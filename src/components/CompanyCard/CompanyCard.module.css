@@ -1,0 +1,290 @@
+@import '../../styles/propertySets.css';
+
+.root {
+  /* Layout */
+  display: flex;
+  flex-direction: column;
+
+
+  /* Remove link's hover effect */
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.threeToTwoWrapper {
+  /* Layout */
+  border-radius: 10px;
+  display: block;
+  height: 345px;
+  position: relative;
+  overflow: hidden;
+  transition: var(--transitionStyleButton);
+
+  &:hover {
+    transform: scale(1.02);
+    box-shadow: var(--boxShadowListingCard);
+  }
+}
+
+/* Firefox doesn't support image aspect ratio inside flexbox */
+.aspectWrapper {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  max-width: 100%;
+  padding: 10px;
+  padding-bottom: 100%; /* 3:2 Aspect Ratio */
+  background: #EEF5F3;
+}
+
+.rootForImage {
+  /* Layout - image will take space defined by aspect ratio wrapper */
+  position: relative;
+  object-fit: cover;
+  height: 100px; ;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  border-radius: var(--borderRadius);
+  z-index: 0;
+  background-color: #8DC7C7;
+
+}
+
+.rootForNoImage {
+  /* Layout - image will take space defined by aspect ratio wrapper */
+  position: relative;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  border-radius: var(--borderRadius);
+}
+
+.info {
+  /* Layout */
+  position: flex;
+  flex-direction: row;
+  padding: 16px 0 2px 0;
+}
+
+.price {
+  /* Layout */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  margin-right: 18px;
+}
+
+.priceValue {
+  /* Font */
+  @apply --marketplaceH3FontStyles;
+
+  /* Remove default margins from font */
+  margin-top: 0;
+  margin-bottom: 0;
+
+  @media (--viewportMedium) {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+
+.perUnit {
+  /* Font */
+  @apply --marketplaceTinyFontStyles;
+  color: var(--matterColor);
+
+  /* Remove default margins from font */
+  margin-top: 0;
+  margin-bottom: 0;
+
+  @media (--viewportMedium) {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+
+.mainInfo {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 5px;
+}
+
+.title {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  /* Font */
+  height:25px;
+  overflow: hidden;
+
+  @apply --marketplaceH3FontStyles;
+  color: var(--matterColorDark);
+
+
+
+
+  /* Remove default margins from font */
+  margin-top: 0;
+  margin-bottom: 0;
+
+
+  @media (--viewportMedium) {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+
+.authorInfo {
+  /* Font */
+  @apply --marketplaceTinyFontStyles;
+  color: var(--matterColor);
+
+  /* Remove default margins from font */
+  margin-top: 0;
+  margin-bottom: 0;
+
+  @media (--viewportMedium) {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+
+.address {
+ display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  height: 16px;
+  /* Font */
+  @apply --marketplaceTinyFontStyles;
+  color: var(--matterColorAnti);
+  flex-shrink: 10;
+  /* Remove default margins from font */
+  margin-top: 0;
+  margin-bottom: 5px;
+
+
+  @media (--viewportMedium) {
+    margin-top: 0;
+
+
+  }
+}
+
+.description {
+  /* Font */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* number of lines to show */
+          line-clamp: 2;
+  -webkit-box-orient: vertical;
+  min-height: 45px;
+  height: 45px;
+
+  @apply --marketplaceSmallFontStyles;
+  color: var(--matterColor);
+  flex-shrink: 3;
+
+  /* Remove default margins from font */
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-bottom: 10px;
+
+  @media (--viewportMedium) {
+    min-height: 45px;
+    height: 45px;
+    -webkit-line-clamp: 2; /* number of lines to show */
+    line-clamp: 2;
+
+
+  }
+}
+
+.longWord {
+  /* fallback option */
+  word-break: break-all;
+  /* use break-word if available */
+  word-break: break-word;
+  hyphens: auto;
+}
+
+.avatar {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  left: 0px;
+  top: 30px;
+  border: solid whitesmoke 3px;
+  height: 85px;
+  width: 85px;
+  -moz-border-radius:85px;
+  -webkit-border-radius:85px;
+  border-radius:85px;
+  margin-bottom: 25px;
+  z-index: 1;
+
+
+@media (--viewportLarge) {}
+}
+
+
+.containerTags{
+  display: -webkit-inline-box;
+  flex-wrap: wrap;
+  align-content: flex-end;
+  position: relative;
+  align-content: flex-end;
+
+  height: 100px;
+
+  color: var(--matterColor);
+  flex-shrink: 1;
+
+  @media (--viewportMedium) {
+    margin-top: 0;
+    height: 105px;
+
+
+
+  }}
+
+  .extraTags {
+    @apply --marketplaceTinyFontStyles;
+    position: relative;
+    border-radius: 99px;
+    padding: 5px;
+    margin-right: 5px;
+    margin-top:10px;
+    flex-shrink: 1;
+    background-color: var(--matterColorLight);
+
+
+    @media (min-width: 700px) and (max-width: 1300px) {
+      padding:5px;
+      margin-right:3px;
+
+      margin-top:5px;
+
+
+
+    @media (--viewportMedium) {
+
+    }
+  }
+}
+
+  .hidden {
+    display:none;
+
+  }

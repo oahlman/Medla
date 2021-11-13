@@ -1,0 +1,109 @@
+@import '../../styles/propertySets.css';
+
+.root {
+  /* Dimensions */
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  flex-grow: 1;
+
+  @media (--viewportMedium) {
+    padding-top: 2px;
+  }
+}
+
+.error {
+  color: var(--failColor);
+}
+
+.priceInput {
+  flex-shrink: 0;
+  width: 100%;
+}
+
+.submitButton {
+  margin-top: auto;
+  margin-bottom: 24px;
+
+  @media (--viewportLarge) {
+    display: inline-block;
+    width: 241px;
+    margin-top: 100px;
+  }
+}
+
+.addBox {
+}
+
+.addService {
+  width: 150px;
+}
+
+.buttonAdd {
+  margin-top: 30px;
+  margin-bottom: 24px;
+  flex-shrink: 0;
+
+  @media (--viewportLarge) {
+    display: inline-block;
+    width: 241px;
+    margin-top: 30px;
+  }
+}
+
+.tip {
+  @apply --marketplaceH5FontStyles;
+  flex-shrink: 0;
+  color: var(--matterColorAnti);
+  margin-top: 24px;
+  margin-bottom: 60px;
+
+  @media (--viewportLarge) {
+    margin-top: 10px;
+    margin-bottom: 0;
+  }
+}
+
+
+.hidden{
+  display:none;
+}
+
+.expandedOffer{
+  border-style: solid;
+  border-color: rgba(0, 0, 0, 0.322);
+  border-width: 2px;
+  padding-left:0px;
+  padding-right:0px;
+  border-top: 0px;
+  border-radius: 0px 0px 10px 10px;
+  margin-left:5%;
+  margin-right: 5%;
+
+  @media (--viewportMedium) {
+    padding-left:30px;
+    padding-right:30px;
+    margin-left:0px;
+    margin-right:0px;
+    
+  }
+}
+
+.buttonAddSecondary {
+  width: 150px;
+  margin-top: 30px;
+}
+
+.serviceAdded {
+display: inline;
+width: 100%;
+position: relative;
+padding-left: 30px;
+padding-right: 30px;
+padding-top: 20px;
+padding-bottom: 30px;
+transition: var(--transitionStyleButton);
+box-shadow: var(--boxShadowListingCard);
+margin-top: 50px;}

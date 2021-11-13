@@ -1,0 +1,216 @@
+/**
+ *  TopbarMobileMenu prints the menu content for authenticated user or
+ * shows login actions for those who are not authenticated.
+ */
+import React from 'react';
+import PropTypes from 'prop-types';
+import { FormattedMessage } from '../../util/reactIntl';
+import classNames from 'classnames';
+import { ACCOUNT_SETTINGS_PAGES } from '../../routeConfiguration';
+import { propTypes } from '../../util/types';
+import {
+  LISTING_PAGE_PENDING_APPROVAL_VARIANT,
+} from '../../util/urlHelpers';
+import { ensureCurrentUser } from '../../util/data';
+import { AvatarLarge, InlineTextButton, NamedLink, NotificationBadge, ExternalLink } from '../../components';
+
+import css from './TopbarMobileMenu.module.css';
+import DesktopLogo from '../Logo/DesktopLogo';
+
+const TopbarMobileMenu = props => {
+  const {
+    isAuthenticated,
+    currentPage,
+    currentUserHasListings,
+    currentUser,
+    notificationCount,
+    onLogout,
+    disableProfileLink,
+  } = props;
+
+  const user = ensureCurrentUser(currentUser);
+  const companyName = currentUser && user.attributes.profile.publicData.companyName ? user.attributes.profile.publicData.companyName.replace(/\s+/g, '-').toLowerCase() : "company";
+  const hasCompanyListingId = user.id && user.attributes.profile.privateData.companyListingId;
+  const companyListingId = user.id && user.attributes.profile.privateData.companyListingId;
+  const pageVariant = currentUserHasListings ? "CompanyPageVariant" : "CompanyPageVariant";
+  const companyPage = hasCompanyListingId ? pageVariant : "ListingBasePage";
+  const companyParams = hasCompanyListingId ? { slug: companyName, id: companyListingId, variant: LISTING_PAGE_PENDING_APPROVAL_VARIANT } : "";
+
+  if (!isAuthenticated) {
+    const signup = (
+      <NamedLink name="SignupPage" className={css.signupLink}>
+        <FormattedMessage id="TopbarMobileMenu.signupLink" />
+      </NamedLink>
+
+    );
+
+    const login = (
+      <NamedLink name="LoginPage" className={css.loginLink}>
+        <FormattedMessage id="TopbarMobileMenu.loginLink" />
+      </NamedLink>
+    );
+
+    const signupOrLogin = (
+      <span className={css.authenticationLinks}>
+        <FormattedMessage id="TopbarMobileMenu.signupOrLogin" values={{ signup, login }} />
+      </span>
+    );
+    return (
+      <div className={css.root}>
+
+          <NamedLink
+          name="LandingPage"
+            >
+          <DesktopLogo></DesktopLogo>
+           </NamedLink>
+
+
+        <div className={css.content}>
+          <div className={css.authenticationGreeting}>
+            <FormattedMessage
+              id="TopbarMobileMenu.unauthorizedGreeting"
+              values={{ lineBreak: <br />, signup, login }}
+            />
+          </div>
+
+
+        <NamedLink name="AboutPage" className={css.navigationLinkMargin}>
+        <FormattedMessage id="Footer.toAboutPage" />
+        </NamedLink>
+
+        <NamedLink name="FAQPage" className={css.navigationLinkDark}>
+         <FormattedMessage id="Footer.toFAQPage" />
+        </NamedLink>
+
+        <ExternalLink className={css.navigationLinkDark} href="mailto:info@peerdigital.se">
+          <FormattedMessage id="Footer.toHelpPage" />
+          </ExternalLink>
+
+          <ExternalLink
+            href='https://www.peerdigital.se/anslut-projekt'
+
+           className={css.navigationLinkDark}
+            >
+            <FormattedMessage id="Footer.searchConnectCompany" />
+           </ExternalLink>
+        </div>
+        <div className={css.footer}>
+        <NamedLink className={css.createNewListingLink} name="SignupPage">
+          <FormattedMessage id="SignupForm.signUp" />
+        </NamedLink>
+        </div>
+      </div>
+    );
+  }
+
+  const notificationCountBadge =
+    notificationCount > 0 ? (
+      <NotificationBadge className={css.notificationBadge} count={notificationCount} />
+    ) : null;
+
+  const displayName = user.attributes.profile.firstName;
+  const currentPageClass = page => {
+    const isAccountSettingsPage =
+      page === 'AccountSettingsPage' && ACCOUNT_SETTINGS_PAGES.includes(currentPage);
+    return currentPage === page || isAccountSettingsPage ? css.currentPage : null;
+  };
+
+  return (
+    <div className={css.root}>
+
+      <div className={css.avatarContainer}>
+      <NamedLink
+          className={classNames(css.navigationLink, currentPageClass('ProfileSettingsPage'))}
+          name={companyPage}
+          params={companyParams}
+        >
+       <AvatarLarge className={css.avatar} disableProfileLink={!disableProfileLink} user={currentUser}
+      /> </NamedLink>
+
+      <div className={css.content}>
+      <span className={css.greeting}>
+          <FormattedMessage id="TopbarMobileMenu.greeting" values={{ displayName }} />
+        </span>
+
+        <InlineTextButton rootClassName={css.logoutButton} onClick={onLogout}>
+          <FormattedMessage id="TopbarMobileMenu.logoutLink" />
+        </InlineTextButton>
+
+        </div>
+
+        </div>
+
+      <div className={css.content}>
+
+      <NamedLink
+          className={classNames(css.homeLink, currentPageClass('LandingPage'))}
+          name="LandingPage"
+        >
+          <FormattedMessage id="TopbarMobileMenu.homeLink" />
+        </NamedLink>
+
+        <NamedLink
+          className={classNames(css.navigationLink, currentPageClass('InboxPage'))}
+          name="InboxPage"
+          params={{ tab: currentUserHasListings ? 'sales' : 'orders' }}
+        >
+          <FormattedMessage id="TopbarMobileMenu.inboxLink" />
+          {notificationCountBadge}
+        </NamedLink>
+        <NamedLink
+          className={classNames(css.navigationLink, currentPageClass('ManageListingsPage'))}
+          name="ManageListingsPage"
+        >
+          <FormattedMessage id="TopbarMobileMenu.yourListingsLink" />
+        </NamedLink>
+        <NamedLink
+          className={classNames(css.navigationLink, currentPageClass('ProfileSettingsPage'))}
+          name={companyPage}
+          params={companyParams}
+        >
+          <FormattedMessage id="TopbarMobileMenu.companySettingsLink" />
+        </NamedLink>
+        <NamedLink
+          className={classNames(css.navigationLink, currentPageClass('AccountSettingsPage'))}
+          name="AccountSettingsPage"
+        >
+          <FormattedMessage id="TopbarMobileMenu.accountSettingsLink" />
+        </NamedLink>
+
+
+
+        <NamedLink
+         className={classNames(css.navigationLinkMargin, currentPageClass ('AboutPage'))}
+        name="AboutPage" >
+        <FormattedMessage id="Footer.toAboutPage" />
+        </NamedLink>
+
+        <NamedLink name="FAQPage" className={css.navigationLinkDark}>
+         <FormattedMessage id="Footer.toFAQPage" />
+        </NamedLink>
+
+        <ExternalLink className={css.navigationLinkDark} href="mailto:info@peerdigital.se">
+          <FormattedMessage id="Footer.toHelpPage" />
+          </ExternalLink>
+
+
+      </div>
+
+    </div>
+  );
+};
+
+TopbarMobileMenu.defaultProps = { currentUser: null, notificationCount: 0, currentPage: null };
+
+const { bool, func, number, string } = PropTypes;
+
+TopbarMobileMenu.propTypes = {
+  isAuthenticated: bool.isRequired,
+  currentUserHasListings: bool.isRequired,
+  currentUser: propTypes.currentUser,
+  currentPage: string,
+  notificationCount: number,
+  onLogout: func.isRequired,
+};
+
+export default TopbarMobileMenu;

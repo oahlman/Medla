@@ -1,0 +1,15 @@
+.logoMobile {
+  
+  & path {
+    fill: var(--marketplaceColor);
+  }
+}
+
+.logoDesktop {
+  padding-bottom:20px;
+
+  & path {
+    fill: var(--marketplaceColor);
+   
+  }
+}

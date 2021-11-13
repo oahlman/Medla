@@ -1,0 +1,228 @@
+@import '../../styles/propertySets.css';
+
+/* Animation for the hero elements */
+@keyframes animationTitle {
+  0% {
+    visibility: hidden;
+    opacity: 0;
+    top: -20px;
+  }
+  100% {
+    visibility: visible;
+    opacity: 1;
+    top: 0;
+  }
+}
+
+/* Shared animation rules */
+.animation {
+  animation-name: animationTitle;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-out;
+  -webkit-animation-fill-mode: forwards;
+
+  visibility: hidden;
+  opacity: 1;
+  position: relative;
+}
+.root {
+  padding: 0px;
+
+  /* Use CSS variable defined in src/styles/marketplaceDefaults.css */
+}
+.root {
+  padding: 0px;
+
+  /* Use CSS variable defined in src/styles/marketplaceDefaults.css */
+}
+
+
+.sectionContent {
+
+  margin: var(--LandingPage_sectionMarginTop) 24px 15px 24px;
+
+  @media (--viewportMedium) {
+    max-width: 100%;
+    margin: var(--LandingPage_sectionMarginTopLarge) auto 0px auto;
+    margin-top: 0px;
+
+  }
+
+  @media (--viewportLarge) {
+    max-width: 1128px;
+    padding: 0 px 0 px;
+    margin: var(--LandingPage_sectionMarginTopLarge) auto 0px auto;
+    margin-top: 0px;
+
+  }
+
+ 
+}
+
+
+.sectionProcessMaybe {
+  margin: var(--LandingPage_sectionMarginTop) 24px 15px 24px;
+
+  @media (--viewportMedium) {
+    max-width: 100%;
+    margin: var(--LandingPage_sectionMarginTopMedium) 24px 0px 24px;
+    margin-bottom: 100px;
+    margin-top: 0px;
+
+  }
+
+  @media (--viewportLarge) {
+    max-width: 1128px;
+    padding: 0 36px 0 36px;
+    margin: var(--LandingPage_sectionMarginTopLarge) auto 0px auto;
+    margin-top: 30px;
+    margin-bottom: 100px;
+
+
+  }
+
+  @media (--viewportXLarge) {
+    max-width: 1056px;
+    padding: 0;
+    margin-top: 30px;
+    margin-bottom: 100px;
+
+
+
+  }
+}
+
+
+.sectionText{
+  
+  flex-wrap: row;
+  padding:30px;
+  background-color: var(--marketplaceColorDark);
+  border-color: whitesmoke;
+  color:whitesmoke;
+  overflow:hidden;
+  max-height: 500px;
+  align-items: center;
+  
+  @media (--viewportMedium) {
+    display:flex;
+    flex-wrap: row;
+    margin: var(--LandingPage_sectionMarginTopMedium) 24px 60px 24px;
+    min-height: 540px;
+  
+  }
+}
+
+.bannerLeft {
+
+  @media (--viewportMedium) {
+    min-width: 55%;
+    max-width: 55%;
+  }
+}
+.bannerContent{
+
+  display: flex;
+  justify-content: left;
+  overflow: hidden;
+
+  @media (--viewportMedium) {
+
+  margin-left:50px;
+
+  
+  }
+}
+
+.imagePhoneContainer {
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
+
+  @media (--viewportMedium) {
+    display:none;
+
+    }
+  }
+
+
+.imagePhone {
+  position: relative;
+  object-fit: cover;
+
+  object-position: 0px 50px; /* try 20px 10px */ 
+  width:90%;
+
+  @media (--viewportMedium) {
+    display:none;
+
+    }
+  }
+
+
+  .imageMacbookContainer {
+    display:none;
+    @media (--viewportMedium) {
+    display:flex;
+    align-items: center;
+    margin-right: -300px;
+
+
+    
+      }
+    }  
+
+  .imageMacbook {
+    display: none;
+
+    @media (--viewportMedium) {
+      display:block;
+      object-fit: cover;
+      overflow:hidden;
+      width:80%;
+      object-position: 50px 0%; /* try 20px 10px */ 
+
+     
+    
+      }
+  }
+
+  
+  .heroButton {
+    @apply --marketplaceButtonStylesSecondary;
+    composes: animation;
+    background-color: transparent;
+    border-width: 2px;
+    color: whitesmoke;
+    transition-duration: 0.25s;
+    padding: 2px;
+    animation-delay: 0.8s;
+    margin-bottom: 10px;
+    margin-top: 30px;
+  
+    @media (--viewportMedium) {
+      display: block;
+      width: 260px;
+      margin-left: 50px;
+    }
+  }
+  
+  .heroButton:hover{
+  color:black;
+  border-color: whitesmoke;
+  background-color: whitesmoke;
+  
+  
+  
+  
+  }
+
+
+
+
+
+
+
+  
+  
+  

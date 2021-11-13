@@ -1,0 +1,49 @@
+@import '../../styles/propertySets.css';
+
+.toggle {
+  @apply --marketplaceButtonStylesSecondary;
+  animation-delay: 0.8s;
+  margin-bottom: 15px;
+  margin-top: 15px;
+
+  @media (--viewportMedium) {
+    display: block;
+    width: 200px;
+    height: 10px;
+  }
+}
+
+
+.headingCard{
+@apply --marketplaceH3FontStyles;
+color:#494949;
+  /* fallback option */
+  word-break: break-all;
+  /* use break-word if available */
+  word-break: break-word;
+  hyphens: auto;
+
+
+@media (max-width: 600px) {
+display:none;
+
+}
+}
+
+
+.hidden {
+  display:none;
+}
+
+.hideButton{
+  display:none;
+}
+
+.buttonHiddenNumber {
+  @apply --marketplaceButtonStyles;
+
+
+}
+
+ 
+  

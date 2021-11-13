@@ -1,0 +1,115 @@
+@import '../../styles/propertySets.css';
+
+.root {
+  @apply --marketplaceModalFormRootStyles;
+
+  justify-content: flex-start;
+
+  @media (--viewportMedium) {
+    justify-content: space-between;
+  }
+}
+
+.name {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 24px;
+
+  @media (--viewportMedium) {
+    margin-top: 32px;
+  }
+}
+
+.firstNameRoot {
+  width: calc(34% - 9px);
+}
+
+.lastNameRoot {
+  width: calc(66% - 9px);
+}
+
+.password {
+  @apply --marketplaceModalPasswordMargins;
+}
+
+.bottomWrapper {
+  @apply --marketplaceModalBottomWrapper;
+}
+
+.bottomWrapperText {
+  @apply --marketplaceModalBottomWrapperText;
+}
+
+.termsText {
+  @apply --marketplaceModalHelperText;
+}
+
+.termsLink {
+  @apply --marketplaceModalHelperLink;
+
+  &:hover {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+}
+
+.location {
+  @apply --marketplaceModalPasswordMargins;
+}
+
+.locationAutocompleteInput {
+  flex-grow: 1;
+  height: 36px;
+  line-height: unset;
+  padding-left: 0;
+  margin: 0;
+  border-bottom: 2px solid var(--attentionColor);
+
+  &:hover,
+  &:focus {
+    border-bottom-color: var(--matterColorDark);
+    outline: none;
+  }
+
+  .phone {
+    margin-top: 24px;
+  
+    @media (--viewportMedium) {
+      margin-top: 32px;
+    }
+  }
+
+  /* Safari bugfix: without this Safari will print placeholder to a wrong place */
+  &::-webkit-input-placeholder {
+    line-height: normal;
+  }
+
+  @media (--viewportMedium) {
+    height: 40px;
+  }
+}
+
+.locationAutocompleteInputIcon {
+  display: none;
+}
+
+.predictionsRoot {
+  position: absolute;
+  width: 100%;
+  padding-bottom: var(--locationAutocompleteBottomPadding);
+  top: 36px;
+  left: 0;
+  background-color: var(--marketplaceColor);
+  border-bottom-left-radius: var(--borderRadius);
+  border-bottom-right-radius: var(--borderRadius);
+  box-shadow: var(--boxShadowPopup);
+  z-index: calc(var(--zIndexPopup) + 1);
+
+  @media (--viewportMedium) {
+    top: 40px;
+  }
+}
+
+.validLocation {
+  border-bottom-color: var(--successColor);
+}

@@ -1,0 +1,195 @@
+@import '../../styles/propertySets.css';
+
+/* Animation for the hero elements */
+
+@keyframes animationTitle {
+  0% {
+    visibility: hidden;
+    opacity: 0;
+    top: -20px;
+  }
+  100% {
+    visibility: visible;
+    opacity: 1;
+    top: 0;
+  }
+}
+
+/* Shared animation rules */
+.animation {
+  animation-name: animationTitle;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-out;
+  -webkit-animation-fill-mode: forwards;
+
+  visibility: hidden;
+  opacity: 1;
+  position: relative;
+}
+
+.root {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    /* Gradient direction and overlaying the black color on top of the image for better readability */
+    background: url('data:image/svg+xml;utf8,<svg width="1760" height="1134" viewBox="0 0 1760 1134" xmlns="http://www.w3.org/2000/svg"><path d="M1759.8 1158.46L-345.904 1760.83L-784 229.367L905.909 -254.055C844.877 -56.125 838.67 161.183 899.884 375.172C1018.99 791.516 1361.34 1083.54 1759.8 1158.46Z" fill="%23ECF9F6" fill-rule="evenodd"/></svg>'), url('../../assets/background-1440.jpg');
+
+    /* Add loading color for the div */
+    background-color: var(--marketplaceColorLight);
+
+    /* Cover the whole screen with the background image */
+    background-size: cover;
+
+    /* Align the image within the container */
+    background-position: center center;
+
+    @media (--viewportLarge) {
+      border-radius: 40px;
+      border: solid 36px var(--matterColorBright);
+    }
+
+  /* Text positioning is done with paddings */
+}
+
+.heroContent {
+  margin: 0 24px 0 24px;
+  @media (--viewportMedium) {
+    margin: 0 7.5vw 0 7.5vw;
+    padding: 0 40% 0 0;
+  }
+
+  /* Special viewport for adjusting the heroContent's placement */
+
+  @media only screen and (min-width: 1025px) and (max-width: 1366px) {
+    padding: 0 500px 0 36px;
+  }
+
+  @media only screen and (min-width: 1367px) {
+    margin: 0 auto;
+    max-width: calc(1052px + 36px + 36px);
+    width: 100%;
+    padding: 0 550px 0 36px;
+  }
+}
+
+.heroMainTitle {
+  @apply --marketplaceHeroTitleFontStyles;
+  color: var(--marketplaceColorDark);
+  padding-right: 45%;
+
+  composes: animation;
+  animation-delay: 0.5s;
+
+  @media (--viewportMedium) {
+    max-width: var(--SectionHero_desktopTitleMaxWidth);
+    padding-right: 0;
+  }
+}
+
+.heroSubTitle {
+  @apply --marketplaceH4FontStyles;
+  color: var(--marketplaceColorDark);
+  padding-right: 40%;
+  margin: 0 0 32px 0;
+
+  composes: animation;
+  animation-delay: 0.65s;
+
+  @media (--viewportMedium) {
+    max-width: var(--SectionHero_desktopTitleMaxWidth);
+    padding-right: 0;
+    margin: 0 0 47px 0;
+  }
+}
+
+.heroButton {
+  @apply --marketplaceButtonStyles;
+  background-color: var(--marketplaceColorDark);
+  composes: animation;
+
+  animation-delay: 0.8s;
+  margin-bottom: 10px;
+
+  @media (--viewportMedium) {
+    display: block;
+    width: 260px;
+  }
+}
+
+.secondaryButton {
+  @apply --marketplaceButtonStylesSecondary;
+  composes: animation;
+  background-color: #ECF9F6;
+  border-width: 2px;
+  color: var(--marketplaceColorDark);
+  border-color: var(--marketplaceColorDark);
+  transition-duration: 0.25s;
+
+  animation-delay: 0.8s;
+  margin-bottom: 10px;
+
+  @media (--viewportMedium) {
+    display: block;
+    width: 260px;
+  }
+}
+
+.secondaryButton:hover{
+color: var(--marketplaceColor);
+border-color: var(--marketplaceColor);
+background-color: transparent;
+}
+
+
+
+.steps {
+  display: flex;
+  flex-direction: row;
+
+  @media (--viewportMedium) {
+
+  }
+}
+
+.step {
+  margin-right: 10px;
+  width: 160px;
+  @media (--viewportMedium) {
+    width: 324px;
+    margin-right: 20px;
+  }
+  @media (--viewportLarge) {
+    width: 324px;
+    margin-right: 40px;
+  }
+}
+
+.step:last-of-type {
+  margin-right: 0;
+  @media (--viewportMedium) {
+
+  }
+}
+
+.stepTitle {
+  margin-top: 18px;
+  margin-bottom: 18px;
+
+  @media (--viewportMedium) {
+    margin-top: 21px;
+    margin-bottom: 18px;
+  }
+}
+
+.createListingLink {
+  margin-top: 18px;
+
+  @media (--viewportMedium) {
+    margin-top: 24px;
+  }
+}
+
+.background {
+  width: 100%;
+}

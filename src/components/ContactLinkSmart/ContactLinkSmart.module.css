@@ -1,0 +1,58 @@
+@import '../../styles/propertySets.css';
+
+.toggle {
+  @apply --marketplaceButtonStylesSecondary;
+  animation-delay: 0.8s;
+  margin-bottom: 15px;
+  margin-top: 15px;
+
+  @media (--viewportMedium) {
+    display: block;
+    width: 200px;
+    height: 10px;
+  }
+}
+
+
+.buttonHiddenNumber{
+  @media (--viewportMedium) {
+    display: none;
+    
+  }
+
+  @media (max-width: 600px) {
+    @apply --marketplaceLinkStyles;
+    @apply --marketplaceH4FontStyles;
+    margin: 0;
+    padding: 0 24px;
+    
+    
+  
+
+  
+   
+    
+ 
+  }
+    
+  } 
+
+
+  
+
+
+.buttonShowNumber{
+
+  padding: 0 0 2px 0;
+
+ 
+  
+}
+
+.hidden {
+  display:none;
+}
+
+.hideButton{
+  display:none;
+}

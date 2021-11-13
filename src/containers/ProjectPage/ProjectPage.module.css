@@ -1,0 +1,477 @@
+@import '../../styles/customMediaQueries.css';
+@import '../../styles/propertySets.css';
+
+.pageTitle {
+ color: var(--marketplaceColorDark);
+}
+
+.staticPageWrapper {
+  width: calc(100% - 48px);
+  max-width: 1056px;
+  margin: 24px auto;
+
+  @media (--viewportMedium) {
+    width: calc(100% - 72px);
+    margin: 72px auto;
+  }
+}
+
+.coverImage {
+  background-color: var(--matterColorNegative);
+  width: 100%;
+  border-radius: 5px 5px 0px 0px;
+  object-fit: cover;
+  @media (--viewportMedium) {
+    width: calc(100% - 400px);
+    border-radius: 0px 10px 10px 0px;
+  }
+}
+
+.coverInfo {
+  background-color: var(--matterColorLight);
+  border-radius: 0px 0px 5px 5px;
+  padding: 20px;
+  @media (--viewportMedium) {
+    padding: 40px;
+    width: 400px;
+    border-radius: 10px 0px 0px 10px;
+  }
+}
+
+.following {
+  @apply --marketplaceButtonStylesSecondary;
+  margin-bottom: 10px;
+
+}
+
+.follow {
+  @apply --marketplaceButtonStylesPrimary;
+  margin-bottom: 10px;
+
+}
+
+.followingText {
+  padding-left: 18px;
+  background-repeat: no-repeat;
+  background-position: top 6px left;
+  color: var(--successColor);
+  background-image: url('data:image/svg+xml;utf8,<svg width="12" height="12" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg"><path d="M6.52 9.098c-.163.188-.397.3-.646.31h-.032c-.238 0-.466-.094-.635-.263L2.783 6.732c-.353-.35-.354-.92-.003-1.273.35-.353.92-.354 1.272-.004L5.794 7.19l4.59-5.278C9.287.738 7.73 0 6 0 2.686 0 0 2.686 0 6c0 3.313 2.686 6 6 6 3.313 0 6-2.687 6-6 0-.91-.21-1.772-.573-2.545L6.52 9.098z" fill="%232ECC71" fill-rule="evenodd"/></svg>');
+
+}
+
+.followText {
+
+}
+
+.contentWrapper {
+  display: flex;
+  flex-wrap: wrap;
+
+  @media (--viewportMedium) {
+  }
+}
+
+.coverSection {
+  display: flex;
+  flex-direction: column-reverse;
+  box-shadow: var(--boxShadowListingCard);
+  border-radius: 5px;
+
+  @media (--viewportMedium) {
+    flex-direction: row;
+    border-radius: 10px;
+  }
+}
+
+.contentMain {
+  width: 100%;
+
+  @media (--viewportMedium) {
+
+  }
+}
+
+.subtitle {
+  @apply --marketplaceH3FontStyles;
+  margin-top: 32px;
+  margin-bottom: 16px;
+}
+
+
+.hidden {
+  display: none;
+}
+
+.infoText {
+  @apply --marketplaceH4FontStyles;
+
+  display: inline-block;
+  width: 100%;
+  padding-left: 18px;
+  background-repeat: no-repeat;
+  background-position: top 7px left;
+
+  margin-top: 11px;
+  margin-bottom: 0;
+
+  @media (--viewportMedium) {
+    margin-top: 14px;
+    margin-bottom: 1px;
+  }
+}
+
+.emailVerified {
+  composes: infoText;
+  color: var(--successColor);
+  background-image: url('data:image/svg+xml;utf8,<svg width="12" height="12" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg"><path d="M6.52 9.098c-.163.188-.397.3-.646.31h-.032c-.238 0-.466-.094-.635-.263L2.783 6.732c-.353-.35-.354-.92-.003-1.273.35-.353.92-.354 1.272-.004L5.794 7.19l4.59-5.278C9.287.738 7.73 0 6 0 2.686 0 0 2.686 0 6c0 3.313 2.686 6 6 6 3.313 0 6-2.687 6-6 0-.91-.21-1.772-.573-2.545L6.52 9.098z" fill="%232ECC71" fill-rule="evenodd"/></svg>');
+}
+
+.emailUnverified {
+  composes: infoText;
+  color: var(--matterColorAnti);
+  background-image: url('data:image/svg+xml;utf8,<svg width="12" height="12" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg"><path d="M6.52 9.098c-.163.188-.397.3-.646.31h-.032c-.238 0-.466-.094-.635-.263L2.783 6.732c-.353-.35-.354-.92-.003-1.273.35-.353.92-.354 1.272-.004L5.794 7.19l4.59-5.278C9.287.738 7.73 0 6 0 2.686 0 0 2.686 0 6c0 3.313 2.686 6 6 6 3.313 0 6-2.687 6-6 0-.91-.21-1.772-.573-2.545L6.52 9.098z" fill="%23F00" fill-rule="evenodd"/></svg>');
+}
+
+.pendingEmailUnverified {
+  composes: infoText;
+  color: var(--attentionColor);
+  width: 100%;
+  background-image: url('data:image/svg+xml;utf8,<svg width="12" height="12" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg"><path d="M6.52 9.098c-.163.188-.397.3-.646.31h-.032c-.238 0-.466-.094-.635-.263L2.783 6.732c-.353-.35-.354-.92-.003-1.273.35-.353.92-.354 1.272-.004L5.794 7.19l4.59-5.278C9.287.738 7.73 0 6 0 2.686 0 0 2.686 0 6c0 3.313 2.686 6 6 6 3.313 0 6-2.687 6-6 0-.91-.21-1.772-.573-2.545L6.52 9.098z" fill="%23ffaa00" fill-rule="evenodd"/></svg>');
+}
+.columnsStatus {
+  margin-top: 0px;
+}
+.readMore {
+  @apply --marketplaceButtonStylesSecondary;
+
+}
+
+.settingsLink:hover {
+}
+
+.listingCards {
+  margin: unset;
+  padding: 0 0 48px 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  @media (--viewportMedium) {
+
+  }
+
+  @media (--viewportLarge) {
+    padding: 0 0 48px 0;
+  }
+}
+
+.listingCard {
+  margin-bottom: 36px;
+  flex-basis: 100%;
+
+  @media (--viewportMedium) {
+    flex-basis: calc(50% - 12px);
+    margin-right: 24px;
+  }
+
+  @media (--viewportLarge) {
+    /**
+     * resultPanelWidthRatio = 0.625 aka 62.5%
+
+      resultPanel: 62.5vw from 1920px = 1200px
+      panelPaddings: - 2*36px = 72px
+
+      columnCount: 3
+      guttersBetweenColumns: 2*24px = 48px
+
+      (resultPanel - (panelPaddings + guttersBetweenColumns)) / columnCount = listingCardWidth
+      ergo => listingCardWidth: 360px
+
+     * flex-basis: calc((100%/columnCount) - (guttersBetweenColumns / columnCount))
+     */
+
+    flex-basis: calc(33.33% - 16px);
+    margin-right: 24px;
+  }
+}
+
+/**
+ * Remove margin-right from listingCards on the last column
+ * This is a special case in the world of breakpoints. Nth-of-type effects every nth item.
+ * Here we take margin-right away, but we don't want it affect the next column breakpoint.
+ */
+
+.listingCard:nth-of-type(2n) {
+  @media screen and (max-width: 1024px) {
+    margin-right: 0;
+  }
+}
+
+.listingCard:nth-of-type(3n) {
+  @media (--viewportLarge) {
+    margin-right: 0;
+  }
+}
+
+.companyCards {
+  margin: unset;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 0 0 48px 0;
+
+  @media (--viewportMedium) {
+
+  }
+
+  @media (--viewportLarge) {
+    padding: 0 0 48px 0;
+  }
+}
+
+.companyCard {
+  margin-bottom: 36px;
+  flex-basis: calc(50% - 12px);
+  margin-right: 24px;
+
+  @media screen and (max-width: 512px) {
+    /**
+     * resultPanelWidthRatio = 0.625 aka 62.5%
+
+      resultPanel: 62.5vw from 1920px = 1200px
+      panelPaddings: - 2*36px = 72px
+
+      columnCount: 3
+      guttersBetweenColumns: 2*24px = 48px
+
+      (resultPanel - (panelPaddings + guttersBetweenColumns)) / columnCount = companyCardWidth
+      ergo => companyCardWidth: 360px
+
+     * flex-basis: calc((100%/columnCount) - (guttersBetweenColumns / columnCount))
+     */
+
+    flex-basis: 100%;
+    margin-right: 0px;
+  }
+
+  @media (--viewportMedium) {
+    /**
+     * resultPanelWidthRatio = 0.625 aka 62.5%
+
+      resultPanel: 62.5vw from 1920px = 1200px
+      panelPaddings: - 2*36px = 72px
+
+      columnCount: 3
+      guttersBetweenColumns: 2*24px = 48px
+
+      (resultPanel - (panelPaddings + guttersBetweenColumns)) / columnCount = companyCardWidth
+      ergo => companyCardWidth: 360px
+
+     * flex-basis: calc((100%/columnCount) - (guttersBetweenColumns / columnCount))
+     */
+
+    flex-basis: calc(33.33% - 16px);
+    margin-right: 24px;
+  }
+
+  @media (--viewportXLarge) {
+    /**
+     * resultPanelWidthRatio = 0.625 aka 62.5%
+
+      resultPanel: 62.5vw from 1920px = 1200px
+      panelPaddings: - 2*36px = 72px
+
+      columnCount: 3
+      guttersBetweenColumns: 2*24px = 48px
+
+      (resultPanel - (panelPaddings + guttersBetweenColumns)) / columnCount = companyCardWidth
+      ergo => companyCardWidth: 360px
+
+     * flex-basis: calc((100%/columnCount) - (guttersBetweenColumns / columnCount))
+     */
+
+    flex-basis: calc(33.33% - 16px);
+    margin-right: 24px;
+  }
+}
+
+/**
+ * Remove margin-right from companyCards on the last column
+ * This is a special case in the world of breakpoints. Nth-of-type effects every nth item.
+ * Here we take margin-right away, but we don't want it affect the next column breakpoint.
+ */
+
+.companyCard:nth-of-type(2n) {
+  @media screen and (max-width: 767px) {
+    margin-right: 0;
+  }
+}
+
+.companyCard:nth-of-type(3n) {
+  @media (--viewportMedium) {
+    margin-right: 0;
+  }
+}
+
+.searchLink {
+  width: 100%;
+}
+
+.serviceCards {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  padding: 48px 0 48px 0;
+  overflow-x: scroll;
+
+  @media screen and (max-width: 768px) {
+    margin: auto -24px;
+    padding-left: 24px;
+  }
+
+  @media (--viewportMedium) {
+    overflow-x: unset;
+    flex-wrap: wrap;
+  }
+
+  @media (--viewportLarge) {
+    padding: 0 0 48px 0;
+  }
+}
+
+.serviceCard {
+  @apply --marketplaceH3FontStyles;
+  min-width: 200px;
+  min-height: 120px;
+  border-radius: 5px;
+  background-color: white;
+  color: var(--matterColor);
+  padding: 30px 20px 0px 20px;
+  margin-right: 24px;
+  flex-basis: 100%;
+  box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.1);
+  transition: var(--transitionStyleButton);
+
+  @media (--viewportMedium) {
+    /**
+      * resultPanelWidthRatio = 0.625 aka 62.5%
+
+      resultPanel: 62.5vw from 1024px = 640px
+      panelPaddings: - 2*36px = 72px
+
+      columnCount: 2
+      guttersBetweenColumns: 24px
+
+      (resultPanel - (panelPaddings + guttersBetweenColumns)) / columnCount = listingCardWidth
+      ergo => listingCardWidth: 272px
+
+    * flex-basis: calc((100%/columnCount) - (guttersBetweenColumns / columnCount))
+    */
+    min-width: unset;
+    flex-basis: calc(50% - 12px);
+    margin-right: 24px;
+    margin-bottom: 36px;
+  }
+
+  @media (--viewportLarge) {
+    /**
+     * resultPanelWidthRatio = 0.625 aka 62.5%
+
+      resultPanel: 62.5vw from 1920px = 1200px
+      panelPaddings: - 2*36px = 72px
+
+      columnCount: 3
+      guttersBetweenColumns: 2*24px = 48px
+
+      (resultPanel - (panelPaddings + guttersBetweenColumns)) / columnCount = listingCardWidth
+      ergo => listingCardWidth: 360px
+
+     * flex-basis: calc((100%/columnCount) - (guttersBetweenColumns / columnCount))
+     */
+
+    flex-basis: calc(33.33% - 16px);
+    margin-right: 24px;
+    margin-bottom: 36px;
+  }
+}
+
+.serviceCard:hover {
+  text-decoration: none;
+  transform: scale(1.02);
+  box-shadow: var(--boxShadowListingCard);
+  color: var(--matterColorDark);
+}
+
+.serviceCard:nth-of-type(2n) {
+  @media screen and (min-width: 768px) and (max-width: 1023px) {
+    margin-right: 0;
+  }
+}
+
+.serviceCard:nth-of-type(3n) {
+  @media screen and (min-width: 1024px) {
+    margin-right: 0;
+  }
+}
+
+.projectDetails {
+  display: flex;
+  flex-direction: column;
+
+  @media (--viewportMedium) {
+    flex-direction: row-reverse;
+  }
+}
+
+.stats {
+
+
+  @media (--viewportMedium) {
+    width: 300px;
+  margin-left: 24px;
+  }
+}
+
+.items {
+
+  @media (--viewportMedium) {
+    width: 300px;
+  }
+}
+
+li {
+  margin-bottom: 5px;
+
+}
+
+.desctiption {
+
+  @media (--viewportMedium) {
+    width: calc(100% - 300px);
+  }
+}
+
+.newJob {
+  @apply --marketplaceButtonStylesPrimary
+}
+
+.newJobDesktop {
+    display: none;
+
+  @media (--viewportMedium) {
+    display: initial;
+  }
+}
+
+.newJobMobile {
+
+  @media (--viewportMedium) {
+    display: none;
+  }
+}
+
+.checkmark {
+  color: var(--attentionColor);
+  width: 100%;
+  background-image: url('data:image/svg+xml;utf8,<svg width="12" height="12" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg"><path d="M6.52 9.098c-.163.188-.397.3-.646.31h-.032c-.238 0-.466-.094-.635-.263L2.783 6.732c-.353-.35-.354-.92-.003-1.273.35-.353.92-.354 1.272-.004L5.794 7.19l4.59-5.278C9.287.738 7.73 0 6 0 2.686 0 0 2.686 0 6c0 3.313 2.686 6 6 6 3.313 0 6-2.687 6-6 0-.91-.21-1.772-.573-2.545L6.52 9.098z" fill="%23ffaa00" fill-rule="evenodd"/></svg>');
+}

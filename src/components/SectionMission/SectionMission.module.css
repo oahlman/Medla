@@ -1,0 +1,70 @@
+@import '../../styles/propertySets.css';
+
+.title {
+  @apply --marketplaceH1FontStyles;
+  margin-top: 0;
+  color: var(--marketplaceColorDark);
+
+}
+
+.steps {
+  display: flex;
+  flex-direction: column;
+
+  @media (--viewportMedium) {
+    flex-direction: row;
+  }
+}
+
+.step {
+
+  @media (--viewportMedium) {
+    width: 50%;
+    margin-right: 40px;
+  }
+}
+
+.step:last-of-type {
+  @media (--viewportMedium) {
+    margin-right: 0;
+  }
+}
+
+.stepTitle {
+  color: var(--marketplaceColorDark);
+
+  margin-top: 18px;
+  margin-bottom: 18px;
+
+  @media (--viewportMedium) {
+    margin-top: 21px;
+    margin-bottom: 18px;
+  }
+}
+
+.createListingLink {
+
+  margin-top: 18px;
+
+
+  @media (--viewportMedium) {
+    margin-top: 24px;
+  }
+}
+
+.linkStyle{
+
+}
+
+.heroButton {
+  @apply --marketplaceButtonStyles;
+  background-color: var(--marketplaceColorDark);
+
+  margin-bottom: 10px;
+
+  @media (--viewportMedium) {
+    margin-top: 85px;
+    display: block;
+    width: 260px;
+  }
+}

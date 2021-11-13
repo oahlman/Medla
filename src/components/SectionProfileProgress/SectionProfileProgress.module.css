@@ -1,0 +1,163 @@
+@import '../../styles/propertySets.css';
+
+.root {
+  /* Adding empty .root class to enforce className overwrite */
+
+}
+
+.containerProgressCards{
+
+  display: flex;
+  flex-direction: column;
+  margin:0;
+  @media (--viewportMedium) {
+    flex-direction: row;
+
+  }
+}
+
+  .progressCard1 {
+    background-color: white;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 25px;
+    padding-bottom: 35px;
+    transition: var(--transitionStyleButton);
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
+    @media (--viewportMedium) {
+    max-height: 150px;
+    width: 350px;
+    margin-right: 15px;
+    margin-top: 0px;
+
+    }
+  }
+
+  .progressCard1:hover {
+      transform: scale(1.02);
+      box-shadow: var(--boxShadowListingCard);
+    }
+
+
+
+
+  .progressCard2 {
+    background-color: white;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 25px;
+    padding-bottom: 35px;
+    transition: var(--transitionStyleButton);
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
+    margin-top:30px;
+    @media (--viewportMedium) {
+    max-height: 150px;
+    width: 350px;
+    margin-right: 15px;
+    margin-left: 15px;
+    margin-top: 0px;
+    }
+  }
+
+  .progressCard2:hover {
+    transform: scale(1.02);
+    box-shadow: var(--boxShadowListingCard);
+  }
+
+  .progressCard3 {
+    background-color: white;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 25px;
+    padding-bottom: 35px;
+    transition: var(--transitionStyleButton);
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
+    margin-top: 30px;
+    @media (--viewportMedium) {
+    max-height: 150px;
+    width: 350px;
+    margin-left: 15px;
+    margin-top: 0px;
+    }
+  }
+
+  .progressCard3:hover {
+    transform: scale(1.02);
+    box-shadow: var(--boxShadowListingCard);
+  }
+
+
+.hidden {
+  display: none;
+}
+
+.infoText {
+  @apply --marketplaceH4FontStyles;
+
+  display: inline-block;
+  width: 100%;
+  padding-left: 18px;
+  background-repeat: no-repeat;
+  background-position: top 7px left;
+
+  margin-top: 11px;
+  margin-bottom: 0;
+
+  @media (--viewportMedium) {
+    margin-top: 14px;
+    margin-bottom: 1px;
+  }
+}
+
+.emailVerified {
+  composes: infoText;
+  color: var(--successColor);
+  background-image: url('data:image/svg+xml;utf8,<svg width="12" height="12" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg"><path d="M6.52 9.098c-.163.188-.397.3-.646.31h-.032c-.238 0-.466-.094-.635-.263L2.783 6.732c-.353-.35-.354-.92-.003-1.273.35-.353.92-.354 1.272-.004L5.794 7.19l4.59-5.278C9.287.738 7.73 0 6 0 2.686 0 0 2.686 0 6c0 3.313 2.686 6 6 6 3.313 0 6-2.687 6-6 0-.91-.21-1.772-.573-2.545L6.52 9.098z" fill="%232ECC71" fill-rule="evenodd"/></svg>');
+}
+
+.emailUnverified {
+  composes: infoText;
+  color: var(--matterColorAnti);
+  background-image: url('data:image/svg+xml;utf8,<svg width="12" height="12" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg"><path d="M6.52 9.098c-.163.188-.397.3-.646.31h-.032c-.238 0-.466-.094-.635-.263L2.783 6.732c-.353-.35-.354-.92-.003-1.273.35-.353.92-.354 1.272-.004L5.794 7.19l4.59-5.278C9.287.738 7.73 0 6 0 2.686 0 0 2.686 0 6c0 3.313 2.686 6 6 6 3.313 0 6-2.687 6-6 0-.91-.21-1.772-.573-2.545L6.52 9.098z" fill="%23F00" fill-rule="evenodd"/></svg>');
+}
+
+.pendingEmailUnverified {
+  composes: infoText;
+  color: var(--attentionColor);
+  width: 100%;
+  background-image: url('data:image/svg+xml;utf8,<svg width="12" height="12" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg"><path d="M6.52 9.098c-.163.188-.397.3-.646.31h-.032c-.238 0-.466-.094-.635-.263L2.783 6.732c-.353-.35-.354-.92-.003-1.273.35-.353.92-.354 1.272-.004L5.794 7.19l4.59-5.278C9.287.738 7.73 0 6 0 2.686 0 0 2.686 0 6c0 3.313 2.686 6 6 6 3.313 0 6-2.687 6-6 0-.91-.21-1.772-.573-2.545L6.52 9.098z" fill="%23ffaa00" fill-rule="evenodd"/></svg>');
+}
+.columnsStatus {
+  margin-top: 0px;
+}
+.settingsLink {
+  color: var(--matterColor);
+  border-bottom: solid 1px var(--matterColor);
+  margin: 0;
+  cursor: pointer;
+
+  @media (--viewportMedium) {
+    margin: 0;
+    color: var(--matterColor);
+  }
+}
+
+.settingsLink:hover {
+  text-decoration: none;
+}
+
+.sectionHeadline{
+  color: var(--marketplaceColorDark);
+
+}
+
+.heroMainTitle {
+  @apply --marketplaceHeroTitleFontStyles;
+  color: var(--matterColor);
+  margin-bottom: 32px;
+
+  @media (--viewportMedium) {
+    max-width: var(--SectionHero_desktopTitleMaxWidth);
+    margin-bottom: 47px;
+  }
+}

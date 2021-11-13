@@ -1,0 +1,50 @@
+@import '../../styles/propertySets.css';
+
+.toggle {
+  @apply --marketplaceButtonStylesSecondary;
+  animation-delay: 0.8s;
+  margin-bottom: 15px;
+  margin-top: 15px;
+
+  @media (--viewportMedium) {
+    display: block;
+    width: 200px;
+    height: 10px;
+  }
+}
+
+
+.buttonHiddenNumber{
+  @media (--viewportMedium) {
+    margin-top:20px;
+    
+  }
+
+  @media (max-width: 600px) {
+  display: none;
+   
+    
+ 
+  }
+    
+  } 
+
+
+  
+
+
+.buttonShowNumber{
+
+  padding: 0 0 2px 0;
+
+ 
+  
+}
+
+.hidden {
+  display:none;
+}
+
+.hideButton{
+  display:none;
+}

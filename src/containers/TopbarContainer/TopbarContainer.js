@@ -16,6 +16,7 @@ export const TopbarContainerComponent = props => {
     currentSearchParams,
     currentUser,
     currentUserHasListings,
+    currentUserCompanyListing,
     currentUserHasOrders,
     history,
     isAuthenticated,
@@ -31,6 +32,8 @@ export const TopbarContainerComponent = props => {
     ...rest
   } = props;
 
+  console.log('currentUserCompanyListing.container', currentUserCompanyListing);
+
   return (
     <Topbar
       authInProgress={authInProgress}
@@ -38,6 +41,7 @@ export const TopbarContainerComponent = props => {
       currentSearchParams={currentSearchParams}
       currentUser={currentUser}
       currentUserHasListings={currentUserHasListings}
+      currentUserCompanyListing={currentUserCompanyListing}
       currentUserHasOrders={currentUserHasOrders}
       history={history}
       isAuthenticated={isAuthenticated}
@@ -60,6 +64,7 @@ TopbarContainerComponent.defaultProps = {
   currentSearchParams: null,
   currentUser: null,
   currentUserHasOrders: null,
+  currentUserCompanyListing: null,
   notificationCount: 0,
   sendVerificationEmailError: null,
   authScopes: null,
@@ -71,6 +76,7 @@ TopbarContainerComponent.propTypes = {
   currentSearchParams: object,
   currentUser: propTypes.currentUser,
   currentUserHasListings: bool.isRequired,
+  currentUserCompanyListing: array.isRequired,
   currentUserHasOrders: bool,
   isAuthenticated: bool.isRequired,
   authScopes: array,
@@ -96,6 +102,7 @@ const mapStateToProps = state => {
   const {
     currentUser,
     currentUserHasListings,
+    currentUserCompanyListing,
     currentUserHasOrders,
     currentUserNotificationCount: notificationCount,
     sendVerificationEmailInProgress,
@@ -106,6 +113,7 @@ const mapStateToProps = state => {
     authInProgress: authenticationInProgress(state),
     currentUser,
     currentUserHasListings,
+    currentUserCompanyListing,
     currentUserHasOrders,
     notificationCount,
     isAuthenticated,

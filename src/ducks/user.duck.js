@@ -22,6 +22,13 @@ export const FETCH_CURRENT_USER_HAS_LISTINGS_SUCCESS =
 export const FETCH_CURRENT_USER_HAS_LISTINGS_ERROR =
   'app/user/FETCH_CURRENT_USER_HAS_LISTINGS_ERROR';
 
+export const FETCH_CURRENT_USER_COMPANY_LISTING_REQUEST =
+  'app/user/FETCH_CURRENT_USER_COMPANY_LISTING_REQUEST';
+export const FETCH_CURRENT_USER_COMPANY_LISTING_SUCCESS =
+  'app/user/FETCH_CURRENT_USER_COMPANY_LISTING_SUCCESS';
+export const FETCH_CURRENT_USER_COMPANY_LISTING_ERROR =
+  'app/user/FETCH_CURRENT_USER_COMPANY_LISTING_ERROR';
+
 export const FETCH_CURRENT_USER_NOTIFICATIONS_REQUEST =
   'app/user/FETCH_CURRENT_USER_NOTIFICATIONS_REQUEST';
 export const FETCH_CURRENT_USER_NOTIFICATIONS_SUCCESS =
@@ -60,6 +67,8 @@ const initialState = {
   currentUserShowError: null,
   currentUserHasListings: false,
   currentUserHasListingsError: null,
+  currentUserCompanyListing: null,
+  currentUserCompanyListingError: null,
   currentUserNotificationCount: 0,
   currentUserNotificationCountError: null,
   currentUserHasOrders: null, // This is not fetched unless unverified emails exist
@@ -72,6 +81,7 @@ const randomCode = Math.floor(Math.random() * (999999 - 111111) + 111111);
 
 export default function reducer(state = initialState, action = {}) {
   const { type, payload } = action;
+  console.log('payload', payload);
   switch (type) {
     case CURRENT_USER_SHOW_REQUEST:
       return { ...state, currentUserShowError: null };
@@ -89,6 +99,8 @@ export default function reducer(state = initialState, action = {}) {
         currentUserShowError: null,
         currentUserHasListings: false,
         currentUserHasListingsError: null,
+        currentUserCompanyListing: null,
+        currentUserCompanyListingError: null,
         currentUserNotificationCount: 0,
         currentUserNotificationCountError: null,
       };
@@ -100,6 +112,14 @@ export default function reducer(state = initialState, action = {}) {
     case FETCH_CURRENT_USER_HAS_LISTINGS_ERROR:
       console.error(payload); // eslint-disable-line
       return { ...state, currentUserHasListingsError: payload };
+
+    case FETCH_CURRENT_USER_COMPANY_LISTING_REQUEST:
+      return { ...state, currentUserCompanyListingError: null };
+    case FETCH_CURRENT_USER_COMPANY_LISTING_SUCCESS:
+      return { ...state, currentUserCompanyListing: payload.companyListing };
+    case FETCH_CURRENT_USER_COMPANY_LISTING_ERROR:
+      console.error(payload); // eslint-disable-line
+      return { ...state, currentUserCompanyListingError: payload };
 
     case FETCH_CURRENT_USER_NOTIFICATIONS_REQUEST:
       return { ...state, currentUserNotificationCountError: null };
@@ -147,6 +167,7 @@ export const hasCurrentUserErrors = state => {
   return (
     user.currentUserShowError ||
     user.currentUserHasListingsError ||
+    user.currentUserCompanyListingError ||
     user.currentUserNotificationCountError ||
     user.currentUserHasOrdersError
   );
@@ -184,6 +205,21 @@ export const fetchCurrentUserHasListingsSuccess = hasListings => ({
 
 const fetchCurrentUserHasListingsError = e => ({
   type: FETCH_CURRENT_USER_HAS_LISTINGS_ERROR,
+  error: true,
+  payload: e,
+});
+
+const fetchCurrentUserCompanyListingRequest = () => ({
+  type: FETCH_CURRENT_USER_COMPANY_LISTING_REQUEST,
+});
+
+export const fetchCurrentUserCompanyListingSuccess = companyListing => ({
+  type: FETCH_CURRENT_USER_COMPANY_LISTING_SUCCESS,
+  payload: { companyListing },
+});
+
+const fetchCurrentUserCompanyListingError = e => ({
+  type: FETCH_CURRENT_USER_COMPANY_LISTING_ERROR,
   error: true,
   payload: e,
 });
@@ -261,6 +297,37 @@ export const fetchCurrentUserHasListings = () => (dispatch, getState, sdk) => {
       dispatch(fetchCurrentUserHasListingsSuccess(!!hasPublishedListings));
     })
     .catch(e => dispatch(fetchCurrentUserHasListingsError(storableError(e))));
+};
+
+export const fetchCurrentUserCompanyListing = () => (dispatch, getState, sdk) => {
+  dispatch(fetchCurrentUserCompanyListingRequest());
+  const { currentUser } = getState().user;
+
+  if (!currentUser) {
+    dispatch(fetchCurrentUserCompanyListingSuccess(false));
+    return Promise.resolve(null);
+  }
+
+  const params = {
+    // Since we are only interested in if the user has
+    // listings, we only need at most one result.
+    pub_listingCategory: 'company',
+
+  };
+
+  return sdk.ownListings
+    .query(params)
+    .then(response => {
+      const hasListings = response.data.data && response.data.data.length > 0;
+      const companyListing = response.data.data.filter(listing => listing.attributes.publicData.listingCategory === 'company');
+      console.log('companyListing', companyListing[0].id.uuid);
+
+      const hasCompanyListing =
+        hasListings &&
+        ensureOwnListing(response.data.data[0]).attributes.state !== LISTING_STATE_DRAFT;
+      dispatch(fetchCurrentUserCompanyListingSuccess(companyListing));
+    })
+    .catch(e => dispatch(fetchCurrentUserCompanyListingError(storableError(e))));
 };
 
 export const fetchCurrentUserHasOrders = () => (dispatch, getState, sdk) => {
@@ -359,6 +426,7 @@ export const fetchCurrentUser = (params = null) => (dispatch, getState, sdk) => 
     })
     .then(currentUser => {
       dispatch(fetchCurrentUserHasListings());
+      dispatch(fetchCurrentUserCompanyListing());
       dispatch(fetchCurrentUserNotifications());
       if (!currentUser.attributes.emailVerified) {
         dispatch(fetchCurrentUserHasOrders());

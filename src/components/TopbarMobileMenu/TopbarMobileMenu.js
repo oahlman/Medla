@@ -22,6 +22,7 @@ const TopbarMobileMenu = props => {
     isAuthenticated,
     currentPage,
     currentUserHasListings,
+    currentUserCompanyListing,
     currentUser,
     notificationCount,
     onLogout,
@@ -29,12 +30,9 @@ const TopbarMobileMenu = props => {
   } = props;
 
   const user = ensureCurrentUser(currentUser);
-  const companyName = currentUser && user.attributes.profile.publicData.companyName ? user.attributes.profile.publicData.companyName.replace(/\s+/g, '-').toLowerCase() : "company";
-  const hasCompanyListingId = user.id && user.attributes.profile.privateData.companyListingId;
-  const companyListingId = user.id && user.attributes.profile.privateData.companyListingId;
-  const pageVariant = currentUserHasListings ? "CompanyPageVariant" : "CompanyPageVariant";
-  const companyPage = hasCompanyListingId ? pageVariant : "ListingBasePage";
-  const companyParams = hasCompanyListingId ? { slug: companyName, id: companyListingId, variant: LISTING_PAGE_PENDING_APPROVAL_VARIANT } : "";
+  const companyListing = currentUserCompanyListing && currentUserCompanyListing[0];
+  const companyPage = companyListing ? "CompanyPageVariant" : "ListingBasePage";
+  const companyParams = companyListing ? { slug: companyListing.attributes.title.replace(/\s+/g, '-').toLowerCase(), id: companyListing.id.uuid, variant: LISTING_PAGE_PENDING_APPROVAL_VARIANT } : "";
 
   if (!isAuthenticated) {
     const signup = (
@@ -202,12 +200,13 @@ const TopbarMobileMenu = props => {
 
 TopbarMobileMenu.defaultProps = { currentUser: null, notificationCount: 0, currentPage: null };
 
-const { bool, func, number, string } = PropTypes;
+const { array, bool, func, number, string } = PropTypes;
 
 TopbarMobileMenu.propTypes = {
   isAuthenticated: bool.isRequired,
   currentUserHasListings: bool.isRequired,
   currentUser: propTypes.currentUser,
+  currentUserCompanyListing: array,
   currentPage: string,
   notificationCount: number,
   onLogout: func.isRequired,

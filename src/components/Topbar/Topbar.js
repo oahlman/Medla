@@ -141,6 +141,7 @@ class TopbarComponent extends Component {
       authInProgress,
       currentUser,
       currentUserHasListings,
+      currentUserCompanyListing,
       currentUserHasOrders,
       currentPage,
       notificationCount,
@@ -162,6 +163,7 @@ class TopbarComponent extends Component {
     });
 
     const notificationDot = notificationCount > 0 ? <div className={css.notificationDot} /> : null;
+    console.log('Topbar.currentUserCompanyListing', currentUserCompanyListing);
 
     const isMobileLayout = viewport.width < MAX_MOBILE_SCREEN_WIDTH;
     const isMobileMenuOpen = isMobileLayout && mobilemenu === 'open';
@@ -171,6 +173,7 @@ class TopbarComponent extends Component {
       <TopbarMobileMenu
         isAuthenticated={isAuthenticated}
         currentUserHasListings={currentUserHasListings}
+        currentUserCompanyListing={currentUserCompanyListing}
         currentUser={currentUser}
         onLogout={this.handleLogout}
         notificationCount={notificationCount}
@@ -232,6 +235,7 @@ class TopbarComponent extends Component {
           <TopbarDesktop
             className={desktopClassName}
             currentUserHasListings={currentUserHasListings}
+            currentUserCompanyListing={currentUserCompanyListing}
             currentUser={currentUser}
             currentPage={currentPage}
             initialSearchFormValues={initialSearchFormValues}
@@ -277,6 +281,7 @@ class TopbarComponent extends Component {
           containerClassName={css.missingInformationModal}
           currentUser={currentUser}
           currentUserHasListings={currentUserHasListings}
+          currentUserCompanyListing={currentUserCompanyListing}
           currentUserHasOrders={currentUserHasOrders}
           location={location}
           onManageDisableScrolling={onManageDisableScrolling}
@@ -300,6 +305,7 @@ TopbarComponent.defaultProps = {
   notificationCount: 0,
   currentUser: null,
   currentUserHasOrders: null,
+  currentUserCompanyListing: null,
   currentPage: null,
   sendVerificationEmailError: null,
   authScopes: [],
@@ -319,6 +325,7 @@ TopbarComponent.propTypes = {
   currentUser: propTypes.currentUser,
   currentUserHasListings: bool.isRequired,
   currentUserHasOrders: bool,
+  currentUserCompanyListing: array,
   currentPage: string,
   notificationCount: number,
   onLogout: func.isRequired,

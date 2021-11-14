@@ -29,6 +29,7 @@ const TopbarDesktop = props => {
     currentPage,
     rootClassName,
     currentUserHasListings,
+    currentUserCompanyListing,
     notificationCount,
     intl,
     isAuthenticated,
@@ -49,12 +50,9 @@ const TopbarDesktop = props => {
   const classes = classNames(rootClassName || css.root, className);
 
   const user = ensureCurrentUser(currentUser);
-  const companyName = currentUser && user.attributes.profile.publicData.companyName ? user.attributes.profile.publicData.companyName.replace(/\s+/g, '-').toLowerCase() : "company";
-  const hasCompanyListingId = user.id && user.attributes.profile.privateData.companyListingId;
-  const companyListingId = user.id && user.attributes.profile.privateData.companyListingId;
-  const pageVariant = currentUserHasListings ? "CompanyPageVariant" : "CompanyPageVariant";
-  const companyPage = hasCompanyListingId ? pageVariant : "ListingBasePage";
-  const companyParams = hasCompanyListingId ? { slug: companyName, id: companyListingId, variant: LISTING_PAGE_PENDING_APPROVAL_VARIANT } : "";
+  const companyListing = currentUserCompanyListing && currentUserCompanyListing[0];
+  const companyPage = companyListing ? "CompanyPageVariant" : "ListingBasePage";
+  const companyParams = companyListing ? { slug: companyListing.attributes.title.replace(/\s+/g, '-').toLowerCase(), id: companyListing.id.uuid, variant: LISTING_PAGE_PENDING_APPROVAL_VARIANT } : "";
 
   const search = (
     <TopbarSearchForm
@@ -169,7 +167,7 @@ const TopbarDesktop = props => {
   );
 };
 
-const { bool, func, object, number, string } = PropTypes;
+const { array, bool, func, object, number, string } = PropTypes;
 
 TopbarDesktop.defaultProps = {
   rootClassName: null,
@@ -185,6 +183,7 @@ TopbarDesktop.propTypes = {
   className: string,
   currentUserHasListings: bool.isRequired,
   currentUser: propTypes.currentUser,
+  currentUserCompanyListing: array,
   currentPage: string,
   isAuthenticated: bool.isRequired,
   onLogout: func.isRequired,

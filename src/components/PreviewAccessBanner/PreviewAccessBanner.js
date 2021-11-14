@@ -15,7 +15,6 @@ const PreviewAccessBanner = props => {
   const {
     rootClassName,
     className,
-    isAuthenticated,
     authScopes,
     currentUser,
     onLogout,
@@ -23,14 +22,6 @@ const PreviewAccessBanner = props => {
   } = props;
   const classes = classNames(rootClassName || css.root, className);
   const user = ensureCurrentUser(currentUser);
-
-  const showBanner =
-    user.id &&
-    isAuthenticated &&
-    authScopes &&
-    authScopes.length === 1 &&
-    authScopes[0] === 'user:limited' &&
-    !disabledPages.includes(currentPage);
 
   const { firstName, lastName } = user.attributes.profile;
 
@@ -59,11 +50,7 @@ const { array, bool, func, string } = PropTypes;
 PreviewAccessBanner.propTypes = {
   rootClassName: string,
   className: string,
-  isAuthenticated: bool.isRequired,
   authScopes: array,
-  currentUser: propTypes.currentUser,
-  onLogout: func.isRequired,
-  currentPage: string,
 };
 
 export default PreviewAccessBanner;

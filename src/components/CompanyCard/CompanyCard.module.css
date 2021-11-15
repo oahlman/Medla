@@ -67,7 +67,7 @@
 
 .info {
   /* Layout */
-  position: flex;
+  display: inline-grid;
   flex-direction: row;
   padding: 16px 0 2px 0;
 }

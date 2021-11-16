@@ -167,16 +167,7 @@ const EditListingDescriptionFormComponent = props => (
             validate={composeValidators(required(descriptionRequiredMessage))}
           />
 
-            <FieldTextInput
-            id="contactNumber"
-            name="contactNumber"
-            className={css.description}
-            type="textarea"
-            label={contactPhoneJob}
-            placeholder={contactInformationMessage}
-            validate={validators.composeValidators(usernameRequired, usernameValid)}
-
-            />
+        
 
           <CustomCategorySelectFieldMaybe
             id="categoy"

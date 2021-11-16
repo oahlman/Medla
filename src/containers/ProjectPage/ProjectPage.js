@@ -418,8 +418,6 @@ export class ProjectPageComponent extends Component {
               </div>
               <div className={css.description}>
               <p>{projectData.description.about.aboutProject}</p>
-              <b>{projectData.companyName}</b>
-              <p>{projectData.description.about.aboutCompany}</p>
 
               <p><ExternalLink href={projectData.description.about.externalLink}>{projectData.description.about.linkText}</ExternalLink></p>
               </div>

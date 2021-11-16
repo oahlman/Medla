@@ -33,6 +33,8 @@
  *         (i.e. pub_<key> or meta_<key>).
  */
 
+import bjornetjarnsbergetImg from './images/bjornetjarnsberget.jpg';
+import hanImg from './images/han.jpg';
 import bjornbergetImg from './images/bjornberget.jpg';
 import hocksjonImg from './images/hocksjon.jpg';
 import stollsaterbergetImg from './images/stollsaterberget.jpg';
@@ -64,6 +66,92 @@ const businessAreas = [
   ];
 
 export const projects = [
+  {
+    id: 'bjornetjarnsberget',
+    name: 'Björnetjärnsberget',
+    companyName: 'Cloudberry',
+    companyId: 'cloudberry',
+    image: bjornetjarnsbergetImg,
+    location: {
+      lat: 59.883856,
+      lng: 12.305330,
+    },
+    bounds: {
+        ne: '60.72512459,13.22554434',
+        sw: '59.02077329,11.38504166',
+    },
+    popularBusinessAreas: [
+      'anlaggning',
+      'bemanning',
+      'betong',
+      'bygg',
+      'driftochunderhall',
+      'el',
+    ],
+    description: {
+        title: 'Björnetjärnsberget',
+        summary: 'Projektet har utvecklats av Cloudberry och kommer bestå av 18 vindkraftverk med en beräknad årsproduktion på ca 450GWH i Björnetjärnsberget, Eda kommun.',
+        about: {
+          aboutProject: 'Projektet har utvecklats av Cloudberry och kommer bestå av 18 vindkraftverk med en beräknad årsproduktion på ca 450GWH i Björnetjärnsberget, Eda kommun.',
+          aboutCompany: '',
+          externalLink: 'https://www.cloudberry.no/',
+          linkText: 'Läs mer'
+      },
+    },
+    stats: {
+      currentStatus: 'planning',
+      turbines: 18,
+      mw: 76.6,
+      constructionPeriod: {
+          start: 2028,
+          end: 2029,
+      },
+      region: 'Eda kommun',
+  },
+  },
+  {
+    id: 'han',
+    name: 'Hån',
+    companyName: 'Cloudberry',
+    companyId: 'cloudberry',
+    image: hanImg,
+    location: {
+      lat: 59.389870,
+      lng: 12.132296,
+    },
+    bounds: {
+        ne: '60.0199218,12.8579495',
+        sw: '58.78261923,11.4745755',
+    },
+    popularBusinessAreas: [
+      'anlaggning',
+      'bemanning',
+      'betong',
+      'bygg',
+      'driftochunderhall',
+      'el',
+    ],
+    description: {
+        title: 'Hån',
+        summary: 'Projektet har utvecklats av Cloudberry och kommer bestå av 5 vindkraftverk med en beräknad årsproduktion på ca 74GWH i Hån, Årjängs kommun.',
+        about: {
+          aboutProject: 'Projektet har utvecklats av Cloudberry och kommer bestå av 5 vindkraftverk med en beräknad årsproduktion på ca 74GWH i Hån, Årjängs kommun.',
+          aboutCompany: '',
+          externalLink: 'https://www.cloudberry.no/sv/project/han-vindpark',
+          linkText: 'Läs mer'
+      },
+    },
+    stats: {
+      currentStatus: 'building',
+      turbines: 5,
+      mw: 21,
+      constructionPeriod: {
+          start: 2021,
+          end: 2022,
+      },
+      region: 'Årjängs kommun',
+  },
+  },
     {
       id: 'bjornberget',
       name: 'Björnberget',
@@ -93,7 +181,7 @@ export const projects = [
             aboutProject: 'RES startar bygget av Björnberget Vindkraftpark i Ånge kommun! Björnberget har utvecklats av RES och kommer bestå av 60 vindkraftverk på 220 m och totalt 372MW. Vindkraftparken ägs av Prime Capital och Enlight Renewable Energy. Björnberget kommer årligen att producera el motsvarande ca 300 000 hushålls elförbrukning samt bidrar till minskade utsläpp av koldioxid motsvarande ca 600 000 CO2 årligen.',
             aboutCompany: 'Över 3000 anställda på RES Group drivs av visionen att skapa en värld där alla ska ha tillgång till prisvärd koldioxidfri energi. RES är världens största oberoende aktör inom förnybar energi. Idag har vi en global portfölj på 19GW varav vi förvaltar över 7GW. Bolaget utvecklar, bygger och förvaltar anläggningar över hela världen. I Norden är vi i dagsläget verksamma i Sverige och Norge. Välkommen att registrera ditt företag här för samarbetsmöjligheter.',
             externalLink: 'https://res-group.com/sv/',
-            linkText: 'Läs mer om RES Group'
+            linkText: 'Läs mer'
         },
       },
       stats: {
@@ -137,7 +225,7 @@ export const projects = [
                 aboutProject: 'Sammanlagt finns tillstånd för 45 vindkraftverk. Då tillståndet är ett så kallat BOX-tillstånd har vi möjligheten att använda den senaste tekniken vilket innebär att vi med bibehållen totalhöjd ändå ser en minskning av antal vindkraftverk till 23 vindkraftverk. Vi beräknar att vi i anläggningen kommer producera ca 450 GWh/år förnybar energi, det motsvarar energi till cirka 90 000 hushåll*. 1,6 miljarder Projektet Hocksjön Vind drivs gemensamt av Jämtkraft och Persson Invest. Vindkraftsprojektet förvärvades från Höglandsbolagen i början av 2019. Vindkraftsparken kommer att anslutas mot EON Elnät och vidare mot Svenska Kraftnäts nya stamnätsstation i Storfinnforsen. 16 april 2020 beviljade Mark- och miljööverdomstolen förlängt igångsättningstillstånd för Hocksjöns vindkraftsprojekt. Beslutet innebär att förberedelserna för uppförandet av vindkraftparken kan återupptas. Anläggningen beräknas vara klar under 2022. *Beräknat på en årsförbrukning av hushållsel på 5 000 kWh. ',
                 aboutCompany: 'Description lorem ipsum',
                 externalLink: 'https://www.jamtkraft.se/om-jamtkraft/var-fornybara-produktion/vindkraft/planerade-vindkraftsprojekt/hocksjon/',
-                linkText: 'Läs mer om Jämtkraft'
+                linkText: 'Läs mer'
             },
         },
         stats: {
@@ -181,7 +269,7 @@ export const projects = [
                 aboutProject: 'wpd arbetar aktivt med att ge regionala företag möjligheter att delta vid byggnation och drift av våra vindparker. Vårt syfte är att öka chanserna för lokala företag att bistå med tjänster, både på lång sikt och mer akuta behov som dyker upp under parkens livstid. Vi kommer att använda affärsplattformen för att snabbt hitta lokala företag som kan leverera tjänster som uppstår. Just nu pågår förberedelser inför avverkning, vilket genomförs av ett lokalt företag. Inom kort görs upphandling av huvudentreprenör. wpd kommer att säkerställa att berörda känner till plattformen och hjälpa till att vid behov skapa förfrågningar. Plattformen är under utveckling och wpd hoppas att den kommer att vara till stor nytta för att öka deltagandet och närvaron av lokala näringslivet under vindparkens livslängd. Läs mer om projektet på www.wpd.se/stollsaterberget wpd tycker det är viktigt att de platser där vi bygger vindparker ges nya möjlighet att utvecklas och att göra lokala satsningar som kanske inte hade kunnat genomföras utan ett extra tillskott i kassan. För att möjliggöra det avsätter vi bygdemedel. Vi brinner för omställningen till en förnybar värld och hållbarhet är ett av våra ledord. Vi bidrar inte bara med grön el i form av vindkraft och solkraft utan vi kompenserar även för de koldioxidutsläpp företaget orsakar. ',
                 aboutCompany: 'Description lorem ipsum',
                 externalLink: 'https://www.wpd.se/stollsaterberget',
-                linkText: 'Läs mer om wpd'
+                linkText: 'Läs mer'
             },
         },
         stats: {
@@ -225,7 +313,7 @@ export const projects = [
                 aboutProject: 'I maj påbörjades byggnationen av Grönhult vindkraftspark. Vi börjar med att uppföra vägar och därefter uppställningsplatser, fundament och det interna elnätet för vindkraftsparken som är belägen i Tranemo och Gislaveds kommuner. Vindkraftverken levereras under sommaren 2022 och tas i drift i slutet av samma år. På Vattenfall vill vi göra det möjligt att leva fossilfritt inom en generation. På vägen dit fortsätter vi våra ambitiösa vindkraftsatsningar för att dels ersätta annan energiproduktion som avvecklas och samtidigt ta höjd för ökad elektrifiering av bl a transport- och industrisektorn. För oss är det viktigt med ett lokalt engagemang i de områden där vi driver våra projekt. Det kan man säkerställa på många olika sätt bl a genom tidig dialog och att vara tillgängliga för frågor. Att viss återbäring från vindkraftsproduktionen går tillbaka till bygden är en självklarhet för oss och det sker genom det vi kallar "Stöd till lokal utveckling". Ett annat sätt att medverka till mer lokalt innehåll är att samverka med de lokala och regionala näringslivet för att visa på affärsmöjligheter kopplat till våra projekt. Den här plattformen är ett led i just detta och vi är mycket glada för att vi tillsammans med Vindkraftcentrum får ännu en möjlighet att samverka kring dessa frågor och bidra till mervärden i de regioner där vi är verksamma.',
                 aboutCompany: 'Description lorem ipsum',
                 externalLink: 'https://group.vattenfall.com/se/var-verksamhet/vindprojekt/gronhult',
-                linkText: 'Läs mer om Vattenfall'
+                linkText: 'Läs mer'
             },
         },
         stats: {
@@ -269,7 +357,7 @@ export const projects = [
                 aboutProject: 'Just nu pågår byggnationen av Vattenfalls hittills största landbaserade vindkraftspark. Områdena för vindkraftsparken är Blakliden med 50 vindkraftverk i Åsele kommun och Fäbodberget med 34 vindkraftverk, norr om Fredrika i Åsele och Lycksele kommuner. Totalt installeras 84 vindkraftverk med en total maxkapacitet på 353 MW. Byggnationen av vindkraftsparken har pågått sedan 2018, med årliga uppehåll under vintermånaderna. I november 2020 väntas anläggningsentreprenaden vara klar för att under sommaren 2021 kunna ta emot och resa de 84 turbinerna. Vindkraftsparken står klar 2022 och kommer då årligen att kunna producera förnybar el till cirka 220 000 svenska hushåll. På Vattenfall vill vi göra det möjligt att leva fossilfritt inom en generation. På vägen dit fortsätter vi våra ambitiösa vindkraftsatsningar för att dels ersätta annan energiproduktion som avvecklas och samtidigt ta höjd för ökad elektrifiering av bl a transport- och industrisektorn. För oss är det viktigt med ett lokalt engagemang i de områden där vi driver våra projekt. Det kan man säkerställa på många olika sätt bl a genom tidig dialog och att vara tillgängliga för frågor. Att viss återbäring från vindkraftsproduktionen går tillbaka till bygden är en självklarhet för oss och det sker genom det vi kallar "Stöd till lokal utveckling". Ett annat sätt att medverka till mer lokalt innehåll är att samverka med de lokala och regionala näringslivet för att visa på affärsmöjligheter kopplat till våra projekt. Den här plattformen är ett led i just detta och vi är mycket glada för att vi tillsammans med Vindkraftcentrum får ännu en möjlighet att samverka kring dessa frågor och bidra till mervärden i de regioner där vi är verksamma.',
                 aboutCompany: 'Description lorem ipsum',
                 externalLink: 'https://group.vattenfall.com/se/var-verksamhet/vindprojekt/blakliden-och-fabodberget',
-                linkText: 'Läs mer om Vattenfall'
+                linkText: 'Läs mer'
             },
         },
         stats: {
@@ -313,7 +401,7 @@ export const projects = [
                 aboutProject: 'Kabeko Kraft har under 10 års tid arbetat med utvecklingen av Storhöjden, Vitberget, Sörlidberget och Knäsjöberget i Kramfors och Sollefteå kommuner. De fyra vindkraftsparkerna går under samlingsnamnet Project High Coast. Sammanlagt omfattar projektet 80-85 vindkraftverk i storleksordningen 6 MW vardera.  Elkraftproduktionen har beräknats till ca 1,6 TWh per år vilket motsvarar ca 1 % av Sveriges årliga elkraftbehov. Byggstart är planerad till 2022 och driftsättning är planerad under 2024/2025. Under 2021 kommer upphandling av vindkraftverk och totalentreprenad att utföras och därefter kommer anbudsförfrågningar gå ut till mindre företag. Vi har anslutit oss till Vindkraftcentrums affärsplattform med målsättningen att skapa goda förutsättningar för regionala företagare att vara med under upphandlingen. Vår målsättningen är att regionala företagare som lämnar anbud ska kunna prioriteras så långt som det är möjligt. Affärsplattformen kommer även att användas löpande under byggnationen då behov uppstår att snabbt hitta företag som kan leverera materiel och tjänster. Behovet av diverse kringtjänster kopplat till byggnationen kommer att vara stort och det kommer även att behövas tjänster som logi, mat med mera. Därför är det viktigt att fler företagare, oavsett bransch, anmäler sig till affärsplattformen. Ett brett nätverk är en förutsättning för att nya typer synergier och samarbeten ska kunna uppstå och Vindkraftcentrums affärsplattform kan utgöra just det nätverket för dig och ditt företag.',
                 aboutCompany: 'Description lorem ipsum',
                 externalLink: 'https://www.kabeko.com/',
-                linkText: 'Läs mer om Kabeko'
+                linkText: 'Läs mer'
             },
         },
         stats: {

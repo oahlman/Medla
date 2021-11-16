@@ -22,7 +22,7 @@
   border-radius: 5px 5px 0px 0px;
   object-fit: cover;
   @media (--viewportMedium) {
-    width: calc(100% - 400px);
+    width: calc(100% - 450px);
     border-radius: 0px 10px 10px 0px;
   }
 }
@@ -33,7 +33,7 @@
   padding: 20px;
   @media (--viewportMedium) {
     padding: 40px;
-    width: 400px;
+    width: 450px;
     border-radius: 10px 0px 0px 10px;
   }
 }

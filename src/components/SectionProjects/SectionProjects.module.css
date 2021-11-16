@@ -20,6 +20,20 @@
   }
 }
 
+.locationsTwoOfThree {
+  display: flex;
+  flex-direction: column;
+  margin-top: 0px;
+  margin-bottom: 10px;
+
+  @media (--viewportMedium) {
+    flex-direction: row;
+    margin-top: 33px;
+    margin-bottom: 57px;
+    width: calc(66.666666667% - 13px);
+  }
+}
+
 .location {
   width: 100%;
   margin-top: 25px;
@@ -163,4 +177,8 @@
   align-items: center;
   margin: auto;
   padding: 10px;
+}
+
+.hidden {
+
 }

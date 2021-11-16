@@ -17,6 +17,8 @@ class LocationImage extends Component {
 }
 const LazyImage = lazyLoadWithDimensions(LocationImage);
 
+const bjornetjarnsberget = projects[projects.findIndex(id => id.id === 'bjornetjarnsberget')];
+const han = projects[projects.findIndex(id => id.id === 'han')];
 const bjornberget = projects[projects.findIndex(id => id.id === 'bjornberget')];
 const stollsaterberget = projects[projects.findIndex(id => id.id === 'stollsaterberget')];
 const hocksjon = projects[projects.findIndex(id => id.id === 'hocksjon')];
@@ -91,6 +93,23 @@ const SectionProjects = props => {
       </div>
       <div className={css.locations}>
         {locationLink(
+          bjornetjarnsberget.name,
+          bjornetjarnsberget.stats.region,
+          bjornetjarnsberget.stats.currentStatus,
+          bjornetjarnsberget.id,
+          ResLogo,
+          '?address=Björnetjärnsberget%2C%20Eda%2C%20Sverige&bounds=61.09926332%2C13.69678676%2C58.72429564%2C10.99971924'
+        )}
+
+        {locationLink(
+          han.name,
+          han.stats.region,
+          han.stats.currentStatus,
+          han.id,
+          WpdLogo,
+          '?address=Hån%2C%20Årjäng%2C%20Sverige&bounds=60.31060906%2C13.19044064%2C58.4784612%2C11.14208436'
+        )}
+        {locationLink(
           bjornberget.name,
           bjornberget.stats.region,
           bjornberget.stats.currentStatus,
@@ -98,7 +117,17 @@ const SectionProjects = props => {
           ResLogo,
           '?address=Björnberget%2C%20820%2046%20Ramsjö%2C%20Sverige&bounds=63.96074168%2C17.70965133%2C60.28740006%2C13.58712057'
         )}
+      </div>
+      <div className={css.locations}>
 
+      {locationLink(
+          kabeko.name,
+          kabeko.stats.region,
+          kabeko.stats.currentStatus,
+          kabeko.id,
+          KabekoLogo,
+          '?address=Hocksjön%2C%20880%2040%20Ramsele%2C%20Sverige&bounds=64.33484208%2C17.27594777%2C62.50539696%2C15.13267783'
+        )}
         {locationLink(
           stollsaterberget.name,
           stollsaterberget.stats.region,
@@ -115,8 +144,9 @@ const SectionProjects = props => {
           JamtkraftLogo,
           '?address=Hocksjön%2C%20880%2040%20Ramsele%2C%20Sverige&bounds=64.33484208%2C17.27594777%2C62.50539696%2C15.13267783'
         )}
+
       </div>
-      <div className={css.locations}>
+      <div className={css.locationsTwoOfThree}>
         {locationLink(
           gronhult.name,
           gronhult.stats.region,
@@ -131,14 +161,6 @@ const SectionProjects = props => {
           blaklidenfabodberget.stats.currentStatus,
           blaklidenfabodberget.id,
           VattenfallLogo,
-          '?address=Hocksjön%2C%20880%2040%20Ramsele%2C%20Sverige&bounds=64.33484208%2C17.27594777%2C62.50539696%2C15.13267783'
-        )}
-        {locationLink(
-          kabeko.name,
-          kabeko.stats.region,
-          kabeko.stats.currentStatus,
-          kabeko.id,
-          KabekoLogo,
           '?address=Hocksjön%2C%20880%2040%20Ramsele%2C%20Sverige&bounds=64.33484208%2C17.27594777%2C62.50539696%2C15.13267783'
         )}
       </div>

@@ -432,6 +432,51 @@ export class ProjectPageComponent extends Component {
           </div>
     );
 
+    const mainContentExternal = (
+      <div className={css.staticPageWrapper}>
+      <div className={css.contentWrapper}>
+            <div className={css.coverSection}>
+              <div className={css.coverInfo}>
+              <h1 className={css.pageTitle} >Välkommen till {projectName}</h1>
+              <p>{projectData.description.summary}</p>
+              <p className={css.externalService}>Projektet har en extern databas för leverantörer</p>
+              <div className={css.step}>
+                      <ExternalLink
+                        href={projectData.description.about.externalServiceLink}
+                        className={css.following}
+                      >
+                        <span className={css.followText}><FormattedMessage id={"ProjectPage.externalService"} /></span>
+                      </ExternalLink>
+                </div>
+              </div>
+              <img className={css.coverImage} src={projectData.image} alt={`Bild från projektet ${projectName}.`} />
+            </div>
+
+            <div className={css.contentMain}>
+
+              <h3 id='projectDetails' className={css.subtitle}> Om projektet </h3>
+              <b>{projectName}</b>
+              <div className={css.projectDetails}>
+              <div className={css.stats}>
+              <ul className={css.items}>
+                <li><b>Status</b> {status}</li>
+                <li><b>Storlek</b> {projectData.stats.turbines} turbiner</li>
+                <li><b>Effekt</b> {projectData.stats.mw} MW</li>
+                <li><b>Byggperiod</b> {projectData.stats.constructionPeriod.start}—{projectData.stats.constructionPeriod.end}</li>
+                <li><b>Plats</b> {projectData.stats.region}</li>
+              </ul>
+              </div>
+              <div className={css.description}>
+              <p>{projectData.description.about.aboutProject}</p>
+
+              <p><ExternalLink href={projectData.description.about.externalLink}>{projectData.description.about.linkText}</ExternalLink></p>
+              </div>
+              </div>
+            </div>
+          </div>
+          </div>
+    );
+
     let content;
 
     if (userShowError && userShowError.status === 404) {
@@ -442,6 +487,8 @@ export class ProjectPageComponent extends Component {
           <FormattedMessage id="ProfilePage.loadingDataFailed" />
         </p>
       );
+    } else if (projectData.type === 'external') {
+      content = mainContentExternal;
     } else {
       content = mainContent;
     }

@@ -287,7 +287,7 @@ export class ProjectPageComponent extends Component {
               <div className={css.listingCards}>
               {queryListingsError ? queryError : null}
               {queryListingsError ? queryError : null}
-                {jobs.slice(0, 6).map(l => (
+                {jobs.slice(0, 3).map(l => (
                   <ListingCard
                     className={css.listingCard}
                     key={l.id.uuid}

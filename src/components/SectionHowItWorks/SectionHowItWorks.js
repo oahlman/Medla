@@ -45,12 +45,10 @@ const linkJobSearch = <NamedLink name="SearchPage"  to={{
   <FormattedMessage id="SectionHowItWorks.textLinkUppdrag" />
 </NamedLink>
 
-const linkEditCompany = <NamedLink className={css.linkStyle} name="SearchPage"
-name={companyPage}
-params={companyParams}
->
+const linkEditCompany = <NamedLink name={companyPage}
+params={companyParams}  className={css.linkStyle}>
   <FormattedMessage id="SectionHowItWorks.textLinkBeskrivForetag" />
-</NamedLink>
+</NamedLink>;
 
 
 
@@ -116,6 +114,7 @@ const mapStateToProps = state => {
     currentUserHasListings,
     currentUserHasOrders,
     currentUserNotificationCount: notificationCount,
+    currentUserCompanyListing,
     sendVerificationEmailInProgress,
     sendVerificationEmailError,
   } = state.user;
@@ -125,6 +124,7 @@ const mapStateToProps = state => {
     currentUser,
     currentUserHasListings,
     currentUserHasOrders,
+    currentUserCompanyListing,
     notificationCount,
     isAuthenticated,
     authScopes,

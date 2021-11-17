@@ -387,6 +387,22 @@ const routeConfiguration = () => {
 
     //Project links
     {
+      path: '/bjornetjarnsberget',
+      name: 'Björnetjärnsberget',
+      component: ProjectPage,
+      extraProps: { projectUrl: 'bjornetjarnsberget' },
+      loadData: params =>
+        pageDataLoadingAPI.ProjectPage.loadData({ ...params, projectUrl: 'bjornetjarnsberget' }),
+    },
+    {
+      path: '/han',
+      name: 'Hån',
+      component: ProjectPage,
+      extraProps: { projectUrl: 'han' },
+      loadData: params =>
+        pageDataLoadingAPI.ProjectPage.loadData({ ...params, projectUrl: 'han' }),
+    },
+    {
       path: '/bjornberget',
       name: 'Björnberget',
       component: ProjectPage,

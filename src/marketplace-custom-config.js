@@ -152,18 +152,7 @@ export const filters = [
     group: 'primary',
     // Note: KeywordFilter is fixed filter,
     // you can't change "queryParamNames: ['keywords'],"
-    queryParamNames: [
-      'keywords',
-      'pub_offer1',
-      'pub_offer2',
-      'pub_offer3',
-      'pub_offer4',
-      'pub_offer5',
-      'pub_offerHeading1',
-      'pub_offerHeading2',
-      'pub_offerHeading3',
-      'pub_offerHeading4',
-      'pub_offerHeading5'],
+    queryParamNames: ['keywords'],
     // NOTE: If you are ordering search results by distance
     // the keyword search can't be used at the same time.
     // You can turn on/off ordering by distance from config.js file.

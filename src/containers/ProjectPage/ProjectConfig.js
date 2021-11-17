@@ -155,7 +155,7 @@ export const projects = [
           start: 0,
           end: 0,
       },
-      region: 'Kommun',
+      region: 'Härjedalens kommun',
   },
   },
   {

@@ -18,41 +18,6 @@ import css from './SectionMission.module.css';
 const SectionMission = props => {
 
   const { rootClassName, className, currentUser } = props;
-  const linkNotifications = <NamedLink name="NotificationSettingsPage">
-  <FormattedMessage id="SectionHowItWorks.textLinkBevakningar" />
-</NamedLink>
-  const user = ensureCurrentUser(currentUser);
-  const companyName = currentUser && user.attributes.profile.publicData.companyName ? user.attributes.profile.publicData.companyName.replace(/\s+/g, '-').toLowerCase() : "company";
-  const hasCompanyListingId = user.id && user.attributes.profile.privateData.companyListingId;
-  const companyListingId = user.id && user.attributes.profile.privateData.companyListingId;
-  const pageVariant = "CompanyPageVariant";
-  const companyPage = hasCompanyListingId ? pageVariant : "ListingBasePage";
-  const companyParams = hasCompanyListingId ? { slug: companyName, id: companyListingId, variant: LISTING_PAGE_PENDING_APPROVAL_VARIANT } : "";
-
-const linkCompanySearch = <NamedLink name="SearchPage"  to={{
-  search:
-  's?address=Sverige&bounds=69.0599269995724%2C24.1933684832876%2C55.280224001785%2C10.8383668128319&pub_listingCategory=company',
-}}
->
-  <FormattedMessage id="SectionHowItWorks.textLinkForetagare" />
-</NamedLink>
-
-const linkJobSearch = <NamedLink name="SearchPage"  to={{
-  search:
-  '?address=Sverige&bounds=69.0599269995724%2C24.1933684832876%2C55.280224001785%2C10.8383668128319&pub_listingCategory=job',
-}}
->
-  <FormattedMessage id="SectionHowItWorks.textLinkUppdrag" />
-</NamedLink>
-
-const linkEditCompany = <NamedLink className={css.linkStyle} name="SearchPage"
-name={companyPage}
-params={companyParams}
->
-  <FormattedMessage id="SectionHowItWorks.textLinkBeskrivForetag" />
-</NamedLink>
-
-
 
   const classes = classNames(rootClassName || css.root, className);
   return (
@@ -68,7 +33,7 @@ params={companyParams}
             <FormattedMessage id="SectionMission.part1Title" />
           </h2>
           <p >
-            <FormattedMessage id="SectionMission.part1Text" values={{ beskrivforetag: linkEditCompany }} />
+            <FormattedMessage id="SectionMission.part1Text" />
           </p>
         </div>
         <div className={css.step}>

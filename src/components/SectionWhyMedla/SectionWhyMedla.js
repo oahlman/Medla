@@ -17,7 +17,7 @@ import css from './SectionWhyMedla.module.css';
 
 const SectionWhyMedla = props => {
 
-  const { rootClassName, className, currentUser } = props;
+  const { rootClassName, className, currentUser, } = props;
   const linkNotifications = <NamedLink name="NotificationSettingsPage">
   <FormattedMessage id="SectionWhyMedla.textLinkBevakningar" />
 </NamedLink>

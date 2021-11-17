@@ -27,7 +27,7 @@ import { logout, authenticationInProgress } from '../../ducks/Auth.duck';
 import css from './Footer.module.css';
 
 const Footer = props => {
-  const { rootClassName, className, intl, currentPage, currentUser } = props;
+  const { rootClassName, className, intl, currentPage, currentUser, currentUserCompanyListing } = props;
   const classes = classNames(rootClassName || css.root, className);
 
 
@@ -37,16 +37,11 @@ const Footer = props => {
       page === 'AccountSettingsPage' && ACCOUNT_SETTINGS_PAGES.includes(currentPage);
     return currentPage === page || isAccountSettingsPage ? css.currentPage : null;
   };
+
   const user = ensureCurrentUser(currentUser);
-  const companyName = currentUser && user.attributes.profile.publicData.companyName ? user.attributes.profile.publicData.companyName.replace(/\s+/g, '-').toLowerCase() : "company";
-  const hasCompanyListingId = user.id && user.attributes.profile.privateData.companyListingId;
-  const companyListingId = user.id && user.attributes.profile.privateData.companyListingId;
-  const pageVariant = "CompanyPageVariant";
-  const companyPage = hasCompanyListingId ? pageVariant : "ListingBasePage";
-  const companyParams = hasCompanyListingId ? { slug: companyName, id: companyListingId, variant: LISTING_PAGE_PENDING_APPROVAL_VARIANT } : "";
-
-
-
+  const companyListing = currentUserCompanyListing && currentUserCompanyListing[0];
+  const companyPage = companyListing ? "CompanyPageVariant" : "ListingBasePage";
+  const companyParams = companyListing ? { slug: companyListing.attributes.title.replace(/\s+/g, '-').toLowerCase(), id: companyListing.id.uuid, variant: LISTING_PAGE_PENDING_APPROVAL_VARIANT } : "";
 
   return (
     <div className={classes}>
@@ -220,6 +215,7 @@ const mapStateToProps = state => {
     currentUser,
     currentUserHasListings,
     currentUserHasOrders,
+    currentUserCompanyListing,
     currentUserNotificationCount: notificationCount,
     sendVerificationEmailInProgress,
     sendVerificationEmailError,
@@ -230,6 +226,7 @@ const mapStateToProps = state => {
     currentUser,
     currentUserHasListings,
     currentUserHasOrders,
+    currentUserCompanyListing,
     notificationCount,
     isAuthenticated,
     authScopes,

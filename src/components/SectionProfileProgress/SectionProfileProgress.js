@@ -27,6 +27,7 @@ export const SectionProfileProgress = props => {
     currentUser,
     currentUserHasListings,
     currentUserHasOrders,
+    currentUserCompanyListing,
     history,
     isAuthenticated,
     authScopes,
@@ -58,12 +59,10 @@ export const SectionProfileProgress = props => {
   const profileAmenities = transientUserAmenities;
   const profileImageId = user.profileImage ? user.profileImage.id : null;
   const profileImage = image || { imageId: profileImageId };
-  const companyName = currentUser && user.attributes.profile.publicData.companyName ? user.attributes.profile.publicData.companyName.replace(/\s+/g, '-').toLowerCase() : "company";
-  const hasCompanyListingId = user.id && user.attributes.profile.privateData.companyListingId;
-  const companyListingId = user.id && user.attributes.profile.privateData.companyListingId;
-  const pageVariant = "CompanyPageVariant";
-  const companyPage = hasCompanyListingId ? pageVariant : "ListingBasePage";
-  const companyParams = hasCompanyListingId ? { slug: companyName, id: companyListingId, variant: LISTING_PAGE_PENDING_APPROVAL_VARIANT } : "";
+  const companyListing = currentUserCompanyListing && currentUserCompanyListing[0];
+  const companyPage = companyListing ? "CompanyPageVariant" : "ListingBasePage";
+  const companyParams = companyListing ? { slug: companyListing.attributes.title.replace(/\s+/g, '-').toLowerCase(), id: companyListing.id.uuid, variant: LISTING_PAGE_PENDING_APPROVAL_VARIANT } : "";
+
 
   const categoryNumber = profileCategory.id && user.attributes.profile.publicData.category;
   const amenitiesNumber = profileAmenities.id && user.attributes.profile.publicData.amenities;
@@ -181,6 +180,7 @@ SectionProfileProgress.defaultProps = {
   currentSearchParams: null,
   currentUser: null,
   currentUserHasOrders: null,
+  currentUserCompanyListing: null,
   notificationCount: 0,
   sendVerificationEmailError: null,
   authScopes: null,
@@ -193,6 +193,7 @@ SectionProfileProgress.propTypes = {
   currentUser: propTypes.currentUser,
   currentUserHasListings: bool.isRequired,
   currentUserHasOrders: bool,
+  currentUserCompanyListing: array,
   isAuthenticated: bool.isRequired,
   authScopes: array,
   notificationCount: number,
@@ -220,6 +221,7 @@ const mapStateToProps = state => {
     currentUserHasOrders,
     currentUserNotificationCount: notificationCount,
     sendVerificationEmailInProgress,
+    currentUserCompanyListing,
     sendVerificationEmailError,
   } = state.user;
   const hasGenericError = !!(logoutError || hasCurrentUserErrors(state));
@@ -230,6 +232,7 @@ const mapStateToProps = state => {
     currentUserHasListings,
     currentUserHasOrders,
     notificationCount,
+    currentUserCompanyListing,
     isAuthenticated,
     authScopes,
     sendVerificationEmailInProgress,

@@ -17,17 +17,15 @@ import css from './SectionHowItWorks.module.css';
 
 const SectionHowItWorks = props => {
 
-  const { rootClassName, className, currentUser } = props;
+  const { rootClassName, className, currentUser, currentUserCompanyListing } = props;
   const linkNotifications = <NamedLink name="NotificationSettingsPage">
   <FormattedMessage id="SectionHowItWorks.textLinkBevakningar" />
 </NamedLink>
-  const user = ensureCurrentUser(currentUser);
-  const companyName = currentUser && user.attributes.profile.publicData.companyName ? user.attributes.profile.publicData.companyName.replace(/\s+/g, '-').toLowerCase() : "company";
-  const hasCompanyListingId = user.id && user.attributes.profile.privateData.companyListingId;
-  const companyListingId = user.id && user.attributes.profile.privateData.companyListingId;
-  const pageVariant = "CompanyPageVariant";
-  const companyPage = hasCompanyListingId ? pageVariant : "ListingBasePage";
-  const companyParams = hasCompanyListingId ? { slug: companyName, id: companyListingId, variant: LISTING_PAGE_PENDING_APPROVAL_VARIANT } : "";
+
+const user = ensureCurrentUser(currentUser);
+const companyListing = currentUserCompanyListing && currentUserCompanyListing[0];
+const companyPage = companyListing ? "CompanyPageVariant" : "ListingBasePage";
+const companyParams = companyListing ? { slug: companyListing.attributes.title.replace(/\s+/g, '-').toLowerCase(), id: companyListing.id.uuid, variant: LISTING_PAGE_PENDING_APPROVAL_VARIANT } : "";
 
 const linkCompanySearch = <NamedLink name="SearchPage"  to={{
   search:

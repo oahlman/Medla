@@ -33,6 +33,8 @@
  *         (i.e. pub_<key> or meta_<key>).
  */
 
+import kolvallenImg from './images/placeholder.jpg';
+import skaftasenImg from './images/placeholder.jpg';
 import bjornetjarnsbergetImg from './images/bjornetjarnsberget.jpg';
 import hanImg from './images/han.jpg';
 import bjornbergetImg from './images/bjornberget.jpg';
@@ -67,6 +69,96 @@ const businessAreas = [
 
 export const projects = [
   {
+    id: 'kolvallen',
+    name: 'Kölvallen',
+    companyName: 'Arise',
+    companyId: 'arise',
+    type: 'medla',
+    image: kolvallenImg,
+    location: {
+      lat: 60.883856,
+      lng: 12.305330,
+    },
+    bounds: {
+        ne: '69.0599269995724,24.1933684832876',
+        sw: '55.280224001785,10.8383668128319',
+    },
+    popularBusinessAreas: [
+      'anlaggning',
+      'bemanning',
+      'betong',
+      'bygg',
+      'driftochunderhall',
+      'el',
+    ],
+    description: {
+        title: 'Kölvallen',
+        summary: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        about: {
+          aboutProject: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+          aboutCompany: '',
+          externalServiceLink: 'https://www.arise.se/',
+          externalLink: 'https://www.arise.se/',
+          linkText: 'Läs mer'
+      },
+    },
+    stats: {
+      currentStatus: 'planning',
+      turbines: 0,
+      mw: 0,
+      constructionPeriod: {
+          start: 0,
+          end: 0,
+      },
+      region: 'Kommun',
+  },
+  },
+  {
+    id: 'skaftasen',
+    name: 'Skaftåsen',
+    companyName: 'Arise',
+    companyId: 'arise',
+    type: 'medla',
+    image: skaftasenImg,
+    location: {
+      lat: 60.389870,
+      lng: 12.142296,
+    },
+    bounds: {
+      ne: '69.0599269995724,24.1933684832876',
+      sw: '55.280224001785,10.8383668128319',
+    },
+    popularBusinessAreas: [
+      'anlaggning',
+      'bemanning',
+      'betong',
+      'bygg',
+      'driftochunderhall',
+      'el',
+    ],
+    description: {
+        title: 'Skaftåsen',
+        summary: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        about: {
+          aboutProject: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+          aboutCompany: '',
+          externalServiceLink: 'https://www.arise.se/',
+          externalLink: 'https://www.arise.se/',
+          linkText: 'Läs mer'
+      },
+    },
+    stats: {
+      currentStatus: 'building',
+      turbines: 0,
+      mw: 0,
+      constructionPeriod: {
+          start: 0,
+          end: 0,
+      },
+      region: 'Kommun',
+  },
+  },
+  {
     id: 'bjornetjarnsberget',
     name: 'Björnetjärnsberget',
     companyName: 'Cloudberry',
@@ -78,8 +170,8 @@ export const projects = [
       lng: 12.305330,
     },
     bounds: {
-        ne: '60.72512459,13.22554434',
-        sw: '59.02077329,11.38504166',
+        ne: '62.38293114,16.16852564',
+        sw: '57.18165757,8.44206036',
     },
     popularBusinessAreas: [
       'anlaggning',
@@ -123,8 +215,8 @@ export const projects = [
       lng: 12.132296,
     },
     bounds: {
-        ne: '60.0199218,12.8579495',
-        sw: '58.78261923,11.4745755',
+        ne: '60.6217629,13.97948452',
+        sw: '58.14688954,10.35304048',
     },
     popularBusinessAreas: [
       'anlaggning',

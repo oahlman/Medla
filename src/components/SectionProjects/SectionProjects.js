@@ -4,7 +4,7 @@ import { FormattedMessage } from '../../util/reactIntl';
 import classNames from 'classnames';
 import { lazyLoadWithDimensions } from '../../util/contextHelpers';
 import { NamedLink } from '../../components';
-import { CloudberryLogo, ResLogo, JamtkraftLogo, WpdLogo, VattenfallLogo, KabekoLogo } from './logos';
+import { AriseLogo, CloudberryLogo, ResLogo, JamtkraftLogo, WpdLogo, VattenfallLogo, KabekoLogo } from './logos';
 import { projects } from '../../containers/ProjectPage/ProjectConfig';
 
 import css from './SectionProjects.module.css';
@@ -17,6 +17,8 @@ class LocationImage extends Component {
 }
 const LazyImage = lazyLoadWithDimensions(LocationImage);
 
+const kolvallen = projects[projects.findIndex(id => id.id === 'kolvallen')];
+const skaftasen = projects[projects.findIndex(id => id.id === 'skaftasen')];
 const bjornetjarnsberget = projects[projects.findIndex(id => id.id === 'bjornetjarnsberget')];
 const han = projects[projects.findIndex(id => id.id === 'han')];
 const bjornberget = projects[projects.findIndex(id => id.id === 'bjornberget')];
@@ -98,7 +100,6 @@ const SectionProjects = props => {
           bjornberget.stats.currentStatus,
           bjornberget.id,
           ResLogo,
-          '?address=Björnberget%2C%20820%2046%20Ramsjö%2C%20Sverige&bounds=63.96074168%2C17.70965133%2C60.28740006%2C13.58712057'
         )}
         {locationLink(
           bjornetjarnsberget.name,
@@ -106,7 +107,6 @@ const SectionProjects = props => {
           bjornetjarnsberget.stats.currentStatus,
           bjornetjarnsberget.id,
           CloudberryLogo,
-          '?address=Björnetjärnsberget%2C%20Eda%2C%20Sverige&bounds=61.09926332%2C13.69678676%2C58.72429564%2C10.99971924'
         )}
         {locationLink(
           blaklidenfabodberget.name,
@@ -114,7 +114,6 @@ const SectionProjects = props => {
           blaklidenfabodberget.stats.currentStatus,
           blaklidenfabodberget.id,
           VattenfallLogo,
-          '?address=Hocksjön%2C%20880%2040%20Ramsele%2C%20Sverige&bounds=64.33484208%2C17.27594777%2C62.50539696%2C15.13267783'
         )}
       </div>
       <div className={css.locations}>
@@ -124,7 +123,6 @@ const SectionProjects = props => {
           gronhult.stats.currentStatus,
           gronhult.id,
           VattenfallLogo,
-          '?address=Hocksjön%2C%20880%2040%20Ramsele%2C%20Sverige&bounds=64.33484208%2C17.27594777%2C62.50539696%2C15.13267783'
         )}
         {locationLink(
           hocksjon.name,
@@ -132,7 +130,6 @@ const SectionProjects = props => {
           hocksjon.stats.currentStatus,
           hocksjon.id,
           JamtkraftLogo,
-          '?address=Hocksjön%2C%20880%2040%20Ramsele%2C%20Sverige&bounds=64.33484208%2C17.27594777%2C62.50539696%2C15.13267783'
         )}
       {locationLink(
           han.name,
@@ -140,25 +137,38 @@ const SectionProjects = props => {
           han.stats.currentStatus,
           han.id,
           CloudberryLogo,
-          '?address=Hån%2C%20Årjäng%2C%20Sverige&bounds=60.31060906%2C13.19044064%2C58.4784612%2C11.14208436'
         )}
       </div>
-      <div className={css.locationsTwoOfThree}>
+      <div className={css.locations}>
       {locationLink(
           kabeko.name,
           kabeko.stats.region,
           kabeko.stats.currentStatus,
           kabeko.id,
           KabekoLogo,
-          '?address=Hocksjön%2C%20880%2040%20Ramsele%2C%20Sverige&bounds=64.33484208%2C17.27594777%2C62.50539696%2C15.13267783'
         )}
+        {locationLink(
+          kolvallen.name,
+          kolvallen.stats.region,
+          kolvallen.stats.currentStatus,
+          kolvallen.id,
+          AriseLogo,
+        )}
+        {locationLink(
+          skaftasen.name,
+          skaftasen.stats.region,
+          skaftasen.stats.currentStatus,
+          skaftasen.id,
+          AriseLogo,
+        )}
+      </div>
+      <div className={css.locationsOneOfThree}>
         {locationLink(
           stollsaterberget.name,
           stollsaterberget.stats.region,
           stollsaterberget.stats.currentStatus,
           stollsaterberget.id,
           WpdLogo,
-          '?address=Stöllsäterberget%2C%20Värmlands%20län%2C%20Sverige&bounds=61.50822595%2C14.52980007%2C59.61018271%2C12.50567518'
         )}
       </div>
     </div>

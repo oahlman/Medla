@@ -305,7 +305,7 @@ export class ProjectPageComponent extends Component {
               </div>
               </div>
 
-              <h3 className={css.subtitle}>Nya företag</h3>
+              <h3 className={css.subtitle}>Lokala företag</h3>
               <div className={css.companyCards}>
               {queryListingsError ? queryError : null}
                 {companies.slice(0, 6).map(c => (

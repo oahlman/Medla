@@ -104,17 +104,16 @@ const EditListingServiceFormComponent = props => (
 
 
 
-   
+
       const { offer1, offerHeading1 } = values || {}
       const { offer2, offerHeading2 } = values || {}
       const { offer3, offerHeading3 } = values || {}
       const { offer4, offerHeading4 } = values || {}
       const { offer5, offerHeading5 } = values || {}
-      
-       console.log('offer3',offer3)
 
 
-    
+
+
       const [isOpen1, setIsOpen1] = useState(offer1 || offerHeading1 ? true : false);
       const [isOpen2, setIsOpen2] = useState(offer2 || offerHeading2 ? true : false);
       const [isOpen3, setIsOpen3] = useState(offer3 || offerHeading3 ? true : false);
@@ -186,7 +185,7 @@ const EditListingServiceFormComponent = props => (
               label={offer1Message}
               placeholder={descriptionPlaceholderMessage}
             />
-           
+
 
              <SecondaryButton
             className={isOpen2 && !isOpen3 ? css.buttonAddSecondary : css.hidden}
@@ -196,7 +195,7 @@ const EditListingServiceFormComponent = props => (
              {buttonText}{' '}
             </SecondaryButton>
 
-        
+
             </div>
             ) : null}
 
@@ -213,7 +212,7 @@ const EditListingServiceFormComponent = props => (
               maxLength={TITLE_MAX_LENGTH}
               validate={maxLength60Message}
               autoFocus
-            />      
+            />
             <FieldTextInput
               id= 'offer3'
               name= 'offer3'
@@ -245,7 +244,7 @@ const EditListingServiceFormComponent = props => (
               maxLength={TITLE_MAX_LENGTH}
               validate={maxLength60Message}
               autoFocus
-            />      
+            />
             <FieldTextInput
               id= 'offer4'
               name= 'offer4'
@@ -254,7 +253,7 @@ const EditListingServiceFormComponent = props => (
               label={offer1Message}
               placeholder={descriptionPlaceholderMessage}
             />
-           
+
             <SecondaryButton
             className={isOpen4 && !isOpen5 ? css.buttonAddSecondary : css.hidden}
             type="submit"
@@ -277,7 +276,7 @@ const EditListingServiceFormComponent = props => (
               maxLength={TITLE_MAX_LENGTH}
               validate={maxLength60Message}
               autoFocus
-            />      
+            />
             <FieldTextInput
               id= 'offer5'
               name= 'offer5'

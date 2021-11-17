@@ -97,7 +97,6 @@ const EditListingPricingFormComponent = props => (
 
       const offer2 = publicData.offer2 == undefined ? false : true;
 
-      console.log(offer2, publicData);
       const classes = classNames(css.root, className);
       const submitReady = (updated && pristine) || ready;
       const submitInProgress = updateInProgress;

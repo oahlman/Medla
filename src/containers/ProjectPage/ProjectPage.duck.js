@@ -130,7 +130,6 @@ export const queryListings = queryParams => (dispatch, getState, sdk) => {
   const currentProject = projects.findIndex(id => id.id === queryParams);
   const projectData = projects[currentProject];
   const origin = new LatLng(projectData.location.lat, projectData.location.lng);
-  console.log('projectData.duck', projectData);
   dispatch(queryListingsRequest(queryParams));
   return sdk.listings
     .query({
@@ -202,7 +201,6 @@ export const showCompanyListing = companyListing => (dispatch, getState, sdk) =>
 
 export const loadData = params => (dispatch, getState, sdk) => {
   const project = params.projectUrl;
-  console.log('projectUrl.duck', params.projectUrl);
 
   // Clear state so that previously loaded data is not visible
   // in case this page load fails.

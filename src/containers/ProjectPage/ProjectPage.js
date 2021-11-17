@@ -110,7 +110,6 @@ export class ProjectPageComponent extends Component {
     projectDetailsLink = document.getElementById("projectDetails");
   };
 
-  console.log(projectDetailsLink);
 
   const subscribeToProject = (<div className={css.progressCard}>
     <div
@@ -457,8 +456,6 @@ export class ProjectPageComponent extends Component {
         siteTitle: config.siteTitle,
       }
     );
-
-    console.log('projectName', projectName)
 
     return (
       <Page

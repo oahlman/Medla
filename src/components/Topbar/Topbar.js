@@ -163,7 +163,6 @@ class TopbarComponent extends Component {
     });
 
     const notificationDot = notificationCount > 0 ? <div className={css.notificationDot} /> : null;
-    console.log('Topbar.currentUserCompanyListing', currentUserCompanyListing);
 
     const isMobileLayout = viewport.width < MAX_MOBILE_SCREEN_WIDTH;
     const isMobileMenuOpen = isMobileLayout && mobilemenu === 'open';

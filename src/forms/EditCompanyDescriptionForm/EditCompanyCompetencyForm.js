@@ -39,8 +39,6 @@ const EditCompanyCompetencyFormComponent = props => (
       if (typeof document !== 'undefined') {
         projectDetailsLink = document.getElementById("projectDetails");
       };
-    
-      console.log(projectDetailsLink);
 
       const titleMessage = intl.formatMessage({ id: 'EditCompanyDescriptionForm.title' });
       const titlePlaceholderMessage = intl.formatMessage({
@@ -98,12 +96,12 @@ const EditCompanyCompetencyFormComponent = props => (
           {errorMessageUpdateListing}
           {errorMessageShowListing}
 
-          <FieldCheckboxGroup 
-            className={css.features} 
-            id="category" 
-            name="category" 
+          <FieldCheckboxGroup
+            className={css.features}
+            id="category"
+            name="category"
             options={categories}
-            twoColumns={true} 
+            twoColumns={true}
             label="Branscher"
           />
 

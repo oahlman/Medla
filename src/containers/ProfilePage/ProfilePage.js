@@ -179,7 +179,6 @@ export class ProfilePageComponent extends Component {
       </div>
     );
 
-    console.log('listings', listings[0]);
 
     const mainContent = (
       <div>

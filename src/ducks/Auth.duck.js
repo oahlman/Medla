@@ -229,7 +229,6 @@ export const signup = params => (dispatch, getState, sdk) => {
   const { LatLng } = sdkTypes;
   const lat = params.location.selectedPlace.origin.lat;
   const lng = params.location.selectedPlace.origin.lng;
-  console.log('search.auth', search);
 
   // We must login the user if signup succeeds since the API doesn't
   // do that automatically.

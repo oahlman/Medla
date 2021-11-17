@@ -81,7 +81,6 @@ const randomCode = Math.floor(Math.random() * (999999 - 111111) + 111111);
 
 export default function reducer(state = initialState, action = {}) {
   const { type, payload } = action;
-  console.log('payload', payload);
   switch (type) {
     case CURRENT_USER_SHOW_REQUEST:
       return { ...state, currentUserShowError: null };
@@ -320,7 +319,6 @@ export const fetchCurrentUserCompanyListing = () => (dispatch, getState, sdk) =>
     .then(response => {
       const hasListings = response.data.data && response.data.data.length > 0;
       const companyListing = response.data.data.filter(listing => listing.attributes.publicData.listingCategory === 'company');
-      console.log('companyListing', companyListing[0].id.uuid);
 
       const hasCompanyListing =
         hasListings &&

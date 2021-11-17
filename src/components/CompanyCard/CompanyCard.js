@@ -49,7 +49,6 @@ export const CompanyCardComponent = props => {
   const address = listingAddress !== null ? listingAddress : companyAddress;
   const displayAddress = address !== null ? address : <FormattedMessage id="ListingCard.NoAddress" />;
   const categories = currentListing.attributes.publicData.category ? currentListing.attributes.publicData.category : [];
-  console.log('address', address);
 
   const tagsMaybe = categories && categories.length < 3 ? categories : categories.slice (0,3);
   let extraTags =  categories && categories.length > 3 ? `+${categories.length - 3}`: [];

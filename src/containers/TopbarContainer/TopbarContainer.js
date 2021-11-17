@@ -32,8 +32,6 @@ export const TopbarContainerComponent = props => {
     ...rest
   } = props;
 
-  console.log('currentUserCompanyListing.container', currentUserCompanyListing);
-
   return (
     <Topbar
       authInProgress={authInProgress}

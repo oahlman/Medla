@@ -136,7 +136,6 @@ export function uploadImage(actionPayload) {
 
 export const updateCompanyListing = response => {
   return (dispatch, getState, sdk) => {
-    console.log('companyListingId', response.data.data.attributes.profile.privateData.companyListingId, 'category', response.data.data.attributes.profile.publicData.category);
     const { UUID } = sdkTypes;
     const companyListingId = response.data.data.attributes.profile.privateData.companyListingId;
     const businessAreas = response.data.data.attributes.profile.publicData.category;

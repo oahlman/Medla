@@ -76,7 +76,6 @@ export const PasswordRecoveryPageComponent = props => {
     const phoneParams = `phone+${email}@medla.app`;
     const params = isEmail ? emailParams : phoneParams;
     onSubmitEmail(params);
-    console.log('email', email, 'isEmail', isEmail);
   };
 
   const isPhoneNumber = (initialEmail && initialEmail.includes("phone+")) || (submittedEmail && submittedEmail.includes("phone+")) ? true : false;

@@ -98,7 +98,6 @@ export class AuthenticationPageComponent extends Component {
 
     //Check if user is registered with an email address or a phone number
     const isPhoneNumber = currentUserLoaded && user.attributes.email.includes("phone+") && user.attributes.email.includes("@medla.app");
-    console.log("isPhoneNumber", isPhoneNumber);
 
 
     // We only want to show the email verification dialog in the signup

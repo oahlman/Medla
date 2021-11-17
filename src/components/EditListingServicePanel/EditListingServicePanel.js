@@ -61,7 +61,6 @@ const EditListingServicePanel = props => {
   const [isOpen3, setIsOpen3] = useState(hasData3 ? true : false);
   const [isOpen4, setIsOpen4] = useState(hasData4 ? true : false);
   const [isOpen5, setIsOpen5] = useState(hasData5 ? true : false);
-  console.log(name);
   const buttonText3 = 'Lägg till tjänst';
 
   const isPublished = currentListing.id && currentListing.attributes.state !== LISTING_STATE_DRAFT;
@@ -74,7 +73,6 @@ const EditListingServicePanel = props => {
     <FormattedMessage id="EditListingDescriptionPanel.createListingTitle" />
   );
   const categoryOptions = findOptionsForSelectFilter('category', config.custom.filters);
-  console.log('panel', publicData);
 
   return (
     <div className={classes}>

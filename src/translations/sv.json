@@ -216,7 +216,7 @@
   "EditCompanyDescriptionForm.contactPhoneJob": "Kontaktuppgifter för jobb",
   "EditListingDescriptionForm.maxLength": "Måste vara {maxLength} tecken eller färre",
   "EditListingDescriptionForm.showListingFailed": "Hämtning av listdata misslyckades",
-  "EditListingDescriptionForm.title": "Namn på uppdrag",
+  "EditListingDescriptionForm.title": "Namn på jobb",
   "EditListingOfferForm.offer": "Namn på tjänst",
   "EditListingDescriptionForm.titlePlaceholder": "Vad vill du kalla ditt jobb?",
   "EditListingDescriptionForm.titleRequired": "Du behöver lägga till ett namn.",
@@ -370,7 +370,7 @@
   "Footer.searchJob": "Sök uppdrag",
   "Footer.improveProfile": "Ditt företag",
   "Footer.searchCompanies": "Sök företag",
-  "Footer.searchConnectCompany": "Anslut ditt projekt",
+  "Footer.searchConnectCompany": "Anslut projekt",
 
 
   "Footer.searchRegionMitt": "Mitt",

@@ -1,5 +1,5 @@
 import React from 'react';
-import { bool, func, object, shape, string, oneOf, array } from 'prop-types';
+import { bool, func, object, shape, string, oneOf } from 'prop-types';
 import { compose } from 'redux';
 import { withRouter } from 'react-router-dom';
 import { intlShape, injectIntl } from '../../util/reactIntl';
@@ -13,7 +13,6 @@ import {
   createSlug,
 } from '../../util/urlHelpers';
 import { LISTING_STATE_DRAFT, LISTING_STATE_PENDING_APPROVAL, propTypes } from '../../util/types';
-import { fetchCurrentUser } from '../../ducks/user.duck';
 import { ensureOwnListing } from '../../util/data';
 import { getMarketplaceEntities } from '../../ducks/marketplaceData.duck';
 import { manageDisableScrolling, isScrollingDisabled } from '../../ducks/UI.duck';
@@ -85,7 +84,6 @@ export const EditListingPageComponent = props => {
     stripeAccountFetched,
     stripeAccount,
     updateStripeAccountError,
-    currentUserCompanyListing,
   } = props;
 
   const { id, type, returnURLType } = params;
@@ -207,7 +205,6 @@ export const EditListingPageComponent = props => {
           getAccountLinkInProgress={getAccountLinkInProgress}
           onImageUpload={onImageUpload}
           onUpdateImageOrder={onUpdateImageOrder}
-          currentUserCompanyListing={currentUserCompanyListing}
           onRemoveImage={onRemoveListingImage}
           onChange={onChange}
           currentUser={currentUser}
@@ -257,7 +254,6 @@ export const EditListingPageComponent = props => {
           onPayoutDetailsFormChange={onPayoutDetailsFormChange}
           onPayoutDetailsSubmit={onPayoutDetailsFormSubmit}
           onGetStripeConnectAccountLink={onGetStripeConnectAccountLink}
-          currentUserCompanyListing={currentUserCompanyListing}
           getAccountLinkInProgress={getAccountLinkInProgress}
           onImageUpload={onImageUpload}
           onUpdateImageOrder={onUpdateImageOrder}
@@ -304,7 +300,6 @@ EditListingPageComponent.defaultProps = {
   listingDraft: null,
   notificationCount: 0,
   sendVerificationEmailError: null,
-  currentUserCompanyListing: null,
 };
 
 EditListingPageComponent.propTypes = {
@@ -345,7 +340,6 @@ EditListingPageComponent.propTypes = {
   stripeAccountFetched: bool,
   stripeAccount: object,
   scrollingDisabled: bool.isRequired,
-  currentUserCompanyListing: array,
 
   /* from withRouter */
   history: shape({
@@ -391,7 +385,6 @@ const mapStateToProps = state => {
     getOwnListing,
     page,
     scrollingDisabled: isScrollingDisabled(state),
-    currentUserCompanyListing,
   };
 };
 

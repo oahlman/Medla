@@ -253,7 +253,6 @@ class EditCompanyWizard extends Component {
       stripeAccountError,
       stripeAccountLinkError,
       currentUser,
-      currentUserCompanyListing,
       ...rest
     } = this.props;
 
@@ -458,7 +457,6 @@ EditCompanyWizard.defaultProps = {
   fetchStripeAccountError: null,
   stripeAccountError: null,
   stripeAccountLinkError: null,
-  currentUserCompanyListing: null,
 };
 
 EditCompanyWizard.propTypes = {
@@ -507,7 +505,6 @@ EditCompanyWizard.propTypes = {
   onPayoutDetailsFormChange: func.isRequired,
   onGetStripeConnectAccountLink: func.isRequired,
   onManageDisableScrolling: func.isRequired,
-  currentUserCompanyListing: array,
 
   // from withViewport
   viewport: shape({

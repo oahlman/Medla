@@ -94,7 +94,6 @@ const EditListingWizardTab = props => {
     updatedTab,
     updateInProgress,
     intl,
-    currentUserCompanyListing,
   } = props;
 
   const { type } = params;
@@ -270,7 +269,6 @@ const EditListingWizardTab = props => {
 EditListingWizardTab.defaultProps = {
   listing: null,
   updatedTab: null,
-  currentUserCompanyListing: null,
 };
 
 const { array, bool, func, object, oneOf, shape, string } = PropTypes;
@@ -297,7 +295,6 @@ EditListingWizardTab.propTypes = {
   }).isRequired,
   images: array.isRequired,
   availability: object.isRequired,
-  currentUserCompanyListing: array,
 
   // We cannot use propTypes.listing since the listing might be a draft.
   listing: shape({

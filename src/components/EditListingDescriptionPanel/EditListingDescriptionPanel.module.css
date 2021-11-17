@@ -1,3 +1,5 @@
+@import '../../styles/propertySets.css';
+
 .root {
   flex-grow: 1;
   width: 100%;
@@ -15,7 +17,26 @@
   margin-bottom: 19px;
 
   @media (--viewportLarge) {
-    margin-bottom: 38px;
+    margin-bottom: 20px;
     padding: 1px 0 7px 0;
   }
+}
+
+
+.tiny{
+  @apply --marketplaceTinyFontStyles;
+  color: var(--matterColorAnti);
+  
+
+}
+
+.icon{
+ margin-right:5px;
+width: 15px;
+height: 15px;
+}
+
+.descriptionTitle{
+
+  
 }

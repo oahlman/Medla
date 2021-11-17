@@ -8,6 +8,8 @@ import { LISTING_STATE_DRAFT } from '../../util/types';
 import { ListingLink } from '../../components';
 import { EditListingDescriptionForm, EditCompanyDescriptionForm } from '../../forms';
 import config from '../../config';
+import { MdOutlineReportGmailerrorred  } from 'react-icons/md';
+
 
 import css from './EditListingDescriptionPanel.module.css';
 import { supportedCountries } from '../StripeBankAccountTokenInputField/StripeBankAccountTokenInputField.util';
@@ -40,10 +42,18 @@ const EditListingDescriptionPanel = props => {
       id="EditListingDescriptionPanel.title"
       values={{ listingTitle: <ListingLink listing={listing} /> }}
     />
+    
   ) : (
+    <div className={css.descriptionTitle}>
     <FormattedMessage id="EditListingDescriptionPanel.createListingTitle" />
+    <br></br>
+   <div className={css.tiny}> <MdOutlineReportGmailerrorred className={css.icon} ></MdOutlineReportGmailerrorred><FormattedMessage id="EditListingDescriptionPanel.createListingTooltip" /></div> 
+    
+    
+    </div>
   );
 
+  
   const categoryOptions = findOptionsForSelectFilter('category', config.custom.filters);
 
   return isJob ? (

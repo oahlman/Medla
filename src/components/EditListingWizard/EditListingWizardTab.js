@@ -16,7 +16,7 @@ import {
   EditListingLocationPanel,
   EditListingPhotosPanel,
   EditListingPoliciesPanel,
-  EditListingPricingPanel,
+  EditListingServicePanel,
 } from '../../components';
 
 import css from './EditListingWizard.module.css';

@@ -80,12 +80,14 @@
 
 
 .selectedLabel {
-  background-color: var(--matterColorMediumLight);
+  border-style:solid;
+  border-color: var(--matterColorAnti);
+  border-width: 0.1px;
   border-radius: 99px;
   padding-left: 7px;
   padding-right: 7px;
-  padding-top: 5px;
-  padding-bottom: 5px;
+  padding-top: 4px;
+  padding-bottom: 4px;
   margin-right:5px;
   font-size: 11px;
   color: var(--matterColor);

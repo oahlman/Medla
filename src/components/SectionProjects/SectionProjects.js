@@ -102,28 +102,21 @@ const SectionProjects = props => {
           ResLogo,
         )}
         {locationLink(
-          bjornetjarnsberget.name,
-          bjornetjarnsberget.stats.region,
-          bjornetjarnsberget.stats.currentStatus,
-          bjornetjarnsberget.id,
-          CloudberryLogo,
-        )}
-        {locationLink(
           blaklidenfabodberget.name,
           blaklidenfabodberget.stats.region,
           blaklidenfabodberget.stats.currentStatus,
           blaklidenfabodberget.id,
           VattenfallLogo,
         )}
-      </div>
-      <div className={css.locations}>
-      {locationLink(
+        {locationLink(
           gronhult.name,
           gronhult.stats.region,
           gronhult.stats.currentStatus,
           gronhult.id,
           VattenfallLogo,
         )}
+      </div>
+      <div className={css.locations}>
         {locationLink(
           hocksjon.name,
           hocksjon.stats.region,
@@ -131,16 +124,7 @@ const SectionProjects = props => {
           hocksjon.id,
           JamtkraftLogo,
         )}
-      {locationLink(
-          han.name,
-          han.stats.region,
-          han.stats.currentStatus,
-          han.id,
-          CloudberryLogo,
-        )}
-      </div>
-      <div className={css.locations}>
-      {locationLink(
+        {locationLink(
           kabeko.name,
           kabeko.stats.region,
           kabeko.stats.currentStatus,
@@ -148,28 +132,16 @@ const SectionProjects = props => {
           KabekoLogo,
         )}
         {locationLink(
-          kolvallen.name,
-          kolvallen.stats.region,
-          kolvallen.stats.currentStatus,
-          kolvallen.id,
-          AriseLogo,
-        )}
-        {locationLink(
-          skaftasen.name,
-          skaftasen.stats.region,
-          skaftasen.stats.currentStatus,
-          skaftasen.id,
-          AriseLogo,
-        )}
-      </div>
-      <div className={css.locationsOneOfThree}>
-        {locationLink(
           stollsaterberget.name,
           stollsaterberget.stats.region,
           stollsaterberget.stats.currentStatus,
           stollsaterberget.id,
           WpdLogo,
         )}
+      </div>
+      <div className={css.locations}>
+      </div>
+      <div className={css.locationsOneOfThree}>
       </div>
     </div>
   );

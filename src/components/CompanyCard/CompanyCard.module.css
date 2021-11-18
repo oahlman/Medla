@@ -267,7 +267,7 @@
     margin-right: 5px;
     margin-top:10px;
     flex-shrink: 1;
-    background-color: var(--matterColorLight);
+    background-color: var(--matterColorMediumLight);
 
 
     @media (min-width: 700px) and (max-width: 1300px) {

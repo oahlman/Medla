@@ -80,7 +80,7 @@
 
 
 .selectedLabel {
-  background-color: var(--matterColorLight);
+  background-color: var(--matterColorMediumLight);
   border-radius: 99px;
   padding-left: 7px;
   padding-right: 7px;
@@ -93,8 +93,8 @@
   
   @media (min-width: 700px) and (max-width: 1300px) {                             
     font-size: 8px;
-    padding-left: 5px;
-    padding-right: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
     margin-right:3px;
     
 

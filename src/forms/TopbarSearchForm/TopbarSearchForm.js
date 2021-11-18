@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Form as FinalForm, Field } from 'react-final-form';
 import classNames from 'classnames';
 import { intlShape, injectIntl } from '../../util/reactIntl';
-import { Form, LocationAutocompleteInput } from '../../components';
+import { Form, LocationAutocompleteInput, FieldTextInput, FieldSelect, Button, SelectSingleFilter } from '../../components';
 
 import css from './TopbarSearchForm.module.css';
 
@@ -35,7 +35,7 @@ class TopbarSearchFormComponent extends Component {
       <FinalForm
         {...this.props}
         render={formRenderProps => {
-          const { rootClassName, className, desktopInputRoot, intl, isMobile } = formRenderProps;
+          const { rootClassName, className, desktopInputRoot, intl, isMobile, handleSubmit } = formRenderProps;
 
           const classes = classNames(rootClassName, className);
           const desktopInputRootClass = desktopInputRoot || css.desktopInputRoot;
@@ -46,25 +46,25 @@ class TopbarSearchFormComponent extends Component {
           return (
             <Form
               className={classes}
-              onSubmit={preventFormSubmit}
+              onSubmit={handleSubmit}
               enforcePagePreloadFor="SearchPage"
-            >
+            ><div className={css.searchBar}>
               <Field
                 name="location"
                 format={identity}
                 render={({ input, meta }) => {
-                  const { onChange, ...restInput } = input;
+                  const { onSubmit, ...restInput } = input;
 
                   // Merge the standard onChange function with custom behaviur. A better solution would
                   // be to use the FormSpy component from Final Form and pass this.onChange to the
                   // onChange prop but that breaks due to insufficient subscription handling.
                   // See: https://github.com/final-form/react-final-form/issues/159
                   const searchOnChange = value => {
-                    onChange(value);
-                    this.onChange(value);
+                    onSubmit(value);
+                    this.onSubmit(value);
                   };
 
-                  const searchInput = { ...restInput, onChange: searchOnChange };
+                  const searchInput = { ...restInput, onSubmit: searchOnChange };
                   return (
                     <LocationAutocompleteInput
                       className={isMobile ? css.mobileInputRoot : desktopInputRootClass}
@@ -87,6 +87,25 @@ class TopbarSearchFormComponent extends Component {
                   );
                 }}
               />
+              <FieldSelect rootClassName={isMobile ? css.mobileInputRoot : desktopInputRootClass}
+                inputClassName={isMobile ? css.mobileInput : css.desktopInput}
+                id="business" name="business">
+                <option value="">Alla branscher</option>
+                <option value="anlaggning">Anlägging</option>
+                <option value="kostlogi">Kost och Logi</option>
+              </FieldSelect>
+              <FieldSelect className={isMobile ? css.mobileInputRoot : desktopInputRootClass}
+                inputClassName={isMobile ? css.mobileInput : css.desktopInput}
+                id="category" name="category">
+                <option value="company">Företag</option>
+                <option value="job">Jobb</option>
+              </FieldSelect>
+          <Button
+                className={css.submitButton}
+                type="submit"
+              >Sök
+              </Button>
+              </div>
             </Form>
           );
         }}

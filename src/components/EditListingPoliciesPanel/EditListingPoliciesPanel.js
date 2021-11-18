@@ -3,11 +3,11 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { FormattedMessage } from '../../util/reactIntl';
 import { LISTING_STATE_DRAFT } from '../../util/types';
-import { ensureOwnListing } from '../../util/data';
 import { findOptionsForSelectFilter } from '../../util/search';
-import { ListingLink } from '../../components';
-import { EditCompanyCompetencyForm } from '../../forms'
 import config from '../../config';
+import { ensureOwnListing } from '../../util/data';
+import { ListingLink } from '../../components';
+import { EditListingPoliciesForm } from '../../forms';
 
 import css from './EditListingPoliciesPanel.module.css';
 
@@ -29,34 +29,32 @@ const EditListingPoliciesPanel = props => {
   const classes = classNames(rootClassName || css.root, className);
   const currentListing = ensureOwnListing(listing);
   const { publicData } = currentListing.attributes;
-  const isJob = publicData.listingCategory !== 'company';
-  const listingCategory = isJob ? 'job' : 'company';
+
+  const categoryOptions = findOptionsForSelectFilter('category', config.custom.filters);
 
   const isPublished = currentListing.id && currentListing.attributes.state !== LISTING_STATE_DRAFT;
+  const isJobListing = currentListing.id && currentListing.attributes.publicData.listingCategory !== 'company';
   const panelTitle = isPublished ? (
     <FormattedMessage
       id="EditListingPoliciesPanel.title"
       values={{ listingTitle: <ListingLink listing={listing} /> }}
     />
   ) : (
-    <FormattedMessage id="EditListingPoliciesPanel.createListingTitle" />
+    <FormattedMessage id={isJobListing ? "EditListingPoliciesPanel.createJobListingTitle" : "EditListingPoliciesPanel.createCompanyListingTitle"} />
   );
-
-  const categoryOptions = findOptionsForSelectFilter('category', config.custom.filters);
 
   return (
     <div className={classes}>
       <h1 className={css.title}>{panelTitle}</h1>
-      <EditCompanyCompetencyForm
+      <EditListingPoliciesForm
         className={css.form}
         initialValues={{ category: publicData.category }}
         saveActionMsg={submitButtonText}
         onSubmit={values => {
           const { category } = values;
           const updateValues = {
-            publicData: { 
-              category, 
-              listingCategory: listingCategory,
+            publicData: {
+              category,
             },
           };
 

@@ -1,19 +1,22 @@
 import React from 'react';
-import { bool, func, shape, string } from 'prop-types';
+import { arrayOf, bool, func, shape, string } from 'prop-types';
 import { compose } from 'redux';
 import { Form as FinalForm } from 'react-final-form';
+import arrayMutators from 'final-form-arrays';
 import { intlShape, injectIntl, FormattedMessage } from '../../util/reactIntl';
 import classNames from 'classnames';
 import { propTypes } from '../../util/types';
-import { Form, Button, FieldTextInput } from '../../components';
+import { Form, Button, FieldTextInput, FieldCheckboxGroup } from '../../components';
 
 import css from './EditListingPoliciesForm.module.css';
 
 export const EditListingPoliciesFormComponent = props => (
   <FinalForm
     {...props}
+    mutators={{ ...arrayMutators }}
     render={formRenderProps => {
       const {
+        categories,
         className,
         disabled,
         ready,
@@ -52,18 +55,28 @@ export const EditListingPoliciesFormComponent = props => (
       const submitDisabled = invalid || disabled || submitInProgress;
 
       return (
-        <Form className={classes} onChange={handleSubmit}>
+        <Form className={classes} onSubmit={handleSubmit}>
           {errorMessage}
           {errorMessageShowListing}
 
-          <FieldTextInput
-            id="rules"
-            name="rules"
-            className={css.policy}
-            type="textarea"
-            label={rulesLabelMessage}
-            placeholder={rulesPlaceholderMessage}
+          <FieldCheckboxGroup
+            className={css.features}
+            id="category"
+            name="category"
+            options={categories}
+            twoColumns={true}
+            label="Branscher"
           />
+
+          <Button
+            className={css.submitButton}
+            type="submit"
+            inProgress={submitInProgress}
+            disabled={submitDisabled}
+            ready={submitReady}
+          >
+            {saveActionMsg}
+          </Button>
         </Form>
       );
     }}
@@ -88,6 +101,12 @@ EditListingPoliciesFormComponent.propTypes = {
     showListingsError: propTypes.error,
     updateListingError: propTypes.error,
   }),
+  categories: arrayOf(
+    shape({
+      key: string.isRequired,
+      label: string.isRequired,
+    })
+  ),
 };
 
 export default compose(injectIntl)(EditListingPoliciesFormComponent);

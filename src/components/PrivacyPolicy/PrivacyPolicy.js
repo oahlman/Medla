@@ -64,7 +64,7 @@ När du besöker webbplatsen samlar vi automatiskt in viss information om din en
       i syfte att göra informationsutskick till användare av Medla ( "Sajten").
       <br></br>
       <br></br>
-      Dessutom, så delar vi också din information med våra kunder (projektägare), vi delar kontaktuppgifter (mailadresser och telefonnummer) samt organisationsnummer.
+      Dessutom, så delar vi också din information med våra kunder (projektägare) när du följer deras projekt, när du följer ett projekt godkänner du att vi delar dina kontaktuppgifter (mailadresser och telefonnummer) samt organisationsnummer till projektägaren.
       Syftet med delningen till projektägare är att ge dem sätt att hitta och kontakta företag som anslutit till tjänsten (Medla).
       <br></br>
       <br></br>

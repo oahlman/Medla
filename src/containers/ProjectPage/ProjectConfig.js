@@ -33,7 +33,7 @@
  *         (i.e. pub_<key> or meta_<key>).
  */
 
-import kolvallenImg from './images/placeholder.jpg';
+import kolvallenImg from './images/kolvallen.jpg';
 import skaftasenImg from './images/placeholder.jpg';
 import bjornetjarnsbergetImg from './images/bjornetjarnsberget.jpg';
 import hanImg from './images/han.jpg';
@@ -76,12 +76,12 @@ export const projects = [
     type: 'medla',
     image: kolvallenImg,
     location: {
-      lat: 60.883856,
-      lng: 12.305330,
+      lat: 61.830080,
+      lng: 16.090436,
     },
     bounds: {
-        ne: '69.0599269995724,24.1933684832876',
-        sw: '55.280224001785,10.8383668128319',
+        ne: '63.03626025,18.0991935',
+        sw: '60.59913922,14.2480015',
     },
     popularBusinessAreas: [
       'anlaggning',
@@ -93,9 +93,9 @@ export const projects = [
     ],
     description: {
         title: 'Kölvallen',
-        summary: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        summary: 'Projektet har utvecklats av Arise och kommer bestå av 42 vindkraftverk med en beräknad årsproduktion på ca 815GWH i Kölvallen, Ljusdals kommun.',
         about: {
-          aboutProject: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+          aboutProject: 'Arise utvecklar projektet Kölvallen i närheten av Sveg. Kölvallen är ett systerprojekt till projektet Skaftåsen, 35 turbiner, som för närvarande är under byggnation. Kölvallen har 42-43 fullt tillståndsgivna turbiner med en totalhöjd på 220 m. Vi hoppas på att kunna starta bygget under andra halvan av 2022 och avsluta under 2024.',
           aboutCompany: '',
           externalServiceLink: 'https://www.arise.se/',
           externalLink: 'https://www.arise.se/',
@@ -104,13 +104,13 @@ export const projects = [
     },
     stats: {
       currentStatus: 'planning',
-      turbines: 0,
-      mw: 0,
+      turbines: 42,
+      mw: 300,
       constructionPeriod: {
-          start: 0,
-          end: 0,
+          start: 2022,
+          end: 2024,
       },
-      region: 'Kommun',
+      region: 'Ljusdals kommun',
   },
   },
   {

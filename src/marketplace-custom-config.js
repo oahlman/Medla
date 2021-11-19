@@ -61,22 +61,6 @@ export const filters = [
       // to make filter customizations a bit easier.
       options: [
         {
-          key: 'kolvallen',
-          label: 'Kölvallen',
-        },
-        {
-          key: 'skaftasen',
-          label: 'Skaftåsen',
-        },
-        {
-          key: 'bjornetjarnsberget',
-          label: 'Björnetjärnsberget',
-        },
-        {
-          key: 'han',
-          label: 'Hån',
-        },
-        {
           key: 'bjornberget',
           label: 'Björnberget',
         },

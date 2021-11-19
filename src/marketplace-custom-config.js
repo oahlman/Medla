@@ -93,6 +93,10 @@ export const filters = [
           label: 'Hocksjön',
         },
         {
+          key: 'hybrit',
+          label: 'Hybrit',
+        },
+        {
           key: 'klevberget',
           label: 'Klevberget',
         },

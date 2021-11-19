@@ -4,7 +4,7 @@ import { FormattedMessage } from '../../util/reactIntl';
 import classNames from 'classnames';
 import { lazyLoadWithDimensions } from '../../util/contextHelpers';
 import { NamedLink } from '../../components';
-import { AriseLogo, CloudberryLogo, ResLogo, JamtkraftLogo, WpdLogo, VattenfallLogo, KabekoLogo } from './logos';
+import { HybritLogo, AriseLogo, CloudberryLogo, ResLogo, JamtkraftLogo, WpdLogo, VattenfallLogo, KabekoLogo } from './logos';
 import { projects } from '../../containers/ProjectPage/ProjectConfig';
 
 import css from './SectionProjects.module.css';
@@ -17,6 +17,7 @@ class LocationImage extends Component {
 }
 const LazyImage = lazyLoadWithDimensions(LocationImage);
 
+const hybrit = projects[projects.findIndex(id => id.id === 'hybrit')];
 const kolvallen = projects[projects.findIndex(id => id.id === 'kolvallen')];
 const skaftasen = projects[projects.findIndex(id => id.id === 'skaftasen')];
 const bjornetjarnsberget = projects[projects.findIndex(id => id.id === 'bjornetjarnsberget')];
@@ -117,12 +118,19 @@ const SectionProjects = props => {
         )}
       </div>
       <div className={css.locations}>
-        {locationLink(
+      {locationLink(
           hocksjon.name,
           hocksjon.stats.region,
           hocksjon.stats.currentStatus,
           hocksjon.id,
           JamtkraftLogo,
+        )}
+      {locationLink(
+          hybrit.name,
+          hybrit.stats.region,
+          hybrit.stats.currentStatus,
+          hybrit.id,
+          HybritLogo,
         )}
         {locationLink(
           kabeko.name,
@@ -131,17 +139,15 @@ const SectionProjects = props => {
           kabeko.id,
           KabekoLogo,
         )}
-        {locationLink(
+      </div>
+      <div className={css.locationsOneOfThree}>
+      {locationLink(
           stollsaterberget.name,
           stollsaterberget.stats.region,
           stollsaterberget.stats.currentStatus,
           stollsaterberget.id,
           WpdLogo,
         )}
-      </div>
-      <div className={css.locations}>
-      </div>
-      <div className={css.locationsOneOfThree}>
       </div>
     </div>
   );

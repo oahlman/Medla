@@ -65,6 +65,13 @@ const EditListingFeaturesFormComponent = props => (
           {errorMessageShowListing}
           <FormSpy onChange={onChange} />
           <FieldRadioButton
+            id='hybrit'
+            name='amenities'
+            label="Hybrit"
+            value="hybrit"
+            showAsRequired={showAsRequired}
+          />
+          <FieldRadioButton
             id='bjornetjarnsberget'
             name='amenities'
             label="Björnetjärnsberget"

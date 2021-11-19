@@ -387,6 +387,14 @@ const routeConfiguration = () => {
 
     //Project links
     {
+      path: '/hybrit',
+      name: 'Hybrit',
+      component: ProjectPage,
+      extraProps: { projectUrl: 'hybrit' },
+      loadData: params =>
+        pageDataLoadingAPI.ProjectPage.loadData({ ...params, projectUrl: 'hybrit' }),
+    },
+    {
       path: '/kolvallen',
       name: 'Kölvallen',
       component: ProjectPage,

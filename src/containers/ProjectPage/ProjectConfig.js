@@ -33,6 +33,7 @@
  *         (i.e. pub_<key> or meta_<key>).
  */
 
+import hybritImg from './images/hybrit.jpg';
 import kolvallenImg from './images/kolvallen.jpg';
 import skaftasenImg from './images/placeholder.jpg';
 import bjornetjarnsbergetImg from './images/bjornetjarnsberget.jpg';
@@ -68,6 +69,51 @@ const businessAreas = [
   ];
 
 export const projects = [
+  {
+    id: 'hybrit',
+    name: 'Hybrit',
+    companyName: 'Hybrit',
+    companyId: 'hybrit',
+    type: 'medla',
+    image: hybritImg,
+    location: {
+      lat: 67.133798,
+      lng: 20.657898,
+    },
+    bounds: {
+        ne: '69.33701906,25.08883256',
+        sw: '64.71116182,16.22061112',
+    },
+    popularBusinessAreas: [
+      'anlaggning',
+      'bemanning',
+      'betong',
+      'bygg',
+      'driftochunderhall',
+      'el',
+    ],
+    description: {
+        title: 'Hybrit',
+        summary: 'Projektet är ett samarbete mellan SSAB, LKAB och Vattenfall och kommer innefatta av en demonstrationsanläggning för produktion av vätgas och tillverkning av järnsvamp genom direktreduktion. Anläggningen planeras i Gällivare kommun och planeras vara klar 2026. Bild från pilotanläggningen i Luleå.',
+        about: {
+          aboutProject: 'I demonstrationsanläggningen tar vi utvecklingen vidare från tester i labbmiljö och pilotskala, till att demonstrera produktion i industriell skala. Den planerade demonstrationsanläggningen omfattar produktion av vätgas och tillverkning av järnsvamp genom direktreduktion av järnmalm med vätgas. Anläggningen planeras i Gällivare kommun. Planen är att anläggningen ska vara klar 2026. Under 2020 påbörjades arbetet med att ta fram underlag för den miljökonsekvensbeskrivning som kommer ligga till grund för tillståndsansökan till Mark- och Miljödomstolen. Hybrit genomförde under 2020 samråd för de två möjliga placeringar som ursprungligen utreddes för demonstrationsanläggningen (i Luleå kommun och Gällivare kommun). Hybrit går nu vidare med fördjupade dialoger och utredningar för etablering i Gällivare kommun för att säkerställa att vi får tillgång till alla synpunkter och all information som kan ha betydelse för den fortsatta utformningen av anläggningen och miljökonsekvensbeskrivningen.',
+          aboutCompany: '',
+          externalServiceLink: '',
+          externalLink: 'https://www.hybritdevelopment.se/samrad/',
+          linkText: 'Läs mer'
+      },
+    },
+    stats: {
+      currentStatus: 'planning',
+      turbines: 42,
+      mw: 300,
+      constructionPeriod: {
+          start: 2022,
+          end: 2026,
+      },
+      region: 'Gällivare kommun',
+  },
+  },
   {
     id: 'kolvallen',
     name: 'Kölvallen',

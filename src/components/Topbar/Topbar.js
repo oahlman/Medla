@@ -106,8 +106,6 @@ class TopbarComponent extends Component {
     const searchParams = {
       ...currentSearchParams,
       ...originMaybe,
-      keywords: values.keywords,
-      pub_category: values.business,
       pub_listingCategory: values.category,
       address: search,
       bounds,

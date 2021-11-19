@@ -87,13 +87,7 @@ class TopbarSearchFormComponent extends Component {
                   );
                 }}
               />
-              <FieldSelect rootClassName={isMobile ? css.mobileInputRoot : desktopInputRootClass}
-                inputClassName={isMobile ? css.mobileInput : css.desktopInput}
-                id="business" name="business">
-                <option value="">Alla branscher</option>
-                <option value="anlaggning">Anlägging</option>
-                <option value="kostlogi">Kost och Logi</option>
-              </FieldSelect>
+            
               <FieldSelect className={isMobile ? css.mobileInputRoot : desktopInputRootClass}
                 inputClassName={isMobile ? css.mobileInput : css.desktopInput}
                 id="category" name="category">

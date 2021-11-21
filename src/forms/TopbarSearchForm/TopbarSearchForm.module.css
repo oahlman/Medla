@@ -52,8 +52,7 @@
   height: var(--topbarHeightDesktop);
   border: none;
   padding-top: 3px;
-
-  display: flex;
+  display: none;
   width: 24px;
   align-self: stretch;
   background-color: var(--matterColorLight);
@@ -63,13 +62,14 @@
   flex-grow: 1;
   /* Font */
   @apply --marketplaceH4FontStyles;
-  height: var(--topbarHeightDesktop);
+  align-self: center;
   line-height: unset;
+  height: 20px;
   border: none;
   padding-top: 0;
   padding-bottom: 0;
   padding-left: 10px;
-
+  min-width: 100%;
   /* Search text gets ellipsis if it's too wide */
   text-overflow: ellipsis;
   overflow-x: hidden;
@@ -146,4 +146,68 @@
       var(--TopbarSearchForm_bottomBorder)
   );
   max-width: 434px;
+}
+
+
+.searchBarWrapper{
+padding-bottom: 5px;
+
+
+}
+
+.searchBarContainer{
+display: flex;
+flex-direction: row;
+align-items: left;
+justify-content: stretch;
+border-style: solid;
+align-items: center;
+border-radius: 99px;
+border-width:2px;
+padding-right:20px;
+
+
+  
+}
+
+.submitButton{
+  height: 60px;
+  width: 60px;
+  border-style: none;
+  border-radius:99px;
+  margin-left:40px;
+  align-self: center;
+  background: var(--marketplaceColorDark);
+
+  
+}
+
+.icon{
+ color: var(--marketplaceColorLight);
+ height: 26px;
+ width: 26px;
+ padding:0px;
+ margin: 0px;
+
+}
+
+
+.divider1nd {
+  position: relative;
+  min-width:2px;
+  max-width:2px;
+  background-color:#000;
+  display:inline-fblock;
+  margin:0 0.25%;
+}
+
+.divider2nd {
+  position: relative;
+  min-width:2px;
+  max-width:2px;
+  max-height: 50%;
+  background-color:rgba(0, 0, 0, 0.256);
+  display:inline-fblock;
+  margin:0.25%;
+  margin-left:35px;
 }

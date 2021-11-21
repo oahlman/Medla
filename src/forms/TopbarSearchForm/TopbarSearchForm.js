@@ -3,7 +3,8 @@ import PropTypes from 'prop-types';
 import { Form as FinalForm, Field } from 'react-final-form';
 import classNames from 'classnames';
 import { intlShape, injectIntl } from '../../util/reactIntl';
-import { Form, LocationAutocompleteInput, FieldTextInput, FieldSelect, Button, SelectSingleFilter } from '../../components';
+import { Form, LocationAutocompleteInput, FieldTextInput, FieldSelectSwitch, Button, SelectSingleFilter, Collapsible, FieldBoolean } from '../../components';
+import { MdSearch } from 'react-icons/md';
 
 import css from './TopbarSearchForm.module.css';
 
@@ -64,8 +65,15 @@ class TopbarSearchFormComponent extends Component {
                     this.onSubmit(value);
                   };
 
+                  
                   const searchInput = { ...restInput, onSubmit: searchOnChange };
                   return (
+
+                    <div className={css.searchBarWrapper}> 
+
+
+                    <div className={css.searchBarContainer}> 
+
                     <LocationAutocompleteInput
                       className={isMobile ? css.mobileInputRoot : desktopInputRootClass}
                       iconClassName={isMobile ? css.mobileIcon : css.desktopIcon}
@@ -84,21 +92,34 @@ class TopbarSearchFormComponent extends Component {
                       input={searchInput}
                       meta={meta}
                     />
-                  );
-                }}
-              />
-            
-              <FieldSelect className={isMobile ? css.mobileInputRoot : desktopInputRootClass}
+                    
+              <FieldSelectSwitch className={isMobile ? css.mobileInputRoot : desktopInputRootClass}
                 inputClassName={isMobile ? css.mobileInput : css.desktopInput}
-                id="category" name="category">
+                id="category" name="category" type= 'radio'>
                 <option value="company">Företag</option>
                 <option value="job">Jobb</option>
-              </FieldSelect>
-          <Button
+              </FieldSelectSwitch>
+
+              
+              
+              
+              <span className={css.divider2nd}>
+              <button
                 className={css.submitButton}
                 type="submit"
-              >Sök
-              </Button>
+              ><MdSearch className={css.icon}></MdSearch>
+              </button>
+              </span>
+        
+
+               </div>
+               </div>
+                    );
+                  }}
+                />
+          
+              
+              
               </div>
             </Form>
           );

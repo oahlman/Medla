@@ -104,7 +104,7 @@ const FAQPage = () => {
                 </a>
                 <div className={ isOpen3 ? css.containerOpenText : css.hidden}>
                 {isOpen3 ? (
-                <p className={css.textFormat}><NamedLink name="SignupPage"> <FormattedMessage id="FrequentlyAskedQuestionsPage.signupForm" /> </NamedLink> och verifiera sedan ditt konto via länken du får på mail eller sms. Om uppgifterna är korrekta kommer ditt företag att synas på Medla inom 24 timmar. Om du inte vill göra ditt företag synligt kan du lämna fältet "Företag" blankt vid registrering.</p>
+                <p className={css.textFormat}><NamedLink name="SignupPage"> <FormattedMessage id="FrequentlyAskedQuestionsPage.signupForm" /> </NamedLink> och verifiera sedan ditt konto via länken du får på mail eller sms. Om uppgifterna är korrekta kommer ditt företag att synas på Medla inom 24 timmar. Om du inte vill göra ditt företag synligt kan du skriva "Inget företag" i fältet Företagnamn vid registrering.</p>
                 ) : null}
                 </div>
                 </div>
@@ -118,7 +118,7 @@ const FAQPage = () => {
                 </a>
                 <div className={ isOpen4 ? css.containerOpenText : css.hidden}>
                 {isOpen4 ? (
-                <p className={css.textFormat}>Absolut! Utöver företag så är andra organisationer som föreningar och kommuner är välkomna att registrera sig på Medla. Om du inte vill visa upp någon verksamhet alls kan du lämna fältet "Företag" blankt vid registrering.</p>
+                <p className={css.textFormat}>Absolut! Utöver företag så är andra organisationer som föreningar och kommuner är välkomna att registrera sig på Medla. Om du inte vill visa upp någon verksamhet alls kan du skriva "Inget företag" i fältet Företagnamn vid registrering.</p>
                 ) : null}
                 </div>
                 </div>

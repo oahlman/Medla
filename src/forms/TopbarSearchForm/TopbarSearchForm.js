@@ -74,6 +74,7 @@ class TopbarSearchFormComponent extends Component {
 
                     <div className={css.searchBarContainer}> 
 
+                    <h3 className={css.mobileHeading} >Välj plats</h3>
                     <LocationAutocompleteInput
                       className={isMobile ? css.mobileInputRoot : desktopInputRootClass}
                       iconClassName={isMobile ? css.mobileIcon : css.desktopIcon}
@@ -94,8 +95,11 @@ class TopbarSearchFormComponent extends Component {
                     />
 
                 
+                  <hr className={css.hr1}></hr>
+                  <hr className={css.hr2}></hr>              
 
-                <hr className={css.hr}></hr>              
+
+                <h3 className={css.mobileHeading} >Välj vad du söker efter</h3>
               <FieldSelectSwitch className={isMobile ? css.mobileInputRoot : desktopInputRootClass}
                 inputClassName={isMobile ? css.mobileInput : css.desktopInput}
                 id="category" name="category" type= 'radio'>
@@ -104,7 +108,7 @@ class TopbarSearchFormComponent extends Component {
               </FieldSelectSwitch>
 
               
-              <hr className={css.hr}></hr>
+              <hr className={css.hr3}></hr>
               
               <span className={css.divider2nd}>
               <button

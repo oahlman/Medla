@@ -146,7 +146,7 @@
   /* Absolute position to avoid affecting the layout of the autocomplete
    predictions list */
   position: absolute;
-  top: 73px;
+  top: 400px;
 }
 
 /* ================ Modal ================ */

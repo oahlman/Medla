@@ -2,11 +2,22 @@
 }
 
 .select {
-  
+  width: 285px;
+
+
+
   color: var(--matterColorAnti);
   border-bottom: none;
 
   padding-right: 20px;
+
+  @media (--viewportMedium) {
+    margin-top: 0px;
+    width: 90px;
+
+     
+
+  }
 
   & > option {
     color: var(--matterColor);
@@ -14,10 +25,10 @@
   & > option:disabled {
     
     color: var(--matterColorAnti);
+    
 
-  }
 }
-
+}
 .selectSuccess {
   color: var(--matterColor);
 }

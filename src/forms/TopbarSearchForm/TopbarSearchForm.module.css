@@ -12,31 +12,29 @@
 .mobileIcon {
   
   margin-left: 24px;
-  padding: 11px 0 17px 0;
 
   /* Borders */
-  border-bottom-width: var(--borderRadiusMobileSearch);
 
   display: none;
   width: 24px;
   align-self: stretch;
-  background-color: var(--matterColorLight);
 }
 
 .mobileInput {
   flex-grow: 1;
 
   /* Font */
-  @apply --marketplaceH1FontStyles;
+  @apply --marketplaceH4FontStyles;
 
   /* Layout */
   margin: 0 24px 0 0;
-  padding: 4px 13px 10px 13px;
+  padding: 4px 0px 10px 0px;
   height: var(--TopbarSearchForm_inputHeight);
   line-height: unset;
 
   /* Borders */
-  border-bottom-width: var(--borderRadiusMobileSearch);
+  border-bottom-width: none;
+  border-bottom: none;
 
   /* Safari bugfix: without this Safari will print placeholder to a wrong place */
   &::-webkit-input-placeholder {
@@ -166,9 +164,12 @@ align-items: left;
 justify-content: stretch;
 border-style: solid;
 border-color:rgba(0, 0, 0, 0.25);
-align-items: left;
 width:100%;
 padding-right: 20px;
+padding-left: 20px;
+padding-bottom: 10px;
+
+
 border-radius: 20px;
 border-width:2px;
 margin-left:20px;
@@ -178,7 +179,6 @@ height: fit-content;
 
 @media (--viewportMedium) {
 
-display: flex;
 flex-direction: row;
 align-items: left;
 justify-content: stretch;
@@ -187,6 +187,8 @@ border-color:rgba(0, 0, 0, 0.25);
 align-items: center;
 width:fit-content;
 padding-right: 20px;
+padding-left: 0px;
+padding-bottom: 0px;
 border-radius: 99px;
 border-width:2px;
 margin-left:20px;
@@ -197,13 +199,17 @@ height: 50px;
 
 
 .submitButton{
+  width: 100%;
   height: 40px;
-  width: 40px;
   border-style: none;
   border-radius:99px;
   align-self: center;
   background: var(--marketplaceColorDark);
 
+  @media (--viewportMedium) {
+    width: 40px;
+  
+  }
   
 }
 
@@ -216,25 +222,65 @@ height: 50px;
 
 }
 
-
-.divider1nd {
-  position: relative;
-  min-width:2px;
-  max-width:2px;
-  background-color:rgba(0, 0, 0, 0.25);
-  display:inline-fblock;
-  margin:0 0.25%;
-}
-
-.divider2nd {
-
-}
+.hr1 {
+  height: 2px;
+  margin: auto 10px;
+  margin-bottom: 5px;
+  margin-top:0px;
+  margin-left:0px;
+  align-self: left;
+  /* border-reset*/
+  border: none;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.20);
 
 
-.hr {
+  @media (--viewportMedium) {
+  display:none;
+  }
+  }
+
+
+.hr2 {
+  display:none;
+
+  @media (--viewportMedium) {
+    display: inline;
+    height: 20px;
+    margin: auto 25px;
+    /* border-reset*/
+    border: none;
+    border-left: 0.5px solid rgba(0, 0, 0, 0.20);
+  }
+
+  }
+
+.hr3 {
+  height: 20px;
+  margin: auto 10px;
+  margin-bottom: 20px;
+  margin-left:0px;
+
+  /* border-reset*/
+  border: none;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.20);
+
+
+@media (--viewportMedium) {
   height: 20px;
   margin: auto 25px;
   /* border-reset*/
   border: none;
   border-left: 0.5px solid rgba(0, 0, 0, 0.20);
+}
+
+}
+
+
+.mobileHeading{
+  display:block;
+
+
+  @media (--viewportMedium) {
+    display:none;
+  }
 }

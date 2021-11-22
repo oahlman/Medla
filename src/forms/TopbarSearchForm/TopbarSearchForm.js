@@ -93,9 +93,9 @@ class TopbarSearchFormComponent extends Component {
                       meta={meta}
                     />
 
-<hr className={css.hr}></hr>
+                
 
-                    
+                <hr className={css.hr}></hr>              
               <FieldSelectSwitch className={isMobile ? css.mobileInputRoot : desktopInputRootClass}
                 inputClassName={isMobile ? css.mobileInput : css.desktopInput}
                 id="category" name="category" type= 'radio'>

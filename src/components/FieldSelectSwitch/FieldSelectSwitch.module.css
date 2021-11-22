@@ -4,14 +4,17 @@
 .select {
   
   color: var(--matterColorAnti);
-  border-bottom-color: var(--attentionColor);
+  border-bottom: none;
+
   padding-right: 20px;
 
   & > option {
     color: var(--matterColor);
   }
   & > option:disabled {
+    
     color: var(--matterColorAnti);
+
   }
 }
 
@@ -24,4 +27,6 @@
 
 .switch{
   width: 100px;
+
 }
+

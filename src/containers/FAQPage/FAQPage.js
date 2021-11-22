@@ -75,7 +75,7 @@ const FAQPage = () => {
                 </a>
                 <div className={ isOpen1 ? css.containerOpenText : css.hidden}>
                 {isOpen1 ? (
-                <p className={css.textFormat}>Medla drivs av Peer Digital Sweden AB med stöd av en referensgrupp. Bolaget är startat av projektledare och utvecklare från Umeå Universitet. Referensgruppen består av intressenter och experter från energisektorn. Tjänsten bygger på lärdomar från ett pilotprojekt mellan Umeå Universitet, Vindkraftcentrum och Energimyndigheten för lokal samverkan i utbyggnaden av svensk vindkraft.</p>
+                <p className={css.textFormat}>Medla drivs av Peer Digital Sweden AB med stöd av en referensgrupp. Bolaget är startat av tidigare projektledare och utvecklare från Umeå Universitet. Referensgruppen består av intressenter och experter från energisektorn. Tjänsten bygger på lärdomar från ett pilotprojekt mellan Umeå Universitet, Vindkraftcentrum och Energimyndigheten för lokal samverkan i utbyggnaden av svensk vindkraft.</p>
                 ) : null}
                </div>
                </div>
@@ -118,7 +118,7 @@ const FAQPage = () => {
                 </a>
                 <div className={ isOpen4 ? css.containerOpenText : css.hidden}>
                 {isOpen4 ? (
-                <p className={css.textFormat}>Absolut! Andra verksamhetsformer som enskild firma och handelsbolag är också välkomna på Medla. Om du inte vill visa upp någon verksamhet alls kan du lämna fältet "Företag" blankt vid registrering.</p>
+                <p className={css.textFormat}>Absolut! Utöver företag så är andra organisationer som föreningar och kommuner är välkomna att registrera sig på Medla. Om du inte vill visa upp någon verksamhet alls kan du lämna fältet "Företag" blankt vid registrering.</p>
                 ) : null}
                 </div>
                 </div>

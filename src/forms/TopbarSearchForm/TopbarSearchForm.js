@@ -92,6 +92,9 @@ class TopbarSearchFormComponent extends Component {
                       input={searchInput}
                       meta={meta}
                     />
+
+<hr className={css.hr}></hr>
+
                     
               <FieldSelectSwitch className={isMobile ? css.mobileInputRoot : desktopInputRootClass}
                 inputClassName={isMobile ? css.mobileInput : css.desktopInput}
@@ -101,7 +104,7 @@ class TopbarSearchFormComponent extends Component {
               </FieldSelectSwitch>
 
               
-              
+              <hr className={css.hr}></hr>
               
               <span className={css.divider2nd}>
               <button

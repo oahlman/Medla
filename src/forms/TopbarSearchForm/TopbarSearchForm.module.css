@@ -2,10 +2,11 @@
 
 .mobileInputRoot {
   width: 100%;
+  
 }
 
 .desktopInputRoot {
-  height: var(--topbarHeightDesktop);
+  height: 5px !important;
 }
 
 .mobileIcon {
@@ -49,12 +50,11 @@
 }
 
 .desktopIcon {
-  height: var(--topbarHeightDesktop);
+  height: 5px !important;
   border: none;
   padding-top: 3px;
   display: none;
   width: 24px;
-  align-self: stretch;
   background-color: var(--matterColorLight);
 }
 
@@ -64,7 +64,7 @@
   @apply --marketplaceH4FontStyles;
   align-self: center;
   line-height: unset;
-  height: 20px;
+  height: 17px;
   border: none;
   padding-top: 0;
   padding-bottom: 0;
@@ -150,7 +150,8 @@
 
 
 .searchBarWrapper{
-padding-bottom: 5px;
+padding-bottom: 10px;
+padding-top:10px
 
 
 }
@@ -161,21 +162,25 @@ flex-direction: row;
 align-items: left;
 justify-content: stretch;
 border-style: solid;
+border-color:rgba(0, 0, 0, 0.25);
 align-items: center;
+width:fit-content;
+padding-right: 20px;
 border-radius: 99px;
 border-width:2px;
-padding-right:20px;
+margin-left:20px;
+height: 50px;
+
 
 
   
 }
 
 .submitButton{
-  height: 60px;
-  width: 60px;
+  height: 40px;
+  width: 40px;
   border-style: none;
   border-radius:99px;
-  margin-left:40px;
   align-self: center;
   background: var(--marketplaceColorDark);
 
@@ -196,18 +201,20 @@ padding-right:20px;
   position: relative;
   min-width:2px;
   max-width:2px;
-  background-color:#000;
+  background-color:rgba(0, 0, 0, 0.25);
   display:inline-fblock;
   margin:0 0.25%;
 }
 
 .divider2nd {
-  position: relative;
-  min-width:2px;
-  max-width:2px;
-  max-height: 50%;
-  background-color:rgba(0, 0, 0, 0.256);
-  display:inline-fblock;
-  margin:0.25%;
-  margin-left:35px;
+
+}
+
+
+.hr {
+  height: 20px;
+  margin: auto 25px;
+  /* border-reset*/
+  border: none;
+  border-left: 1px solid rgba(0, 0, 0, 0.25);
 }

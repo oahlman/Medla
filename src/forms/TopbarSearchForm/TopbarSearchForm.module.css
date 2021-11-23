@@ -133,7 +133,7 @@
 
 .desktopPredictions {
   position: absolute;
-  width: 700%;
+  width: 800%;
   padding-bottom: var(--locationAutocompleteBottomPadding);
   top: 45px;
   left: 0px;
@@ -149,7 +149,7 @@
     var(--topbarHeightDesktop) - var(--TopbarSearchForm_inputHeight) +
       var(--TopbarSearchForm_bottomBorder)
   );
-  max-width: 400px;
+  max-width: 450px;
 }
 
 

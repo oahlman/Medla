@@ -114,7 +114,7 @@ class TopbarSearchFormComponent extends Component {
               <button
                 className={css.submitButton}
                 type="submit"
-              ><MdSearch className={css.icon}></MdSearch>
+              ><MdSearch className={css.icon}></MdSearch > 
               </button>
               </span>
         

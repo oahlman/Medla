@@ -67,7 +67,7 @@
   border: none;
   padding-top: 0;
   padding-bottom: 0;
-  padding-left: 10px;
+  padding-left: 0px;
   min-width: 100%;
   /* Search text gets ellipsis if it's too wide */
   text-overflow: ellipsis;
@@ -112,6 +112,7 @@
           var(--TopbarSearchForm_bottomBorder)
       )
   );
+  border-radius: 20px;
   width: 100%;
   padding-bottom: var(--locationAutocompleteBottomPadding);
   background-color: var(--marketplaceColor);
@@ -119,6 +120,7 @@
   border-bottom-right-radius: var(--borderRadius);
   box-shadow: var(--boxShadowPopup);
   z-index: calc(var(--zIndexPopup) + 1);
+  margin-top:15px;
 }
 
 .mobilePredictionsAttribution {
@@ -126,25 +128,28 @@
    text is hidden in Mobile Safari without giving some extra space to
    it. */
   margin-bottom: 100px;
+  
 }
 
 .desktopPredictions {
   position: absolute;
-  width: 100%;
+  width: 700%;
   padding-bottom: var(--locationAutocompleteBottomPadding);
-  top: 50px;
-  left: 0;
+  top: 45px;
+  left: 0px;
   background-color: var(--marketplaceColor);
   border-bottom-left-radius: var(--borderRadius);
   border-bottom-right-radius: var(--borderRadius);
   box-shadow: var(--boxShadowPopup);
   z-index: calc(var(--zIndexPopup) + 1);
+  border-radius: 20px;
+  overflow:visible;
 
   margin-top: calc(
     var(--topbarHeightDesktop) - var(--TopbarSearchForm_inputHeight) +
       var(--TopbarSearchForm_bottomBorder)
   );
-  max-width: 434px;
+  max-width: 400px;
 }
 
 
@@ -186,7 +191,7 @@ border-style: solid;
 border-color:rgba(0, 0, 0, 0.25);
 align-items: center;
 width:fit-content;
-padding-right: 20px;
+padding-right: 5px;
 padding-left: 0px;
 padding-bottom: 0px;
 border-radius: 99px;
@@ -205,6 +210,7 @@ height: 50px;
   border-radius:99px;
   align-self: center;
   background: var(--marketplaceColorDark);
+ 
 
   @media (--viewportMedium) {
     width: 40px;

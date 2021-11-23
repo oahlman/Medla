@@ -37,7 +37,14 @@
 }
 
 .switch{
-  width: 100px;
+
+  @media (--viewportMedium) {
+    width: 100px;
+
+
+     
+
+  }
 
 }
 

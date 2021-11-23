@@ -2,7 +2,7 @@
 }
 
 .select {
-  width: 285px;
+  width: 100%;
 
 
 
@@ -37,7 +37,7 @@
 }
 
 .switch{
-
+  width: 100%;
   @media (--viewportMedium) {
     width: 100px;
 

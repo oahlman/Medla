@@ -99,7 +99,7 @@ class TopbarSearchFormComponent extends Component {
                   <hr className={css.hr2}></hr>              
 
 
-                <h3 className={css.mobileHeading} >Välj vad du söker efter</h3>
+                <h3 className={css.mobileHeading} >Välj kategori</h3>
               <FieldSelectSwitch className={isMobile ? css.mobileInputRoot : desktopInputRootClass}
                 inputClassName={isMobile ? css.mobileInput : css.desktopInput}
                 id="category" name="category" type= 'radio'>

@@ -25,11 +25,22 @@
   }
 }
 
-.home {
+.homeMobile {
   display: flex;
   padding: calc((var(--topbarHeight) - var(--CheckoutPage_logoHeight)) / 2) 24px;
 
   @media (--viewportLarge) {
+    display: none;
+    padding: calc((var(--topbarHeightDesktop) - var(--CheckoutPage_logoHeightDesktop)) / 2) 36px;
+  }
+}
+
+.homeDesktop {
+  display: none;
+  padding: calc((var(--topbarHeight) - var(--CheckoutPage_logoHeight)) / 2) 24px;
+
+  @media (--viewportLarge) {
+    display: flex;
     padding: calc((var(--topbarHeightDesktop) - var(--CheckoutPage_logoHeightDesktop)) / 2) 36px;
   }
 }

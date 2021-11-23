@@ -337,7 +337,7 @@ export class CheckoutPageComponent extends Component {
 
     const topbar = (
       <div className={css.topbar}>
-        <NamedLink className={css.home} name="LandingPage">
+        <NamedLink className={css.homeMobile} name="LandingPage">
           <Logo
             className={css.logoMobile}
             title={intl.formatMessage({
@@ -345,6 +345,8 @@ export class CheckoutPageComponent extends Component {
             })}
             format="mobile"
           />
+        </NamedLink>
+        <NamedLink className={css.homeDesktop} name="LandingPage">
           <Logo
             className={css.logoDesktop}
             alt={intl.formatMessage({
@@ -425,7 +427,7 @@ export class CheckoutPageComponent extends Component {
                   inProgress={this.state.submitting}
                   disabled={false}
                 >
-                  Confirm booking
+                  Bekräfta intresseanmälan
                 </PrimaryButton>
               </div>
             </Form>

@@ -202,7 +202,7 @@ const PanelHeading = props => {
       return isCustomer ? (
         <HeadingCustomerWithSubtitle
           className={titleClasses}
-          id="TransactionPanel.orderPreauthorizedTitle"
+          id="TransactionPanel.orderAcceptedTitle"
           values={{ customerName }}
           subtitleId="TransactionPanel.orderAcceptedSubtitle"
           subtitleValues={{ listingLink }}

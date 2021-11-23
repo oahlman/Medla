@@ -467,6 +467,7 @@
   @media (--viewportLarge) {
     display: block;
     margin-bottom: 48px;
+    margin-top: 12px;
   }
 }
 

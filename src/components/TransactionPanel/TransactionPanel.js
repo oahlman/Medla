@@ -29,7 +29,6 @@ import {
   ReviewModal,
   UserDisplayName,
 } from '../../components';
-import SectionMapMaybe from '../../containers/ListingPage/SectionMapMaybe';
 import { SendMessageForm } from '../../forms';
 import config from '../../config';
 
@@ -350,11 +349,6 @@ export class TransactionPanelComponent extends Component {
               provider={currentProvider}
               isCustomer={isCustomer}
             />
-            <SectionMapMaybe
-                    geolocation={geolocation}
-                    publicData={publicData}
-                    listingId={currentListing.id}
-                  />
             {isProvider ? (
               <div className={css.avatarWrapperProviderDesktop}>
                 <AvatarLarge user={currentCustomer} className={css.avatarDesktop} />

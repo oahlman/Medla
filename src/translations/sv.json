@@ -1281,7 +1281,7 @@
   "TransactionPanel.initialMessageFailed": "Oj, det gick inte att skicka meddelande från kassan.",
   "TransactionPanel.messageDeletedListing": "Listan raderas dock och kan inte ses längre.",
   "TransactionPanel.messageLoadingFailed": "Något gick fel när meddelanden laddades. Uppdatera sidan och försök igen.",
-  "TransactionPanel.orderAcceptedSubtitle": "Din bokning för {listingLink} har accepterats.",
+  "TransactionPanel.orderAcceptedSubtitle": "Ditt affärsförslag för {listingLink} har accepterats.",
   "TransactionPanel.orderAcceptedTitle": "Grattis {customerName}!",
   "TransactionPanel.orderCancelledTitle": "{customerName}, ditt affärsförslag för {listingLink} har avbrutits.",
   "TransactionPanel.orderDeclinedTitle": "{customerName}, ditt affärsförslag för {listingLink} har avböjts.",

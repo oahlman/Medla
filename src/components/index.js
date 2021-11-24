@@ -192,6 +192,8 @@ export { default as TopbarDesktop } from './TopbarDesktop/TopbarDesktop';
 export { default as TopbarMobileMenu } from './TopbarMobileMenu/TopbarMobileMenu';
 export { default as TransactionPanel } from './TransactionPanel/TransactionPanel';
 export { default as Collapsible } from './Collapsible/Collapsible';
+export { default as TopBarSearchModal } from './TopBarSearchModal/TopBarSearchModal';
+
 export { default as ContactCardForCompany } from './ContactCardCompany/ContactCardCompany';
 export { default as ContactCardForJob } from './ContactCardJob/ContactCardJob';
 export { default as ContactLinkJob } from './ContactLinkSmart/ContactLinkSmart';

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Form as FinalForm, Field } from 'react-final-form';
 import classNames from 'classnames';
 import { intlShape, injectIntl } from '../../util/reactIntl';
-import { Form, LocationAutocompleteInput, FieldTextInput, FieldSelectSwitch, Button, SelectSingleFilter, Collapsible, FieldBoolean } from '../../components';
+import { Form, LocationAutocompleteInput, FieldTextInput, FieldSelectSwitch, Button, SelectSingleFilter, TopBarSearchModal, FieldBoolean } from '../../components';
 import { MdSearch } from 'react-icons/md';
 
 import css from './TopbarSearchForm.module.css';
@@ -69,9 +69,9 @@ class TopbarSearchFormComponent extends Component {
                   const searchInput = { ...restInput, onSubmit: searchOnChange };
                   return (
 
-                    <div className={css.searchBarWrapper}> 
+                <div className={css.searchBarWrapper}> 
 
-
+                    <TopBarSearchModal className={css.displayNone}>
                     <div className={css.searchBarContainer}> 
 
                     <h3 className={css.mobileHeading} >Välj plats</h3>
@@ -95,31 +95,32 @@ class TopbarSearchFormComponent extends Component {
                     />
 
                 
-                  <hr className={css.hr1}></hr>
-                  <hr className={css.hr2}></hr>              
+                        <hr className={css.hr1}></hr>
+                        <hr className={css.hr2}></hr>              
 
 
-                <h3 className={css.mobileHeading} >Välj kategori</h3>
-              <FieldSelectSwitch className={isMobile ? css.mobileInputRoot : desktopInputRootClass}
-                inputClassName={isMobile ? css.mobileInput : css.desktopInput}
-                id="category" name="category" type= 'radio'>
-                <option value="company">Företag</option>
-                <option value="job">Jobb</option>
-              </FieldSelectSwitch>
+                         <h3 className={css.mobileHeading} >Välj kategori</h3>
+                        <FieldSelectSwitch className={isMobile ? css.mobileInputRoot : desktopInputRootClass}
+                          inputClassName={isMobile ? css.mobileInput : css.desktopInput}
+                          id="category" name="category" type= 'radio'>
+                           <option value="company">Företag</option>
+                             <option value="job">Jobb</option>
+                                </FieldSelectSwitch>
 
               
-              <hr className={css.hr3}></hr>
+                                  <hr className={css.hr3}></hr>
               
-              <span className={css.divider2nd}>
-              <button
-                className={css.submitButton}
-                type="submit"
-              ><MdSearch className={css.icon}></MdSearch > 
-              </button>
-              </span>
-        
+                              <span className={css.divider2nd}>
+                           <button
+                             className={css.submitButton}
+                             type="submit"
+                          ><MdSearch className={css.icon}></MdSearch > 
+                        </button>
+                          </span>
+                      
 
                </div>
+               </TopBarSearchModal>
                </div>
                     );
                   }}

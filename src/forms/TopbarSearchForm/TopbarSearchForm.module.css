@@ -181,7 +181,7 @@ margin-right:20px;
 height: fit-content;
 
 @media (--viewportMedium) {
-position: relative;
+position: absolute;
 flex-direction: row;
 align-items: left;
 justify-content: stretch;
@@ -194,8 +194,10 @@ padding-left: 0px;
 padding-bottom: 0px;
 border-radius: 99px;
 border-width: 2px;
-margin-left:20px;
+margin-left:auto;
+margin-right:auto;
 height: 50px;
+margin-top:20px;
 
 
 }

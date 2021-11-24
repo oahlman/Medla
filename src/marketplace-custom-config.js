@@ -41,7 +41,7 @@ export const filters = [
     group: 'primary',
     queryParamNames: ['pub_listingCategory'],
     config: {
-      options: [{ key: 'job', label: 'Uppdrag' }, { key: 'company', label: 'Företag' }],
+      options: [{ key: 'job', label: 'Jobb' }, { key: 'company', label: 'Företag' }],
     },
   },
 
@@ -60,22 +60,6 @@ export const filters = [
       // Note: label is not added through the translation files
       // to make filter customizations a bit easier.
       options: [
-        {
-          key: 'kolvallen',
-          label: 'Kölvallen',
-        },
-        {
-          key: 'skaftasen',
-          label: 'Skaftåsen',
-        },
-        {
-          key: 'bjornetjarnsberget',
-          label: 'Björnetjärnsberget',
-        },
-        {
-          key: 'han',
-          label: 'Hån',
-        },
         {
           key: 'bjornberget',
           label: 'Björnberget',

@@ -396,7 +396,7 @@
   "LayoutWrapperAccountSettingsSideNav.paymentMethodsTabTitle": "Payment methods",
   "LimitedAccessBanner.message": "Your are logged in as {firstName} {lastName}. You have limited rights for actions.",
   "LimitedAccessBanner.logout": "Log out",
-  "ListingCard.hostedBy": "Uppdrag från {authorName}.",
+  "ListingCard.hostedBy": "Jobb från {authorName}.",
   "ListingCard.perDay": "per day",
   "ListingCard.perNight": "per night",
   "ListingCard.perUnit": "per unit",

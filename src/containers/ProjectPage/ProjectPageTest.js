@@ -109,7 +109,7 @@ export class ProjectPageComponent extends Component {
       <span>
       <br></br>
         <NamedLink className={css.settingsLink} name="NewListingPage">
-          <FormattedMessage id="Skapa ett uppdrag" />
+          <FormattedMessage id="Skapa ett jobb" />
         </NamedLink>
       </span>
     </div>

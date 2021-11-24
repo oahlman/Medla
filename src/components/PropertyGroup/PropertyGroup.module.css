@@ -70,10 +70,12 @@
   /* Then we define how is distributed the remaining space */
   justify-content: left;
   margin-top: 10px;
+  margin-bottom:3px;
   
 
   @media (--viewportMedium) {
     margin-top: 0px;
+    margin-bottom:0px;
   }
 }
 

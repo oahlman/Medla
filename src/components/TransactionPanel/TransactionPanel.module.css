@@ -62,7 +62,6 @@
 
 /* Firefox doesn't support image aspect ratio inside flexbox */
 .aspectWrapper {
-  padding-bottom: 66.6667%; /* 3:2 Aspect Ratio */
   background-color: var(--matterColorNegative); /* Loading BG color */
 }
 
@@ -74,6 +73,7 @@
   left: 0;
   right: 0;
   width: 100%;
+  background-color: initial;
 
   @media (--viewportLarge) {
     border-radius: 2px 2px 0 0;
@@ -104,6 +104,7 @@
 /* Passed-in props for DetailCardImage subcomponent */
 .imageWrapperMobile {
   position: relative;
+  padding-bottom: 10%;
 
   @media (--viewportLarge) {
     display: none;
@@ -277,6 +278,7 @@
 /* BreakdownMaybe subcomponent */
 .breakdownMaybe {
   /* default "root" class for breakdown container */
+  display: none;
 }
 
 .bookingBreakdownTitle {
@@ -465,6 +467,7 @@
   @media (--viewportLarge) {
     display: block;
     margin-bottom: 48px;
+    margin-top: 12px;
   }
 }
 
@@ -483,4 +486,40 @@
 
 .hidden{
   display:none;
+}
+
+.sectionMap {
+  display: none;
+  padding: 0 24px;
+  margin-bottom: 35px;
+
+  @media (--viewportMedium) {
+    padding: 0;
+    margin-bottom: 0;
+    display: block;
+  }
+}
+
+.map {
+  /* Dimensions: Map takes all available space from viewport (excludes action button and section title) */
+  display: none;
+  height: calc(100vh - 193px);
+  width: 100%;
+
+  /* Static map: dimensions are 640px */
+  max-width: 640px;
+  max-height: 640px;
+  background-color: #eee;
+  padding: 0;
+  border: 0;
+  cursor: pointer;
+
+  @media (--viewportMedium) {
+    height: 75vh;
+  }
+
+  @media (--viewportLarge) {
+    display: block;
+    height: 268px;
+  }
 }

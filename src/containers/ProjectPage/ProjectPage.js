@@ -282,7 +282,7 @@ export class ProjectPageComponent extends Component {
 
             <div className={css.contentMain}>
 
-              <h3 className={css.subtitle}>Nya uppdrag</h3>
+              <h3 className={css.subtitle}>Nya jobb</h3>
               <div className={css.listingCards}>
               {queryListingsError ? queryError : null}
               {queryListingsError ? queryError : null}
@@ -300,7 +300,7 @@ export class ProjectPageComponent extends Component {
                 to={{
                   search: `?address=${projectName}&bounds=${projectData.bounds.ne},${projectData.bounds.sw}&pub_listingCategory=job`,
                 }}>
-                <span>Se alla uppdrag</span>
+                <span>Se alla jobb</span>
               </NamedLink>
               </div>
               </div>

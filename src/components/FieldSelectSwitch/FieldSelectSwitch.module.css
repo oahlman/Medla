@@ -30,7 +30,7 @@
 }
 }
 .selectSuccess {
-  color: lightgray;
+  color: var(--matterColorAnti);
   
 }
 

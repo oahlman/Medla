@@ -10,12 +10,12 @@ import { FormattedMessage } from '../../util/reactIntl';
 function TopBarSearchModal(props) {
   const [isOpen, setIsOpen] = useState(false);
 
-  const buttonText = isOpen ? 'Stäng sökning' : 'Starta sökning';
+  const buttonText = isOpen ? 'Stäng sökning' : 'Sök...';
   
 
   return (
     <div className={css.TopBarSearchModal}>  
-    <a className={isOpen ? css.questionCardOpen : css.questionCard} onClick={() => setIsOpen(!isOpen)}> 
+    <a className={isOpen ? css.hidden : css.questionCard} onClick={() => setIsOpen(!isOpen)}> 
        <span className={css.titleText}>{props.label }</span>
         
     <div className={isOpen ? css.buttonCloseText : css.buttonOpenText}>

@@ -154,11 +154,12 @@
 
 
 .searchBarWrapper{
-padding-bottom: 10px;
-padding-top:10px;
+padding-bottom: 5px;
+padding-top:5px;
 display:flex;
-justify-content: center;
-align-content:center;
+justify-content: left;
+align-content:left;
+margin-left:10px;
 
 }
 
@@ -197,7 +198,8 @@ border-width: 2px;
 margin-left:auto;
 margin-right:auto;
 height: 50px;
-margin-top:20px;
+margin-top:0px;
+background: white;
 
 
 }
@@ -300,3 +302,24 @@ margin-top:20px;
 .displayNone{
   display:none;
 }
+
+.displayWide{
+  display:inherit;
+  @media (--viewportMedium) {
+    display:none;
+  }
+  @media (--viewportLarge) {
+    display:inherit;
+  }
+}
+
+.displaySmall{
+  display:none;
+  @media (--viewportMedium) {
+    display:inherit;
+  }
+  @media (--viewportLarge) {
+    display:none;
+  }
+}
+

@@ -17,6 +17,8 @@ class TopbarSearchFormComponent extends Component {
     this.searchInput = null;
   }
 
+  
+
   onChange(location) {
     if (location.selectedPlace) {
       // Note that we use `onSubmit` instead of the conventional
@@ -40,6 +42,8 @@ class TopbarSearchFormComponent extends Component {
 
           const classes = classNames(rootClassName, className);
           const desktopInputRootClass = desktopInputRoot || css.desktopInputRoot;
+
+          
 
           // Allow form submit only when the place has changed
           const preventFormSubmit = e => e.preventDefault();
@@ -67,13 +71,10 @@ class TopbarSearchFormComponent extends Component {
 
                   
                   const searchInput = { ...restInput, onSubmit: searchOnChange };
-                  return (
 
-                <div className={css.searchBarWrapper}> 
-
-                    <TopBarSearchModal className={css.displayNone}>
-                    <div className={css.searchBarContainer}> 
-
+                  const searchBar = (
+                    <div className={css.searchBarWrapper}> 
+                          <div className={css.searchBarContainer}> 
                     <h3 className={css.mobileHeading} >Välj plats</h3>
                     <LocationAutocompleteInput
                       className={isMobile ? css.mobileInputRoot : desktopInputRootClass}
@@ -93,12 +94,12 @@ class TopbarSearchFormComponent extends Component {
                       input={searchInput}
                       meta={meta}
                     />
-
+      
                 
                         <hr className={css.hr1}></hr>
                         <hr className={css.hr2}></hr>              
-
-
+      
+      
                          <h3 className={css.mobileHeading} >Välj kategori</h3>
                         <FieldSelectSwitch className={isMobile ? css.mobileInputRoot : desktopInputRootClass}
                           inputClassName={isMobile ? css.mobileInput : css.desktopInput}
@@ -106,7 +107,7 @@ class TopbarSearchFormComponent extends Component {
                            <option value="company">Företag</option>
                              <option value="job">Jobb</option>
                                 </FieldSelectSwitch>
-
+      
               
                                   <hr className={css.hr3}></hr>
               
@@ -116,12 +117,25 @@ class TopbarSearchFormComponent extends Component {
                              type="submit"
                           ><MdSearch className={css.icon}></MdSearch > 
                         </button>
-                          </span>
-                      
+                          </span>                   
+               </div>
+               </div>
+      
+        );
+      
+                  return (
 
-               </div>
-               </TopBarSearchModal>
-               </div>
+                <div className={css.searchBarWrapper}> 
+                    <div className={css.displaySmall}>
+                    <TopBarSearchModal>
+                      {searchBar}
+                     </TopBarSearchModal>
+                   </div>
+
+                     <div className={css.displayWide}> 
+                     {searchBar} 
+                      </div>
+                       </div>
                     );
                   }}
                 />

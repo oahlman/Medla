@@ -30,7 +30,8 @@
 }
 }
 .selectSuccess {
-  color: var(--matterColor);
+  color: lightgray;
+  
 }
 
 .selectError {

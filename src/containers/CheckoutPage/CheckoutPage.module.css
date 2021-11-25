@@ -102,8 +102,7 @@
 
 .aspectWrapper {
   position: relative;
-  padding-bottom: 66.6667%; /* 3:2 Aspect Ratio */
-  background-color: var(--matterColorNegative); /* Loading BG color */
+  padding-bottom: 20%; /* 3:2 Aspect Ratio */
 
   @media (--viewportLarge) {
     display: none;
@@ -291,7 +290,6 @@
 
 .detailsAspectWrapper {
   position: relative;
-  padding-bottom: 66.6667%; /* 3:2 Aspect Ratio */
   background-color: var(--matterColorNegative); /* Loading BG color */
 }
 

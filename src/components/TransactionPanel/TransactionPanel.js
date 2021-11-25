@@ -342,13 +342,6 @@ export class TransactionPanelComponent extends Component {
       <div className={classes}>
         <div className={css.container}>
           <div className={css.txInfo}>
-          <SectionMapMaybe
-                rootClassName={css.imageWrapperMobile}
-                avatarWrapperClassName={css.avatarWrapperMobile}
-                geolocation={geolocation}
-                publicData={publicData}
-                listingId={currentListing.id}
-              />
             <DetailCardImage
               rootClassName={css.imageWrapperMobile}
               avatarWrapperClassName={css.avatarWrapperMobile}

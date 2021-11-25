@@ -35,6 +35,8 @@ import {
   FieldTextInput,
 } from '../../components';
 
+import SectionMapMaybe from '../../components/TransactionPanel/SectionMapMaybe';
+
 import { isScrollingDisabled } from '../../ducks/UI.duck';
 import {
   initiateOrder,
@@ -397,6 +399,9 @@ export class CheckoutPageComponent extends Component {
       { messageOptionalText: messageOptionalText }
     );
 
+    const { publicData, geolocation } = currentListing.attributes;
+    const location = publicData && publicData.location ? publicData.location : {};
+
     const bookingForm = (
       <FinalForm
         onSubmit={values => this.handleSubmit(values)}
@@ -441,12 +446,6 @@ export class CheckoutPageComponent extends Component {
         {topbar}
         <div className={css.contentContainer}>
           <div className={css.aspectWrapper}>
-            <ResponsiveImage
-              rootClassName={css.rootForImage}
-              alt={listingTitle}
-              image={firstImage}
-              variants={['landscape-crop', 'landscape-crop2x']}
-            />
           </div>
           <div className={classNames(css.avatarWrapper, css.avatarMobile)}>
             <AvatarMedium user={currentAuthor} disableProfileLink />
@@ -469,11 +468,11 @@ export class CheckoutPageComponent extends Component {
 
           <div className={css.detailsContainerDesktop}>
             <div className={css.detailsAspectWrapper}>
-              <ResponsiveImage
-                rootClassName={css.rootForImage}
-                alt={listingTitle}
-                image={firstImage}
-                variants={['landscape-crop', 'landscape-crop2x']}
+              <SectionMapMaybe
+                avatarWrapperClassName={css.avatarWrapperMobile}
+                geolocation={geolocation}
+                publicData={publicData}
+                listingId={currentListing.id}
               />
             </div>
             <div className={css.avatarWrapper}>

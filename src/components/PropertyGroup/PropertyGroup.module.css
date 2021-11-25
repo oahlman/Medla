@@ -70,22 +70,26 @@
   /* Then we define how is distributed the remaining space */
   justify-content: left;
   margin-top: 10px;
+  margin-bottom:3px;
   
 
   @media (--viewportMedium) {
     margin-top: 0px;
+    margin-bottom:0px;
   }
 }
 
 
 
 .selectedLabel {
-  background-color: var(--matterColorLight);
+  border-style:solid;
+  border-color: var(--matterColorAnti);
+  border-width: 0.1px;
   border-radius: 99px;
   padding-left: 7px;
   padding-right: 7px;
-  padding-top: 5px;
-  padding-bottom: 5px;
+  padding-top: 4px;
+  padding-bottom: 4px;
   margin-right:5px;
   font-size: 11px;
   color: var(--matterColor);
@@ -93,8 +97,8 @@
   
   @media (min-width: 700px) and (max-width: 1300px) {                             
     font-size: 8px;
-    padding-left: 5px;
-    padding-right: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
     margin-right:3px;
     
 

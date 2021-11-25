@@ -12,6 +12,7 @@ import config from '../../config';
 import { NamedLink, ResponsiveImage } from '../../components';
 import { findOptionsForSelectFilter } from '../../util/search';
 import { MdCategory, MdLocationPin } from 'react-icons/md';
+import { PropertyGroup } from '..';
 
 
 
@@ -72,6 +73,20 @@ export const ListingCardComponent = props => {
   const jobCategory = categoryLabel(category, publicData.category)
   const projectOnCard = projectCurrent ? projectCurrent : <FormattedMessage id="ListingCard.NoProjekt" />;
 
+  const categories = currentListing.attributes.publicData.category ? currentListing.attributes.publicData.category : [];
+
+  const tagsMaybe = categories && categories.length < 2 ? categories : categories.slice (0,2);
+  let extraTags =  categories && categories.length > 2 ? `+${categories.length - 2}`: [];
+  const categoryOptions = findOptionsForSelectFilter('category', filterConfig);
+  let propertyGroupTags =(
+      <PropertyGroup
+       id="CompanyCard.category"
+       options={categoryOptions}
+       publicData={publicData}
+       selectedOptions = {tagsMaybe}
+  />
+  );
+
   const user = author.attributes ;
 
   return (
@@ -114,23 +129,7 @@ export const ListingCardComponent = props => {
                 longWordClass: css.longWord,
                 })}
                </div>
-
-
-               <MdCategory className={css.icon}></MdCategory>
-
-              <div className={css.category}>
-
-                {richText(jobCategory, {
-                longWordMinLength: MIN_LENGTH_FOR_LONG_WORDS,
-                longWordClass: css.longWord,
-                })}
-
-
-               </div>
-
-
-
-
+ 
              </div>
             </div>
 
@@ -146,6 +145,13 @@ export const ListingCardComponent = props => {
                 })}
 
                   </div>
+
+                  <div className={css.containerTags}>
+              {propertyGroupTags}
+              <span className={categories.length > 2 ? css.extraTags : css.hidden} >
+                 {extraTags}
+              </span>
+                 </div>
 
 
         </div>

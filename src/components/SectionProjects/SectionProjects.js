@@ -4,7 +4,7 @@ import { FormattedMessage } from '../../util/reactIntl';
 import classNames from 'classnames';
 import { lazyLoadWithDimensions } from '../../util/contextHelpers';
 import { NamedLink } from '../../components';
-import { ResLogo, JamtkraftLogo, WpdLogo, VattenfallLogo, KabekoLogo } from './logos';
+import { AriseLogo, CloudberryLogo, ResLogo, JamtkraftLogo, WpdLogo, VattenfallLogo, KabekoLogo } from './logos';
 import { projects } from '../../containers/ProjectPage/ProjectConfig';
 
 import css from './SectionProjects.module.css';
@@ -17,6 +17,10 @@ class LocationImage extends Component {
 }
 const LazyImage = lazyLoadWithDimensions(LocationImage);
 
+const kolvallen = projects[projects.findIndex(id => id.id === 'kolvallen')];
+const skaftasen = projects[projects.findIndex(id => id.id === 'skaftasen')];
+const bjornetjarnsberget = projects[projects.findIndex(id => id.id === 'bjornetjarnsberget')];
+const han = projects[projects.findIndex(id => id.id === 'han')];
 const bjornberget = projects[projects.findIndex(id => id.id === 'bjornberget')];
 const stollsaterberget = projects[projects.findIndex(id => id.id === 'stollsaterberget')];
 const hocksjon = projects[projects.findIndex(id => id.id === 'hocksjon')];
@@ -90,40 +94,12 @@ const SectionProjects = props => {
         <FormattedMessage id="SectionProjects.title" />
       </div>
       <div className={css.locations}>
-        {locationLink(
+      {locationLink(
           bjornberget.name,
           bjornberget.stats.region,
           bjornberget.stats.currentStatus,
           bjornberget.id,
           ResLogo,
-          '?address=Björnberget%2C%20820%2046%20Ramsjö%2C%20Sverige&bounds=63.96074168%2C17.70965133%2C60.28740006%2C13.58712057'
-        )}
-
-        {locationLink(
-          stollsaterberget.name,
-          stollsaterberget.stats.region,
-          stollsaterberget.stats.currentStatus,
-          stollsaterberget.id,
-          WpdLogo,
-          '?address=Stöllsäterberget%2C%20Värmlands%20län%2C%20Sverige&bounds=61.50822595%2C14.52980007%2C59.61018271%2C12.50567518'
-        )}
-        {locationLink(
-          hocksjon.name,
-          hocksjon.stats.region,
-          hocksjon.stats.currentStatus,
-          hocksjon.id,
-          JamtkraftLogo,
-          '?address=Hocksjön%2C%20880%2040%20Ramsele%2C%20Sverige&bounds=64.33484208%2C17.27594777%2C62.50539696%2C15.13267783'
-        )}
-      </div>
-      <div className={css.locations}>
-        {locationLink(
-          gronhult.name,
-          gronhult.stats.region,
-          gronhult.stats.currentStatus,
-          gronhult.id,
-          VattenfallLogo,
-          '?address=Hocksjön%2C%20880%2040%20Ramsele%2C%20Sverige&bounds=64.33484208%2C17.27594777%2C62.50539696%2C15.13267783'
         )}
         {locationLink(
           blaklidenfabodberget.name,
@@ -131,7 +107,22 @@ const SectionProjects = props => {
           blaklidenfabodberget.stats.currentStatus,
           blaklidenfabodberget.id,
           VattenfallLogo,
-          '?address=Hocksjön%2C%20880%2040%20Ramsele%2C%20Sverige&bounds=64.33484208%2C17.27594777%2C62.50539696%2C15.13267783'
+        )}
+        {locationLink(
+          gronhult.name,
+          gronhult.stats.region,
+          gronhult.stats.currentStatus,
+          gronhult.id,
+          VattenfallLogo,
+        )}
+      </div>
+      <div className={css.locations}>
+        {locationLink(
+          hocksjon.name,
+          hocksjon.stats.region,
+          hocksjon.stats.currentStatus,
+          hocksjon.id,
+          JamtkraftLogo,
         )}
         {locationLink(
           kabeko.name,
@@ -139,8 +130,18 @@ const SectionProjects = props => {
           kabeko.stats.currentStatus,
           kabeko.id,
           KabekoLogo,
-          '?address=Hocksjön%2C%20880%2040%20Ramsele%2C%20Sverige&bounds=64.33484208%2C17.27594777%2C62.50539696%2C15.13267783'
         )}
+        {locationLink(
+          stollsaterberget.name,
+          stollsaterberget.stats.region,
+          stollsaterberget.stats.currentStatus,
+          stollsaterberget.id,
+          WpdLogo,
+        )}
+      </div>
+      <div className={css.locations}>
+      </div>
+      <div className={css.locationsOneOfThree}>
       </div>
     </div>
   );

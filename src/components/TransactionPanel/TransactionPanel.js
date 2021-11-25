@@ -49,6 +49,7 @@ import PanelHeading, {
   HEADING_CANCELED,
   HEADING_DELIVERED,
 } from './PanelHeading';
+import SectionMapMaybe from './SectionMapMaybe';
 
 import css from './TransactionPanel.module.css';
 
@@ -341,6 +342,13 @@ export class TransactionPanelComponent extends Component {
       <div className={classes}>
         <div className={css.container}>
           <div className={css.txInfo}>
+          <SectionMapMaybe
+                rootClassName={css.imageWrapperMobile}
+                avatarWrapperClassName={css.avatarWrapperMobile}
+                geolocation={geolocation}
+                publicData={publicData}
+                listingId={currentListing.id}
+              />
             <DetailCardImage
               rootClassName={css.imageWrapperMobile}
               avatarWrapperClassName={css.avatarWrapperMobile}
@@ -419,6 +427,12 @@ export class TransactionPanelComponent extends Component {
 
           <div className={css.asideDesktop}>
             <div className={css.detailCard}>
+            <SectionMapMaybe
+                avatarWrapperClassName={css.avatarWrapperDesktop}
+                geolocation={geolocation}
+                publicData={publicData}
+                listingId={currentListing.id}
+              />
               <DetailCardImage
                 avatarWrapperClassName={css.avatarWrapperDesktop}
                 listingTitle={listingTitle}

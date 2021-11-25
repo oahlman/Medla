@@ -17,7 +17,7 @@ import css from './SectionWhyMedla.module.css';
 
 const SectionWhyMedla = props => {
 
-  const { rootClassName, className, currentUser } = props;
+  const { rootClassName, className, currentUser, } = props;
   const linkNotifications = <NamedLink name="NotificationSettingsPage">
   <FormattedMessage id="SectionWhyMedla.textLinkBevakningar" />
 </NamedLink>
@@ -42,7 +42,7 @@ const linkJobSearch = <NamedLink name="SearchPage"  to={{
   '?address=Sverige&bounds=69.0599269995724%2C24.1933684832876%2C55.280224001785%2C10.8383668128319&pub_listingCategory=job',
 }}
 >
-  <FormattedMessage id="SectionWhyMedla.textLinkUppdrag" />
+  <FormattedMessage id="SectionWhyMedla.textLinkJobb" />
 </NamedLink>
 
 const linkToLogin = <NamedLink name="LoginPage">

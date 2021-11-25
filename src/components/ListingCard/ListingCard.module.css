@@ -98,7 +98,7 @@
   text-overflow: ellipsis;
   /* Font */
   margin: 10px;
-  padding-top:45px;
+  padding-top:25px;
 
   @apply --marketplaceH3FontStyles;
   color: var(--marketplaceColorLight);
@@ -107,6 +107,7 @@
 
   @media (--viewportMedium) {
     margin-bottom: 0px;
+    padding-top:30px;
   }
 }
 
@@ -171,11 +172,12 @@
 
   /* Remove default margins from font */
   margin-left:10px;
-  margin-top: 15px;
+  margin-top: 10px;
   margin-right:10px;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 
   @media (--viewportMedium) {
+    margin-bottom: 12px;
     min-height: 45px;
     height: 45px;
     -webkit-line-clamp: 2; /* number of lines to show */
@@ -277,3 +279,54 @@ right:-15px;
   color: var(--matterColorAnti);
 }
 
+.containerTags{
+  display: -webkit-inline-box;
+  flex-wrap: wrap;
+  align-content: flex-end;
+  position: relative;
+  align-content: flex-end;
+  margin-left:10px;
+  height: 0px;
+  margin-bottom: 20px;
+
+  color: var(--matterColor);
+  flex-shrink: 1;
+
+  @media (--viewportMedium) {
+    height: 0px;
+
+  }}
+
+
+  .extraTags {
+    @apply --marketplaceTinyFontStyles;
+    border-style:solid;
+    border-color: var(--matterColorAnti);
+     border-width: 0.1px;
+     border-radius: 9999px;
+    position: relative;
+    padding: 5px;
+    margin-right: 5px;
+    margin-top:10px;
+    flex-shrink: 1;
+    background-color: var(--matterColorMed);
+
+
+    @media (min-width: 700px) and (max-width: 1300px) {
+      padding:5px;
+      margin-right:3px;
+
+      margin-top:5px;
+
+
+
+    @media (--viewportMedium) {
+
+    }
+  }
+}
+
+  .hidden {
+    display:none;
+
+  }

@@ -56,14 +56,14 @@ const EditListingDescriptionFormComponent = props => (
           const phoneInvalidMessage = intl.formatMessage({
             id: 'SignupForm.phoneInvalid',
           });
-    
+
           const contactPhoneMessage = intl.formatMessage({
             id: 'EditCompanyDescriptionForm.contactPhone',
           }
           );
           const phoneValid = validators.swedenMobileFormatValid(phoneInvalidMessage);
-    
-    
+
+
        // username
        const usernameLabel = intl.formatMessage({
         id: 'SignupForm.usernameLabel',
@@ -79,15 +79,15 @@ const EditListingDescriptionFormComponent = props => (
       });
       const usernameRequired = validators.required(usernameRequiredMessage);
       const usernameValid = validators.usernameFormatValid(usernameInvalidMessage);
-    
+
           //email
-    
+
           const emailPlaceholder = currentEmail || '';
-    
+
           const emailRequiredMessage = intl.formatMessage({
             id: 'ContactDetailsForm.emailRequired',
           });
-          
+
           const emailRequired = validators.required(emailRequiredMessage);
           const emailInvalidMessage = intl.formatMessage({
             id: 'ContactDetailsForm.emailInvalid',
@@ -167,15 +167,6 @@ const EditListingDescriptionFormComponent = props => (
             validate={composeValidators(required(descriptionRequiredMessage))}
           />
 
-        
-
-          <CustomCategorySelectFieldMaybe
-            id="categoy"
-            name="category"
-            categories={categories}
-            intl={intl}
-          />
-
           <Button
             className={css.submitButton}
             type="submit"
@@ -186,7 +177,7 @@ const EditListingDescriptionFormComponent = props => (
             {saveActionMsg}
           </Button>
 
-      
+
         </Form>
       );
     }}

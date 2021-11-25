@@ -20,6 +20,34 @@
   }
 }
 
+.locationsTwoOfThree {
+  display: flex;
+  flex-direction: column;
+  margin-top: 0px;
+  margin-bottom: 10px;
+
+  @media (--viewportMedium) {
+    flex-direction: row;
+    margin-top: 33px;
+    margin-bottom: 57px;
+    width: calc(66.666666667% - 13px);
+  }
+}
+
+.locationsOneOfThree {
+  display: flex;
+  flex-direction: column;
+  margin-top: 0px;
+  margin-bottom: 10px;
+
+  @media (--viewportMedium) {
+    flex-direction: row;
+    margin-top: 33px;
+    margin-bottom: 57px;
+    width: calc(33.333333334% - 26px);
+  }
+}
+
 .location {
   width: 100%;
   margin-top: 25px;
@@ -164,3 +192,4 @@
   margin: auto;
   padding: 10px;
 }
+

@@ -40,7 +40,7 @@ När du besöker webbplatsen samlar vi automatiskt in viss information om din en
       <br></br>
       När vi pratar om "personlig information" i denna sekretesspolicy, talar vi både om enhetsinformation och orderinformation.
       </p>
-      <h2> HUR ANVÄNDER VI DIN PERSONLIGA INFORMATION? </h2>
+      <h2> HUR ANVÄNDER VI ANVÄNDARDATA? </h2>
       <p>
       Vi använder beställningsinformationen som vi samlar in i allmänhet för att utföra alla beställningar som görs via webbplatsen (inklusive bearbetning av din
       betalningsinformation, förse dig med fakturor och/eller orderbekräftelser). Dessutom använder vi denna beställningsinformation för att:
@@ -52,7 +52,7 @@ När du besöker webbplatsen samlar vi automatiskt in viss information om din en
       och för att bedöma framgången för våra marknadsförings- och reklamkampanjer).
       </p>
 
-      <h2> DELA DIN PERSONLIG INFORMATION </h2>
+      <h2> DELA DIN ANVÄNDARINFORMATION </h2>
       <p>
       Vi delar din personliga information med tredje part för att ta vara på din personliga information, enligt beskrivningen ovan.
       Vi använder också Google Analytics för att hjälpa oss att förstå hur våra kunder använder webbplatsen-du kan läsa mer om hur Google använder din personliga
@@ -64,6 +64,11 @@ När du besöker webbplatsen samlar vi automatiskt in viss information om din en
       i syfte att göra informationsutskick till användare av Medla ( "Sajten").
       <br></br>
       <br></br>
+      Dessutom, så delar vi också din information med våra kunder (projektägare) när du följer deras projekt, när du följer ett projekt godkänner du att vi delar dina kontaktuppgifter (mailadresser och telefonnummer) samt organisationsnummer till projektägaren.
+      Syftet med delningen till projektägare är att ge dem sätt att hitta och kontakta företag som anslutit till tjänsten (Medla).
+      <br></br>
+      <br></br>
+      
       Slutligen kan vi också dela din personliga information för att följa tillämpliga lagar och förordningar, för att svara på en stämning,
       sökorder eller annan laglig begäran om information vi får, eller för att på annat sätt skydda våra rättigheter.
       <br></br>

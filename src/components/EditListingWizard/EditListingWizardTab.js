@@ -16,7 +16,7 @@ import {
   EditListingLocationPanel,
   EditListingPhotosPanel,
   EditListingPoliciesPanel,
-  EditListingPricingPanel,
+  EditListingServicePanel,
 } from '../../components';
 
 import css from './EditListingWizard.module.css';
@@ -173,8 +173,8 @@ const EditListingWizardTab = props => {
     }
     case FEATURES: {
       const submitButtonTranslationKey = isNewListingFlow
-        ? 'EditListingWizard.saveNewFeatures'
-        : 'EditListingWizard.saveEditFeatures';
+        ? 'EditListingWizard.saveNewProjects'
+        : 'EditListingWizard.saveEditProjects';
       return (
         <EditListingFeaturesPanel
           {...panelProps(FEATURES)}
@@ -187,8 +187,8 @@ const EditListingWizardTab = props => {
     }
     case POLICY: {
       const submitButtonTranslationKey = isNewListingFlow
-        ? 'EditListingWizard.saveNewPolicies'
-        : 'EditListingWizard.saveEditPolicies';
+        ? 'EditListingWizard.saveNewBusinessAreas'
+        : 'EditListingWizard.saveEditBusinessAreas';
       return (
         <EditListingPoliciesPanel
           {...panelProps(POLICY)}

@@ -261,13 +261,16 @@
 
   .extraTags {
     @apply --marketplaceTinyFontStyles;
+    border-style:solid;
+    border-color: var(--matterColorAnti);
+     border-width: 0.1px;
+     border-radius: 9999px;
     position: relative;
-    border-radius: 99px;
     padding: 5px;
     margin-right: 5px;
     margin-top:10px;
     flex-shrink: 1;
-    background-color: var(--matterColorLight);
+    background-color: var(--matterColorMed);
 
 
     @media (min-width: 700px) and (max-width: 1300px) {

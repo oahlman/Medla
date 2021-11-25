@@ -41,7 +41,7 @@ export const filters = [
     group: 'primary',
     queryParamNames: ['pub_listingCategory'],
     config: {
-      options: [{ key: 'job', label: 'Uppdrag' }, { key: 'company', label: 'Företag' }],
+      options: [{ key: 'job', label: 'Jobb' }, { key: 'company', label: 'Företag' }],
     },
   },
 

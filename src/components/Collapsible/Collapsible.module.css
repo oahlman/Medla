@@ -30,7 +30,7 @@
   color:black;
   margin-left: auto;
   margin-right: auto;
-  background: rgba(0, 0, 0, 0.025);
+  background: var(--matterColorMediumLight);
   border-radius: 10px;
   box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.025);
 
@@ -65,7 +65,7 @@
   padding-bottom: 0px;
   transition: var(--transitionStyleButton);
   color:black;
-  background: rgba(0, 0, 0, 0.15);
+  background: var(--matterColorAnti);
   margin-left: auto;
   margin-right: auto;
   border-radius: 10px 10px 0px 0px;

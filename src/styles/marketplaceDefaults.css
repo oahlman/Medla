@@ -40,6 +40,7 @@
   --matterColorNegative: #e7e7e7;
   --matterColorBright: #fcfcfc;
   --matterColorLight: #ffffff;
+  --matterColorMediumLight: rgb(243, 243, 243);
 
   --matterColorLightTransparent: rgba(255, 255, 255, 0.65);
 

@@ -282,11 +282,11 @@ export class ProjectPageComponent extends Component {
 
             <div className={css.contentMain}>
 
-              <h3 className={css.subtitle}>Nya uppdrag</h3>
+              <h3 className={css.subtitle}>Nya jobb</h3>
               <div className={css.listingCards}>
               {queryListingsError ? queryError : null}
               {queryListingsError ? queryError : null}
-                {jobs.slice(0, 6).map(l => (
+                {jobs.slice(0, 3).map(l => (
                   <ListingCard
                     className={css.listingCard}
                     key={l.id.uuid}
@@ -300,12 +300,12 @@ export class ProjectPageComponent extends Component {
                 to={{
                   search: `?address=${projectName}&bounds=${projectData.bounds.ne},${projectData.bounds.sw}&pub_listingCategory=job`,
                 }}>
-                <span>Se alla uppdrag</span>
+                <span>Se alla jobb</span>
               </NamedLink>
               </div>
               </div>
 
-              <h3 className={css.subtitle}>Nya företag</h3>
+              <h3 className={css.subtitle}>Lokala företag</h3>
               <div className={css.companyCards}>
               {queryListingsError ? queryError : null}
                 {companies.slice(0, 6).map(c => (
@@ -417,8 +417,6 @@ export class ProjectPageComponent extends Component {
               </div>
               <div className={css.description}>
               <p>{projectData.description.about.aboutProject}</p>
-              <b>{projectData.companyName}</b>
-              <p>{projectData.description.about.aboutCompany}</p>
 
               <p><ExternalLink href={projectData.description.about.externalLink}>{projectData.description.about.linkText}</ExternalLink></p>
               </div>
@@ -426,6 +424,51 @@ export class ProjectPageComponent extends Component {
                   <NamedLink className={css.newJob} name="NewListingPage">
                     <FormattedMessage id="ProjectPage.newJob" />
                   </NamedLink>
+              </div>
+              </div>
+            </div>
+          </div>
+          </div>
+    );
+
+    const mainContentExternal = (
+      <div className={css.staticPageWrapper}>
+      <div className={css.contentWrapper}>
+            <div className={css.coverSection}>
+              <div className={css.coverInfo}>
+              <h1 className={css.pageTitle} >Välkommen till {projectName}</h1>
+              <p>{projectData.description.summary}</p>
+              <p className={css.externalService}>Projektet har en extern databas för leverantörer</p>
+              <div className={css.step}>
+                      <ExternalLink
+                        href={projectData.description.about.externalServiceLink}
+                        className={css.following}
+                      >
+                        <span className={css.followText}><FormattedMessage id={"ProjectPage.externalService"} /></span>
+                      </ExternalLink>
+                </div>
+              </div>
+              <img className={css.coverImage} src={projectData.image} alt={`Bild från projektet ${projectName}.`} />
+            </div>
+
+            <div className={css.contentMain}>
+
+              <h3 id='projectDetails' className={css.subtitle}> Om projektet </h3>
+              <b>{projectName}</b>
+              <div className={css.projectDetails}>
+              <div className={css.stats}>
+              <ul className={css.items}>
+                <li><b>Status</b> {status}</li>
+                <li><b>Storlek</b> {projectData.stats.turbines} turbiner</li>
+                <li><b>Effekt</b> {projectData.stats.mw} MW</li>
+                <li><b>Byggperiod</b> {projectData.stats.constructionPeriod.start}—{projectData.stats.constructionPeriod.end}</li>
+                <li><b>Plats</b> {projectData.stats.region}</li>
+              </ul>
+              </div>
+              <div className={css.description}>
+              <p>{projectData.description.about.aboutProject}</p>
+
+              <p><ExternalLink href={projectData.description.about.externalLink}>{projectData.description.about.linkText}</ExternalLink></p>
               </div>
               </div>
             </div>
@@ -443,6 +486,8 @@ export class ProjectPageComponent extends Component {
           <FormattedMessage id="ProfilePage.loadingDataFailed" />
         </p>
       );
+    } else if (projectData.type === 'external') {
+      content = mainContentExternal;
     } else {
       content = mainContent;
     }

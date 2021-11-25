@@ -1,6 +1,7 @@
 @import '../../styles/propertySets.css';
 
 .mobileInputRoot {
+  display: flex;
   width: 100%;
   
 }
@@ -154,14 +155,15 @@
 
 
 .searchBarWrapper{
-display:inline-flexbox;
+display:flex;
+flex-direction: column;
+justify-self: flex-end;
 padding-bottom: 5px;
 padding-top:5px;
-justify-content: center;
-align-self: center;
+
 width:100%;
 margin-left:10px;
-padding-right: 20px;
+padding-right: 15px;
 
 
 
@@ -194,9 +196,8 @@ padding-bottom: 10px;
 border-radius: 20px;
 border-width:1px;
 box-shadow: 0 0 10px 2px rgba(0,0,0,0.025);
-
-
 height: fit-content;
+
 
 @media (--viewportMedium) {
 display: flex;
@@ -256,7 +257,7 @@ background: white;
 
 .hr1 {
   height: 2px;
-  margin: auto 10px;
+  margin: auto 0px;
   margin-bottom: 5px;
   margin-top:0px;
   margin-left:0px;
@@ -288,8 +289,9 @@ background: white;
 
 .hr3 {
   height: 20px;
-  margin: auto 10px;
+  margin: auto 0px;
   margin-bottom: 20px;
+  margin-top: 5px;
   margin-left:0px;
 
   /* border-reset*/
@@ -308,8 +310,9 @@ background: white;
 }
 
 .mobileHeadingTop{
-  display:block;
-  margin-top: 95%;
+  display:flex;
+  margin-top: 70%;
+
 
   @media (--viewportMedium) {
     display:none;

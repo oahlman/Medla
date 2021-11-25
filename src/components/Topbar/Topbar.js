@@ -99,13 +99,14 @@ class TopbarComponent extends Component {
 
   handleSubmit(values) {
     const { currentSearchParams } = this.props;
-    const { search, selectedPlace } = values.location;
+    const { search, selectedPlace } = values.location ? values.location : {address: 'Sverige'};
     const { history } = this.props;
-    const { origin, bounds } = selectedPlace;
+    const { origin, bounds } = selectedPlace ? selectedPlace : {bounds: '69.0599269995724,24.1933684832876,55.280224001785,10.8383668128319'};
     const originMaybe = config.sortSearchByDistance ? { origin } : {};
     const searchParams = {
       ...currentSearchParams,
       ...originMaybe,
+      pub_listingCategory: values.category ? values.category : 'company',
       address: search,
       bounds,
     };
@@ -270,9 +271,7 @@ class TopbarComponent extends Component {
               initialValues={initialSearchFormValues}
               isMobile
             />
-            <p className={css.mobileHelp}>
-              <FormattedMessage id="Topbar.mobileSearchHelp" />
-            </p>
+      
           </div>
         </Modal>
         <ModalMissingInformation

@@ -169,3 +169,8 @@ max-width: 65%;
 .hidden{
   display:none;
 }
+
+.contentshow{
+transition-duration: 2s;
+
+}

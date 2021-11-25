@@ -133,7 +133,7 @@
 
 .desktopPredictions {
   position: absolute;
-  width: 800%;
+  width: 201%;
   padding-bottom: var(--locationAutocompleteBottomPadding);
   top: 45px;
   left: 0px;
@@ -163,11 +163,6 @@ padding-top:5px;
 width:100%;
 margin-left:10px;
 padding-right: 15px;
-
-
-
-
-
 
 @media (--viewportMedium) {
   display:flex;

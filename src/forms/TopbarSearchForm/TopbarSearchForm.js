@@ -74,6 +74,7 @@ class TopbarSearchFormComponent extends Component {
 
                   const searchBar = (
                     <div className={css.searchBarWrapper}> 
+                    <h1 className={css.mobileHeadingTop} >Smart sök</h1>
                           <div className={css.searchBarContainer}> 
                     <h3 className={css.mobileHeading} >Välj plats</h3>
                     <LocationAutocompleteInput

@@ -5,15 +5,17 @@
   width: 100%;
 
 
-
+  
   color: var(--matterColorAnti);
   border-bottom: none;
+  
 
   padding-right: 20px;
 
   @media (--viewportMedium) {
     margin-top: 0px;
     width: 90px;
+    background: none;
 
      
 
@@ -26,7 +28,6 @@
     
     color: var(--matterColorAnti);
     
-
 }
 }
 .selectSuccess {
@@ -40,7 +41,7 @@
 .switch{
   width: 100%;
   @media (--viewportMedium) {
-    width: 100px;
+    width: 60px;
 
 
      

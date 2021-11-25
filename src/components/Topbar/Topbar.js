@@ -27,6 +27,8 @@ import MenuIcon from './MenuIcon';
 import SearchIcon from './SearchIcon';
 import css from './Topbar.module.css';
 import ModalMissingAccountInformation from '../ModalMissingAccountInformation/ModalMissingAccountInformation';
+import DesktopLogo from '../../components/Logo/DesktopLogo';
+
 
 const MAX_MOBILE_SCREEN_WIDTH = 768;
 
@@ -256,6 +258,7 @@ class TopbarComponent extends Component {
         >
           {authInProgress ? null : mobileMenu}
         </Modal>
+        
         <Modal
           id="TopbarMobileSearch"
           containerClassName={css.modalContainer}
@@ -264,8 +267,18 @@ class TopbarComponent extends Component {
           usePortal
           onManageDisableScrolling={onManageDisableScrolling}
           profileImage={profileImage}
+          
         >
+            
+             <NamedLink className={css.logo}
+              name="LandingPage"
+            >
+          <DesktopLogo></DesktopLogo>
+           </NamedLink>
+
+
           <div className={css.searchContainer}>
+       
             <TopbarSearchForm
               onSubmit={this.handleSubmit}
               initialValues={initialSearchFormValues}

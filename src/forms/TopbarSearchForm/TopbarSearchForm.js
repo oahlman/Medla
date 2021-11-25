@@ -5,8 +5,10 @@ import classNames from 'classnames';
 import { intlShape, injectIntl } from '../../util/reactIntl';
 import { Form, LocationAutocompleteInput, FieldTextInput, FieldSelectSwitch, Button, SelectSingleFilter, TopBarSearchModal, FieldBoolean } from '../../components';
 import { MdSearch } from 'react-icons/md';
+import { NamedLink } from '../../components';
 
 import css from './TopbarSearchForm.module.css';
+
 
 const identity = v => v;
 
@@ -35,25 +37,32 @@ class TopbarSearchFormComponent extends Component {
 
   render() {
     return (
+      
       <FinalForm
+      
         {...this.props}
         render={formRenderProps => {
           const { rootClassName, className, desktopInputRoot, intl, isMobile, handleSubmit } = formRenderProps;
 
           const classes = classNames(rootClassName, className);
           const desktopInputRootClass = desktopInputRoot || css.desktopInputRoot;
-
           
+      
 
           // Allow form submit only when the place has changed
           const preventFormSubmit = e => e.preventDefault();
 
           return (
             <Form
+            
               className={classes}
               onSubmit={handleSubmit}
               enforcePagePreloadFor="SearchPage"
+              
+              
             ><div className={css.searchBar}>
+
+
               <Field
                 name="location"
                 format={identity}

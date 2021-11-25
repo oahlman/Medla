@@ -156,15 +156,20 @@
 .searchBarWrapper{
 display:flex;
 flex-direction: column;
+position: fixed;
+bottom: 40px;
+left: 0;
 
 padding-bottom: 5px;
 padding-top:5px;
 
 width:100%;
-margin-left:10px;
-padding-right: 15px;
+margin-left:20px;
+padding-right: 40px;
 
 @media (--viewportMedium) {
+  position: relative;
+  bottom:0px;
   display:flex;
   padding-bottom: 5px;
   padding-top:5px;
@@ -305,7 +310,6 @@ background: white;
 
 .mobileHeadingTop{
   display:flex;
-  margin-top: 70%;
 
 
   @media (--viewportMedium) {

@@ -23,7 +23,6 @@
 
 .mobileInput {
   flex-grow: 1;
-
   /* Font */
   @apply --marketplaceH4FontStyles;
 
@@ -157,7 +156,7 @@
 .searchBarWrapper{
 display:flex;
 flex-direction: column;
-justify-self: flex-end;
+
 padding-bottom: 5px;
 padding-top:5px;
 

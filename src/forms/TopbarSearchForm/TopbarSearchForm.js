@@ -73,6 +73,7 @@ class TopbarSearchFormComponent extends Component {
                   const searchInput = { ...restInput, onSubmit: searchOnChange };
 
                   const searchBar = (
+
                     <div className={css.searchBarWrapper}> 
                     <h1 className={css.mobileHeadingTop} >Smart sök</h1>
                           <div className={css.searchBarContainer}> 
@@ -121,6 +122,7 @@ class TopbarSearchFormComponent extends Component {
                           </span>                   
                </div>
                </div>
+           
       
         );
       

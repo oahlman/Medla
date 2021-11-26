@@ -1,5 +1,5 @@
 import isEmpty from 'lodash/isEmpty';
-import { clearCurrentUser, fetchCurrentUser } from './user.duck';
+import { clearCurrentUser, fetchCurrentUser, fetchCurrentUserCompanyListing } from './user.duck';
 import { createUserWithIdp } from '../util/api';
 import { storableError } from '../util/errors';
 import * as log from '../util/log';
@@ -271,6 +271,7 @@ export const signup = params => (dispatch, getState, sdk) => {
   .then(res => {
     return dispatch(updateCompanyListingId());
   })
+  .then(() => dispatch(fetchCurrentUserCompanyListing()))
   .then(res => {
     return dispatch(confirmSuccess());
   });

@@ -168,6 +168,7 @@ padding-right: 40px;
 
 @media (--viewportMedium) {
   position: inherit;
+  padding-right: 0px;
   bottom:0px;
   display:flex;
   padding-bottom: 5px;

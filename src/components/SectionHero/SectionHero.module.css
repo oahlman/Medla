@@ -113,6 +113,14 @@
 
   @media (--viewportMedium) {
     display: block;
+    width: 200px;
+  }
+
+  @media (--viewportLarge) {
+    width: 225px;
+  }
+
+  @media (--viewportXLarge) {
     width: 260px;
   }
 }
@@ -131,6 +139,14 @@
 
   @media (--viewportMedium) {
     display: block;
+    width: 200px;
+  }
+
+  @media (--viewportLarge) {
+    width: 225px;
+  }
+
+  @media (--viewportXLarge) {
     width: 260px;
   }
 }
@@ -156,11 +172,11 @@ background-color: transparent;
   margin-right: 10px;
   width: 160px;
   @media (--viewportMedium) {
-    width: 324px;
+    width: 200px;
     margin-right: 20px;
   }
   @media (--viewportLarge) {
-    width: 324px;
+    width: 225px;
     margin-right: 40px;
   }
 }

@@ -1,40 +1,40 @@
 @import '../../styles/propertySets.css';
 
 .mobileInputRoot {
+  display: flex;
   width: 100%;
+  
 }
 
 .desktopInputRoot {
-  height: var(--topbarHeightDesktop);
+  height: 5px !important;
 }
 
 .mobileIcon {
+  
   margin-left: 24px;
-  padding: 11px 0 17px 0;
 
   /* Borders */
-  border-bottom-width: var(--borderRadiusMobileSearch);
 
-  display: flex;
+  display: none;
   width: 24px;
   align-self: stretch;
-  background-color: var(--matterColorLight);
 }
 
 .mobileInput {
   flex-grow: 1;
-
   /* Font */
-  @apply --marketplaceH1FontStyles;
+  @apply --marketplaceH4FontStyles;
 
   /* Layout */
   margin: 0 24px 0 0;
-  padding: 4px 13px 10px 13px;
+  padding: 4px 0px 10px 0px;
   height: var(--TopbarSearchForm_inputHeight);
   line-height: unset;
 
   /* Borders */
-  border-bottom-width: var(--borderRadiusMobileSearch);
+  border-bottom-width: none;
+  border-bottom: none;
 
   /* Safari bugfix: without this Safari will print placeholder to a wrong place */
   &::-webkit-input-placeholder {
@@ -49,13 +49,11 @@
 }
 
 .desktopIcon {
-  height: var(--topbarHeightDesktop);
+  height: 5px !important;
   border: none;
   padding-top: 3px;
-
-  display: flex;
+  display: none;
   width: 24px;
-  align-self: stretch;
   background-color: var(--matterColorLight);
 }
 
@@ -63,13 +61,14 @@
   flex-grow: 1;
   /* Font */
   @apply --marketplaceH4FontStyles;
-  height: var(--topbarHeightDesktop);
+  align-self: center;
   line-height: unset;
+  height: 17px;
   border: none;
   padding-top: 0;
   padding-bottom: 0;
-  padding-left: 10px;
-
+  padding-left: 0px;
+  min-width: 100%;
   /* Search text gets ellipsis if it's too wide */
   text-overflow: ellipsis;
   overflow-x: hidden;
@@ -113,6 +112,7 @@
           var(--TopbarSearchForm_bottomBorder)
       )
   );
+  border-radius: 20px;
   width: 100%;
   padding-bottom: var(--locationAutocompleteBottomPadding);
   background-color: var(--marketplaceColor);
@@ -120,6 +120,7 @@
   border-bottom-right-radius: var(--borderRadius);
   box-shadow: var(--boxShadowPopup);
   z-index: calc(var(--zIndexPopup) + 1);
+  margin-top:15px;
 }
 
 .mobilePredictionsAttribution {
@@ -127,23 +128,226 @@
    text is hidden in Mobile Safari without giving some extra space to
    it. */
   margin-bottom: 100px;
+  
 }
 
 .desktopPredictions {
   position: absolute;
-  width: 100%;
+  width: 201%;
   padding-bottom: var(--locationAutocompleteBottomPadding);
-  top: 50px;
-  left: 0;
+  top: 45px;
+  left: 0px;
   background-color: var(--marketplaceColor);
   border-bottom-left-radius: var(--borderRadius);
   border-bottom-right-radius: var(--borderRadius);
   box-shadow: var(--boxShadowPopup);
   z-index: calc(var(--zIndexPopup) + 1);
+  border-radius: 20px;
+  overflow:visible;
 
   margin-top: calc(
     var(--topbarHeightDesktop) - var(--TopbarSearchForm_inputHeight) +
       var(--TopbarSearchForm_bottomBorder)
   );
-  max-width: 434px;
+  max-width: 450px;
 }
+
+
+.searchBarWrapper{
+display:flex;
+flex-direction: column;
+position: fixed;
+bottom: 40px;
+left: 0;
+
+padding-bottom: 5px;
+padding-top:5px;
+
+width:100%;
+margin-left:20px;
+padding-right: 40px;
+
+@media (--viewportMedium) {
+  position: relative;
+  bottom:0px;
+  display:flex;
+  padding-bottom: 5px;
+  padding-top:5px;
+  display:flex;
+  justify-content: left;
+  align-content:left;
+
+  
+  }
+  }
+
+.searchBarContainer{
+display: flex;
+flex-direction: column;
+align-items: left;
+justify-content: stretch;
+border-style: solid;
+border-color:rgba(0, 0, 0, 0.1);
+width:100%;
+padding-right: 20px;
+padding-left: 20px;
+padding-bottom: 10px;
+border-radius: 20px;
+border-width:1px;
+box-shadow: 0 0 10px 2px rgba(0,0,0,0.025);
+height: fit-content;
+
+
+@media (--viewportMedium) {
+display: flex;
+position: absolute;
+flex-direction: row;
+align-items: left;
+justify-content: stretch;
+border-style: solid;
+border-color:rgba(0, 0, 0, 0.1);
+align-items: center;
+width:fit-content;
+padding-right: 5px;
+padding-left: 0px;
+padding-bottom: 0px;
+border-radius: 99px;
+border-width: 1px;
+margin-left:auto;
+margin-right:auto;
+height: 50px;
+margin-top:0px;
+background: white;
+
+
+}
+}
+  
+
+
+.submitButton{
+  width: 100%;
+  height: 40px;
+  border-style: none;
+  border-radius:99px;
+  align-self: center;
+  background: var(--marketplaceColorDark);
+ 
+
+  @media (--viewportMedium) {
+    width: 40px;
+  
+  }
+}
+
+.submitButton:hover{
+  transition-duration: 0.3s;
+  background: var(--marketplaceColor);
+}
+
+.icon{
+ color: var(--marketplaceColorLight);
+ height: 26px;
+ width: 26px;
+ padding:0px;
+ margin: 0px;
+
+}
+
+.hr1 {
+  height: 2px;
+  margin: auto 0px;
+  margin-bottom: 5px;
+  margin-top:0px;
+  margin-left:0px;
+  align-self: left;
+  /* border-reset*/
+  border: none;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.20);
+
+
+  @media (--viewportMedium) {
+  display:none;
+  }
+  }
+
+
+.hr2 {
+  display:none;
+
+  @media (--viewportMedium) {
+    display: inline;
+    height: 20px;
+    margin: auto 25px;
+    /* border-reset*/
+    border: none;
+    border-left: 0.5px solid rgba(0, 0, 0, 0.20);
+  }
+
+  }
+
+.hr3 {
+  height: 20px;
+  margin: auto 0px;
+  margin-bottom: 20px;
+  margin-top: 5px;
+  margin-left:0px;
+
+  /* border-reset*/
+  border: none;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.20);
+
+
+@media (--viewportMedium) {
+  height: 20px;
+  margin: auto 25px;
+  /* border-reset*/
+  border: none;
+  border-left: 0.5px solid rgba(0, 0, 0, 0.20);
+}
+
+}
+
+.mobileHeadingTop{
+  display:flex;
+
+
+  @media (--viewportMedium) {
+    display:none;
+  }
+}
+
+
+.mobileHeading{
+  display:block;
+
+
+  @media (--viewportMedium) {
+    display:none;
+  }
+}
+
+.displayNone{
+  display:none;
+}
+
+.displayWide{
+  display:inherit;
+  @media (--viewportMedium) {
+    display:none;
+  }
+  @media (--viewportLarge) {
+    display:inherit;
+  }
+}
+
+.displaySmall{
+  display:none;
+  @media (--viewportMedium) {
+    display:inherit;
+  }
+  @media (--viewportLarge) {
+    display:none;
+  }
+}
+

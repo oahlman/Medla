@@ -177,10 +177,12 @@
 }
 
 .mobileReviews {
+  display: none;
   margin-bottom: 36px;
 }
 
 .desktopReviews {
+  display: none;
   margin-top: 28px;
 
   @media (--viewportMedium) {

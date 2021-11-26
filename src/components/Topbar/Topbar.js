@@ -27,6 +27,8 @@ import MenuIcon from './MenuIcon';
 import SearchIcon from './SearchIcon';
 import css from './Topbar.module.css';
 import ModalMissingAccountInformation from '../ModalMissingAccountInformation/ModalMissingAccountInformation';
+import DesktopLogo from '../../components/Logo/DesktopLogo';
+
 
 const MAX_MOBILE_SCREEN_WIDTH = 768;
 
@@ -99,13 +101,14 @@ class TopbarComponent extends Component {
 
   handleSubmit(values) {
     const { currentSearchParams } = this.props;
-    const { search, selectedPlace } = values.location;
+    const { search, selectedPlace } = values.location ? values.location : {address: 'Sverige'};
     const { history } = this.props;
-    const { origin, bounds } = selectedPlace;
+    const { origin, bounds } = selectedPlace ? selectedPlace : {bounds: '69.0599269995724,24.1933684832876,55.280224001785,10.8383668128319'};
     const originMaybe = config.sortSearchByDistance ? { origin } : {};
     const searchParams = {
       ...currentSearchParams,
       ...originMaybe,
+      pub_listingCategory: values.category ? values.category : 'company',
       address: search,
       bounds,
     };
@@ -255,6 +258,7 @@ class TopbarComponent extends Component {
         >
           {authInProgress ? null : mobileMenu}
         </Modal>
+        
         <Modal
           id="TopbarMobileSearch"
           containerClassName={css.modalContainer}
@@ -263,16 +267,24 @@ class TopbarComponent extends Component {
           usePortal
           onManageDisableScrolling={onManageDisableScrolling}
           profileImage={profileImage}
+          
         >
+            
+             <NamedLink className={css.logo}
+              name="LandingPage"
+            >
+          <DesktopLogo></DesktopLogo>
+           </NamedLink>
+
+
           <div className={css.searchContainer}>
+       
             <TopbarSearchForm
               onSubmit={this.handleSubmit}
               initialValues={initialSearchFormValues}
               isMobile
             />
-            <p className={css.mobileHelp}>
-              <FormattedMessage id="Topbar.mobileSearchHelp" />
-            </p>
+      
           </div>
         </Modal>
         <ModalMissingInformation

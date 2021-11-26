@@ -1,0 +1,52 @@
+.root {
+}
+
+.select {
+  width: 100%;
+
+
+  
+  color: var(--matterColorAnti);
+  border-bottom: none;
+  
+
+  padding-right: 20px;
+
+  @media (--viewportMedium) {
+    margin-top: 0px;
+    width: 90px;
+    background: none;
+
+     
+
+  }
+
+  & > option {
+    color: var(--matterColor);
+  }
+  & > option:disabled {
+    
+    color: var(--matterColorAnti);
+    
+}
+}
+.selectSuccess {
+  color: var(--matterColorAnti);
+  
+}
+
+.selectError {
+}
+
+.switch{
+  width: 100%;
+  @media (--viewportMedium) {
+    width: 60px;
+
+
+     
+
+  }
+
+}
+

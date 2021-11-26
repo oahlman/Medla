@@ -179,6 +179,10 @@ background-color: transparent;
     width: 225px;
     margin-right: 40px;
   }
+
+  @media (--viewportXLarge) {
+    width: 324px;
+  }
 }
 
 .step:last-of-type {

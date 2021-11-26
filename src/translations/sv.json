@@ -406,7 +406,7 @@
   "Footer.toContactPage": "Kontakt",
   "Footer.toFAQPage": "Vanliga frågor",
   "Footer.toHelpPage": "Hjälp",
-  "Footer.toNewListingPage": "Nytt jobb",
+  "Footer.toNewListingPage": "Publicera ett jobb",
   "ImageCarousel.imageAltText": "Visar bild {index}/{count}",
   "ImageFromFile.couldNotReadFile": "Det gick inte att läsa filen",
   "InboxPage.fetchFailed": "Det gick inte att läsa in alla meddelanden. Försök igen.",

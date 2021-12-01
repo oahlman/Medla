@@ -329,7 +329,7 @@ export class ProjectPageComponent extends Component {
               </div>
 
               <h3 className={css.subtitle}>
-                Populära tjänster
+                Populära branscher
               </h3>
               <div className={css.serviceCards}>
 
@@ -392,9 +392,9 @@ export class ProjectPageComponent extends Component {
                 className={css.helperLink}
                 name="SearchPage"
                 to={{
-                  search: `?address=${projectName}&bounds=${projectData.bounds.ne},${projectData.bounds.sw}&pub_category=has_any&pub_listingCategory=company`,
+                  search: `?address=${projectName}&bounds=${projectData.bounds.ne},${projectData.bounds.sw}&pub_listingCategory=company`,
                 }}>
-                <span>Se alla tjänster</span>
+                <span>Se alla branscher</span>
               </NamedLink>
               </div>
 

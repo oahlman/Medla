@@ -402,13 +402,24 @@ export class ProjectPageComponent extends Component {
               <b>{projectName}</b>
               <div className={css.projectDetails}>
               <div className={css.stats}>
+                <div className={css.statusBar}>
+                  <div className={css.statusPlanningCircle}></div>
+                  <div className={css.statusPlanningLine}></div>
+                  <div className={css.statusBuildingCircle}></div>
+                  <div className={css.statusBuildingLine}></div>
+                  <div className={css.statusRunningCircle}></div>
+                </div>
+                <div className={css.statusCardRunning}>
+                <div className={css.statusArrowRunning}></div>
+                <div className={css.statusTextRunning}>
+                  <b>Status</b> {status}</div>
+                </div>
               <div className={css.newJobDesktop}>
                   <NamedLink className={css.newJob} name="NewListingPage">
                     <FormattedMessage id="ProjectPage.newJob" />
                   </NamedLink>
               </div>
               <ul className={css.items}>
-                <li><b>Status</b> {status}</li>
                 <li><b>Storlek</b> {projectData.stats.turbines} turbiner</li>
                 <li><b>Effekt</b> {projectData.stats.mw} MW</li>
                 <li><b>Byggperiod</b> {projectData.stats.constructionPeriod.start}—{projectData.stats.constructionPeriod.end}</li>

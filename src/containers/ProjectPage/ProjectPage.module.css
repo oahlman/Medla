@@ -486,3 +486,107 @@ li {
 .externalServiceButton {
   @apply --marketplaceButtonStylesPrimary
 }
+
+.statusBar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px;
+}
+
+.statusCircle {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: var(--matterColorNegative);
+}
+
+.statusLine {
+  height: 3px;
+  width: calc(50% - 60px);
+  background-color: var(--matterColorNegative);
+}
+
+.statusCard {
+  width: 100%;
+  height: 67px;
+  margin-bottom: 10px;
+}
+
+.statusText {
+  background-color: var(--matterColorNegative);
+  padding: 10px;
+  width: 90%;
+  max-width: 300px;
+}
+
+.statusPlanningCircle {
+  composes: statusCircle;
+  background-color: var(--attentionColor);
+}
+
+.statusBuildingCircle {
+  composes: statusCircle;
+}
+
+.statusRunningCircle {
+  composes: statusCircle;
+}
+
+.statusPlanningLine {
+  composes: statusLine;
+  background-color: var(--attentionColor);
+}
+
+.statusBuildingLine {
+  composes: statusLine;
+}
+
+.statusArrow {
+  width: 0;
+  height: 0;
+  margin: 0 10px 0 10px;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+
+  border-bottom: 15px solid var(--matterColorNegative);
+}
+
+.statusCardPlanning {
+  composes: statusCard;
+}
+
+.statusCardBuilding {
+  composes: statusCard;
+}
+
+.statusCardRunning {
+  composes: statusCard;
+}
+
+.statusTextPlanning {
+  composes: statusText;
+}
+
+.statusTextBuilding {
+  composes: statusText;
+}
+
+.statusTextRunning {
+  composes: statusText;
+  float: right;
+}
+
+.statusArrowPlanning {
+  composes: statusArrow;
+}
+
+.statusArrowBuilding {
+  composes: statusArrow;
+}
+
+.statusArrowRunning {
+  composes: statusArrow;
+  float: right;
+}

@@ -31,18 +31,15 @@ const kabeko = projects[projects.findIndex(id => id.id === 'kabeko')];
 const locationLink = (title, subtitle, status, link, logo) => {
 
   let projectStatusText = null
-if (status === 'pending') {
-  projectStatusText = css.pending;
-  status = 'Söker tillstånd';
-} else if (status === 'planning') {
+if (status === 'planning') {
   projectStatusText = css.planning;
-  status = 'Planerad byggstart';
+  status = 'Planering';
 } else if (status === 'building') {
   projectStatusText = css.building;
-  status = 'Under byggnation';
+  status = 'Byggnation';
 } else if (status === 'running') {
   projectStatusText = css.running;
-  status = 'I drift';
+  status = 'Drift';
 }
 
   const projectTitle = <span className={css.projectTitleText}>{title}</span>;

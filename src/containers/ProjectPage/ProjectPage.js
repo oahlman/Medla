@@ -241,21 +241,36 @@ export class ProjectPageComponent extends Component {
       </div>
     );
 
-    var status = projectData.stats.currentStatus;
-
+    let status = null;
+    let statusCard = css.statusCard;
+    let statusArrow = css.statusArrow;
+    let statusText = css.statusText;
     let projectStatusText = null
-    if (status === 'pending') {
+
+    if (projectData.stats.currentStatus === 'pending') {
       projectStatusText = css.pending;
-      status = 'Söker tillstånd';
-    } else if (status === 'planning') {
+      statusCard = css.statusCardPlanning;
+      statusArrow = css.statusArrowPlanning;
+      statusText = css.statusTextPlanning;
+      status = 'Planering';
+    } else if (projectData.stats.currentStatus === 'planning') {
       projectStatusText = css.planning;
-      status = 'Planerad byggstart';
-    } else if (status === 'building') {
+      statusCard = css.statusCardPlanning;
+      statusArrow = css.statusArrowPlanning;
+      statusText = css.statusTextPlanning;
+      status = 'Planering';
+    } else if (projectData.stats.currentStatus === 'building') {
       projectStatusText = css.building;
-      status = 'Under byggnation';
-    } else if (status === 'running') {
+      statusCard = css.statusCardBuilding;
+      statusArrow = css.statusArrowBuilding;
+      statusText = css.statusTextBuilding;
+      status = 'Byggnation';
+    } else if (projectData.stats.currentStatus === 'running') {
       projectStatusText = css.running;
-      status = 'I drift';
+      statusCard = css.statusCardRunning;
+      statusArrow = css.statusArrowRunning;
+      statusText = css.statusTextRunning;
+      status = 'Drift';
     }
 
     const mainContent = (
@@ -403,16 +418,15 @@ export class ProjectPageComponent extends Component {
               <div className={css.projectDetails}>
               <div className={css.stats}>
                 <div className={css.statusBar}>
-                  <div className={css.statusPlanningCircle}></div>
-                  <div className={css.statusPlanningLine}></div>
-                  <div className={css.statusBuildingCircle}></div>
-                  <div className={css.statusBuildingLine}></div>
-                  <div className={css.statusRunningCircle}></div>
+                  <div className={projectData.stats.currentStatus === 'planning' ? css.statusCirclePlanning : css.statusCircle}></div>
+                  <div className={projectData.stats.currentStatus === 'planning' ? css.statusLinePlanning : css.statusLine}></div>
+                  <div className={projectData.stats.currentStatus === 'building' ? css.statusCircleBuilding : css.statusCircle}></div>
+                  <div className={projectData.stats.currentStatus === 'building' ? css.statusLineBuilding : css.statusLine}></div>
+                  <div className={projectData.stats.currentStatus === 'running' ? css.statusCircleRunning : css.statusCircle}></div>
                 </div>
-                <div className={css.statusCardRunning}>
-                <div className={css.statusArrowRunning}></div>
-                <div className={css.statusTextRunning}>
-                  <b>Status</b> {status}</div>
+                <div className={statusCard}>
+                <div className={statusArrow}></div>
+                <div className={statusText}> <b>Status</b> {status}</div>
                 </div>
               <div className={css.newJobDesktop}>
                   <NamedLink className={css.newJob} name="NewListingPage">

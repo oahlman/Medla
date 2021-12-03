@@ -200,8 +200,6 @@ class TopbarComponent extends Component {
 
     return (
       <div className={classes}>
-        <PreviewAccessBanner
-        />
         <LimitedAccessBanner
           isAuthenticated={isAuthenticated}
           authScopes={authScopes}
@@ -258,7 +256,7 @@ class TopbarComponent extends Component {
         >
           {authInProgress ? null : mobileMenu}
         </Modal>
-        
+
         <Modal
           id="TopbarMobileSearch"
           containerClassName={css.modalContainer}
@@ -267,9 +265,9 @@ class TopbarComponent extends Component {
           usePortal
           onManageDisableScrolling={onManageDisableScrolling}
           profileImage={profileImage}
-          
+
         >
-            
+
              <NamedLink className={css.logo}
               name="LandingPage"
             >
@@ -278,13 +276,13 @@ class TopbarComponent extends Component {
 
 
           <div className={css.searchContainer}>
-       
+
             <TopbarSearchForm
               onSubmit={this.handleSubmit}
               initialValues={initialSearchFormValues}
               isMobile
             />
-      
+
           </div>
         </Modal>
         <ModalMissingInformation

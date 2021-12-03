@@ -574,7 +574,11 @@ li {
 
 .statusTextBuilding {
   composes: statusText;
-  margin-left: 5%;
+  margin-left: auto;
+  margin-right: auto;
+  @media (--viewportMedium) {
+    margin-left: 5%;
+  }
 }
 
 .statusTextRunning {
@@ -588,7 +592,10 @@ li {
 
 .statusArrowBuilding {
   composes: statusArrow;
-  margin-left: 45%;
+  margin-left: calc(50% - 15px);
+  @media (--viewportMedium) {
+    margin-left: 45%;
+  }
 }
 
 .statusArrowRunning {

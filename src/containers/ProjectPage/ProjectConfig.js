@@ -238,7 +238,7 @@ export const projects = [
       },
     },
     stats: {
-      currentStatus: 'building',
+      currentStatus: 'planning',
       turbines: 5,
       mw: 21,
       constructionPeriod: {

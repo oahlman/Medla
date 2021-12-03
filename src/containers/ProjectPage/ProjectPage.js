@@ -426,7 +426,7 @@ export class ProjectPageComponent extends Component {
                 </div>
                 <div className={statusCard}>
                 <div className={statusArrow}></div>
-                <div className={statusText}> <b>Status</b> {status}</div>
+                <div className={statusText}> <b>{status}</b><br></br> I planeringsfasen görs inventeringar, samråd, tillståndsansökningar och en detaljplanering om tillstånd beviljas.</div>
                 </div>
               <div className={css.newJobDesktop}>
                   <NamedLink className={css.newJob} name="NewListingPage">

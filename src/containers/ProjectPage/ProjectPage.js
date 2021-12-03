@@ -169,36 +169,9 @@ export class ProjectPageComponent extends Component {
       [css.withBioMissingAbove]: !hasBio,
     });
 
-    const reviewsError = (
-      <p className={css.error}>
-        <FormattedMessage id="ProfilePage.loadingReviewsFailed" />
-      </p>
-    );
-
     const reviewsOfProvider = reviews.filter(r => r.attributes.type === REVIEW_TYPE_OF_PROVIDER);
 
     const reviewsOfCustomer = reviews.filter(r => r.attributes.type === REVIEW_TYPE_OF_CUSTOMER);
-
-    const mobileReviews = (
-      <div className={css.mobileReviews}>
-        <h2 className={css.mobileReviewsTitle}>
-          <FormattedMessage
-            id="ProfilePage.reviewsOfProviderTitle"
-            values={{ count: reviewsOfProvider.length }}
-          />
-        </h2>
-        {queryReviewsError ? reviewsError : null}
-        <Reviews reviews={reviewsOfProvider} />
-        <h2 className={css.mobileReviewsTitle}>
-          <FormattedMessage
-            id="ProfilePage.reviewsOfCustomerTitle"
-            values={{ count: reviewsOfCustomer.length }}
-          />
-        </h2>
-        {queryReviewsError ? reviewsError : null}
-        <Reviews reviews={reviewsOfCustomer} />
-      </div>
-    );
 
     const desktopReviewTabs = [
       {
@@ -227,53 +200,91 @@ export class ProjectPageComponent extends Component {
       },
     ];
 
-    const desktopReviews = (
-      <div className={css.desktopReviews}>
-        <ButtonTabNavHorizontal className={css.desktopReviewsTabNav} tabs={desktopReviewTabs} />
-
-        {queryReviewsError ? reviewsError : null}
-
-        {this.state.showReviewsType === REVIEW_TYPE_OF_PROVIDER ? (
-          <Reviews reviews={reviewsOfProvider} />
-        ) : (
-          <Reviews reviews={reviewsOfCustomer} />
-        )}
+    const jobSection = (<div className={css.jobSection}>
+      <h3 className={css.subtitle}>Nya jobb</h3>
+      <div className={css.listingCards}>
+      {queryListingsError ? queryError : null}
+      {queryListingsError ? queryError : null}
+        {jobs.slice(0, 3).map(l => (
+          <ListingCard
+            className={css.listingCard}
+            key={l.id.uuid}
+            listing={l}
+            renderSizes={renderSizes}
+          />
+        ))}
+      <div className={css.searchLink}>
+      <NamedLink className={css.helperLink}
+        name="SearchPage"
+        to={{
+          search: `?address=${projectName}&bounds=${projectData.bounds.ne},${projectData.bounds.sw}&pub_listingCategory=job`,
+        }}>
+        <span>Se alla jobb</span>
+      </NamedLink>
       </div>
-    );
+      </div>
+      </div>);
+
+
+    const companySection = (<div className={css.companySection}>
+      <h3 className={css.subtitle}>Lokala företag</h3>
+      <div className={css.companyCards}>
+      {queryListingsError ? queryError : null}
+        {companies.slice(0, 6).map(c => (
+          <CompanyCard
+            className={css.companyCard}
+            key={c.id.uuid}
+            listing={c}
+            renderSizes={renderSizes}
+          />
+        ))}
+      <div className={css.searchLink}>
+      <NamedLink
+        className={css.helperLink}
+        name="SearchPage"
+        to={{
+          search: `?address=${projectName}&bounds=${projectData.bounds.ne},${projectData.bounds.sw}&pub_listingCategory=company`,
+        }}>
+        <span>Se alla företag</span>
+      </NamedLink>
+      </div>
+      </div>
+      </div>);
 
     let status = null;
     let statusCard = css.statusCard;
     let statusArrow = css.statusArrow;
     let statusText = css.statusText;
-    let projectStatusText = null
+    let statusDescription = null
+    let jobSectionMaybe = null;
+    let companySectionMaybe = null;
 
-    if (projectData.stats.currentStatus === 'pending') {
-      projectStatusText = css.pending;
+    if (projectData.stats.currentStatus === 'planning') {
       statusCard = css.statusCardPlanning;
       statusArrow = css.statusArrowPlanning;
       statusText = css.statusTextPlanning;
-      status = 'Planering';
-    } else if (projectData.stats.currentStatus === 'planning') {
-      projectStatusText = css.planning;
-      statusCard = css.statusCardPlanning;
-      statusArrow = css.statusArrowPlanning;
-      statusText = css.statusTextPlanning;
-      status = 'Planering';
+      status = 'Status: Planering';
+      statusDescription = 'I planeringsfasen görs inventeringar, samråd, tillståndsansökningar och en detaljplanering om projektet beviljas tillstånd.';
     } else if (projectData.stats.currentStatus === 'building') {
-      projectStatusText = css.building;
       statusCard = css.statusCardBuilding;
       statusArrow = css.statusArrowBuilding;
       statusText = css.statusTextBuilding;
-      status = 'Byggnation';
+      status = 'Status: Byggnation';
+      statusDescription = 'I byggfasen sker upphandling av byggentreprenad, finansiering och byggnation av projektet.';
+      jobSectionMaybe = jobSection;
+      companySectionMaybe = companySection;
     } else if (projectData.stats.currentStatus === 'running') {
-      projectStatusText = css.running;
       statusCard = css.statusCardRunning;
       statusArrow = css.statusArrowRunning;
       statusText = css.statusTextRunning;
-      status = 'Drift';
+      status = 'Status: Drift';
+      statusDescription = 'Projektet har färdigställts och är i drift. Underhållsjobb kommer att behövas under hela driftperioden.';
+      jobSectionMaybe = jobSection;
+      companySectionMaybe = companySection;
     }
 
     const mainContent = (
+      <div>
       <div className={css.staticPageWrapper}>
       <div className={css.contentWrapper}>
             <div className={css.coverSection}>
@@ -288,61 +299,22 @@ export class ProjectPageComponent extends Component {
                         <span className={userIsSubscribed ? css.followingText : css.followText}><FormattedMessage id={userIsSubscribed ? "ProjectPage.followingProject" : "ProjectPage.followProject"} /></span>
                       </NamedLink>
                 </div>
-                    <span className={css.following} onClick={() => projectDetailsLink.scrollIntoView({ block: 'start', behavior: 'smooth' })}>
-                      <FormattedMessage id="ProjectPage.readMore" />
-                    </span>
+                <div className={css.step}>
+                      <NamedLink className={css.following}
+                        name="SearchPage"
+                        to={{
+                          search: `?address=${projectName}&bounds=${projectData.bounds.ne},${projectData.bounds.sw}&pub_listingCategory=company`,
+                        }}
+                      ><FormattedMessage id={"ProjectPage.findLocalCompanies"} />
+                      </NamedLink>
+                </div>
               </div>
               <img className={css.coverImage} src={projectData.image} alt={`Bild från projektet ${projectName}.`} />
             </div>
 
             <div className={css.contentMain}>
-
-              <h3 className={css.subtitle}>Nya jobb</h3>
-              <div className={css.listingCards}>
-              {queryListingsError ? queryError : null}
-              {queryListingsError ? queryError : null}
-                {jobs.slice(0, 3).map(l => (
-                  <ListingCard
-                    className={css.listingCard}
-                    key={l.id.uuid}
-                    listing={l}
-                    renderSizes={renderSizes}
-                  />
-                ))}
-              <div className={css.searchLink}>
-              <NamedLink className={css.helperLink}
-                name="SearchPage"
-                to={{
-                  search: `?address=${projectName}&bounds=${projectData.bounds.ne},${projectData.bounds.sw}&pub_listingCategory=job`,
-                }}>
-                <span>Se alla jobb</span>
-              </NamedLink>
-              </div>
-              </div>
-
-              <h3 className={css.subtitle}>Lokala företag</h3>
-              <div className={css.companyCards}>
-              {queryListingsError ? queryError : null}
-                {companies.slice(0, 6).map(c => (
-                  <CompanyCard
-                    className={css.companyCard}
-                    key={c.id.uuid}
-                    listing={c}
-                    renderSizes={renderSizes}
-                  />
-                ))}
-              <div className={css.searchLink}>
-              <NamedLink
-                className={css.helperLink}
-                name="SearchPage"
-                to={{
-                  search: `?address=${projectName}&bounds=${projectData.bounds.ne},${projectData.bounds.sw}&pub_listingCategory=company`,
-                }}>
-                <span>Se alla företag</span>
-              </NamedLink>
-              </div>
-              </div>
-
+              {jobSectionMaybe}
+              {companySectionMaybe}
               <h3 className={css.subtitle}>
                 Populära branscher
               </h3>
@@ -426,13 +398,8 @@ export class ProjectPageComponent extends Component {
                 </div>
                 <div className={statusCard}>
                 <div className={statusArrow}></div>
-                <div className={statusText}> <b>{status}</b><br></br> I planeringsfasen görs inventeringar, samråd, tillståndsansökningar och en detaljplanering om tillstånd beviljas.</div>
+                <div className={statusText}> <b>{status}</b><br></br>{statusDescription}</div>
                 </div>
-              <div className={css.newJobDesktop}>
-                  <NamedLink className={css.newJob} name="NewListingPage">
-                    <FormattedMessage id="ProjectPage.newJob" />
-                  </NamedLink>
-              </div>
               <ul className={css.items}>
                 <li><b>Storlek</b> {projectData.stats.turbines} turbiner</li>
                 <li><b>Effekt</b> {projectData.stats.mw} MW</li>
@@ -445,15 +412,28 @@ export class ProjectPageComponent extends Component {
 
               <p><ExternalLink href={projectData.description.about.externalLink}>{projectData.description.about.linkText}</ExternalLink></p>
               </div>
-              <div className={css.newJobMobile}>
-                  <NamedLink className={css.newJob} name="NewListingPage">
-                    <FormattedMessage id="ProjectPage.newJob" />
-                  </NamedLink>
-              </div>
               </div>
             </div>
           </div>
-          </div>
+      </div>
+      <div className={css.newJobSectionBg}>
+      <div className={css.newJobSection}>
+      <div className={css.newJobTitle}>
+      <h1 className={css.pageTitle}><FormattedMessage id="ProjectPage.newJob" /></h1>
+      </div>
+      <div className={css.newJobContent}>
+      <div className={css.newJobDescription}>
+      <FormattedMessage id="ProjectPage.newJob" />
+      </div>
+      <div className={css.newJobDesktop}>
+          <NamedLink className={css.newJob} name="NewListingPage">
+            <FormattedMessage id="ProjectPage.newJob" />
+          </NamedLink>
+      </div>
+      </div>
+      </div>
+      </div>
+      </div>
     );
 
     const mainContentExternal = (

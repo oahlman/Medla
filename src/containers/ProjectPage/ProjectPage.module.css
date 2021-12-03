@@ -455,11 +455,42 @@ li {
   @apply --marketplaceButtonStylesPrimary
 }
 
-.newJobDesktop {
-    display: none;
+.newJobSectionBg {
+  background-color: var(--marketplaceColorLight);
+}
+
+.newJobSection {
+  width: calc(100% - 48px);
+  max-width: 1056px;
+  margin: 24px auto;
+  padding: 24px 0 24px 0;
 
   @media (--viewportMedium) {
-    display: initial;
+    width: calc(100% - 72px);
+    margin: 72px auto;
+    padding: 72px 0 72px 0;
+  }
+}
+
+.newJobContent {
+  display: flex;
+  flex-direction: column;
+  @media (--viewportMedium) {
+    flex-direction: row;
+  }
+}
+
+.newJobDesktop {
+
+  @media (--viewportMedium) {
+    padding: 0 40px 0 40px;
+    flex-basis: 450px;
+  }
+}
+
+.newJobDescription {
+  @media (--viewportMedium) {
+    flex-basis: calc(100% - 450px);
   }
 }
 
@@ -503,7 +534,7 @@ li {
 }
 
 .statusLine {
-  height: 3px;
+  height: 4px;
   width: calc(50% - 60px);
   background-color: var(--matterColorNegative);
 }

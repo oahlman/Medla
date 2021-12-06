@@ -471,12 +471,12 @@ li {
 .newJobSection {
   width: calc(100% - 48px);
   max-width: 1056px;
-  margin: 0 24px 0 24px;
+  margin: 24px auto;
   padding: 24px 0 24px 0;
 
   @media (--viewportMedium) {
     width: calc(100% - 72px);
-    margin: 0 72px 0 72px;
+    margin: 72px auto;
     padding: 72px 0 72px 0;
   }
 }

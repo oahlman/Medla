@@ -451,8 +451,17 @@ li {
   }
 }
 
-.newJob {
-  @apply --marketplaceButtonStylesPrimary
+.heroButton {
+  @apply --marketplaceButtonStyles;
+  background-color: var(--marketplaceColorDark);
+
+  margin-bottom: 10px;
+
+  @media (--viewportMedium) {
+    margin-top: 10px;
+    display: block;
+    width: 260px;
+  }
 }
 
 .newJobSectionBg {
@@ -462,12 +471,12 @@ li {
 .newJobSection {
   width: calc(100% - 48px);
   max-width: 1056px;
-  margin: 24px auto;
+  margin: 0 24px 0 24px;
   padding: 24px 0 24px 0;
 
   @media (--viewportMedium) {
     width: calc(100% - 72px);
-    margin: 72px auto;
+    margin: 0 72px 0 72px;
     padding: 72px 0 72px 0;
   }
 }
@@ -481,16 +490,21 @@ li {
 }
 
 .newJobDesktop {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
 
   @media (--viewportMedium) {
     padding: 0 40px 0 40px;
-    flex-basis: 450px;
+    flex-basis: 400px;
   }
 }
 
 .newJobDescription {
   @media (--viewportMedium) {
-    flex-basis: calc(100% - 450px);
+    flex-basis: calc(100% - 400px);
+    margin-right: 40px;
   }
 }
 

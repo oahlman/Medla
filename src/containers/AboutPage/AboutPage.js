@@ -47,7 +47,7 @@ const AboutPage = () => {
               </h2>
 
               <p>
-                Medla är en digital tjänst för lokal jobbförmedling i förnybara energiprojekt.
+                Medla är en digital tjänst för lokal jobbförmedling i hållbara energiprojekt.
                 Med Medla kan företag och enskilda firmor enkelt visa upp sin verksamheter,
                 hitta relevanta jobbmöjligheter och påbörja affärsrelationer med aktörer i energisektorn.
                 För projektägare gör Medla det möjligt att nå ut till det lokala näringslivet och effektivisera planering,

@@ -251,6 +251,51 @@ export class ProjectPageComponent extends Component {
       </div>
       </div>);
 
+const sectionPostJob = (
+  <div className={css.newJobSectionBg}>
+  <div className={css.newJobSection}>
+  <div className={css.newJobContent}>
+  <div className={css.newJobDescription}>
+  <h1 className={css.pageTitle}>
+    <FormattedMessage id="ProjectPage.createJobTitle" />
+    {projectName}
+  </h1>
+  <FormattedMessage id="ProjectPage.createJobDescription" />
+  </div>
+  <div className={css.newJobDesktop}>
+      <NamedLink className={css.heroButton} name="NewListingPage">
+        <FormattedMessage id="ProjectPage.newJob" />
+      </NamedLink>
+  </div>
+  </div>
+  </div>
+  </div>);
+
+  const sectionFindCompany = (
+  <div className={css.newJobSectionBg}>
+  <div className={css.newJobSection}>
+  <div className={css.newJobContent}>
+  <div className={css.newJobDescription}>
+  <h1 className={css.pageTitle}>
+    <FormattedMessage id="ProjectPage.findCompanyTitle" />
+    {projectName}
+  </h1>
+  <FormattedMessage id="ProjectPage.findCompanyDescription" />
+  </div>
+  <div className={css.newJobDesktop}>
+      <NamedLink
+            className={css.heroButton}
+            name="SearchPage"
+            to={{
+              search: `?address=${projectName}&bounds=${projectData.bounds.ne},${projectData.bounds.sw}&pub_listingCategory=company`,
+            }}>
+            <FormattedMessage id="ProjectPage.findCompanies" />
+          </NamedLink>
+  </div>
+  </div>
+  </div>
+  </div>);
+
     let status = null;
     let statusCard = css.statusCard;
     let statusArrow = css.statusArrow;
@@ -258,6 +303,8 @@ export class ProjectPageComponent extends Component {
     let statusDescription = null
     let jobSectionMaybe = null;
     let companySectionMaybe = null;
+    let postJobMaybe = null;
+    let findCompanyMaybe = null;
 
     if (projectData.stats.currentStatus === 'planning') {
       statusCard = css.statusCardPlanning;
@@ -265,6 +312,7 @@ export class ProjectPageComponent extends Component {
       statusText = css.statusTextPlanning;
       status = 'Status: Planering';
       statusDescription = 'I planeringsfasen görs inventeringar, samråd, tillståndsansökningar och en detaljplanering om projektet beviljas tillstånd.';
+      findCompanyMaybe = sectionFindCompany;
     } else if (projectData.stats.currentStatus === 'building') {
       statusCard = css.statusCardBuilding;
       statusArrow = css.statusArrowBuilding;
@@ -273,6 +321,7 @@ export class ProjectPageComponent extends Component {
       statusDescription = 'I byggfasen sker upphandling av byggentreprenad, finansiering och byggnation av projektet.';
       jobSectionMaybe = jobSection;
       companySectionMaybe = companySection;
+      postJobMaybe = sectionPostJob;
     } else if (projectData.stats.currentStatus === 'running') {
       statusCard = css.statusCardRunning;
       statusArrow = css.statusArrowRunning;
@@ -281,6 +330,7 @@ export class ProjectPageComponent extends Component {
       statusDescription = 'Projektet har färdigställts och är i drift. Underhållsjobb kommer att behövas under hela driftperioden.';
       jobSectionMaybe = jobSection;
       companySectionMaybe = companySection;
+      postJobMaybe = sectionPostJob;
     }
 
     const mainContent = (
@@ -416,23 +466,8 @@ export class ProjectPageComponent extends Component {
             </div>
           </div>
       </div>
-      <div className={css.newJobSectionBg}>
-      <div className={css.newJobSection}>
-      <div className={css.newJobTitle}>
-      <h1 className={css.pageTitle}><FormattedMessage id="ProjectPage.newJob" /></h1>
-      </div>
-      <div className={css.newJobContent}>
-      <div className={css.newJobDescription}>
-      <FormattedMessage id="ProjectPage.newJob" />
-      </div>
-      <div className={css.newJobDesktop}>
-          <NamedLink className={css.newJob} name="NewListingPage">
-            <FormattedMessage id="ProjectPage.newJob" />
-          </NamedLink>
-      </div>
-      </div>
-      </div>
-      </div>
+        {postJobMaybe}
+        {findCompanyMaybe}
       </div>
     );
 

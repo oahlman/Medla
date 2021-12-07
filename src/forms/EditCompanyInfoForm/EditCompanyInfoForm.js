@@ -157,7 +157,7 @@ export const EditCompanyInfoFormComponent = props => (
             className={css.contactDetails}
             type="textarea"
             label={organizationNumber}
-            placeholder={contactInformationMessage}
+            placeholder={organizationPlaceholder}
             /> 
 
           <Button

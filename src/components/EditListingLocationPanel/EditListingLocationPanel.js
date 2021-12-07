@@ -131,6 +131,7 @@ class EditListingLocationPanel extends Component {
       ) : (
         
         <div className={classes}>
+         <h1 className={css.title}> <FormattedMessage id="EditCompanyInfoPanel.title" /> </h1>
         <EditCompanyInfoForm
           className={css.form}
           initialValues={this.state.initialValues}

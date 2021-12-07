@@ -121,6 +121,13 @@ const SectionProjects = props => {
       </div>
       <div className={css.locations}>
       {locationLink(
+          bleka.name,
+          bleka.stats.region,
+          bleka.stats.currentStatus,
+          bleka.id,
+          WpdLogo,
+        )}
+      {locationLink(
           gronhult.name,
           gronhult.stats.region,
           gronhult.stats.currentStatus,
@@ -134,15 +141,15 @@ const SectionProjects = props => {
           hocksjon.id,
           JamtkraftLogo,
         )}
-        {locationLink(
+      </div>
+      <div className={css.locations}>
+      {locationLink(
           han.name,
           han.stats.region,
           han.stats.currentStatus,
           han.id,
           CloudberryLogo,
         )}
-      </div>
-      <div className={css.locations}>
       {locationLink(
           hybrit.name,
           hybrit.stats.region,
@@ -151,33 +158,42 @@ const SectionProjects = props => {
           HybritLogo,
         )}
       {locationLink(
-          kolvallen.name,
-          kolvallen.stats.region,
-          kolvallen.stats.currentStatus,
-          kolvallen.id,
-          AriseLogo,
-        )}
-        {locationLink(
-          skaftasen.name,
-          skaftasen.stats.region,
-          skaftasen.stats.currentStatus,
-          skaftasen.id,
-          AriseLogo,
-        )}
-      </div>
-      <div className={css.locationsTwoOfThree}>
-        {locationLink(
           kabeko.name,
           kabeko.stats.region,
           kabeko.stats.currentStatus,
           kabeko.id,
           KabekoLogo,
         )}
+      </div>
+      <div className={css.locations}>
+      {locationLink(
+          kolvallen.name,
+          kolvallen.stats.region,
+          kolvallen.stats.currentStatus,
+          kolvallen.id,
+          AriseLogo,
+        )}
+      {locationLink(
+          skaftasen.name,
+          skaftasen.stats.region,
+          skaftasen.stats.currentStatus,
+          skaftasen.id,
+          AriseLogo,
+        )}
       {locationLink(
           stollsaterberget.name,
           stollsaterberget.stats.region,
           stollsaterberget.stats.currentStatus,
           stollsaterberget.id,
+          WpdLogo,
+        )}
+      </div>
+      <div className={css.locationsOneOfThree}>
+      {locationLink(
+          stormossen.name,
+          stormossen.stats.region,
+          stormossen.stats.currentStatus,
+          stormossen.id,
           WpdLogo,
         )}
       </div>

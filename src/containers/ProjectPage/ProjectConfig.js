@@ -107,8 +107,8 @@ export const projects = [
     },
     stats: {
       currentStatus: 'planning',
-      turbines: 42,
-      mw: 300,
+      turbines: 32,
+      mw: 256,
       constructionPeriod: {
           start: 0,
           end: 0,

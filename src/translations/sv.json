@@ -210,11 +210,11 @@
   "EditListingOffer4Form.offer": "Beskriv ytterligare tjänst",
   "EditListingOffer5Form.offer": "Beskriv ytterligare tjänst",
   "EditListingDescriptionForm.descriptionPlaceholder": "Vad handlar jobbet om? Vad behöver ni hjälp med?",
-  "EditListingDescriptionForm.contactPlaceholder": "Ange dina kontaktuppgifter",
+  "EditListingDescriptionForm.contactPlaceholder": "Ange en e-postadress eller ett mobilnummer",
   "EditListingDescriptionForm.descriptionRequired": "Detta fält är obligatorisk.",
   "EditCompanyDescriptionForm.contactPhone": "Telefonnummer eller E-post",
   "EditCompanyDescriptionForm.organizationNumber": "Organisationsnummer",
-  "EditCompanyDescriptionForm.organizationPlaceholder": "Ange ditt organisationsnummer eller personnummer",
+  "EditCompanyDescriptionForm.organizationPlaceholder": "Ange ditt organisationsnummer",
 
 
   "EditCompanyDescriptionForm.contactPhoneJob": "Kontaktuppgifter för jobb",

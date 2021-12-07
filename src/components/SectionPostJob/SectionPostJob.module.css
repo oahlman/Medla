@@ -3,27 +3,30 @@
 .title {
   @apply --marketplaceH1FontStyles;
   margin-top: 0;
-  margin-bottom: 0;
   color: var(--marketplaceColorDark);
-  text-align: center;
 
 }
 
 .steps {
   display: flex;
   flex-direction: column;
-  align-items: center;
 
+  @media (--viewportMedium) {
+    flex-direction: row;
+  }
 }
 
 .step {
 
   @media (--viewportMedium) {
+    width: 50%;
+    margin-right: 40px;
   }
 }
 
 .step:last-of-type {
   @media (--viewportMedium) {
+    margin-right: 0;
   }
 }
 
@@ -60,8 +63,50 @@
   margin-bottom: 10px;
 
   @media (--viewportMedium) {
-    margin-top: 10px;
+    margin-top: 85px;
     display: block;
     width: 260px;
+  }
+}
+
+.newJob {
+  @apply --marketplaceButtonStylesPrimary
+}
+
+.newJobSectionBg {
+  background-color: var(--marketplaceColorLight);
+}
+
+.newJobContent {
+  display: flex;
+  flex-direction: column;
+  @media (--viewportMedium) {
+    flex-direction: row;
+  }
+}
+
+.newJobDesktop {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+
+  @media (--viewportMedium) {
+    padding: 0 40px 0 40px;
+    flex-basis: 400px;
+  }
+}
+
+.newJobDescription {
+  @media (--viewportMedium) {
+    flex-basis: calc(100% - 400px);
+    margin-right: 40px;
+  }
+}
+
+.newJobMobile {
+
+  @media (--viewportMedium) {
+    display: none;
   }
 }

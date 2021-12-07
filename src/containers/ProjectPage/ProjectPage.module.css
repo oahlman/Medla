@@ -451,15 +451,60 @@ li {
   }
 }
 
-.newJob {
-  @apply --marketplaceButtonStylesPrimary
+.heroButton {
+  @apply --marketplaceButtonStyles;
+  background-color: var(--marketplaceColorDark);
+
+  margin-bottom: 10px;
+
+  @media (--viewportMedium) {
+    margin-top: 10px;
+    display: block;
+    width: 260px;
+  }
+}
+
+.newJobSectionBg {
+  background-color: var(--marketplaceColorLight);
+}
+
+.newJobSection {
+  width: calc(100% - 48px);
+  max-width: 1056px;
+  margin: 24px auto 0 auto;
+  padding: 24px 0 24px 0;
+
+  @media (--viewportMedium) {
+    width: calc(100% - 72px);
+    margin: 72px auto 0 auto;
+    padding: 72px 0 72px 0;
+  }
+}
+
+.newJobContent {
+  display: flex;
+  flex-direction: column;
+  @media (--viewportMedium) {
+    flex-direction: row;
+  }
 }
 
 .newJobDesktop {
-    display: none;
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
 
   @media (--viewportMedium) {
-    display: initial;
+    padding: 0 40px 0 40px;
+    flex-basis: 400px;
+  }
+}
+
+.newJobDescription {
+  @media (--viewportMedium) {
+    flex-basis: calc(100% - 400px);
+    margin-right: 40px;
   }
 }
 
@@ -485,4 +530,126 @@ li {
 
 .externalServiceButton {
   @apply --marketplaceButtonStylesPrimary
+}
+
+.statusBar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px;
+}
+
+.statusCircle {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: var(--matterColorNegative);
+}
+
+.statusLine {
+  height: 4px;
+  width: calc(50% - 60px);
+  background-color: var(--matterColorNegative);
+}
+
+.statusCard {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.statusText {
+  background-color: var(--matterColorNegative);
+  padding: 10px;
+  max-width: 300px;
+}
+
+.statusCirclePlanning {
+  composes: statusCircle;
+  background-color: var(--attentionColor);
+}
+
+.statusCircleBuilding {
+  composes: statusCircle;
+  background-color: var(--successColor);
+}
+
+.statusCircleRunning {
+  composes: statusCircle;
+  background-color: var(--marketplaceColor);
+}
+
+.statusLinePlanning {
+  composes: statusLine;
+  background-color: var(--attentionColor);
+}
+
+.statusLineBuilding {
+  composes: statusLine;
+  background-color: var(--successColor);
+}
+
+.statusArrow {
+  width: 0;
+  height: 0;
+  margin: 0 10px 0 10px;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+
+  border-bottom: 15px solid var(--matterColorNegative);
+}
+
+.statusCardPlanning {
+  composes: statusCard;
+}
+
+.statusCardBuilding {
+  composes: statusCard;
+}
+
+.statusCardRunning {
+  composes: statusCard;
+}
+
+.statusTextPlanning {
+  composes: statusText;
+  @media (--viewportMedium) {
+    margin-right: 10%;
+  }
+}
+
+.statusTextBuilding {
+  composes: statusText;
+  margin-left: auto;
+  margin-right: auto;
+  @media (--viewportMedium) {
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+}
+
+.statusTextRunning {
+  composes: statusText;
+  margin-left: calc(100% - 300px);
+  @media (--viewportMedium) {
+    margin-left: 10%;
+  }
+}
+
+.statusArrowPlanning {
+  composes: statusArrow;
+}
+
+.statusArrowBuilding {
+  composes: statusArrow;
+  margin-left: calc(50% - 15px);
+  @media (--viewportMedium) {
+    margin-left: 45%;
+  }
+}
+
+.statusArrowRunning {
+  composes: statusArrow;
+  margin-left: calc(100% - 40px);
 }

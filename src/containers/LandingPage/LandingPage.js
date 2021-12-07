@@ -14,6 +14,7 @@ import {
   SectionHero,
   SectionHowItWorks,
   SectionMission,
+  SectionPostJob,
   SectionProjects,
   SectionProfileProgress,
   LayoutSingleColumn,
@@ -107,6 +108,12 @@ export const LandingPageComponent = props => {
             <li className={css.section}>
               <div className={css.sectionContent}>
                 <SectionHowItWorks />
+              </div>
+            </li>
+
+            <li className={css.section}>
+              <div className={css.sectionContent}>
+                <SectionPostJob />
               </div>
             </li>
 

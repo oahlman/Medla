@@ -12,48 +12,40 @@ import { logout, authenticationInProgress } from '../../ducks/Auth.duck';
 import { NamedLink, ExternalLink } from '../../components';
 import { ensureCurrentUser } from '../../util/data';
 
-import css from './SectionMission.module.css';
+import css from './SectionPostJob.module.css';
 
 
-const SectionMission = props => {
+const SectionPostJob = props => {
 
   const { rootClassName, className, currentUser } = props;
 
   const classes = classNames(rootClassName || css.root, className);
   return (
     <div className={classes}>
-      <div className={css.title}>
-        <FormattedMessage id="SectionMission.part1Title" />
-
+      <div className={css.newJobSection}>
+      <div className={css.newJobContent}>
+      <div className={css.newJobDescription}>
+      <h1 className={css.pageTitle}>
+        <FormattedMessage id="SectionPostJob.createJobTitle" />
+      </h1>
+      <FormattedMessage id="SectionPostJob.createJobDescription" />
       </div>
-
-      <div className={css.steps}>
-        <div className={css.step}>
-          <p>
-            <FormattedMessage id="SectionMission.part1Text" />
-          </p>
-        </div>
-        <div className={css.step}>
-            <NamedLink
-            name="AboutPage"
-
-           className={css.heroButton}
-            >
-            <FormattedMessage id="ProjectPage.readMore" />
-           </NamedLink>
-        </div>
+      <div className={css.newJobDesktop}>
+          <NamedLink className={css.heroButton} name="NewListingPage">
+            <FormattedMessage id="ProjectPage.newJob" />
+          </NamedLink>
       </div>
-
-
+      </div>
+      </div>
     </div>
   );
 };
 
-SectionMission.defaultProps = { rootClassName: null, className: null };
+SectionPostJob.defaultProps = { rootClassName: null, className: null };
 
 const { string } = PropTypes;
 
-SectionMission.propTypes = {
+SectionPostJob.propTypes = {
   rootClassName: string,
   className: string,
 };
@@ -99,13 +91,13 @@ const mapDispatchToProps = dispatch => ({
 // lifecycle hook.
 //
 // See: https://github.com/ReactTraining/react-router/issues/4671
-const SectionMissionExport = compose(
+const SectionPostJobExport = compose(
   withRouter,
   connect(
     mapStateToProps,
     mapDispatchToProps
   )
-)(SectionMission);
+)(SectionPostJob);
 
 
-export default SectionMissionExport;
+export default SectionPostJobExport;

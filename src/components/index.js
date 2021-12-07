@@ -180,6 +180,7 @@ export { default as Footer } from './Footer/Footer';
 export { default as SectionHero } from './SectionHero/SectionHero';
 export { default as SectionHowItWorks } from './SectionHowItWorks/SectionHowItWorks';
 export { default as SectionMission } from './SectionMission/SectionMission';
+export { default as SectionPostJob } from './SectionPostJob/SectionPostJob';
 export { default as SectionSignUpProcess } from './SectionSignUpProcess/SectionSignUpProcess';
 export { default as SectionProjectTransfer } from './SectionProjectTransfer/SectionProjectTransfer';
 export { default as SectionWhyMedla } from './SectionWhyMedla/SectionWhyMedla';

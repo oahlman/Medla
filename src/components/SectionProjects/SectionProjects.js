@@ -18,6 +18,8 @@ class LocationImage extends Component {
 const LazyImage = lazyLoadWithDimensions(LocationImage);
 
 const hybrit = projects[projects.findIndex(id => id.id === 'hybrit')];
+const stormossen = projects[projects.findIndex(id => id.id === 'stormossen')];
+const bleka = projects[projects.findIndex(id => id.id === 'bleka')];
 const kolvallen = projects[projects.findIndex(id => id.id === 'kolvallen')];
 const skaftasen = projects[projects.findIndex(id => id.id === 'skaftasen')];
 const bjornetjarnsberget = projects[projects.findIndex(id => id.id === 'bjornetjarnsberget')];

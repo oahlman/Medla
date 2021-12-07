@@ -69,6 +69,10 @@ export const filters = [
           label: 'Blakliden',
         },
         {
+          key: 'bleka',
+          label: 'Bleka',
+        },
+        {
           key: 'gronhult',
           label: 'Grönhult',
         },
@@ -91,6 +95,10 @@ export const filters = [
         {
           key: 'stollsaterberget',
           label: 'Stöllsäterberget',
+        },
+        {
+          key: 'stormossen',
+          label: 'Stormossen',
         },
       ],
     },

@@ -7,6 +7,8 @@ export { default as EditCompanyDescriptionForm } from './EditCompanyDescriptionF
 export { default as EditCompanyCompetencyForm } from './EditCompanyDescriptionForm/EditCompanyCompetencyForm';
 export { default as EditListingFeaturesForm } from './EditListingFeaturesForm/EditListingFeaturesForm';
 export { default as EditListingLocationForm } from './EditListingLocationForm/EditListingLocationForm';
+export { default as EditCompanyInfoForm } from './EditCompanyInfoForm/EditCompanyInfoForm';
+
 export { default as EditListingPhotosForm } from './EditListingPhotosForm/EditListingPhotosForm';
 export { default as EditListingPoliciesForm } from './EditListingPoliciesForm/EditListingPoliciesForm';
 export { default as EditListingPricingForm } from './EditListingPricingForm/EditListingPricingForm';

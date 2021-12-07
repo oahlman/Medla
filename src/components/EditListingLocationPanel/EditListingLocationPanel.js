@@ -5,7 +5,7 @@ import { FormattedMessage } from '../../util/reactIntl';
 import { LISTING_STATE_DRAFT } from '../../util/types';
 import { ensureOwnListing } from '../../util/data';
 import { ListingLink } from '../../components';
-import { EditListingLocationForm } from '../../forms';
+import { EditListingLocationForm, EditCompanyInfoForm } from '../../forms';
 
 import css from './EditListingLocationPanel.module.css';
 
@@ -32,6 +32,10 @@ class EditListingLocationPanel extends Component {
     const location = publicData && publicData.location ? publicData.location : {};
     const { address, building} = location;
     const contactNumber = currentListing.attributes.publicData.contactNumber
+    const organizationNumber = currentListing.attributes.publicData.organizationNumber
+
+
+ 
 
     return {
       building,
@@ -41,7 +45,8 @@ class EditListingLocationPanel extends Component {
             selectedPlace: { address, origin: geolocation },
           }
         : null,
-          contactNumber: contactNumber,  
+          contactNumber: contactNumber, 
+          organizationNumber:  organizationNumber, 
     };
   }
 
@@ -59,11 +64,13 @@ class EditListingLocationPanel extends Component {
       updateInProgress,
       errors,
       publicData,
+      
     } = this.props;
 
     const classes = classNames(rootClassName || css.root, className);
     const currentListing = ensureOwnListing(listing);
     const contactNumber = currentListing.attributes.publicData.contactNumber;
+    const listingCategoryData = currentListing.attributes.publicData.listingCategory;
 
     const isPublished =
       currentListing.id && currentListing.attributes.state !== LISTING_STATE_DRAFT;
@@ -76,7 +83,11 @@ class EditListingLocationPanel extends Component {
       <FormattedMessage id="EditListingLocationPanel.createListingTitle" />
     );
 
-    return (
+    const isJob = listingCategoryData !== 'company';
+  
+    const listingCategory = isJob ? 'job' : 'company';
+
+    return isJob ? (
       <div className={classes}>
         <h1 className={css.title}>{panelTitle}</h1>
         <EditListingLocationForm
@@ -92,6 +103,8 @@ class EditListingLocationPanel extends Component {
               publicData: {
                 location: { address, building },
                 contactNumber: contactNumber,
+                listingCategory: listingCategory,
+
               },
             };
 
@@ -115,6 +128,55 @@ class EditListingLocationPanel extends Component {
           fetchErrors={errors}
         />
       </div>
+      ) : (
+        
+        <div className={classes}>
+         <h1 className={css.title}> <FormattedMessage id="EditCompanyInfoPanel.title" /> </h1>
+        <EditCompanyInfoForm
+          className={css.form}
+          initialValues={this.state.initialValues}
+          onSubmit={values => {
+            const { building = '', location, contactNumber,  organizationNumber} = values;
+            const {
+              selectedPlace: { address, origin },
+            } = location;
+            const updateValues = {
+              geolocation: origin,
+              publicData: {
+                location: { address, building },
+                contactNumber: contactNumber,
+                listingCategory: listingCategory,
+                organizationNumber:  organizationNumber,
+
+              },
+            };
+
+            this.setState({
+              initialValues: {
+                building,
+                location: { search: address, selectedPlace: { address, origin } },
+                contactNumber: contactNumber,
+                organizationNumber:  organizationNumber,
+
+              },
+            });
+
+            onSubmit(updateValues);
+          }}
+          onChange={onChange}
+          saveActionMsg={submitButtonText}
+          disabled={disabled}
+          ready={ready}
+          updated={panelUpdated}
+          updateInProgress={updateInProgress}
+          fetchErrors={errors}
+        />
+
+
+
+
+        </div>
+      
     );
   }
 }

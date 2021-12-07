@@ -213,6 +213,10 @@
   "EditListingDescriptionForm.contactPlaceholder": "Ange dina kontaktuppgifter",
   "EditListingDescriptionForm.descriptionRequired": "Detta fält är obligatorisk.",
   "EditCompanyDescriptionForm.contactPhone": "Telefonnummer eller E-post",
+  "EditCompanyDescriptionForm.organizationNumber": "Organisationsnummer",
+  "EditCompanyDescriptionForm.organizationPlaceholder": "Ange ditt organisationsnummer eller personnummer",
+
+
   "EditCompanyDescriptionForm.contactPhoneJob": "Kontaktuppgifter för jobb",
   "EditListingDescriptionForm.maxLength": "Måste vara {maxLength} tecken eller färre",
   "EditListingDescriptionForm.showListingFailed": "Hämtning av listdata misslyckades",

@@ -76,6 +76,16 @@ export const EditCompanyInfoFormComponent = props => (
             id: 'EditCompanyDescriptionForm.contactPhone',
           }
           );
+
+          const organizationNumber = intl.formatMessage({
+            id: 'EditCompanyDescriptionForm.organizationNumber',
+          }
+          );
+
+          const organizationPlaceholder = intl.formatMessage({
+            id: 'EditCompanyDescriptionForm.organizationPlaceholder',
+          }
+          );
           const phoneValid = validators.swedenMobileFormatValid(phoneInvalidMessage);
   
     
@@ -142,13 +152,12 @@ export const EditCompanyInfoFormComponent = props => (
             />    
 
           <FieldTextInput
-            id="contactNumber"
-            name="contactNumber"
+            id="organizationNumber"
+            name="organizationNumber"
             className={css.contactDetails}
             type="textarea"
-            label={contactPhoneMessage}
+            label={organizationNumber}
             placeholder={contactInformationMessage}
-            validate={validators.composeValidators(usernameRequired, usernameValid)}
             /> 
 
           <Button

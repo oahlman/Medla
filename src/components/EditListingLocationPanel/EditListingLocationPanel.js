@@ -32,6 +32,8 @@ class EditListingLocationPanel extends Component {
     const location = publicData && publicData.location ? publicData.location : {};
     const { address, building} = location;
     const contactNumber = currentListing.attributes.publicData.contactNumber
+    const organizationNumber = currentListing.attributes.publicData.organizationNumber
+
 
  
 
@@ -43,7 +45,8 @@ class EditListingLocationPanel extends Component {
             selectedPlace: { address, origin: geolocation },
           }
         : null,
-          contactNumber: contactNumber,  
+          contactNumber: contactNumber, 
+          organizationNumber:  organizationNumber, 
     };
   }
 
@@ -126,14 +129,13 @@ class EditListingLocationPanel extends Component {
         />
       </div>
       ) : (
-
         
         <div className={classes}>
         <EditCompanyInfoForm
           className={css.form}
           initialValues={this.state.initialValues}
           onSubmit={values => {
-            const { building = '', location, contactNumber} = values;
+            const { building = '', location, contactNumber,  organizationNumber} = values;
             const {
               selectedPlace: { address, origin },
             } = location;
@@ -143,6 +145,7 @@ class EditListingLocationPanel extends Component {
                 location: { address, building },
                 contactNumber: contactNumber,
                 listingCategory: listingCategory,
+                organizationNumber:  organizationNumber,
 
               },
             };
@@ -152,6 +155,7 @@ class EditListingLocationPanel extends Component {
                 building,
                 location: { search: address, selectedPlace: { address, origin } },
                 contactNumber: contactNumber,
+                organizationNumber:  organizationNumber,
 
               },
             });

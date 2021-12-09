@@ -141,7 +141,7 @@ class NotificationSettingsFormComponent extends Component {
                     className={css.features}
                     id="notifyNewProjects"
                     name="notifyNewProjects"
-                    label="Notifiera mig när nya projekt publiceras"
+                    label="Notifiera mig när nya projekt blir synliga på medla"
                     defaultValue='true'
                     twoColumns={true}
                 

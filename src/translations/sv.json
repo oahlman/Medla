@@ -588,7 +588,7 @@
 
   "NotificationSettingsForm.saveChanges": "Spara ändringar",
   "NotificationSettingsForm.notificationOptionsHeading": "Bevakningar",
-  "NotificationSettingsForm.notificationOptionsInfo": "Välj vilka jobb du vill få notiser om.",
+  "NotificationSettingsForm.notificationOptionsInfo": "Välj vad du vill få notiser om.",
   "NotificationSettingsForm.notificationSettingsHeading": "Notisinställningar",
   "NotificationSettingsForm.notificationSettingsInfo": "Välj hur du vill ta emot emotiser.",
   "NotificationSettingsForm.businessAreasTip": "Som standard visas samma branscher på din företagssida.",

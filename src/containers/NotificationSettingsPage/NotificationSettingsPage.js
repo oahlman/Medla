@@ -46,7 +46,7 @@ export class NotificationSettingsPageComponent extends Component {
     } = this.props;
 
     const handleSubmit = values => {
-      const { firstName, lastName, bio: rawBio, amenities, notifications, category } = values;
+      const { firstName, lastName, bio: rawBio, amenities, notifications, category, notifyNewProjects } = values;
 
       // Ensure that the optional bio is a string
       const bio = rawBio || '';
@@ -58,6 +58,7 @@ export class NotificationSettingsPageComponent extends Component {
         publicData: {
           amenities,
           category,
+          notifyNewProjects,
         },
         privateData: {
           notifications,
@@ -86,7 +87,8 @@ export class NotificationSettingsPageComponent extends Component {
         initialValues={{
           amenities: publicData?.amenities,
           category: publicData?.category,
-          notifications: privateData?.notifications,
+          notifyNewProjects: publicData?.notifyNewProjects,
+          notifications: privateData?.notifications
         }}
         profileImage={profileImage}
         onImageUpload={e => onImageUploadHandler(e, onImageUpload)}

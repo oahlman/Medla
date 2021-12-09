@@ -137,13 +137,16 @@ class NotificationSettingsFormComponent extends Component {
                   />
                      <div className={css.newProjects}>
                       <legend className={css.newProjectsHeadline}>Nya projekt</legend>
+                    
+                    
                     <FieldCheckbox
                     className={css.features}
                     id="notifyNewProjects"
                     name="notifyNewProjects"
                     label="Notifiera mig när nya projekt publiceras"
-                    value='true'
+                    defaultValue='true'
                     twoColumns={true}
+                
                       />
                     </div>
 

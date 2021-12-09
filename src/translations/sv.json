@@ -576,7 +576,6 @@
   "ModalMissingInformation.resendFailedTooManyPhoneRequests": "Det gick inte att skicka smset igen. Du har redan skickat för många verifieringsmeddelanden.",
   "ModalMissingInformation.verifyPhoneNumberText": "Vi kan för närvarande inte skicka sms om andra Medla-användare kontaktar dig eftersom du inte har verifierat ditt mobilnummer.",
   "ModalMissingInformation.verifyPhoneNumberTitle": "Vänligen verifiera ditt mobilnummer",
-
   "NewUserPage.button": "Logga in",
   "NewUserPage.headline": "Välkommen till Medla!",
   "NewUserPage.subheading": "Låt oss berätta mer",
@@ -584,11 +583,10 @@
   "NewProjectUserPage.headline": "Ny plats för era projekt",
   "NewProjectUserPage.newservice": "Plattformen som tagits fram av Peer Digital, Vindkraftcentrum, Energimyndigheten och Umeå Universitet blir nu Medla. För projekt som fanns på prototypen gör vi en kostnadsfri flytt, flyttade projekt fortlöper på samma villkor som de hade på prototypen.",
   "NewProjectUserPage.connectProject": "Anslut projekt",
-
-
   "NotificationSettingsForm.saveChanges": "Spara ändringar",
   "NotificationSettingsForm.notificationOptionsHeading": "Bevakningar",
   "NotificationSettingsForm.notificationOptionsInfo": "Välj vad du vill få notiser om.",
+  "NotificationSettingsForm.newProjectsHeadline": "Nya projekt",
   "NotificationSettingsForm.notificationSettingsHeading": "Notisinställningar",
   "NotificationSettingsForm.notificationSettingsInfo": "Välj hur du vill ta emot emotiser.",
   "NotificationSettingsForm.businessAreasTip": "Som standard visas samma branscher på din företagssida.",

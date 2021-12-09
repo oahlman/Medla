@@ -136,9 +136,7 @@ class NotificationSettingsFormComponent extends Component {
                     twoColumns={true}
                   />
                      <div className={css.newProjects}>
-                      <legend className={css.newProjectsHeadline}>Nya projekt</legend>
-                    
-                    
+                      <legend className={css.newProjectsHeadline}><FormattedMessage id="NotificationSettingsForm.newProjectsHeadline" /></legend> 
                     <FieldCheckbox
                     className={css.features}
                     id="notifyNewProjects"

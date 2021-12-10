@@ -102,36 +102,82 @@ const SectionProjects = props => {
           ResLogo,
         )}
         {locationLink(
+          bjornetjarnsberget.name,
+          bjornetjarnsberget.stats.region,
+          bjornetjarnsberget.stats.currentStatus,
+          bjornetjarnsberget.id,
+          CloudberryLogo,
+        )}
+        {locationLink(
           blaklidenfabodberget.name,
           blaklidenfabodberget.stats.region,
           blaklidenfabodberget.stats.currentStatus,
           blaklidenfabodberget.id,
           VattenfallLogo,
         )}
-        {locationLink(
+      </div>
+      <div className={css.locations}>
+      {locationLink(
+          bleka.name,
+          bleka.stats.region,
+          bleka.stats.currentStatus,
+          bleka.id,
+          WpdLogo,
+        )}
+      {locationLink(
           gronhult.name,
           gronhult.stats.region,
           gronhult.stats.currentStatus,
           gronhult.id,
           VattenfallLogo,
         )}
-      </div>
-      <div className={css.locations}>
-        {locationLink(
+      {locationLink(
           hocksjon.name,
           hocksjon.stats.region,
           hocksjon.stats.currentStatus,
           hocksjon.id,
           JamtkraftLogo,
         )}
-        {locationLink(
+      </div>
+      <div className={css.locations}>
+      {locationLink(
+          han.name,
+          han.stats.region,
+          han.stats.currentStatus,
+          han.id,
+          CloudberryLogo,
+        )}
+      {locationLink(
+          hybrit.name,
+          hybrit.stats.region,
+          hybrit.stats.currentStatus,
+          hybrit.id,
+          HybritLogo,
+        )}
+      {locationLink(
           kabeko.name,
           kabeko.stats.region,
           kabeko.stats.currentStatus,
           kabeko.id,
           KabekoLogo,
         )}
-        {locationLink(
+      </div>
+      <div className={css.locations}>
+      {locationLink(
+          kolvallen.name,
+          kolvallen.stats.region,
+          kolvallen.stats.currentStatus,
+          kolvallen.id,
+          AriseLogo,
+        )}
+      {locationLink(
+          skaftasen.name,
+          skaftasen.stats.region,
+          skaftasen.stats.currentStatus,
+          skaftasen.id,
+          AriseLogo,
+        )}
+      {locationLink(
           stollsaterberget.name,
           stollsaterberget.stats.region,
           stollsaterberget.stats.currentStatus,
@@ -139,9 +185,14 @@ const SectionProjects = props => {
           WpdLogo,
         )}
       </div>
-      <div className={css.locations}>
-      </div>
       <div className={css.locationsOneOfThree}>
+      {locationLink(
+          stormossen.name,
+          stormossen.stats.region,
+          stormossen.stats.currentStatus,
+          stormossen.id,
+          WpdLogo,
+        )}
       </div>
     </div>
   );

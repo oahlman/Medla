@@ -77,8 +77,8 @@ export const EditCompanyInfoFormComponent = props => (
           }
           );
 
-          const organizationNumber = intl.formatMessage({
-            id: 'EditCompanyDescriptionForm.organizationNumber',
+          const companyNumber = intl.formatMessage({
+            id: 'EditCompanyDescriptionForm.companyNumber',
           }
           );
 
@@ -152,11 +152,11 @@ export const EditCompanyInfoFormComponent = props => (
             />
 
           <FieldTextInput
-            id="organizationNumber"
-            name="organizationNumber"
+            id="companyNumber"
+            name="companyNumber"
             className={css.contactDetails}
             type="textarea"
-            label={organizationNumber}
+            label={companyNumber}
             placeholder={organizationPlaceholder}
             />
 

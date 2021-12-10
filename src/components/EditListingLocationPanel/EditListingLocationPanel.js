@@ -32,10 +32,10 @@ class EditListingLocationPanel extends Component {
     const location = publicData && publicData.location ? publicData.location : {};
     const { address, building} = location;
     const contactNumber = currentListing.attributes.publicData.contactNumber
-    const organizationNumber = currentListing.attributes.publicData.organizationNumber
+    const companyNumber = currentListing.attributes.publicData.companyNumber
 
 
- 
+
 
     return {
       building,
@@ -45,8 +45,8 @@ class EditListingLocationPanel extends Component {
             selectedPlace: { address, origin: geolocation },
           }
         : null,
-          contactNumber: contactNumber, 
-          organizationNumber:  organizationNumber, 
+          contactNumber: contactNumber,
+          companyNumber:  companyNumber,
     };
   }
 
@@ -64,7 +64,7 @@ class EditListingLocationPanel extends Component {
       updateInProgress,
       errors,
       publicData,
-      
+
     } = this.props;
 
     const classes = classNames(rootClassName || css.root, className);
@@ -84,7 +84,7 @@ class EditListingLocationPanel extends Component {
     );
 
     const isJob = listingCategoryData !== 'company';
-  
+
     const listingCategory = isJob ? 'job' : 'company';
 
     return isJob ? (
@@ -129,14 +129,14 @@ class EditListingLocationPanel extends Component {
         />
       </div>
       ) : (
-        
+
         <div className={classes}>
          <h1 className={css.title}> <FormattedMessage id="EditCompanyInfoPanel.title" /> </h1>
         <EditCompanyInfoForm
           className={css.form}
           initialValues={this.state.initialValues}
           onSubmit={values => {
-            const { building = '', location, contactNumber,  organizationNumber} = values;
+            const { building = '', location, contactNumber,  companyNumber} = values;
             const {
               selectedPlace: { address, origin },
             } = location;
@@ -146,7 +146,7 @@ class EditListingLocationPanel extends Component {
                 location: { address, building },
                 contactNumber: contactNumber,
                 listingCategory: listingCategory,
-                organizationNumber:  organizationNumber,
+                companyNumber:  companyNumber,
 
               },
             };
@@ -156,7 +156,7 @@ class EditListingLocationPanel extends Component {
                 building,
                 location: { search: address, selectedPlace: { address, origin } },
                 contactNumber: contactNumber,
-                organizationNumber:  organizationNumber,
+                companyNumber:  companyNumber,
 
               },
             });
@@ -176,7 +176,7 @@ class EditListingLocationPanel extends Component {
 
 
         </div>
-      
+
     );
   }
 }

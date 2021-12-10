@@ -213,7 +213,7 @@
   "EditListingDescriptionForm.contactPlaceholder": "Ange en e-postadress eller ett mobilnummer",
   "EditListingDescriptionForm.descriptionRequired": "Detta fält är obligatorisk.",
   "EditCompanyDescriptionForm.contactPhone": "Telefonnummer eller E-post",
-  "EditCompanyDescriptionForm.organizationNumber": "Organisationsnummer",
+  "EditCompanyDescriptionForm.companyNumber": "Organisationsnummer",
   "EditCompanyDescriptionForm.organizationPlaceholder": "Ange ditt organisationsnummer",
 
 

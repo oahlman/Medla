@@ -480,7 +480,7 @@
   "ListingPage.ownJob": "Det här är ditt jobb.",
   "ListingPage.ownJobDraft": "Det här jobbet är ett utkast.",
   "ListingPage.ownJobPendingApproval": "Det här jobbet väntar på godkännande.",
-  "ListingPage.ownClosedCompany": "Ditt företag har stängts och kan inte kontaktas.",
+  "ListingPage.ownClosedCompany": "Ditt företag är stängt och syns bara för dig.",
   "ListingPage.ownCompany": "Det här är ditt företag.",
   "ListingPage.ownCompanyDraft": "Företaget är ett utkast.",
   "ListingPage.ownCompanyPendingApproval": "Ditt företag väntar på godkännande.",

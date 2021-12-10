@@ -30,7 +30,7 @@ const PreviewAccessBanner = props => {
       <p className={css.text}>
         <FormattedMessage id="PreviewAccessBanner.message" values={{ firstName, lastName }} />
       </p>
-        <ExternalLink className={css.button} href="mailto:info@peerdigital.se">
+        <ExternalLink className={css.button} href="mailto:info@medla.app">
                     <FormattedMessage id="PreviewAccessBanner.contact" />
                   </ExternalLink>
     </div>

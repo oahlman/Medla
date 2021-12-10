@@ -80,7 +80,7 @@ const TopbarMobileMenu = props => {
          <FormattedMessage id="Footer.toFAQPage" />
         </NamedLink>
 
-        <ExternalLink className={css.navigationLinkDark} href="mailto:info@peerdigital.se">
+        <ExternalLink className={css.navigationLinkDark} href="mailto:info@medla.app">
           <FormattedMessage id="Footer.toHelpPage" />
           </ExternalLink>
 
@@ -187,7 +187,7 @@ const TopbarMobileMenu = props => {
          <FormattedMessage id="Footer.toFAQPage" />
         </NamedLink>
 
-        <ExternalLink className={css.navigationLinkDark} href="mailto:info@peerdigital.se">
+        <ExternalLink className={css.navigationLinkDark} href="mailto:info@medla.app">
           <FormattedMessage id="Footer.toHelpPage" />
           </ExternalLink>
 

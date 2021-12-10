@@ -50,7 +50,7 @@ const linkToHome = <NamedLink name="LoginPage">
   <FormattedMessage id="SectionProjectTransfer.toHome" />
 </NamedLink>
 
-const mailTo = <ExternalLink  href="mailto:info@peerdigital.se" className={css.link}>
+const mailTo = <ExternalLink  href="mailto:info@medla.app" className={css.link}>
 
   <FormattedMessage id="SectionProjectTransfer.mailTo" />
 </ExternalLink>

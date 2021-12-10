@@ -79,7 +79,7 @@ const AboutPage = () => {
               <h2>Kontakt</h2>
               <p>
                 Har du frågor eller funderingar så tveka inte med att {''}
-                <ExternalLink href="mailto:info@peerdigital.se">kontakta oss</ExternalLink>.
+                <ExternalLink href="mailto:info@medla.app">info@medla.app</ExternalLink>.
               </p>
 
             </div>

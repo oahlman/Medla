@@ -79,7 +79,7 @@ const Footer = props => {
                   </NamedLink>
                 </li>
                 <li className={css.listItem}>
-                <ExternalLink className={css.link} href="mailto:info@peerdigital.se">
+                <ExternalLink className={css.link} href="mailto:info@medla.app">
                     <FormattedMessage id="Footer.toHelpPage" />
                   </ExternalLink>
                 </li>

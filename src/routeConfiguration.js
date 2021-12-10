@@ -387,6 +387,14 @@ const routeConfiguration = () => {
 
     //Project links
     {
+      path: '/hybrit',
+      name: 'Hybrit',
+      component: ProjectPage,
+      extraProps: { projectUrl: 'hybrit' },
+      loadData: params =>
+        pageDataLoadingAPI.ProjectPage.loadData({ ...params, projectUrl: 'hybrit' }),
+    },
+    {
       path: '/kolvallen',
       name: 'Kölvallen',
       component: ProjectPage,
@@ -427,12 +435,27 @@ const routeConfiguration = () => {
         pageDataLoadingAPI.ProjectPage.loadData({ ...params, projectUrl: 'bjornberget' }),
     },
     {
+      path: '/bleka',
+      name: 'Bleka',
+      component: ProjectPage,
+      extraProps: { projectUrl: 'bleka' },
+      loadData: params =>
+        pageDataLoadingAPI.ProjectPage.loadData({ ...params, projectUrl: 'bleka' }),
+    },
+    {
       path: '/stollsaterberget',
       name: 'Stöllsäterberget',
       component: ProjectPage,
       extraProps: { projectUrl: 'stollsaterberget' },
       loadData: params =>
         pageDataLoadingAPI.ProjectPage.loadData({ ...params, projectUrl: 'stollsaterberget' }),    },
+    {
+      path: '/stormossen',
+      name: 'Stormossen',
+      component: ProjectPage,
+      extraProps: { projectUrl: 'stormossen' },
+      loadData: params =>
+        pageDataLoadingAPI.ProjectPage.loadData({ ...params, projectUrl: 'stormossen' }),    },
     {
       path: '/hocksjon',
       name: 'Hocksjön',

@@ -33,6 +33,9 @@
  *         (i.e. pub_<key> or meta_<key>).
  */
 
+import hybritImg from './images/hybrit.jpg';
+import stormossenImg from './images/stormossen.jpg';
+import blekaImg from './images/bleka.jpg';
 import kolvallenImg from './images/kolvallen.jpg';
 import skaftasenImg from './images/placeholder.jpg';
 import bjornetjarnsbergetImg from './images/bjornetjarnsberget.jpg';
@@ -68,6 +71,141 @@ const businessAreas = [
   ];
 
 export const projects = [
+  {
+    id: 'stormossen',
+    name: 'Stormossen',
+    companyName: 'wpd',
+    companyId: 'wpd',
+    type: 'medla',
+    image: stormossenImg,
+    location: {
+      lat: 60.371137038777064,
+      lng: 16.529531507934973,
+    },
+    bounds: {
+      ne: '60.96597403,17.43740995',
+      sw: '59.76505104,15.6256871',
+    },
+    popularBusinessAreas: [
+      'anlaggning',
+      'bemanning',
+      'betong',
+      'bygg',
+      'driftochunderhall',
+      'el',
+    ],
+    description: {
+        title: 'Vindpark Stormossen',
+        summary: 'wpd undersöker möjligheterna att uppföra en vindpark om maximalt 32 vindkraftverk med en totalhöjd om högst 290 m. Projektområdet är beläget ca 7 km nordost om Horndal, ca 20 km sydost om Hofors och ca 20 km sydväst om Sandviken. Bilden är ett fotomontage från Horndal.',
+        about: {
+          aboutProject: 'wpd undersöker möjligheterna att uppföra en vindpark om maximalt 32 vindkraftverk med en totalhöjd om högst 290 m. Projektområdet är beläget ca 7 km nordost om Horndal, ca 20 km sydost om Hofors och ca 20 km sydväst om Sandviken. Projektområdet stäcker sig över tre kommuner; Sandviken, Hofors och Avesta. Marken ägs av Sveaskog och ett antal privata markägare. En vindkraftspark av den här storleken skulle kunna ge en årsproduktion på ca 842 GWh vilket räcker för att försörja drygt 168000 villor med hushållsel.',
+          aboutCompany: '',
+          externalServiceLink: 'https://www.wpd.se/',
+      externalLink: 'https://www.wpd.se/aktuella-projekt/vindkraft-pa-land/stormossen/',
+          linkText: 'Läs mer'
+      },
+    },
+    stats: {
+      currentStatus: 'planning',
+      turbines: 32,
+      mw: 256,
+      constructionPeriod: {
+          start: 0,
+          end: 0,
+      },
+      region: 'Sandviken, Hofors och Avesta kommun',
+  },
+  },
+  {
+    id: 'bleka',
+    name: 'Bleka',
+    companyName: 'wpd',
+    companyId: 'wpd',
+    type: 'medla',
+    image: blekaImg,
+    location: {
+      lat: 63.86755527451014,
+      lng: 16.1675187962954,
+    },
+    bounds: {
+      ne: '64.32126811,16.94344962',
+      sw: '63.40614915,15.39384103',
+    },
+    popularBusinessAreas: [
+      'anlaggning',
+      'bemanning',
+      'betong',
+      'bygg',
+      'driftochunderhall',
+      'el',
+    ],
+    description: {
+      title: 'Vindpark Bleka',
+      summary: 'wpd undersöker möjligheterna att uppföra en vindpark om maximalt 15 vindkraftverk med en totalhöjd om högst 290 m på höjdområdet Bleka, beläget i Strömsunds kommun i Jämtlands län. Projektområdet är beläget ca 30 km nordost om Strömsund, mellan Rossön och Backe. Bilden är ett fotomontage från Rudsjön.',
+      about: {
+        aboutProject: 'wpd undersöker möjligheterna att uppföra en vindpark om maximalt 15 vindkraftverk med en totalhöjd om högst 290 m på höjdområdet Bleka, beläget i Strömsunds kommun i Jämtlands län. Projektområdet är beläget ca 30 km nordost om Strömsund, mellan Rossön och Backe. Marken ägs av Sveaskog, SCA samt en privat markägare. Projektområdet lämpar sig väl för en vindkraftsetablering med tanke på att området ligger högt och fritt samt långt från samlad bebyggelse. Möjlighet till elanslutning finns även direkt på den befintliga ledning som korsar området. En vindkraftspark av den här storleken skulle ge en årsproduktion på ca 270 GWh (270 000 000 kWh) vilket räcker för att försörja drygt 54 000 villor med hushållsel.',
+        aboutCompany: '',
+        externalServiceLink: 'https://www.wpd.se/',
+        externalLink: 'https://www.wpd.se/aktuella-projekt/vindkraft-pa-land/bleka/',
+          linkText: 'Läs mer'
+      },
+    },
+    stats: {
+      currentStatus: 'planning',
+      turbines: 15,
+      mw: 100,
+      constructionPeriod: {
+          start: 0,
+          end: 0,
+      },
+      region: 'Strömsunds kommun',
+  },
+  },
+  {
+    id: 'hybrit',
+    name: 'Hybrit',
+    companyName: 'Hybrit',
+    companyId: 'hybrit',
+    type: 'medla',
+    image: hybritImg,
+    location: {
+      lat: 67.133798,
+      lng: 20.657898,
+    },
+    bounds: {
+        ne: '69.33701906,25.08883256',
+        sw: '64.71116182,16.22061112',
+    },
+    popularBusinessAreas: [
+      'anlaggning',
+      'bemanning',
+      'betong',
+      'bygg',
+      'driftochunderhall',
+      'el',
+    ],
+    description: {
+      title: 'Hybrit',
+      summary: 'Projektet är ett samarbete mellan SSAB, LKAB och Vattenfall och kommer innefatta av en demonstrationsanläggning för produktion av vätgas och tillverkning av järnsvamp genom direktreduktion. Anläggningen planeras i Gällivare kommun och planeras vara klar 2026. Bild från pilotanläggningen i Luleå.',
+      about: {
+        aboutProject: 'I demonstrationsanläggningen tar vi utvecklingen vidare från tester i labbmiljö och pilotskala, till att demonstrera produktion i industriell skala. Den planerade demonstrationsanläggningen omfattar produktion av vätgas och tillverkning av järnsvamp genom direktreduktion av järnmalm med vätgas. Anläggningen planeras i Gällivare kommun. Planen är att anläggningen ska vara klar 2026. Under 2020 påbörjades arbetet med att ta fram underlag för den miljökonsekvensbeskrivning som kommer ligga till grund för tillståndsansökan till Mark- och Miljödomstolen. Hybrit genomförde under 2020 samråd för de två möjliga placeringar som ursprungligen utreddes för demonstrationsanläggningen (i Luleå kommun och Gällivare kommun). Hybrit går nu vidare med fördjupade dialoger och utredningar för etablering i Gällivare kommun för att säkerställa att vi får tillgång till alla synpunkter och all information som kan ha betydelse för den fortsatta utformningen av anläggningen och miljökonsekvensbeskrivningen.',
+        aboutCompany: '',
+        externalServiceLink: '',
+        externalLink: 'https://www.hybritdevelopment.se/samrad/',
+        linkText: 'Läs mer'
+      },
+    },
+    stats: {
+      currentStatus: 'planning',
+      turbines: 42,
+      mw: 300,
+      constructionPeriod: {
+          start: 2022,
+          end: 2026,
+      },
+      region: 'Gällivare kommun',
+  },
+  },
   {
     id: 'kolvallen',
     name: 'Kölvallen',

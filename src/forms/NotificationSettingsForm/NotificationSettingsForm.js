@@ -94,6 +94,7 @@ class NotificationSettingsFormComponent extends Component {
             invalid || pristine || pristineSinceLastSubmit || uploadInProgress || submitInProgress;
 
           const categoryOptions = findOptionsForSelectFilter('category', filterConfig);
+
           const notificationOptions = [
             { key: 'email', label: 'E-post' },
             { key: 'sms', label: 'Sms' },
@@ -134,6 +135,18 @@ class NotificationSettingsFormComponent extends Component {
                     values="amenities"
                     twoColumns={true}
                   />
+                     <div className={css.newProjects}>
+                      <legend className={css.newProjectsHeadline}><FormattedMessage id="NotificationSettingsForm.newProjectsHeadline" /></legend> 
+                    <FieldCheckbox
+                    className={css.features}
+                    id="notifyNewProjects"
+                    name="notifyNewProjects"
+                    label="Notifiera mig när nya projekt blir synliga på medla"
+                    defaultValue='true'
+                    twoColumns={true}
+                
+                      />
+                    </div>
 
                   <FieldCheckboxGroup
                     className={css.features}
@@ -144,6 +157,12 @@ class NotificationSettingsFormComponent extends Component {
                     values="category"
                     twoColumns={true}
                   />
+
+                   
+            
+
+
+             
                 <div className={css.fileInfo}>
                   <FormattedMessage id="NotificationSettingsForm.businessAreasTip" />
                 </div>

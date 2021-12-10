@@ -65,6 +65,27 @@ const EditListingFeaturesFormComponent = props => (
           {errorMessageShowListing}
           <FormSpy onChange={onChange} />
           <FieldRadioButton
+            id='hybrit'
+            name='amenities'
+            label="Hybrit"
+            value="hybrit"
+            showAsRequired={showAsRequired}
+          />
+          <FieldRadioButton
+            id='bjornetjarnsberget'
+            name='amenities'
+            label="Björnetjärnsberget"
+            value="bjornetjarnsberget"
+            showAsRequired={showAsRequired}
+          />
+          <FieldRadioButton
+            id='han'
+            name='amenities'
+            label="Hån"
+            value="han"
+            showAsRequired={showAsRequired}
+          />
+          <FieldRadioButton
             id='bjornberget'
             name='amenities'
             label="Björnberget"
@@ -76,6 +97,13 @@ const EditListingFeaturesFormComponent = props => (
             name='amenities'
             label="Blakliden"
             value="blaklidenfabodberget"
+            showAsRequired={showAsRequired}
+          />
+           <FieldRadioButton
+            id='bleka'
+            name='amenities'
+            label="Bleka"
+            value="bleka"
             showAsRequired={showAsRequired}
           />
           <FieldRadioButton
@@ -111,6 +139,13 @@ const EditListingFeaturesFormComponent = props => (
             name='amenities'
             label="Stöllsäterberget"
             value="stollsaterberget"
+            showAsRequired={showAsRequired}
+          />
+          <FieldRadioButton
+            id='stormossen'
+            name='amenities'
+            label="Stormossen"
+            value="Stormossen"
             showAsRequired={showAsRequired}
           />
           <FieldRadioButton

@@ -498,7 +498,6 @@ const sectionPostJob = (
               <div className={css.projectDetails}>
               <div className={css.stats}>
               <ul className={css.items}>
-                <li><b>Status</b> {status}</li>
                 <li><b>Storlek</b> {projectData.stats.turbines} turbiner</li>
                 <li><b>Effekt</b> {projectData.stats.mw} MW</li>
                 <li><b>Byggperiod</b> {projectData.stats.constructionPeriod.start}—{projectData.stats.constructionPeriod.end}</li>

@@ -54,9 +54,24 @@ export const ContactCardJob = props => {
   const isEmail = (/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i).test(contactInformation);
   const [companyContact, setEmailHidden] = useState(false);
   const phoneNumberClean = contactInformation.replace(/[^0-9+]/g, '');
-  const phoneNumberFormatted = isEmail === false && phoneNumberClean.length === 10 && phoneNumberClean.startsWith('07')
-    ? phoneNumberClean.substring(0,3).replace('0', '+46 ') + '-' + phoneNumberClean.substring(3,6) + ' ' + phoneNumberClean.substring(6,8) + ' ' + phoneNumberClean.substring(8,11)
-    : phoneNumberClean.substring(0,3) + '-' + phoneNumberClean.substring(3,6) + ' ' + phoneNumberClean.substring(6,8) + ' ' + phoneNumberClean.substring(8);
+
+  const swedenMobileNumberFormat = phoneNumberClean.substring(0,3).replace('0', '+46 ') + '-' + phoneNumberClean.substring(3,6) + ' ' + phoneNumberClean.substring(6,8) + ' ' + phoneNumberClean.substring(8,11);
+  const otherMobileNumberFormat = phoneNumberClean.substring(0,3) + '-' + phoneNumberClean.substring(3,5) + ' ' + phoneNumberClean.substring(5,8) + ' ' + phoneNumberClean.substring(8,10) + ' ' + phoneNumberClean.substring(10);
+  const landlinePhoneNumberFormat = phoneNumberClean.substring(0,3) + '-' + phoneNumberClean.substring(3,6) + ' ' + phoneNumberClean.substring(6,9) + ' ' + phoneNumberClean.substring(9);
+  const otherPhoneNumberFormat = phoneNumberClean.substring(0,3) + '-' + phoneNumberClean.substring(3,6) + ' ' + phoneNumberClean.substring(6,8) + ' ' + phoneNumberClean.substring(8);
+
+  let phoneNumberFormatted = null;
+  if (isEmail === false && phoneNumberClean.startsWith('07')) {
+    phoneNumberFormatted = swedenMobileNumberFormat;
+  } else if (isEmail === false && phoneNumberClean.startsWith('+')) {
+    phoneNumberFormatted = otherMobileNumberFormat;
+  } else if (isEmail === false && phoneNumberClean.length >= 10) {
+    phoneNumberFormatted = otherMobileNumberFormat;
+  } else if (isEmail === false && phoneNumberClean.length <= 9) {
+    phoneNumberFormatted = landlinePhoneNumberFormat;
+  } else if (isEmail === false) {
+    phoneNumberFormatted = otherPhoneNumberFormat;
+  }
 
   const buttonText =  'Visa kontaktuppgifter';
 

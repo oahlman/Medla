@@ -71,14 +71,14 @@ export const EditListingLocationFormComponent = props => (
           const phoneInvalidMessage = intl.formatMessage({
             id: 'SignupForm.phoneInvalid',
           });
-    
+
           const contactPhoneMessage = intl.formatMessage({
             id: 'EditCompanyDescriptionForm.contactPhone',
           }
           );
           const phoneValid = validators.swedenMobileFormatValid(phoneInvalidMessage);
-  
-    
+
+
           const contactInformationMessage = intl.formatMessage({
             id: 'EditListingDescriptionForm.contactPlaceholder',
           });
@@ -138,8 +138,8 @@ export const EditListingLocationFormComponent = props => (
             type="textarea"
             label={contactPhoneMessage}
             placeholder={contactInformationMessage}
-            validate={validators.composeValidators(usernameRequired, usernameValid)}
-            />    
+            validate={validators.composeValidators(usernameRequired)}
+            />
 
           <Button
             className={css.submitButton}

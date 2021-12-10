@@ -29,7 +29,7 @@ const SectionMission = props => {
 
       <div className={css.steps}>
         <div className={css.step}>
-          <p>
+          <p className={css.subtitle}>
             <FormattedMessage id="SectionMission.part1Text" />
           </p>
         </div>

@@ -40,7 +40,7 @@ export const ContactCardJob = props => {
     onResendVerificationEmail,
     listing,
     email,
-  
+
     ...rest
   } = props;
 
@@ -53,9 +53,13 @@ export const ContactCardJob = props => {
    />;
   const isEmail = (/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i).test(contactInformation);
   const [companyContact, setEmailHidden] = useState(false);
-  
+  const phoneNumberClean = contactInformation.replace(/[^0-9+]/g, '');
+  const phoneNumberFormatted = isEmail === false && phoneNumberClean.length === 10 && phoneNumberClean.startsWith('07')
+    ? phoneNumberClean.substring(0,3).replace('0', '+46 ') + '-' + phoneNumberClean.substring(3,6) + ' ' + phoneNumberClean.substring(6,8) + ' ' + phoneNumberClean.substring(8,11)
+    : phoneNumberClean.substring(0,3) + '-' + phoneNumberClean.substring(3,6) + ' ' + phoneNumberClean.substring(6,8) + ' ' + phoneNumberClean.substring(8);
+
   const buttonText =  'Visa kontaktuppgifter';
- 
+
   const simulateCall = contactInformation => window.open(`tel:${contactInformation}`, '_self');
   const simulateEmail = contactInformation => window.open(`mailto:${contactInformation}`, '_self');
 
@@ -64,9 +68,9 @@ export const ContactCardJob = props => {
     className={companyContact ? css.buttonHiddenNumber : css.hidden}
     type="submit"
     onClick={isEmail ? (() => simulateEmail(contactInformation)) : (() => simulateCall(contactInformation))}>
-    {contactInformation}{}
+    {isEmail ? contactInformation : phoneNumberFormatted}{}
   </SecondaryButton>
-  
+
 );
 
 return (
@@ -75,9 +79,9 @@ return (
     onClick={() => setEmailHidden(showCompanyContactDetails)}>
      <FormattedMessage
     id="ListingPage.contactDetailsButton"
-     /> 
+     />
     </SecondaryButton>
-    
+
     {showCompanyContactDetails}
   </div>
 );

@@ -136,15 +136,15 @@ class NotificationSettingsFormComponent extends Component {
                     twoColumns={true}
                   />
                      <div className={css.newProjects}>
-                      <legend className={css.newProjectsHeadline}><FormattedMessage id="NotificationSettingsForm.newProjectsHeadline" /></legend> 
+                      <legend className={css.newProjectsHeadline}><FormattedMessage id="NotificationSettingsForm.newProjectsHeadline" /></legend>
                     <FieldCheckbox
                     className={css.features}
                     id="notifyNewProjects"
                     name="notifyNewProjects"
-                    label="Notifiera mig när nya projekt blir synliga på medla"
+                    label="Notifiera mig om nya projekt på Medla"
                     defaultValue='true'
                     twoColumns={true}
-                
+
                       />
                     </div>
 
@@ -158,11 +158,11 @@ class NotificationSettingsFormComponent extends Component {
                     twoColumns={true}
                   />
 
-                   
-            
 
 
-             
+
+
+
                 <div className={css.fileInfo}>
                   <FormattedMessage id="NotificationSettingsForm.businessAreasTip" />
                 </div>

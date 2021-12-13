@@ -52,7 +52,7 @@ export const ActionBarMaybe = props => {
     return (
       <div className={css.actionBar}>
         <p className={css.closedListingText}>
-          <FormattedMessage id="ListingPage.closedListing" />
+          <FormattedMessage id="CompanyPage.closedListing" />
         </p>
       </div>
     );

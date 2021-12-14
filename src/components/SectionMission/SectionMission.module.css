@@ -12,8 +12,11 @@
 .steps {
   display: flex;
   flex-direction: column;
-  align-items: center;
 
+
+  @media (--viewportMedium) {
+    align-items: center;
+  }
 }
 
 .step {
@@ -22,9 +25,8 @@
   }
 }
 
-.step:last-of-type {
-  @media (--viewportMedium) {
-  }
+.subtitle {
+  text-align: center;
 }
 
 .stepTitle {

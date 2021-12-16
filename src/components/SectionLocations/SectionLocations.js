@@ -8,9 +8,12 @@ import { NamedLink } from '../../components';
 
 import css from './SectionLocations.module.css';
 
-import helsinkiImage from './images/location_helsinki.jpg';
-import rovaniemiImage from './images/location_rovaniemi.jpg';
-import rukaImage from './images/location_ruka.jpg';
+import arjang from './images/arjang.jpg';
+import avesta from './images/avesta.jpg';
+import gallivare from './images/gallivare.jpg';
+import hofors from './images/hofors.jpg';
+import ljusdal from './images/ljusdal.jpg';
+import sandviken from './images/sandviken.jpg';
 
 class LocationImage extends Component {
   render() {
@@ -51,19 +54,36 @@ const SectionLocations = props => {
       </div>
       <div className={css.locations}>
         {locationLink(
-          'Helsinki',
-          helsinkiImage,
-          '?address=Helsinki%2C%20Finland&bounds=60.2978389%2C25.254484899999966%2C59.9224887%2C24.782875800000056&origin=60.16985569999999%2C24.93837910000002'
+          'Avesta',
+          avesta,
+          's?address=Avesta&bounds=60.6217629,13.97948452,58.14688954,10.35304048&pub_listingCategory=company'
         )}
         {locationLink(
-          'Rovaniemi',
-          rovaniemiImage,
-          '?address=Rovaniemi%2C%20Finland&bounds=67.18452510000002%2C27.32667850000007%2C66.1553745%2C24.736871199999996&origin=66.50394779999999%2C25.729390599999988'
+          'Gällivare',
+          gallivare,
+          's?address=Gällivare&bounds=69.33701906,25.08883256,64.71116182,16.22061112&pub_listingCategory=company'
         )}
         {locationLink(
-          'Ruka',
-          rukaImage,
-          '?address=Ruka%2C%20Finland&bounds=66.1704578%2C29.14246849999995%2C66.1614402%2C29.110453699999994&origin=66.16594940000002%2C29.12646110000003'
+          'Hofors',
+          hofors,
+          's?address=Hofors&bounds=61.09750184%2C17.13902433%2C59.96552243%2C15.46719667&mapSearch=true&pub_listingCategory=company'
+        )}
+      </div>
+      <div className={css.locations}>
+        {locationLink(
+          'Ljusdal',
+          ljusdal,
+          's?address=Ljusdal&bounds=63.03626025,18.0991935,60.59913922,14.2480015&pub_listingCategory=company'
+        )}
+        {locationLink(
+          'Sandviken',
+          sandviken,
+          's?address=Sandviken&bounds=60.95459392%2C17.1740284%2C60.37694908%2C16.3174206&mapSearch=true&pub_listingCategory=company'
+        )}
+        {locationLink(
+          'Årjäng',
+          arjang,
+          's?address=Årjäng&bounds=60.36228154%2C13.5496365%2C58.42383193%2C10.7828885&mapSearch=true&pub_listingCategory=company'
         )}
       </div>
     </div>

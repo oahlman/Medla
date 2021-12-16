@@ -56,7 +56,7 @@ const SectionLocations = props => {
         {locationLink(
           'Avesta',
           avesta,
-          's?address=Avesta&bounds=60.6217629,13.97948452,58.14688954,10.35304048&pub_listingCategory=company'
+          's?address=Avesta&bounds=60.70848539%2C16.86920029%2C59.62704493%2C15.28974871&pub_listingCategory=company'
         )}
         {locationLink(
           'Gällivare',

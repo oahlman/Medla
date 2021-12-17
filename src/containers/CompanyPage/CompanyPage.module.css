@@ -286,11 +286,12 @@
 
 
   .bookingPanel {
-   
+    display: none;
+
 
 
     @media (--viewportLarge) {
-      display: block;
+
   
     
   

@@ -343,7 +343,7 @@
   "EmailVerificationPage.title": "Verifiera din e-postadress",
   "EnquiryForm.heading": "Fråga om {listingTitle}",
   "EnquiryForm.messageLabel": "Meddelande till {authorDisplayName}",
-  "EnquiryForm.messagePlaceholder": "Hej {authorDisplayName}! Vi erbuder…",
+  "EnquiryForm.messagePlaceholder": "Hej {authorDisplayName}! Vi söker…",
   "EnquiryForm.messageRequired": "Ett meddelande krävs",
   "EnquiryForm.sendEnquiryError": "Oj, något gick fel. Försök igen.",
   "EnquiryForm.submitButtonText": "Skicka förfrågan",

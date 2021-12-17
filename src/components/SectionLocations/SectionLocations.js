@@ -30,7 +30,7 @@ const locationLink = (location, region, image, searchQuery) => {
     <NamedLink name="SearchPage" to={{ search: searchQuery }} className={css.location}>
       <div className={css.imageWrapper}>
         <div className={css.aspectWrapper}>
-          <LazyImage src={image} alt={name} className={css.locationImage} />
+          <LazyImage src={image} alt={location} className={css.locationImage} />
         </div>
       </div>
       <div className={css.textContainer}>

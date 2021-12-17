@@ -20,7 +20,7 @@
     
   }
 
-  @media (max-width: 600px) {
+  @media (max-width: 775px) {
     @apply --marketplaceLinkStyles;
     @apply --marketplaceH4FontStyles;
     margin: 0;

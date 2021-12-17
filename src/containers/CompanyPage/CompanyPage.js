@@ -41,8 +41,12 @@ import {
   BookingPanel,
   ContactCardForCompany,
   Collapsible,
+  Modal,
+  Button,
 
 } from '../../components';
+
+import { EnquiryForm } from '../../forms';
 import { TopbarContainer, NotFoundPage } from '../../containers';
 
 import { sendEnquiry, fetchTransactionLineItems, setInitialValues } from './CompanyPage.duck';
@@ -205,6 +209,7 @@ export class CompanyPageComponent extends Component {
       lineItems,
       fetchLineItemsInProgress,
       fetchLineItemsError,
+      onContactUser,
     } = this.props;
 
     const listingId = new UUID(rawParams.id);
@@ -479,6 +484,7 @@ export class CompanyPageComponent extends Component {
                     richTitle={richTitle}
                     category={category}
                     hostLink={null}
+              
 
                   />
 
@@ -547,6 +553,8 @@ export class CompanyPageComponent extends Component {
                     publicData={publicData}
                     listingId={currentListing.id}
                   />
+
+         
                   </div>
 
                 </div>
@@ -560,10 +568,28 @@ export class CompanyPageComponent extends Component {
                   {SectionBookingPanel}
 
                   {ContactCardForJobListings}
+              
+              
+      
 
+                  <Modal
+              id="ListingPage.enquiry"
+              contentClassName={css.enquiryModalContent}
+              isOpen={isAuthenticated && this.state.enquiryModalOpen}
+              onClose={() => this.setState({ enquiryModalOpen: false })}
+              onManageDisableScrolling={onManageDisableScrolling}
+            >
+              <EnquiryForm
+                className={css.enquiryForm}
+                submitButtonWrapperClassName={css.enquirySubmitButtonWrapper}
+                listingTitle={title}
+                authorDisplayName={authorDisplayName}
+                sendEnquiryError={sendEnquiryError}
+                onSubmit={this.onSubmitEnquiry}
+                inProgress={sendEnquiryInProgress}
+              />
+            </Modal>
                   </div>
-
-
                   <div className={css.mapDesktop}>
                   <SectionMapMaybe
                     geolocation={geolocation}
@@ -571,11 +597,18 @@ export class CompanyPageComponent extends Component {
                     listingId={currentListing.id}
                   />
                   </div>
+                  <SectionHeading
+                      showContactUser={showContactUser}
+                       onContactUser={this.onContactUser} >
+                      </SectionHeading>
 
                      {ContactCardForCompanyListings}
+              
               </div>
 
               </div>
+              
+
 
             </div>
           </LayoutWrapperMain>

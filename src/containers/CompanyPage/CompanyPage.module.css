@@ -408,12 +408,15 @@
   /* Font */
   @apply --marketplaceModalTitleStyles;
   color: var(--matterColor);
+  padding: 0 24px;
 
   /* Layout */
   width: 100%;
   margin-top: 0;
   margin-bottom: 0;
   @media (--viewportMedium) {
+    padding: 0 0px;
+
     margin-top: 0;
     margin-bottom: 2px;
   }
@@ -452,8 +455,7 @@
   @apply --marketplaceButtonStylesPrimary;
    margin:0;
    width: 100%;
-   padding: 0px;
-
+  
   @media (--viewportMedium) {
     margin-bottom:-20px;
   }
@@ -736,6 +738,7 @@
 
 
 .contactCardCompany {
+    
   
     @media (--viewportMedium) {
       flex-basis: 576px;
@@ -757,14 +760,14 @@
       border-color: rgba(0, 0, 0, 0.322);
     }
  
-    @media (max-width: 600px) {
+    @media (max-width: 625px) {
       z-index: 9999999999;
       position: fixed;
       bottom: 0;
       left: 0;
       width: 100%;
       margin-bottom: 0px;
-      padding: 18px 24px 18px 24px;
+      padding: 0px 24px 18px 24px;
       background-color: var(--matterColorLight);
       box-shadow: var(--boxShadowTop);
       display: flex; 
@@ -795,11 +798,5 @@ display:none;
   }
 
 
-  .contactPrimary {
-background-color: blue;
-padding: 10px;
-margin: 10px;
-    }
-  
 
   

@@ -43,6 +43,8 @@ import {
   Collapsible,
   Modal,
   Button,
+  ContactLinkJob,
+  ContactCardForJob,
 
 } from '../../components';
 
@@ -423,18 +425,25 @@ export class CompanyPageComponent extends Component {
   );
 
 
-
+  const contactJob =(
+    <ContactCardForJob listing={currentListing}
+    />
+    );
 
   const listingName = currentListing.attributes.title
-
+  
+  
+  const contactLinkJobListings =(
+    <ContactLinkJob listing={currentListing}/> 
+    );
 
   const contactCompany =(
     <ContactCardForCompany  listing={currentListing}/>
     );
 
-  const ContactCardForJobListings = null;
-  const ContactCardForCompanyListings = contactCompany;
-  const ContactLinkForJob = null;
+    
+const ContactCardForJobListings = contactJob;
+  const ContactLinkForJob = contactLinkJobListings;
   const SectionBookingPanel = null;
 
     return (
@@ -484,8 +493,6 @@ export class CompanyPageComponent extends Component {
                     richTitle={richTitle}
                     category={category}
                     hostLink={null}
-              
-
                   />
 
                     {ContactLinkForJob}
@@ -567,7 +574,6 @@ export class CompanyPageComponent extends Component {
 
                   {SectionBookingPanel}
 
-                  {ContactCardForJobListings}
               
               
       
@@ -602,7 +608,7 @@ export class CompanyPageComponent extends Component {
                        onContactUser={this.onContactUser} >
                       </SectionHeading>
 
-                     {ContactCardForCompanyListings}
+                     {ContactCardForJobListings}
               
               </div>
 

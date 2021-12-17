@@ -494,8 +494,9 @@ const ContactCardForJobListings = contactJob;
                     category={category}
                     hostLink={null}
                   />
-
+                    <div className={css.mapMobile}>
                     {ContactLinkForJob}
+                    </div>
                   <SectionDescriptionMaybe description={description} />
 
                   <h2 className={publicData.offerHeading1 ? css.serviceTitle : css.hidden}>
@@ -608,8 +609,9 @@ const ContactCardForJobListings = contactJob;
                        onContactUser={this.onContactUser} >
                       </SectionHeading>
 
+                  <div className={css.showContact}> 
                      {ContactCardForJobListings}
-              
+                     </div>
               </div>
 
               </div>

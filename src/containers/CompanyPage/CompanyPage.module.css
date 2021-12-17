@@ -747,7 +747,7 @@
   margin-bottom: 0px;
   padding: 0px 24px 18px 24px;
   background-color: var(--matterColorLight);
-  box-shadow: var(--boxShadowTop);
+  box-shadow: var(--boxShadow);
   display: flex; 
   flex-direction: column;
   justify-content: center;
@@ -768,9 +768,7 @@
       padding-right: 25px;
       padding-bottom: 20px;
       padding-top: 0px;
-      border-style: solid;
-      border-color: black;
-      border-width: 2px;
+      
       border-radius: 10px;
       width: 50px !important;
       border-color: rgba(0, 0, 0, 0.322);

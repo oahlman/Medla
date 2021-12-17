@@ -738,7 +738,7 @@
 
 
 .contactCardCompany {
-  z-index: 9999999999;
+ 
   position: fixed;
   bottom: 0;
   left: 0;
@@ -752,10 +752,6 @@
   justify-content: center;
   
     @media (--viewportMedium) {
-    
-
-
-
 
     }
     @media (--viewportLarge) {

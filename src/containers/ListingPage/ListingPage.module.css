@@ -697,8 +697,6 @@
 
 
 .contactCardCompany {  
-
-  z-index: 9999999999;
   position: fixed;
   bottom: 0;
   left: 0;

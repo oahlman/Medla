@@ -123,13 +123,19 @@
   }
 }
 
-.hidden{
-  display:none;
+.hidden {
+  display: none;
 }
 
-  
+.missionBackground {
+  background: url('../../assets/road-at-night.jpg');
+  background-position: center;
+  background-size: cover;
+}
 
 
-  
- 
-  
+
+
+
+
+

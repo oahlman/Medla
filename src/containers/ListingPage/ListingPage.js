@@ -436,7 +436,7 @@ export class ListingPageComponent extends Component {
     
     );
 
-  const ContactCardForJobListings =contactJob;
+  const ContactCardForJobListings = contactJob;
 
 
   const ContactCardForCompanyListings = null;
@@ -494,8 +494,9 @@ export class ListingPageComponent extends Component {
                    
                   />
 
+                    <div className={css.mapMobile}>
                     {ContactLinkForJob}
-                  <SectionDescriptionMaybe description={description} />
+                    </div>                  <SectionDescriptionMaybe description={description} />
 
 
                   <SectionServicesMaybe
@@ -538,9 +539,10 @@ export class ListingPageComponent extends Component {
                 <div className={css.bookingPanel}>
                   
                   {SectionBookingPanel}
-
+                  
+                  <div className={css.showContact}>
                   {ContactCardForJobListings}
-                
+                  </div>
                   </div>
 
                 {ContactCardForCompanyListings

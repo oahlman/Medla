@@ -286,7 +286,7 @@
 
 
   .bookingPanel {
-   
+    
 
 
     @media (--viewportLarge) {
@@ -349,7 +349,7 @@
   margin-bottom: 34px;
 
   @media (--viewportMedium) {
-    display: flex;
+    
     margin-bottom: 31px;
   }
 }
@@ -391,7 +391,7 @@
 
 .heading {
   margin-bottom: -25px;
-  padding: 0 24px;
+  padding: 0 0px;
   /* fallback option */
   word-break: break-all;
   /* use break-word if available */
@@ -408,12 +408,15 @@
   /* Font */
   @apply --marketplaceModalTitleStyles;
   color: var(--matterColor);
+  padding: 0 24px;
 
   /* Layout */
   width: 100%;
   margin-top: 0;
   margin-bottom: 0;
   @media (--viewportMedium) {
+    padding: 0 0px;
+
     margin-top: 0;
     margin-bottom: 2px;
   }
@@ -437,7 +440,7 @@
 }
 
 .contactWrapper {
-  display: none;
+  
 
   @media (--viewportMedium) {
     display: inline;
@@ -445,14 +448,19 @@
 }
 
 .separator {
-  margin: 0 6px;
+  display:none;
 }
 
 .contactLink {
-  @apply --marketplaceLinkStyles;
-  @apply --marketplaceH5FontStyles;
-  margin: 0;
+  @apply --marketplaceButtonStylesPrimary;
+   margin:0;
+   width: 100%;
+  
+  @media (--viewportMedium) {
+    margin-bottom:-20px;
+  }
 }
+
 
 .sectionDescription {
   padding: 0 24px;
@@ -546,12 +554,13 @@
 .sectionMap {
   padding: 0 24px;
   margin-bottom: 35px;
+  margin-top: 20px;
   
 
   @media (--viewportMedium) {
     padding: 0;
     margin-bottom: 0;
-    margin-top: 20px;
+   
  
   }
 }
@@ -665,8 +674,8 @@
   max-height: 640px;
   background-color: #eee;
   padding: 0;
-  border: 2px;
- 
+  border-style: none;
+  border-radius: 10px;
   cursor: pointer;
  
   @media (--viewportMedium) {
@@ -730,7 +739,23 @@
 
 
 .contactCardCompany {
+  z-index: 1;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  margin-bottom: 0px;
+  padding: 0px 24px 18px 24px;
+  background-color: var(--matterColorLight);
+  display: flex; 
+  flex-direction: column;
+  justify-content: center;
+  
     @media (--viewportMedium) {
+
+    }
+    @media (--viewportLarge) {
+      display: initial;
       flex-basis: 576px;
       position: relative;
       top: 145px;
@@ -742,29 +767,11 @@
       padding-right: 25px;
       padding-bottom: 20px;
       padding-top: 0px;
-      border-style: solid;
-      border-color: black;
-      border-width: 2px;
+      
       border-radius: 10px;
       width: 50px !important;
       border-color: rgba(0, 0, 0, 0.322);
     }
- 
-    @media (max-width: 600px) {
-      z-index: 9999999999;
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      margin-bottom: 0px;
-      padding: 18px 24px 18px 24px;
-      background-color: var(--matterColorLight);
-      box-shadow: var(--boxShadowTop);
-      display: flex; 
-      flex-direction: column;
-      justify-content: center;
-      
-    } 
   
 }
 
@@ -773,17 +780,43 @@
 .mapDesktop {
 display:none;
   @media (--viewportMedium) {
-    display: block;
-  
-
-    
+    display: none;
   }
-}
+  
+    @media (--viewportLarge) {
+      display:block;
+    }
+  }
+    
+  
 
 .mapMobile {
   display:block;
-    @media (--viewportMedium) {
+    
+  @media (--viewportMedium) {
+      display:block;
+      margin-top: 30px;
+    }
+
+    @media (--viewportLarge) {
       display:none;
     }
   }
 
+
+  .showContact{
+    display: none;
+    
+    @media (--viewportMedium) {
+       display: none;
+      }
+  
+      @media (--viewportLarge) {
+        display: initial;
+      }
+    }
+
+  
+
+
+  

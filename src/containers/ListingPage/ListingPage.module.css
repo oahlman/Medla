@@ -696,10 +696,28 @@
 
 
 
-.contactCardCompany {
- 
-  
+.contactCardCompany {  
+  z-index: 1;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  margin-left: auto ;
+  margin-right: auto ;
+  margin-bottom: 0px;
+  padding: 18px 24px 18px 24px;
+  background-color: var(--matterColorLight);
+  box-shadow: var(--boxShadowTop);
+  display: flex; 
+  flex-direction: column;
+  justify-content: center;
+
+
     @media (--viewportMedium) {
+
+      
+    }
+    @media (--viewportLarge) {
       flex-basis: 576px;
       height: 100%;
       background-color: var(--matterColorLight);
@@ -723,34 +741,11 @@
       box-shadow: var(--boxShadowListingCard);
       border-radius: 10px;
       width: 50px !important;
-
-      
-    }
-    @media (--viewportLarge) {
-      padding: 30px;
-      background-color: transparent;
-      margin-top: 60px;
       
      
     }
 
-    @media (max-width: 600px) {
-      z-index: 9999999999;
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      margin-left: auto ;
-      margin-right: auto ;
-      margin-bottom: 0px;
-      padding: 18px 24px 18px 24px;
-      background-color: var(--matterColorLight);
-      box-shadow: var(--boxShadowTop);
-      display: flex; 
-      flex-direction: column;
-      justify-content: center;
-      
-    } 
+
   
 }
 
@@ -774,7 +769,30 @@
   
 
 
+  .mapMobile {
+    display:block;
+      
+    @media (--viewportMedium) {
+        display:block;
+        margin-top: -30px;
+      }
+  
+      @media (--viewportLarge) {
+        display:none;
+      }
+    }
 
 
 
-
+    .showContact{
+      display: none;
+      
+      @media (--viewportMedium) {
+         display: none;
+        }
+    
+        @media (--viewportLarge) {
+          display: initial;
+        }
+      }
+  

@@ -22,6 +22,7 @@ const SectionMission = props => {
   const classes = classNames(rootClassName || css.root, className);
   return (
     <div className={classes}>
+      <div className={css.content}>
       <div className={css.title}>
         <FormattedMessage id="SectionMission.part1Title" />
 
@@ -37,14 +38,13 @@ const SectionMission = props => {
             <NamedLink
             name="AboutPage"
 
-           className={css.heroButton}
+           className={css.secondaryButton}
             >
             <FormattedMessage id="ProjectPage.readMore" />
            </NamedLink>
         </div>
       </div>
-
-
+      </div>
     </div>
   );
 };

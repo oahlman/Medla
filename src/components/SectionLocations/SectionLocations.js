@@ -80,8 +80,6 @@ const SectionLocations = props => {
           hofors,
           'address=Hofors&bounds=61.09750184%2C17.13902433%2C59.96552243%2C15.46719667&pub_listingCategory=company'
         )}
-      </div>
-      <div className={css.locations}>
         {locationLink(
           'Ljusdal',
           'Gävleborgs län',

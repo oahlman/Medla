@@ -117,7 +117,7 @@ export const LandingPageComponent = props => {
               </div>
             </li>
 
-            <li className={css.section}>
+            <li className={css.missionBackground}>
               <div className={css.sectionContent}>
                 <SectionMission />
               </div>

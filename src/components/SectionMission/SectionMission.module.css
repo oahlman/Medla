@@ -1,10 +1,22 @@
 @import '../../styles/propertySets.css';
 
+.root {
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.content {
+  max-width: 600px;
+}
+
 .title {
   @apply --marketplaceH1FontStyles;
   margin-top: 0;
   margin-bottom: 0;
-  color: var(--marketplaceColorDark);
+  color: var(--marketplaceColorLight);
   text-align: center;
 
 }
@@ -27,6 +39,7 @@
 
 .subtitle {
   text-align: center;
+  color: var(--marketplaceColorLight);
 }
 
 .stepTitle {
@@ -55,15 +68,33 @@
 
 }
 
-.heroButton {
-  @apply --marketplaceButtonStyles;
-  background-color: var(--marketplaceColorDark);
+.secondaryButton {
+  @apply --marketplaceButtonStylesSecondary;
+  background-color: transparent;
+  border-width: 2px;
+  color: var(--marketplaceColorLight);
+  border-color: var(--marketplaceColorLight);
+  transition-duration: 0.25s;
 
+  animation-delay: 0.8s;
   margin-bottom: 10px;
 
   @media (--viewportMedium) {
-    margin-top: 10px;
     display: block;
+    width: 200px;
+  }
+
+  @media (--viewportLarge) {
+    width: 225px;
+  }
+
+  @media (--viewportXLarge) {
     width: 260px;
   }
+}
+
+.secondaryButton:hover{
+color: var(--marketplaceColorDark);
+border-color: var(--marketplaceColorLight);
+background-color: var(--marketplaceColorLight);
 }

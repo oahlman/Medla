@@ -312,7 +312,9 @@ const sectionPostJob = (
       statusText = css.statusTextPlanning;
       status = 'Status: Planering';
       statusDescription = 'I planeringsfasen görs inventeringar, samråd, tillståndsansökningar och en detaljplanering om projektet beviljas tillstånd.';
-      findCompanyMaybe = sectionFindCompany;
+      jobSectionMaybe = jobSection;
+      companySectionMaybe = companySection;
+      postJobMaybe = sectionPostJob;
     } else if (projectData.stats.currentStatus === 'building') {
       statusCard = css.statusCardBuilding;
       statusArrow = css.statusArrowBuilding;

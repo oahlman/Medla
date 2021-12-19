@@ -78,7 +78,7 @@ const AboutPage = () => {
 
               <h2>Kontakt</h2>
               <p>
-                Har du frågor eller funderingar så når du oss på {''}
+              Har du frågor eller funderingar så når du oss på {''}
                 <ExternalLink href="mailto:info@medla.app">info@medla.app</ExternalLink>.
               </p>
 

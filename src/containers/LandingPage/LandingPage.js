@@ -101,6 +101,13 @@ export const LandingPageComponent = props => {
 
             <li className={css.section}>
               <div className={css.sectionContent}>
+                <SectionProjects
+                onVerifyPhoneNumber={onVerifyPhoneNumber}/>
+              </div>
+            </li>
+
+            <li className={css.section}>
+              <div className={css.sectionContent}>
                 <SectionLocations />
               </div>
             </li>
@@ -118,7 +125,7 @@ export const LandingPageComponent = props => {
             </li>
 
             <li className={css.missionBackground}>
-              <div className={css.sectionContent}>
+              <div className={css.missionContent}>
                 <SectionMission />
               </div>
             </li>

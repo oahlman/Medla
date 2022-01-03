@@ -22,9 +22,6 @@ const SectionProjectTransfer = props => {
   <FormattedMessage id="SectionProjectTransfer.textLinkBevakningar" />
 </NamedLink>
   const user = ensureCurrentUser(currentUser);
-  const companyListing = currentUserCompanyListing && currentUserCompanyListing[0];
-  const companyPage = companyListing ? "CompanyPageVariant" : "ListingBasePage";
-  const companyParams = companyListing ? { slug: companyListing.attributes.title.replace(/\s+/g, '-').toLowerCase(), id: companyListing.id.uuid, variant: LISTING_PAGE_PENDING_APPROVAL_VARIANT } : "";
 
 const linkCompanySearch = <NamedLink name="SearchPage"  to={{
   search:
@@ -59,16 +56,6 @@ const connectProject = <a  href="https://www.peerdigital.se/anslut-projekt" clas
 
   <FormattedMessage id="SectionProjectTransfer.connectProject" />
 </a>
-
-
-
-
-const linkEditCompany = <NamedLink name="SearchPage"
-name={companyPage}
-params={companyParams}
->
-  <FormattedMessage id="SectionProjectTransfer.textLinkBeskrivForetag" />
-</NamedLink>
 
 
 

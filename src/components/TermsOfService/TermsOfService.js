@@ -69,7 +69,7 @@ const TermsOfService = props => {
       Rubrikerna som används i detta avtal ingår endast för bekvämlighet och kommer inte att begränsa eller på annat sätt påverka dessa villkor.
       </p>
 
-      <h2>INFORMATIONENS PÅ WEBBPLATSEN</h2>
+      <h2>INFORMATIONEN PÅ WEBBPLATSEN</h2>
       <p>
       Vi är inte ansvariga om information som görs tillgänglig på denna webbplats inte är korrekt, fullständig eller aktuell.
       Materialet på denna webbplats tillhandahålls endast för allmän information och bör inte litas på eller användas som
@@ -78,6 +78,7 @@ const TermsOfService = props => {
       Denna webbplats kan innehålla viss historisk information. Historisk information är nödvändigtvis inte
       aktuell och tillhandahålls endast för din referens. Vi förbehåller oss rätten att ändra innehållet på denna webbplats när som helst,
       men vi har ingen skyldighet att uppdatera någon information på vår sida. Du samtycker till att det är ditt ansvar att övervaka ändringar på vår webbplats.
+      Vidare, så förbehåller vi oss rätten att när som helst korrigera inkorrekta företagsuppgifter utan att först kontakta användaren.
       </p>
 
 

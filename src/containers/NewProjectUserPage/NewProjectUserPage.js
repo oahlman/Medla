@@ -73,6 +73,7 @@ const NewProjectUserPage = () => {
           <SectionProjectDeal className={css.sectionProcessMaybe}></SectionProjectDeal>
           <SectionWhatIsMedla className={css.sectionProcessMaybe}></SectionWhatIsMedla>
           <SectionProjectGoals className={css.sectionProcessMaybe}></SectionProjectGoals>
+          <ImageGallery />
           <SectionQuote className={css.sectionProcessMaybe}></SectionQuote>
           <SectionProjectFunctions className={css.sectionProcessMaybe}></SectionProjectFunctions>
 

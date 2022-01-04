@@ -1,0 +1,77 @@
+@import '../../styles/propertySets.css';
+
+.title {
+  @apply --marketplaceH1FontStyles;
+  margin-top: 0;
+  color: var(--marketplaceColorDark);
+
+}
+
+.galleryContainer {
+
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+  scroll-behavior: smooth;
+
+  @media (--viewportMedium) {
+
+  }
+
+  @media (--viewportLarge) {
+
+  }
+}
+
+.imageContainer {
+  margin-right: 20px;
+  @media (--viewportMedium) {
+    margin-right: 40px;
+  }
+}
+
+.image:last-of-type {
+  @media (--viewportMedium) {
+    margin-right: 0;
+  }
+}
+
+.image {
+  display: block;
+  width: 80vw;
+  max-width: 900px;
+  object-fit: cover;
+  overflow: hidden;
+  background-color: lawngreen;
+
+  &:active {
+    transform: scale(1.02);
+    box-shadow: var(--boxShadowListingCard);
+  }
+}
+
+.stepTitle {
+  color: var(--marketplaceColorDark);
+
+  margin-top: 18px;
+  margin-bottom: 18px;
+
+  @media (--viewportMedium) {
+    margin-top: 21px;
+    margin-bottom: 18px;
+  }
+}
+
+.createListingLink {
+
+  margin-top: 18px;
+
+
+  @media (--viewportMedium) {
+    margin-top: 24px;
+  }
+}
+
+.linkStyle{
+
+}

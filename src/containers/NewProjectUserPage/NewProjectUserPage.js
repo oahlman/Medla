@@ -13,6 +13,7 @@ import {
   SectionProjectChallanges,
   SectionProjectGoals,
   SectionQuote,
+  ImageGallery,
   SectionWhatIsMedla,
 } from '../../components';
 
@@ -53,11 +54,11 @@ const NewProjectUserPage = () => {
           <p className={css.bannerContent}>
              <FormattedMessage id="NewProjectUserPage.newservice" ></FormattedMessage>
           </p>
-          
+
             <ExternalLink href="https://www.peerdigital.se/anslut-projekt" className={css.heroButton}>
           <FormattedMessage id="NewProjectUserPage.connectProject" />
         </ExternalLink>
-            
+
           </div  >
           <div className={css.imagePhoneContainer}>
           <img className={css.imagePhone} src={imagephone} alt="Medla in phones" />
@@ -68,18 +69,19 @@ const NewProjectUserPage = () => {
           </div>
           <SectionProjectChallanges className={css.sectionProcessMaybe}></SectionProjectChallanges>
           <div className={css.sectionProcessMaybe}>
-          <div className={css.deal}> 
+          <div className={css.deal}>
           <div className={css.textDeal}>
            <h2 className={css.headingTextDeal}>Medlemsförmån</h2>
             <h4>5000 kr rabatt på anslutningsavgiften. Rabatten läggs på automatiskt vid beställning. <ExternalLink className={css.linkStyle} href="https://www.peerdigital.se/anslut-projekt"> Kom igång </ExternalLink></h4>
             </div>
             <div>
             <img className={css.imageSvenskVind} src={imagesvenskvind} alt="Medla in macbook" />
-            </div> 
+            </div>
             </div>
           </div>
           <SectionWhatIsMedla className={css.sectionProcessMaybe}></SectionWhatIsMedla>
           <SectionProjectGoals className={css.sectionProcessMaybe}></SectionProjectGoals>
+          <ImageGallery />
 
           <SectionQuote className={css.sectionProcessMaybe}></SectionQuote>
 

@@ -185,6 +185,7 @@ export { default as SectionSignUpProcess } from './SectionSignUpProcess/SectionS
 export { default as SectionWhatIsMedla } from './SectionWhatIsMedla/SectionWhatIsMedla';
 export { default as SectionProjectChallanges } from './SectionProjectChallanges/SectionProjectChallanges';
 export { default as SectionProjectDeal } from './SectionProjectDeal/SectionProjectDeal';
+export { default as SectionProjectFunctions } from './SectionProjectFunctions/SectionProjectFunctions';
 export { default as SectionProjectGoals } from './SectionProjectGoals/SectionProjectGoals';
 export { default as SectionQuote } from './SectionQuote/SectionQuote';
 

@@ -182,10 +182,10 @@ export { default as SectionHowItWorks } from './SectionHowItWorks/SectionHowItWo
 export { default as SectionMission } from './SectionMission/SectionMission';
 export { default as SectionPostJob } from './SectionPostJob/SectionPostJob';
 export { default as SectionSignUpProcess } from './SectionSignUpProcess/SectionSignUpProcess';
-export { default as SectionProjectTransfer } from './SectionProjectTransfer/SectionProjectTransfer';
+export { default as SectionWhatIsMedla } from './SectionWhatIsMedla/SectionWhatIsMedla';
 export { default as SectionProjectChallanges } from './SectionProjectChallanges/SectionProjectChallanges';
 export { default as SectionProjectGoals } from './SectionProjectGoals/SectionProjectGoals';
-export { default as SectionWhyMedla } from './SectionWhyMedla/SectionWhyMedla';
+export { default as SectionQuote } from './SectionQuote/SectionQuote';
 
 export { default as SectionLocations } from './SectionLocations/SectionLocations';
 export { default as SectionProjects } from './SectionProjects/SectionProjects';

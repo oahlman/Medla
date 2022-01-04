@@ -8,12 +8,12 @@ import {
   Footer,
   NamedLink,
   ExternalLink,
-  SectionHowItWorks,
-  SectionSignUpProcess,
   SectionProjectTransfer,
   SectionWhyMedla,
   SectionProjectChallanges,
   SectionProjectGoals,
+  SectionQuote,
+  SectionWhatIsMedla,
 } from '../../components';
 
 import StaticPage from '../StaticPage/StaticPage';
@@ -78,10 +78,10 @@ const NewProjectUserPage = () => {
             </div> 
             </div>
           </div>
-          <SectionProjectTransfer className={css.sectionProcessMaybe}></SectionProjectTransfer>
+          <SectionWhatIsMedla className={css.sectionProcessMaybe}></SectionWhatIsMedla>
           <SectionProjectGoals className={css.sectionProcessMaybe}></SectionProjectGoals>
 
-          <SectionWhyMedla className={css.sectionProcessMaybe}></SectionWhyMedla>
+          <SectionQuote className={css.sectionProcessMaybe}></SectionQuote>
 
 
 

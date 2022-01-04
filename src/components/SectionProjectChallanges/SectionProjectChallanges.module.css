@@ -18,6 +18,13 @@
   @media (--viewportMedium) {
     width: 50%;
     margin-right: 40px;
+    background-color: var(--marketplaceColorLight);
+    padding:15px;
+    padding-left:50px;
+    padding-right:30px;
+    border-style: none;
+    border-radius: 20px;
+
   }
 }
 

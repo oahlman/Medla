@@ -19,8 +19,9 @@ const SectionProjectChallanges = props => {
           <h2 className={css.stepTitle}>
             <FormattedMessage id="SectionProjectChallanges.part1Title" />
           </h2>
-          <p>
-            <FormattedMessage id="SectionProjectChallanges.part1Text" />
+          <p> 
+          <strong>Tillstånd </strong> Tillståndsprocesser är allt för långdragna och blir ofta avslagna.<br></br>
+          <strong>Förankring </strong> Lokalt motstånd allt tuffare
           </p>
         </div>
 
@@ -31,7 +32,9 @@ const SectionProjectChallanges = props => {
             <FormattedMessage id="SectionProjectChallanges.part3Title" />
           </h2>
           <p>
-            <FormattedMessage id="SectionProjectChallanges.part3Text"  />
+          <strong>Fosilfritt 2045 </strong> Energibranschen ska bara fossifri 2045<br></br>
+          <strong>Hållbarhet </strong> Det räcker inte med att bygga hållbar energiproduktion, projektet och organisationen förväntas också vara socialt hållbara.
+       
           </p>
         </div>
       </div>

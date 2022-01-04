@@ -7,18 +7,23 @@
 
 .steps {
   display: flex;
-  flex-direction: column;
-
+  flex-direction: row;
+  overflow-x: scroll;
+  margin: auto -50px;
+  padding-left: 50px;
+  gap:30px;
+  
 
   @media (--viewportMedium) {
     flex-direction: row;
+    gap:0px;
+    margin:0px;
   }
 }
 
 .step {
-
-  margin:0px;
-  
+  width: 100%;
+ 
   @media (--viewportMedium) {
     width: 30%;
     margin-right: 20px;
@@ -67,12 +72,13 @@ width:35px;
 }
 
 .iconPos{
-  display:inline-flex;
+  display:flex;
+  flex-direction: grid;
   justify-content: left;
   align-items: center;
-  min-width: 100%;
-  width: 100%;
   gap: 15px;
+  
+  
   @media (--viewportMedium) {
     display:inline-flex;
     flex-direction: row;
@@ -80,6 +86,9 @@ width:35px;
     align-items: center;
     width: fit-content;
     gap: 15px;
+    min-width: 100%;
+    width: 100%;
 }
 
 }
+

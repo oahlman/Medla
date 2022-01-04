@@ -20,7 +20,7 @@
   margin:0px;
   
   @media (--viewportMedium) {
-    width: 50%;
+    width: 30%;
     margin-right: 20px;
     margin-left:0;
   }
@@ -48,7 +48,7 @@
 
 .icon {
 color: whitesmoke;
-background-color: rgb(34, 186, 130);
+background-color: var(--matterColor);
 border-style: none;
 border-radius: 99px;
 padding:7px;
@@ -70,6 +70,7 @@ width:35px;
   display:inline-flex;
   justify-content: left;
   align-items: center;
+  min-width: 100%;
   width: 100%;
   gap: 15px;
   @media (--viewportMedium) {

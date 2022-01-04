@@ -977,7 +977,31 @@
   "SectionProjectChallanges.part1Text":"Det räcker inte med att bygga hållbar energiproduktion, projektet och organisationen förväntas också vara hållbara (socialt, miljö, ekonomiskt)",
   "SectionProjectChallanges.part3Title":"Långsiktigt",
   "SectionProjectChallanges.part3Text":"Energibranschen ska bara fossifri 2045 Lokalt motstånd allt tuffare Tillståndsprocesser - x % (allt fler) får avslag ) - tillsammans kan vi vändra trenden/komma ikapp",
+  "SectionProjectFunctions.titleLineOne": "Funktioner",
+  "SectionProjectFunctions.chat":"Direktmeddelanden",
+  "SectionProjectFunctions.data":"Nyckeltal och analyser",
+  "SectionProjectFunctions.seo":"Automatisk SEO för projektet",
+  "SectionProjectFunctions.companyprofiles":"Företagsprofiler",
+  "SectionProjectFunctions.search":"Smart sök",
+  "SectionProjectFunctions.integration":"Integrera på er egen webbplats",
+  "SectionProjectFunctions.location":"Filtrera lokalt",
+  "SectionProjectFunctions.jobs":"Interaktiva jobbannonser",
+  "SectionProjectFunctions.language":"200+ språk",
+  "SectionProjectFunctions.phone":"Mobilanpassad",
+  "SectionProjectFunctions.notifications":"Notiser via SMS & epost ",
+  "SectionProjectFunctions.branch":"Stöd för 25+ branscher",
+
+
+
+
   "SectionProjectGoals.titleLineOne": "Vad är målen?",
+  "SectionProjectGoals.part1Title": "Fler projekt som får tillstånd",
+  "SectionProjectGoals.part1Text": "Smidigare och snabbare tillståndsprocesser",
+  "SectionProjectGoals.part3Title": "Stärkta varumärken inom social hållbarhet",
+  "SectionProjectGoals.part3Text": "Fler projekt som håller tidsplan",
+
+
+
   "SectionWhatIsMedla.createListingLink": "PS. Du kan också bli Medla-värd med bara några klick!",
   "SectionWhatIsMedla.part1Text": "{mailTo} för att flytta ett projekt från prototypen. Flytten är helt kostnadsfri och drift för projektet fortsätter på samma vis som innan.",
   "SectionWhatIsMedla.part1Title": "Flytta projekt",

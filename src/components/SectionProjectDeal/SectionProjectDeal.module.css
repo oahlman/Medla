@@ -1,0 +1,152 @@
+@import '../../styles/propertySets.css';
+
+.title {
+  @apply --marketplaceH1FontStyles;
+  margin-top: 0;
+}
+
+.steps {
+  display: flex;
+  flex-direction: column;
+
+  @media (--viewportMedium) {
+    flex-direction: row;
+  }
+}
+
+.step {
+  @media (--viewportMedium) {
+    width: 50%;
+    margin-right: 40px;
+    background-color: var(--marketplaceColorLight);
+    padding:15px;
+    padding-left:50px;
+    padding-right:30px;
+    border-style: none;
+    border-radius: 20px;
+
+  }
+}
+
+.step:last-of-type {
+  @media (--viewportMedium) {
+    margin-right: 0;
+  }
+}
+
+.stepTitle {
+  margin-top: 18px;
+  margin-bottom: 18px;
+
+  @media (--viewportMedium) {
+    margin-top: 21px;
+    margin-bottom: 18px;
+  }
+}
+
+.createListingLink {
+  margin-top: 18px;
+
+  @media (--viewportMedium) {
+    margin-top: 24px;
+  }
+}
+
+.deal{
+  display:flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: var(--marketplaceColor);
+  padding-bottom: 15px;
+  padding-left:15px;
+  padding-right:15px;
+  border-style: none;
+  border-radius: 20px;
+  color: whitesmoke;
+
+  @media (--viewportMedium) {
+  flex-direction: row;
+  padding: 0px;
+  padding-bottom: 15px;
+  justify-content: space-evenly;
+  align-items: center;
+
+
+
+  }
+
+}
+
+.textWrapper{
+  max-width:95%;
+  text-align: center;
+
+  @media (--viewportMedium) {
+    max-width:70%;
+    text-align: left;
+    padding-left:20px;
+    padding-right:10%;
+
+    }
+}
+
+.textDeal{
+  max-width:100%;
+  text-align: center;
+
+  @media (--viewportMedium) {
+   text-align: left;
+  
+
+    }
+}
+
+.headingTextDeal{
+  margin-bottom: -5px;
+
+  @media (--viewportMedium) {
+    margin-bottom: -15px;
+}
+}
+
+.imageSvenskVind{
+  width: 225px;
+  display: flex;
+
+  @media (--viewportMedium) {
+    width: 225px;
+}
+}
+
+.sectionProcessMaybe {
+  margin: var(--LandingPage_sectionMarginTop) 24px 15px 24px;
+
+  @media (--viewportMedium) {
+    max-width: 100%;
+    margin: var(--LandingPage_sectionMarginTopMedium) 24px 0px 24px;
+    margin-bottom: 100px;
+    margin-top: 0px;
+
+  }
+
+  @media (--viewportLarge) {
+    max-width: 1128px;
+    padding: 0 36px 0 36px;
+    margin: var(--LandingPage_sectionMarginTopLarge) auto 0px auto;
+    margin-top: 30px;
+    margin-bottom: 100px;
+
+
+  }
+
+  @media (--viewportXLarge) {
+    max-width: 1056px;
+    padding: 0;
+    margin-top: 30px;
+    margin-bottom: 100px;
+
+
+
+  }
+}

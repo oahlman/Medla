@@ -183,6 +183,9 @@ export { default as SectionMission } from './SectionMission/SectionMission';
 export { default as SectionPostJob } from './SectionPostJob/SectionPostJob';
 export { default as SectionSignUpProcess } from './SectionSignUpProcess/SectionSignUpProcess';
 export { default as SectionProjectTransfer } from './SectionProjectTransfer/SectionProjectTransfer';
+export { default as SectionProjectChallanges } from './SectionProjectChallanges/SectionProjectChallanges';
+
+
 export { default as SectionWhyMedla } from './SectionWhyMedla/SectionWhyMedla';
 
 export { default as SectionLocations } from './SectionLocations/SectionLocations';

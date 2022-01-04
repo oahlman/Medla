@@ -211,12 +211,74 @@
   color:black;
   border-color: whitesmoke;
   background-color: whitesmoke;
-  
-  
-  
-  
   }
 
+
+  .deal{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: var(--marketplaceColor);
+    padding-bottom: 15px;
+    padding-left:15px;
+    padding-right:15px;
+    border-style: none;
+    border-radius: 20px;
+    color: whitesmoke;
+
+    @media (--viewportMedium) {
+    flex-direction: row;
+    padding: 0px;
+    padding-bottom: 15px;
+    justify-content: space-evenly;
+    align-items: center;
+
+
+
+    }
+
+  }
+
+  .textDeal{
+    max-width:100%;
+    text-align: center;
+
+    @media (--viewportMedium) {
+      max-width:60%;
+      text-align: left;
+  
+      }
+  }
+
+  .headingTextDeal{
+    margin-bottom: -5px;
+
+    @media (--viewportMedium) {
+      margin-bottom: -15px;
+  }
+}
+
+  .imageSvenskVind{
+    width: 225px;
+    display: flex;
+
+    @media (--viewportMedium) {
+      width: 275px;
+  }
+}
+
+.linkStyle{
+  color:whitesmoke;
+  text-decoration: underline;
+  font-weight: bolder;
+}
+
+.linkStyle:hover{
+  text-decoration: none;
+}
+  
+  
 
 
 

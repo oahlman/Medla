@@ -581,7 +581,7 @@
   "NewUserPage.headline": "Välkommen till Medla!",
   "NewUserPage.subheading": "Låt oss berätta mer",
   "NewUserPage.newservice": "Affärsplattformen byter upp sig och går nu under namnet Medla, din gamla profil finns redan tillgänglig, det är bara att logga in.",
-  "NewProjectUserPage.headline": "Ny plats för era projekt",
+  "NewProjectUserPage.headline": "Medla för ert projekt",
   "NewProjectUserPage.newservice": "Plattformen som tagits fram av Peer Digital, Vindkraftcentrum, Energimyndigheten och Umeå Universitet blir nu Medla. För projekt som fanns på prototypen gör vi en kostnadsfri flytt, flyttade projekt fortlöper på samma villkor som de hade på prototypen.",
   "NewProjectUserPage.connectProject": "Anslut projekt",
   "NotificationSettingsForm.saveChanges": "Spara ändringar",
@@ -972,6 +972,11 @@
   "SectionSignUpProcess.toHome": "här",
 
 
+  "SectionProjectChallanges.titleLineOne": "Vad är utmaningarna?",
+  "SectionProjectChallanges.part1Title":"Rubrik 2",
+  "SectionProjectChallanges.part1Text":"Energibranschen ska bara fossifri 2045 Lokalt motstånd allt tuffare Tillståndsprocesser - x % (allt fler) får avslag ) - tillsammans kan vi vändra trenden/komma ikapp",
+  "SectionProjectChallanges.part3Title":"Rubrik 2",
+  "SectionProjectChallanges.part3Text":"Det räcker inte med att bygga hållbar energiproduktion, projektet och organisationen förväntas också vara hållbara (socialt, miljö, ekonomiskt)",
 
   "SectionProjectTransfer.createListingLink": "PS. Du kan också bli Medla-värd med bara några klick!",
   "SectionProjectTransfer.part1Text": "{mailTo} för att flytta ett projekt från prototypen. Flytten är helt kostnadsfri och drift för projektet fortsätter på samma vis som innan.",

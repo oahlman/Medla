@@ -12,14 +12,14 @@ import { logout, authenticationInProgress } from '../../ducks/Auth.duck';
 import { NamedLink, ExternalLink } from '..';
 import { ensureCurrentUser } from '../../util/data';
 
-import css from './SectionProjectTransfer.module.css';
+import css from './SectionProjectChallanges.module.css';
 
 
-const SectionProjectTransfer = props => {
+const SectionProjectChallanges = props => {
 
   const { rootClassName, className, currentUser } = props;
   const linkNotifications = <NamedLink name="NotificationSettingsPage">
-  <FormattedMessage id="SectionProjectTransfer.textLinkBevakningar" />
+  <FormattedMessage id="SectionProjectChallanges.textLinkBevakningar" />
 </NamedLink>
   const user = ensureCurrentUser(currentUser);
 
@@ -30,25 +30,25 @@ const linkJobSearch = <NamedLink name="SearchPage"  to={{
   '?address=Sverige&bounds=69.0599269995724%2C24.1933684832876%2C55.280224001785%2C10.8383668128319&pub_listingCategory=job',
 }}
 >
-  <FormattedMessage id="SectionProjectTransfer.textLinkJobb" />
+  <FormattedMessage id="SectionProjectChallanges.textLinkJobb" />
 </NamedLink>
 
 const linkToLogin = <NamedLink name="LoginPage">
-  <FormattedMessage id="SectionProjectTransfer.login" />
+  <FormattedMessage id="SectionProjectChallanges.login" />
 </NamedLink>
 
 const linkToHome = <NamedLink name="LoginPage">
-  <FormattedMessage id="SectionProjectTransfer.toHome" />
+  <FormattedMessage id="SectionProjectChallanges.toHome" />
 </NamedLink>
 
 const mailTo = <ExternalLink  href="mailto:info@medla.app" className={css.link}>
 
-  <FormattedMessage id="SectionProjectTransfer.mailTo" />
+  <FormattedMessage id="SectionProjectChallanges.mailTo" />
 </ExternalLink>
 
 const connectProject = <a  href="https://www.peerdigital.se/anslut-projekt" className={css.link}>
 
-  <FormattedMessage id="SectionProjectTransfer.connectProject" />
+  <FormattedMessage id="SectionProjectChallanges.connectProject" />
 </a>
 
 
@@ -57,17 +57,17 @@ const connectProject = <a  href="https://www.peerdigital.se/anslut-projekt" clas
   return (
     <div className={classes}>
       <div className={css.title}>
-        <FormattedMessage id="SectionProjectTransfer.titleLineOne" />
+        <FormattedMessage id="SectionProjectChallanges.titleLineOne" />
 
       </div>
 
       <div className={css.steps}>
         <div className={css.step}>
           <h2 className={css.stepTitle}>
-            <FormattedMessage id="SectionProjectTransfer.part1Title" />
+            <FormattedMessage id="SectionProjectChallanges.part1Title" />
           </h2>
           <p>
-            <FormattedMessage id="SectionProjectTransfer.part1Text" values={{ mailTo: mailTo }} />
+            <FormattedMessage id="SectionProjectChallanges.part1Text" values={{ mailTo: mailTo }} />
           </p>
         </div>
 
@@ -75,10 +75,10 @@ const connectProject = <a  href="https://www.peerdigital.se/anslut-projekt" clas
 
         <div className={css.step}>
           <h2 className={css.stepTitle}>
-            <FormattedMessage id="SectionProjectTransfer.part3Title" />
+            <FormattedMessage id="SectionProjectChallanges.part3Title" />
           </h2>
           <p>
-            <FormattedMessage id="SectionProjectTransfer.part3Text" values={{ linkJobSearch, mailTo, connectProject }} />
+            <FormattedMessage id="SectionProjectChallanges.part3Text" values={{ linkJobSearch, mailTo, connectProject }} />
           </p>
         </div>
       </div>
@@ -88,11 +88,11 @@ const connectProject = <a  href="https://www.peerdigital.se/anslut-projekt" clas
   );
 };
 
-SectionProjectTransfer.defaultProps = { rootClassName: null, className: null };
+SectionProjectChallanges.defaultProps = { rootClassName: null, className: null };
 
 const { string } = PropTypes;
 
-SectionProjectTransfer.propTypes = {
+SectionProjectChallanges.propTypes = {
   rootClassName: string,
   className: string,
 };
@@ -138,13 +138,13 @@ const mapDispatchToProps = dispatch => ({
 // lifecycle hook.
 //
 // See: https://github.com/ReactTraining/react-router/issues/4671
-const SectionProjectTransferExport = compose(
+const SectionProjectChallangesExport = compose(
   withRouter,
   connect(
     mapStateToProps,
     mapDispatchToProps
   )
-)(SectionProjectTransfer);
+)(SectionProjectChallanges);
 
 
-export default SectionProjectTransferExport;
+export default SectionProjectChallangesExport;

@@ -1,26 +1,26 @@
 import React from 'react';
 import { FormattedMessage } from '../../util/reactIntl';
 import classNames from 'classnames';
-import css from './SectionProjectChallanges.module.css';
+import css from './SectionProjectGoals.module.css';
 
-const SectionProjectChallanges = props => {
+const SectionProjectGoals = props => {
 
   const { rootClassName, className, currentUser } = props;
   const classes = classNames(rootClassName || css.root, className);
   return (
     <div className={classes}>
       <div className={css.title}>
-        <FormattedMessage id="SectionProjectChallanges.titleLineOne" />
+        <FormattedMessage id="SectionProjectGoals.titleLineOne" />
 
       </div>
 
       <div className={css.steps}>
         <div className={css.step}>
           <h2 className={css.stepTitle}>
-            <FormattedMessage id="SectionProjectChallanges.part1Title" />
+            <FormattedMessage id="SectionProjectGoals.part1Title" />
           </h2>
           <p>
-            <FormattedMessage id="SectionProjectChallanges.part1Text" />
+            <FormattedMessage id="SectionProjectGoals.part1Text" />
           </p>
         </div>
 
@@ -28,10 +28,10 @@ const SectionProjectChallanges = props => {
 
         <div className={css.step}>
           <h2 className={css.stepTitle}>
-            <FormattedMessage id="SectionProjectChallanges.part3Title" />
+            <FormattedMessage id="SectionProjectGoals.part3Title" />
           </h2>
           <p>
-            <FormattedMessage id="SectionProjectChallanges.part3Text"  />
+            <FormattedMessage id="SectionProjectGoals.part3Text"  />
           </p>
         </div>
       </div>
@@ -42,4 +42,4 @@ const SectionProjectChallanges = props => {
 };
 
 
-export default SectionProjectChallanges;
+export default SectionProjectGoals;

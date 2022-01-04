@@ -13,6 +13,7 @@ import {
   SectionProjectTransfer,
   SectionWhyMedla,
   SectionProjectChallanges,
+  SectionProjectGoals,
 } from '../../components';
 
 import StaticPage from '../StaticPage/StaticPage';
@@ -66,26 +67,22 @@ const NewProjectUserPage = () => {
           </div>
           </div>
           <SectionProjectChallanges className={css.sectionProcessMaybe}></SectionProjectChallanges>
-          
-          
           <div className={css.sectionProcessMaybe}>
           <div className={css.deal}> 
           <div className={css.textDeal}>
            <h2 className={css.headingTextDeal}>Medlemsförmån</h2>
             <h4>5000 kr rabatt på anslutningsavgiften. Rabatten läggs på automatiskt vid beställning. <ExternalLink className={css.linkStyle} href="https://www.peerdigital.se/anslut-projekt"> Kom igång </ExternalLink></h4>
             </div>
-            
             <div>
             <img className={css.imageSvenskVind} src={imagesvenskvind} alt="Medla in macbook" />
-              
+            </div> 
             </div>
-            
-            </div>
-
-
           </div>
           <SectionProjectTransfer className={css.sectionProcessMaybe}></SectionProjectTransfer>
+          <SectionProjectGoals className={css.sectionProcessMaybe}></SectionProjectGoals>
+
           <SectionWhyMedla className={css.sectionProcessMaybe}></SectionWhyMedla>
+
 
 
           </container>

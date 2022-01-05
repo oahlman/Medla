@@ -25,28 +25,56 @@
 
 .imageContainer {
   margin-right: 20px;
-  @media (--viewportMedium) {
+  margin-top: 20px;
+
+  @media (--viewportLarge) {
     margin-right: 40px;
+    margin-top: 40px;
   }
 }
 
-.image:last-of-type {
-  @media (--viewportMedium) {
-    margin-right: 0;
+.activeContainer {
+  composes: imageContainer;
+  opacity: 1;
+}
+
+.inactiveContainer {
+  composes: imageContainer;
+  opacity: 0.5;
+}
+
+.imageContainer:first-of-type {
+  margin-left: 20px;
+
+  @media (--viewportLarge) {
+    margin-left: 40px;
+  }
+}
+
+.imageContainer:last-of-type {
+  margin-right: 40px;
+
+  @media (--viewportLarge) {
+    margin-right: 80px;
   }
 }
 
 .image {
   display: block;
-  width: 80vw;
-  max-width: 900px;
+  width: 70vw;
+  margin-top: 20px;
   object-fit: cover;
   overflow: hidden;
-  background-color: lawngreen;
 
-  &:active {
-    transform: scale(1.02);
-    box-shadow: var(--boxShadowListingCard);
+  @media (--viewportSmall) {
+  }
+
+  @media (--viewportMedium) {
+    margin-top: 40px;
+  }
+
+  @media (--viewportLarge) {
+    width: 900px;
   }
 }
 
@@ -74,4 +102,39 @@
 
 .linkStyle{
 
+}
+
+.buttonContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  @media (--viewportMedium) {
+  }
+}
+
+.scrollRight {
+  position: absolute;
+  left: 20px;
+  margin-top: 30%;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  @media (--viewportLarge) {
+    left: 40px;
+    margin-top: 350px;
+  }
+}
+
+.scrollLeft {
+  position: absolute;
+  right: 20px;
+  margin-top: 30%;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  @media (--viewportLarge) {
+    right: 40px;
+    margin-top: 350px;
+  }
 }

@@ -70,14 +70,14 @@ const NewProjectUserPage = () => {
           <img className={css.imageMacbook} src={imagemacbook} alt="Medla in macbook" />
           </div>
           </div>
-          <SectionProjectChallanges ></SectionProjectChallanges>
-          <SectionProjectDeal></SectionProjectDeal>
-          <SectionWhatIsMedla ></SectionWhatIsMedla>
-          <ImageGallery />
-          <SectionProjectGoals></SectionProjectGoals>
-          <SectionQuote ></SectionQuote>
-          <SectionProjectFunctions  ></SectionProjectFunctions>
-          <SectionTimeline ></SectionTimeline>
+          <SectionProjectChallanges className={css.sectionProcessMaybe} ></SectionProjectChallanges>
+          <SectionProjectDeal className={css.sectionProcessMaybe}></SectionProjectDeal>
+          <SectionWhatIsMedla className={css.sectionProcessMaybe}></SectionWhatIsMedla>
+          <ImageGallery className={css.sectionProcessMaybe} />
+          <SectionProjectGoals className={css.sectionProcessMaybe}></SectionProjectGoals>
+          <SectionQuote className={css.sectionProcessMaybe}></SectionQuote>
+          <SectionProjectFunctions className={css.sectionProcessMaybe} ></SectionProjectFunctions>
+          <SectionTimeline className={css.sectionProcessMaybe}></SectionTimeline>
 
 
 

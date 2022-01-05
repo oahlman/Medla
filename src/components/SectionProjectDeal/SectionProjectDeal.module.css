@@ -68,7 +68,7 @@
   @media (--viewportMedium) {
   flex-direction: row;
   padding: 0px;
-  padding-bottom: 15px;
+  padding-bottom: 0px;
   justify-content: space-evenly;
   align-items: center;
 

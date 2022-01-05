@@ -106,7 +106,7 @@
 }
 
 .bannerLeft {
-
+  margin:0px;
   @media (--viewportMedium) {
     min-width: 55%;
     max-width: 55%;
@@ -121,7 +121,7 @@
 
   @media (--viewportMedium) {
  
-  margin-left:50px;
+  margin-left:20px;
  
 
   

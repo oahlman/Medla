@@ -35,17 +35,18 @@ const SectionProjectGoals = props => {
 
         <div className={css.step}>
         <div className={css.iconPos}>
+          <IoCheckmarkOutline className={css.icon}></IoCheckmarkOutline>
+          <h2> <FormattedMessage id="SectionProjectGoals.part3Text"  />
+          </h2>
+          </div>
+        <div className={css.iconPos}>
         <IoCheckmarkOutline className={css.icon}></IoCheckmarkOutline>
           <h2>
             <FormattedMessage id="SectionProjectGoals.part3Title" />
           </h2>
           </div>
 
-          <div className={css.iconPos}>
-          <IoCheckmarkOutline className={css.icon}></IoCheckmarkOutline>
-          <h2> <FormattedMessage id="SectionProjectGoals.part3Text"  />
-          </h2>
-          </div>
+         
         </div>
       </div>
 

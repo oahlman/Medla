@@ -990,15 +990,12 @@
   "SectionProjectFunctions.phone":"Mobilanpassad",
   "SectionProjectFunctions.notifications":"Notiser via SMS & epost ",
   "SectionProjectFunctions.branch":"Stöd för 25+ branscher",
-
-
-
-
   "SectionProjectGoals.titleLineOne": "Vad är målen?",
   "SectionProjectGoals.part1Title": "Fler projekt som får tillstånd",
   "SectionProjectGoals.part1Text": "Smidigare och snabbare tillståndsprocesser",
   "SectionProjectGoals.part3Title": "Stärkta varumärken inom social hållbarhet",
   "SectionProjectGoals.part3Text": "Fler projekt som håller tidsplan",
+  "SectionTimeline.titleLineOne": "Från start till mål",
 
 
 

@@ -40,12 +40,21 @@ class ImageGallery extends Component {
       firstImage.style.boxShadow = "0 0 50px 0 rgba(0, 0, 0, 0.1";
       secondImage.style.opacity = "0.5";
       thirdImage.style.opacity = "0.5";
-      console.log(window.innerWidth);
+      if (firstImage.style.opacity == "1") {
+        buttonRight.disabled="true";
+      } else {
+        buttonRight.value="initial";
+      }
+      if (thirdImage.style.opacity == "1") {
+        buttonLeft.disabled="true";
+      } else {
+        buttonRight.value="initial";
+      }
       buttonLeft.onclick = function () {
         if (window.innerWidth < 1024) {
-          document.getElementById('galleryContainer').scrollLeft += window.innerWidth * 0.7 + 20;
+          document.getElementById('galleryContainer').scrollLeft += window.innerWidth * 0.7 + 10;
         } else {
-          document.getElementById('galleryContainer').scrollLeft += 900 + 40;
+          document.getElementById('galleryContainer').scrollLeft += 860;
         }
         if (firstImage.style.opacity == "1") {
           firstImage.style.opacity = "0.5";
@@ -67,31 +76,31 @@ class ImageGallery extends Component {
           secondImage.style.opacity = "initial";
           thirdImage.style.opacity = "initial";
         }
+        buttonRight.onclick = function () {
+          if (window.innerWidth < 1024) {
+            document.getElementById('galleryContainer').scrollLeft -= window.innerWidth * 0.7 + 20;
+          } else {
+            document.getElementById('galleryContainer').scrollLeft -= 860;
+          }        if (secondImage.style.opacity == "1") {
+            firstImage.style.opacity = "1";
+            secondImage.style.opacity = "0.5";
+            thirdImage.style.opacity = "0.5";
+          } else if (thirdImage.style.opacity == "1") {
+            firstImage.style.opacity = "0.5";
+            secondImage.style.opacity = "1";
+            thirdImage.style.opacity = "0.5";
+          } else if (firstImage.style.opacity == "1") {
+            firstImage.style.opacity = "1";
+            secondImage.style.opacity = "0.5";
+            thirdImage.style.opacity = "0.5";
+          } else {
+            firstImage.style.opacity = "initial";
+            secondImage.style.opacity = "initial";
+            thirdImage.style.opacity = "initial";
+          }
       };
-      buttonRight.onclick = function () {
-        if (window.innerWidth < 1024) {
-          document.getElementById('galleryContainer').scrollLeft -= window.innerWidth * 0.7 + 20;
-        } else {
-          document.getElementById('galleryContainer').scrollLeft -= 900 + 40;
-        }        if (secondImage.style.opacity == "1") {
-          firstImage.style.opacity = "1";
-          secondImage.style.opacity = "0.5";
-          thirdImage.style.opacity = "0.5";
-        } else if (thirdImage.style.opacity == "1") {
-          firstImage.style.opacity = "0.5";
-          secondImage.style.opacity = "1";
-          thirdImage.style.opacity = "0.5";
-        } else if (firstImage.style.opacity == "1") {
-          firstImage.style.opacity = "1";
-          secondImage.style.opacity = "0.5";
-          thirdImage.style.opacity = "0.5";
-        } else {
-          firstImage.style.opacity = "initial";
-          secondImage.style.opacity = "initial";
-          thirdImage.style.opacity = "initial";
-        }
-    };
-    };
+      };
+      };
 
 
     return (

@@ -51,13 +51,7 @@
   }
 }
 
-.imageContainer:last-of-type {
-  margin-right: 40px;
 
-  @media (--viewportLarge) {
-    margin-right: 80px;
-  }
-}
 
 .image {
   display: block;

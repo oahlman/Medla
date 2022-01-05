@@ -4,6 +4,7 @@ import { injectIntl, intlShape } from '../../util/reactIntl';
 import classNames from 'classnames';
 import { ResponsiveImage, IconSpinner } from '../../components';
 import { propTypes } from '../../util/types';
+import { IoChevronBackOutline, IoChevronForwardOutline } from "react-icons/io5";
 
 import css from './ImageGallery.module.css';
 
@@ -104,8 +105,10 @@ class ImageGallery extends Component {
         <h3>Chatt</h3>
         <span>Text som beskriver fördelarna med chatten.</span>
         </div>
-      <button id="slideRight" className={css.scrollRight}>←</button>
-      <button id="slideLeft" className={css.scrollLeft}>→</button>
+      <div className={css.navigation}>
+      <button id="slideRight" className={css.scrollRight}><IoChevronBackOutline className={css.icon} /></button>
+      <button id="slideLeft" className={css.scrollLeft}><IoChevronForwardOutline className={css.icon} /></button>
+      </div>
       </div>
       </div>
     );

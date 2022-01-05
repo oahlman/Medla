@@ -1,0 +1,230 @@
+@import '../../styles/propertySets.css';
+
+.title {
+  @apply --marketplaceH1FontStyles;
+  margin-top: 0;
+}
+
+.steps {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  align-items: left;
+  width:100%;
+  margin-top:5px;
+
+  @media (--viewportMedium) {
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+}
+
+.step {
+  background-color: var(--matterColorNegative);
+  margin-top:0px;
+  margin-bottom:10px;
+  padding:0px;
+  padding-left:20px;
+  padding-right: 20px;;
+
+  color: var(--matterColorDark);
+
+
+  @media (--viewportMedium) {
+    width: 30%;
+    margin-right: 40px;
+    
+  }
+}
+
+.stepText {
+
+@media (--viewportMedium) {
+  margin-left:15px;
+  margin-right: 15px;
+}
+}
+
+.step:last-of-type {
+  @media (--viewportMedium) {
+    margin-right: 0;
+  }
+}
+
+.stepTitle {
+
+
+  @media (--viewportMedium) {
+    margin-bottom: -15px;
+    margin-right: 15px;
+    
+  }
+}
+
+.createListingLink {
+  margin-top: 18px;
+
+  @media (--viewportMedium) {
+    margin-top: 24px;
+  }
+}
+
+
+.container{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: left;
+
+  
+ 
+  @media (--viewportMedium) {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px;
+    
+  }
+}
+
+.statusBar {
+  padding-top: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px;
+  margin-left:0px;
+  margin-right:15px;
+
+
+  @media (--viewportMedium) {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px;
+    width:100%;
+    padding-left: 10px;
+    padding-right: 10px;
+  
+
+  }
+
+}
+
+.statusCirclePlanning {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: var(--attentionColor);
+}
+
+.statusCircleBuilding {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: var(--successColor);}
+
+
+  .statusCircleRunning {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: var(--marketplaceColor);}
+  
+
+
+.statusLine1 {
+  height: calc(45% - 60px);;
+  width: calc(50% - 60px);
+  max-width: 4px;
+  border-style: solid;
+  border-color: var(--attentionColor);
+
+  @media (--viewportMedium) {
+  height: calc(50% - 60px);
+  width: calc(50% - 60px);
+  max-width: 100%;
+  }
+}
+
+
+.statusLine2 {
+  height: calc(45% - 60px);;
+  width: calc(50% - 60px);
+  max-width: 4px;
+  border-style: solid;
+  border-color: var(--successColor);
+
+
+  @media (--viewportMedium) {
+  height: calc(50% - 60px);
+  width: calc(50% - 60px);
+  max-width: 100%;
+  }
+}
+
+.statusCard {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.statusText {
+  background-color: var(--matterColorNegative);
+  padding: 10px;
+  max-width: 300px;
+}
+
+
+.statusArrowPlanning {
+  position: absolute;
+  width: 0;
+  height: 0;
+  margin: 5% 10px 0px -6%;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-radius: 10px;
+  border-bottom: 15px solid var(--matterColorNegative);
+  
+  @media (--viewportMedium) {
+    position: relative;
+    margin: -12px 10px 0px -6%;
+    }
+}
+
+.statusArrowBuilding {
+  position: absolute;
+  width: 0;
+  height: 0;
+  margin: 5% 10px 0px -6%;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-radius: 10px;
+  border-bottom: 15px solid var(--matterColorNegative);
+  
+  @media (--viewportMedium) {
+    position: relative;
+    margin: -12px 10px 0px -6%;
+    margin-left: auto;
+    margin-right: auto;
+    }
+}
+
+.statusArrowRunning {
+  position: absolute;
+  width: 0;
+  height: 0;
+  margin: 5% 10px 0px -6%;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-radius: 10px;
+  border-bottom: 15px solid var(--matterColorNegative);
+  
+  @media (--viewportMedium) {
+    position: relative;
+    margin: -12px 10px 0px 93%;
+    }
+}

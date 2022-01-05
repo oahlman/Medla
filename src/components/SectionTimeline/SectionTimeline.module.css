@@ -192,8 +192,6 @@
   @media (--viewportMedium) {
     border-top: 15px solid var(--attentionColor);
     border-left: 15px solid transparent;
-    border-right: 15px solid transparent;
-    border-bottom: 15px solid transparent;
     border-radius: 20px;
     margin: 21px 10px 0px 0px;
     }
@@ -212,8 +210,6 @@
   @media (--viewportMedium) {
     border-top: 15px solid var(--successColor);
     border-left: 15px solid transparent;
-    border-right: 15px solid transparent;
-    border-bottom: 15px solid transparent;
     border-radius: 20px;
     margin: 21px 10px 0px 0px;
     }
@@ -232,8 +228,6 @@
   @media (--viewportMedium) {
     border-top: 15px solid var(--marketplaceColor);
     border-left: 15px solid transparent;
-    border-right: 15px solid transparent;
-    border-bottom: 15px solid transparent;
     border-radius: 20px;
     margin: 21px 10px 0px 0px;
     }

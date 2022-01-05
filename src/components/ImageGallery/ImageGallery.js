@@ -33,16 +33,6 @@ class ImageGallery extends Component {
         firstImage.style.boxShadow = "0 0 50px 0 rgba(0, 0, 0, 0.1";
         secondImage.style.opacity = "0.5";
         thirdImage.style.opacity = "0.5";
-        if (firstImage.style.opacity == "1") {
-          buttonRight.disabled="true";
-        } else {
-          buttonRight.disabled="false";
-        }
-        if (thirdImage.style.opacity == "1") {
-          buttonLeft.disabled="true";
-        } else {
-          buttonRight.disabled="false";
-        }
         buttonLeft.onclick = function () {
           if (typeof window !== "undefined" && window.innerWidth < 1024) {
             document.getElementById('galleryContainer').scrollLeft += window.innerWidth * 0.7 + 10;

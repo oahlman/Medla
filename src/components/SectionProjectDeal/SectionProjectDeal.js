@@ -20,7 +20,7 @@ const SectionProjectDeal = props => {
       <h4 className={css.textDeal}>5000 kr rabatt på anslutningsavgiften. Rabatten läggs på automatiskt vid beställning. <ExternalLink className={css.linkStyle} href="https://www.peerdigital.se/anslut-projekt"> Kom igång </ExternalLink></h4>
       </div>
       <div>
-      <img className={css.imageSvenskVind} src={imagesvenskvind} alt="Medla in macbook" />
+      <img className={css.imageSvenskVind} src={imagesvenskvind} alt="Medla och Svensk vind" />
       </div> 
       </div>
     </div>

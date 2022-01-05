@@ -53,36 +53,36 @@
 }
 
 .stepTitlePlanning {
-  color: whitesmoke;
+  color: white;
 background-color: var(--attentionColor);
 width:fit-content;
 margin-left:-20px;
 margin-top:0px;
-padding:5px;
+padding:7px;
 padding-right:25px;
 padding-left: 10px;
 border-radius: 20px 0px 40px 0px;
 }
 
 .stepTitleBuilding {
-  color: whitesmoke;
+  color: white;
   background-color: var(--successColor);
   width:fit-content;
   margin-left:-20px;
   margin-top:0px;
-  padding:5px;
+  padding:7px;
   padding-right:25px;
   padding-left: 10px;
   border-radius: 20px 0px 40px 0px;
   }
 
   .stepTitleRunning {
-    color: whitesmoke;
+    color: white;
     background-color: var(--marketplaceColor);
     width:fit-content;
     margin-left:-20px;
     margin-top:0px;
-    padding:5px;
+    padding:7px;
     padding-right:25px;
     padding-left: 10px;
     border-radius: 20px 0px 40px 0px;

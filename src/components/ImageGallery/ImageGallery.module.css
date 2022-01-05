@@ -56,7 +56,7 @@
 
 .image {
   display: block;
-  width: 70vw;
+  width: 60vw;
   margin-top: 20px;
   object-fit: cover;
   overflow: hidden;
@@ -69,7 +69,7 @@
   }
 
   @media (--viewportLarge) {
-    width: 900px;
+    width: 600px;
   }
 }
 
@@ -122,10 +122,10 @@
   background-color: var(--matterColorBright);
   border: none;
   box-shadow: var(--boxShadowFilterButton);
-  margin-top: 30%;
+  margin-top: 25%;
 
   @media (--viewportLarge) {
-    margin-top: 350px;
+    margin-top: 300px;
   }
   &:hover {
     background-color: var(--matterColorLight);

@@ -26,6 +26,7 @@
   padding:0px;
   padding-left:20px;
   padding-right: 20px;;
+  border-radius: 20px;
 
   color: var(--matterColorDark);
 
@@ -51,15 +52,46 @@
   }
 }
 
-.stepTitle {
-
-
-  @media (--viewportMedium) {
-    margin-bottom: -15px;
-    margin-right: 15px;
-    
-  }
+.stepTitlePlanning {
+  color: white;
+background-color: var(--attentionColor);
+width:fit-content;
+margin-left:-20px;
+margin-top:0px;
+padding:7px;
+padding-right:25px;
+padding-left: 10px;
+border-radius: 20px 0px 40px 0px;
 }
+
+.stepTitleBuilding {
+  color: white;
+  background-color: var(--successColor);
+  width:fit-content;
+  margin-left:-20px;
+  margin-top:0px;
+  padding:7px;
+  padding-right:25px;
+  padding-left: 10px;
+  border-radius: 20px 0px 40px 0px;
+  }
+
+  .stepTitleRunning {
+    color: white;
+    background-color: var(--marketplaceColor);
+    width:fit-content;
+    margin-left:-20px;
+    margin-top:0px;
+    padding:7px;
+    padding-right:25px;
+    padding-left: 10px;
+    border-radius: 20px 0px 40px 0px;
+    }
+
+
+
+
+
 
 .createListingLink {
   margin-top: 18px;
@@ -232,3 +264,19 @@
     margin: 21px 10px 0px 0px;
     }
 }
+
+.opacityCurtainPlanning{
+ background-color: rgba(233, 172, 50, 0.404);
+ margin-right:-20px;
+ border-radius: 0 20px 0px 0px;
+}
+.opacityCurtainBulding{
+  background-color: rgba(34, 186, 130, 0.404);
+  margin-right:-20px;
+  border-radius: 0 20px 0px 0px;
+ }
+ .opacityCurtainRunning{
+  background-color: rgba(20, 85, 121, 0.404);
+  margin-right:-20px;
+  border-radius: 0 20px 0px 0px;
+ }

@@ -37,10 +37,13 @@ const SectionTimeline = props => {
     
 
       <div className={css.steps}>
+
         <div className={css.step}>
-          <h2 className={css.stepTitle}>
+          <div className={css.opacityCurtainPlanning}>
+          <h3 className={css.stepTitlePlanning}>
             <FormattedMessage id="SectionTimeline.part1Title" />
-          </h2>
+          </h3>
+          </div>
           <p>
             <FormattedMessage id="SectionTimeline.part1Text" />
           </p>
@@ -49,17 +52,21 @@ const SectionTimeline = props => {
 
 
         <div className={css.step}>
-          <h2 className={css.stepTitle}>
+        <div className={css.opacityCurtainBulding}>
+          <h3 className={css.stepTitleBuilding}>
             <FormattedMessage id="SectionTimeline.part2Title" />
-          </h2>
+          </h3>
+          </div>
           <p>
             <FormattedMessage id="SectionTimeline.part2Text"  />
           </p>
         </div>
         <div className={css.step}>
-          <h2 className={css.stepTitle}>
+        <div className={css.opacityCurtainRunning}>
+          <h3 className={css.stepTitleRunning}>
             <FormattedMessage id="SectionTimeline.part3Title" />
-          </h2>
+          </h3>
+          </div>
           <p>
             <FormattedMessage id="SectionTimeline.part3Text"  />
           </p>

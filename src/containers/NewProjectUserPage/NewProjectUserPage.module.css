@@ -39,11 +39,12 @@
 
 .sectionContent {
   margin: var(--LandingPage_sectionMarginTop) 24px 51px 24px;
+  margin-bottom: 50px;
 
   @media (--viewportMedium) {
     max-width: 100%;
     margin: var(--LandingPage_sectionMarginTop) 24px 60px 24px;
-    margin-top: 0px;
+    margin-bottom: 50px;
 
   }
 
@@ -51,7 +52,7 @@
     max-width: 1128px;
     padding: 0 px 0 px;
     margin: var(--LandingPage_sectionMarginTopLarge) auto 0px auto;
-    margin-top: 0px;
+    margin-top: 50px;
 
   }
 

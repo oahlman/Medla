@@ -8,29 +8,37 @@
 .steps {
   display: flex;
   flex-direction: column;
-  
+  justify-content: left;
+  align-items: left;
+  width:100%;
+  margin-top:5px;
 
   @media (--viewportMedium) {
     flex-direction: row;
+    justify-content: space-evenly;
   }
 }
 
 .step {
-  background-color: var(--marketplaceColorDark);
-  margin-top:10px;
+  background-color: var(--matterColorNegative);
+  margin-top:0px;
   margin-bottom:10px;
-  padding:15px;
+  padding:0px;
+  padding-left:20px;
+  padding-right: 20px;;
 
-  color:whitesmoke;
+  color: var(--matterColorDark);
+
 
   @media (--viewportMedium) {
-    width: 324px;
+    width: 30%;
     margin-right: 40px;
     
   }
 }
 
 .stepText {
+
 @media (--viewportMedium) {
   margin-left:15px;
   margin-right: 15px;
@@ -44,14 +52,12 @@
 }
 
 .stepTitle {
-  margin-top: 18px;
-  margin-bottom: 18px;
+
 
   @media (--viewportMedium) {
-    margin-top: 21px;
-    margin-bottom: 18px;
+    margin-bottom: -15px;
     margin-right: 15px;
-    margin-left: 15px;
+    
   }
 }
 
@@ -64,12 +70,48 @@
 }
 
 
-.statusBar {
+.container{
   display: flex;
   flex-direction: row;
+  justify-content: center;
+  align-items: left;
+
+  
+ 
+  @media (--viewportMedium) {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px;
+    
+  }
+}
+
+.statusBar {
+  padding-top: 15px;
+  display: flex;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
   margin: 10px;
+  margin-left:0px;
+  margin-right:15px;
+
+
+  @media (--viewportMedium) {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px;
+    width:100%;
+    padding-left: 10px;
+    padding-right: 10px;
+  
+
+  }
+
 }
 
 .statusCirclePlanning {
@@ -95,15 +137,33 @@
 
 
 .statusLine1 {
-  height: 4px;
+  height: calc(45% - 60px);;
   width: calc(50% - 60px);
-  background-color: var(--attentionColor);
+  max-width: 4px;
+  border-style: solid;
+  border-color: var(--attentionColor);
+
+  @media (--viewportMedium) {
+  height: calc(50% - 60px);
+  width: calc(50% - 60px);
+  max-width: 100%;
+  }
 }
 
+
 .statusLine2 {
-  height: 4px;
+  height: calc(45% - 60px);;
   width: calc(50% - 60px);
-  background-color: var(--successColor);
+  max-width: 4px;
+  border-style: solid;
+  border-color: var(--successColor);
+
+
+  @media (--viewportMedium) {
+  height: calc(50% - 60px);
+  width: calc(50% - 60px);
+  max-width: 100%;
+  }
 }
 
 .statusCard {
@@ -116,4 +176,55 @@
   background-color: var(--matterColorNegative);
   padding: 10px;
   max-width: 300px;
+}
+
+
+.statusArrowPlanning {
+  position: absolute;
+  width: 0;
+  height: 0;
+  margin: 5% 10px 0px -6%;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-radius: 10px;
+  border-bottom: 15px solid var(--matterColorNegative);
+  
+  @media (--viewportMedium) {
+    position: relative;
+    margin: -12px 10px 0px -6%;
+    }
+}
+
+.statusArrowBuilding {
+  position: absolute;
+  width: 0;
+  height: 0;
+  margin: 5% 10px 0px -6%;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-radius: 10px;
+  border-bottom: 15px solid var(--matterColorNegative);
+  
+  @media (--viewportMedium) {
+    position: relative;
+    margin: -12px 10px 0px -6%;
+    margin-left: auto;
+    margin-right: auto;
+    }
+}
+
+.statusArrowRunning {
+  position: absolute;
+  width: 0;
+  height: 0;
+  margin: 5% 10px 0px -6%;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-radius: 10px;
+  border-bottom: 15px solid var(--matterColorNegative);
+  
+  @media (--viewportMedium) {
+    position: relative;
+    margin: -12px 10px 0px 93%;
+    }
 }

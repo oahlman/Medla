@@ -10,11 +10,12 @@ const SectionTimeline = props => {
   return (
     <div className={classes}>
 
-      <div className={css.container}>
-      <div className={css.title}>
+    <div className={css.title}>
         <FormattedMessage id="SectionTimeline.titleLineOne" />
 
       </div>
+      <div className={css.container}>
+      
 
       <div className={css.statusBar}>
       <div className={css.statusCirclePlanning}></div>
@@ -29,6 +30,7 @@ const SectionTimeline = props => {
 
       <div className={css.steps}>
         <div className={css.step}>
+        <div className={css.statusArrowPlanning}></div>
           <h2 className={css.stepTitle}>
             <FormattedMessage id="SectionTimeline.part1Title" />
           </h2>
@@ -40,14 +42,16 @@ const SectionTimeline = props => {
 
 
         <div className={css.step}>
+        <div className={css.statusArrowBuilding}></div>
           <h2 className={css.stepTitle}>
-            <FormattedMessage id="SectionTimeline.part3Title" />
+            <FormattedMessage id="SectionTimeline.part2Title" />
           </h2>
           <p>
-            <FormattedMessage id="SectionTimeline.part3Text"  />
+            <FormattedMessage id="SectionTimeline.part2Text"  />
           </p>
         </div>
         <div className={css.step}>
+        <div className={css.statusArrowRunning}></div>
           <h2 className={css.stepTitle}>
             <FormattedMessage id="SectionTimeline.part3Title" />
           </h2>

@@ -180,83 +180,55 @@
 
 
 .statusArrowPlanning {
-  position: absolute;
   width: 0;
   height: 0;
-  margin: 30px 10px 0px -37px;
-  border-left: 15px solid transparent;
+  margin: 0px 0px 0px 21px;
+  border-top: 15px solid transparent ;
+  border-left: 15px solid var(--attentionColor) ;
   border-right: 15px solid transparent;
-  border-radius: 10px;
-  border-bottom: 15px solid var(--matterColorNegative);
-  -webkit-transform: rotate(270deg);
-  -moz-transform: rotate(270deg);
-  -o-transform: rotate(270deg);
-  -ms-transform: rotate(270deg);
-  transform: rotate(270deg);
+  border-bottom: 15px solid transparent;
+  border-radius: 99px;
   
   @media (--viewportMedium) {
-    position: relative;
-    margin: -12px 10px 0px -6%;
-    -webkit-transform: rotate(0deg);
-    -moz-transform: rotate(0deg);
-    -o-transform: rotate(0deg);
-    -ms-transform: rotate(0deg);
-    transform: rotate(0deg);
+    border-top: 15px solid var(--attentionColor);
+    border-left: 15px solid transparent;
+    border-radius: 20px;
+    margin: 21px 10px 0px 0px;
     }
 }
 
 .statusArrowBuilding {
-  position: absolute;
   width: 0;
   height: 0;
-
-  margin: 42px 10px 0px -37px;
-  border-left: 15px solid transparent;
+  margin: 0px 0px 0px 21px;
+  border-top: 15px solid transparent ;
+  border-left: 15px solid var(--successColor) ;
   border-right: 15px solid transparent;
-  border-radius: 10px;
-  border-bottom: 15px solid var(--matterColorNegative);
-  -webkit-transform: rotate(270deg);
-  -moz-transform: rotate(270deg);
-  -o-transform: rotate(270deg);
-  -ms-transform: rotate(270deg);
-  transform: rotate(270deg);
+  border-bottom: 15px solid transparent;
+  border-radius: 99px;
   
   @media (--viewportMedium) {
-    position: relative;
-    margin: -12px 10px 0px -6%;
-    margin-left:auto;
-    margin-right:auto;
-    -webkit-transform: rotate(0deg);
-    -moz-transform: rotate(0deg);
-    -o-transform: rotate(0deg);
-    -ms-transform: rotate(0deg);
-    transform: rotate(0deg);
+    border-top: 15px solid var(--successColor);
+    border-left: 15px solid transparent;
+    border-radius: 20px;
+    margin: 21px 10px 0px 0px;
     }
 }
 
 .statusArrowRunning {
-  position: absolute;
   width: 0;
   height: 0;
-  margin: 57px 10px 0px -37px;
-  border-left: 15px solid transparent;
+  margin: 0px 0px 0px 21px;
+  border-top: 15px solid transparent ;
+  border-left: 15px solid var(--marketplaceColor) ;
   border-right: 15px solid transparent;
-  border-radius: 10px;
-  border-bottom: 15px solid var(--matterColorNegative);
-  -webkit-transform: rotate(270deg);
-  -moz-transform: rotate(270deg);
-  -o-transform: rotate(270deg);
-  -ms-transform: rotate(270deg);
-  transform: rotate(270deg);
+  border-bottom: 15px solid transparent;
+  border-radius: 99px;
   
   @media (--viewportMedium) {
-    position: relative;
-
-    margin: -12px 10px 0px 88%;
-    -webkit-transform: rotate(0deg);
-    -moz-transform: rotate(0deg);
-    -o-transform: rotate(0deg);
-    -ms-transform: rotate(0deg);
-    transform: rotate(0deg);
+    border-top: 15px solid var(--marketplaceColor);
+    border-left: 15px solid transparent;
+    border-radius: 20px;
+    margin: 21px 10px 0px 0px;
     }
 }

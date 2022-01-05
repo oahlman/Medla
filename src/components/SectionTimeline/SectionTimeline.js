@@ -18,11 +18,19 @@ const SectionTimeline = props => {
       
 
       <div className={css.statusBar}>
-      <div className={css.statusCirclePlanning}></div>
+      <div className={css.statusCirclePlanning}>
+      <div className={css.statusArrowPlanning}></div>
+      </div>
       <div className={css.statusLine1}></div>
-      <div className={css.statusCircleBuilding}></div>
+      <div className={css.statusCircleBuilding}>
+      <div className={css.statusArrowBuilding}></div>
+
+      </div>
       <div className={css.statusLine2}></div>
-      <div className={css.statusCircleRunning}></div>
+      <div className={css.statusCircleRunning}>
+      <div className={css.statusArrowRunning}></div>
+
+      </div>
       <div className={css.statusCard}></div>
       </div>
 
@@ -30,7 +38,6 @@ const SectionTimeline = props => {
 
       <div className={css.steps}>
         <div className={css.step}>
-        <div className={css.statusArrowPlanning}></div>
           <h2 className={css.stepTitle}>
             <FormattedMessage id="SectionTimeline.part1Title" />
           </h2>
@@ -42,7 +49,6 @@ const SectionTimeline = props => {
 
 
         <div className={css.step}>
-        <div className={css.statusArrowBuilding}></div>
           <h2 className={css.stepTitle}>
             <FormattedMessage id="SectionTimeline.part2Title" />
           </h2>
@@ -51,7 +57,6 @@ const SectionTimeline = props => {
           </p>
         </div>
         <div className={css.step}>
-        <div className={css.statusArrowRunning}></div>
           <h2 className={css.stepTitle}>
             <FormattedMessage id="SectionTimeline.part3Title" />
           </h2>

@@ -105,8 +105,8 @@
   @media (--viewportMedium) {
     display:flex;
     flex-wrap: row;
-    margin: var(--LandingPage_sectionMarginTopMedium) 24px 60px 24px;
     min-height: 540px;
+    width: 100%;
     
   
   }

@@ -73,8 +73,8 @@ const NewProjectUserPage = () => {
           <SectionProjectChallanges ></SectionProjectChallanges>
           <SectionProjectDeal></SectionProjectDeal>
           <SectionWhatIsMedla ></SectionWhatIsMedla>
-          <SectionProjectGoals></SectionProjectGoals>
           <ImageGallery />
+          <SectionProjectGoals></SectionProjectGoals>
           <SectionQuote ></SectionQuote>
           <SectionProjectFunctions  ></SectionProjectFunctions>
           <SectionTimeline ></SectionTimeline>

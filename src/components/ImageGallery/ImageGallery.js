@@ -19,88 +19,81 @@ class ImageGallery extends Component {
   constructor(props) {
     super(props);
   }
-  componentDidMount() {
-    window.addEventListener('keyup', this.onKeyUp);
-  }
-  componentWillUnmount() {
-    window.removeEventListener('keyup', this.onKeyUp);
-  }
 
   render() {
     const { rootClassName, className, images, intl } = this.props;
     const classes = classNames(rootClassName || css.root, className);
-
-    window.onload = function(){
-      const buttonLeft = document.getElementById('slideLeft');
-      const buttonRight = document.getElementById('slideRight');
-      const firstImage = document.getElementById('firstImage');
-      const secondImage = document.getElementById('secondImage');
-      const thirdImage = document.getElementById('thirdImage');
-      firstImage.style.opacity = "1";
-      firstImage.style.boxShadow = "0 0 50px 0 rgba(0, 0, 0, 0.1";
-      secondImage.style.opacity = "0.5";
-      thirdImage.style.opacity = "0.5";
-      if (firstImage.style.opacity == "1") {
-        buttonRight.disabled="true";
-      } else {
-        buttonRight.value="initial";
-      }
-      if (thirdImage.style.opacity == "1") {
-        buttonLeft.disabled="true";
-      } else {
-        buttonRight.value="initial";
-      }
-      buttonLeft.onclick = function () {
-        if (window.innerWidth < 1024) {
-          document.getElementById('galleryContainer').scrollLeft += window.innerWidth * 0.7 + 10;
-        } else {
-          document.getElementById('galleryContainer').scrollLeft += 860;
-        }
+    if (typeof window !== "undefined") {window.onload = function(){
+        const buttonLeft = typeof document !== "undefined" ? document.getElementById('slideLeft') : null;
+        const buttonRight = typeof document !== "undefined" ? document.getElementById('slideRight') : null;
+        const firstImage = typeof document !== "undefined" ? document.getElementById('firstImage') : null;
+        const secondImage = typeof document !== "undefined" ? document.getElementById('secondImage') : null;
+        const thirdImage = typeof document !== "undefined" ? document.getElementById('thirdImage') : null;
+        firstImage.style.opacity = "1";
+        firstImage.style.boxShadow = "0 0 50px 0 rgba(0, 0, 0, 0.1";
+        secondImage.style.opacity = "0.5";
+        thirdImage.style.opacity = "0.5";
         if (firstImage.style.opacity == "1") {
-          firstImage.style.opacity = "0.5";
-          secondImage.style.opacity = "1";
-          secondImage.style.boxShadow = "0 0 50px 0 rgba(0, 0, 0, 0.1";
-          thirdImage.style.opacity = "0.5";
-        } else if (secondImage.style.opacity == "1") {
-          firstImage.style.opacity = "0.5";
-          secondImage.style.opacity = "0.5";
-          thirdImage.style.opacity = "1";
-          thirdImage.style.boxShadow = "0 0 50px 0 rgba(0, 0, 0, 0.1";
-        } else if (thirdImage.style.opacity == "1") {
-          firstImage.style.opacity = "0.5";
-          secondImage.style.opacity = "0.5";
-          thirdImage.style.opacity = "1";
-          thirdImage.style.boxShadow = "0 0 50px 0 rgba(0, 0, 0, 0.1";
+          buttonRight.disabled="true";
         } else {
-          firstImage.style.opacity = "initial";
-          secondImage.style.opacity = "initial";
-          thirdImage.style.opacity = "initial";
+          buttonRight.disabled="false";
         }
-        buttonRight.onclick = function () {
-          if (window.innerWidth < 1024) {
-            document.getElementById('galleryContainer').scrollLeft -= window.innerWidth * 0.7 + 20;
+        if (thirdImage.style.opacity == "1") {
+          buttonLeft.disabled="true";
+        } else {
+          buttonRight.disabled="false";
+        }
+        buttonLeft.onclick = function () {
+          if (typeof window !== "undefined" && window.innerWidth < 1024) {
+            document.getElementById('galleryContainer').scrollLeft += window.innerWidth * 0.7 + 10;
           } else {
-            document.getElementById('galleryContainer').scrollLeft -= 860;
-          }        if (secondImage.style.opacity == "1") {
-            firstImage.style.opacity = "1";
-            secondImage.style.opacity = "0.5";
-            thirdImage.style.opacity = "0.5";
-          } else if (thirdImage.style.opacity == "1") {
+            document.getElementById('galleryContainer').scrollLeft += 860;
+          }
+          if (firstImage.style.opacity == "1") {
             firstImage.style.opacity = "0.5";
             secondImage.style.opacity = "1";
+            secondImage.style.boxShadow = "0 0 50px 0 rgba(0, 0, 0, 0.1";
             thirdImage.style.opacity = "0.5";
-          } else if (firstImage.style.opacity == "1") {
-            firstImage.style.opacity = "1";
+          } else if (secondImage.style.opacity == "1") {
+            firstImage.style.opacity = "0.5";
             secondImage.style.opacity = "0.5";
-            thirdImage.style.opacity = "0.5";
+            thirdImage.style.opacity = "1";
+            thirdImage.style.boxShadow = "0 0 50px 0 rgba(0, 0, 0, 0.1";
+          } else if (thirdImage.style.opacity == "1") {
+            firstImage.style.opacity = "0.5";
+            secondImage.style.opacity = "0.5";
+            thirdImage.style.opacity = "1";
+            thirdImage.style.boxShadow = "0 0 50px 0 rgba(0, 0, 0, 0.1";
           } else {
             firstImage.style.opacity = "initial";
             secondImage.style.opacity = "initial";
             thirdImage.style.opacity = "initial";
           }
-      };
-      };
-      };
+          buttonRight.onclick = function () {
+            if (typeof window !== "undefined" && window.innerWidth < 1024) {
+              document.getElementById('galleryContainer').scrollLeft -= window.innerWidth * 0.7 + 20;
+            } else {
+              document.getElementById('galleryContainer').scrollLeft -= 860;
+            }        if (secondImage.style.opacity == "1") {
+              firstImage.style.opacity = "1";
+              secondImage.style.opacity = "0.5";
+              thirdImage.style.opacity = "0.5";
+            } else if (thirdImage.style.opacity == "1") {
+              firstImage.style.opacity = "0.5";
+              secondImage.style.opacity = "1";
+              thirdImage.style.opacity = "0.5";
+            } else if (firstImage.style.opacity == "1") {
+              firstImage.style.opacity = "1";
+              secondImage.style.opacity = "0.5";
+              thirdImage.style.opacity = "0.5";
+            } else {
+              firstImage.style.opacity = "initial";
+              secondImage.style.opacity = "initial";
+              thirdImage.style.opacity = "initial";
+            }
+        };
+        };
+        };}
 
 
     return (

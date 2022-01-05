@@ -2,6 +2,9 @@ import React from 'react';
 import { FormattedMessage } from '../../util/reactIntl';
 import classNames from 'classnames';
 import css from './SectionQuote.module.css';
+import imagesvenskvind from '../../assets/Svensk-vind-logo.png';
+      <img className={css.imageSvenskVind} src={imagesvenskvind} alt="Medla in macbook" />
+
 
 const SectionQuote = props => {
 
@@ -9,31 +12,27 @@ const SectionQuote = props => {
   const classes = classNames(rootClassName || css.root, className);
   return (
     <div className={classes}>
-      <div className={css.title}>
-        <FormattedMessage id="SectionQuote.titleLineOne" />
-
-      </div>
-
       <div className={css.steps}>
         <div className={css.step}>
+        <div>
           <h2 className={css.stepTitle}>
             <FormattedMessage id="SectionQuote.part1Title" />
           </h2>
-          <p>
+          <i >
             <FormattedMessage id="SectionQuote.part1Text" />
-          </p>
+          </i>
+         
+          </div>
+          <div className={css.containerNameAndLogo}>
+          <strong className={css.fontName}>
+            Förnamn Efternamn - Svensk Vindenergi
+          </strong>
+          <img className={css.imageSvenskVind} src={imagesvenskvind} alt="Medla och Svensk vind" />
+          </div>
         </div>
 
 
 
-        <div className={css.step}>
-          <h2 className={css.stepTitle}>
-            <FormattedMessage id="SectionQuote.part3Title" />
-          </h2>
-          <p>
-            <FormattedMessage id="SectionQuote.part3Text"  />
-          </p>
-        </div>
       </div>
 
 

@@ -208,7 +208,7 @@ const routeConfiguration = () => {
     },
 
     {
-      path: '/nytt-projekt',
+      path: '/anslut-projekt',
       name: 'NewProjectUserPage',
       component: NewProjectUserPage,
     },

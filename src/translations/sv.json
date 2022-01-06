@@ -970,7 +970,9 @@
   "SectionSignUpProcess.textLinkBeskrivForetag": "Beskriv företaget",
   "SectionSignUpProcess.login": "medla.app/login",
   "SectionSignUpProcess.toHome": "här",
-  "SectionProjectChallenges.titleLineOne": "Energisektorn står inför utmaningar",
+
+
+  "SectionProjectChallenges.titleLineOne": "Utmaningarna",
   "SectionProjectChallenges.part1Title":"För samhällen",
   "SectionProjectChallenges.part1Text":"Det räcker inte med att bygga hållbar energiproduktion, projektet och organisationen förväntas också vara hållbara (socialt, miljö, ekonomiskt)",
   "SectionProjectChallenges.part3Title":"För branschen",
@@ -994,7 +996,7 @@
   "SectionProjectGoals.part1Text": "Smidigare och snabbare tillståndsprocesser",
   "SectionProjectGoals.part3Title": "Stärkta varumärken inom social hållbarhet",
   "SectionProjectGoals.part3Text": "Fler projekt som håller tidsplan",
-  "SectionTimeline.titleLineOne": "Projektnytta från start till mål",
+  "SectionTimeline.titleLineOne": "Lösningar för alla projektfaser",
   "SectionTimeline.part1Title": "Planering",
   "SectionTimeline.part2Title": "Byggnation",
   "SectionTimeline.part3Title": "Drift",

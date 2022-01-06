@@ -50,7 +50,7 @@
   @media (--viewportLarge) {
     max-width: 1128px;
     padding: 0 px 0 px;
-    margin: var(--LandingPage_sectionMarginTopLarge) auto 0px auto;
+    margin: var(--LandingPage_sectionMarginTopLarge) 24px 0px 24px;
 
   }
 }

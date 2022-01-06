@@ -2,7 +2,7 @@ import React from 'react';
 import { FormattedMessage } from '../../util/reactIntl';
 import classNames from 'classnames';
 import css from './SectionProjectContact.module.css';
-import Button from '../Button/Button'
+import Button, { SecondaryButton } from '../Button/Button'
 import ExternalLink from '../ExternalLink/ExternalLink';
 
 const SectionProjectContact = props => {
@@ -18,15 +18,12 @@ const SectionProjectContact = props => {
       </div>
 
 
-        <ExternalLink href="https://peerdigital.se/anslut-projekt">
+        <ExternalLink className={css.button} href="https://peerdigital.se/anslut-projekt">
 
-
-        <Button className={css.button}> Kontakt  </Button>
-     
+        <FormattedMessage id="NewProjectUserPage.connectProject" />
 
         </ExternalLink>
 
-     
       </div>
 
     </div>

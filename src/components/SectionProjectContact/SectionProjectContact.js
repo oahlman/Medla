@@ -2,6 +2,8 @@ import React from 'react';
 import { FormattedMessage } from '../../util/reactIntl';
 import classNames from 'classnames';
 import css from './SectionProjectContact.module.css';
+import Button from '../Button/Button'
+import ExternalLink from '../ExternalLink/ExternalLink';
 
 const SectionProjectContact = props => {
 
@@ -9,22 +11,19 @@ const SectionProjectContact = props => {
   const classes = classNames(rootClassName || css.root, className);
   return (
     <div className={classes}>
+      <div className={css.steps}>
       <div className={css.title}>
         <FormattedMessage id="SectionProjectContact.titleLineOne" />
 
       </div>
 
-      <div className={css.steps}>
-        <div className={css.step}>
-          <h2 className={css.stepTitle}>
-            <FormattedMessage id="SectionProjectContact.part1Title" />
-          </h2>
-          <p>
-            <FormattedMessage id="SectionProjectContact.part1Text" />
-          </p>
-        </div>
-      </div>
 
+      <Button className={css.button}> Kontakt
+        <ExternalLink href="https://peerdigital.se/anslut-projekt"></ExternalLink>
+
+       </Button>
+     
+      </div>
 
     </div>
   );

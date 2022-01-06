@@ -970,13 +970,12 @@
   "SectionSignUpProcess.textLinkBeskrivForetag": "Beskriv företaget",
   "SectionSignUpProcess.login": "medla.app/login",
   "SectionSignUpProcess.toHome": "här",
-
-
   "SectionProjectChallenges.titleLineOne": "Energisektorn står inför utmaningar",
   "SectionProjectChallenges.part1Title":"För samhällen",
   "SectionProjectChallenges.part1Text":"Det räcker inte med att bygga hållbar energiproduktion, projektet och organisationen förväntas också vara hållbara (socialt, miljö, ekonomiskt)",
   "SectionProjectChallenges.part3Title":"För branschen",
   "SectionProjectChallenges.part3Text":"Energibranschen ska bara fossifri 2045 Lokalt motstånd allt tuffare Tillståndsprocesser - x % (allt fler) får avslag ) - tillsammans kan vi vändra trenden/komma ikapp",
+  "SectionProjectContact.titleLineOne":"Bli en del av lösningen idag",
   "SectionProjectFunctions.titleLineOne": "Funktioner",
   "SectionProjectFunctions.chat":"Direktmeddelanden",
   "SectionProjectFunctions.data":"Nyckeltal och analyser",
@@ -1002,6 +1001,7 @@
   "SectionTimeline.part1Text": "Underlätta lokal förankring och tillståndsprocess",
   "SectionTimeline.part2Text": "Bidra till ökade affärsmöjligheter lokalt",
   "SectionTimeline.part3Text": "Skapa långsiktiga möjligheter för lokalsamhället",
+
 
 
 

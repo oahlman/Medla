@@ -11,8 +11,6 @@ const SectionProjectFunctions = props => {
   return (
     <div className={classes}>
       <div className={css.title}>
-        <FormattedMessage id="SectionProjectFunctions.titleLineOne" />
-
       </div>
 
       <div className={css.steps}>
@@ -93,7 +91,7 @@ const SectionProjectFunctions = props => {
           </h4>
           </div>
         </div>
-      
+
       </div>
 
 

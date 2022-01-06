@@ -88,10 +88,10 @@
   background-color: var(--marketplaceColorLight);
   margin-top: 50px;
   margin-bottom: 50px;
-  margin-left: -999px;
-  margin-right: -999px;
-  padding-left: 999px;
-  padding-right: 999px;
+  margin-left: -9999px;
+  margin-right: -9999px;
+  padding-left: 9999px;
+  padding-right: 9999px;
   padding-bottom: 50px;
   padding-top: 50px;
   @media (--viewportMedium) {

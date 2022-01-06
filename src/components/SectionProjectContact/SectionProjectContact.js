@@ -18,10 +18,14 @@ const SectionProjectContact = props => {
       </div>
 
 
-      <Button className={css.button}> Kontakt
-        <ExternalLink href="https://peerdigital.se/anslut-projekt"></ExternalLink>
+        <ExternalLink href="https://peerdigital.se/anslut-projekt">
 
-       </Button>
+
+        <Button className={css.button}> Kontakt  </Button>
+     
+
+        </ExternalLink>
+
      
       </div>
 

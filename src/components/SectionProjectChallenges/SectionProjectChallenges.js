@@ -52,10 +52,10 @@ const SectionProjectChallenges = props => {
 
         <div className={css.step}>
           <h2 className={css.stepTitle}>
-            Hållbarhet
+            25 % lokal sysselsättning
           </h2>
           <p>
-          <strong>Det räcker inte med att bygga hållbar energiproduktion</strong> Projektet och organisationen förväntas också vara socialt hållbara.
+          <strong>Det räcker inte med att bygga hållbar energiproduktion</strong> http://www.svenskvindenergi.org/wp-content/blogs.dir/11/files/2011/05/Vind_2_2012.pdf Projektet och organisationen förväntas också vara socialt hållbara.
           </p>
         </div>
       </div>

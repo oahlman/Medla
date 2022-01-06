@@ -76,7 +76,7 @@ const NewProjectUserPage = () => {
 
           <div className={css.sectionProcessMaybeColor}>
           <SectionWhatIsMedla />
-          <div className={css.sectionGallery}>
+          <div className={null}>
             <SectionProjectFunctions  className={css.subSection} />
             <ImageGallery  />
           </div>
@@ -86,7 +86,7 @@ const NewProjectUserPage = () => {
           <SectionProjectGoals className={css.sectionProcessMaybe} />
 
           <SectionProjectContact className={css.lastSectionProcessMaybeColor} />
-         
+
 
 
 

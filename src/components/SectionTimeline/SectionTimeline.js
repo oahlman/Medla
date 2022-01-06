@@ -15,7 +15,7 @@ const SectionTimeline = props => {
 
       </div>
       <div className={css.container}>
-      
+
 
       <div className={css.statusBar}>
       <div className={css.statusCirclePlanning}>
@@ -34,7 +34,7 @@ const SectionTimeline = props => {
       <div className={css.statusCard}></div>
       </div>
 
-    
+
 
       <div className={css.steps}>
 

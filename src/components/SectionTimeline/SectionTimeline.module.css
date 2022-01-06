@@ -1,7 +1,7 @@
 @import '../../styles/propertySets.css';
 
 .title {
-  @apply --marketplaceH1FontStyles;
+  @apply --marketplaceH2FontStyles;
   margin-top: 0;
 }
 
@@ -34,7 +34,7 @@
   @media (--viewportMedium) {
     width: 30%;
     margin-right: 40px;
-    
+
   }
 }
 
@@ -108,15 +108,15 @@ border-radius: 20px 0px 40px 0px;
   justify-content: center;
   align-items: left;
 
-  
- 
+
+
   @media (--viewportMedium) {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
     margin: 10px;
-    
+
   }
 }
 
@@ -140,7 +140,7 @@ border-radius: 20px 0px 40px 0px;
     width:100%;
     padding-left: 10px;
     padding-right: 10px;
-  
+
 
   }
 
@@ -165,7 +165,7 @@ border-radius: 20px 0px 40px 0px;
     height: 30px;
     border-radius: 50%;
     background-color: var(--marketplaceColor);}
-  
+
 
 
 .statusLine1 {
@@ -220,7 +220,7 @@ border-radius: 20px 0px 40px 0px;
   border-right: 15px solid transparent;
   border-bottom: 15px solid transparent;
   border-radius: 99px;
-  
+
   @media (--viewportMedium) {
     border-top: 15px solid var(--attentionColor);
     border-left: 15px solid transparent;
@@ -238,7 +238,7 @@ border-radius: 20px 0px 40px 0px;
   border-right: 15px solid transparent;
   border-bottom: 15px solid transparent;
   border-radius: 99px;
-  
+
   @media (--viewportMedium) {
     border-top: 15px solid var(--successColor);
     border-left: 15px solid transparent;
@@ -256,7 +256,7 @@ border-radius: 20px 0px 40px 0px;
   border-right: 15px solid transparent;
   border-bottom: 15px solid transparent;
   border-radius: 99px;
-  
+
   @media (--viewportMedium) {
     border-top: 15px solid var(--marketplaceColor);
     border-left: 15px solid transparent;

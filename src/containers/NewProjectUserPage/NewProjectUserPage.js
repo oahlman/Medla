@@ -10,7 +10,7 @@ import {
   ExternalLink,
   SectionProjectTransfer,
   SectionWhyMedla,
-  SectionProjectChallanges,
+  SectionProjectChallenges,
   SectionProjectGoals,
   SectionQuote,
   ImageGallery,
@@ -71,14 +71,14 @@ const NewProjectUserPage = () => {
           <img className={css.imageMacbook} src={imagemacbook} alt="Medla in macbook" />
           </div>
           </div>
-          <SectionProjectChallanges className={css.sectionProcessMaybe} />
+          <SectionProjectChallenges className={css.sectionProcessMaybe} />
           <SectionWhatIsMedla className={css.sectionProcessMaybe} />
           <ImageGallery />
           <SectionProjectFunctions className={css.sectionProcessMaybe} />
           <SectionTimeline className={css.sectionProcessMaybe} />
           <SectionProjectGoals className={css.sectionProcessMaybe} />
           <SectionProjectContact className={css.sectionProcessMaybe} />
-          
+
 
 
 

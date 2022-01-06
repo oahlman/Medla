@@ -16,6 +16,7 @@
   
 
   @media (--viewportMedium) {
+    overflow-x: hidden;
     flex-direction: row;
     gap:0px;
     margin:0px;

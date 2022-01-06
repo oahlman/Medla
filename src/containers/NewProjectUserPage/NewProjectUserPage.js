@@ -18,6 +18,7 @@ import {
   SectionProjectDeal,
   SectionProjectFunctions,
   SectionTimeline,
+  SectionProjectContact,
 } from '../../components';
 
 import StaticPage from '../StaticPage/StaticPage';
@@ -70,12 +71,14 @@ const NewProjectUserPage = () => {
           <img className={css.imageMacbook} src={imagemacbook} alt="Medla in macbook" />
           </div>
           </div>
-          <SectionProjectChallanges className={css.sectionProcessMaybe} ></SectionProjectChallanges>
-          <SectionWhatIsMedla className={css.sectionProcessMaybe}></SectionWhatIsMedla>
+          <SectionProjectChallanges className={css.sectionProcessMaybe} />
+          <SectionWhatIsMedla className={css.sectionProcessMaybe} />
           <ImageGallery className={css.sectionProcessMaybe} />
-          <SectionTimeline className={css.sectionProcessMaybe}></SectionTimeline>
-          <SectionProjectFunctions className={css.sectionProcessMaybe} ></SectionProjectFunctions>
-          <SectionProjectGoals className={css.sectionProcessMaybe}></SectionProjectGoals>
+          <SectionTimeline className={css.sectionProcessMaybe} />
+          <SectionProjectFunctions className={css.sectionProcessMaybe} />
+          <SectionProjectGoals className={css.sectionProcessMaybe} />
+          <SectionProjectContact className={css.sectionProcessMaybe} />
+          
 
 
 

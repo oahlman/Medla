@@ -17,11 +17,10 @@ const SectionProjectChallenges = props => {
       <div className={css.steps}>
         <div className={css.step}>
           <h2 className={css.stepTitle}>
-            <FormattedMessage id="SectionProjectChallenges.part1Title" />
+            59% av projekt får avslag
           </h2>
           <p>
-          <strong>59% av projekt får avslag</strong> Tillståndsprocesser är allt för långdragna och blir ofta avslagna. https://svenskvindenergi.org/pressmeddelanden/stor-investeringsvilja-i-vindkraft-men-59-procent-av-verken-avslas<br></br>
-          <strong>11% minskat klimatengagemang</strong> Lokalt motstånd allt tuffare. https://www.kantarsifo.se/sites/default/files/reports/documents/energibarometern_q2_2020.pdf<br></br>
+          <strong>Tillståndsprocesser är allt för långdragna och blir ofta avslagna.</strong> https://svenskvindenergi.org/pressmeddelanden/stor-investeringsvilja-i-vindkraft-men-59-procent-av-verken-avslas<br></br>
           </p>
         </div>
 
@@ -29,18 +28,40 @@ const SectionProjectChallenges = props => {
 
         <div className={css.step}>
           <h2 className={css.stepTitle}>
-            <FormattedMessage id="SectionProjectChallenges.part3Title" />
+          11% minskat klimatengagemang
           </h2>
           <p>
-          <strong>Fosilfritt 2045 </strong> Energibranschen ska bara fossifri 2045<br></br>
-          <strong>Hållbarhet </strong> Det räcker inte med att bygga hållbar energiproduktion, projektet och organisationen förväntas också vara socialt hållbara.
+          <strong>Lokalt motstånd allt tuffare.</strong> https://www.kantarsifo.se/sites/default/files/reports/documents/energibarometern_q2_2020.pdf<br></br>
+          </p>
+        </div>
+      </div>
+      <div className={css.title}>
+      </div>
 
+      <div className={css.steps}>
+        <div className={css.step}>
+          <h2 className={css.stepTitle}>
+            Fosilfritt 2045
+          </h2>
+          <p>
+          <strong>Fosilfritt 2045</strong> Energibranschen ska bara fossifri 2045<br></br>
+          </p>
+        </div>
+
+
+
+        <div className={css.step}>
+          <h2 className={css.stepTitle}>
+            Hållbarhet
+          </h2>
+          <p>
+          <strong>Det räcker inte med att bygga hållbar energiproduktion</strong> Projektet och organisationen förväntas också vara socialt hållbara.
           </p>
         </div>
       </div>
 
-
     </div>
+
   );
 };
 

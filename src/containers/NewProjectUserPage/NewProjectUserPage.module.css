@@ -97,7 +97,7 @@
   @media (--viewportMedium) {
     margin-top: 100px;
     margin-bottom: 100px;
-   
+
 
 
 
@@ -158,15 +158,15 @@
   max-height: 500px;
   align-items: center;
   margin-bottom:20px;
-  
+
   @media (--viewportMedium) {
     display:flex;
     flex-wrap: row;
     min-height: 540px;
     width: 100%;
     margin-bottom:30px;
-    
-  
+
+
   }
 }
 
@@ -182,14 +182,13 @@
 
   display: flex;
   justify-content: left;
-  overflow: hidden;
 
   @media (--viewportMedium) {
- 
-  margin-left:20px;
- 
 
-  
+  margin-left:20px;
+
+
+
   }
 }
 
@@ -209,7 +208,7 @@
   position: relative;
   object-fit: cover;
 
-  object-position: 0px 50px; /* try 20px 10px */ 
+  object-position: 0px 50px; /* try 20px 10px */
   width:90%;
 
   @media (--viewportMedium) {
@@ -227,9 +226,9 @@
     margin-right: -300px;
 
 
-    
+
       }
-    }  
+    }
 
   .imageMacbook {
     display: none;
@@ -239,14 +238,14 @@
       object-fit: cover;
       overflow:hidden;
       width:70%;
-      object-position: 120px 0%; /* try 20px 10px */ 
+      object-position: 120px 0%; /* try 20px 10px */
 
-     
-    
+
+
       }
   }
 
-  
+
   .heroButton {
     @apply --marketplaceButtonStylesSecondary;
     composes: animation;
@@ -264,7 +263,7 @@
       margin-left: 50px;
     }
   }
-  
+
   .heroButton:hover{
   color:black;
   border-color: whitesmoke;
@@ -307,7 +306,7 @@
       text-align: left;
       padding-left:20px;
       padding-right:10%;
-  
+
       }
   }
 
@@ -317,8 +316,8 @@
 
     @media (--viewportMedium) {
      text-align: left;
-    
-  
+
+
       }
   }
 
@@ -348,13 +347,12 @@
 .linkStyle:hover{
   text-decoration: none;
 }
-  
-  
 
 
 
 
 
-  
-  
-  
+
+
+
+

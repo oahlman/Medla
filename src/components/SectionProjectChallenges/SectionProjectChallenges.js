@@ -41,10 +41,10 @@ const SectionProjectChallenges = props => {
       <div className={css.steps}>
         <div className={css.step}>
           <h2 className={css.stepTitle}>
-            Fosilfritt 2045
+          Fossifritt 2045
           </h2>
           <p>
-          <strong>Fosilfritt 2045</strong> Energibranschen ska bara fossifri 2045<br></br>
+          <strong>Svensk energiproduktion ska vara fossilfri till 2045</strong> https://fossilfrittsverige.se/<br></br>
           </p>
         </div>
 

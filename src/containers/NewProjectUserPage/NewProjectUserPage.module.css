@@ -78,12 +78,38 @@
     margin-top: 100px;
     margin-bottom: 100px;
 
-  
 
+  }
+}
+
+.subSection {
+  margin-top: 25px;
+  margin-bottom: 25px;
+  @media (--viewportMedium) {
+    margin-top: 50px;
+    margin-bottom: 50px;
+
+
+  }
+
+  @media (--viewportLarge) {
+    margin-top: 50px;
+    margin-bottom: 50px;
+
+
+  }
+
+  @media (--viewportXLarge) {
+    margin-top: 50px;
+    margin-bottom: 50px;
 
 
   }
 }
+
+
+
+
 
 
 .sectionText{

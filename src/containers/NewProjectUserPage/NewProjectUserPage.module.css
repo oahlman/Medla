@@ -58,22 +58,27 @@
 
 
 .sectionProcessMaybe {
-  margin-top: 40px;
-
+  margin-top: 20px;
+  margin-bottom: 20px;
   @media (--viewportMedium) {
     margin-top: 60px;
+    margin-bottom: 60px;
 
 
   }
 
   @media (--viewportLarge) {
     margin-top: 60px;
+    margin-bottom: 60px;
+
 
 
   }
 
   @media (--viewportXLarge) {
     margin-top: 60px;
+    margin-bottom: 60px;
+
 
   
 

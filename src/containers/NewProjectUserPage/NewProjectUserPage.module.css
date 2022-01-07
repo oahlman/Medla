@@ -33,27 +33,37 @@
 .root {
   padding: 0px;
 
+
   /* Use CSS variable defined in src/styles/marketplaceDefaults.css */
 }
 
 
 .sectionContent {
 
-  margin: var(--LandingPage_sectionMarginTop) 24px 0px 24px;
+  margin: var(--LandingPage_sectionMarginTop) 24px 51px 24px;
 
   @media (--viewportMedium) {
     max-width: 100%;
-    margin: var(--LandingPage_sectionMarginTop) 24px 0px 24px;
+    margin: var(--LandingPage_sectionMarginTop) 24px 61px 24px;
 
   }
 
-  @media (--viewportLarge) {
+  @media (min-width: 1128px) {
+    
     max-width: 1128px;
-    padding: 0 px 0 px;
-    margin: var(--LandingPage_sectionMarginTopLarge) 24px 0px 24px;
+    padding: 0 36px 0 36px;
+    margin: var(--LandingPage_sectionMarginTopLarge) auto 0px auto;
+    
+   
+  }
+
+  @media (--viewportXLarge) {
+    max-width: 1056px;
+    padding: 0;
 
   }
 }
+
 
 .overflow{
   overflow-x:hidden
@@ -65,22 +75,16 @@
   @media (--viewportMedium) {
     margin-top: 100px;
     margin-bottom: 100px;
-
-
   }
 
   @media (--viewportLarge) {
     margin-top: 100px;
     margin-bottom: 100px;
-
-
   }
 
   @media (--viewportXLarge) {
     margin-top: 100px;
     margin-bottom: 100px;
-
-
   }
 }
 
@@ -293,7 +297,7 @@ padding-top: 50px;
     @media (--viewportMedium) {
       display: block;
       width: 260px;
-      margin-left: 50px;
+      margin-left: 20px;
     }
   }
 
@@ -390,7 +394,11 @@ padding-top: 50px;
 }
 }
 
+.section {
+  overflow: auto;
+  background-color: var(--marketplaceColorLight);
 
+}
 
 
 

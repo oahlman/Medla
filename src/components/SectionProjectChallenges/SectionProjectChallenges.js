@@ -25,9 +25,9 @@ const SectionProjectChallenges = props => {
 
         <div className={css.step}>
           <h2 className={css.stepTitle}>
-            43% får veto
+            40% får veto
           </h2>
-          <p className={css.stepSubtitle}>Andelen ansökta vindkraftprojekt som fick kommunalt veto ökade från 8% till 43% mellan 2015–2020.</p>
+          <p className={css.stepSubtitle}>Andelen ansökta vindkraftprojekt som fick kommunalt veto ökade från 8% till 40% mellan 2016–2019.</p>
           <p className={css.note}><a className={css.note} href="https://www.regeringen.se/49e6a7/contentassets/8b16a30f6de3468ab6fa640ebb23851f/en-rattssaker-vindkraftsprovning-sou-202153#page=192">Regeringen</a></p>
         </div>
 

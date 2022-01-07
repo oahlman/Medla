@@ -66,6 +66,7 @@
 
 
 .overflow{
+  overflow: hidden;
 }
 
 .sectionProcessMaybe {

@@ -33,10 +33,10 @@ const SectionProjectChallenges = props => {
 
         <div className={css.step}>
           <h2 className={css.stepTitle}>
-            25% lokal sysselsättning
+            25% lokala jobb
           </h2>
-          <p className={css.stepSubtitle}>Cirka 1 av 4 jobb i energiprojekt landar lokalt</p>
-          <p className={css.note}><a className={css.note} href="http://www.svenskvindenergi.org/wp-content/blogs.dir/11/files/2011/05/Vind_2_2012.pdf">Svensk Vindenergi</a></p>
+          <p className={css.stepSubtitle}>I studerade vindkraftprojekt har 25% av jobben utförts av lokala eller regionala aktörer. Lokala leverantörer skulle kunna stå för upp till 73% av jobben.</p>
+          <p className={css.note}><a className={css.note} href="https://www.svenskvindenergi.org/wp-content/blogs.dir/11/files/2011/05/Vind_2_2012.pdf#page=3">Svensk Vindenergi</a> &‌ <a className={css.note} href="https://www.irena.org/benefits/Local-Value-Creation">IRENA</a></p>
         </div>
       </div>
 

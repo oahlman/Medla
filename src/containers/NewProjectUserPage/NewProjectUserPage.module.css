@@ -301,24 +301,53 @@ padding-top: 50px;
     }
   }
 
+  .heroButton {
+    @apply --marketplaceButtonStylesSecondary;
+    border-width: 2px;
+    transition-duration: 0.25s;
+    animation-delay: 0.8s;
+    margin-bottom: 10px;
+    margin-top: 30px;
+    background-color: transparent;
+    color:whitesmoke;
+  
+    @media (--viewportMedium) {
+      width: 260px;
+      margin-left: 50px;
+    }
+  }
+  
   .heroButton:hover{
   color:black;
   border-color: whitesmoke;
   background-color: whitesmoke;
+  text-decoration: none;
+  
   }
-
   .heroButton:focus{ 
-    @apply --marketplaceButtonStylesSecondary;
-
-    background: transparent;
-    
-
+    border-width: 2px;
+    transition-duration: 0.25s;
+    animation-delay: 0.8s;
+    margin-bottom: 10px;
+    margin-top: 30px;
+    border-color: whitesmoke !important;
+    background-color: transparent !important;
+    color:whitesmoke;
+  
+  
     @media (--viewportMedium) {
-      display: block;
       width: 260px;
-      margin-left: 20px;
+      margin-left: 50px;
     }
   }
+  
+  .heroButton:focus:hover{ 
+  color:black;
+  border-color: whitesmoke !important;
+  background-color: whitesmoke !important;
+  text-decoration: none;
+  }
+  
 
 
   .deal{

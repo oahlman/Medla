@@ -67,7 +67,7 @@
   animation-delay: 0.8s;
   margin-bottom: 10px;
   margin-top: 30px;
-  background: transparent;
+  background-color: transparent;
   color:whitesmoke;
 
   @media (--viewportMedium) {
@@ -78,24 +78,32 @@
 
 .button:hover{
 color:black;
-background: whitesmoke;
+border-color: whitesmoke;
+background-color: whitesmoke;
 text-decoration: none;
 
 }
-
-
 .button:focus{ 
-  @apply --marketplaceButtonStylesSecondary;
-  margin-top: 30px;
+  border-width: 2px;
+  transition-duration: 0.25s;
+  animation-delay: 0.8s;
   margin-bottom: 10px;
+  margin-top: 30px;
+  border-color: whitesmoke !important;
+  background-color: transparent !important;
+  color:whitesmoke;
 
-  background: transparent;
-  
 
   @media (--viewportMedium) {
     width: 260px;
     margin-left: 50px;
-
-   
   }
 }
+
+.button:focus:hover{ 
+color:black;
+border-color: whitesmoke !important;
+background-color: whitesmoke !important;
+text-decoration: none;
+}
+

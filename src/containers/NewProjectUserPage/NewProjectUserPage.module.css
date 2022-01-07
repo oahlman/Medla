@@ -48,10 +48,11 @@
   }
 
   @media (--viewportLarge) {
-    max-width: 1128px;
-    padding: 0 px 0 px;
-    margin: var(--LandingPage_sectionMarginTopLarge) 24px 0px 24px;
-
+    max-width: 100%;
+    padding: 0 36px 0 36px;
+    margin: var(--LandingPage_sectionMarginTopLarge) auto 0px auto;
+    
+   
   }
 }
 
@@ -390,7 +391,11 @@ padding-top: 50px;
 }
 }
 
+.section {
+  overflow: auto;
+  background-color: var(--marketplaceColorLight);
 
+}
 
 
 

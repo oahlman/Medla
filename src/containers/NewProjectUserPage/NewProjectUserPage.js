@@ -85,8 +85,10 @@ const NewProjectUserPage = () => {
 
           <SectionProjectGoals className={css.sectionProcessMaybe} />
 
-          <SectionProjectContact className={css.lastSectionProcessMaybeColor} />
 
+      
+          <SectionProjectContact className={css.lastSectionProcessMaybeColor} />
+   
 
 
 

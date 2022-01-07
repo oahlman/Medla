@@ -19,7 +19,7 @@ const SectionProjectContact = props => {
 
 
         <ExternalLink className={css.button} href="https://peerdigital.se/anslut-projekt">
-
+          
         <FormattedMessage id="NewProjectUserPage.connectProject" />
 
         </ExternalLink>

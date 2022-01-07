@@ -79,7 +79,7 @@
 .button:hover{
 color:black;
 border-color: whitesmoke;
-background-color: whitesmoke;
+background: whitesmoke;
 text-decoration: none;
 
 }

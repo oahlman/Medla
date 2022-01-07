@@ -26,11 +26,9 @@
 
 .imageContainer {
   margin-right: 20px;
-  margin-top: 20px;
 
   @media (--viewportLarge) {
-    margin-right: 40px;
-    margin-top: 40px;
+
   }
 }
 
@@ -48,7 +46,6 @@
   margin-left: 20px;
 
   @media (--viewportLarge) {
-    margin-left: 40px;
   }
 }
 
@@ -65,12 +62,15 @@
   }
 
   @media (--viewportMedium) {
-    margin-top: 40px;
+    width: 440px;
   }
 
   @media (--viewportLarge) {
-    width: 600px;
   }
+}
+
+.imageTitle {
+  margin-bottom: 0px;
 }
 
 .stepTitle {
@@ -109,8 +109,10 @@
 }
 
 .navigation {
+  position: relative;
   width: 100%;
   max-width: 1128px;
+  z-index: 1;
 
 }
 
@@ -125,7 +127,7 @@
   margin-top: 25%;
 
   @media (--viewportLarge) {
-    margin-top: 300px;
+    margin-top: 150px;
   }
   &:hover {
     background-color: var(--matterColorLight);
@@ -137,10 +139,10 @@
 
 .scrollRight {
   composes: navButton;
-  left: 20px;
+  left: 10px;
 
   @media (--viewportLarge) {
-    left: 40px;
+
   }
 }
 
@@ -148,7 +150,7 @@
   composes: navButton;
   right: 20px;
   @media (--viewportLarge) {
-    right: 40px;
+    left: 420px;
   }
 }
 

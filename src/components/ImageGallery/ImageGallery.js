@@ -8,9 +8,9 @@ import { IoChevronBackOutline, IoChevronForwardOutline } from "react-icons/io5";
 
 import css from './ImageGallery.module.css';
 
-import firstImage from './images/searchPage.png';
-import secondImage from './images/projectPage.png';
-import thirdImage from './images/chatPage.png';
+import firstImage from './images/searchPage.jpg';
+import secondImage from './images/projectPage.jpg';
+import thirdImage from './images/chatPage.jpg';
 
 
 const KEY_CODE_LEFT_ARROW = 37;
@@ -38,7 +38,7 @@ class ImageGallery extends Component {
           if (typeof window !== "undefined" && window.innerWidth < 1024) {
             document.getElementById('galleryContainer').scrollLeft += window.innerWidth * 0.5 + 10;
           } else {
-            document.getElementById('galleryContainer').scrollLeft += 430;
+            document.getElementById('galleryContainer').scrollLeft += 460;
           }
           if (firstImage.style.opacity == "1") {
             firstImage.style.opacity = "0.5";
@@ -64,7 +64,7 @@ class ImageGallery extends Component {
             if (typeof window !== "undefined" && window.innerWidth < 1024) {
               document.getElementById('galleryContainer').scrollLeft -= window.innerWidth * 0.5 + 20;
             } else {
-              document.getElementById('galleryContainer').scrollLeft -= 430;
+              document.getElementById('galleryContainer').scrollLeft -= 460;
             }        if (secondImage.style.opacity == "1") {
               firstImage.style.opacity = "1";
               secondImage.style.opacity = "0.5";
@@ -89,26 +89,26 @@ class ImageGallery extends Component {
 
     return (
       <div className={classes}>
+      <div className={css.navigation}>
+        <button id="slideRight" className={css.scrollRight}><IoChevronBackOutline className={css.icon} /></button>
+        <button id="slideLeft" className={css.scrollLeft}><IoChevronForwardOutline className={css.icon} /></button>
+      </div>
       <div id="galleryContainer" className={css.galleryContainer}>
         <div className={css.imageContainer}>
         <img id="firstImage" className={css.image} src={firstImage} alt="search"/>
-        <h3>Söksida</h3>
-        <span>Text som beskriver fördelarna med söksidan.</span>
+        <h3 className={css.imageTitle}>Söksida</h3>
+        <span>Hitta lokala företag med en smart sökmotor.</span>
         </div>
         <div className={css.imageContainer}>
         <img id="secondImage" className={css.image} src={secondImage} alt="project"/>
-        <h3>Projektsida</h3>
-        <span>Text som beskriver fördelarna med projektsidor.</span>
+        <h3 className={css.imageTitle}>Projektsida</h3>
+        <span>En dynamisk projektsida gör underlättar den lokala affärsförmedlingen.</span>
         </div>
         <div className={css.imageContainer}>
         <img id="thirdImage" className={css.image} src={thirdImage} alt="chat"/>
-        <h3>Chatt</h3>
-        <span>Text som beskriver fördelarna med chatten.</span>
+        <h3 className={css.imageTitle}>Chatt</h3>
+        <span>Leverantörer och beställare kan chatta och översätta dialogen till valfritt språk.</span>
         </div>
-      <div className={css.navigation}>
-      <button id="slideRight" className={css.scrollRight}><IoChevronBackOutline className={css.icon} /></button>
-      <button id="slideLeft" className={css.scrollLeft}><IoChevronForwardOutline className={css.icon} /></button>
-      </div>
       </div>
       </div>
     );

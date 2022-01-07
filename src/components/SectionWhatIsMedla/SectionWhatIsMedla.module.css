@@ -28,12 +28,17 @@
 
 .stepTitle {
   margin-top: 18px;
-  margin-bottom: 18px;
+  margin-bottom: 6px;
 
   @media (--viewportMedium) {
     margin-top: 21px;
-    margin-bottom: 18px;
+    margin-bottom: 6px;
   }
+}
+
+.stepSubtitle {
+  margin-top: 0px;
+  margin-bottom: 50px;
 }
 
 .createListingLink {

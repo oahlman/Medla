@@ -49,12 +49,12 @@
   }
 
   @media (min-width: 1128px) {
-    
+
     max-width: 1128px;
     padding: 0 36px 0 36px;
     margin: var(--LandingPage_sectionMarginTopLarge) auto 0px auto;
-    
-   
+
+
   }
 
   @media (--viewportXLarge) {
@@ -66,7 +66,6 @@
 
 
 .overflow{
-  overflow-x:hidden
 }
 
 .sectionProcessMaybe {
@@ -138,7 +137,7 @@ padding-top: 50px;
 @media (--viewportMedium) {
   margin-top: 100px;
   padding-bottom: 100px;
-  padding-top: 100px; 
+  padding-top: 100px;
 
 }
 
@@ -149,7 +148,7 @@ padding-top: 50px;
 
 @media (--viewportXLarge) {
   margin-top: 100px;
-  
+
 }
 }
 
@@ -160,20 +159,17 @@ padding-top: 50px;
   margin-top: 25px;
   margin-bottom: 25px;
   @media (--viewportMedium) {
-    margin-top: 50px;
     margin-bottom: 50px;
 
   }
 
   @media (--viewportLarge) {
-    margin-top: 50px;
     margin-bottom: 50px;
 
 
   }
 
   @media (--viewportXLarge) {
-    margin-top: 50px;
     margin-bottom: 50px;
 
 
@@ -310,21 +306,21 @@ padding-top: 50px;
     margin-top: 30px;
     background-color: transparent;
     color:whitesmoke;
-  
+
     @media (--viewportMedium) {
       width: 260px;
       margin-left: 50px;
     }
   }
-  
+
   .heroButton:hover{
   color:black;
   border-color: whitesmoke;
   background-color: whitesmoke;
   text-decoration: none;
-  
+
   }
-  .heroButton:focus{ 
+  .heroButton:focus{
     border-width: 2px;
     transition-duration: 0.25s;
     animation-delay: 0.8s;
@@ -333,21 +329,21 @@ padding-top: 50px;
     border-color: whitesmoke !important;
     background-color: transparent !important;
     color:whitesmoke;
-  
-  
+
+
     @media (--viewportMedium) {
       width: 260px;
       margin-left: 50px;
     }
   }
-  
-  .heroButton:focus:hover{ 
+
+  .heroButton:focus:hover{
   color:black;
   border-color: whitesmoke !important;
   background-color: whitesmoke !important;
   text-decoration: none;
   }
-  
+
 
 
   .deal{
@@ -430,16 +426,30 @@ padding-top: 50px;
 .sectionGallery {
   display: flex;
   flex-direction: column;
+  flex-direction: column-reverse;
 
   @media (--viewportMedium) {
     flex-direction: row;
-}
+  }
 }
 
 .section {
   overflow: auto;
   background-color: var(--marketplaceColorLight);
 
+}
+
+.functions {
+  margin: 10px;
+  @media (--viewportMedium) {
+    width: calc(100% - 500px);
+  }
+}
+
+.gallery {
+  @media (--viewportMedium) {
+    width: 500px;
+  }
 }
 
 

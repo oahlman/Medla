@@ -19,7 +19,7 @@ const SectionWhatIsMedla = props => {
           <h2 className={css.stepTitle}>
             <FormattedMessage id="SectionWhatIsMedla.part1Title" />
           </h2>
-          <p>
+          <p className={css.stepSubtitle}>
             <FormattedMessage id="SectionWhatIsMedla.part1Text" />
           </p>
         </div>

@@ -8,15 +8,13 @@
 .steps {
   display: flex;
   flex-direction: row;
-  overflow-x: scroll;
   margin: auto -50px;
   padding-left: 50px;
   padding-right: 50px;
   gap:30px;
-  
+
 
   @media (--viewportMedium) {
-    overflow-x: hidden;
     flex-direction: row;
     justify-content: center;
     gap:0px;
@@ -28,11 +26,18 @@
 
 .step {
   width: 100%;
- 
+
   @media (--viewportMedium) {
-    width: 30%;
+    width: 50%;
     margin-right: 20px;
     margin-left:0;
+  }
+}
+
+.step:last-of-type {
+
+  @media (--viewportMedium) {
+    margin-right: 0px;
   }
 }
 
@@ -58,7 +63,7 @@
 
 .icon {
 color: whitesmoke;
-background-color: var(--matterColor);
+background-color: var(--matterColorAnti);
 border-style: none;
 border-radius: 99px;
 padding:7px;
@@ -67,7 +72,7 @@ min-height:35px;
 height:35px;
 width:35px;
 
-@media (--viewportMedium) {
+@media (--viewportLarge) {
   padding:13px;
   min-width:55px;
   min-height:55px;
@@ -82,8 +87,8 @@ width:35px;
   justify-content: left;
   align-items: center;
   gap: 15px;
-  
-  
+
+
   @media (--viewportMedium) {
     display:inline-flex;
     flex-direction: row;
@@ -94,6 +99,10 @@ width:35px;
     min-width: 100%;
     width: 100%;
 }
+
+}
+
+.text {
 
 }
 

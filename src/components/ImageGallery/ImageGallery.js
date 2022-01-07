@@ -36,7 +36,7 @@ class ImageGallery extends Component {
         thirdImage.style.opacity = "0.5";
         buttonLeft.onclick = function () {
           if (typeof window !== "undefined" && window.innerWidth < 1024) {
-            document.getElementById('galleryContainer').scrollLeft += window.innerWidth * 0.5 + 10;
+            document.getElementById('galleryContainer').scrollLeft += window.innerWidth * 0.8 + 10;
           } else {
             document.getElementById('galleryContainer').scrollLeft += 460;
           }
@@ -62,7 +62,7 @@ class ImageGallery extends Component {
           }
           buttonRight.onclick = function () {
             if (typeof window !== "undefined" && window.innerWidth < 1024) {
-              document.getElementById('galleryContainer').scrollLeft -= window.innerWidth * 0.5 + 20;
+              document.getElementById('galleryContainer').scrollLeft -= window.innerWidth * 0.8 + 20;
             } else {
               document.getElementById('galleryContainer').scrollLeft -= 460;
             }        if (secondImage.style.opacity == "1") {

@@ -53,7 +53,7 @@
 
 .image {
   display: block;
-  width: 60vw;
+  width: 80vw;
   margin-top: 20px;
   object-fit: cover;
   overflow: hidden;

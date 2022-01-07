@@ -83,3 +83,20 @@ background: whitesmoke;
 text-decoration: none;
 
 }
+
+
+.button:focus{ 
+  @apply --marketplaceButtonStylesSecondary;
+  margin-top: 30px;
+  margin-bottom: 10px;
+
+  background: transparent;
+  
+
+  @media (--viewportMedium) {
+    width: 260px;
+    margin-left: 50px;
+
+   
+  }
+}

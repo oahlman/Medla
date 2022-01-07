@@ -307,6 +307,19 @@ padding-top: 50px;
   background-color: whitesmoke;
   }
 
+  .heroButton:focus{ 
+    @apply --marketplaceButtonStylesSecondary;
+
+    background: transparent;
+    
+
+    @media (--viewportMedium) {
+      display: block;
+      width: 260px;
+      margin-left: 20px;
+    }
+  }
+
 
   .deal{
     display:flex;

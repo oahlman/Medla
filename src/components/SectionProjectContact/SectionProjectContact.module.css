@@ -67,7 +67,7 @@
   animation-delay: 0.8s;
   margin-bottom: 10px;
   margin-top: 30px;
-  background-color: transparent;
+  background: transparent;
   color:whitesmoke;
 
   @media (--viewportMedium) {
@@ -78,7 +78,6 @@
 
 .button:hover{
 color:black;
-border-color: whitesmoke;
 background: whitesmoke;
 text-decoration: none;
 

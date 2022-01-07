@@ -71,6 +71,9 @@ const NewProjectUserPage = () => {
           <img className={css.imageMacbook} src={imagemacbook} alt="Medla in macbook" />
           </div>
           </div>
+
+
+            <div className={css.sections}>
           <SectionProjectChallenges className={css.sectionProcessMaybe} />
 
 
@@ -88,7 +91,7 @@ const NewProjectUserPage = () => {
 
       
           <SectionProjectContact className={css.lastSectionProcessMaybeColor} />
-   
+          </div>
 
 
 

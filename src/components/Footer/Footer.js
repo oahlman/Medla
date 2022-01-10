@@ -88,13 +88,13 @@ const Footer = props => {
                 <li className={css.listItem}>
 
 
-                  <ExternalLink
-                   href='https://www.peerdigital.se/anslut-projekt'
+                  <NamedLink
+                   name="NewProjectUserPage"
 
                     className={css.connectCompanyLink}
                   >
                     <FormattedMessage id="Footer.searchConnectCompany" />
-                  </ExternalLink>
+                  </NamedLink>
                 </li>
 
 

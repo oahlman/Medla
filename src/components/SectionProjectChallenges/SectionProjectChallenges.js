@@ -19,7 +19,7 @@ const SectionProjectChallenges = props => {
           <h2 className={css.stepTitle}>
             Fossifritt 2045
           </h2>
-          <p className={css.stepSubtitle}>Sveriges mål om noll nettnoutsläpp 2045 kräver en ökad utbyggnad av fossilfri elproduktion. I nuvarande takt missar vi målet.</p>
+          <p className={css.stepSubtitle}>Sveriges mål om noll nettoutsläpp 2045 kräver en ökad utbyggnad av fossilfri elproduktion. I nuvarande takt missar vi målet.</p>
           <p className={css.note}><a className={css.note} href="https://www.sverigesmiljomal.se/etappmalen/utslapp-av-vaxthusgaser-till-ar-2045/">Naturvårdsverket</a></p>
         </div>
 

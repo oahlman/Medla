@@ -193,6 +193,7 @@ export { default as SectionProjectDeal } from './SectionProjectDeal/SectionProje
 export { default as SectionProjectFunctions } from './SectionProjectFunctions/SectionProjectFunctions';
 export { default as SectionProjectGoals } from './SectionProjectGoals/SectionProjectGoals';
 export { default as SectionQuote } from './SectionQuote/SectionQuote';
+export { default as SectionFoundersNote } from './SectionFoundersNote/SectionFoundersNote';
 export { default as SectionTimeline } from './SectionTimeline/SectionTimeline';
 
 export { default as SectionLocations } from './SectionLocations/SectionLocations';

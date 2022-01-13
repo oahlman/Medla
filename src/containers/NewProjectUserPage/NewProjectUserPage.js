@@ -13,6 +13,7 @@ import {
   SectionProjectChallenges,
   SectionProjectGoals,
   SectionQuote,
+  SectionFoundersNote,
   ImageGallery,
   SectionWhatIsMedla,
   SectionProjectDeal,
@@ -106,10 +107,9 @@ const NewProjectUserPage = () => {
           </div>
 
           <SectionProjectGoals className={css.sectionProcessMaybe} />
-
-
-
+          <SectionProjectDeal className={css.sectionProcessMaybe}/>
           <SectionProjectContact className={css.lastSectionProcessMaybeColor} />
+          <SectionFoundersNote className={css.sectionProcessMaybe}/>
           </div>
 
 

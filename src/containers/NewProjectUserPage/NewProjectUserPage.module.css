@@ -157,10 +157,7 @@ padding-top: 50px;
 
 .subSection {
 
-  margin-top: 25px;
-  margin-bottom: 25px;
   @media (--viewportMedium) {
-    margin-bottom: 50px;
 
   }
 

@@ -10,10 +10,7 @@ const SectionTimeline = props => {
   return (
     <div className={classes}>
 
-    <div className={css.title}>
-        <FormattedMessage id="SectionTimeline.titleLineOne" />
 
-      </div>
       <div className={css.container}>
 
 

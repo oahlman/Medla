@@ -581,9 +581,9 @@
   "NewUserPage.headline": "Välkommen till Medla!",
   "NewUserPage.subheading": "Låt oss berätta mer",
   "NewUserPage.newservice": "Affärsplattformen byter upp sig och går nu under namnet Medla, din gamla profil finns redan tillgänglig, det är bara att logga in.",
-  "NewProjectUserPage.headline": "Effektivare projektering och stärkt förankring.",
-  "NewProjectUserPage.newservice": "Medla förenklar lokal jobbförmedling och låser upp nya möjligheter för fossilfria energiprojekt.",
-  "NewProjectUserPage.connectProject": "Anslut projekt",
+  "NewProjectUserPage.headline": "Effektiv projektering och lokal förankring.",
+  "NewProjectUserPage.newservice": "Medlas projektsidor, jobbannonser och leverantörsdatabaser sparar tid och lyfter samhällsnyttan i era projekt.",
+  "NewProjectUserPage.connectProject": "Anslut projekt från 5 880 kr",
   "NotificationSettingsForm.saveChanges": "Spara ändringar",
   "NotificationSettingsForm.notificationOptionsHeading": "Bevakningar",
   "NotificationSettingsForm.notificationOptionsInfo": "Välj vad du vill få notiser om.",
@@ -1000,9 +1000,9 @@
   "SectionTimeline.part1Title": "Planering",
   "SectionTimeline.part2Title": "Byggnation",
   "SectionTimeline.part3Title": "Drift",
-  "SectionTimeline.part1Text": "Underlätta lokal förankring och tillståndsprocess",
-  "SectionTimeline.part2Text": "Bidra till ökade affärsmöjligheter lokalt",
-  "SectionTimeline.part3Text": "Skapa långsiktiga möjligheter för lokalsamhället",
+  "SectionTimeline.part1Text": "Synliggör nytta och skapa lokal förankring för projektet.",
+  "SectionTimeline.part2Text": "Förenkla affärsförmedling mellan byggentreprenad och lokala leverantörer.",
+  "SectionTimeline.part3Text": "Bidra till långsiktig lokal utveckling och använd mätbara resultat i framtida projekt.",
 
 
 

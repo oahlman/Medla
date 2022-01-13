@@ -13,9 +13,9 @@ const SectionWhatIsMedlaDescription = props => {
 
       <div className={css.steps}>
         <div className={css.step}>
-          <h3 className={css.stepTitle}>
+          <div className={css.stepTitle}>
             <FormattedMessage id="SectionWhatIsMedlaDescription.Title1" />
-          </h3>
+          </div>
           <p className={css.stepSubtitle}>
             <FormattedMessage id="SectionWhatIsMedlaDescription.Text1" />
           </p>

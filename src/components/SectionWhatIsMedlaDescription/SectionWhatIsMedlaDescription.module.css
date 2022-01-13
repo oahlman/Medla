@@ -29,10 +29,12 @@
 }
 
 .stepTitle {
+  @apply --marketplaceH4FontStyles;
   margin-top: 18px;
   margin-bottom: 6px;
 
   @media (--viewportMedium) {
+    @apply --marketplaceH3FontStyles;
     margin-top: 21px;
     margin-bottom: 6px;
   }

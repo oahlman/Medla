@@ -2,8 +2,9 @@
 
 .title {
   @apply --marketplaceH1FontStyles;
-  margin-top: 0;
+
 }
+
 
 .steps {
   display: flex;
@@ -67,12 +68,15 @@ width:35px;
 }
 
 .iconPos{
+  @apply --marketplaceH3FontStyles;
+
   display:inline-flex;
   justify-content: left;
   align-items: center;
   width: 100%;
   gap: 15px;
   @media (--viewportMedium) {
+    @apply --marketplaceH2FontStyles;
     display:inline-flex;
     flex-direction: row;
     justify-content: left;

@@ -37,10 +37,17 @@
   /* Use CSS variable defined in src/styles/marketplaceDefaults.css */
 }
 
+.heroContainer {
+ display: flex;
+ background-color: var(--marketplaceColorDark);
+ border: solid 36px var(--matterColorBright);
+
+
+
+}
+
 .heroContent {
   display:flex;
-  border: solid 36px var(--matterColorBright);
-background-color: var(--marketplaceColorDark);
 }
 
 .sectionContent {
@@ -272,8 +279,10 @@ padding-top: 50px;
 
 
   .imageMacbookContainer {
+    display: flex;
+  
     @media (--viewportMedium) {
-  overflow:visible;
+
 
 
 
@@ -289,6 +298,7 @@ padding-top: 50px;
       display:flex;
       object-fit: cover;
       overflow:visible;
+      width: 100%;
       
       object-position: 150px 0%; /* try 20px 10px */
 

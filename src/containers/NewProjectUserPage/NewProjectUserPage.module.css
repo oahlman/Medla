@@ -209,6 +209,7 @@ padding-top: 50px;
   @media (--viewportMedium) {
     min-width: 55%;
     max-width: 55%;
+    margin-top: 35px;
   }
 }
 
@@ -388,12 +389,46 @@ padding-top: 50px;
   }
 }
 
+.quoteContainer{
+margin-left:0px;
+margin-top:50px;
+display: flex;
+flex-direction: column;
+justify-content: flex-end;
+align-items: center;
+
+
+  @media (--viewportMedium) {
+    margin-top: 50px;
+    margin-left:20px;
+    flex-direction: row;
+    width: 600px;
+}
+
+@media (--viewportLarge) {
+  margin-top: 80px;
+  margin-left:20px;
+  flex-direction: row;
+  width: 500px;
+
+  }
+
+}
+
+.quoteFont {
+  @apply --marketplaceH5FontStyles
+
+ 
+
+}
+
   .imageSvenskVind{
-    width: 225px;
-    display: flex;
+    width:85px;
+    margin-left:0px;
 
     @media (--viewportMedium) {
-      width: 225px;
+      width: 85px;
+      margin-left:20px;
   }
 }
 

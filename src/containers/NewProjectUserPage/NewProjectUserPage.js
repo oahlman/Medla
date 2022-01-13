@@ -25,7 +25,7 @@ import StaticPage from '../StaticPage/StaticPage';
 import TopbarContainer from '../TopbarContainer/TopbarContainer';
 import imagephone from '../../assets/Medla-phones.png';
 import imagemacbook from '../../assets/Medla-macbook.png';
-import imagesvenskvind from '../../assets/Medla-svenskvind.png';
+import imagesvenskvind from '../../assets/Svensk-vind-logo.png';
 
 
 import css from './NewProjectUserPage.module.css';
@@ -35,7 +35,7 @@ const NewProjectUserPage = () => {
   return (
     <StaticPage
       className={css.root}
-      title="Nytt för projektör"
+      title="Anslut projekt"
       schema={{
         '@context': 'http://schema.org',
         '@type': 'AboutPage',
@@ -63,10 +63,16 @@ const NewProjectUserPage = () => {
           <FormattedMessage id="NewProjectUserPage.connectProject" />
         </ExternalLink>
 
+          <div className={css.quoteContainer}>
+            <div className={css.quoteFont}><i>“Elektrifieringen erbjuder enorma möjligheter för en levande landsbygd, genom att lokala jobb skapas där behovet är som störst.</i> <strong>Medla underlättar denna utveckling."</strong></div>
+            <div >
+            <img className={css.imageSvenskVind} src={imagesvenskvind} alt="Medla in phones" />
+            </div>
+            
+            </div>
+
           </div  >
-          <div className={css.imagePhoneContainer}>
-          <img className={css.imagePhone} src={imagephone} alt="Medla in phones" />
-          </div>
+        
           <div className={css.imageMacbookContainer}>
           <img className={css.imageMacbook} src={imagemacbook} alt="Medla in macbook" />
           </div>

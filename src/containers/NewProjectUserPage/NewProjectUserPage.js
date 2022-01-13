@@ -51,7 +51,6 @@ const NewProjectUserPage = () => {
         </LayoutWrapperTopbar>
         <LayoutWrapperMain>
 
-        <div className={css.heroContainer}>
         <div className={css.heroContent} >
       
             <div className={css.sectionText}>
@@ -76,14 +75,13 @@ const NewProjectUserPage = () => {
     
          
           </div  >
-
-          </div>
-          </div>
-
           <div className={css.imageMacbookContainer}>
           <img className={css.imageMacbook} src={imagemacbook} alt="Medla in macbook" />
           </div>
           </div>
+       
+          </div>
+
          
           <container className={css.sectionContent} >
             <div className={css.sections}>

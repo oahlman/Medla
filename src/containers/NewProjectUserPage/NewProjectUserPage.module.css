@@ -37,17 +37,12 @@
   /* Use CSS variable defined in src/styles/marketplaceDefaults.css */
 }
 
-.heroContainer {
- display: flex;
- background-color: var(--marketplaceColorDark);
- border: solid 36px var(--matterColorBright);
 
-
-
-}
 
 .heroContent {
-  display:flex;
+  display: flex;
+ background-color: var(--marketplaceColorDark);
+ border: solid 36px var(--matterColorBright);
 }
 
 .sectionContent {
@@ -253,9 +248,10 @@ padding-top: 50px;
 }
 
 .imagePhoneContainer {
-  display:flex;
   flex-direction: row;
   justify-content: center;
+  width:400px;
+
 
   @media (--viewportMedium) {
     display:none;
@@ -269,7 +265,7 @@ padding-top: 50px;
   object-fit: cover;
 
   object-position: 0px 50px; /* try 20px 10px */
-  width:90%;
+  width:100%;
 
   @media (--viewportMedium) {
     display:none;
@@ -279,28 +275,47 @@ padding-top: 50px;
 
 
   .imageMacbookContainer {
-    display: flex;
-  
+    display: none;
+
+
     @media (--viewportMedium) {
+      display: flex;
+      position: absolute;
+      overflow:hidden;
+      right: 36px;
+      max-height:90%;
+    
+      width:45%;
+      }
+    
 
-
-
-
+    @media (--viewportLarge) {
+      display: flex;
+      position: absolute;
+      overflow:hidden;
+      right: 150px;
+      max-height:80%;
+    
+      width:35%;
       }
     }
+    
 
   .imageMacbook {
-    display: none;
-    position: initial;
-
-
+display: none;
     @media (--viewportMedium) {
-      display:flex;
-      object-fit: cover;
-      overflow:visible;
-      width: 100%;
+    
+      overflow:hidden;
+
+    display: flex;
+    position: relative;
+    width: 100%;
+    align-self: center;
+    
+   
+
       
-      object-position: 150px 0%; /* try 20px 10px */
+
 
 
 

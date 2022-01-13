@@ -19,6 +19,7 @@ import {
   SectionProjectFunctions,
   SectionTimeline,
   SectionProjectContact,
+  SectionWhatIsMedlaDescription,
 } from '../../components';
 
 import StaticPage from '../StaticPage/StaticPage';
@@ -86,9 +87,11 @@ const NewProjectUserPage = () => {
           <div className={css.sectionProcessMaybeColor}>
           <SectionWhatIsMedla />
           <div className={css.sectionGallery}>
-            <SectionProjectFunctions  className={css.functions} />
+            <SectionWhatIsMedlaDescription className={css.functions} /> 
             <ImageGallery  className={css.gallery}/>
           </div>
+          <SectionProjectFunctions  className={css.functions} />
+
           <SectionTimeline className={css.subSection} />
           </div>
 

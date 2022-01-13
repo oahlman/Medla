@@ -184,6 +184,8 @@ export { default as SectionMission } from './SectionMission/SectionMission';
 export { default as SectionPostJob } from './SectionPostJob/SectionPostJob';
 export { default as SectionSignUpProcess } from './SectionSignUpProcess/SectionSignUpProcess';
 export { default as SectionWhatIsMedla } from './SectionWhatIsMedla/SectionWhatIsMedla';
+export { default as SectionWhatIsMedlaDescription } from './SectionWhatIsMedlaDescription/SectionWhatIsMedlaDescription';
+
 export { default as SectionProjectChallenges } from './SectionProjectChallenges/SectionProjectChallenges';
 export { default as SectionProjectContact } from './SectionProjectContact/SectionProjectContact';
 

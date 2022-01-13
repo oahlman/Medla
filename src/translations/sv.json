@@ -1019,7 +1019,7 @@
   "SectionWhatIsMedla.part1Title": "Energibranschens marknadsplats för lokala affärer",
   "SectionWhatIsMedla.part3Text": "Ansök om att ansluta ert projekt till Medla {connectProject}. Vid frågor eller funderingar {mailTo}.",
   "SectionWhatIsMedla.part3Title": "Anslut ett nytt projekt",
-  "SectionWhatIsMedla.titleLineOne": "Vår lösning",
+  "SectionWhatIsMedla.titleLineOne": "Byggt med branschen, för branschen.",
   "SectionWhatIsMedla.textLinkBevakningar": "bevakningar",
   "SectionWhatIsMedla.textLinkJobb": "jobb",
   "SectionWhatIsMedla.textLinkForetagare": "företagare",
@@ -1028,6 +1028,18 @@
   "SectionWhatIsMedla.toHome": "här",
   "SectionWhatIsMedla.mailTo": "Kontakta oss",
   "SectionWhatIsMedla.connectProject": "här",
+
+  "SectionWhatIsMedlaDescription.Title1": "Leverantörsdatabas",
+  "SectionWhatIsMedlaDescription.Title2": "Jobbannonsering",
+  "SectionWhatIsMedlaDescription.Title3": "Samverkan, samlat",
+  "SectionWhatIsMedlaDescription.Title4": "Se resultat per projekt",
+  "SectionWhatIsMedlaDescription.Text1": "Bjud in, sök och jämför projektets lokala leverantörer — de registrerar sig själva och kontrolleras av Medla.",
+  "SectionWhatIsMedlaDescription.Text2": "Publicera behov av varor och tjänster i projektet (lika enkelt som att skicka ett SMS) och få svar av relevanta leverantörer — vi gör det lika enkelt för er entreprenad.",
+  "SectionWhatIsMedlaDescription.Text3": "Lokalt näringsliv, jobbmöjligheter och projektinformation samlas på medla.app/ert-projektnamn (och kan integreras med egen hemsida).",
+  "SectionWhatIsMedlaDescription.Text4": "# lokala leverantörer, # projektföljare, # jobbannonseringar, # affärsförmedlingar,  mkr bidrag till lokala intäkter (schablon). Medla skapar bättre förutsättningar för lokala affärer, men resultaten kommer bero på projektets, entreprenadens, och lokalsamhällets specifika förutsättningar. ",
+
+
+
 
 
   "SectionQuote.part1Title": "Vad säger branschen?",

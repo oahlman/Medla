@@ -37,14 +37,19 @@
   /* Use CSS variable defined in src/styles/marketplaceDefaults.css */
 }
 
+.heroContent {
+  display:flex;
+  border: solid 36px var(--matterColorBright);
+background-color: var(--marketplaceColorDark);
+}
 
 .sectionContent {
-
-  margin: var(--LandingPage_sectionMarginTop) 24px 51px 24px;
+  
+  margin: 0px 24px 51px 24px;
 
   @media (--viewportMedium) {
     max-width: 100%;
-    margin: var(--LandingPage_sectionMarginTop) 24px 61px 24px;
+    margin: 0px 24px 61px 24px;
 
   }
 
@@ -52,7 +57,7 @@
 
     max-width: 1128px;
     padding: 0 36px 0 36px;
-    margin: var(--LandingPage_sectionMarginTopLarge) auto 0px auto;
+    margin: 24px auto 0px auto;
 
 
   }
@@ -175,20 +180,30 @@ padding-top: 50px;
 }
 
 
-
-
-
-
 .sectionText{
   flex-wrap: column;
   padding:30px;
-  background-color: var(--marketplaceColorDark);
-  border-color: whitesmoke;
   color:whitesmoke;
   overflow:hidden;
   max-height: 500px;
   align-items: center;
-  margin-bottom:20px;
+  margin: 0px 24px 51px 24px;
+  max-width: 100%;
+
+
+  @media (min-width: 1128px) {
+    display:flex;
+    flex-wrap: row;
+    min-height: 540px;
+    width: 100%;
+    margin-bottom:30px;
+    max-width: 1128px;
+    padding: 0 36px 0 36px;
+    margin: 24px auto 0px auto;
+  
+  
+  }
+  
 
   @media (--viewportMedium) {
     display:flex;
@@ -199,6 +214,12 @@ padding-top: 50px;
 
 
   }
+}
+
+@media (--viewportXLarge) {
+  max-width: 1056px;
+  padding: 0;
+
 }
 
 .bannerLeft {
@@ -251,11 +272,8 @@ padding-top: 50px;
 
 
   .imageMacbookContainer {
-    display:none;
     @media (--viewportMedium) {
-    display:flex;
-    align-items: center;
-    margin-right: -300px;
+  overflow:visible;
 
 
 
@@ -264,13 +282,15 @@ padding-top: 50px;
 
   .imageMacbook {
     display: none;
+    position: initial;
+
 
     @media (--viewportMedium) {
-      display:block;
+      display:flex;
       object-fit: cover;
-      overflow:hidden;
-      width:70%;
-      object-position: 120px 0%; /* try 20px 10px */
+      overflow:visible;
+      
+      object-position: 150px 0%; /* try 20px 10px */
 
 
 

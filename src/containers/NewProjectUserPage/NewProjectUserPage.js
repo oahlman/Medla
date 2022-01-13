@@ -20,6 +20,7 @@ import {
   SectionTimeline,
   SectionProjectContact,
   SectionWhatIsMedlaDescription,
+  SectionHeroProjectSales,
 } from '../../components';
 
 import StaticPage from '../StaticPage/StaticPage';
@@ -50,14 +51,15 @@ const NewProjectUserPage = () => {
         </LayoutWrapperTopbar>
         <LayoutWrapperMain>
 
-        <container className={css.sectionContent} >
+        <div className={css.heroContent} >
+      
             <div className={css.sectionText}>
-                <div className={css.bannerLeft}>
-          <h1 className={css.bannerContent}>
-             <FormattedMessage id="NewProjectUserPage.headline" ></FormattedMessage>
-          </h1>
-          <p className={css.bannerContent}>
-             <FormattedMessage id="NewProjectUserPage.newservice" ></FormattedMessage>
+                  <div className={css.bannerLeft}>
+                <h1 className={css.bannerContent}>
+                   <FormattedMessage id="NewProjectUserPage.headline" ></FormattedMessage>
+                </h1>
+               <p className={css.bannerContent}>
+                   <FormattedMessage id="NewProjectUserPage.newservice" ></FormattedMessage>
           </p>
 
             <ExternalLink href="https://www.peerdigital.se/anslut-projekt" className={css.heroButton}>
@@ -69,17 +71,22 @@ const NewProjectUserPage = () => {
             <div >
             <img className={css.imageSvenskVind} src={imagesvenskvind} alt="Medla in phones" />
             </div>
-            
             </div>
-
+            
+            
+            
+         
           </div  >
-        
+           
           <div className={css.imageMacbookContainer}>
           <img className={css.imageMacbook} src={imagemacbook} alt="Medla in macbook" />
           </div>
+     
+          </div>
+          
           </div>
 
-
+          <container className={css.sectionContent} >
             <div className={css.sections}>
             <SectionTimeline className={css.subSection} />
           <SectionProjectChallenges className={css.sectionProcessMaybe} />

@@ -82,7 +82,7 @@ const NewProjectUserPage = () => {
           </div>
        
           </div>
-
+
          
           <container className={css.sectionContent} >
             <div className={css.sections}>

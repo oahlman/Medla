@@ -229,7 +229,7 @@ padding-top: 50px;
   @media (--viewportMedium) {
     min-width: 55%;
     max-width: 55%;
-    margin-top: 35px;
+    margin-top: 0px;
   }
 }
 
@@ -293,10 +293,16 @@ padding-top: 50px;
       display: flex;
       position: absolute;
       overflow:hidden;
-      right: 150px;
-      max-height:80%;
+      right: 60px;
+      max-height:90%;
     
-      width:35%;
+      width:37%;
+      }
+    
+
+    @media (--viewportXLarge) {
+      right: 200px;
+      width:32%;
       }
     }
     

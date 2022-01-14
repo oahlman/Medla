@@ -22,6 +22,7 @@ import {
   SectionProjectContact,
   SectionWhatIsMedlaDescription,
   SectionHeroProjectSales,
+  SectionProjectFAQ,
 } from '../../components';
 
 import StaticPage from '../StaticPage/StaticPage';
@@ -81,14 +82,8 @@ const NewProjectUserPage = () => {
             <div >
             <div className={css.nameFont}> —Ylva Tengdal, Svensk Vindenergi </div>
             <img className={css.imageSvenskVindMobile} src={imagesvenskvind} alt="Svensk vind" />
-
             </div>        
             </div>  
-               
-
-
-            
-              
           </div  >
           <div className={css.imageMacbookContainer}>
           <img className={css.imageMacbook} src={imagemacbook} alt="Medla in macbook" />
@@ -110,12 +105,10 @@ const NewProjectUserPage = () => {
             <div> 
             <ImageGallery  className={css.gallery}/>
             <SectionProjectFunctions  className={css.functions} />
-
             </div>
           </div>
-
-         
           </div>
+          <SectionProjectFAQ />
 
           <SectionProjectGoals className={css.sectionProcessMaybe} />
           <div className={css.contactContainer}>

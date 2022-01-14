@@ -192,6 +192,8 @@ export { default as SectionProjectContact } from './SectionProjectContact/Sectio
 export { default as SectionProjectDeal } from './SectionProjectDeal/SectionProjectDeal';
 export { default as SectionProjectFunctions } from './SectionProjectFunctions/SectionProjectFunctions';
 export { default as SectionProjectGoals } from './SectionProjectGoals/SectionProjectGoals';
+export { default as SectionProjectFAQ } from './SectionProjectFAQ/SectionProjectFAQ';
+
 export { default as SectionQuote } from './SectionQuote/SectionQuote';
 export { default as SectionFoundersNote } from './SectionFoundersNote/SectionFoundersNote';
 export { default as SectionTimeline } from './SectionTimeline/SectionTimeline';

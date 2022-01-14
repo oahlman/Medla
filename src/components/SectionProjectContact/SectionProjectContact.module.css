@@ -1,5 +1,6 @@
 @import '../../styles/propertySets.css';
 
+
 .title {
   text-align: left;
   @apply --marketplaceH1FontStyles;
@@ -9,7 +10,7 @@
 .steps {
   display: flex;
   flex-direction: column;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: left;
 
   @media (--viewportMedium) {

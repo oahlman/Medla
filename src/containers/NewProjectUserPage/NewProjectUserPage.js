@@ -29,6 +29,7 @@ import TopbarContainer from '../TopbarContainer/TopbarContainer';
 import imagephone from '../../assets/Medla-phones.png';
 import imagemacbook from '../../assets/Medla-macbook.png';
 import imagesvenskvind from '../../assets/Svensk-vind-logo.png';
+import imageSvenskVindProfile from '../../assets/Svensk-vind-profile.jpg';
 
 
 import css from './NewProjectUserPage.module.css';
@@ -70,17 +71,27 @@ const NewProjectUserPage = () => {
           <div className={css.quoteContainer}>
             <div className={css.quoteFont}><i>“Elektrifieringen erbjuder enorma möjligheter för en levande landsbygd, genom att lokala jobb skapas där behovet är som störst.</i> <strong>Medla underlättar denna utveckling."</strong></div>
             <div >
-            <img className={css.imageSvenskVind} src={imagesvenskvind} alt="Medla in phones" />
-            </div>
-            </div>
-    
-         
+            <img className={css.imageSvenskVindDesktop} src={imagesvenskvind} alt="Svensk vind" />
+            </div>        
+            </div>  
+            <div className={css.nameContainer}>
+            <img className={css.imageQuoteProfile} src={imageSvenskVindProfile} alt="Svensk vind" />
+            <div >
+            <div className={css.nameFont}> —Ylva Tengdal, Svensk Vindenergi </div>
+            <img className={css.imageSvenskVindMobile} src={imagesvenskvind} alt="Svensk vind" />
+
+            </div>        
+            </div>  
+               
+
+
+            
+              
           </div  >
           <div className={css.imageMacbookContainer}>
           <img className={css.imageMacbook} src={imagemacbook} alt="Medla in macbook" />
           </div>
           </div>
-       
           </div>
 
          

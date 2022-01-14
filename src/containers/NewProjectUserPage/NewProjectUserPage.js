@@ -30,6 +30,8 @@ import imagephone from '../../assets/Medla-phones.png';
 import imagemacbook from '../../assets/Medla-macbook.png';
 import imagesvenskvind from '../../assets/Svensk-vind-logo.png';
 import imageSvenskVindProfile from '../../assets/Svensk-vind-profile.jpg';
+import offshoreWind from '../../assets/offshore-wind.jpg'
+
 
 
 import css from './NewProjectUserPage.module.css';
@@ -116,8 +118,14 @@ const NewProjectUserPage = () => {
           </div>
 
           <SectionProjectGoals className={css.sectionProcessMaybe} />
-          <SectionProjectDeal className={css.sectionProcessMaybe}/>
+          <div className={css.contactContainer}>
+            <div className={css.contactTextContainer}>
           <SectionProjectContact className={css.lastSectionProcessMaybeColor} />
+          </div>
+          <div className={css.imageContainer}>
+          <div className={css.imageContact}></div>
+          </div>
+          </div>
           <SectionFoundersNote className={css.sectionProcessMaybe}/>
           </div>
 

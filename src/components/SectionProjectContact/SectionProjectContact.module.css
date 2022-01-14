@@ -1,7 +1,7 @@
 @import '../../styles/propertySets.css';
 
 .title {
-  text-align: center;
+  text-align: left;
   @apply --marketplaceH1FontStyles;
   margin-top: 0;
 }
@@ -9,11 +9,11 @@
 .steps {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: start;
+  align-items: left;
 
   @media (--viewportMedium) {
-    flex-direction: column;
+    flex-direction: column
   }
 }
 
@@ -72,7 +72,7 @@
 
   @media (--viewportMedium) {
     width: 260px;
-    margin-left: 50px;
+
   }
 }
 
@@ -105,5 +105,22 @@ color:black;
 border-color: whitesmoke !important;
 background-color: whitesmoke !important;
 text-decoration: none;
+}
+
+.imageSvenskVindDesktop{
+  margin-top:20px;
+  width:120px;
+  align-self: left;
+
+  @media (--viewportMedium) {
+    display:flex;
+    align-self: top;
+    width:120px;
+    margin-left:0px;
+    margin-left:0px;
+    justify-self:flex-end;
+    align-self: flex-end;
+    margin-bottom:-70px;
+}
 }
 

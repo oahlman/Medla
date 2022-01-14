@@ -4,6 +4,8 @@ import classNames from 'classnames';
 import css from './SectionProjectContact.module.css';
 import Button, { SecondaryButton } from '../Button/Button'
 import ExternalLink from '../ExternalLink/ExternalLink';
+import imagesvenskvind from '../../assets/Svensk-vind-logo.png';
+
 
 const SectionProjectContact = props => {
 
@@ -12,17 +14,18 @@ const SectionProjectContact = props => {
   return (
     <div className={classes}>
       <div className={css.steps}>
+
       <div className={css.title}>
         <FormattedMessage id="SectionProjectContact.titleLineOne" />
-
       </div>
-
-
-        <ExternalLink className={css.button} href="https://peerdigital.se/anslut-projekt">
-          
-        <FormattedMessage id="NewProjectUserPage.connectProject" />
-
+      <div className={css.subTitle}>
+        <FormattedMessage id="SectionProjectContact.textLineOne" />
+      </div>
+        <ExternalLink className={css.button} href="https://peerdigital.se/anslut-projekt"> 
+        <FormattedMessage id="NewProjectUserPage.connectProjectOffer" />
         </ExternalLink>
+   
+        <img className={css.imageSvenskVindDesktop} src={imagesvenskvind} alt="Svensk vind" />
 
       </div>
 

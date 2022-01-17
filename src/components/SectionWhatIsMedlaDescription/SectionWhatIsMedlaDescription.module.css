@@ -28,11 +28,6 @@
     margin-right: 20px;
     width: calc(50% - 40px)
   }
-  @media (--viewportLarge) {
-    margin-right: 20px;
-    width: calc(25% - 40px)
-
-  }
 }
 .step:hover {
   transform: scale(1.02);

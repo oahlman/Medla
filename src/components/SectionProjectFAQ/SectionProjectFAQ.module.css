@@ -43,7 +43,12 @@
 
 .stepSubtitle {
   margin-top: 0px;
-
+  margin-right:30px;
+  margin-left:30px;
+  @media (--viewportMedium) {
+  margin:0px;
+  margin-bottom: 15px;
+  }
 }
 
 .createListingLink {

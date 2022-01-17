@@ -688,8 +688,7 @@ overflow: hidden;
 
   @media (--viewportLarge) {
     max-width: 1128px;
-    padding: 0 36px 0 36px;
-    margin: 24px auto 0px auto;
+    margin: auto auto;
 
 
   }
@@ -705,7 +704,6 @@ overflow: hidden;
   color: white;
   margin: 20px;
   @media (--viewportMedium) {
-    margin: 40px;
     align-self: flex-end;
   }
 }
@@ -715,7 +713,7 @@ overflow: hidden;
     padding: 20px 36px 0 36px;
   @media (--viewportMedium) {
     margin-right: 0px;
-    margin-top: 120px;
+    margin-top: 90px;
   }
 }
 
@@ -723,11 +721,11 @@ overflow: hidden;
     width: 100%;
   @media (--viewportMedium) {
     margin-right: -50%;
-    width: 200%;
+    width: 150%;
     }
   @media (--viewportLarge) {
-    margin-right: -50%;
-    width: 150%;
+    margin-right: -30%;
+    width: 130%;
     }
 }
 

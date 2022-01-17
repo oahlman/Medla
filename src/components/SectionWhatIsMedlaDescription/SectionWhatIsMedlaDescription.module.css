@@ -17,13 +17,14 @@
 }
 
 .step {
-  margin: 20px;
+  margin: 10px;
   padding: 0 20px 0 20px;
   border-radius: 10px;
   box-shadow: var(--boxShadow);
   background-color: var(--matterColorLight);
   transition: var(--transitionStyleButton);
   @media (--viewportMedium) {
+    margin: 20px;
     margin-right: 20px;
     width: calc(50% - 40px)
   }

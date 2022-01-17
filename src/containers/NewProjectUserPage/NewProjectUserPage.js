@@ -136,7 +136,7 @@ const NewProjectUserPage = () => {
           </div>
           <SectionProjectFAQ />
 
-          <SectionProjectGoals className={css.sectionProcessMaybe} />
+          <SectionProjectGoals className={css.sectionProcessMaybeColorGrey} />
           <div className={css.contactContainer}>
             <div className={css.contactTextContainer}>
           <SectionProjectContact className={css.lastSectionProcessMaybeColor} />

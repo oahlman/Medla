@@ -175,7 +175,7 @@ max-width: 65%;
 .titleText {
  @apply --marketplaceH4FontStyles;
  font-weight:550;
- max-width: 90%;
+ max-width: 85%;
  padding: 0px;
  margin-top: 20px;
  margin-bottom: 20px;

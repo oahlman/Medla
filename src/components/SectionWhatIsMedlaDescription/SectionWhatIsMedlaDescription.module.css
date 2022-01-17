@@ -1,13 +1,14 @@
 @import '../../styles/propertySets.css';
 
 .title {
-  @apply --marketplaceH1FontStyles;
-  margin-top: 0;
+  @apply --marketplaceH2FontStyles;
+  margin-bottom: 0;
 }
 
 .steps {
   display: flex;
   flex-direction: column;
+  margin-top: 16px;
 
   @media (--viewportMedium) {
     flex-direction: row;
@@ -16,27 +17,51 @@
 }
 
 .step {
-  margin:0px;
+  margin: 20px;
+  padding: 0 20px 0 20px;
+  border-radius: 10px;
+  box-shadow: var(--boxShadow);
+  background-color: var(--matterColorLight);
+  transition: var(--transitionStyleButton);
   @media (--viewportMedium) {
-    margin-right: 40px;
+    margin-right: 20px;
     width: calc(50% - 40px)
+  }
+  @media (--viewportLarge) {
+    margin-right: 20px;
+    width: calc(25% - 40px)
 
   }
 }
+.step:hover {
+  transform: scale(1.02);
+  box-shadow: var(--boxShadowSectionLocationHover);
+}
 
-.step:last-of-type {
+.step:nth-of-type(2n) {
   @media (--viewportMedium) {
-    margin-right: 0;
+    margin-right: 0px;
+  }
+  @media (--viewportLarge) {
+    margin-right: 20px;
+  }
+}
+
+.step:nth-of-type(4n) {
+  @media (--viewportMedium) {
+    margin-right: 20px;
+  }
+  @media (--viewportLarge) {
+    margin-right: 0px;
   }
 }
 
 .stepTitle {
-  @apply --marketplaceH4FontStyles;
+  @apply --marketplaceH3FontStyles;
   margin-top: 18px;
   margin-bottom: 6px;
 
   @media (--viewportMedium) {
-    @apply --marketplaceH3FontStyles;
     margin-top: 21px;
     margin-bottom: 6px;
   }

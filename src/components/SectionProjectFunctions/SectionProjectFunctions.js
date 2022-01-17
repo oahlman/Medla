@@ -10,7 +10,6 @@ const SectionProjectFunctions = props => {
   const classes = classNames(rootClassName || css.root, className);
   return (
     <div className={classes}>
- <h3>Ytterligare funktioner</h3>
       <div className={css.steps}>
        
         <div className={css.step}>

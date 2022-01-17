@@ -36,16 +36,16 @@ class ImageGallery extends Component {
         const firstHeading = typeof document !== "undefined" ? document.getElementById('firstHeading') : null;
         const secondHeading = typeof document !== "undefined" ? document.getElementById('secondHeading') : null;
         const thirdHeading = typeof document !== "undefined" ? document.getElementById('thirdHeading') : null;
-        const firstText = (firstDescription && firstHeading);
-        const secondText = (secondDescription && secondHeading);
-        const thirdText = (thirdDescription && thirdHeading);
         firstImage.style.opacity = "1";
-        firstText.style.opacity = "1";
+        firstDescription.style.opacity = "1";
+        firstHeading.style.opacity = "1";
         firstImage.style.boxShadow = "0 0 50px 0 rgba(0, 0, 0, 0.1";
         secondImage.style.opacity = "0.5";
-        secondText.style.opacity = "0.5";
+        secondDescription.style.opacity = "0.5";
+        secondHeading.style.opacity = "0.5";
         thirdImage.style.opacity = "0.5";
-        thirdText.style.opacity = "0.5";
+        thirdDescription.style.opacity = "0.5";
+        thirdHeading.style.opacity = "0.5";
         buttonLeft.onclick = function () {
           if (typeof window !== "undefined" && window.innerWidth < 1024) {
             document.getElementById('galleryContainer').scrollLeft += window.innerWidth * 0.8 + 10;
@@ -54,35 +54,47 @@ class ImageGallery extends Component {
           }
           if (firstImage.style.opacity == "1") {
             firstImage.style.opacity = "0.5";
-            firstText.style.opacity = "0.5";
+            firstDescription.style.opacity = "0.5";
+            firstHeading.style.opacity = "0.5";
             secondImage.style.opacity = "1";
             secondImage.style.boxShadow = "0 0 50px 0 rgba(0, 0, 0, 0.1";
-            secondText.style.opacity = "1";
+            secondDescription.style.opacity = "1";
+            secondHeading.style.opacity = "1";
             thirdImage.style.opacity = "0.5";
-            thirdText.style.opacity = "0.5";
+            thirdDescription.style.opacity = "0.5";
+            thirdHeading.style.opacity = "0.5";
           } else if (secondImage.style.opacity == "1") {
             firstImage.style.opacity = "0.5";
-            firstText.style.opacity = "0.5";
+            firstDescription.style.opacity = "0.5";
+            firstHeading.style.opacity = "0.5";
             secondImage.style.opacity = "0.5";
-            secondText.style.opacity = "0.5";
+            secondDescription.style.opacity = "0.5";
+            secondHeading.style.opacity = "0.5";
             thirdImage.style.opacity = "1";
             thirdImage.style.boxShadow = "0 0 50px 0 rgba(0, 0, 0, 0.1";
-            thirdText.style.opacity = "1";
+            thirdDescription.style.opacity = "1";
+            thirdHeading.style.opacity = "1";
           } else if (thirdImage.style.opacity == "1") {
             firstImage.style.opacity = "0.5";
-            firstText.style.opacity = "0.5";
+            firstDescription.style.opacity = "0.5";
+            firstHeading.style.opacity = "0.5";
             secondImage.style.opacity = "0.5";
-            secondText.style.opacity = "0.5";
+            secondDescription.style.opacity = "0.5";
+            secondHeading.style.opacity = "0.5";
             thirdImage.style.opacity = "1";
             thirdImage.style.boxShadow = "0 0 50px 0 rgba(0, 0, 0, 0.1";
-            thirdText.style.opacity = "1";
+            thirdDescription.style.opacity = "1";
+            thirdHeading.style.opacity = "1";
           } else {
             firstImage.style.opacity = "initial";
-            firstText.style.opacity = "initial";
+            firstDescription.style.opacity = "initial";
+            firstHeading.style.opacity = "initial";
             secondImage.style.opacity = "initial";
-            secondText.style.opacity = "initial";
+            secondDescription.style.opacity = "initial";
+            secondHeading.style.opacity = "initial";
             thirdImage.style.opacity = "initial";
-            thirdText.style.opacity = "initial";
+            thirdDescription.style.opacity = "initial";
+            thirdHeading.style.opacity = "initial";
           }
           buttonRight.onclick = function () {
             if (typeof window !== "undefined" && window.innerWidth < 1024) {
@@ -91,32 +103,44 @@ class ImageGallery extends Component {
               document.getElementById('galleryContainer').scrollLeft -= 640;
             }        if (secondImage.style.opacity == "1") {
               firstImage.style.opacity = "1";
-              firstText.style.opacity = "1";
+              firstDescription.style.opacity = "1";
+              firstHeading.style.opacity = "1";
               secondImage.style.opacity = "0.5";
-              secondText.style.opacity = "0.5";
+              secondDescription.style.opacity = "0.5";
+              secondHeading.style.opacity = "0.5";
               thirdImage.style.opacity = "0.5";
-              thirdText.style.opacity = "0.5";
+              thirdDescription.style.opacity = "0.5";
+              thirdHeading.style.opacity = "0.5";
             } else if (thirdImage.style.opacity == "1") {
               firstImage.style.opacity = "0.5";
-              firstText.style.opacity = "0.5";
+              firstDescription.style.opacity = "0.5";
+              firstHeading.style.opacity = "0.5";
               secondImage.style.opacity = "1";
-              secondText.style.opacity = "1";
+              secondDescription.style.opacity = "1";
+              secondHeading.style.opacity = "1";
               thirdImage.style.opacity = "0.5";
-              thirdText.style.opacity = "0.5";
+              thirdDescription.style.opacity = "0.5";
+              thirdHeading.style.opacity = "0.5";
             } else if (firstImage.style.opacity == "1") {
               firstImage.style.opacity = "1";
-              firstText.style.opacity = "1";
+              firstDescription.style.opacity = "1";
+              firstHeading.style.opacity = "1";
               secondImage.style.opacity = "0.5";
-              secondText.style.opacity = "0.5";
+              secondDescription.style.opacity = "0.5";
+              secondHeading.style.opacity = "0.5";
               thirdImage.style.opacity = "0.5";
-              thirdText.style.opacity = "0.5";
+              thirdDescription.style.opacity = "0.5";
+              thirdHeading.style.opacity = "0.5";
             } else {
               firstImage.style.opacity = "initial";
-              firstText.style.opacity = "initial";
+              firstDescription.style.opacity = "initial";
+              firstHeading.style.opacity = "initial";
               secondImage.style.opacity = "initial";
-              secondText.style.opacity = "initial";
+              secondDescription.style.opacity = "initial";
+              secondHeading.style.opacity = "initial";
               thirdImage.style.opacity = "initial";
-              thirdText.style.opacity = "initial";
+              thirdDescription.style.opacity = "initial";
+              thirdHeading.style.opacity = "initial";
             }
         };
         };
@@ -132,17 +156,17 @@ class ImageGallery extends Component {
       <div id="galleryContainer" className={css.galleryContainer}>
         <div className={css.imageContainer}>
         <img id="firstImage" className={css.image} src={firstImage} alt="search"/>
-        <h3 id="firstHeading" className={css.firstText}>Söksida</h3>
+        <h3 id="firstHeading" className={css.imageHeading}>Söksida</h3>
         <span id="firstText">Hitta lokala företag med en smart sökmotor.</span>
         </div>
         <div className={css.imageContainer}>
         <img id="secondImage" className={css.image} src={secondImage} alt="project"/>
-        <h3 id="secondHeading" className={css.secondText}>Projektsida</h3>
+        <h3 id="secondHeading" className={css.imageHeading}>Projektsida</h3>
         <span id="secondText">En dynamisk projektsida gör underlättar den lokala affärsförmedlingen.</span>
         </div>
         <div className={css.imageContainer}>
         <img id="thirdImage" className={css.image} src={thirdImage} alt="chat"/>
-        <h3 id="thirdHeading" className={css.thirdText}>Chatt</h3>
+        <h3 id="thirdHeading" className={css.imageHeading}>Chatt</h3>
         <span id="thirdText">Leverantörer och beställare kan chatta och översätta dialogen till valfritt språk.</span>
         </div>
       </div>

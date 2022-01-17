@@ -109,6 +109,11 @@ width:35px;
   padding: 5px 12px 5px 12px;
   border-radius: 99px;
   margin: 3px 5px 3px 0px;
+  transition: var(--transitionStyleButton);
 
+}
+
+.text:hover {
+  background-color: var(--matterColor);
 }
 

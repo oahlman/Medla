@@ -124,10 +124,10 @@
   background-color: var(--matterColorBright);
   border: none;
   box-shadow: var(--boxShadowFilterButton);
-  margin-top: 25%;
+  margin-top: 30vw;
 
-  @media (--viewportLarge) {
-    margin-top: 150px;
+  @media (--viewportMedium) {
+    margin-top: 250px;
   }
   &:hover {
     background-color: var(--matterColorLight);
@@ -156,4 +156,8 @@
 .icon {
   width: 20px;
   height: 20px;
+}
+
+.imageHeading {
+  margin-bottom: 0px;
 }

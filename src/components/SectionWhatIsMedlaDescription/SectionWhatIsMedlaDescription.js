@@ -9,8 +9,6 @@ const SectionWhatIsMedlaDescription = props => {
   const classes = classNames(rootClassName || css.root, className);
   return (
     <div className={classes}>
-
-
       <div className={css.steps}>
         <div className={css.step}>
           <div className={css.stepTitle}>

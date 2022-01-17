@@ -97,7 +97,7 @@ text-decoration: none;
 
   @media (--viewportMedium) {
     width: 260px;
-    margin-left: 50px;
+    margin-left: 0px;
   }
 }
 
@@ -117,7 +117,6 @@ text-decoration: none;
     display:flex;
     align-self: top;
     width:120px;
-    margin-left:0px;
     margin-left:0px;
     justify-self:flex-end;
     align-self: flex-end;

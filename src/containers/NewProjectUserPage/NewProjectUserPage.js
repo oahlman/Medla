@@ -95,7 +95,6 @@ const NewProjectUserPage = () => {
           <container className={css.sectionContent} >
             <div className={css.sections}>
             <SectionTimeline className={css.subSection} />
-          <SectionProjectChallenges className={css.sectionProcessMaybe} />
           <div className={css.sectionProcessMaybeColor}>
           <SectionWhatIsMedla className={css.whatIsMedla} />
           <div className={css.sectionGallery}>

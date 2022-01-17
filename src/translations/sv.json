@@ -990,6 +990,7 @@
   "SectionProjectFAQ.Title7":"Vilka leverantörer kan följa vårt projekt?",
   "SectionProjectFAQ.Title8":"Har Medla någon bindningstid?",
   "SectionProjectFAQ.Title9":"Vi är anslutna till en annan affärsplattform, hur fungerar det då?",
+  "SectionProjectFAQ.Title10":"Kan vi ansluta projekt utanför Sverige?",
 
 
   "SectionProjectFAQ.Text1":"Projektörer som vill lyfta vinsterna med sina projekt, entreprenad som behöver varor och tjänster i projekt och lokala verksamheter som vill leverera till projekt.",
@@ -1001,6 +1002,7 @@
   "SectionProjectFAQ.Text7":"Alla leverantörer som uppfyller Medlas användarpolicy, och inte befinner sig på er “svartlista”.",
   "SectionProjectFAQ.Text8":"Det är ingen bindingstid, uppsägning verkställs vid nästkommande betalningstillfälle.",
   "SectionProjectFAQ.Text9":"Ni kan använda olika marknadsplatser/affärsplattformar för olika projekt. Vi rekommenderar dock att hålla sig till en affärsplattform per projekt för att inte skapa förvirring för leverantörerna.",
+  "SectionProjectFAQ.Text10":"Det går bra att ansluta projekt utanför Sverige, vi uppdaterar språkstödet för nya regioner vid behov.",
 
   "SectionProjectFunctions.titleLineOne": "Funktioner",
   "SectionProjectFunctions.chat":"Direkt­meddelanden",

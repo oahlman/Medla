@@ -32,12 +32,8 @@
   background: var(--matterColorMediumLight);
   border-radius: 10px;
   box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.025);
-  margin-top: 0px;
-  margin-bottom: 15px;
-
-
-
-
+  margin-top: 15px;
+  margin-bottom: 0px;
   @media (--viewportMedium) {
     margin-left: 0px;
     margin-right: 0px;
@@ -71,7 +67,7 @@
   margin-right: auto;
   border-radius: 10px 10px 0px 0px;
   margin-bottom: 0px;
-  margin-top: 0px;
+  margin-top: 15px;
 
   @media (--viewportMedium) {
     margin-left: 0px;

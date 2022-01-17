@@ -457,6 +457,13 @@ const routeConfiguration = () => {
       loadData: params =>
         pageDataLoadingAPI.ProjectPage.loadData({ ...params, projectUrl: 'stormossen' }),    },
     {
+      path: '/lillmossen',
+      name: 'Lillmossen',
+      component: ProjectPage,
+      extraProps: { projectUrl: 'lillmossen' },
+      loadData: params =>
+        pageDataLoadingAPI.ProjectPage.loadData({ ...params, projectUrl: 'lillmossen' }),    },
+    {
       path: '/hocksjon',
       name: 'Hocksjön',
       component: ProjectPage,

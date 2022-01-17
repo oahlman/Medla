@@ -46,6 +46,7 @@ import stollsaterbergetImg from './images/stollsaterberget.jpg';
 import gronhultImg from './images/gronhult.jpg';
 import blaklidenfabodbergetImg from './images/blaklidenfabodberget.jpg';
 import kabekoImg from './images/kabeko.jpg';
+import lillmossenImg from './images/lillmossen.jpg';
 
 const businessAreas = [
     { key: 'anlaggning', label: 'Anläggning' },
@@ -659,6 +660,51 @@ export const projects = [
               end: 2025,
           },
         region: 'Kramfors kommun',
+      },
+      },
+      {
+        id: 'lillmossen',
+        name: 'Lillmossen',
+        companyName: 'Medla',
+        companyId: 'medla',
+        type: 'medla',
+        image: lillmossenImg,
+        location: {
+          lat: 63.166695,
+          lng: 17.27748,
+        },
+        bounds: {
+            ne: '63.96074168,17.70965133',
+            sw: '60.28740006,13.58712057',
+        },
+        popularBusinessAreas: [
+          'anlaggning',
+          'bemanning',
+          'betong',
+          'bygg',
+          'driftochunderhall',
+          'el',
+        ],
+        description: {
+            title: 'Vindpark Lillmossen',
+            summary: 'Medlas exempel med 32 vindkraftverk med en totalhöjd om högst 290 m. Projektområdet är beläget ca 25 km söder om Umeå, ca 20 km norr om Normaling och ca 8 km nordväst om Hörnefors.',
+            about: {
+              aboutProject: 'Medlas exempel med 32 vindkraftverk med en totalhöjd om högst 290 m. Projektområdet är beläget ca 25 km söder om Umeå, ca 20 km norr om Normaling och ca 8 km nordväst om Hörnefors.',
+              aboutCompany: '',
+              externalServiceLink: 'https://www.medla.app/anslut-projekt',
+          externalLink: 'https://www.medla.app/anslut-projekt',
+              linkText: 'Läs mer'
+          },
+        },
+        stats: {
+          currentStatus: 'planning',
+          turbines: 32,
+          mw: 256,
+          constructionPeriod: {
+              start: 2022,
+              end: 2024,
+          },
+          region: 'Umeå kommun',
       },
       },
   ];

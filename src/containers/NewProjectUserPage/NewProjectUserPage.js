@@ -108,13 +108,15 @@ const NewProjectUserPage = () => {
               <img className={css.image} src={imagemacbook} alt="Medla in macbook" />
             </div>
           </div>
-          <div className={css.quote}>
-              <img className={css.quoteLogo} src={imagesvenskvind} alt="Svensk vind" />
-              <div className={css.quoteText}>
-              <i>“Elektrifieringen erbjuder enorma möjligheter för en levande landsbygd, genom att lokala jobb skapas där behovet är som störst. <strong>Medla underlättar denna utveckling."</strong></i>
-              <p>—Ylva Tengdal, Svensk Vindenergi</p>
-              </div>
-              <img className={css.quoteProfile} src={imageSvenskVindProfile} alt="Svensk vind" />
+          <div className={css.container}>
+            <div className={css.quote}>
+                <img className={css.quoteLogo} src={imagesvenskvind} alt="Svensk vind" />
+                <div className={css.quoteText}>
+                <i>“Elektrifieringen erbjuder enorma möjligheter för en levande landsbygd, genom att lokala jobb skapas där behovet är som störst. <strong>Medla underlättar denna utveckling."</strong></i>
+                <p className={css.quoteName}>Ylva Tengdal, Svensk Vindenergi</p>
+                </div>
+                <img className={css.quoteProfile} src={imageSvenskVindProfile} alt="Svensk vind" />
+            </div>
           </div>
         </div>
 
@@ -124,15 +126,11 @@ const NewProjectUserPage = () => {
             <SectionTimeline className={css.subSection} />
           <div className={css.sectionProcessMaybeColor}>
           <SectionWhatIsMedla className={css.whatIsMedla} />
-          <div className={css.sectionGallery}>
-            <div>
-            <SectionWhatIsMedlaDescription className={css.whatIsMedlaDescription}  /> 
-            </div>
             <div> 
             <ImageGallery  className={css.gallery}/>
+            <SectionWhatIsMedlaDescription className={css.whatIsMedlaDescription}  /> 
             <SectionProjectFunctions  className={css.functions} />
             </div>
-          </div>
           </div>
           <SectionProjectFAQ />
 

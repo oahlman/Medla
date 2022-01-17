@@ -10,7 +10,8 @@
   flex-direction: column;
 
   @media (--viewportMedium) {
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
   }
 }
 
@@ -18,6 +19,7 @@
   margin:0px;
   @media (--viewportMedium) {
     margin-right: 40px;
+    width: calc(50% - 40px)
 
   }
 }

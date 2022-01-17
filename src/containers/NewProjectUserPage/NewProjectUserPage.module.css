@@ -686,6 +686,7 @@ background-color: var(--marketplaceColorDark);
 }
 
 .text {
+  color: white;
   margin: 40px;
   margin-top: auto;
   margin-bottom: auto;
@@ -704,24 +705,46 @@ background-color: var(--marketplaceColorDark);
   width: auto;
 }
 
+.container {
+    margin-left: 10px;
+    margin-right: 10px;
+  @media (--viewportMedium) {
+    margin-left: 40px;
+    margin-right: 40px;
+    border-width: 0px 36px 0px 36px;
+  }
+}
+
 .quote {
-  margin: 20px;
+  color: white;
+  margin: 10px;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  @media (--viewportMedium) {
+    flex-direction: row;
+  }
 }
 
 .quoteText {
   margin-left: 20px;
   margin-right: 20px;
   flex-direction: column;
-  align-self: flex-start;
+  align-self: flex-start; 
+}
+
+.quoteName {
+  text-align: right;
 }
 
 .quoteLogo {
   margin: 10px;
   object-fit: contain;
   height: 50px;
-  justify-self: flex-start;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 .quoteProfile {

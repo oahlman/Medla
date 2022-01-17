@@ -666,43 +666,69 @@ justify-content: left;
 }
 
 .hero {
+width: 100%;
 background-color: var(--marketplaceColorDark);
- border: solid var(--matterColorBright);
- border-width: 36px 36px 20px 36px;
+overflow: hidden;
 
 @media (--viewportMedium) {
-  border-width: 36px 36px 0px 36px;
+  border: solid var(--matterColorBright);
+  border-width: 36px 36px 20px 36px;
 }
+
 }
 
 .row {
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
   width: 100%;
   @media (--viewportMedium) {
     flex-direction: row;
     width: 100%;
   }
+
+  @media (--viewportLarge) {
+    max-width: 1128px;
+    padding: 0 36px 0 36px;
+    margin: 24px auto 0px auto;
+
+
+  }
+
+  @media (--viewportXLarge) {
+    max-width: 1056px;
+    padding: 0;
+
+  }
 }
 
 .text {
   color: white;
-  margin: 40px;
-  margin-top: auto;
-  margin-bottom: auto;
+  margin: 20px;
+  @media (--viewportMedium) {
+    margin: 40px;
+    align-self: flex-end;
+  }
 }
 
 .imageWrapper {
-  margin: 20px;
-  margin-top: 120px;
-  margin-right: 0px;
-  overflow: hidden;
+    margin: 36px 20px 0 20px;
+    padding: 20px 36px 0 36px;
+  @media (--viewportMedium) {
+    margin-right: 0px;
+    margin-top: 120px;
+  }
 }
 
 .image {
-  margin-right: -100px;
-  height: 70vh;
-  width: auto;
+    width: 100%;
+  @media (--viewportMedium) {
+    margin-right: -50%;
+    width: 200%;
+    }
+  @media (--viewportLarge) {
+    margin-right: -50%;
+    width: 150%;
+    }
 }
 
 .container {
@@ -724,19 +750,20 @@ background-color: var(--marketplaceColorDark);
   margin-left: auto;
   margin-right: auto;
   @media (--viewportMedium) {
-    flex-direction: row;
+    flex-direction: column;
   }
 }
 
-.quoteText {
+.quoteBrand {
   margin-left: 20px;
   margin-right: 20px;
+  display: flex;
   flex-direction: column;
   align-self: flex-start; 
-}
-
-.quoteName {
-  text-align: right;
+  @media (--viewportMedium) {
+    flex-direction: row;
+    align-self: flex-start; 
+  }
 }
 
 .quoteLogo {
@@ -747,6 +774,34 @@ background-color: var(--marketplaceColorDark);
   margin-bottom: auto;
 }
 
+.quoteText {
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 10px;
+  @media (--viewportMedium) {
+
+  }
+}
+
+.quoteAuthor {
+  margin-left: 20px;
+  margin-right: 20px;
+  display: flex;
+  flex-direction: row;
+  align-self: flex-end; 
+  align-items: center;
+  @media (--viewportMedium) {
+
+  }
+}
+
+.quoteName {
+  text-align: right;
+  @media (--viewportMedium) {
+    flex-basis: calc(100% - 50px)
+  }
+}
+
 .quoteProfile {
   margin: 10px;
   object-fit: cover;
@@ -754,7 +809,6 @@ background-color: var(--marketplaceColorDark);
   height: 50px;
   border: 2px solid white;
   border-radius: 100%;
-  align-self: flex-end;
 
 }
 

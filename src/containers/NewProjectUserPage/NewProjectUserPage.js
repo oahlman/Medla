@@ -55,42 +55,6 @@ const NewProjectUserPage = () => {
           <TopbarContainer />
         </LayoutWrapperTopbar>
         <LayoutWrapperMain>
-
-        <div className={css.heroContent} >
-      
-            <div className={css.sectionText}>
-                  <div className={css.bannerLeft}>
-                <h1 className={css.bannerContent}>
-                   <FormattedMessage id="NewProjectUserPage.headline" ></FormattedMessage>
-                </h1>
-               <p className={css.bannerContent}>
-                   <FormattedMessage id="NewProjectUserPage.newservice" ></FormattedMessage>
-          </p>
-
-          <ExternalLink href="https://www.peerdigital.se/anslut-projekt" className={css.heroButton}>
-            <FormattedMessage id="NewProjectUserPage.connectProject" />
-          </ExternalLink>
-
-          <div className={css.quoteContainer}>
-            <div className={css.quoteFont}><i>“Elektrifieringen erbjuder enorma möjligheter för en levande landsbygd, genom att lokala jobb skapas där behovet är som störst.</i> <strong>Medla underlättar denna utveckling."</strong></div>
-            <div >
-            <img className={css.imageSvenskVindDesktop} src={imagesvenskvind} alt="Svensk vind" />
-            </div>        
-            </div>  
-            <div className={css.nameContainer}>
-            <img className={css.imageQuoteProfile} src={imageSvenskVindProfile} alt="Svensk vind" />
-            <div >
-            <div className={css.nameFont}> —Ylva Tengdal, Svensk Vindenergi </div>
-            <img className={css.imageSvenskVindMobile} src={imagesvenskvind} alt="Svensk vind" />
-            </div>        
-            </div>  
-          </div  >
-          <div className={css.imageMacbookContainer}>
-          <img className={css.imageMacbook} src={imagemacbook} alt="Medla in macbook" />
-          </div>
-          </div>
-        </div>
-
         <div className={css.hero}>
           <div className={css.row}>
             <div className={css.text}>
@@ -110,12 +74,14 @@ const NewProjectUserPage = () => {
           </div>
           <div className={css.container}>
             <div className={css.quote}>
+              <div className={css.quoteBrand}>
                 <img className={css.quoteLogo} src={imagesvenskvind} alt="Svensk vind" />
-                <div className={css.quoteText}>
-                <i>“Elektrifieringen erbjuder enorma möjligheter för en levande landsbygd, genom att lokala jobb skapas där behovet är som störst. <strong>Medla underlättar denna utveckling."</strong></i>
+                <i className={css.quoteText}>“Elektrifieringen erbjuder enorma möjligheter för en levande landsbygd, genom att lokala jobb skapas där behovet är som störst. <strong>Medla underlättar denna utveckling."</strong></i>
+              </div>
+              <div className={css.quoteAuthor}>
                 <p className={css.quoteName}>Ylva Tengdal, Svensk Vindenergi</p>
-                </div>
                 <img className={css.quoteProfile} src={imageSvenskVindProfile} alt="Svensk vind" />
+              </div>
             </div>
           </div>
         </div>

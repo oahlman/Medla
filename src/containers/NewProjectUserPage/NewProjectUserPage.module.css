@@ -102,6 +102,9 @@ display: flex;
   }
 }
 
+
+
+
 .sectionProcessMaybeColor {
   background-color: var(--marketplaceColorLight);
   margin-top: 50px;
@@ -115,25 +118,39 @@ display: flex;
   @media (--viewportMedium) {
     margin-top: 100px;
     margin-bottom: 100px;
-
-
-
-
   }
 
   @media (--viewportLarge) {
     margin-top: 100px;
     margin-bottom: 100px;
-
-
   }
 
   @media (--viewportXLarge) {
     margin-top: 100px;
     margin-bottom: 100px;
-
-
   }
+}
+
+.sectionProcessMaybeColorGrey{
+  background-color: var(--matterColorMediumLight);
+  margin-left: -9999px;
+  margin-right: -9999px;
+  padding-left: 9999px;
+  padding-right: 9999px;
+  padding-bottom: 100px;
+  padding-top: 75px;
+  @media (--viewportMedium) {
+    margin-top: 100px;
+  }
+
+  @media (--viewportLarge) {
+    margin-top: 100px;
+  }
+
+  @media (--viewportXLarge) {
+    margin-top: 100px;
+  }
+
 }
 
 .lastSectionProcessMaybeColor{

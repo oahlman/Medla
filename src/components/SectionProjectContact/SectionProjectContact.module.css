@@ -129,6 +129,7 @@ text-decoration: none;
   margin-top:20px;
   width:100%;
   align-self: left;
+  color: whitesmoke;
 
   @media (--viewportMedium) {
     display:flex;

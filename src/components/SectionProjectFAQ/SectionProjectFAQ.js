@@ -46,6 +46,12 @@ const SectionProjectFAQ = props => {
             <FormattedMessage id="SectionProjectFAQ.Text4" />
           </p>
           </CollapsibleProjects>
+
+          <CollapsibleProjects label={<FormattedMessage id="SectionProjectFAQ.Title9"/>}>
+        <p className={css.stepSubtitle}>
+            <FormattedMessage id="SectionProjectFAQ.Text9" />
+          </p>
+          </CollapsibleProjects>
         </div>
 
 

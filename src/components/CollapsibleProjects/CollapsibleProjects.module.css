@@ -26,13 +26,14 @@
   padding-right: 30px;
   padding-top: 0px;
   padding-bottom: 0px;
-  transition: var(--transitionStyleButton);
   color:black;
   margin-left: auto;
   margin-right: auto;
   background: var(--matterColorMediumLight);
   border-radius: 10px;
   box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.025);
+  margin-top: 0px;
+  margin-bottom: 15px;
 
 
 
@@ -69,6 +70,8 @@
   margin-left: auto;
   margin-right: auto;
   border-radius: 10px 10px 0px 0px;
+  margin-bottom: 0px;
+  margin-top: 0px;
 
   @media (--viewportMedium) {
     margin-left: 0px;
@@ -149,6 +152,8 @@ max-width: 65%;
   margin-right: 5%;
   padding-bottom: 1px;
   padding-top:15px;
+  margin-bottom: 20px;;
+ 
 
   @media (--viewportMedium) {
     padding-left:30px;
@@ -157,6 +162,18 @@ max-width: 65%;
     margin-right:0px;
     
   }
+}
+
+.contentParent {
+  height: 0px;
+  overflow:hidden;
+  transition: height ease 0.3s;
+
+}
+
+.heightLimit{
+  transition: height ease 0.3s;
+
 }
 
 .titleText {

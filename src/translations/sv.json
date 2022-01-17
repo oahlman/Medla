@@ -989,6 +989,7 @@
   "SectionProjectFAQ.Title6":"Vilka resultat kan vi vänta oss?",
   "SectionProjectFAQ.Title7":"Vilka leverantörer kan följa vårt projekt?",
   "SectionProjectFAQ.Title8":"Har Medla någon bindningstid?",
+  "SectionProjectFAQ.Title9":"Vi är anslutna till en annan affärsplattform, hur fungerar det då?",
 
 
   "SectionProjectFAQ.Text1":"Projektörer som vill lyfta vinsterna med sina projekt, entreprenad som behöver varor och tjänster i projekt och lokala verksamheter som vill leverera till projekt.",
@@ -998,8 +999,8 @@
   "SectionProjectFAQ.Text5":"Från 5 880 kr/år. Priser beror på status, storlek och antal projekt som ansluts. Medla har ingen bindningstid och ni behåller leverantörslistan om ni skulle välja att säga upp ett projekt.",
   "SectionProjectFAQ.Text6":"Ökade chanser till kommunal tillstyrkan, Stärkta relationer med nyckelintressenter & lokalsamhället, Ökad lokal sysselsättning i projektet, Stärkt varumärke & social hållbarhets-positionering",
   "SectionProjectFAQ.Text7":"Alla leverantörer som uppfyller Medlas användarpolicy, och inte befinner sig på er “svartlista”.",
-  "SectionProjectFAQ.Text8":"Nej.",
-
+  "SectionProjectFAQ.Text8":"Det är ingen bindingstid, uppsägning verkställs vid nästkommande betalningstillfälle.",
+  "SectionProjectFAQ.Text9":"Ni kan använda olika marknadsplatser/affärsplattformar för olika projekt. Vi rekommenderar dock att hålla sig till en affärsplattform per projekt för att inte skapa förvirring för leverantörerna.",
 
   "SectionProjectFunctions.titleLineOne": "Funktioner",
   "SectionProjectFunctions.chat":"Direkt­meddelanden",

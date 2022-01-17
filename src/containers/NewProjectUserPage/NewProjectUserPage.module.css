@@ -121,12 +121,12 @@ display: flex;
   }
 
   @media (--viewportLarge) {
-    margin-top: 100px;
+    margin-top: 0px;
     margin-bottom: 100px;
   }
 
   @media (--viewportXLarge) {
-    margin-top: 100px;
+    margin-top: 0px;
     margin-bottom: 100px;
   }
 }

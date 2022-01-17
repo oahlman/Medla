@@ -137,10 +137,13 @@ display: flex;
   margin-right: -9999px;
   padding-left: 9999px;
   padding-right: 9999px;
-  padding-bottom: 100px;
-  padding-top: 75px;
+  padding-bottom: 50px;
+  padding-top: 30px;
+  margin-top: 50px;
   @media (--viewportMedium) {
     margin-top: 100px;
+    padding-bottom: 100px;
+    padding-top: 75px;
   }
 
   @media (--viewportLarge) {

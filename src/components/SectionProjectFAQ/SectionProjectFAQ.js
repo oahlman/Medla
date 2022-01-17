@@ -46,6 +46,12 @@ const SectionProjectFAQ = props => {
             <FormattedMessage id="SectionProjectFAQ.Text4" />
           </p>
           </CollapsibleProjects>
+
+          <CollapsibleProjects label={<FormattedMessage id="SectionProjectFAQ.Title9"/>}>
+        <p className={css.stepSubtitle}>
+            <FormattedMessage id="SectionProjectFAQ.Text9" />
+          </p>
+          </CollapsibleProjects>
         </div>
 
 
@@ -72,6 +78,12 @@ const SectionProjectFAQ = props => {
           <CollapsibleProjects label={<FormattedMessage id="SectionProjectFAQ.Title8"/>}>
           <p className={css.stepSubtitle}>
             <FormattedMessage id="SectionProjectFAQ.Text8" />
+          </p>
+          </CollapsibleProjects>
+
+          <CollapsibleProjects label={<FormattedMessage id="SectionProjectFAQ.Title10"/>}>
+          <p className={css.stepSubtitle}>
+            <FormattedMessage id="SectionProjectFAQ.Text10" />
           </p>
           </CollapsibleProjects>
         </div>

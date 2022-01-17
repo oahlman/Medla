@@ -25,6 +25,8 @@ const SectionProjectContact = props => {
         <FormattedMessage id="NewProjectUserPage.connectProjectOffer" />
         </ExternalLink>
    
+
+        <p className={css.disclaimerSvenskVindDesktop}>Erbjudandet är begränsat och gäller så långt lagret räcker*</p>
         <img className={css.imageSvenskVindDesktop} src={imagesvenskvind} alt="Svensk vind" />
 
       </div>

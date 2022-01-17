@@ -150,8 +150,9 @@ padding-top: 50px;
 
 
 
-@media (--viewportMedium) {
 
+@media (--viewportMedium) {
+  height: 480px;
   padding-bottom: 90px;
 padding-top: 90px;
 

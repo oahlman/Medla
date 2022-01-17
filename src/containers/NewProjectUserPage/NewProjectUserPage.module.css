@@ -573,10 +573,9 @@ align-items: center;
 .sectionGallery {
   display: flex;
   flex-direction: column;
-  flex-direction: column;
 
   @media (--viewportMedium) {
-    flex-direction: row;
+    flex-direction: column;
   }
 }
 
@@ -600,7 +599,6 @@ align-items: center;
 .gallery {
   margin-top:30px;
   @media (--viewportMedium) {
-    width: 500px;
     margin-top:0px;
   }
 }

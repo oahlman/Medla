@@ -139,7 +139,7 @@
 
 .scrollRight {
   composes: navButton;
-  left: 10px;
+  left: 20px;
 
   @media (--viewportLarge) {
 
@@ -150,7 +150,6 @@
   composes: navButton;
   right: 20px;
   @media (--viewportLarge) {
-    left: 420px;
   }
 }
 

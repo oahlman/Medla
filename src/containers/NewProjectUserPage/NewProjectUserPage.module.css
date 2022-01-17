@@ -456,13 +456,11 @@ align-items: center;
     margin-top: 15%;
     margin-left:20px;
     flex-direction: row;
-    width: 600px;
 }
 
 @media (--viewportLarge) {
   margin-top: 80px;
   margin-left:20px;
-  width: 500px;
 
   }
 
@@ -507,7 +505,8 @@ align-items: center;
     @media (--viewportMedium) {
       display:flex;
       align-self: top;
-      width:85px;
+      width: 85px;
+      height: 41px;
       margin-left:0px;
       margin-left:20px;
   }
@@ -646,6 +645,77 @@ justify-content: left;
  
   
 }
+
+.hero {
+background-color: var(--marketplaceColorDark);
+ border: solid var(--matterColorBright);
+ border-width: 36px 36px 20px 36px;
+
+@media (--viewportMedium) {
+  border-width: 36px 36px 0px 36px;
+}
+}
+
+.row {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  @media (--viewportMedium) {
+    flex-direction: row;
+    width: 100%;
+  }
+}
+
+.text {
+  margin: 40px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.imageWrapper {
+  margin: 20px;
+  margin-top: 120px;
+  margin-right: 0px;
+  overflow: hidden;
+}
+
+.image {
+  margin-right: -100px;
+  height: 70vh;
+  width: auto;
+}
+
+.quote {
+  margin: 20px;
+  display: flex;
+  flex-direction: row;
+}
+
+.quoteText {
+  margin-left: 20px;
+  margin-right: 20px;
+  flex-direction: column;
+  align-self: flex-start;
+}
+
+.quoteLogo {
+  margin: 10px;
+  object-fit: contain;
+  height: 50px;
+  justify-self: flex-start;
+}
+
+.quoteProfile {
+  margin: 10px;
+  object-fit: cover;
+  width: 50px;
+  height: 50px;
+  border: 2px solid white;
+  border-radius: 100%;
+  align-self: flex-end;
+
+}
+
 
 
 

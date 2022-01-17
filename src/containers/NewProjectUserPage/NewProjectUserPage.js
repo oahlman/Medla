@@ -67,9 +67,9 @@ const NewProjectUserPage = () => {
                    <FormattedMessage id="NewProjectUserPage.newservice" ></FormattedMessage>
           </p>
 
-            <ExternalLink href="https://www.peerdigital.se/anslut-projekt" className={css.heroButton}>
-          <FormattedMessage id="NewProjectUserPage.connectProject" />
-        </ExternalLink>
+          <ExternalLink href="https://www.peerdigital.se/anslut-projekt" className={css.heroButton}>
+            <FormattedMessage id="NewProjectUserPage.connectProject" />
+          </ExternalLink>
 
           <div className={css.quoteContainer}>
             <div className={css.quoteFont}><i>“Elektrifieringen erbjuder enorma möjligheter för en levande landsbygd, genom att lokala jobb skapas där behovet är som störst.</i> <strong>Medla underlättar denna utveckling."</strong></div>
@@ -89,7 +89,34 @@ const NewProjectUserPage = () => {
           <img className={css.imageMacbook} src={imagemacbook} alt="Medla in macbook" />
           </div>
           </div>
+        </div>
+
+        <div className={css.hero}>
+          <div className={css.row}>
+            <div className={css.text}>
+              <h1 className={css.bannerContent}>
+                <FormattedMessage id="NewProjectUserPage.headline" ></FormattedMessage>
+              </h1>
+              <p className={css.bannerContent}>
+                <FormattedMessage id="NewProjectUserPage.newservice" ></FormattedMessage>
+              </p>
+              <ExternalLink href="https://www.peerdigital.se/anslut-projekt" className={css.heroButton}>
+                <FormattedMessage id="NewProjectUserPage.connectProject" />
+              </ExternalLink>
+            </div>
+            <div className={css.imageWrapper}>
+              <img className={css.image} src={imagemacbook} alt="Medla in macbook" />
+            </div>
           </div>
+          <div className={css.quote}>
+              <img className={css.quoteLogo} src={imagesvenskvind} alt="Svensk vind" />
+              <div className={css.quoteText}>
+              <i>“Elektrifieringen erbjuder enorma möjligheter för en levande landsbygd, genom att lokala jobb skapas där behovet är som störst. <strong>Medla underlättar denna utveckling."</strong></i>
+              <p>—Ylva Tengdal, Svensk Vindenergi</p>
+              </div>
+              <img className={css.quoteProfile} src={imageSvenskVindProfile} alt="Svensk vind" />
+          </div>
+        </div>
 
          
           <container className={css.sectionContent} >

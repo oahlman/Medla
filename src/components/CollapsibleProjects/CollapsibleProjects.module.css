@@ -173,8 +173,7 @@ max-width: 65%;
 }
 
 .titleText {
- @apply --marketplaceH4FontStyles;
- font-weight:550;
+ @apply --marketplaceH5FontStyles;
  max-width: 85%;
  padding: 0px;
  margin-top: 20px;
@@ -184,6 +183,10 @@ max-width: 65%;
    /* use break-word if available */
    word-break: break-word;
    hyphens: auto;
+   
+   @media (--viewportMedium) {
+    @apply --marketplaceH4FontStyles;
 
-
+  }
 }
+

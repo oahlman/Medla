@@ -25,7 +25,7 @@ const SectionProjectContact = props => {
         <FormattedMessage id="NewProjectUserPage.connectProjectOffer" />
         </ExternalLink>
    
-
+        
         <p className={css.disclaimerSvenskVindDesktop}>*Erbjudandet är tidsbegränsat och gäller för upp till två projekt per organisation. Medlemskap kontrolleras vid lagd beställning.</p>
         <img className={css.imageSvenskVindDesktop} src={imagesvenskvind} alt="Svensk vind" />
 

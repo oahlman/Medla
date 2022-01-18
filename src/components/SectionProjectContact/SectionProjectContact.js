@@ -21,11 +21,11 @@ const SectionProjectContact = props => {
       <div className={css.subTitle}>
         <FormattedMessage id="SectionProjectContact.textLineOne" />
       </div>
-        <ExternalLink className={css.button} href="https://peerdigital.se/anslut-projekt"> 
+        <ExternalLink className={css.button} href="https://peerdigital.se/bestall-projekt"> 
         <FormattedMessage id="NewProjectUserPage.connectProjectOffer" />
         </ExternalLink>
    
-
+        
         <p className={css.disclaimerSvenskVindDesktop}>*Erbjudandet är tidbegränsat och gäller för upp till två projekt per organisation. Medlemskap kontrolleras vid lagd beställning.</p>
         <img className={css.imageSvenskVindDesktop} src={imagesvenskvind} alt="Svensk vind" />
 

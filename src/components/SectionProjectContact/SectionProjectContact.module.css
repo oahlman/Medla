@@ -125,7 +125,7 @@ text-decoration: none;
 }
 
 .disclaimerSvenskVindDesktop{
-  @apply --marketplaceSmallFontStyles;
+  @apply --marketplaceTinyFontStyles;
   margin-top:20px;
   width: calc(100% - 130px);
   align-self: left;

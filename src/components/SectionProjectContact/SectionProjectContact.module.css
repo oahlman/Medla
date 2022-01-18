@@ -127,14 +127,14 @@ text-decoration: none;
 .disclaimerSvenskVindDesktop{
   @apply --marketplaceTinyFontStyles;
   margin-top:20px;
-  width: calc(100% - 130px);
+  width: 100%;
   align-self: left;
   color: whitesmoke;
 
   @media (--viewportMedium) {
     display:flex;
     align-self: bottom;
-    
+    width: calc(100% - 130px);
     margin-left:0px;
     margin-top:130px;
 }

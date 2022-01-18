@@ -669,6 +669,7 @@ justify-content: left;
 width: 100%;
 background-color: var(--marketplaceColorDark);
 overflow: hidden;
+padding-bottom: 20px;
 
 @media (--viewportMedium) {
   border: solid var(--matterColorBright);

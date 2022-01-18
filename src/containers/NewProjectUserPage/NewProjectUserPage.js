@@ -72,18 +72,6 @@ const NewProjectUserPage = () => {
               <img className={css.image} src={imagemacbook} alt="Medla in macbook" />
             </div>
           </div>
-          <div className={css.container}>
-            <div className={css.quote}>
-              <div className={css.quoteBrand}>
-                <img className={css.quoteLogo} src={imagesvenskvind} alt="Svensk vind" />
-                <i className={css.quoteText}>“Elektrifieringen erbjuder enorma möjligheter för en levande landsbygd, genom att lokala jobb skapas där behovet är som störst. <strong>Medla underlättar denna utveckling."</strong></i>
-              </div>
-              <div className={css.quoteAuthor}>
-                <p className={css.quoteName}>Ylva Tengdal, Svensk Vindenergi</p>
-                <img className={css.quoteProfile} src={imageSvenskVindProfile} alt="Svensk vind" />
-              </div>
-            </div>
-          </div>
         </div>
 
          
@@ -103,7 +91,6 @@ const NewProjectUserPage = () => {
           <SectionProjectGoals className={css.sectionProcessMaybeColorGrey} />
           <div className={css.contactContainer}>
             <div className={css.contactTextContainer}>
-          <SectionProjectContact className={css.lastSectionProcessMaybeColor} />
           </div>
           <div className={css.imageContainer}>
           <div className={css.imageContact}></div>

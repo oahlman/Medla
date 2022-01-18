@@ -127,7 +127,7 @@ text-decoration: none;
 .disclaimerSvenskVindDesktop{
   @apply --marketplaceSmallFontStyles;
   margin-top:20px;
-  width:100%;
+  width: calc(100% - 130px);
   align-self: left;
   color: whitesmoke;
 

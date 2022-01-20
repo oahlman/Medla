@@ -10,10 +10,10 @@ import { ensureCurrentUser, ensureUser } from '../../util/data';
 import { withViewport } from '../../util/contextHelpers';
 import { isScrollingDisabled } from '../../ducks/UI.duck';
 import { getMarketplaceEntities } from '../../ducks/marketplaceData.duck';
-import { projects } from './ProjectConfig';
-import { vindbrukskollen } from '../../vindbrukskollen.js';
+import { medlaProjects, externalProjects } from '../../projects-config';
 import { filters } from '../../marketplace-custom-config';
 import image from '../../assets/background-1440.jpg'
+import placeholderImg from '../../assets/placeholder.jpg';
 import {
   Page,
   UserNav,
@@ -65,14 +65,10 @@ export class ProjectPageComponent extends Component {
       `${panelWidth / 3}vw`,
     ].join(', ');
 
-    const medlaProject = projects.findIndex(id => id.id === projectId);
-    const externalProject = vindbrukskollen.findIndex(id => id.Områdes_ID === projectId);
-    console.log('listedProject', medlaProject, 'externalProject', externalProject);
-    const currentProject = medlaProject < 0 ? 0 : medlaProject;
-    const projectData = projects[currentProject];
-    const businessAreas = filters[filters.findIndex(id => id.id === 'category')];
-    const businessAreaLabels = businessAreas.config.options.filter(id => projectData.popularBusinessAreas.includes(id.key));
-    const projectName = projectData.name;
+    const medlaProject = medlaProjects.findIndex(id => id.Områdes_ID === projectId);
+    const externalProject = externalProjects.findIndex(id => id.Områdes_ID === projectId);
+    const currentProject = medlaProject < 0 ? externalProject : medlaProject;
+    const projectData = currentProject === medlaProject ? medlaProjects[currentProject] : externalProjects[currentProject];
 
     const userAttributes = currentUser && currentUser.attributes;
     const userSubscriptions = userAttributes && currentUser.attributes.profile.publicData.amenities;
@@ -103,7 +99,7 @@ export class ProjectPageComponent extends Component {
           <NamedLink className={css.helperLink}
             name="SearchPage"
             to={{
-              search: `?address=${projectName}&bounds=${projectData.bounds.ne},${projectData.bounds.sw}&pub_listingCategory=job`,
+              search: `?address=${projectData.Projektnamn}&bounds=${projectData.ne},${projectData.sw}&pub_listingCategory=job`,
             }}>
             <span>Se alla jobb</span>
           </NamedLink>
@@ -129,7 +125,7 @@ export class ProjectPageComponent extends Component {
             className={css.helperLink}
             name="SearchPage"
             to={{
-              search: `?address=${projectName}&bounds=${projectData.bounds.ne},${projectData.bounds.sw}&pub_listingCategory=company`,
+              search: `?address=${projectData.Projektnamn}&bounds=${projectData.ne},${projectData.sw}&pub_listingCategory=company`,
             }}>
             <span>Se alla företag</span>
           </NamedLink>
@@ -144,7 +140,7 @@ export class ProjectPageComponent extends Component {
             <div className={css.newJobDescription}>
               <h1 className={css.pageTitle}>
                 <FormattedMessage id="ProjectPage.createJobTitle" />
-                {projectName}
+                {projectData.Projektnamn}
               </h1>
               <FormattedMessage id="ProjectPage.createJobDescription" />
             </div>
@@ -167,7 +163,7 @@ export class ProjectPageComponent extends Component {
     let postJobMaybe = null;
     let findCompanyMaybe = null;
 
-    if (projectData.stats.currentStatus === 'planning') {
+    if (new Date(projectData.Planerad_byggstart) < new Date()) {
       statusCard = css.statusCardPlanning;
       statusArrow = css.statusArrowPlanning;
       statusText = css.statusTextPlanning;
@@ -176,7 +172,7 @@ export class ProjectPageComponent extends Component {
       jobSectionMaybe = jobSection;
       companySectionMaybe = companySection;
       postJobMaybe = sectionPostJob;
-    } else if (projectData.stats.currentStatus === 'building') {
+    } else if (new Date(projectData.Planerad_byggstart) > new Date() && new Date(projectData.Planerat_drifttagande) < new Date()) {
       statusCard = css.statusCardBuilding;
       statusArrow = css.statusArrowBuilding;
       statusText = css.statusTextBuilding;
@@ -185,7 +181,7 @@ export class ProjectPageComponent extends Component {
       jobSectionMaybe = jobSection;
       companySectionMaybe = companySection;
       postJobMaybe = sectionPostJob;
-    } else if (projectData.stats.currentStatus === 'running') {
+    } else if (new Date(projectData.Planerat_drifttagande) > new Date()) {
       statusCard = css.statusCardRunning;
       statusArrow = css.statusArrowRunning;
       statusText = css.statusTextRunning;
@@ -202,8 +198,8 @@ export class ProjectPageComponent extends Component {
           <div className={css.contentWrapper}>
             <div className={css.coverSection}>
               <div className={css.coverInfo}>
-                <h1 className={css.pageTitle} >Välkommen till {projectName}</h1>
-                <p>{projectData.description.summary}</p>
+                <h1 className={css.pageTitle} >Välkommen till {projectData.Projektnamn}</h1>
+                <p>{projectData.about}</p>
                 <div className={css.step}>
                   <NamedLink
                     name="NotificationSettingsPage"
@@ -216,114 +212,52 @@ export class ProjectPageComponent extends Component {
                   <NamedLink className={css.following}
                     name="SearchPage"
                     to={{
-                      search: `?address=${projectName}&bounds=${projectData.bounds.ne},${projectData.bounds.sw}&pub_listingCategory=company`,
+                      search: `?address=${projectData.Projektnamn}&bounds=${projectData.ne},${projectData.sw}&pub_listingCategory=company`,
                     }}
                   ><FormattedMessage id={"ProjectPage.findLocalCompanies"} />
                   </NamedLink>
                 </div>
               </div>
-              <img className={css.coverImage} src={projectData.image} alt={`Bild från projektet ${projectName}.`} />
+              <img className={css.coverImage} src={projectData.image ? projectData.image : placeholderImg} alt={`Bild från projektet ${projectData.Projektnamn}.`} />
             </div>
 
             <div className={css.contentMain}>
               {jobSectionMaybe}
               {companySectionMaybe}
-              <h3 className={css.subtitle}>
-                Populära branscher
-              </h3>
-              <div className={css.serviceCards}>
-
-                <NamedLink
-                  className={css.serviceCard}
-                  name="SearchPage"
-                  to={{
-                    search: `?address=${projectName}&bounds=${projectData.bounds.ne},${projectData.bounds.sw}&pub_category=has_any:${businessAreaLabels[0].key}&pub_listingCategory=company`,
-                  }}>
-                  <span>{businessAreaLabels[0].label}</span>
-                </NamedLink>
-
-                <NamedLink
-                  className={css.serviceCard}
-                  name="SearchPage"
-                  to={{
-                    search: `?address=${projectName}&bounds=${projectData.bounds.ne},${projectData.bounds.sw}&pub_category=has_any:${businessAreaLabels[1].key}&pub_listingCategory=company`,
-                  }}>
-                  <span>{businessAreaLabels[1].label}</span>
-                </NamedLink>
-
-                <NamedLink
-                  className={css.serviceCard}
-                  name="SearchPage"
-                  to={{
-                    search: `?address=${projectName}&bounds=${projectData.bounds.ne},${projectData.bounds.sw}&pub_category=has_any:${businessAreaLabels[2].key}&pub_listingCategory=company`,
-                  }}>
-                  <span>{businessAreaLabels[2].label}</span>
-                </NamedLink>
-
-                <NamedLink
-                  className={css.serviceCard}
-                  name="SearchPage"
-                  to={{
-                    search: `?address=${projectName}&bounds=${projectData.bounds.ne},${projectData.bounds.sw}&pub_category=has_any:${businessAreaLabels[3].key}&pub_listingCategory=company`,
-                  }}>
-                  <span>{businessAreaLabels[3].label}</span>
-                </NamedLink>
-
-                <NamedLink
-                  className={css.serviceCard}
-                  name="SearchPage"
-                  to={{
-                    search: `?address=${projectName}&bounds=${projectData.bounds.ne},${projectData.bounds.sw}&pub_category=has_any:${businessAreaLabels[4].key}&pub_listingCategory=company`,
-                  }}>
-                  <span>{businessAreaLabels[4].label}</span>
-                </NamedLink>
-
-                <NamedLink
-                  className={css.serviceCard}
-                  name="SearchPage"
-                  to={{
-                    search: `?address=${projectName}&bounds=${projectData.bounds.ne},${projectData.bounds.sw}&pub_category=has_any:${businessAreaLabels[5].key}&pub_listingCategory=company`,
-                  }}>
-                  <span>{businessAreaLabels[5].label}</span>
-                </NamedLink>
-              </div>
-              <div className={css.searchLink}>
-                <NamedLink
-                  className={css.helperLink}
-                  name="SearchPage"
-                  to={{
-                    search: `?address=${projectName}&bounds=${projectData.bounds.ne},${projectData.bounds.sw}&pub_listingCategory=company`,
-                  }}>
-                  <span>Se alla branscher</span>
-                </NamedLink>
-              </div>
 
               <h3 id='projectDetails' className={css.subtitle}> Om projektet </h3>
-              <b>{projectName}</b>
+              <b>{projectData.Projektnamn}</b>
               <div className={css.projectDetails}>
+              <div className={css.description}>
+                  <p>{projectData.about}</p>
+                  <p><ExternalLink href={projectData.externalLink}>Läs mer</ExternalLink></p>
+                </div>
                 <div className={css.stats}>
                   <div className={css.statusBar}>
-                    <div className={projectData.stats.currentStatus === 'planning' ? css.statusCirclePlanning : css.statusCircle}></div>
-                    <div className={projectData.stats.currentStatus === 'planning' ? css.statusLinePlanning : css.statusLine}></div>
-                    <div className={projectData.stats.currentStatus === 'building' ? css.statusCircleBuilding : css.statusCircle}></div>
-                    <div className={projectData.stats.currentStatus === 'building' ? css.statusLineBuilding : css.statusLine}></div>
-                    <div className={projectData.stats.currentStatus === 'running' ? css.statusCircleRunning : css.statusCircle}></div>
+                    <div className={status === 'Status: Planering' ? css.statusCirclePlanning : css.statusCircle}></div>
+                    <div className={status === 'Status: Planering' ? css.statusLinePlanning : css.statusLine}></div>
+                    <div className={status === 'Status: Byggnation' ? css.statusCircleBuilding : css.statusCircle}></div>
+                    <div className={status === 'Status: Byggnation' ? css.statusLineBuilding : css.statusLine}></div>
+                    <div className={status === 'Status: Drift' ? css.statusCircleRunning : css.statusCircle}></div>
                   </div>
                   <div className={statusCard}>
                     <div className={statusArrow}></div>
                     <div className={statusText}> <b>{status}</b><br></br>{statusDescription}</div>
                   </div>
                   <ul className={css.items}>
-                    <li><b>Storlek</b> {projectData.stats.turbines} turbiner</li>
-                    <li><b>Effekt</b> {projectData.stats.mw} MW</li>
-                    <li><b>Byggperiod</b> {projectData.stats.constructionPeriod.start}—{projectData.stats.constructionPeriod.end}</li>
-                    <li><b>Plats</b> {projectData.stats.region}</li>
+                    <li><b>Projektnamn</b> {projectData.Projektnamn}</li>
+                    <li><b>Projektör</b> {projectData.Verksamhetsutövare}</li>
+                    <li><b>Aktuella verk</b> {projectData.Aktuella_verk}</li>
+                    <li><b>Ej koordinatsatta verk</b> {projectData.Antal_ej_koordinatsatta_verk}</li>
+                    <li><b>Beräknad årsproduktion</b> {projectData.Beräknad_årsproduktion} GWh</li>
+                    <li><b>Uppmätt årsproduktion</b> {projectData.Uppmätt_årsproduktion_GWh} GWh</li>
+                    <li><b>Planerad byggstart</b> {projectData.Planerad_byggstart}</li>
+                    <li><b>Planerat drifttagande</b> {projectData.Planerat_drifttagande}</li>
+                    <li><b>Återkallat eller ej aktuellt</b> {projectData.Området_ej_aktuellt_i_sin_helhet}</li>
+                    <li><b>Kommun</b> {projectData.Kommun}</li>
+                    <li><b>Län</b> {projectData.Län}</li>
+                    <li><b>Elområde</b> {projectData.Elområde}</li>
                   </ul>
-                </div>
-                <div className={css.description}>
-                  <p>{projectData.description.about.aboutProject}</p>
-
-                  <p><ExternalLink href={projectData.description.about.externalLink}>{projectData.description.about.linkText}</ExternalLink></p>
                 </div>
               </div>
             </div>
@@ -334,51 +268,51 @@ export class ProjectPageComponent extends Component {
       </div>
     );
 
-    const externalProjectData = vindbrukskollen[externalProject];
     const projectPageExternal = (
       <div className={css.staticPageWrapper}>
         <div className={css.contentWrapper}>
           <div className={css.coverSection}>
             <div className={css.coverInfo}>
-              <h1 className={css.pageTitle} >Välkommen till {externalProjectData.Projektnamn}</h1>
-              <p className={css.updatedDate}>Uppdaterad {externalProjectData.Senast_sparad}</p>
-              <p>Projektet drivs av {externalProjectData.Verksamhetsutövare} och består av {externalProjectData.Aktuella_verk} vindkraftverk i {externalProjectData.Kommun}, {externalProjectData.Län}.</p>
+              <h1 className={css.pageTitle} >Välkommen till {projectData.Projektnamn}</h1>
+              <p className={css.updatedDate}>Uppdaterad {projectData.Senast_sparad}</p>
+              <p>Projektet drivs av {projectData.Verksamhetsutövare} och består av {projectData.Aktuella_verk} vindkraftverk i {projectData.Kommun}, {projectData.Län}.</p>
               <p className={css.externalService}>Projektet är inte anslutet till Medla</p>
               <div className={css.step}>
                 <ExternalLink
-                  href={`https://www.google.com/search?q=kontakt+${externalProjectData.Projektnamn}+${externalProjectData.Verksamhetsutövare.replace(/\s/g, '+')}`}
+                  href={`https://www.google.com/search?q=kontakt+${projectData.Projektnamn}+${projectData.Verksamhetsutövare.replace(/\s/g, '+')}`}
                   className={css.following}
                 >
                   <span className={css.followText}><FormattedMessage id={"ProjectPage.externalService"} /></span>
                 </ExternalLink>
               </div>
             </div>
-            <img className={css.coverImage} src={projectData.image} alt={`Bild från projektet ${projectName}.`} />
+            <img className={css.coverImage} src={projectData.image ? projectData.image : placeholderImg} alt={`Bild från projektet ${projectData.Projektnamn}.`} />
           </div>
 
           <div className={css.contentMain}>
 
             <h3 id='projectDetails' className={css.subtitle}> Om projektet </h3>
-            <b>{externalProjectData.Projektnamn}</b>
+            <b>{projectData.Projektnamn}</b>
             <div className={css.projectDetails}>
+            <div className={css.description}>
+                <p>Projektet drivs av {projectData.Verksamhetsutövare} och består av {projectData.Aktuella_verk} vindkraftverk i {projectData.Kommun}, {projectData.Län}.</p>
+              </div>
               <div className={css.stats}>
                 <ul className={css.items}>
-                  <li><b>Projektnamn</b> {externalProjectData.Projektnamn}</li>
-                  <li><b>Projektör</b> {externalProjectData.Verksamhetsutövare}</li>
-                  <li><b>Aktuella verk</b> {externalProjectData.Aktuella_verk}</li>
-                  <li><b>Ej koordinatsatta verk</b> {externalProjectData.Antal_ej_koordinatsatta_verk}</li>
-                  <li><b>Beräknad årsproduktion</b> {externalProjectData.Beräknad_årsproduktion} GWh</li>
-                  <li><b>Uppmätt årsproduktion</b> {externalProjectData.Uppmätt_årsproduktion_GWh} GWh</li>
-                  <li><b>Planerad byggstart</b> {externalProjectData.Planerad_byggstart}</li>
-                  <li><b>Planerat drifttagande</b> {externalProjectData.Planerat_drifttagande}</li>
-                  <li><b>Återkallat eller ej aktuellt</b> {externalProjectData.Området_ej_aktuellt_i_sin_helhet}</li>
-                  <li><b>Kommun</b> {externalProjectData.Kommun}</li>
-                  <li><b>Län</b> {externalProjectData.Län}</li>
-                  <li><b>Elområde</b> {externalProjectData.Elområde}</li>
+                  <li><b>Projektnamn</b> {projectData.Projektnamn}</li>
+                  <li><b>Projektör</b> {projectData.Verksamhetsutövare}</li>
+                  <li><b>Aktuella verk</b> {projectData.Aktuella_verk}</li>
+                  <li><b>Ej koordinatsatta verk</b> {projectData.Antal_ej_koordinatsatta_verk}</li>
+                  <li><b>Beräknad årsproduktion</b> {projectData.Beräknad_årsproduktion} GWh</li>
+                  <li><b>Uppmätt årsproduktion</b> {projectData.Uppmätt_årsproduktion_GWh} GWh</li>
+                  <li><b>Planerad byggstart</b> {projectData.Planerad_byggstart}</li>
+                  <li><b>Planerat drifttagande</b> {projectData.Planerat_drifttagande}</li>
+                  <li><b>Återkallat eller ej aktuellt</b> {projectData.Området_ej_aktuellt_i_sin_helhet}</li>
+                  <li><b>Kommun</b> {projectData.Kommun}</li>
+                  <li><b>Län</b> {projectData.Län}</li>
+                  <li><b>Elområde</b> {projectData.Elområde}</li>
+                  <p className={css.updatedDate}>Källa: Vindbrukskollen</p>
                 </ul>
-              </div>
-              <div className={css.description}>
-                <p>Projektet drivs av {externalProjectData.Verksamhetsutövare} och består av {externalProjectData.Aktuella_verk} vindkraftverk i {externalProjectData.Kommun}, {externalProjectData.Län}.</p>
               </div>
             </div>
           </div>
@@ -407,7 +341,7 @@ export class ProjectPageComponent extends Component {
         id: 'ProjectPage.schemaTitle',
       },
       {
-        name: projectName,
+        name: projectData.Projektnamn,
         siteTitle: config.siteTitle,
       }
     );

@@ -419,7 +419,7 @@
   flex-direction: column;
 
   @media (--viewportMedium) {
-    flex-direction: row-reverse;
+    flex-direction: row;
   }
 }
 
@@ -428,7 +428,7 @@
 
   @media (--viewportMedium) {
     width: 300px;
-  margin-left: 24px;
+    margin-left: 24px;
   }
 }
 

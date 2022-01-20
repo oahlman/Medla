@@ -1,0 +1,69 @@
+<h3 className={css.subtitle}>
+                Populära branscher
+              </h3>
+              <div className={css.serviceCards}>
+
+                <NamedLink
+                  className={css.serviceCard}
+                  name="SearchPage"
+                  to={{
+                    search: `?address=${projectName}&bounds=${projectData.bounds.ne},${projectData.bounds.sw}&pub_category=has_any:${businessAreaLabels[0].key}&pub_listingCategory=company`,
+                  }}>
+                  <span>{businessAreaLabels[0].label}</span>
+                </NamedLink>
+
+                <NamedLink
+                  className={css.serviceCard}
+                  name="SearchPage"
+                  to={{
+                    search: `?address=${projectName}&bounds=${projectData.bounds.ne},${projectData.bounds.sw}&pub_category=has_any:${businessAreaLabels[1].key}&pub_listingCategory=company`,
+                  }}>
+                  <span>{businessAreaLabels[1].label}</span>
+                </NamedLink>
+
+                <NamedLink
+                  className={css.serviceCard}
+                  name="SearchPage"
+                  to={{
+                    search: `?address=${projectName}&bounds=${projectData.bounds.ne},${projectData.bounds.sw}&pub_category=has_any:${businessAreaLabels[2].key}&pub_listingCategory=company`,
+                  }}>
+                  <span>{businessAreaLabels[2].label}</span>
+                </NamedLink>
+
+                <NamedLink
+                  className={css.serviceCard}
+                  name="SearchPage"
+                  to={{
+                    search: `?address=${projectName}&bounds=${projectData.bounds.ne},${projectData.bounds.sw}&pub_category=has_any:${businessAreaLabels[3].key}&pub_listingCategory=company`,
+                  }}>
+                  <span>{businessAreaLabels[3].label}</span>
+                </NamedLink>
+
+                <NamedLink
+                  className={css.serviceCard}
+                  name="SearchPage"
+                  to={{
+                    search: `?address=${projectName}&bounds=${projectData.bounds.ne},${projectData.bounds.sw}&pub_category=has_any:${businessAreaLabels[4].key}&pub_listingCategory=company`,
+                  }}>
+                  <span>{businessAreaLabels[4].label}</span>
+                </NamedLink>
+
+                <NamedLink
+                  className={css.serviceCard}
+                  name="SearchPage"
+                  to={{
+                    search: `?address=${projectName}&bounds=${projectData.bounds.ne},${projectData.bounds.sw}&pub_category=has_any:${businessAreaLabels[5].key}&pub_listingCategory=company`,
+                  }}>
+                  <span>{businessAreaLabels[5].label}</span>
+                </NamedLink>
+              </div>
+              <div className={css.searchLink}>
+                <NamedLink
+                  className={css.helperLink}
+                  name="SearchPage"
+                  to={{
+                    search: `?address=${projectName}&bounds=${projectData.bounds.ne},${projectData.bounds.sw}&pub_listingCategory=company`,
+                  }}>
+                  <span>Se alla branscher</span>
+                </NamedLink>
+              </div>

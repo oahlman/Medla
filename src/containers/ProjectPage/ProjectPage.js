@@ -95,7 +95,8 @@ export class ProjectPageComponent extends Component {
       `${panelWidth / 3}vw`,
     ].join(', ');
 
-    const currentProject = projects.findIndex(id => id.id === projectUrl);
+    const listedProject = projects.findIndex(id => id.id === projectUrl);
+    const currentProject = listedProject === -1 ? 0 : listedProject;
     const projectData = projects[currentProject];
     const businessAreas = filters[filters.findIndex(id => id.id === 'category')];
     const businessAreaLabels = businessAreas.config.options.filter(id => projectData.popularBusinessAreas.includes(id.key));

@@ -31,6 +31,7 @@ const defaultDirectives = {
 
     '*.sentry.io',
     '*.stripe.com',
+    'www.googletagmanager.com'
   ],
   fontSrc: [self, data, 'assets-sharetribecom.sharetribe.com', 'fonts.gstatic.com'],
   frameSrc: [self, '*.stripe.com'],
@@ -56,6 +57,7 @@ const defaultDirectives = {
     'www.google.com',
     'www.google-analytics.com',
     'stats.g.doubleclick.net',
+    'www.googletagmanager.com',
 
     '*.stripe.com',
   ],
@@ -68,6 +70,7 @@ const defaultDirectives = {
     'api.mapbox.com',
     '*.google-analytics.com',
     'js.stripe.com',
+    'https://www.googletagmanager.com'
   ],
   styleSrc: [self, unsafeInline, 'fonts.googleapis.com', 'api.mapbox.com'],
 };

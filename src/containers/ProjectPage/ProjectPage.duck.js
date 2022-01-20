@@ -127,8 +127,7 @@ export const queryReviewsError = e => ({
 
 export const queryListings = queryParams => (dispatch, getState, sdk) => {
   const { LatLng } = sdkTypes;
-  const listedProject = projects.findIndex(id => id.id === queryParams);
-    const currentProject = listedProject === -1 ? 0 : listedProject;
+  const currentProject = projects.findIndex(id => id.id === queryParams);
   const projectData = projects[currentProject];
   const origin = new LatLng(projectData.location.lat, projectData.location.lng);
   dispatch(queryListingsRequest(queryParams));

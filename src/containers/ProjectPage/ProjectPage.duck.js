@@ -19,10 +19,6 @@ export const QUERY_LISTINGS_REQUEST = 'app/ProfilePage/QUERY_LISTINGS_REQUEST';
 export const QUERY_LISTINGS_SUCCESS = 'app/ProfilePage/QUERY_LISTINGS_SUCCESS';
 export const QUERY_LISTINGS_ERROR = 'app/ProfilePage/QUERY_LISTINGS_ERROR';
 
-export const QUERY_REVIEWS_REQUEST = 'app/ProfilePage/QUERY_REVIEWS_REQUEST';
-export const QUERY_REVIEWS_SUCCESS = 'app/ProfilePage/QUERY_REVIEWS_SUCCESS';
-export const QUERY_REVIEWS_ERROR = 'app/ProfilePage/QUERY_REVIEWS_ERROR';
-
 // ================ Reducer ================ //
 
 const initialState = {
@@ -30,8 +26,6 @@ const initialState = {
   userListingRefs: [],
   userShowError: null,
   queryListingsError: null,
-  reviews: [],
-  queryReviewsError: null,
 };
 
 export default function profilePageReducer(state = initialState, action = {}) {
@@ -59,12 +53,6 @@ export default function profilePageReducer(state = initialState, action = {}) {
       return { ...state, userListingRefs: payload.listingRefs };
     case QUERY_LISTINGS_ERROR:
       return { ...state, userListingRefs: [], queryListingsError: payload };
-    case QUERY_REVIEWS_REQUEST:
-      return { ...state, queryReviewsError: null };
-    case QUERY_REVIEWS_SUCCESS:
-      return { ...state, reviews: payload };
-    case QUERY_REVIEWS_ERROR:
-      return { ...state, reviews: [], queryReviewsError: payload };
 
     default:
       return state;
@@ -108,27 +96,12 @@ export const queryListingsError = e => ({
   payload: e,
 });
 
-export const queryReviewsRequest = () => ({
-  type: QUERY_REVIEWS_REQUEST,
-});
-
-export const queryReviewsSuccess = reviews => ({
-  type: QUERY_REVIEWS_SUCCESS,
-  payload: reviews,
-});
-
-export const queryReviewsError = e => ({
-  type: QUERY_REVIEWS_ERROR,
-  error: true,
-  payload: e,
-});
-
 // ================ Thunks ================ //
 
 export const queryListings = queryParams => (dispatch, getState, sdk) => {
   const { LatLng } = sdkTypes;
   const listedProject = projects.findIndex(id => id.id === queryParams);
-    const currentProject = listedProject === -1 ? 0 : listedProject;
+  const currentProject = listedProject === -1 ? 0 : listedProject;
   const projectData = projects[currentProject];
   const origin = new LatLng(projectData.location.lat, projectData.location.lng);
   dispatch(queryListingsRequest(queryParams));
@@ -152,21 +125,6 @@ export const queryListings = queryParams => (dispatch, getState, sdk) => {
       dispatch(queryListingsSuccess(listingRefs));
       return response;
     })
-};
-
-export const queryUserReviews = userId => (dispatch, getState, sdk) => {
-  sdk.reviews
-    .query({
-      subject_id: userId,
-      state: 'public',
-      include: ['author', 'author.profileImage'],
-      'fields.image': ['variants.square-small', 'variants.square-small2x'],
-    })
-    .then(response => {
-      const reviews = denormalisedResponseEntities(response);
-      dispatch(queryReviewsSuccess(reviews));
-    })
-    .catch(e => dispatch(queryReviewsError(e)));
 };
 
 export const showUser = userId => (dispatch, getState, sdk) => {
@@ -201,7 +159,7 @@ export const showCompanyListing = companyListing => (dispatch, getState, sdk) =>
 };
 
 export const loadData = params => (dispatch, getState, sdk) => {
-  const project = params.projectUrl;
+  const project = params.projectId;
 
   // Clear state so that previously loaded data is not visible
   // in case this page load fails.
@@ -210,6 +168,5 @@ export const loadData = params => (dispatch, getState, sdk) => {
   return Promise.all([
     dispatch(fetchCurrentUser()),
     dispatch(queryListings(project)),
-    dispatch(queryUserReviews(project)),
   ]);
 };

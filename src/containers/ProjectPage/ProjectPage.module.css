@@ -653,3 +653,9 @@ li {
   composes: statusArrow;
   margin-left: calc(100% - 40px);
 }
+
+.updatedDate {
+  @apply --marketplaceSmallFontStyles;
+  color: var(--matterColorAnti);
+  margin-bottom: 0px;
+}

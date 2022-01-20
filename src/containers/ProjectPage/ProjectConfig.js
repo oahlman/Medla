@@ -46,7 +46,7 @@ import stollsaterbergetImg from './images/stollsaterberget.jpg';
 import gronhultImg from './images/gronhult.jpg';
 import blaklidenfabodbergetImg from './images/blaklidenfabodberget.jpg';
 import kabekoImg from './images/kabeko.jpg';
-import lillmossenImg from './images/lillmossen.jpg';
+import exampleImg from './images/example.jpg';
 
 const businessAreas = [
     { key: 'anlaggning', label: 'Anläggning' },
@@ -78,7 +78,7 @@ export const projects = [
     companyName: 'Medla',
     companyId: 'medla',
     type: 'medla',
-    image: lillmossenImg,
+    image: exampleImg,
     location: {
       lat: 63.166695,
       lng: 17.27748,

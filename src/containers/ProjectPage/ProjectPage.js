@@ -199,6 +199,7 @@ export class ProjectPageComponent extends Component {
             <div className={css.coverSection}>
               <div className={css.coverInfo}>
                 <h1 className={css.pageTitle} >Välkommen till {projectData.Projektnamn}</h1>
+                <p className={css.updatedDate}>Uppdaterad {projectData.Senast_sparad}</p>
                 <p>{projectData.about}</p>
                 <div className={css.step}>
                   <NamedLink
@@ -224,6 +225,76 @@ export class ProjectPageComponent extends Component {
             <div className={css.contentMain}>
               {jobSectionMaybe}
               {companySectionMaybe}
+
+              <h3 className={css.subtitle}>
+                Populära branscher
+              </h3>
+              <div className={css.serviceCards}>
+
+                <NamedLink
+                  className={css.serviceCard}
+                  name="SearchPage"
+                  to={{
+                    search: `?address=${projectData.Projektnamn}&bounds=${projectData.ne},${projectData.sw}&pub_category=has_any:kostlogi&pub_listingCategory=company`,
+                  }}>
+                  <span>Kost och logi</span>
+                </NamedLink>
+
+                <NamedLink
+                  className={css.serviceCard}
+                  name="SearchPage"
+                  to={{
+                    search: `?address=${projectData.Projektnamn}&bounds=${projectData.ne},${projectData.sw}&pub_category=has_any:bygg&pub_listingCategory=company`,
+                  }}>
+                  <span>Byggentreprenad</span>
+                </NamedLink>
+
+                <NamedLink
+                  className={css.serviceCard}
+                  name="SearchPage"
+                  to={{
+                    search: `?address=${projectData.Projektnamn}&bounds=${projectData.ne},${projectData.sw}&pub_category=has_any:anlaggning&pub_listingCategory=company`,
+                  }}>
+                  <span>Anläggning</span>
+                </NamedLink>
+
+                <NamedLink
+                  className={css.serviceCard}
+                  name="SearchPage"
+                  to={{
+                    search: `?address=${projectData.Projektnamn}&bounds=${projectData.ne},${projectData.sw}&pub_category=has_any:servicetjanster&pub_listingCategory=company`,
+                  }}>
+                  <span>Servicetjänster</span>
+                </NamedLink>
+
+                <NamedLink
+                  className={css.serviceCard}
+                  name="SearchPage"
+                  to={{
+                    search: `?address=${projectData.Projektnamn}&bounds=${projectData.ne},${projectData.sw}&pub_category=has_any:transport&pub_listingCategory=company`,
+                  }}>
+                  <span>Transport och taxi</span>
+                </NamedLink>
+
+                <NamedLink
+                  className={css.serviceCard}
+                  name="SearchPage"
+                  to={{
+                    search: `?address=${projectData.Projektnamn}&bounds=${projectData.ne},${projectData.sw}&pub_category=has_any:ovrigt&pub_listingCategory=company`,
+                  }}>
+                  <span>Övrigt</span>
+                </NamedLink>
+              </div>
+              <div className={css.searchLink}>
+                <NamedLink
+                  className={css.helperLink}
+                  name="SearchPage"
+                  to={{
+                    search: `?address=${projectData.Projektnamn}&bounds=${projectData.ne},${projectData.sw}&pub_listingCategory=company`,
+                  }}>
+                  <span>Se alla branscher</span>
+                </NamedLink>
+              </div>
 
               <h3 id='projectDetails' className={css.subtitle}> Om projektet </h3>
               <b>{projectData.Projektnamn}</b>

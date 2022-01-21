@@ -2,6 +2,7 @@ import React from 'react';
 import loadable from '@loadable/component';
 import getPageDataLoadingAPI from './containers/pageDataLoadingAPI';
 import { NotFoundPage } from './containers';
+import { medlaProjects, externalProjects } from './projects-config'
 
 // routeConfiguration needs to initialize containers first
 // Otherwise, components will import form container eventually and
@@ -49,6 +50,34 @@ const draftId = '00000000-0000-0000-0000-000000000000';
 const draftSlug = 'draft';
 
 const RedirectToLandingPage = () => <NamedRedirect name="LandingPage" />;
+const medlaProjectPaths = medlaProjects.map(p => (
+    {
+      path: `/${p.Projektnamn
+        .replace(/\s+/g, '-')
+        .toLowerCase()
+        .replace(/å/g, 'a')
+        .replace(/ä/g, 'a')
+        .replace(/ö/g, 'o')}`,
+      name: p.Projektnamn,
+      component: ProjectPage,
+      extraProps: { projectId: p.Områdes_ID },
+      loadData: params => pageDataLoadingAPI.ProjectPage.loadData({ ...params, projectId: p.Områdes_ID })
+    }
+));
+const externalProjectPaths = externalProjects.map(p => (
+  {
+    path: `/${p.Projektnamn
+      .replace(/\s+/g, '-')
+      .toLowerCase()
+      .replace(/å/g, 'a')
+      .replace(/ä/g, 'a')
+      .replace(/ö/g, 'o')}`,
+    name: p.Projektnamn,
+    component: ProjectPage,
+    extraProps: { projectId: p.Områdes_ID },
+    loadData: params => pageDataLoadingAPI.ProjectPage.loadData({ ...params, projectId: p.Områdes_ID })
+  }
+));
 
 // NOTE: Most server-side endpoints are prefixed with /api. Requests to those
 // endpoints are indended to be handled in the server instead of the browser and
@@ -385,112 +414,19 @@ const routeConfiguration = () => {
       component: props => <NotFoundPage {...props} />,
     },
 
-    //Project links
+    //medlaProject links start
     {
       path: '/hybrit',
       name: 'Hybrit',
       component: ProjectPage,
-      extraProps: { projectUrl: 'hybrit' },
-      loadData: params =>
-        pageDataLoadingAPI.ProjectPage.loadData({ ...params, projectUrl: 'hybrit' }),
+      extraProps: { projectId: 'hybrit' },
+      loadData: params => pageDataLoadingAPI.ProjectPage.loadData({ ...params, projectId: 'hybrit' })
     },
-    {
-      path: '/kolvallen',
-      name: 'Kölvallen',
-      component: ProjectPage,
-      extraProps: { projectUrl: 'kolvallen' },
-      loadData: params =>
-        pageDataLoadingAPI.ProjectPage.loadData({ ...params, projectUrl: 'kolvallen' }),
-    },
-    {
-      path: '/skaftasen',
-      name: 'Skaftåsen',
-      component: ProjectPage,
-      extraProps: { projectUrl: 'skaftasen' },
-      loadData: params =>
-        pageDataLoadingAPI.ProjectPage.loadData({ ...params, projectUrl: 'skaftasen' }),
-    },
-    {
-      path: '/bjornetjarnsberget',
-      name: 'Björnetjärnsberget',
-      component: ProjectPage,
-      extraProps: { projectUrl: 'bjornetjarnsberget' },
-      loadData: params =>
-        pageDataLoadingAPI.ProjectPage.loadData({ ...params, projectUrl: 'bjornetjarnsberget' }),
-    },
-    {
-      path: '/han',
-      name: 'Hån',
-      component: ProjectPage,
-      extraProps: { projectUrl: 'han' },
-      loadData: params =>
-        pageDataLoadingAPI.ProjectPage.loadData({ ...params, projectUrl: 'han' }),
-    },
-    {
-      path: '/bjornberget',
-      name: 'Björnberget',
-      component: ProjectPage,
-      extraProps: { projectUrl: 'bjornberget' },
-      loadData: params =>
-        pageDataLoadingAPI.ProjectPage.loadData({ ...params, projectUrl: 'bjornberget' }),
-    },
-    {
-      path: '/bleka',
-      name: 'Bleka',
-      component: ProjectPage,
-      extraProps: { projectUrl: 'bleka' },
-      loadData: params =>
-        pageDataLoadingAPI.ProjectPage.loadData({ ...params, projectUrl: 'bleka' }),
-    },
-    {
-      path: '/stollsaterberget',
-      name: 'Stöllsäterberget',
-      component: ProjectPage,
-      extraProps: { projectUrl: 'stollsaterberget' },
-      loadData: params =>
-        pageDataLoadingAPI.ProjectPage.loadData({ ...params, projectUrl: 'stollsaterberget' }),    },
-    {
-      path: '/stormossen',
-      name: 'Stormossen',
-      component: ProjectPage,
-      extraProps: { projectUrl: 'stormossen' },
-      loadData: params =>
-        pageDataLoadingAPI.ProjectPage.loadData({ ...params, projectUrl: 'stormossen' }),    },
-    {
-      path: '/lillmossen',
-      name: 'Lillmossen',
-      component: ProjectPage,
-      extraProps: { projectUrl: 'lillmossen' },
-      loadData: params =>
-        pageDataLoadingAPI.ProjectPage.loadData({ ...params, projectUrl: 'lillmossen' }),    },
-    {
-      path: '/hocksjon',
-      name: 'Hocksjön',
-      component: ProjectPage,
-      extraProps: { projectUrl: 'hocksjon' },
-      loadData: params =>
-        pageDataLoadingAPI.ProjectPage.loadData({ ...params, projectUrl: 'hocksjon' }),    },
-    {
-      path: '/blaklidenfabodberget',
-      name: 'Blakliden och Fäbodberget',
-      component: ProjectPage,
-      extraProps: { projectUrl: 'blaklidenfabodberget' },
-      loadData: params =>
-        pageDataLoadingAPI.ProjectPage.loadData({ ...params, projectUrl: 'blaklidenfabodberget' }),    },
-    {
-      path: '/gronhult',
-      name: 'Grönhult',
-      component: ProjectPage,
-      extraProps: { projectUrl: 'gronhult' },
-      loadData: params =>
-        pageDataLoadingAPI.ProjectPage.loadData({ ...params, projectUrl: 'gronhult' }),    },
-    {
-      path: '/kabeko',
-      name: 'Kabeko',
-      component: ProjectPage,
-      extraProps: { projectUrl: 'kabeko' },
-      loadData: params =>
-        pageDataLoadingAPI.ProjectPage.loadData({ ...params, projectUrl: 'kabeko' }),    },
+
+    //medlaProject and externalProject from projects-config.js
+
+    ...medlaProjectPaths,
+    ...externalProjectPaths,
 
     // Do not change this path!
     //
@@ -498,7 +434,7 @@ const routeConfiguration = () => {
     {
       path: '/reset-password',
       name: 'PasswordResetPage',
-      component: PasswordResetPage ,
+      component: PasswordResetPage,
     },
 
     // Do not change this path!

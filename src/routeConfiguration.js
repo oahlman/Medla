@@ -105,12 +105,18 @@ const routeConfiguration = () => {
       name: 'FAQPage',
       component: FAQPage,
     },
-
-
     {
       path: '/s',
       name: 'SearchPage',
       component: SearchPage,
+      loadData: pageDataLoadingAPI.SearchPage.loadData,
+    },
+    {
+      path: '/s/jobs',
+      name: 'SearchJobsPage',
+      component: SearchPage,
+      auth: true,
+      authPage: 'LoginPage',
       loadData: pageDataLoadingAPI.SearchPage.loadData,
     },
     {

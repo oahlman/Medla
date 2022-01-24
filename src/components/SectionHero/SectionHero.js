@@ -8,7 +8,6 @@ import css from './SectionHero.module.css';
 
 const SectionHero = props => {
   const { rootClassName, className } = props;
-
   const classes = classNames(rootClassName || css.root, className);
 
   return (
@@ -21,36 +20,28 @@ const SectionHero = props => {
           <FormattedMessage id="SectionHero.subTitle" />
         </h2>
         <div className={css.steps}>
-        <div className={css.step}>
-          <NamedLink
-            name="SearchPage"
-            to={{
-              search:
-                'address=Sverige&bounds=69.0599269995724%2C24.1933684832876%2C55.280224001785%2C10.8383668128319&pub_listingCategory=company',
-            }}
-            className={css.heroButton}
-          >
-            <FormattedMessage id="SectionHero.browseButtonPrimary" />
-          </NamedLink>
+          <div className={css.step}>
+            <NamedLink
+              name="SearchPage"
+              to={{
+                search:
+                  'address=Sverige&bounds=69.0599269995724%2C24.1933684832876%2C55.280224001785%2C10.8383668128319&pub_listingCategory=company',
+              }}
+              className={css.heroButton}
+            >
+              <FormattedMessage id="SectionHero.browseButtonPrimary" />
+            </NamedLink>
+          </div>
+
+          <div className={css.step}>
+            <NamedLink
+              name="SignupPage"
+              className={css.secondaryButton}
+            >
+              <FormattedMessage id="SectionHero.browseButtonSecondary" />
+            </NamedLink>
+          </div>
         </div>
-
-        <div className={css.step}>
-
-          <NamedLink
-
-            name="SearchPage"
-            to={{
-              search:
-                'address=Sverige&bounds=69.0599269995724%2C24.1933684832876%2C55.280224001785%2C10.8383668128319&pub_listingCategory=job',
-            }}
-            className={css.secondaryButton}
-          >
-            <FormattedMessage id="SectionHero.browseButtonSecondary" />
-
-          </NamedLink>
-
-        </div>
-      </div>
       </div>
     </div>
   );

@@ -374,7 +374,7 @@ export class ProjectPageComponent extends Component {
                   <li><b>Projektör</b> {projectData.Verksamhetsutövare}</li>
                   <li><b>Aktuella verk</b> {projectData.Aktuella_verk}</li>
                   <li><b>Ej koordinatsatta verk</b> {projectData.Antal_ej_koordinatsatta_verk}</li>
-                  <li><b>Beräknad årsproduktion</b> {projectData.Beräknad_årsproduktion} GWh</li>
+                  <li><b>Beräknad årsproduktion</b> {projectData.Beräknad_årsproduktion_Gwh} GWh</li>
                   <li><b>Uppmätt årsproduktion</b> {projectData.Uppmätt_årsproduktion_GWh} GWh</li>
                   <li><b>Planerad byggstart</b> {projectData.Planerad_byggstart}</li>
                   <li><b>Planerat drifttagande</b> {projectData.Planerat_drifttagande}</li>

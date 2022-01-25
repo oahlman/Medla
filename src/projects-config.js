@@ -1,5 +1,6 @@
 import lillmossenImg from './assets/background-1440.jpg';
 import hybritImg from './assets/hybrit.jpg';
+import kolvallenImg from './assets/kolvallen.jpg';
 
 
 export const medlaProjects = [
@@ -56,6 +57,33 @@ export const medlaProjects = [
     sw: '64.71116182,16.22061112',
     about: 'Projektet är ett samarbete mellan SSAB, LKAB och Vattenfall och kommer innefatta av en demonstrationsanläggning för produktion av vätgas och tillverkning av järnsvamp genom direktreduktion. Anläggningen planeras i Gällivare kommun och planeras vara klar 2026. Bild från pilotanläggningen i Luleå.',
     externalLink: 'https://www.hybritdevelopment.se/samrad/',
+  },
+  {
+    Områdes_ID: "2161-V-008",
+    Projektnamn: "Kölvallen",
+    Verksamhetsutövare: "Arise Windpower AB",
+    Organisationsnummer: "556274-6726",
+    Aktuella_verk: 43,
+    Antal_ej_koordinatsatta_verk: 0,
+    Beräknad_årsproduktion_GWh: 305.3,
+    Uppmätt_årsproduktion_GWh: 0,
+    Planerad_byggstart: "2022",
+    Planerat_drifttagande: "2024",
+    Området_ej_aktuellt_i_sin_helhet: "Nej",
+    Kommun: "Ljusdal",
+    Län: "Gävleborgs län",
+    Elområde: "Sundsvall",
+    Senast_sparad: "Oct 14, 2021",
+
+    // Medla config
+
+    image: kolvallenImg,
+    lat: 60.389870,
+    lng: 12.142296,
+    ne: '69.0599269995724,24.1933684832876',
+    sw: '55.280224001785,10.8383668128319',
+    about: 'Arise utvecklar projektet Kölvallen i närheten av Sveg. Kölvallen är ett systerprojekt till projektet Skaftåsen, 35 turbiner, som för närvarande är under byggnation. Kölvallen har 42-43 fullt tillståndsgivna turbiner med en totalhöjd på 220 m. Vi hoppas på att kunna starta bygget under andra halvan av 2022 och avsluta under 2024.',
+    externalLink: 'https://www.arise.se/',
   },
 ];
 

@@ -500,8 +500,8 @@
 
   "LoadableComponentErrorBoundaryPage.title": "Sidan hämtades inte",
   "LoadableComponentErrorBoundaryPage.heading": "Hoppsan, vi kunde inte hämta sidan.",
-  "LoadableComponentErrorBoundaryPage.description": "Det verkar som att appen måste uppdateras! Uppdatera den aktuella sidan eller gå tillbaka till {link}.",
-  "LoadableComponentErrorBoundaryPage.landingPageLink": "målsida",
+  "LoadableComponentErrorBoundaryPage.description": "Det verkar som att Medla måste uppdateras! Ladda om den aktuella sidan eller gå tillbaka till {link}.",
+  "LoadableComponentErrorBoundaryPage.landingPageLink": "startsidan",
   "LocationAutocompleteInput.currentLocation": "Nuvarande plats",
   "LocationSearchForm.placeholder": "Hela Sverige…",
   "LoginForm.emailInvalid": "En giltig e-postadress krävs",

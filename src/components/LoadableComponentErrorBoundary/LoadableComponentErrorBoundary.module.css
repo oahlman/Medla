@@ -31,6 +31,22 @@
   }
 }
 
+.buttonMobile {
+  display: block;
+
+  @media (--viewportLarge) {
+    display: none;
+  }
+}
+
+.buttonDesktop {
+  display: none;
+
+  @media (--viewportLarge) {
+    display: block;
+  }
+}
+
 .logoMobile {
   display: block;
 

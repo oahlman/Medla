@@ -35,7 +35,7 @@ const defaultDirectives = {
     'https://connect.facebook.net',
   ],
   fontSrc: [self, data, 'assets-sharetribecom.sharetribe.com', 'fonts.gstatic.com'],
-  frameSrc: [self, '*.stripe.com'],
+  frameSrc: [self, '*.stripe.com', 'https://connect.facebook.net',],
   imgSrc: [
     self,
     data,

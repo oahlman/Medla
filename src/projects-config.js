@@ -1,4 +1,4 @@
-import lillmossenImg from './assets/background-1440.jpg';
+import lillmossenImg from './assets/placeholder.jpg';
 import hybritImg from './assets/hybrit.jpg';
 import kolvallenImg from './assets/kolvallen.jpg';
 

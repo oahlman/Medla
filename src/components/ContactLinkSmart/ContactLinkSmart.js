@@ -55,7 +55,6 @@ export const ContactLinkSmart = props => {
   const isEmail = (/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i).test(contactInformation);
   const [companyContact, setEmailHidden] = useState(false);
   
-  const buttonText =  'Visa kontaktuppgifter';
  
   const simulateCall = contactInformation => window.open(`tel:${contactInformation}`, '_self');
   const simulateEmail = contactInformation => window.open(`mailto:${contactInformation}`, '_self');
@@ -75,8 +74,7 @@ return (
     onClick={() => setEmailHidden(showCompanyContactDetails)}>
      <FormattedMessage
     id="ListingPage.contactDetailsButton"
-     /> 
-
+     />
     
     </p>
     

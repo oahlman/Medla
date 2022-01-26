@@ -430,16 +430,13 @@ export class CompanyPageComponent extends Component {
     />
     );
 
-  const listingName = currentListing.attributes.title
   
   
   const contactLinkJobListings =(
     <ContactLinkJob listing={currentListing}/> 
     );
 
-  const contactCompany =(
-    <ContactCardForCompany  listing={currentListing}/>
-    );
+
 
     
 const ContactCardForJobListings = contactJob;
@@ -494,7 +491,7 @@ const ContactCardForJobListings = contactJob;
                     category={category}
                     hostLink={null}
                   />
-                    <div className={css.mapMobile}>
+                    <div id="contactCompanyButton" className={css.mapMobile}>
                     {ContactLinkForJob}
                     </div>
                   <SectionDescriptionMaybe description={description} />
@@ -609,7 +606,7 @@ const ContactCardForJobListings = contactJob;
                        onContactUser={this.onContactUser} >
                       </SectionHeading>
 
-                  <div className={css.showContact}> 
+                  <div id="contactCompanyButton" className={css.showContact}> 
                      {ContactCardForJobListings}
                      </div>
               </div>

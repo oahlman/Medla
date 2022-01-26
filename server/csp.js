@@ -32,6 +32,7 @@ const defaultDirectives = {
     '*.sentry.io',
     '*.stripe.com',
     'www.googletagmanager.com',
+    'connect.facebook.net',
   ],
   fontSrc: [self, data, 'assets-sharetribecom.sharetribe.com', 'fonts.gstatic.com'],
   frameSrc: [self, '*.stripe.com',],
@@ -71,6 +72,7 @@ const defaultDirectives = {
     '*.google-analytics.com',
     'js.stripe.com',
     'www.googletagmanager.com',
+    'connect.facebook.net',
   ],
   styleSrc: [self, unsafeInline, 'fonts.googleapis.com', 'api.mapbox.com'],
 };

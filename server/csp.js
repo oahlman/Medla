@@ -35,7 +35,11 @@ const defaultDirectives = {
     'connect.facebook.net',
   ],
   fontSrc: [self, data, 'assets-sharetribecom.sharetribe.com', 'fonts.gstatic.com'],
-  frameSrc: [self, '*.stripe.com',],
+  frameSrc: [
+    self, 
+    '*.stripe.com',
+    'www.facebook.com',
+  ],
   imgSrc: [
     self,
     data,
@@ -61,6 +65,8 @@ const defaultDirectives = {
     'www.googletagmanager.com',
 
     '*.stripe.com',
+    'www.facebook.com',
+    'connect.facebook.net',
   ],
   scriptSrc: [
     self,

@@ -16,6 +16,8 @@
   margin-left: -24px;
   margin-right: -24px;
   padding-left: 24px;
+  scroll-snap-type: x mandatory;
+  scroll-padding: 24px;
 
   @media (--viewportMedium) {
     flex-direction: row;
@@ -30,13 +32,14 @@
 }
 
 .location {
-  min-width: 250px;
+  min-width: calc(100% - 24px);
   margin-top: 25px;
   margin-bottom: 30px;
   margin-right: 10px;
   border-radius: 15px;
   transition: var(--transitionStyleButton);
   background-color: inherit;
+  scroll-snap-align: start;
 
   @media (--viewportMedium) {
     min-width: initial;
@@ -47,9 +50,10 @@
   }
 
   &:hover {
+    @media (--viewportMedium) {
     text-decoration: none;
     transform: scale(1.02);
-    box-shadow: var(--boxShadowSectionLocationHover);
+    box-shadow: var(--boxShadowSectionLocationHover);}
   }
 }
 

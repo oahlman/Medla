@@ -95,7 +95,8 @@ export class ProjectPageComponent extends Component {
             renderSizes={renderSizes}
           />
         ))}
-        <div className={css.searchLink}>
+      </div>
+      <div className={css.searchLink}>
           <NamedLink className={css.helperLink}
             name="SearchPage"
             to={{
@@ -104,7 +105,6 @@ export class ProjectPageComponent extends Component {
             <span>Se alla jobb</span>
           </NamedLink>
         </div>
-      </div>
     </div>);
 
 
@@ -120,7 +120,8 @@ export class ProjectPageComponent extends Component {
             renderSizes={renderSizes}
           />
         ))}
-        <div className={css.searchLink}>
+      </div>
+      <div className={css.searchLink}>
           <NamedLink
             className={css.helperLink}
             name="SearchPage"
@@ -130,7 +131,6 @@ export class ProjectPageComponent extends Component {
             <span>Se alla företag</span>
           </NamedLink>
         </div>
-      </div>
     </div>);
 
     const sectionPostJob = (

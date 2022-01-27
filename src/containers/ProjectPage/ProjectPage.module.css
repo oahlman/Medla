@@ -149,29 +149,41 @@
 .settingsLink:hover {
 }
 
-.listingCards {
+.cards {
   margin: unset;
-  padding: 0 0 48px 0;
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+  scroll-snap-type: x mandatory;
+  overflow-x: scroll;
+  margin-left: -24px;
+  margin-right: -24px;
+  padding-left: 24px;
+  scroll-padding: 24px;
+
 
   @media (--viewportMedium) {
-
+    overflow-x: initial;
+    flex-wrap: wrap;
+    margin-left: initial;
+    margin-right: initial;
+    padding-left: initial;
   }
 
   @media (--viewportLarge) {
-    padding: 0 0 48px 0;
+
   }
 }
 
-.listingCard {
+.card {
   margin-bottom: 36px;
-  flex-basis: 100%;
+  margin-right: 24px;
+  min-width: calc(100% - 48px);
+  scroll-snap-align: center;
 
   @media (--viewportMedium) {
+    min-width: initial;
     flex-basis: calc(50% - 12px);
-    margin-right: 24px;
   }
 
   @media (--viewportLarge) {
@@ -201,116 +213,36 @@
  * Here we take margin-right away, but we don't want it affect the next column breakpoint.
  */
 
-.listingCard:nth-of-type(2n) {
-  @media screen and (max-width: 1024px) {
+.card:nth-of-type(2n) {
+  @media (--viewportMedium) {
+    margin-right: 0;
+  }
+  @media (--viewportLarge) {
+    margin-right: 24px;
+  }
+}
+
+.card:nth-of-type(3n) {
+  
+  @media (--viewportLarge) {
     margin-right: 0;
   }
 }
 
-.listingCard:nth-of-type(3n) {
-  @media (--viewportLarge) {
-    margin-right: 0;
-  }
+.listingCards {
+  composes: cards;
+}
+
+.listingCard {
+  composes: card;
 }
 
 .companyCards {
-  margin: unset;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  padding: 0 0 48px 0;
-
-  @media (--viewportMedium) {
-
-  }
-
-  @media (--viewportLarge) {
-    padding: 0 0 48px 0;
-  }
+  composes: cards;
 }
 
 .companyCard {
-  margin-bottom: 36px;
-  flex-basis: calc(50% - 12px);
-  margin-right: 24px;
-
-  @media screen and (max-width: 512px) {
-    /**
-     * resultPanelWidthRatio = 0.625 aka 62.5%
-
-      resultPanel: 62.5vw from 1920px = 1200px
-      panelPaddings: - 2*36px = 72px
-
-      columnCount: 3
-      guttersBetweenColumns: 2*24px = 48px
-
-      (resultPanel - (panelPaddings + guttersBetweenColumns)) / columnCount = companyCardWidth
-      ergo => companyCardWidth: 360px
-
-     * flex-basis: calc((100%/columnCount) - (guttersBetweenColumns / columnCount))
-     */
-
-    flex-basis: 100%;
-    margin-right: 0px;
-  }
-
-  @media (--viewportMedium) {
-    /**
-     * resultPanelWidthRatio = 0.625 aka 62.5%
-
-      resultPanel: 62.5vw from 1920px = 1200px
-      panelPaddings: - 2*36px = 72px
-
-      columnCount: 3
-      guttersBetweenColumns: 2*24px = 48px
-
-      (resultPanel - (panelPaddings + guttersBetweenColumns)) / columnCount = companyCardWidth
-      ergo => companyCardWidth: 360px
-
-     * flex-basis: calc((100%/columnCount) - (guttersBetweenColumns / columnCount))
-     */
-
-    flex-basis: calc(33.33% - 16px);
-    margin-right: 24px;
-  }
-
-  @media (--viewportXLarge) {
-    /**
-     * resultPanelWidthRatio = 0.625 aka 62.5%
-
-      resultPanel: 62.5vw from 1920px = 1200px
-      panelPaddings: - 2*36px = 72px
-
-      columnCount: 3
-      guttersBetweenColumns: 2*24px = 48px
-
-      (resultPanel - (panelPaddings + guttersBetweenColumns)) / columnCount = companyCardWidth
-      ergo => companyCardWidth: 360px
-
-     * flex-basis: calc((100%/columnCount) - (guttersBetweenColumns / columnCount))
-     */
-
-    flex-basis: calc(33.33% - 16px);
-    margin-right: 24px;
-  }
-}
-
-/**
- * Remove margin-right from companyCards on the last column
- * This is a special case in the world of breakpoints. Nth-of-type effects every nth item.
- * Here we take margin-right away, but we don't want it affect the next column breakpoint.
- */
-
-.companyCard:nth-of-type(2n) {
-  @media screen and (max-width: 767px) {
-    margin-right: 0;
-  }
-}
-
-.companyCard:nth-of-type(3n) {
-  @media (--viewportMedium) {
-    margin-right: 0;
-  }
+  composes: card;
 }
 
 .searchLink {

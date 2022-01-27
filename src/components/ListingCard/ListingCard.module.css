@@ -21,10 +21,11 @@
   transition: var(--transitionStyleButton);
   overflow: hidden;
 
+  @media (--viewportMedium) {
   &:hover {
     transform: scale(1.02);
     box-shadow: var(--boxShadowListingCard);
-  }
+  }}
 }
 
 /* Firefox doesn't support image aspect ratio inside flexbox */

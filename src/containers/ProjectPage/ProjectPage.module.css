@@ -321,17 +321,19 @@
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  padding: 48px 0 0 0;
+  padding: 0 0 0 24px;
+  margin: auto -24px;
+  padding-left: 24px;
   overflow-x: scroll;
-
-  @media screen and (max-width: 768px) {
-    margin: auto -24px;
-    padding-left: 24px;
-  }
+  scroll-snap-type: x mandatory;
+  scroll-padding: 24px;
 
   @media (--viewportMedium) {
     overflow-x: unset;
     flex-wrap: wrap;
+    padding-left: 0;
+    margin: initial;
+
   }
 
   @media (--viewportLarge) {
@@ -341,16 +343,16 @@
 
 .serviceCard {
   @apply --marketplaceH3FontStyles;
-  min-width: 200px;
+  min-width: calc(70% - 12px);
   min-height: 120px;
   border-radius: 5px;
   background-color: white;
   color: var(--matterColor);
   padding: 30px 20px 0px 20px;
   margin-right: 24px;
-  flex-basis: 100%;
   box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.1);
   transition: var(--transitionStyleButton);
+  scroll-snap-align: start;
 
   @media (--viewportMedium) {
     /**
@@ -367,7 +369,7 @@
 
     * flex-basis: calc((100%/columnCount) - (guttersBetweenColumns / columnCount))
     */
-    min-width: unset;
+    min-width: initial;
     flex-basis: calc(50% - 12px);
     margin-right: 24px;
     margin-bottom: 36px;

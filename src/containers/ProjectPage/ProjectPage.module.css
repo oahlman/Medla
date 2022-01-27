@@ -399,9 +399,10 @@
 
 .serviceCard:hover {
   text-decoration: none;
+  color: var(--matterColorDark);}
+  @media (--viewportMedium) {
   transform: scale(1.02);
   box-shadow: var(--boxShadowListingCard);
-  color: var(--matterColorDark);
 }
 
 .serviceCard:nth-of-type(2n) {

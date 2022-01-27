@@ -50,10 +50,11 @@
   }
 
   &:hover {
-    @media (--viewportMedium) {
     text-decoration: none;
+    @media (--viewportMedium) {
     transform: scale(1.02);
-    box-shadow: var(--boxShadowSectionLocationHover);}
+    box-shadow: var(--boxShadowSectionLocationHover);
+    }
   }
 }
 
@@ -94,7 +95,7 @@
 
 .linkText {
   @apply --marketplaceH2FontStyles;
-  color: var(--matterColor);
+  color: var(--matterColorLight);
   margin-top: 15px;
   margin-bottom: 0;
 
@@ -107,6 +108,11 @@
   color: var(--marketplaceColorLight);
 }
 
+.location:hover .locationName {
+  color: var(--matterColorLight);
+  transition: var(--transitionStyleButton);
+}
+
 .locationTitle {
   @apply --marketplaceH2FontStyles;
   font-weight: bold;
@@ -114,8 +120,7 @@
 }
 
 .locationSubtitle {
-  color: var(--marketplaceColorLight);
-  opacity: 0.75;
+  color: var(--matterColorAnti);
 }
 
 .textContainer {

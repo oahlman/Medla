@@ -13,7 +13,7 @@ import {
   LayoutWrapperTopbar,
   LayoutWrapperFooter,
   Footer,
-  TermsOfService,
+  NamedLink,
 } from '../../components';
 import config from '../../config';
 
@@ -45,6 +45,7 @@ const SiteMapPageComponent = props => {
     '@type': 'WebPage',
     name: schemaTitle,
   };
+
   return (
     <Page title={schemaTitle} scrollingDisabled={scrollingDisabled} schema={schema}>
       <LayoutSideNavigation>
@@ -57,7 +58,23 @@ const SiteMapPageComponent = props => {
             <h1 className={css.heading}>
               <FormattedMessage id="SiteMapPage.heading" />
             </h1>
-            <TermsOfService />
+            <div className={css.pagesList}>
+            <div>
+              <NamedLink name="LoginPage" >Logga in </NamedLink>
+            </div>
+            <div>
+              <NamedLink name="SearchPage" >Sök företag </NamedLink>
+            </div>
+            <div>
+              <NamedLink name="NewProjectUserPage" >Anslut projekt </NamedLink>
+            </div>
+            <div>
+              <NamedLink name="AboutPage" >Om Medla </NamedLink>
+            </div>
+            <div>
+              <NamedLink name="FAQPage" >Vanliga frågor </NamedLink>
+            </div>
+            </div>
           </div>
         </LayoutWrapperMain>
         <LayoutWrapperFooter>

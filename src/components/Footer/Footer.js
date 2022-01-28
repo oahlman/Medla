@@ -163,6 +163,11 @@ const Footer = props => {
               <div className={css.someLinks}></div>
               <div className={css.legalMatters}>
                 <ul className={css.tosAndPrivacy}>
+                <li>
+                    <NamedLink name="SiteMapPage" className={css.legalLink}>
+                      <FormattedMessage id="Footer.sitemap" />
+                    </NamedLink>
+                  </li>
                   <li>
                     <NamedLink name="TermsOfServicePage" className={css.legalLink}>
                       <FormattedMessage id="Footer.termsOfUse" />

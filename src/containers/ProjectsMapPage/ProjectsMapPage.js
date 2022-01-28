@@ -12,7 +12,6 @@ import {
   LayoutWrapperSideNav,
   LayoutWrapperTopbar,
   LayoutWrapperFooter,
-  PrivacyPolicy,
   Footer,
   NamedLink,
 } from '../../components';
@@ -50,7 +49,7 @@ const ProjectsMapPageComponent = props => {
 
   const projectLink = (
     <div className={css.projectsList}>
-      {externalProjects.slice(0,5000).map(p => (
+      {externalProjects.slice(0,5000).filter(p => p.Projektnamn.length > 0).map(p => (
         <div>
         <NamedLink
           name={`/${p.Projektnamn
@@ -74,7 +73,6 @@ const ProjectsMapPageComponent = props => {
               <FormattedMessage id="ProjectsMapPage.heading" />
             </h1>
             {projectLink}
-            <PrivacyPolicy />
           </div>
         </LayoutWrapperMain>
         <LayoutWrapperFooter>

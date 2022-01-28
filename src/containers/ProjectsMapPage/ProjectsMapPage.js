@@ -47,6 +47,10 @@ const ProjectsMapPageComponent = props => {
     name: schemaTitle,
   };
 
+  const loadingTitle = intl.formatMessage({
+    id: 'ListingPage.loadingListingTitle',
+  });
+
   const projectLink = (
     <div className={css.projectsList}>
       {externalProjects.filter(p => p.Projektnamn.length > 0).map(p => (
@@ -59,9 +63,10 @@ const ProjectsMapPageComponent = props => {
         </div>
       ))}
     </div>);
-  
-  return (
-    <Page title={schemaTitle} scrollingDisabled={scrollingDisabled} schema={schema}>
+
+  if (typeof window === 'undefined') {
+    return (
+      <Page title={schemaTitle} scrollingDisabled={scrollingDisabled} schema={schema}>
       <LayoutSideNavigation>
         <LayoutWrapperTopbar>
           <TopbarContainer currentPage="ProjectsMapPage" />
@@ -72,7 +77,7 @@ const ProjectsMapPageComponent = props => {
             <h1 className={css.heading}>
               <FormattedMessage id="ProjectsMapPage.heading" />
             </h1>
-            {projectLink}
+            {loadingTitle}
           </div>
         </LayoutWrapperMain>
         <LayoutWrapperFooter>
@@ -80,7 +85,30 @@ const ProjectsMapPageComponent = props => {
         </LayoutWrapperFooter>
       </LayoutSideNavigation>
     </Page>
-  );
+    );
+  } else {
+    return (
+      <Page title={schemaTitle} scrollingDisabled={scrollingDisabled} schema={schema}>
+        <LayoutSideNavigation>
+          <LayoutWrapperTopbar>
+            <TopbarContainer currentPage="ProjectsMapPage" />
+          </LayoutWrapperTopbar>
+          <LayoutWrapperSideNav tabs={tabs} />
+          <LayoutWrapperMain>
+            <div className={css.content}>
+              <h1 className={css.heading}>
+                <FormattedMessage id="ProjectsMapPage.heading" />
+              </h1>
+              {projectLink}
+            </div>
+          </LayoutWrapperMain>
+          <LayoutWrapperFooter>
+            <Footer />
+          </LayoutWrapperFooter>
+        </LayoutSideNavigation>
+      </Page>
+    );
+  }
 };
 
 const { bool } = PropTypes;

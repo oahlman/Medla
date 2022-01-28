@@ -49,7 +49,7 @@ const ProjectsMapPageComponent = props => {
 
   const projectLink = (
     <div className={css.projectsList}>
-      {externalProjects.slice(0,5000).filter(p => p.Projektnamn.length > 0).map(p => (
+      {externalProjects.filter(p => p.Projektnamn.length > 0).map(p => (
         <div>
         <NamedLink
           name={`/${p.Projektnamn

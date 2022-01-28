@@ -32,12 +32,14 @@ const PasswordRecoveryPage = loadable(() => import(/* webpackChunkName: "Passwor
 const PasswordResetPage = loadable(() => import(/* webpackChunkName: "PasswordResetPage" */ './containers/PasswordResetPage/PasswordResetPage'));
 const PaymentMethodsPage = loadable(() => import(/* webpackChunkName: "PaymentMethodsPage" */ './containers/PaymentMethodsPage/PaymentMethodsPage'));
 const PrivacyPolicyPage = loadable(() => import(/* webpackChunkName: "PrivacyPolicyPage" */ './containers/PrivacyPolicyPage/PrivacyPolicyPage'));
+const ProjectsMapPage = loadable(() => import(/* webpackChunkName: "ProjectsMapPage" */ './containers/ProjectsMapPage/ProjectsMapPage'));
 const ProfilePage = loadable(() => import(/* webpackChunkName: "ProfilePage" */ './containers/ProfilePage/ProfilePage'));
 const ProfileSettingsPage = loadable(() => import(/* webpackChunkName: "ProfileSettingsPage" */ './containers/ProfileSettingsPage/ProfileSettingsPage'));
 const NotificationSettingsPage = loadable(() => import(/* webpackChunkName: "NotificationSettingsPage" */ './containers/NotificationSettingsPage/NotificationSettingsPage'));
 const SearchPage = loadable(() => import(/* webpackChunkName: "SearchPage" */ /* webpackPrefetch: true */  './containers/SearchPage/SearchPage'));
 const StripePayoutPage = loadable(() => import(/* webpackChunkName: "StripePayoutPage" */ './containers/StripePayoutPage/StripePayoutPage'));
 const TermsOfServicePage = loadable(() => import(/* webpackChunkName: "TermsOfServicePage" */ './containers/TermsOfServicePage/TermsOfServicePage'));
+const SiteMapPage = loadable(() => import(/* webpackChunkName: "SiteMapPage" */ './containers/SiteMapPage/SiteMapPage'));
 const TransactionPage = loadable(() => import(/* webpackChunkName: "TransactionPage" */ './containers/TransactionPage/TransactionPage'));
 
 // Styleguide helps you to review current components and develop new ones
@@ -57,8 +59,10 @@ const medlaProjectPaths = medlaProjects.map(p => (
         .toLowerCase()
         .replace(/å/g, 'a')
         .replace(/ä/g, 'a')
-        .replace(/ö/g, 'o')}`,
-      name: p.Projektnamn,
+        .replace(/ö/g, 'o')
+        .replace(/\W/g, "-")}`,
+        name: `/${p.Projektnamn
+          .replace(/\W/g, "-")}`,
       component: ProjectPage,
       extraProps: { projectId: p.Områdes_ID },
       loadData: params => pageDataLoadingAPI.ProjectPage.loadData({ ...params, projectId: p.Områdes_ID })
@@ -71,8 +75,10 @@ const externalProjectPaths = externalProjects.map(p => (
       .toLowerCase()
       .replace(/å/g, 'a')
       .replace(/ä/g, 'a')
-      .replace(/ö/g, 'o')}`,
-    name: p.Projektnamn,
+      .replace(/ö/g, 'o')
+      .replace(/\W/g, "-")}`,
+    name: `/${p.Projektnamn
+      .replace(/\W/g, "-")}`,
     component: ProjectPage,
     extraProps: { projectId: p.Områdes_ID },
     loadData: params => pageDataLoadingAPI.ProjectPage.loadData({ ...params, projectId: p.Områdes_ID })
@@ -384,9 +390,19 @@ const routeConfiguration = () => {
       component: TermsOfServicePage,
     },
     {
+      path: '/sitemap',
+      name: 'SiteMapPage',
+      component: SiteMapPage,
+    },
+    {
       path: '/privacy-policy',
       name: 'PrivacyPolicyPage',
       component: PrivacyPolicyPage,
+    },
+    {
+      path: '/projects',
+      name: 'ProjectsMapPage',
+      component: ProjectsMapPage,
     },
     {
       path: '/styleguide',

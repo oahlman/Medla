@@ -1,9 +1,18 @@
 @import '../../styles/customMediaQueries.css';
 @import '../../styles/propertySets.css';
 
-.pageTitle {
+.projectTitle {
  color: var(--marketplaceColorDark);
+ margin-top: 0;
 }
+
+.welcomeTitle {
+  margin-top: 18px;
+  margin-bottom: 0;
+  @media (--viewportMedium) {
+    margin-top: 24px;
+  }
+ }
 
 .staticPageWrapper {
   width: calc(100% - 48px);
@@ -41,7 +50,6 @@
 .following {
   @apply --marketplaceButtonStylesSecondary;
   margin-bottom: 10px;
-
 }
 
 .follow {
@@ -592,4 +600,44 @@ li {
 .updatedDate {
   @apply --marketplaceSmallFontStyles;
   color: var(--matterColorAnti);
+}
+
+.projectOwnerInfo {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.projectOwnerText {
+  color: var(--matterColorAnti);
+  margin-bottom: 0;
+}
+
+.projectOwnerLinks {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+}
+
+.projectOwnerLink {
+  color: var(--marketplaceColor);
+
+  &:hover {
+    color: var(--marketplaceColorDark);
+    text-decoration: none;
+    transition: var(--transitionStyleButton);
+  }
+}
+
+.arrowIcon {
+  /* Color for svg icons */
+  fill: var(--marketplaceColor);
+  margin-left: 5px;
+  margin-top: auto;
+  margin-bottom: auto;
+
+}
+
+.projectOwnerLinks:hover .arrowIcon {
+  fill: var(--marketplaceColorDark);
 }

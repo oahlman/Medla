@@ -30,6 +30,7 @@ import {
   ButtonTabNavHorizontal,
   ExternalLink,
   IconCheckmark,
+  IconArrowHead,
 } from '../../components';
 import { TopbarContainer, NotFoundPage } from '../../containers';
 import config from '../../config';
@@ -198,8 +199,9 @@ export class ProjectPageComponent extends Component {
           <div className={css.contentWrapper}>
             <div className={css.coverSection}>
               <div className={css.coverInfo}>
-                <h1 className={css.pageTitle} >Välkommen till {projectData.Projektnamn}</h1>
-                <p className={css.updatedDate}>Uppdaterad {projectData.Senast_sparad}</p>
+              <h3 className={css.welcomeTitle}>Välkommen till</h3>
+              <h1 className={css.projectTitle} >{projectData.Projektnamn}</h1>
+              <p className={css.updatedDate}>Uppdaterad {projectData.Senast_sparad}</p>
                 <p>{projectData.about}</p>
                 <div className={css.step}>
                   <NamedLink
@@ -344,10 +346,10 @@ export class ProjectPageComponent extends Component {
         <div className={css.contentWrapper}>
           <div className={css.coverSection}>
             <div className={css.coverInfo}>
-              <h1 className={css.pageTitle} >Välkommen till {projectData.Projektnamn}</h1>
+            <h3 className={css.welcomeTitle}>Välkommen till</h3>
+              <h1 className={css.projectTitle} >{projectData.Projektnamn}</h1>
               <p className={css.updatedDate}>Uppdaterad {projectData.Senast_sparad}</p>
               <p>Projektet drivs av {projectData.Verksamhetsutövare} och består av {projectData.Aktuella_verk} vindkraftverk i {projectData.Kommun}, {projectData.Län}.</p>
-              <p className={css.externalService}>Projektet är inte anslutet till Medla</p>
               <div className={css.step}>
                 <ExternalLink
                   href={`https://www.google.com/search?q=kontakt+${projectData.Projektnamn}+${projectData.Verksamhetsutövare.replace(/\s/g, '+')}`}
@@ -367,6 +369,19 @@ export class ProjectPageComponent extends Component {
             <div className={css.projectDetails}>
             <div className={css.description}>
                 <p>Projektet drivs av {projectData.Verksamhetsutövare} och består av {projectData.Aktuella_verk} vindkraftverk i {projectData.Kommun}, {projectData.Län}.</p>
+                <div className={css.projectOwnerInfo}>
+                <p className={css.projectOwnerText}>Arbetar du i projektet?</p>
+                <div className={css.projectOwnerLinks}>
+                  <NamedLink
+                  name="NewProjectUserPage"
+                  className={css.projectOwnerLink} >
+                    <FormattedMessage 
+                      id={"ProjectPage.projectOwnerLink"}
+                    />
+                  </NamedLink>
+                  <IconArrowHead direction="right" size="small" rootClassName={css.arrowIcon} />
+                  </div>
+              </div>
               </div>
               <div className={css.stats}>
                 <ul className={css.items}>

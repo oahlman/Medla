@@ -281,6 +281,11 @@ const routeConfiguration = () => {
       component: PasswordRecoveryPage,
     },
     {
+      path: '/nytt-losenord',
+      name: 'PasswordRecoveryPage',
+      component: PasswordRecoveryPage,
+    },
+    {
       path: '/inbox',
       name: 'InboxBasePage',
       auth: true,

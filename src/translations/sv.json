@@ -492,7 +492,7 @@
   "ListingPage.reviewsError": "Det gick inte att läsa in omdömen.",
   "ListingPage.reviewsHeading": "Omdömen ({count})",
   "ListingPage.rulesTitle": "Branscher",
-  "ListingPage.schemaTitle": "{title} - {price} | {siteTitle}",
+  "ListingPage.schemaTitle": "{title} | {siteTitle}",
   "ListingPage.viewImagesButton": "Visa foton ({count})",
   "ListingPage.yourHostHeading": "Din värd",
   "ListingPage.contactDetailsButton": "Visa kontaktuppgifter",

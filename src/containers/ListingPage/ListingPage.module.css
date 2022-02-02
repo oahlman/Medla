@@ -26,7 +26,10 @@
 }
 
 .jobSectionImages {
-  height: 200px;
+  height: 100px;
+  @media (--viewportMedium) {
+    height: 150px;
+  }
 }
 
 .threeToTwoWrapper {
@@ -732,10 +735,7 @@
       margin-left: 30px;
       margin-right: 0px;
       height: fit-content;
-      padding-left: 25px;
-      padding-right: 25px;
-      padding-bottom: 20px;
-      padding-top: 10px;
+      padding: 25px;
       color: var(--matterColorAnti);
       text-align: center;
       box-shadow: var(--boxShadowListingCard);

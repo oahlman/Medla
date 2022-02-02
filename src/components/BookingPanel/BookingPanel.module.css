@@ -85,10 +85,10 @@
 
 .bookingHelp {
   display: none;
-  @apply --marketplaceH5FontStyles;
+  @apply --marketplaceTinyFontStyles;
+  color: var(--matterColorAnti);
 
   @media (--viewportMedium) {
-    color: var(--matterColor);
     display: block;
     margin-top: 0;
   }

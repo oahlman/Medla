@@ -44,7 +44,7 @@ import {
   ContactCardForJob,
   ContactCardForCompany,
   ContactLinkJob,
-  
+
 } from '../../components';
 import { TopbarContainer, NotFoundPage } from '../../containers';
 
@@ -402,48 +402,48 @@ export class ListingPageComponent extends Component {
         </span>
       ) : null;
 
-    const bookingPanelSection =(
+    const bookingPanelSection = (
       <BookingPanel
-      className={css.blank}
-      listing={currentListing}
-      isOwnListing={isOwnListing}
-      unitType={unitType}
-      onSubmit={handleBookingSubmit}
-      title={bookingTitle}
-      subTitle={bookingSubTitle}
-      authorDisplayName={authorDisplayName}
-      onManageDisableScrolling={onManageDisableScrolling}
-      timeSlots={timeSlots}
-      fetchTimeSlotsError={fetchTimeSlotsError}
-      onFetchTransactionLineItems={onFetchTransactionLineItems}
-      lineItems={lineItems}
-      fetchLineItemsInProgress={fetchLineItemsInProgress}
-      fetchLineItemsError={fetchLineItemsError}
-    />
-    
-  );
-  const contactJob =(
-  <ContactCardForJob listing={currentListing}
-  />
-  );
+        className={css.blank}
+        listing={currentListing}
+        isOwnListing={isOwnListing}
+        unitType={unitType}
+        onSubmit={handleBookingSubmit}
+        title={bookingTitle}
+        subTitle={bookingSubTitle}
+        authorDisplayName={authorDisplayName}
+        onManageDisableScrolling={onManageDisableScrolling}
+        timeSlots={timeSlots}
+        fetchTimeSlotsError={fetchTimeSlotsError}
+        onFetchTransactionLineItems={onFetchTransactionLineItems}
+        lineItems={lineItems}
+        fetchLineItemsInProgress={fetchLineItemsInProgress}
+        fetchLineItemsError={fetchLineItemsError}
+      />
 
-  const contactCompany =(
-    <ContactCardForCompany  listing={currentListing}/>
+    );
+    const contactJob = (
+      <ContactCardForJob listing={currentListing}
+      />
     );
 
-    const contactLinkJobListings =(
-    <ContactLinkJob listing={currentListing}/> 
-    
+    const contactCompany = (
+      <ContactCardForCompany listing={currentListing} />
     );
 
-  const ContactCardForJobListings = contactJob;
+    const contactLinkJobListings = (
+      <ContactLinkJob listing={currentListing} />
+
+    );
+
+    const ContactCardForJobListings = contactJob;
 
 
-  const ContactCardForCompanyListings = null;
+    const ContactCardForCompanyListings = null;
 
-  const ContactLinkForJob = contactLinkJobListings;
+    const ContactLinkForJob = contactLinkJobListings;
 
-      const SectionBookingPanel = bookingPanelSection;
+    const SectionBookingPanel = bookingPanelSection;
 
     return (
       <Page
@@ -466,22 +466,22 @@ export class ListingPageComponent extends Component {
           <LayoutWrapperTopbar>{topbar}</LayoutWrapperTopbar>
           <LayoutWrapperMain>
             <div>
-            <div className={css.jobSectionImages}>
-              <div className={css.jobThreeToTwoWrapper}>
-                <div className={css.jobAspectWrapper}>
-                  <JobActionBarMaybe
-                    listing={currentListing}
-                    isOwnListing={isOwnListing}
-                    editParams={{
-                      id: listingId.uuid,
-                      slug: listingSlug,
-                      type: listingType,
-                      tab: listingTab,
-                    }}
-                  />
+              <div className={css.jobSectionImages}>
+                <div className={css.jobThreeToTwoWrapper}>
+                  <div className={css.jobAspectWrapper}>
+                    <JobActionBarMaybe
+                      listing={currentListing}
+                      isOwnListing={isOwnListing}
+                      editParams={{
+                        id: listingId.uuid,
+                        slug: listingSlug,
+                        type: listingType,
+                        tab: listingTab,
+                      }}
+                    />
+                  </div>
                 </div>
               </div>
-            </div>
               <div className={css.contentContainer}>
                 <SectionAvatar user={currentAuthor} params={params} />
                 <div className={css.mainContent}>
@@ -489,24 +489,22 @@ export class ListingPageComponent extends Component {
                     priceTitle={priceTitle}
                     formattedPrice={formattedPrice}
                     richTitle={richTitle}
-                    category={category}
                     hostLink={hostLink}
-                   
                   />
 
-                    <div className={css.mapMobile}>
+                  <div className={css.mapMobile}>
                     {ContactLinkForJob}
-                    </div>                  <SectionDescriptionMaybe description={description} />
+                  </div>                  <SectionDescriptionMaybe description={description} />
 
 
                   <SectionServicesMaybe
-                  
-                    
+
+
                     title={publicData.offerHeading1 ? publicData.offerHeading1 : null}
                     description={publicData.offer1 ? publicData.offer1 : null}
                   />
                   <SectionServicesMaybe
-                  
+
                     title={publicData.offerHeading2 ? publicData.offerHeading2 : null}
                     description={publicData.offer2 ? publicData.offer2 : null}
                   />
@@ -522,37 +520,37 @@ export class ListingPageComponent extends Component {
                     title={publicData.offerHeading5 ? publicData.offerHeading5 : null}
                     description={publicData.offer5 ? publicData.offer5 : null}
                   />
-                 
+
                   <SectionRulesMaybe options={categoryOptions} publicData={publicData} />
                   <SectionMapMaybe
                     geolocation={geolocation}
                     publicData={publicData}
                     listingId={currentListing.id}
                   />
-                  
+
                 </div>
-                
+
 
                 <div className={css.contactCardCompany}>
-                
-                
-                <div className={css.bookingPanel}>
-                  
-                  {SectionBookingPanel}
-                  
-                  <div className={css.showContact}>
-                  {ContactCardForJobListings}
-                  </div>
+
+
+                  <div className={css.bookingPanel}>
+
+                    {SectionBookingPanel}
+
+                    <div className={css.showContact}>
+                      {ContactCardForJobListings}
+                    </div>
                   </div>
 
-                {ContactCardForCompanyListings
-                }
-                
-             
+                  {ContactCardForCompanyListings
+                  }
+
+
+                </div>
+
               </div>
-              
-              </div>
-       
+
             </div>
           </LayoutWrapperMain>
           <LayoutWrapperFooter>

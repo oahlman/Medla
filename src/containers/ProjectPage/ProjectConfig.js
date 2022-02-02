@@ -65,7 +65,7 @@ const businessAreas = [
     { key: 'skogsmaskintjanster', label: 'Skogsmaskintjänster' },
     { key: 'sprangning', label: 'Sprängning' },
     { key: 'svets', label: 'Svets och metall' },
-    { key: 'transport', label: 'Transport och taxi' },
+    { key: 'transport', label: 'Transport' },
     { key: 'tillverkning', label: 'Tillverkning' },
     { key: 'utbildning', label: 'Utbildning' },
     { key: 'ovrigt', label: 'Övrigt' },

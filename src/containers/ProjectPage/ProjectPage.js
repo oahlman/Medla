@@ -275,7 +275,7 @@ export class ProjectPageComponent extends Component {
                   to={{
                     search: `?address=${projectData.Projektnamn}&bounds=${projectData.ne},${projectData.sw}&pub_category=has_any:transport&pub_listingCategory=company`,
                   }}>
-                  <span>Transport och taxi</span>
+                  <span>Transport</span>
                 </NamedLink>
 
                 <NamedLink

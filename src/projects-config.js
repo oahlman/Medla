@@ -78,10 +78,10 @@ export const medlaProjects = [
     // Medla config
 
     image: kolvallenImg,
-    lat: 60.389870,
-    lng: 12.142296,
-    ne: '69.0599269995724,24.1933684832876',
-    sw: '55.280224001785,10.8383668128319',
+    lat: 61.830080,
+    lng: 16.090436,
+    ne: '63.03626025,18.0991935',
+    sw: '60.59913922,14.2480015',
     about: 'Arise utvecklar projektet Kölvallen i närheten av Sveg. Kölvallen är ett systerprojekt till projektet Skaftåsen, 35 turbiner, som för närvarande är under byggnation. Kölvallen har 42-43 fullt tillståndsgivna turbiner med en totalhöjd på 220 m. Vi hoppas på att kunna starta bygget under andra halvan av 2022 och avsluta under 2024.',
     externalLink: 'https://www.arise.se/',
   },

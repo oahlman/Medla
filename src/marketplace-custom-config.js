@@ -81,8 +81,8 @@ export const filters = [
           label: 'Hocksjön',
         },
         {
-          key: 'hybrit',
-          label: 'Hybrit',
+          key: 'kolvallen',
+          label: 'Kölvallen',
         },
         {
           key: 'klevberget',
@@ -99,6 +99,10 @@ export const filters = [
         {
           key: 'stormossen',
           label: 'Stormossen',
+        },
+        {
+          key: 'other',
+          label: 'Annat projekt',
         },
       ],
     },

@@ -442,13 +442,6 @@ const routeConfiguration = () => {
     },
 
     //medlaProject links start
-    {
-      path: '/hybrit',
-      name: 'Hybrit',
-      component: ProjectPage,
-      extraProps: { projectId: 'hybrit' },
-      loadData: params => pageDataLoadingAPI.ProjectPage.loadData({ ...params, projectId: 'hybrit' })
-    },
 
     //medlaProject and externalProject from projects-config.js
 

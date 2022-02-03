@@ -1,5 +1,4 @@
 import lillmossenImg from './assets/placeholder.jpg';
-import hybritImg from './assets/hybrit.jpg';
 import kolvallenImg from './assets/kolvallen.jpg';
 
 
@@ -30,33 +29,6 @@ export const medlaProjects = [
     sw: '60.28740006,13.58712057',
     about: 'Medlas exempel med 32 vindkraftverk med en totalhöjd om högst 290 m. Projektområdet är beläget ca 25 km söder om Umeå, ca 20 km norr om Normaling och ca 8 km nordväst om Hörnefors.',
     externalLink: 'https://www.medla.app/anslut-projekt',
-  },
-  {
-    Områdes_ID: 'hybrit',
-    Projektnamn: 'Hybrit',
-    Verksamhetsutövare: 'SSAB, LKAB, Vattenfall',
-    Organisationsnummer: "999999-9999",
-    Aktuella_verk: 0,
-    Antal_ej_koordinatsatta_verk: 0,
-    Beräknad_årsproduktion_GWh: 0,
-    Uppmätt_årsproduktion_GWh: 0,
-    Planerad_byggstart: "Dec 31, 2022",
-    Planerat_drifttagande: "Dec 31, 2026",
-    Området_ej_aktuellt_i_sin_helhet: "Nej",
-    Kommun: "Gällivare",
-    Län: "Norrbottens län",
-    Elområde: "Luleå",
-    Senast_sparad: "Oct 11, 2021",
-
-    // Medla config
-
-    image: hybritImg,
-    lat: 67.133798,
-    lng: 20.657898,
-    ne: '69.33701906,25.08883256',
-    sw: '64.71116182,16.22061112',
-    about: 'Projektet är ett samarbete mellan SSAB, LKAB och Vattenfall och kommer innefatta av en demonstrationsanläggning för produktion av vätgas och tillverkning av järnsvamp genom direktreduktion. Anläggningen planeras i Gällivare kommun och planeras vara klar 2026. Bild från pilotanläggningen i Luleå.',
-    externalLink: 'https://www.hybritdevelopment.se/samrad/',
   },
   {
     Områdes_ID: "2161-V-008",

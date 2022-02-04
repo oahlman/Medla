@@ -41,7 +41,7 @@ const SectionProjectChallenges = props => {
       </div>
 
       <div className={css.conclusion}>
-          <p className={css.conclusionSubtitle}>Samverkan med lokalt och regionalt näringsliv kan bidra till en starkare lokalförankring, effektivare projektering och en snabbare energiomställning.</p>
+          <p className={css.conclusionSubtitle}>Samverkan med lokalt och regionalt näringsliv kan bidra till en starkare lokalförankring, effektivare projektering och en snabbare grön omställning.</p>
           <p className={css.note}><a className={css.note}>Interna studier</a></p>
         </div>
 

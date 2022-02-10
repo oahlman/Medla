@@ -256,7 +256,7 @@ const routeConfiguration = () => {
     },
 
     {
-      path: '/anslut-plats',
+      path: '/anslut-kommun',
       name: 'ConnectMunicipalityPage',
       component: ConnectMunicipalityPage,
     },

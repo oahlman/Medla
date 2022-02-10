@@ -48,7 +48,7 @@ const ConnectMunicipalityPage = () => {
   return (
     <StaticPage
       className={css.root}
-      title="Anslut plats"
+      title="Anslut kommun"
       schema={{
         '@context': 'http://schema.org',
         '@type': 'AboutPage',

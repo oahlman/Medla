@@ -143,8 +143,8 @@
   "ConfirmSignupForm.signUp": "Fortsätt med {idp}",
   "ConfirmSignupForm.termsAndConditionsAcceptText": "Genom att registrera dig accepterar du {termsLink}",
   "ConfirmSignupForm.termsAndConditionsLinkText": "villkor",
-  "ConnectMunicipalityPage.headline": "Synligare näringsliv och ökad lokal affärsnytta.",
-  "ConnectMunicipalityPage.newservice": "Medlas kommunsidor och företagsprofiler bryggas lokalt näringsliv med projektetableringar i er region",
+  "ConnectMunicipalityPage.headline": "Synligare näringsliv och affärsnytta.",
+  "ConnectMunicipalityPage.newservice": "Medlas kommunsidor och företagsprofiler länkar lokalt näringsliv med projektetableringar i er region.",
   "ConnectMunicipalityPage.connectProject": "Anslut kommun",
 
 
@@ -1090,7 +1090,7 @@
   "SectionTimelineMunicipality.part1Title": "En attraktivare kommun",
   "SectionTimelineMunicipality.part2Title": "Lokala affärsmöjligheter",
   "SectionTimelineMunicipality.part3Title": "Insikter om näringslivet",
-  "SectionTimelineMunicipality.part1Text": "Visa att investerare kan känna sig trygg med kompetensförsörningen i er kommun.",
+  "SectionTimelineMunicipality.part1Text": "Visa investerare att de kan känna sig trygg med kompetensförsörningen i er kommun.",
   "SectionTimelineMunicipality.part2Text": "En brygga mellan byggentreprenad och lokala leverantörer.",
   "SectionTimelineMunicipality.part3Text": "Insyn i ert näringsliv med Medla-Statistics.",
 

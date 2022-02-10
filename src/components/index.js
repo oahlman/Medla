@@ -185,6 +185,8 @@ export { default as SectionPostJob } from './SectionPostJob/SectionPostJob';
 export { default as SectionSignUpProcess } from './SectionSignUpProcess/SectionSignUpProcess';
 export { default as SectionWhatIsMedla } from './SectionWhatIsMedla/SectionWhatIsMedla';
 export { default as SectionWhatIsMedlaDescription } from './SectionWhatIsMedlaDescription/SectionWhatIsMedlaDescription';
+export { default as SectionWhatIsMedlaDescriptionMunicipality } from './SectionWhatIsMedlaDescriptionMunicipality/SectionWhatIsMedlaDescriptionMunicipality';
+export { default as SectionWhatIsMedlaMunicipality } from './SectionWhatIsMedlaMunicipality/SectionWhatIsMedlaMunicipality';
 
 export { default as SectionProjectChallenges } from './SectionProjectChallenges/SectionProjectChallenges';
 export { default as SectionProjectContact } from './SectionProjectContact/SectionProjectContact';
@@ -192,11 +194,17 @@ export { default as SectionProjectContact } from './SectionProjectContact/Sectio
 export { default as SectionProjectDeal } from './SectionProjectDeal/SectionProjectDeal';
 export { default as SectionProjectFunctions } from './SectionProjectFunctions/SectionProjectFunctions';
 export { default as SectionProjectGoals } from './SectionProjectGoals/SectionProjectGoals';
+export { default as SectionMunicipalityGoals } from './SectionMunicipalityGoals/SectionMunicipalityGoals';
+
 export { default as SectionProjectFAQ } from './SectionProjectFAQ/SectionProjectFAQ';
+export { default as SectionMunicipalityFAQ } from './SectionMunicipalityFAQ/SectionMunicipalityFAQ';
 
 export { default as SectionQuote } from './SectionQuote/SectionQuote';
 export { default as SectionFoundersNote } from './SectionFoundersNote/SectionFoundersNote';
+export { default as SectionFoundersNoteMunicipality } from './SectionFoundersNoteMunicipality/SectionFoundersNoteMunicipality';
+
 export { default as SectionTimeline } from './SectionTimeline/SectionTimeline';
+export { default as SectionTimelineMunicipality } from './SectionTimelineMunicipality/SectionTimelineMunicipality';
 
 export { default as SectionLocations } from './SectionLocations/SectionLocations';
 export { default as SectionProjects } from './SectionProjects/SectionProjects';

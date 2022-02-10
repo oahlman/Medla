@@ -1,0 +1,281 @@
+@import '../../styles/propertySets.css';
+
+.title {
+  @apply --marketplaceH2FontStyles;
+  margin-top: 0;
+}
+
+.steps {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  align-items: left;
+  width:100%;
+  margin-top: 20px;
+
+  @media (--viewportMedium) {
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+}
+
+.step {
+  background-color: var(--matterColorNegative);
+  margin-top:0px;
+  margin-bottom:10px;
+  padding:0px;
+  padding-left:20px;
+  padding-right: 20px;;
+  border-radius: 20px;
+
+  color: var(--matterColorDark);
+
+
+  @media (--viewportMedium) {
+    width: 30%;
+    margin-right: 40px;
+
+  }
+}
+
+.stepText {
+
+@media (--viewportMedium) {
+  margin-left:15px;
+  margin-right: 15px;
+}
+}
+
+.step:last-of-type {
+  @media (--viewportMedium) {
+    margin-right: 0;
+  }
+}
+
+.stepTitlePlanning {
+  color: white;
+background-color: var(--attentionColor);
+width:fit-content;
+margin-left:-20px;
+margin-top:0px;
+padding:7px;
+padding-right:25px;
+padding-left: 10px;
+border-radius: 20px 0px 40px 0px;
+}
+
+.stepTitleBuilding {
+  color: white;
+  background-color: var(--successColor);
+  width:fit-content;
+  margin-left:-20px;
+  margin-top:0px;
+  padding:7px;
+  padding-right:25px;
+  padding-left: 10px;
+  border-radius: 20px 0px 40px 0px;
+  }
+
+  .stepTitleRunning {
+    color: white;
+    background-color: var(--marketplaceColor);
+    width:fit-content;
+    margin-left:-20px;
+    margin-top:0px;
+    padding:7px;
+    padding-right:25px;
+    padding-left: 10px;
+    border-radius: 20px 0px 40px 0px;
+    }
+
+
+
+
+
+
+.createListingLink {
+  margin-top: 18px;
+
+  @media (--viewportMedium) {
+    margin-top: 24px;
+  }
+}
+
+
+.container{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: left;
+
+
+
+  @media (--viewportMedium) {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+  }
+}
+
+.statusBar {
+  padding-top: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px;
+  margin-left:0px;
+  margin-right:15px;
+
+
+  @media (--viewportMedium) {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px;
+    width:100%;
+    padding-left: 10px;
+    padding-right: 10px;
+
+
+  }
+
+}
+
+.statusCirclePlanning {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: var(--attentionColor);
+}
+
+.statusCircleBuilding {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: var(--successColor);}
+
+
+  .statusCircleRunning {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: var(--marketplaceColor);}
+
+
+
+.statusLine1 {
+  height: calc(45% - 60px);;
+  width: calc(50% - 60px);
+  max-width: 4px;
+  border-style: solid;
+  border-color: var(--attentionColor);
+
+  @media (--viewportMedium) {
+  height: calc(50% - 60px);
+  width: calc(50% - 60px);
+  max-width: 100%;
+  }
+}
+
+
+.statusLine2 {
+  height: calc(45% - 60px);;
+  width: calc(50% - 60px);
+  max-width: 4px;
+  border-style: solid;
+  border-color: var(--successColor);
+
+
+  @media (--viewportMedium) {
+  height: calc(50% - 60px);
+  width: calc(50% - 60px);
+  max-width: 100%;
+  }
+}
+
+.statusCard {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.statusText {
+  background-color: var(--matterColorNegative);
+  padding: 10px;
+  max-width: 300px;
+}
+
+
+.statusArrowPlanning {
+  width: 0;
+  height: 0;
+  margin: 0px 0px 0px 21px;
+  border-top: 15px solid transparent ;
+  border-left: 15px solid var(--attentionColor) ;
+  border-right: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+  border-radius: 99px;
+
+  @media (--viewportMedium) {
+    border-top: 15px solid var(--attentionColor);
+    border-left: 15px solid transparent;
+    border-radius: 20px;
+    margin: 21px 10px 0px 0px;
+    }
+}
+
+.statusArrowBuilding {
+  width: 0;
+  height: 0;
+  margin: 0px 0px 0px 21px;
+  border-top: 15px solid transparent ;
+  border-left: 15px solid var(--successColor) ;
+  border-right: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+  border-radius: 99px;
+
+  @media (--viewportMedium) {
+    border-top: 15px solid var(--successColor);
+    border-left: 15px solid transparent;
+    border-radius: 20px;
+    margin: 21px 10px 0px 0px;
+    }
+}
+
+.statusArrowRunning {
+  width: 0;
+  height: 0;
+  margin: 0px 0px 0px 21px;
+  border-top: 15px solid transparent ;
+  border-left: 15px solid var(--marketplaceColor) ;
+  border-right: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+  border-radius: 99px;
+
+  @media (--viewportMedium) {
+    border-top: 15px solid var(--marketplaceColor);
+    border-left: 15px solid transparent;
+    border-radius: 20px;
+    margin: 21px 10px 0px 0px;
+    }
+}
+
+.opacityCurtainPlanning{
+ background-color: rgba(233, 172, 50, 0.404);
+ margin-right:-20px;
+ border-radius: 0 20px 0px 0px;
+}
+.opacityCurtainBulding{
+  background-color: rgba(34, 186, 130, 0.404);
+  margin-right:-20px;
+  border-radius: 0 20px 0px 0px;
+ }
+ .opacityCurtainRunning{
+  background-color: rgba(20, 85, 121, 0.404);
+  margin-right:-20px;
+  border-radius: 0 20px 0px 0px;
+ }

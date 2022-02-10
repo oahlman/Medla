@@ -143,6 +143,19 @@
   "ConfirmSignupForm.signUp": "Fortsätt med {idp}",
   "ConfirmSignupForm.termsAndConditionsAcceptText": "Genom att registrera dig accepterar du {termsLink}",
   "ConfirmSignupForm.termsAndConditionsLinkText": "villkor",
+  "ConnectMunicipalityPage.headline": "Synligare näringsliv och ökad lokal affärsnytta.",
+  "ConnectMunicipalityPage.newservice": "Medlas kommunsidor och företagsprofiler bryggas lokalt näringsliv med projektetableringar i er region",
+  "ConnectMunicipalityPage.connectProject": "Anslut kommun",
+
+
+  
+  
+
+  
+
+
+
+
   "ContactDetailsForm.confirmChangesInfo": "Ange ditt nuvarande lösenord för att ändra din e-postadress.",
   "ContactDetailsForm.confirmChangesTitle": "Bekräfta dina ändringar",
   "ContactDetailsForm.emailInvalid": "En giltig e-postadress krävs",
@@ -1010,6 +1023,33 @@
   "SectionProjectFAQ.Text9":"Anslutningen till Medla görs per projekt och går därför utmärkt att använda vid sidan av andra affärsplattformar. Vill ni flytta hela er projektportfolio till Medla så kan vi hjälpa er med det.",
   "SectionProjectFAQ.Text10":"Det går bra att ansluta projekt utanför Sverige, vi uppdaterar språkstödet för nya regioner vid behov.",
 
+  "SectionMunicipalityFAQ.titleLineOne":"Vanliga frågor",
+  "SectionMunicipalityFAQ.Title1":"Vilka använder Medla?",
+  "SectionMunicipalityFAQ.Title2":"Vilka projekt används Medla för?",
+  "SectionMunicipalityFAQ.Title3":"Är det lätt att komma igång? ",
+  "SectionMunicipalityFAQ.Title4":"Hur ansluter projekten?",
+  "SectionMunicipalityFAQ.Title5":"Vad kostar Medla?",
+  "SectionMunicipalityFAQ.Title6":"Vilka resultat kan vi vänta oss?",
+  "SectionMunicipalityFAQ.Title7":"Hur syns projekten?",
+  "SectionMunicipalityFAQ.Title8":"Har Medla någon bindningstid?",
+  "SectionMunicipalityFAQ.Title9":"Vi har projekt i en annan affärsplattform, hur fungerar Medla då?",
+  "SectionMunicipalityFAQ.Title10":"Kan projekt utanför Sverige anslutas?",
+
+
+  "SectionMunicipalityFAQ.Text1":"Kommuner som vill visa och göra sitt näringsliv mer tillgängligt, projektörer som vill lyfta vinsterna och förankra sina etableringar, byggentreprenad som behöver varor och tjänster i projekt och lokala verksamheter som vill leverera till projekten.",
+  "SectionMunicipalityFAQ.Text2":"Hållbara energi- och industriprojekt i alla faser.",
+  "SectionMunicipalityFAQ.Text3":"Att komma igång med Medla är enkelt. Efter ni kontaktat oss bekräftar vi era uppgifter och installerar kommunsidan på 1-2 veckor.",
+  "SectionMunicipalityFAQ.Text4":"Vi tar kontakt med projektörer och så fort ett projekt ansluter i er region så kommer deras projektsida synas via er kommunsida.",
+  "SectionMunicipalityFAQ.Text5":"Priser beror på storlek av kommun. Medla har ingen bindningstid och ni behåller företagsregistret även om ni säger upp.",
+  "SectionMunicipalityFAQ.Text6":"Bättre inventerat näringsliv, förbättrade affärsmöjligheter för näringslivet och en attraktivare kommun för investeringar.",
+  "SectionMunicipalityFAQ.Text7":"Anslutna projekt visas med en projektsida där deras jobb och behov annonseras.",
+  "SectionMunicipalityFAQ.Text8":"Medla har ingen bindingstid, uppsägning verkställs vid nästkommande betalningstillfälle.",
+  "SectionMunicipalityFAQ.Text9":"Anslutningen till Medla görs per projekt och går därför utmärkt att använda vid sidan av andra affärsplattformar. Vill ni flytta hela er projektportfolio till Medla så kan vi hjälpa er med det.",
+  "SectionMunicipalityFAQ.Text10":"Det går bra att ansluta projekt utanför Sverige, vi uppdaterar språkstödet för nya regioner vid behov.",
+
+
+
+
   "SectionProjectFunctions.titleLineOne": "Funktioner",
   "SectionProjectFunctions.chat":"Direkt­meddelanden",
   "SectionProjectFunctions.data":"Nyckeltal och analyser",
@@ -1028,6 +1068,16 @@
   "SectionProjectGoals.part1Text": "Stärkta relationer med nyckelintressenter & lokalsamhället",
   "SectionProjectGoals.part3Title": "Stärkt varumärke & social hållbarhets-positionering",
   "SectionProjectGoals.part3Text": "Ökad lokal sysselsättning i projektet",
+
+  "SectionMunicipalityGoals.titleLineOne": "Förväntade vinster",
+  "SectionMunicipalityGoals.part1Text": "Insikter och ny information om egna näringslivet",
+  "SectionMunicipalityGoals.part1Title": "Attraktivare kommun för investeringar",
+  "SectionMunicipalityGoals.part3Text": "Synligare och mer tillgängligt näringsliv",
+  "SectionMunicipalityGoals.part3Title": "Affärsmöjligheter för lokalt näringsliv på projekt",
+
+
+
+
   "SectionTimeline.titleLineOne": "Lösningar för alla projektfaser",
   "SectionTimeline.part1Title": "Planering",
   "SectionTimeline.part2Title": "Byggnation",
@@ -1036,15 +1086,13 @@
   "SectionTimeline.part2Text": "Förenkla affärsförmedling mellan byggentreprenad och lokala leverantörer.",
   "SectionTimeline.part3Text": "Bidra till långsiktig lokal utveckling och använd mätbara resultat i framtida projekt.",
 
-
-
-
-
-
-
-
-
-
+  "SectionTimelineMunicipality.titleLineOne": "Lösningar för alla projektfaser",
+  "SectionTimelineMunicipality.part1Title": "Planering",
+  "SectionTimelineMunicipality.part2Title": "Byggnation",
+  "SectionTimelineMunicipality.part3Title": "Drift",
+  "SectionTimelineMunicipality.part1Text": "Synliggör nytta och skapa lokal förankring för projektet.",
+  "SectionTimelineMunicipality.part2Text": "Förenkla affärsförmedling mellan byggentreprenad och lokala leverantörer.",
+  "SectionTimelineMunicipality.part3Text": "Bidra till långsiktig lokal utveckling och använd mätbara resultat i framtida projekt.",
 
   "SectionWhatIsMedla.createListingLink": "PS. Du kan också bli Medla-värd med bara några klick!",
   "SectionWhatIsMedla.part1Text": "Företagsregister och jobbförmedling för anläggning, snöröjning, boenden, catering och mer.",
@@ -1069,6 +1117,31 @@
   "SectionWhatIsMedlaDescription.Text2": "Publicera projektets behov (lika enkelt som att skicka ett SMS) och få svar av relevanta leverantörer — vi gör det lika enkelt för er entreprenad.",
   "SectionWhatIsMedlaDescription.Text3": "Lokalt näringsliv, jobbmöjligheter och projektinformation på unik Medla domän.",
   "SectionWhatIsMedlaDescription.Text4": "Se antalet medlade affärer och mät projektets lokala inverkan.",
+
+  "SectionWhatIsMedlaMunicipality.titleLineOne": "Utvecklat med kommuner och branscher.",
+  "SectionWhatIsMedlaMunicipality.part1Title": "Marknadsplatsen för lokal affärsförmedling",
+  
+  
+  "SectionWhatIsMedlaDescriptionMunicipality.Title1": "Länk mellan näringsliv med projekt",
+  "SectionWhatIsMedlaDescriptionMunicipality.Title2": "Visa upp ert näringsliv",
+  "SectionWhatIsMedlaDescriptionMunicipality.Title3": "Dynamisk kommunsida",
+  "SectionWhatIsMedlaDescriptionMunicipality.Title4": "Statistik och insikter",
+
+
+  "SectionWhatIsMedlaDescriptionMunicipality.Text1": "Offerförfrågningar, notiser och meddelandefunktioner.",
+  "SectionWhatIsMedlaDescriptionMunicipality.Text2": "Lokala företag registrerar sig för att bli synliga och kontaktbara.",
+  "SectionWhatIsMedlaDescriptionMunicipality.Text3": "Ert näringsliv och projekt i er region samlat på er helt egna Medla domän.",
+  "SectionWhatIsMedlaDescriptionMunicipality.Text4": "Få information om antalet lokala affärer samt djupare insikt i ert egna näringsliv.",
+
+
+ 
+
+
+
+
+  
+
+
   "SectionQuote.part1Text": "Elektrifieringen erbjuder enorma möjligheter för en levande landsbygd, genom att lokala jobb skapas där behovet är som störst. Medla underlättar denna utveckling.",
   "SectionFoundersNote.part1Title": "En hälsning från Medlas initiativtagare",
   "SectionWhyMedla.createListingLink": "PS. Du kan också bli Medla-värd med bara några klick!",

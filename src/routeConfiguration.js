@@ -26,6 +26,7 @@ const ProjectPage = loadable(() => import(/* webpackChunkName: "ProjectPage" */ 
 const ManageListingsPage = loadable(() => import(/* webpackChunkName: "ManageListingsPage" */ './containers/ManageListingsPage/ManageListingsPage'));
 const NewUserPage = loadable(() => import( /* webpackChunkName: "NewUserPage" */ './containers/NewUserPage/NewUserPage'));
 const NewProjectUserPage = loadable(() => import( /* webpackChunkName: "NewProjectUserPage" */ './containers/NewProjectUserPage/NewProjectUserPage'));
+const ConnectMunicipalityPage = loadable(() => import( /* webpackChunkName: "ConnectMunicipalityPage" */ './containers/ConnectMunicipalityPage/ConnectMunicipalityPage'));
 
 const PasswordChangePage = loadable(() => import(/* webpackChunkName: "PasswordChangePage" */ './containers/PasswordChangePage/PasswordChangePage'));
 const PasswordRecoveryPage = loadable(() => import(/* webpackChunkName: "PasswordRecoveryPage" */ './containers/PasswordRecoveryPage/PasswordRecoveryPage'));
@@ -253,6 +254,13 @@ const routeConfiguration = () => {
       name: 'NewProjectUserPage',
       component: NewProjectUserPage,
     },
+
+    {
+      path: '/anslut-plats',
+      name: 'ConnectMunicipalityPage',
+      component: ConnectMunicipalityPage,
+    },
+
 
     // Note: authenticating with IdP (e.g. Facebook) expects that /login path exists
     // so that in the error case users can be redirected back to the LoginPage

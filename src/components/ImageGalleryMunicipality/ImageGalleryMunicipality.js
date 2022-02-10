@@ -157,12 +157,12 @@ class ImageGalleryMunicipality extends Component {
         <div className={css.imageContainer}>
         <img id="firstImage" className={css.image} src={firstImage} alt="search"/>
         <h3 id="firstHeading" className={css.imageHeading}>Söksida</h3>
-        <span id="firstText">Hitta lokala företag med en smart sökmotor.</span>
+        <span id="firstText">Låt projektörer nå ert näringsliv med smarta sökfunktioner.</span>
         </div>
         <div className={css.imageContainer}>
         <img id="secondImage" className={css.image} src={secondImage} alt="project"/>
-        <h3 id="secondHeading" className={css.imageHeading}>Projektsida</h3>
-        <span id="secondText">En dynamisk projektsida gör underlättar den lokala affärsförmedlingen.</span>
+        <h3 id="secondHeading" className={css.imageHeading}>Kommunsida</h3>
+        <span id="secondText">Dynamisk kommunsida för näringslivets synlighet och lokala affärer.</span>
         </div>
         <div className={css.imageContainer}>
         <img id="thirdImage" className={css.image} src={thirdImage} alt="chat"/>

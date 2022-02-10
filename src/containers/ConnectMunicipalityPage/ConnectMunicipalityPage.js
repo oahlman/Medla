@@ -70,7 +70,7 @@ const ConnectMunicipalityPage = () => {
               <p className={css.bannerContent}>
                 <FormattedMessage id="ConnectMunicipalityPage.newservice" ></FormattedMessage>
               </p>
-              <ExternalLink href="https://www.peerdigital.se/anslut-projekt" className={css.heroButton}>
+              <ExternalLink href="mailto:info@medla.app?subject=F%C3%B6rfr%C3%A5gan%3A%20Anslut%20kommun%20till%20Medla" className={css.heroButton}>
                 <FormattedMessage id="ConnectMunicipalityPage.connectProject" />
               </ExternalLink>
             </div>

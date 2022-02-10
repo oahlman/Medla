@@ -13,31 +13,11 @@ const SectionTimelineMunicipality = props => {
 
       <div className={css.container}>
 
-
-      <div className={css.statusBar}>
-      <div className={css.statusCirclePlanning}>
-      <div className={css.statusArrowPlanning}></div>
-      </div>
-      <div className={css.statusLine1}></div>
-      <div className={css.statusCircleBuilding}>
-      <div className={css.statusArrowBuilding}></div>
-
-      </div>
-      <div className={css.statusLine2}></div>
-      <div className={css.statusCircleRunning}>
-      <div className={css.statusArrowRunning}></div>
-
-      </div>
-      <div className={css.statusCard}></div>
-      </div>
-
-
-
       <div className={css.steps}>
 
         <div className={css.step}>
-          <div className={css.opacityCurtainPlanning}>
-          <h3 className={css.stepTitlePlanning}>
+          <div className={css.opacityCurtainRunning}>
+          <h3 className={css.stepTitleRunning}>
             <FormattedMessage id="SectionTimelineMunicipality.part1Title" />
           </h3>
           </div>
@@ -49,8 +29,8 @@ const SectionTimelineMunicipality = props => {
 
 
         <div className={css.step}>
-        <div className={css.opacityCurtainBulding}>
-          <h3 className={css.stepTitleBuilding}>
+        <div className={css.opacityCurtainRunning}>
+          <h3 className={css.stepTitleRunning}>
             <FormattedMessage id="SectionTimelineMunicipality.part2Title" />
           </h3>
           </div>

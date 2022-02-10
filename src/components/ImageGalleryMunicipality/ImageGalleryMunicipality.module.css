@@ -1,0 +1,163 @@
+@import '../../styles/propertySets.css';
+
+.title {
+  @apply --marketplaceH1FontStyles;
+  margin-top: 0;
+  color: var(--marketplaceColorDark);
+
+}
+
+.galleryContainer {
+
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+  scroll-behavior: smooth;
+  max-width: 1128px;
+
+  @media (--viewportMedium) {
+
+  }
+
+  @media (--viewportLarge) {
+
+  }
+}
+
+.imageContainer {
+  margin-right: 20px;
+
+  @media (--viewportLarge) {
+
+  }
+}
+
+.activeContainer {
+  composes: imageContainer;
+  opacity: 1;
+}
+
+.inactiveContainer {
+  composes: imageContainer;
+  opacity: 0.5;
+}
+
+.imageContainer:first-of-type {
+  margin-left: 20px;
+
+  @media (--viewportLarge) {
+  }
+}
+
+
+
+.image {
+  display: block;
+  width: 80vw;
+  margin-top: 20px;
+  object-fit: cover;
+  overflow: hidden;
+
+  @media (--viewportSmall) {
+  }
+
+  @media (--viewportMedium) {
+    width: 640px;
+  }
+
+  @media (--viewportLarge) {
+  }
+}
+
+.imageTitle {
+  margin-bottom: 0px;
+}
+
+.stepTitle {
+  color: var(--marketplaceColorDark);
+
+  margin-top: 18px;
+  margin-bottom: 18px;
+
+  @media (--viewportMedium) {
+    margin-top: 21px;
+    margin-bottom: 18px;
+  }
+}
+
+.createListingLink {
+
+  margin-top: 18px;
+
+
+  @media (--viewportMedium) {
+    margin-top: 24px;
+  }
+}
+
+.linkStyle{
+
+}
+
+.buttonContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  @media (--viewportMedium) {
+  }
+}
+
+.navigation {
+  position: relative;
+  width: 100%;
+  max-width: 1128px;
+  z-index: 1;
+
+}
+
+.navButton {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: var(--matterColorBright);
+  border: none;
+  box-shadow: var(--boxShadowFilterButton);
+  margin-top: 30vw;
+
+  @media (--viewportMedium) {
+    margin-top: 250px;
+  }
+  &:hover {
+    background-color: var(--matterColorLight);
+  }
+  &:active {
+    background-color: var(--matterColorNegative);
+  }
+}
+
+.scrollRight {
+  composes: navButton;
+  left: 20px;
+
+  @media (--viewportLarge) {
+
+  }
+}
+
+.scrollLeft {
+  composes: navButton;
+  right: 20px;
+  @media (--viewportLarge) {
+  }
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+}
+
+.imageHeading {
+  margin-bottom: 0px;
+}

@@ -28,6 +28,7 @@ import {
   SectionWhatIsMedlaDescriptionMunicipality,
   SectionMunicipalityGoals,
   SectionFoundersNoteMunicipality,
+  ImageGalleryMunicipality,
 } from '../../components';
 
 import StaticPage from '../StaticPage/StaticPage';
@@ -86,7 +87,7 @@ const ConnectMunicipalityPage = () => {
           <div className={css.sectionProcessMaybeColor}>
           <SectionWhatIsMedlaMunicipality className={css.whatIsMedla} />
             <div> 
-            <ImageGallery  className={css.gallery}/>
+            <ImageGalleryMunicipality  className={css.gallery}/>
             <SectionWhatIsMedlaDescriptionMunicipality className={css.whatIsMedlaDescription}  /> 
             <SectionProjectFunctions  className={css.functions} />
             </div>

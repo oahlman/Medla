@@ -143,7 +143,7 @@
   "ConfirmSignupForm.signUp": "Fortsätt med {idp}",
   "ConfirmSignupForm.termsAndConditionsAcceptText": "Genom att registrera dig accepterar du {termsLink}",
   "ConfirmSignupForm.termsAndConditionsLinkText": "villkor",
-  "ConnectMunicipalityPage.headline": "Synligare näringsliv och affärsnytta.",
+  "ConnectMunicipalityPage.headline": "Synligare näringsliv och ökad affärsnytta.",
   "ConnectMunicipalityPage.newservice": "Medlas kommunsidor och företagsprofiler länkar lokalt näringsliv med projektetableringar i er region.",
   "ConnectMunicipalityPage.connectProject": "Anslut kommun",
 
@@ -1128,10 +1128,10 @@
   "SectionWhatIsMedlaDescriptionMunicipality.Title4": "Statistik och insikter",
 
 
-  "SectionWhatIsMedlaDescriptionMunicipality.Text1": "Offerförfrågningar, notiser och meddelandefunktioner.",
+  "SectionWhatIsMedlaDescriptionMunicipality.Text1": "Företagsprofiler, offerförfrågningar, notiser och meddelandefunktioner.",
   "SectionWhatIsMedlaDescriptionMunicipality.Text2": "Lokala företag registrerar sig för att bli synliga och kontaktbara.",
   "SectionWhatIsMedlaDescriptionMunicipality.Text3": "Ert näringsliv och projekt i er region samlat på er helt egna Medla domän.",
-  "SectionWhatIsMedlaDescriptionMunicipality.Text4": "Få information om antalet lokala affärer samt djupare insikt i ert egna näringsliv.",
+  "SectionWhatIsMedlaDescriptionMunicipality.Text4": "Information om antalet lokala affärer samt djupare insikt i ert egna näringsliv.",
 
 
  

@@ -92,13 +92,6 @@ const EditListingFeaturesFormComponent = props => (
             value="bjornberget"
             showAsRequired={showAsRequired}
           />
-          <FieldRadioButton
-            id='blaklidenfabodberget'
-            name='amenities'
-            label="Blakliden"
-            value="blaklidenfabodberget"
-            showAsRequired={showAsRequired}
-          />
            <FieldRadioButton
             id='bleka'
             name='amenities'
@@ -107,24 +100,10 @@ const EditListingFeaturesFormComponent = props => (
             showAsRequired={showAsRequired}
           />
           <FieldRadioButton
-            id='gronhult'
-            name='amenities'
-            label="Grönhult"
-            value="gronhult"
-            showAsRequired={showAsRequired}
-          />
-          <FieldRadioButton
             id='hocksjon'
             name='amenities'
             label="Hocksjön"
             value="hocksjon"
-            showAsRequired={showAsRequired}
-          />
-          <FieldRadioButton
-            id='klevberget'
-            name='amenities'
-            label="Klevberget"
-            value="klevberget"
             showAsRequired={showAsRequired}
           />
           <FieldRadioButton

@@ -65,16 +65,8 @@ export const filters = [
           label: 'Björnberget',
         },
         {
-          key: 'blaklidenfabodberget',
-          label: 'Blakliden',
-        },
-        {
           key: 'bleka',
           label: 'Bleka',
-        },
-        {
-          key: 'gronhult',
-          label: 'Grönhult',
         },
         {
           key: 'hocksjon',
@@ -83,10 +75,6 @@ export const filters = [
         {
           key: 'kolvallen',
           label: 'Kölvallen',
-        },
-        {
-          key: 'klevberget',
-          label: 'Klevberget',
         },
         {
           key: 'kabeko',

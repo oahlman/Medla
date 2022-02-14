@@ -39,7 +39,6 @@ const defaultDirectives = {
     self, 
     '*.stripe.com',
     'www.facebook.com',
-    'developer.mozilla.org',
   ],
   imgSrc: [
     self,
@@ -112,8 +111,13 @@ module.exports = (reportUri, enforceSsl, reportOnly) => {
     // imgSrc: exampleImgSrc,
     frameAncestors: [
       self, 
-      'developer.mozilla.org',
-      '*.w3schools.com/',
+      unsafeInline,
+      unsafeEval,
+      data,
+      blob,
+      'https://*.*.com',
+      'https://*.*.org',
+      'https://*.*.se',
     ],
   };
 

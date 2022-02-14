@@ -144,7 +144,7 @@
   "ConfirmSignupForm.termsAndConditionsAcceptText": "Genom att registrera dig accepterar du {termsLink}",
   "ConfirmSignupForm.termsAndConditionsLinkText": "villkor",
   "ConnectMunicipalityPage.headline": "Synligare näringsliv och ökad affärsnytta.",
-  "ConnectMunicipalityPage.newservice": "Medlas kommunsidor och företagsprofiler länkar lokalt näringsliv med projektetableringar i er region.",
+  "ConnectMunicipalityPage.newservice": "Medlas kommunsidor, projektsidor och företagsprofiler länkar lokalt näringsliv med projektetableringar i er region.",
   "ConnectMunicipalityPage.connectProject": "Anslut kommun",
 
 
@@ -1037,7 +1037,7 @@
 
 
   "SectionMunicipalityFAQ.Text1":"Kommuner som vill visa och göra sitt näringsliv mer tillgängligt, projektörer som vill lyfta vinsterna och förankra sina etableringar, byggentreprenad som behöver varor och tjänster i projekt och lokala verksamheter som vill leverera till projekten.",
-  "SectionMunicipalityFAQ.Text2":"Hållbara energi- och industriprojekt i alla faser.",
+  "SectionMunicipalityFAQ.Text2":"Hållbara energi- och industriprojekt i alla faser (vindparker, solparker, vätgasanläggningar, batterifabriker, projekt för grönt stål och många fler)",
   "SectionMunicipalityFAQ.Text3":"Att komma igång med Medla är enkelt. Efter ni kontaktat oss bekräftar vi era uppgifter och installerar kommunsidan på 1-2 veckor.",
   "SectionMunicipalityFAQ.Text4":"Projekt ansluts löpande, när ett projekt ansluter i er region så kommer deras projektsida synas via er kommunsida.",
   "SectionMunicipalityFAQ.Text5":"Priser beror på storlek av kommun. Medla har ingen bindningstid och ni behåller företagsregistret även om ni säger upp.",
@@ -1091,7 +1091,7 @@
   "SectionTimelineMunicipality.part2Title": "Lokala affärsmöjligheter",
   "SectionTimelineMunicipality.part3Title": "Insikter om näringslivet",
   "SectionTimelineMunicipality.part1Text": "Visa investerare att de kan känna sig trygg med kompetensförsörningen i er kommun.",
-  "SectionTimelineMunicipality.part2Text": "En brygga mellan byggentreprenad och lokala leverantörer.",
+  "SectionTimelineMunicipality.part2Text": "En brygga mellan projektörer och lokala leverantörer.",
   "SectionTimelineMunicipality.part3Text": "Insyn i ert näringsliv med Medla-Statistics.",
 
   "SectionWhatIsMedla.createListingLink": "PS. Du kan också bli Medla-värd med bara några klick!",

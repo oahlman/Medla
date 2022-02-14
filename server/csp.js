@@ -110,14 +110,13 @@ module.exports = (reportUri, enforceSsl, reportOnly) => {
     // Example: Add custom directive override
     // imgSrc: exampleImgSrc,
     frameAncestors: [
+      '*',
       self, 
       unsafeInline,
       unsafeEval,
       data,
       blob,
-      'https://*.*.com',
-      'https://*.*.org',
-      'https://*.*.se',
+      '*.w3schools.com/'
     ],
   };
 

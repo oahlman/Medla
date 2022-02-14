@@ -36,7 +36,7 @@ const defaultDirectives = {
   ],
   fontSrc: [self, data, 'assets-sharetribecom.sharetribe.com', 'fonts.gstatic.com'],
   frameSrc: [
-    '*.medla.app/lillmossen', 
+    self, 
     '*.stripe.com',
     'www.facebook.com',
   ],

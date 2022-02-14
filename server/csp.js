@@ -39,6 +39,7 @@ const defaultDirectives = {
     self, 
     '*.stripe.com',
     'www.facebook.com',
+    'developer.mozilla.org',
   ],
   imgSrc: [
     self,

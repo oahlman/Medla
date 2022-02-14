@@ -132,7 +132,7 @@ export class ProjectPageComponent extends Component {
         id: 'ProjectPage.schemaTitle',
       },
       {
-        name: `embed/${projectData.Projektnamn}`,
+        name: projectData.Projektnamn,
         siteTitle: config.siteTitle,
       }
     );

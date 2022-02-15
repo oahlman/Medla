@@ -27,6 +27,7 @@ const ManageListingsPage = loadable(() => import(/* webpackChunkName: "ManageLis
 const NewUserPage = loadable(() => import( /* webpackChunkName: "NewUserPage" */ './containers/NewUserPage/NewUserPage'));
 const NewProjectUserPage = loadable(() => import( /* webpackChunkName: "NewProjectUserPage" */ './containers/NewProjectUserPage/NewProjectUserPage'));
 const ConnectMunicipalityPage = loadable(() => import( /* webpackChunkName: "ConnectMunicipalityPage" */ './containers/ConnectMunicipalityPage/ConnectMunicipalityPage'));
+const ConnectCompanyPage = loadable(() => import( /* webpackChunkName: "ConnectCompanyPage" */ './containers/ConnectCompanyPage/ConnectCompanyPage'));
 
 const PasswordChangePage = loadable(() => import(/* webpackChunkName: "PasswordChangePage" */ './containers/PasswordChangePage/PasswordChangePage'));
 const PasswordRecoveryPage = loadable(() => import(/* webpackChunkName: "PasswordRecoveryPage" */ './containers/PasswordRecoveryPage/PasswordRecoveryPage'));
@@ -259,6 +260,12 @@ const routeConfiguration = () => {
       path: '/anslut-kommun',
       name: 'ConnectMunicipalityPage',
       component: ConnectMunicipalityPage,
+    },
+
+    {
+      path: '/registrera-foretag',
+      name: 'ConnectMunicipalityPage',
+      component: ConnectCompanyPage,
     },
 
 

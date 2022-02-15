@@ -19,19 +19,22 @@ import {
 
 import StaticPage from '../StaticPage/StaticPage';
 import TopbarContainer from '../TopbarContainer/TopbarContainer';
+import imagephone from '../../assets/Medla-phones.png';
 import imagemacbook from '../../assets/Medla-macbook.png';
+import imagesvenskvind from '../../assets/Svensk-vind-logo.png';
+import imageSvenskVindProfile from '../../assets/Svensk-vind-profile.jpg';
+import offshoreWind from '../../assets/offshore-wind.jpg'
 
 
 
+import css from './ConnectCompanyPage.module.css';
 
-import css from './ConnectMunicipalityPage.module.css';
 
-
-const ConnectMunicipalityPage = () => {
+const ConnectCompanyPage = () => {
   return (
     <StaticPage
       className={css.root}
-      title="Anslut kommun"
+      title="Registrera Företag"
       schema={{
         '@context': 'http://schema.org',
         '@type': 'AboutPage',
@@ -48,13 +51,13 @@ const ConnectMunicipalityPage = () => {
           <div className={css.row}>
             <div className={css.text}>
               <h1 className={css.bannerContent}>
-                <FormattedMessage id="ConnectMunicipalityPage.headline" ></FormattedMessage>
+                <FormattedMessage id="ConnectCompanyPage.headline" ></FormattedMessage>
               </h1>
               <p className={css.bannerContent}>
-                <FormattedMessage id="ConnectMunicipalityPage.newservice" ></FormattedMessage>
+                <FormattedMessage id="ConnectCompanyPage.newservice" ></FormattedMessage>
               </p>
               <ExternalLink href="mailto:info@medla.app?subject=F%C3%B6rfr%C3%A5gan%3A%20Anslut%20kommun%20till%20Medla" className={css.heroButton}>
-                <FormattedMessage id="ConnectMunicipalityPage.connectProject" />
+                <FormattedMessage id="ConnectCompanyPage.connectProject" />
               </ExternalLink>
             </div>
             <div className={css.imageWrapper}>
@@ -100,4 +103,4 @@ const ConnectMunicipalityPage = () => {
   );
 };
 
-export default ConnectMunicipalityPage;
+export default ConnectCompanyPage;

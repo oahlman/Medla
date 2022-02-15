@@ -1,0 +1,819 @@
+@import '../../styles/propertySets.css';
+
+/* Animation for the hero elements */
+@keyframes animationTitle {
+  0% {
+    visibility: hidden;
+    opacity: 0;
+    top: -20px;
+  }
+  100% {
+    visibility: visible;
+    opacity: 1;
+    top: 0;
+  }
+}
+
+/* Shared animation rules */
+.animation {
+  animation-name: animationTitle;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-out;
+  -webkit-animation-fill-mode: forwards;
+
+  visibility: hidden;
+  opacity: 1;
+  position: relative;
+}
+.root {
+  padding: 0px;
+
+  /* Use CSS variable defined in src/styles/marketplaceDefaults.css */
+}
+.root {
+  padding: 0px;
+
+
+  /* Use CSS variable defined in src/styles/marketplaceDefaults.css */
+}
+
+
+
+.heroContent {
+display: flex;
+ background-color: var(--marketplaceColorDark);
+ border: solid var(--matterColorBright);
+ border-width: 36px 36px 20px 36px;
+
+@media (--viewportMedium) {
+  border-width: 36px 36px 0px 36px;
+
+
+}
+}
+
+.sectionContent {
+  
+  margin: 0px 24px 51px 24px;
+
+  @media (--viewportMedium) {
+    max-width: 100%;
+    margin: 0px 24px 61px 24px;
+
+  }
+
+  @media (min-width: 1128px) {
+
+    max-width: 1128px;
+    padding: 0 36px 0 36px;
+    margin: 24px auto 0px auto;
+
+
+  }
+
+  @media (--viewportXLarge) {
+    max-width: 1056px;
+    padding: 0;
+
+  }
+}
+
+
+.overflow{
+  overflow: hidden;
+}
+
+.sectionProcessMaybe {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  @media (--viewportMedium) {
+    margin-top: 100px;
+    margin-bottom: 100px;
+  }
+
+  @media (--viewportLarge) {
+    margin-top: 100px;
+    margin-bottom: 100px;
+  }
+
+  @media (--viewportXLarge) {
+    margin-top: 100px;
+    margin-bottom: 100px;
+  }
+}
+
+
+
+
+.sectionProcessMaybeColor {
+  background-color: var(--marketplaceColorLight);
+  margin-top: 50px;
+  margin-bottom: 50px;
+  margin-left: -9999px;
+  margin-right: -9999px;
+  padding-left: 9999px;
+  padding-right: 9999px;
+  padding-bottom: 50px;
+  padding-top: 50px;
+  @media (--viewportMedium) {
+    margin-top: 100px;
+    margin-bottom: 100px;
+  }
+
+  @media (--viewportLarge) {
+    margin-top: 0px;
+    margin-bottom: 100px;
+  }
+
+  @media (--viewportXLarge) {
+    margin-top: 0px;
+    margin-bottom: 100px;
+  }
+}
+
+.sectionProcessMaybeColorGrey{
+  background-color: var(--matterColorMediumLight);
+  margin-left: -9999px;
+  margin-right: -9999px;
+  padding-left: 9999px;
+  padding-right: 9999px;
+  padding-bottom: 50px;
+  padding-top: 30px;
+  margin-top: 50px;
+  @media (--viewportMedium) {
+    margin-top: 100px;
+    padding-bottom: 100px;
+    padding-top: 75px;
+  }
+
+  @media (--viewportLarge) {
+    margin-top: 100px;
+  }
+
+  @media (--viewportXLarge) {
+    margin-top: 100px;
+  }
+
+}
+
+.lastSectionProcessMaybeColor{
+color: var(--marketplaceColorLight);
+background-color: var(--marketplaceColorDark);
+margin-left: -9999px;
+margin-right: -9999px;
+padding-left: 9999px;
+padding-right: 9999px;
+padding-bottom: 50px;
+padding-top: 50px;
+
+
+
+
+
+
+@media (--viewportMedium) {
+  height: 480px;
+  padding-bottom: 90px;
+padding-top: 90px;
+
+}
+
+@media (--viewportLarge) {
+
+
+}
+
+
+
+}
+
+
+
+
+.subSection {
+
+  @media (--viewportMedium) {
+
+  }
+
+  @media (--viewportLarge) {
+    margin-bottom: 50px;
+
+
+  }
+
+  @media (--viewportXLarge) {
+    margin-bottom: 50px;
+
+
+  }
+}
+
+
+.sectionText{
+  flex-wrap: column;
+  padding:30px;
+  color:whitesmoke;
+  overflow:hidden;
+  align-items: center;
+  margin: 0px 24px 0px 24px;
+  max-width: 100%;
+
+
+  @media (min-width: 1128px) {
+    display:flex;
+    flex-wrap: row;
+    min-height: 540px;
+    max-height: 600px;
+    width: 100%;
+    max-width: 1128px;
+    padding: 0 36px 0 36px;
+    margin: 24px auto 0px auto;
+  
+  
+  }
+  
+
+  @media (--viewportMedium) {
+    display:flex;
+    flex-wrap: row;
+    min-height: 540px;
+    width: 100%;
+    margin-bottom:30px;
+
+
+  }
+}
+
+@media (--viewportXLarge) {
+  max-width: 1056px;
+  padding: 0;
+
+}
+
+.bannerLeft {
+  margin:0px;
+  @media (--viewportMedium) {
+    min-width: 55%;
+    max-width: 55%;
+    margin-top: 0px;
+  }
+}
+
+.bannerContent{
+
+  display: flex;
+  justify-content: left;
+
+  @media (--viewportMedium) {
+
+  margin-left:20px;
+
+
+
+  }
+}
+
+.imagePhoneContainer {
+  flex-direction: row;
+  justify-content: center;
+  width:400px;
+
+
+  @media (--viewportMedium) {
+    display:none;
+
+    }
+  }
+
+
+.imagePhone {
+  position: relative;
+  object-fit: cover;
+
+  object-position: 0px 50px; /* try 20px 10px */
+  width:100%;
+
+  @media (--viewportMedium) {
+    display:none;
+
+    }
+  }
+
+
+  .imageMacbookContainer {
+    display: none;
+
+
+    @media (--viewportMedium) {
+      display: flex;
+      position: absolute;
+      overflow:hidden;
+      right: 36px;
+      max-height:90%;
+    
+      width:45%;
+      }
+    
+
+    @media (--viewportLarge) {
+      display: flex;
+      position: absolute;
+      overflow:hidden;
+      right: 60px;
+      max-height:90%;
+    
+      width:37%;
+      }
+    
+
+    @media (--viewportXLarge) {
+      right: 200px;
+      width:32%;
+      }
+    }
+    
+
+  .imageMacbook {
+display: none;
+    @media (--viewportMedium) {
+    
+      overflow:hidden;
+
+    display: flex;
+    position: relative;
+    width: 100%;
+    align-self: center;
+    
+   
+
+      
+
+
+
+
+      }
+  }
+
+
+
+  .heroButton {
+    @apply --marketplaceButtonStylesSecondary;
+    border-width: 2px;
+    transition-duration: 0.25s;
+    animation-delay: 0.8s;
+    margin-bottom: 10px;
+    margin-top: 30px;
+    background-color: transparent;
+    color:whitesmoke;
+
+    @media (--viewportMedium) {
+      width: 260px;
+      margin-left: 20px;
+    }
+  }
+
+  .heroButton:hover{
+  color:black;
+  border-color: whitesmoke;
+  background-color: whitesmoke;
+  text-decoration: none;
+
+  }
+  .heroButton:focus{
+    border-width: 2px;
+    transition-duration: 0.25s;
+    animation-delay: 0.8s;
+    margin-bottom: 10px;
+    margin-top: 30px;
+    border-color: whitesmoke !important;
+    background-color: transparent !important;
+    color:whitesmoke;
+
+
+    @media (--viewportMedium) {
+      width: 260px;
+      margin-left: 20px;
+    }
+  }
+
+  .heroButton:focus:hover{
+  color:black;
+  border-color: whitesmoke !important;
+  background-color: whitesmoke !important;
+  text-decoration: none;
+  }
+
+
+
+  .deal{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: var(--marketplaceColor);
+    padding-bottom: 15px;
+    padding-left:15px;
+    padding-right:15px;
+    border-style: none;
+    border-radius: 20px;
+    color: whitesmoke;
+
+    @media (--viewportMedium) {
+    flex-direction: row;
+    padding: 0px;
+    padding-bottom: 15px;
+    justify-content: space-evenly;
+    align-items: center;
+
+
+
+    }
+
+  }
+
+  .textWrapper{
+    max-width:95%;
+    text-align: center;
+
+    @media (--viewportMedium) {
+      max-width:70%;
+      text-align: left;
+      padding-left:20px;
+      padding-right:10%;
+
+      }
+  }
+
+  .textDeal{
+    max-width:100%;
+    text-align: center;
+
+    @media (--viewportMedium) {
+     text-align: left;
+
+
+      }
+  }
+
+  .headingTextDeal{
+    margin-bottom: -5px;
+
+    @media (--viewportMedium) {
+      margin-bottom: -15px;
+  }
+}
+
+.quoteContainer{
+margin-left:0px;
+margin-top:15%;
+display: flex;
+flex-direction: column;
+justify-content: flex-end;
+align-items: center;
+
+
+  @media (--viewportMedium) {
+    margin-top: 15%;
+    margin-left:20px;
+    flex-direction: row;
+}
+
+@media (--viewportLarge) {
+  margin-top: 80px;
+  margin-left:20px;
+
+  }
+
+}
+
+.quoteFont {
+  @apply --marketplaceH5FontStyles
+}
+
+.nameFont{
+  @apply --marketplaceTinyFontStyles;
+}
+
+.nameContainer{
+  margin-left:0px;
+  margin-top:0px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px;
+  
+  @media (--viewportMedium) {
+    margin-top: 0px;
+    margin-left:20px;
+    flex-direction: row;
+    width: 600px;
+}
+
+@media (--viewportLarge) {
+  margin-top: 0px;
+  margin-left:20px;
+  width: 500px;
+
+  }
+
+}
+
+  .imageSvenskVindDesktop{
+    display:none;
+
+    @media (--viewportMedium) {
+      display:flex;
+      align-self: top;
+      width: 85px;
+      height: 41px;
+      margin-left:0px;
+      margin-left:20px;
+  }
+}
+.imageSvenskVindMobile{
+  align-self: top;
+  width:85px;
+  margin-left:0px;
+  margin-left:20px;
+
+  @media (--viewportMedium) {
+    display:none;
+
+}
+}
+
+  .imageQuoteProfile{
+   width:85px;
+   margin-left:0px;
+   border-style: solid;
+   border-width: 3px;
+   border-color: whitesmoke;
+   border-radius: 99px;
+   width:45px;
+   height: 45px;
+
+  @media (--viewportMedium) {
+    margin-left:0px;
+}
+}
+
+
+.linkStyle{
+  color:whitesmoke;
+  text-decoration: underline;
+  font-weight: bolder;
+}
+
+.linkStyle:hover{
+  text-decoration: none;
+}
+
+.sectionGallery {
+  display: flex;
+  flex-direction: column;
+
+  @media (--viewportMedium) {
+    flex-direction: column;
+  }
+}
+
+.section {
+  overflow: auto;
+  background-color: var(--marketplaceColorLight);
+
+}
+
+.functions {
+
+
+  @media (--viewportMedium) {
+    margin: 10px;
+    margin-top:20px;
+    display: block;
+
+}
+}
+
+.gallery {
+  margin-top:30px;
+  @media (--viewportMedium) {
+    margin-top:0px;
+  }
+}
+
+
+.whatIsMedlaDescription{
+  position: relative;
+  margin-bottom: 0px;
+
+  
+  
+  @media (--viewportMedium) {
+  
+  }
+  }
+
+
+.whatIsMedlaDescription{
+position: relative;
+
+
+
+@media (--viewportMedium) {
+  margin-top: 0px;
+
+}
+}
+
+.contactContainer{
+display: flex;
+gap: 30px;
+
+
+}
+
+.contactTextContainer{
+width:75%;
+justify-content: left;
+
+ 
+
+  
+  }
+
+.imageContainer {
+  display: flex;
+  position: static;
+  width: 100%;
+  margin-right:-999999px;
+  background-image: url("offshore-wind.jpg");
+  background-position: bottom; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+  
+   
+}
+
+.imageContact {
+
+
+
+
+ 
+  
+}
+
+.hero {
+width: 100%;
+background-color: var(--marketplaceColorDark);
+overflow: hidden;
+padding-bottom: 20px;
+
+@media (--viewportMedium) {
+  border: solid var(--matterColorBright);
+  border-width: 36px 36px 20px 36px;
+  padding-bottom: 80px;
+}
+
+}
+
+.row {
+  display: flex;
+  flex-direction: column-reverse;
+  width: 100%;
+  @media (--viewportMedium) {
+    flex-direction: row;
+    width: 100%;
+  }
+
+  @media (--viewportLarge) {
+    max-width: 1128px;
+    margin: auto auto;
+
+
+  }
+
+  @media (--viewportXLarge) {
+    max-width: 1056px;
+    padding: 0;
+
+  }
+}
+
+.text {
+  color: white;
+  margin: 20px;
+  @media (--viewportMedium) {
+    align-self: flex-end;
+  }
+}
+
+.imageWrapper {
+    margin: 36px 20px 0 20px;
+    padding: 20px 36px 0 36px;
+  @media (--viewportMedium) {
+    margin-right: 0px;
+    margin-top: 90px;
+  }
+}
+
+.image {
+    width: 100%;
+  @media (--viewportMedium) {
+    margin-right: -50%;
+    width: 150%;
+    }
+  @media (--viewportLarge) {
+    margin-right: -30%;
+    width: 130%;
+    }
+}
+
+.container {
+    margin-left: 10px;
+    margin-right: 10px;
+  @media (--viewportMedium) {
+    margin-left: 40px;
+    margin-right: 40px;
+    border-width: 0px 36px 0px 36px;
+  }
+}
+
+.quote {
+  color: white;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  @media (--viewportMedium) {
+    flex-direction: column;
+  }
+}
+
+.quoteBrand {
+  margin-left: 20px;
+  margin-right: 20px;
+  display: flex;
+  flex-direction: column;
+  align-self: flex-start; 
+  @media (--viewportMedium) {
+    flex-direction: row;
+    align-self: flex-start; 
+  }
+}
+
+.quoteLogo {
+  margin: 10px;
+  object-fit: contain;
+  height: 50px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.quoteText {
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 10px;
+  @media (--viewportMedium) {
+
+  }
+}
+
+.quoteAuthor {
+  margin-left: 20px;
+  margin-right: 20px;
+  display: flex;
+  flex-direction: row;
+  align-self: flex-end; 
+  align-items: center;
+  @media (--viewportMedium) {
+
+  }
+}
+
+.quoteName {
+  text-align: right;
+  @media (--viewportMedium) {
+    flex-basis: calc(100% - 50px)
+  }
+}
+
+.quoteProfile {
+  margin: 10px;
+  object-fit: cover;
+  width: 50px;
+  height: 50px;
+  border: 2px solid white;
+  border-radius: 100%;
+
+}
+
+
+
+
+
+

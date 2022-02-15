@@ -1048,19 +1048,22 @@
   "SectionCompanyFAQ.Title1":"Vilka använder Medla?",
   "SectionCompanyFAQ.Title2":"Vilka projekt används Medla för?",
   "SectionCompanyFAQ.Title3":"Är det lätt att komma igång? ",
+  "SectionCompanyFAQ.Title4":"Hur kan Medla vara gratis för småföretagare?",
   "SectionCompanyFAQ.Title5":"Kostar Medla något?",
   "SectionCompanyFAQ.Title6":"Vilka typer av jobb finns på Medla?",
   "SectionCompanyFAQ.Title7":"Hur hittar jag till jobben?",
+  "SectionCompanyFAQ.Title8":"Kan jag följa flera projekt med samma konto?",
+
 
 
   "SectionCompanyFAQ.Text1":"Kommuner som vill visa och göra sitt näringsliv mer tillgängligt, projektörer som vill lyfta vinsterna och förankra sina etableringar, byggentreprenad som behöver varor och tjänster i projekt och lokala verksamheter som vill leverera till projekten.",
   "SectionCompanyFAQ.Text2":"Hållbara energi- och industriprojekt i alla faser (vindparker, solparker, vätgasanläggningar, batterifabriker, projekt för grönt stål och många fler)",
   "SectionCompanyFAQ.Text3":"Det är tar bara ett par minuter, registrera ditt företag och välj vilka projekt och branscher som är relevanta för dig.",
+  "SectionCompanyFAQ.Text4":"Medlas huvudsakliga affärsmodell ligger hos kommuner och projektägare.",
   "SectionCompanyFAQ.Text5":"Nej, för småföretagare kommer Medla alltid vara gratis.",
-  "SectionCompanyFAQ.Text6":"På läggs alla projektens behov upp, allt från anläggningsarbete på arbetsplatsen till indirekta behov så som catering, frisörtjänster och fritidsaktiviteter.",
+  "SectionCompanyFAQ.Text6":"Alla projektens behov kan läggas upp, allt från anläggningsarbete på arbetsplatsen till indirekta behov så som catering, frisörtjänster och fritidsaktiviteter.",
   "SectionCompanyFAQ.Text7":"Efter registrering kan du se samtliga jobb på Medla, jobb visas upp i vår sökfuntion som du enkelt hittar i toppen av hemsidan.",
-
-
+  "SectionCompanyFAQ.Text8":"Ja, på Medla registrerar man sig en gång och väljer därefter enkelt de projekt där man vill synas och få jobbnotiser.",
 
 
   "SectionProjectFunctions.titleLineOne": "Funktioner",
@@ -1124,8 +1127,8 @@
   "SectionTimelineCompany.part2Title": "2. Följ projekt & branscher",
   "SectionTimelineCompany.part3Title": "3. Invänta möjligheter",
   "SectionTimelineCompany.part1Text": "Registrera dig och fyll i dina kontaktuppgifter.",
-  "SectionTimelineCompany.part2Text": "Välj vilka branscher och projekt du vill bevaka och om du vill ha notiser på SMS eller e-post.",
-  "SectionTimelineCompany.part3Text": "Invänta affärsmöjligheter från projektörer och deras entreprenad.",
+  "SectionTimelineCompany.part2Text": "Välj vilka branscher och projekt du vill bevaka.",
+  "SectionTimelineCompany.part3Text": "Invänta affärsmöjligheter från projektörer och deras entreprenad via SMS eller e-post.",
 
   "SectionTimelineMunicipality.titleLineOne": "Lösningar för alla projektfaser",
   "SectionTimelineMunicipality.part1Title": "En attraktivare kommun",

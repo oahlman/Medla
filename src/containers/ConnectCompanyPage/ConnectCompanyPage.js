@@ -6,7 +6,7 @@ import {
   LayoutWrapperMain,
   LayoutWrapperFooter,
   Footer,
-  ExternalLink,
+  NamedLink,
   SectionConnectCompanyFunctions,
   SectionCompanyFAQ,
   SectionMunicipalityGoals,
@@ -46,9 +46,9 @@ const ConnectCompanyPage = () => {
               <p className={css.bannerContent}>
                 <FormattedMessage id="ConnectCompanyPage.newservice" ></FormattedMessage>
               </p>
-              <ExternalLink href="mailto:info@medla.app?subject=F%C3%B6rfr%C3%A5gan%3A%20Anslut%20kommun%20till%20Medla" className={css.heroButton}>
+              <NamedLink name='SignupPage' className={css.heroButton}>
                 <FormattedMessage id="ConnectCompanyPage.connectProject" />
-              </ExternalLink>
+              </NamedLink>
             </div>
             <div className={css.imageWrapper}>
               <img className={css.image} src={macbookjobs} alt="Medla in macbook" />

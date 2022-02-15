@@ -9,7 +9,7 @@ import {
   NamedLink,
   SectionConnectCompanyFunctions,
   SectionCompanyFAQ,
-  SectionMunicipalityGoals,
+  SectionCompanyGoals,
   SectionFoundersNoteMunicipality,
   SectionTimelineCompany,
 } from '../../components';
@@ -54,9 +54,7 @@ const ConnectCompanyPage = () => {
               <img className={css.image} src={macbookjobs} alt="Medla in macbook" />
             </div>
           </div>
-        </div>
-
-         
+        </div>         
           <container className={css.sectionContent} >
             <div className={css.sections}>
 
@@ -67,11 +65,10 @@ const ConnectCompanyPage = () => {
             </div>
 
             <SectionTimelineCompany className={css.sectionProcessMaybeColorGrey}></SectionTimelineCompany>
-          <div className={css.sectionProcessMaybeColor}>
-          </div>
-          <SectionCompanyFAQ />
+        
+          <SectionCompanyFAQ className={css.sectionProcessMaybe}/>
 
-          <SectionMunicipalityGoals className={css.sectionProcessMaybeColorGrey} />
+          <SectionCompanyGoals className={css.sectionProcessMaybeColorGrey} />
           <div className={css.contactContainer}>
             <div className={css.contactTextContainer}>
           </div>
@@ -79,7 +76,6 @@ const ConnectCompanyPage = () => {
           <div className={css.imageContact}></div>
           </div>
           </div>
-          <SectionFoundersNoteMunicipality className={css.sectionProcessMaybe}/>
           </div>
 
 

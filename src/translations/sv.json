@@ -151,6 +151,7 @@
   "ConnectCompanyPage.headline": "Söker du företagskunder?",
   "ConnectCompanyPage.newservice": "Med din företagssida, offertförfrågningar och smarta notiser skapar medla nya affärsmöjligheter, helt gratis.  ",
   "ConnectCompanyPage.connectProject": "Snabbregistring",
+  "ConnectCompanyPage.connectCompany": "Skapa konto",
   "ConnectCompanyPage.bransch": "Behov av 20 + branscher",
 
   "ContactDetailsForm.confirmChangesInfo": "Ange ditt nuvarande lösenord för att ändra din e-postadress.",
@@ -1058,10 +1059,10 @@
 
   "SectionCompanyFAQ.Text1":"Kommuner som vill visa och göra sitt näringsliv mer tillgängligt, projektörer som vill lyfta vinsterna och förankra sina etableringar, byggentreprenad som behöver varor och tjänster i projekt och lokala verksamheter som vill leverera till projekten.",
   "SectionCompanyFAQ.Text2":"Hållbara energi- och industriprojekt i alla faser (vindparker, solparker, vätgasanläggningar, batterifabriker, projekt för grönt stål och många fler)",
-  "SectionCompanyFAQ.Text3":"Det är tar bara ett par minuter, registrera ditt företag och välj vilka projekt och branscher som är relevanta för dig.",
+  "SectionCompanyFAQ.Text3":"Det tar bara ett par minuter, registrera ditt företag och välj vilka projekt och branscher som är relevanta för dig.",
   "SectionCompanyFAQ.Text4":"Medlas huvudsakliga affärsmodell ligger hos kommuner och projektägare.",
-  "SectionCompanyFAQ.Text5":"Nej, för småföretagare kommer Medla alltid vara gratis.",
-  "SectionCompanyFAQ.Text6":"Alla projektens behov kan läggas upp, allt från anläggningsarbete på arbetsplatsen till indirekta behov så som catering, frisörtjänster och fritidsaktiviteter.",
+  "SectionCompanyFAQ.Text5":"För småföretagare kommer Medla alltid vara gratis.",
+  "SectionCompanyFAQ.Text6":"Alla projektbehov kan läggas upp, allt från anläggningsarbete på arbetsplatsen till indirekta behov så som catering, frisörtjänster och fritidsaktiviteter.",
   "SectionCompanyFAQ.Text7":"Efter registrering kan du se samtliga jobb på Medla, jobb visas upp i vår sökfuntion som du enkelt hittar i toppen av hemsidan.",
   "SectionCompanyFAQ.Text8":"Ja, på Medla registrerar man sig en gång och väljer därefter enkelt de projekt där man vill synas och få jobbnotiser.",
 
@@ -1089,7 +1090,7 @@
   "SectionConnectCompanyFunctions.chat":"Boende",
   "SectionConnectCompanyFunctions.data":"Bemanning",
   "SectionConnectCompanyFunctions.seo":"Betong",
-  "SectionConnectCompanyFunctions.companyprofiles":"Drift och Underhåll",
+  "SectionConnectCompanyFunctions.companyprofiles":"Drift & Underhåll",
   "SectionConnectCompanyFunctions.search":"Elektriker",
   "SectionConnectCompanyFunctions.integration":"IT & Telecom",
   "SectionConnectCompanyFunctions.location":"Anläggning",
@@ -1101,6 +1102,12 @@
   "SectionConnectCompanyFunctions.restaurang":"Restauranger",
   "SectionConnectCompanyFunctions.catering":"Catering",
   "SectionConnectCompanyFunctions.media":"Media & PR",
+  "SectionConnectCompanyFunctions.byggentreprenad":"Byggentreprenad",
+  "SectionConnectCompanyFunctions.fordon":"Fordon & Däck",
+  "SectionConnectCompanyFunctions.maskinreperation":"Maskinreperation",
+  "SectionConnectCompanyFunctions.svets":"Svets & Metall",
+  "SectionConnectCompanyFunctions.extra":"...",
+
 
 
 
@@ -1110,6 +1117,13 @@
   "SectionMunicipalityGoals.part1Title": "Attraktivare kommun för investeringar",
   "SectionMunicipalityGoals.part3Text": "Synligare och mer tillgängligt näringsliv",
   "SectionMunicipalityGoals.part3Title": "Affärsmöjligheter för lokala företag på projekt",
+
+  "SectionCompanyGoals.titleLineOne": "Förväntade vinster",
+  "SectionCompanyGoals.part1Text": "Besvara offertförfrågningar helt gratis",
+  "SectionCompanyGoals.part1Title": "Fler företagskunder",
+  "SectionCompanyGoals.part3Text": "Stärk din digitala närvaro",
+  "SectionCompanyGoals.part3Title": "Var synlig där projektkunderna finns",
+  
 
 
 

@@ -1,0 +1,138 @@
+@import '../../styles/propertySets.css';
+
+.title {
+  @apply --marketplaceH1FontStyles;
+
+}
+
+
+.steps {
+  display: flex;
+  flex-direction: column;
+
+
+  @media (--viewportMedium) {
+    flex-direction: row;
+  }
+}
+
+.step {
+
+  margin:0px;
+  
+  @media (--viewportMedium) {
+    width: 50%;
+    margin-right: 20px;
+    margin-left:0;
+  }
+}
+
+
+
+.stepTitle {
+  margin-top: 18px;
+  margin-bottom: 18px;
+
+  @media (--viewportMedium) {
+    margin-top: 21px;
+    margin-bottom: 18px;
+  }
+}
+
+.createListingLink {
+  margin-top: 18px;
+
+  @media (--viewportMedium) {
+    margin-top: 24px;
+  }
+}
+
+.icon {
+color: whitesmoke;
+background-color: rgb(34, 186, 130);
+border-style: none;
+border-radius: 99px;
+padding:7px;
+min-width:35px;
+min-height:35px;
+height:35px;
+width:35px;
+
+@media (--viewportMedium) {
+  padding:13px;
+  min-width:55px;
+  min-height:55px;
+  height:55px;
+  width:55px;
+}
+}
+
+.iconPos{
+  @apply --marketplaceH3FontStyles;
+
+  display:inline-flex;
+  justify-content: left;
+  align-items: center;
+  width: 100%;
+  gap: 15px;
+  @media (--viewportMedium) {
+    @apply --marketplaceH2FontStyles;
+    display:inline-flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+    width: fit-content;
+    gap: 15px;
+}
+
+}
+
+.buttonAlign{
+  margin-top:50px;
+  display:flex;
+  flex-direction: column;
+  justify-items:center;
+  align-items: center;
+
+}
+
+.heroButton {
+  @apply --marketplaceButtonStyles;
+  border-width: 2px;
+  transition-duration: 0.25s;
+  animation-delay: 0.8s;
+  margin-bottom: 10px;
+  margin-top: 30px;
+  color:whitesmoke;
+  border-color: var(--marketplaceColorDark);
+  background-color: var(--marketplaceColorDark);
+  @media (--viewportMedium) {
+    width: 260px;
+    margin-left: 20px;
+  }
+}
+
+.heroButton:hover{
+color:whitesmoke;
+border-color: var(--marketplaceColor);
+background-color: var(--marketplaceColor);
+text-decoration: none;
+
+}
+
+
+.statusLine2 {
+  height: 2px;
+  width: calc(100% - 60px);
+  border-style: solid;
+  border-width: 2px;
+  border-color: var(--marketplaceColor);
+
+
+  @media (--viewportMedium) {
+  margin-top:40px;
+  height: calc(50% - 60px);
+  width: calc(70% - 200px);
+  max-width: 100%;
+  }
+}

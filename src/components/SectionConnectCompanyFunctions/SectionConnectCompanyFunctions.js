@@ -67,6 +67,22 @@ const SectionConnectCompanyFunctions = props => {
           <h4 className={css.text}>
             <FormattedMessage id="SectionConnectCompanyFunctions.restaurang" />
           </h4>
+          
+          <h4 className={css.text}>
+            <FormattedMessage id="SectionConnectCompanyFunctions.byggentreprenad" />
+          </h4>
+          <h4 className={css.text}>
+            <FormattedMessage id="SectionConnectCompanyFunctions.fordon" />
+          </h4>
+          <h4 className={css.text}>
+            <FormattedMessage id="SectionConnectCompanyFunctions.maskinreperation" />
+          </h4>
+          <h4 className={css.text}>
+            <FormattedMessage id="SectionConnectCompanyFunctions.svets" />
+          </h4>
+          <h4 className={css.text}>
+            <FormattedMessage id="SectionConnectCompanyFunctions.extra" />
+          </h4>
         </div>
 
 

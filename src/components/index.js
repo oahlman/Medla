@@ -199,9 +199,11 @@ export { default as SectionConnectCompanyFunctions } from './SectionConnectCompa
 
 export { default as SectionProjectGoals } from './SectionProjectGoals/SectionProjectGoals';
 export { default as SectionMunicipalityGoals } from './SectionMunicipalityGoals/SectionMunicipalityGoals';
-
+export { default as SectionCompanyFAQ } from './SectionCompanyFAQ/SectionCompanyFAQ';
 export { default as SectionProjectFAQ } from './SectionProjectFAQ/SectionProjectFAQ';
 export { default as SectionMunicipalityFAQ } from './SectionMunicipalityFAQ/SectionMunicipalityFAQ';
+
+
 
 export { default as SectionQuote } from './SectionQuote/SectionQuote';
 export { default as SectionFoundersNote } from './SectionFoundersNote/SectionFoundersNote';

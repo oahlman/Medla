@@ -8,7 +8,7 @@ import {
   Footer,
   ExternalLink,
   SectionConnectCompanyFunctions,
-  SectionMunicipalityFAQ,
+  SectionCompanyFAQ,
   SectionMunicipalityGoals,
   SectionFoundersNoteMunicipality,
   SectionTimelineCompany,
@@ -66,10 +66,10 @@ const ConnectCompanyPage = () => {
             <SectionConnectCompanyFunctions  className={css.functions} />
             </div>
 
-            <SectionTimelineCompany></SectionTimelineCompany>
+            <SectionTimelineCompany className={css.sectionProcessMaybeColorGrey}></SectionTimelineCompany>
           <div className={css.sectionProcessMaybeColor}>
           </div>
-          <SectionMunicipalityFAQ />
+          <SectionCompanyFAQ />
 
           <SectionMunicipalityGoals className={css.sectionProcessMaybeColorGrey} />
           <div className={css.contactContainer}>

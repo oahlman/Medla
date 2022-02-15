@@ -21,6 +21,7 @@
 
 .step {
   background-color: var(--matterColorNegative);
+  box-shadow: var(--boxShadow);
   margin-top:0px;
   margin-bottom:10px;
   padding:0px;

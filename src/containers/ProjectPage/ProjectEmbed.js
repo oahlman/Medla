@@ -32,6 +32,7 @@ import {
   ExternalLink,
   IconCheckmark,
   IconArrowHead,
+  Logo,
 } from '../../components';
 import { TopbarContainer, NotFoundPage } from '../../containers';
 import config from '../../config';
@@ -74,12 +75,12 @@ export class ProjectPageComponent extends Component {
     const jobs = listings.filter(listing => listing.attributes.publicData.listingCategory !== 'company');
 
     const jobSection = (<div className={css.jobSection}>
-      <div className={css.listingCards}>
+      <div className={css.embedCards}>
         {queryListingsError ? queryError : null}
         {queryListingsError ? queryError : null}
         {jobs.slice(0, 3).map(l => (
             <ExternalLink href={`${config.canonicalRootURL}/l/${createSlug(l.attributes.title)}/${l.id.uuid}`} 
-              className={css.listingCard}
+              className={css.embedCard}
             >
               <ListingCard
                 className={css.embed}
@@ -90,24 +91,39 @@ export class ProjectPageComponent extends Component {
             </ExternalLink>
         ))}
       </div>
-      <div className={css.searchLink}>
-        <ExternalLink href={`https://medla.app/s?address=${projectData.Projektnamn}&bounds=${projectData.ne},${projectData.sw}&pub_listingCategory=job`} className={css.helperLink}
-        >
-          <span>Se alla jobb</span>
-        </ExternalLink>
-      </div>
     </div>);
 
     const projectPageMedla = (
       <div>
-        <div className={css.staticPageWrapper}>
           <div className={css.contentWrapper}>
-            <div className={css.contentMain}>
+            <div className={css.embedContentMain}>
+              <div className={css.embedContentMainInner}>
+              <div className={css.embedHeader}>
+              <h3 className={css.projectTitle} >Nya jobb i {projectData.Projektnamn}</h3>
+                <ExternalLink href={`${config.canonicalRootURL}/${createSlug(projectData.Projektnamn)}`} className={css.logoLink}>
+                  <Logo format="desktop" className={css.logo} />
+                </ExternalLink>
+              </div>
               {jobSection}
+              <div className={css.legalMatters}>
+                <ul className={css.tosAndPrivacy}>
+                  <li>
+                    <ExternalLink href={`${config.canonicalRootURL}/terms-of-service`} className={css.legalLink}>
+                      <FormattedMessage id="Footer.termsOfUse" />
+                    </ExternalLink>
+                  </li>
+                  <li><span className={css.separator}></span></li>
+                  <li>
+                    <ExternalLink href={`${config.canonicalRootURL}/privacy-policy`} className={css.legalLink}>
+                      <FormattedMessage id="Footer.privacyPolicy" />
+                    </ExternalLink>
+                  </li>
+                </ul>
+              </div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
     );
 
     let content;

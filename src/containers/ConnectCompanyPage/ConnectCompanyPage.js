@@ -7,26 +7,16 @@ import {
   LayoutWrapperFooter,
   Footer,
   ExternalLink,
-  SectionProjectFunctions,
-  SectionTimelineMunicipality,
+  SectionConnectCompanyFunctions,
   SectionMunicipalityFAQ,
-  SectionWhatIsMedlaMunicipality,
-  SectionWhatIsMedlaDescriptionMunicipality,
   SectionMunicipalityGoals,
   SectionFoundersNoteMunicipality,
-  ImageGalleryMunicipality,
+  SectionTimelineCompany,
 } from '../../components';
 
 import StaticPage from '../StaticPage/StaticPage';
 import TopbarContainer from '../TopbarContainer/TopbarContainer';
-import imagephone from '../../assets/Medla-phones.png';
-import imagemacbook from '../../assets/Medla-macbook.png';
-import imagesvenskvind from '../../assets/Svensk-vind-logo.png';
-import imageSvenskVindProfile from '../../assets/Svensk-vind-profile.jpg';
-import offshoreWind from '../../assets/offshore-wind.jpg'
-
-
-
+import macbookjobs from '../../assets/macbook-jobs.png';
 import css from './ConnectCompanyPage.module.css';
 
 
@@ -61,7 +51,7 @@ const ConnectCompanyPage = () => {
               </ExternalLink>
             </div>
             <div className={css.imageWrapper}>
-              <img className={css.image} src={imagemacbook} alt="Medla in macbook" />
+              <img className={css.image} src={macbookjobs} alt="Medla in macbook" />
             </div>
           </div>
         </div>
@@ -69,14 +59,15 @@ const ConnectCompanyPage = () => {
          
           <container className={css.sectionContent} >
             <div className={css.sections}>
-            <SectionTimelineMunicipality className={css.subSection} />
-          <div className={css.sectionProcessMaybeColor}>
-          <SectionWhatIsMedlaMunicipality className={css.whatIsMedla} />
-            <div> 
-            <ImageGalleryMunicipality  className={css.gallery}/>
-            <SectionWhatIsMedlaDescriptionMunicipality className={css.whatIsMedlaDescription}  /> 
-            <SectionProjectFunctions  className={css.functions} />
+
+            <div className={css.bransch}>
+              
+            <h1 className={css.headingBransch}><FormattedMessage id="ConnectCompanyPage.bransch" /></h1>
+            <SectionConnectCompanyFunctions  className={css.functions} />
             </div>
+
+            <SectionTimelineCompany></SectionTimelineCompany>
+          <div className={css.sectionProcessMaybeColor}>
           </div>
           <SectionMunicipalityFAQ />
 

@@ -194,6 +194,9 @@ export { default as SectionProjectContact } from './SectionProjectContact/Sectio
 
 export { default as SectionProjectDeal } from './SectionProjectDeal/SectionProjectDeal';
 export { default as SectionProjectFunctions } from './SectionProjectFunctions/SectionProjectFunctions';
+export { default as SectionConnectCompanyFunctions } from './SectionConnectCompanyFunctions/SectionConnectCompanyFunctions';
+
+
 export { default as SectionProjectGoals } from './SectionProjectGoals/SectionProjectGoals';
 export { default as SectionMunicipalityGoals } from './SectionMunicipalityGoals/SectionMunicipalityGoals';
 
@@ -205,6 +208,7 @@ export { default as SectionFoundersNote } from './SectionFoundersNote/SectionFou
 export { default as SectionFoundersNoteMunicipality } from './SectionFoundersNoteMunicipality/SectionFoundersNoteMunicipality';
 
 export { default as SectionTimeline } from './SectionTimeline/SectionTimeline';
+export { default as SectionTimelineCompany } from './SectionTimelineCompany/SectionTimelineCompany';
 export { default as SectionTimelineMunicipality } from './SectionTimelineMunicipality/SectionTimelineMunicipality';
 
 export { default as SectionLocations } from './SectionLocations/SectionLocations';

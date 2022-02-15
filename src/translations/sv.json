@@ -151,6 +151,7 @@
   "ConnectCompanyPage.headline": "Söker du företagskunder?",
   "ConnectCompanyPage.newservice": "Med din företagssida, offertförfrågningar och smarta notiser skapar medla nya affärsmöjligheter, helt gratis.  ",
   "ConnectCompanyPage.connectProject": "Snabbregistring",
+  "ConnectCompanyPage.bransch": "Behov av 20 + branscher",
 
   "ContactDetailsForm.confirmChangesInfo": "Ange ditt nuvarande lösenord för att ändra din e-postadress.",
   "ContactDetailsForm.confirmChangesTitle": "Bekräfta dina ändringar",
@@ -959,7 +960,7 @@
   "SectionHowItWorks.part1Text": "{beskrivforetag} du representerar och dess tjänster för att få ut det mesta av plattformen. Väl beskrivna företag genererar mer trafik  och affärer.",
   "SectionHowItWorks.part1Title": "1. Registrera ditt företag",
   "SectionHowItWorks.part2Text": "Ställ in {bevakningar} för de projekt och branscher som är av intresse, notiser skickas ut via sms elller e-post när relevanta publiceringar sker på plattformen.",
-  "SectionHowItWorks.part2Title": "2. Följ projekt och branscher",
+  "SectionHowItWorks.part2Title": "2. Följ projekt & branscher",
   "SectionHowItWorks.part3Text": "Sök upp både {linkJobSearch} och {linkCompanySearch}, filtrera resultaten på bransch, geografi och projekt.",
   "SectionHowItWorks.part3Title": "3. Sök och kontakta",
   "SectionHowItWorks.titleLineOne": "Hur det fungerar",
@@ -1065,6 +1066,26 @@
   "SectionProjectGoals.part3Title": "Stärkt varumärke & social hållbarhets-positionering",
   "SectionProjectGoals.part3Text": "Ökad lokal sysselsättning i projektet",
 
+  "SectionConnectCompanyFunctions.titleLineOne": "Funktioner",
+  "SectionConnectCompanyFunctions.chat":"Boende",
+  "SectionConnectCompanyFunctions.data":"Bemanning",
+  "SectionConnectCompanyFunctions.seo":"Betong",
+  "SectionConnectCompanyFunctions.companyprofiles":"Drift och Underhåll",
+  "SectionConnectCompanyFunctions.search":"Elektriker",
+  "SectionConnectCompanyFunctions.integration":"IT & Telecom",
+  "SectionConnectCompanyFunctions.location":"Anläggning",
+  "SectionConnectCompanyFunctions.jobs":"Skogsmaskintjänster",
+  "SectionConnectCompanyFunctions.language":"Servicetjänster",
+  "SectionConnectCompanyFunctions.phone":"Transport",
+  "SectionConnectCompanyFunctions.helikopter":"Helikoptertjänster",
+  "SectionConnectCompanyFunctions.notifications":"Utbildning",
+  "SectionConnectCompanyFunctions.restaurang":"Restauranger",
+  "SectionConnectCompanyFunctions.catering":"Catering",
+  "SectionConnectCompanyFunctions.media":"Media & PR",
+
+
+
+  
   "SectionMunicipalityGoals.titleLineOne": "Förväntade vinster",
   "SectionMunicipalityGoals.part1Text": "Insikter och ny information om egna näringslivet",
   "SectionMunicipalityGoals.part1Title": "Attraktivare kommun för investeringar",
@@ -1081,6 +1102,14 @@
   "SectionTimeline.part1Text": "Synliggör nytta och skapa lokal förankring för projektet.",
   "SectionTimeline.part2Text": "Förenkla affärsförmedling mellan byggentreprenad och lokala leverantörer.",
   "SectionTimeline.part3Text": "Bidra till långsiktig lokal utveckling och använd mätbara resultat i framtida projekt.",
+
+  "SectionTimelineCompany.titleLineOne": "Kom igång på två minuter",
+  "SectionTimelineCompany.part1Title": "1. Registrera",
+  "SectionTimelineCompany.part2Title": "2. Följ projekt & branscher",
+  "SectionTimelineCompany.part3Title": "3. Invänta möjligheter",
+  "SectionTimelineCompany.part1Text": "Registrera dig och fyll i dina kontaktuppgifter.",
+  "SectionTimelineCompany.part2Text": "Välj vilka branscher och projekt du vill bevaka och om du vill ha notiser på SMS eller e-post.",
+  "SectionTimelineCompany.part3Text": "Invänta affärsmöjligheter från projektörer och deras entreprenad.",
 
   "SectionTimelineMunicipality.titleLineOne": "Lösningar för alla projektfaser",
   "SectionTimelineMunicipality.part1Title": "En attraktivare kommun",

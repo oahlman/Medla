@@ -83,6 +83,7 @@ export class ProjectPageComponent extends Component {
               className={css.embedCard}
             >
               <ListingCard
+                format='embed'
                 className={css.embed}
                 key={l.id.uuid}
                 listing={l}
@@ -95,13 +96,12 @@ export class ProjectPageComponent extends Component {
 
     const projectPageMedla = (
       <div>
-          <div className={css.contentWrapper}>
             <div className={css.embedContentMain}>
               <div className={css.embedContentMainInner}>
               <div className={css.embedHeader}>
-              <h3 className={css.projectTitle} >Nya jobb i {projectData.Projektnamn}</h3>
+              <h3 className={css.embedTitle} >Nya jobb i {projectData.Projektnamn}</h3>
                 <ExternalLink href={`${config.canonicalRootURL}/${createSlug(projectData.Projektnamn)}`} className={css.logoLink}>
-                  <Logo format="desktop" className={css.logo} />
+                  <Logo format="desktopNegative" className={css.logo} />
                 </ExternalLink>
               </div>
               {jobSection}
@@ -123,7 +123,6 @@ export class ProjectPageComponent extends Component {
               </div>
             </div>
           </div>
-        </div>
     );
 
     let content;

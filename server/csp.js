@@ -116,7 +116,6 @@ module.exports = (reportUri, enforceSsl, reportOnly) => {
       unsafeEval,
       data,
       blob,
-      '*.w3schools.com/'
     ],
   };
 

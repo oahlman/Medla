@@ -253,6 +253,18 @@
   composes: card;
 }
 
+.embed {
+  pointer-events: none;
+}
+
+.card:hover {
+  text-decoration: none;
+  color: var(--matterColorDark);}
+  @media (--viewportMedium) {
+  transform: scale(1.02);
+  box-shadow: var(--boxShadowListingCard);
+}
+
 .searchLink {
   width: 100%;
 }

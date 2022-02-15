@@ -11,6 +11,7 @@ import { withViewport } from '../../util/contextHelpers';
 import { isScrollingDisabled } from '../../ducks/UI.duck';
 import { getMarketplaceEntities } from '../../ducks/marketplaceData.duck';
 import { medlaProjects, externalProjects } from '../../projects-config';
+import { createSlug } from '../../util/urlHelpers';
 import { filters } from '../../marketplace-custom-config';
 import image from '../../assets/background-1440.jpg'
 import placeholderImg from '../../assets/placeholder.jpg';
@@ -70,11 +71,6 @@ export class ProjectPageComponent extends Component {
     const currentProject = medlaProject < 0 ? externalProject : medlaProject;
     const projectData = currentProject === medlaProject ? medlaProjects[currentProject] : externalProjects[currentProject];
 
-    let projectDetailsLink = null
-    if (typeof document !== 'undefined') {
-      projectDetailsLink = document.getElementById("projectDetails");
-    };
-
     const jobs = listings.filter(listing => listing.attributes.publicData.listingCategory !== 'company');
 
     const jobSection = (<div className={css.jobSection}>
@@ -82,23 +78,24 @@ export class ProjectPageComponent extends Component {
         {queryListingsError ? queryError : null}
         {queryListingsError ? queryError : null}
         {jobs.slice(0, 3).map(l => (
-          <ListingCard
-            className={css.listingCard}
-            key={l.id.uuid}
-            listing={l}
-            renderSizes={renderSizes}
-          />
+            <ExternalLink href={`${config.canonicalRootURL}/l/${createSlug(l.attributes.title)}/${l.id.uuid}`} 
+              className={css.listingCard}
+            >
+              <ListingCard
+                className={css.embed}
+                key={l.id.uuid}
+                listing={l}
+                renderSizes={renderSizes}
+              />
+            </ExternalLink>
         ))}
       </div>
       <div className={css.searchLink}>
-          <NamedLink className={css.helperLink}
-            name="SearchPage"
-            to={{
-              search: `?address=${projectData.Projektnamn}&bounds=${projectData.ne},${projectData.sw}&pub_listingCategory=job`,
-            }}>
-            <span>Se alla jobb</span>
-          </NamedLink>
-        </div>
+        <ExternalLink href={`https://medla.app/s?address=${projectData.Projektnamn}&bounds=${projectData.ne},${projectData.sw}&pub_listingCategory=job`} className={css.helperLink}
+        >
+          <span>Se alla jobb</span>
+        </ExternalLink>
+      </div>
     </div>);
 
     const projectPageMedla = (
@@ -138,7 +135,7 @@ export class ProjectPageComponent extends Component {
     );
 
     return (
-        <LayoutWrapperMain>{content}</LayoutWrapperMain>
+      <LayoutWrapperMain>{content}</LayoutWrapperMain>
     );
   }
 }

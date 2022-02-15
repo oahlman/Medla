@@ -19,9 +19,9 @@ const SectionFoundersNote = props => {
             <FormattedMessage id="SectionFoundersNote.part1Title" />
           </h2>
           <p>
-          Trots att elektrifieringen och klimatomställningen blir allt viktigare frågor så har projekteringen bara blivit svårare, att andelen vindkraftsprojekt som fick veto <a target="_blank" href='https://www.regeringen.se/49e6a7/contentassets/8b16a30f6de3468ab6fa640ebb23851f/en-rattssaker-vindkraftsprovning-sou-202153#page=192'>ökade från 8% till 40% mellan 2016-2020</a> är talande. 
+          Trots att elektrifieringen och klimatomställningen blir allt viktigare frågor så har projekteringen bara blivit svårare, att andelen vindkraftsprojekt som fick veto <a target="_blank" rel="noopener noreferrer" href='https://www.regeringen.se/49e6a7/contentassets/8b16a30f6de3468ab6fa640ebb23851f/en-rattssaker-vindkraftsprovning-sou-202153#page=192'>ökade från 8% till 40% mellan 2016-2020</a> är talande. 
           <br></br><br></br>
-          Lokal förankring och samverkan är viktiga pusselbitar för lyckade industriprojekt. Arbetstillfällen bidrar till detta, och tack vare era projekt kan fler av dem skapas lokalt (<a target="_blank" href='https://www.irena.org/benefits/Local-Value-Creation'>upp till 200% fler än idag</a>) om vi jobbar tillsammans — med alla aktörer i kedjan. 
+          Lokal förankring och samverkan är viktiga pusselbitar för lyckade industriprojekt. Arbetstillfällen bidrar till detta, och tack vare era projekt kan fler av dem skapas lokalt (<a target="_blank" rel="noopener noreferrer" href='https://www.irena.org/benefits/Local-Value-Creation'>upp till 200% fler än idag</a>) om vi jobbar tillsammans — med alla aktörer i kedjan. 
           <br></br><br></br>
           <b>Utmaningen för många projektörer är att:</b>
           <ol>

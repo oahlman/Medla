@@ -32,10 +32,13 @@
 .aspectWrapper {
   
   padding-bottom: 22.2222%; /* 3:2 Aspect Ratio */
-  background-color: #EEF5F3;
+  background-color: #eef5f3;
   max-width: 100%;
+}
 
-  
+.aspectWrapperEmbed {
+  composes: aspectWrapper;
+  background-color: #eef5f3;
 }
 
 
@@ -112,6 +115,11 @@
   }
 }
 
+.titleEmbed {
+  composes: title;
+  color: initial;
+}
+
 
 .project {
   @apply --marketplaceTinyFontStyles;
@@ -147,12 +155,18 @@
   hyphens: auto;
 }
 
-.containerTopHalf{
+.containerTopHalf {
   
   background: var(--marketplaceColorDark);
   border-radius: 10px 10px 0 0;
   padding-bottom: 5px;
 
+}
+
+.containerTopHalfEmbed {
+  background: var(--marketplaceColorBright);
+  border-radius: 10px 10px 0 0;
+  padding-bottom: 5px;
 }
 
 .description {
@@ -290,7 +304,7 @@ right:-15px;
   height: 0px;
   margin-bottom: 20px;
 
-  color: var(--matterColor);
+  color: var(--matterColorAnti);
   flex-shrink: 1;
 
   @media (--viewportMedium) {
@@ -311,7 +325,6 @@ right:-15px;
     margin-top:10px;
     flex-shrink: 1;
     background-color: var(--matterColorMed);
-
 
     @media (min-width: 700px) and (max-width: 1300px) {
       padding:5px;

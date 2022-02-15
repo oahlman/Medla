@@ -24,7 +24,7 @@ const AboutPage = () => {
       schema={{
         '@context': 'http://schema.org',
         '@type': 'AboutPage',
-        description: 'About Saunatime',
+        description: 'About Medla',
         name: 'About page',
       }}
     >

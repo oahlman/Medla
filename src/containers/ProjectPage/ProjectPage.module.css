@@ -191,7 +191,8 @@
 
   @media (--viewportMedium) {
     min-width: initial;
-    flex-basis: calc(50% - 12px);
+    margin-right: 24px;
+    flex-basis: calc(33.33% - 16px);
   }
 
   @media (--viewportLarge) {
@@ -223,7 +224,7 @@
 
 .card:nth-of-type(2n) {
   @media (--viewportMedium) {
-    margin-right: 0;
+    margin-right: 24px;
   }
   @media (--viewportLarge) {
     margin-right: 24px;
@@ -232,7 +233,7 @@
 
 .card:nth-of-type(3n) {
   
-  @media (--viewportLarge) {
+  @media (--viewportMedium) {
     margin-right: 0;
   }
 }
@@ -251,6 +252,37 @@
 
 .companyCard {
   composes: card;
+}
+
+.embed {
+  pointer-events: none;
+}
+
+.embedCards {
+  composes: cards;
+    margin-left: -10px;
+    margin-right: -10px;
+    padding-left: 10px;
+    scroll-padding: 10px;
+  @media (--viewportMedium) {
+    margin-left: initial;
+    margin-right: initial;
+    padding-left: initial;
+    scroll-padding: initial;
+  }
+}
+
+.embedCard {
+  composes: card;
+  margin-bottom: 0px;
+}
+
+.card:hover {
+  text-decoration: none;
+  color: var(--matterColorDark);}
+  @media (--viewportMedium) {
+  transform: scale(1.02);
+  box-shadow: var(--boxShadowListingCard);
 }
 
 .searchLink {
@@ -312,7 +344,6 @@
     min-width: initial;
     flex-basis: calc(50% - 12px);
     margin-right: 24px;
-    margin-bottom: 36px;
   }
 
   @media (--viewportLarge) {
@@ -640,4 +671,53 @@ li {
 
 .projectOwnerLinks:hover .arrowIcon {
   fill: var(--marketplaceColorDark);
+}
+
+.embedContentMainInner {
+  background-color: var(--marketplaceColorDark);
+  border-radius: 12px;
+  padding: 10px;
+  max-width: 100%;
+
+}
+
+.embedHeader {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.logoLink {
+}
+
+.logo {
+  width: 100%;
+  height: auto;
+  max-width: 100px;
+  max-height: 100px;
+}
+
+.embedTitle {
+  color: white;
+ margin-top: 0;
+}
+
+.tosAndPrivacy {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  color: var(--matterColorAnti);
+  margin-top: 10px;
+  margin-bottom: 0px;
+}
+
+.legalLink {
+  @apply --marketplaceTinyFontStyles;
+  color: var(--matterColorAnti);
+}
+
+.separator {
+  margin: 0 7px;
 }

@@ -23,6 +23,7 @@ const LandingPage = loadable(() => import(/* webpackChunkName: "LandingPage" */ 
 const ListingPage = loadable(() => import(/* webpackChunkName: "ListingPage" */ /* webpackPrefetch: true */ './containers/ListingPage/ListingPage'));
 const CompanyPage = loadable(() => import(/* webpackChunkName: "CompanyPage" */ /* webpackPrefetch: true */ './containers/CompanyPage/CompanyPage'));
 const ProjectPage = loadable(() => import(/* webpackChunkName: "ProjectPage" */ /* webpackPrefetch: true */ './containers/ProjectPage/ProjectPage'));
+const ProjectEmbed = loadable(() => import(/* webpackChunkName: "ProjectEmbed" */ /* webpackPrefetch: true */ './containers/ProjectPage/ProjectEmbed'));
 const ManageListingsPage = loadable(() => import(/* webpackChunkName: "ManageListingsPage" */ './containers/ManageListingsPage/ManageListingsPage'));
 const NewUserPage = loadable(() => import( /* webpackChunkName: "NewUserPage" */ './containers/NewUserPage/NewUserPage'));
 const NewProjectUserPage = loadable(() => import( /* webpackChunkName: "NewProjectUserPage" */ './containers/NewProjectUserPage/NewProjectUserPage'));
@@ -69,6 +70,22 @@ const medlaProjectPaths = medlaProjects.map(p => (
       extraProps: { projectId: p.Områdes_ID },
       loadData: params => pageDataLoadingAPI.ProjectPage.loadData({ ...params, projectId: p.Områdes_ID })
     }
+));
+const medlaProjectEmbedPaths = medlaProjects.map(p => (
+  {
+    path: `/embed/${p.Projektnamn
+      .replace(/\s+/g, '-')
+      .toLowerCase()
+      .replace(/å/g, 'a')
+      .replace(/ä/g, 'a')
+      .replace(/ö/g, 'o')
+      .replace(/\W/g, "-")}`,
+      name: `/${p.Projektnamn
+        .replace(/\W/g, "-")}`,
+    component: ProjectEmbed,
+    extraProps: { projectId: p.Områdes_ID },
+    loadData: params => pageDataLoadingAPI.ProjectPage.loadData({ ...params, projectId: p.Områdes_ID })
+  }
 ));
 const externalProjectPaths = externalProjects.map(p => (
   {
@@ -461,6 +478,7 @@ const routeConfiguration = () => {
     //medlaProject and externalProject from projects-config.js
 
     ...medlaProjectPaths,
+    ...medlaProjectEmbedPaths,
     ...externalProjectPaths,
 
     // Do not change this path!

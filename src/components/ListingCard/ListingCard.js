@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { array, string, func } from 'prop-types';
+import { array, string, func, oneOf } from 'prop-types';
 import { FormattedMessage, intlShape, injectIntl } from '../../util/reactIntl';
 import classNames from 'classnames';
 import { lazyLoadWithDimensions } from '../../util/contextHelpers';
@@ -29,7 +29,7 @@ class ListingImage extends Component {
 const LazyImage = lazyLoadWithDimensions(ListingImage, { loadAfterInitialRendering: 3000 });
 
 export const ListingCardComponent = props => {
-  const { className, rootClassName, intl, listing, renderSizes, setActiveListing, filterConfig, projectUrl } = props;
+  const { className, rootClassName, intl, listing, renderSizes, setActiveListing, filterConfig, projectUrl, format } = props;
   console.log('projectUrl', projectUrl);
   const classes = classNames(rootClassName || css.root, className);
   const currentListing = ensureListing(listing);
@@ -72,6 +72,7 @@ export const ListingCardComponent = props => {
   const projectCurrent  = projectLabel(amenities, publicData.amenities)
   const jobCategory = categoryLabel(category, publicData.category)
   const projectOnCard = projectCurrent ? projectCurrent : <FormattedMessage id="ListingCard.NoProjekt" />;
+  const isEmbedded = format === 'embed';
 
   const categories = currentListing.attributes.publicData.category ? currentListing.attributes.publicData.category : [];
 
@@ -97,9 +98,9 @@ export const ListingCardComponent = props => {
         onMouseLeave={() => setActiveListing(null)}
         >
 
-        <div className={css.aspectWrapper}>
+        <div className={isEmbedded ? css.aspectWrapperEmbed : css.aspectWrapper}>
 
-         <div className={css.containerTopHalf}>
+         <div className={isEmbedded ? css.containerTopHalfEmbed : css.containerTopHalf}>
 
          <div className={css.authorContainer}>
             <div className={css.author}>
@@ -112,7 +113,7 @@ export const ListingCardComponent = props => {
               <div className={css.mainInfo}>
 
 
-               <div className={css.title}>
+               <div className={isEmbedded ? css.titleEmbed : css.title}>
                {richText(title, {
                 longWordMinLength: MIN_LENGTH_FOR_LONG_WORDS,
                   longWordClass: css.longWord,
@@ -166,6 +167,7 @@ ListingCardComponent.defaultProps = {
   renderSizes: null,
   filterConfig: config.custom.filters,
   setActiveListing: () => null,
+  format: 'default',
 };
 
 ListingCardComponent.propTypes = {
@@ -174,6 +176,7 @@ ListingCardComponent.propTypes = {
   intl: intlShape.isRequired,
   listing: propTypes.listing.isRequired,
   filterConfig: array,
+  format: oneOf(['default', 'embed']),
 
   // Responsive image sizes hint
   renderSizes: string,

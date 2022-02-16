@@ -152,7 +152,7 @@
   "ConnectCompanyPage.newservice": "Med din företagssida, offertförfrågningar och smarta notiser skapar medla nya affärsmöjligheter, helt gratis.  ",
   "ConnectCompanyPage.connectProject": "Snabbregistring",
   "ConnectCompanyPage.connectCompany": "Skapa konto",
-  "ConnectCompanyPage.bransch": "Behov av 20 + branscher",
+  "ConnectCompanyPage.bransch": "Företag i följande branscher sökes",
 
   "ContactDetailsForm.confirmChangesInfo": "Ange ditt nuvarande lösenord för att ändra din e-postadress.",
   "ContactDetailsForm.confirmChangesTitle": "Bekräfta dina ändringar",
@@ -1141,7 +1141,7 @@
   "SectionTimelineCompany.part2Title": "2. Följ projekt",
   "SectionTimelineCompany.part3Title": "3. Invänta affärsmöjligheter",
   "SectionTimelineCompany.part1Text": " och fyll i dina kontaktuppgifter så genereras din sida automatiskt.",
-  "SectionTimelineCompany.part2Text": "Checka enkelt i de projekt och branscher du vill följa och få jobbnotiser från.",
+  "SectionTimelineCompany.part2Text": "Välj enkelt i de projekt och branscher du vill följa och få jobbnotiser från.",
   "SectionTimelineCompany.part3Text": " När relevanta affärer dyker upp så får du en notis på SMS eller e-post.",
 
   "SectionTimelineMunicipality.titleLineOne": "Lösningar för alla projektfaser",

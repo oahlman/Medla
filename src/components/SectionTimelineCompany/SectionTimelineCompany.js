@@ -2,6 +2,8 @@ import React from 'react';
 import { FormattedMessage } from '../../util/reactIntl';
 import classNames from 'classnames';
 import css from './SectionTimelineCompany.module.css';
+import phoneCompany1 from '../../assets/phone-company1.png';
+
 
 const SectionTimelineCompany = props => {
 
@@ -15,61 +17,50 @@ const SectionTimelineCompany = props => {
       <div className={css.container}>
 
 
-      <div className={css.statusBar}>
-      <div className={css.statusCirclePlanning}>
-      <div className={css.statusArrowPlanning}></div>
-      
-      </div>
-      <div className={css.statusLine1}></div>
-      <div className={css.statusCircleBuilding}>
-      <div className={css.statusArrowBuilding}></div>
-
-      </div>
-      <div className={css.statusLine2}></div>
-      <div className={css.statusCircleRunning}>
-      <div className={css.statusArrowRunning}></div>
-
-      </div>
-      <div className={css.statusCard}></div>
-      </div>
 
 
 
       <div className={css.steps}>
 
         <div className={css.step}>
-          <div className={css.opacityCurtainPlanning}>
-          <h3 className={css.stepTitlePlanning}>
-            <FormattedMessage id="SectionTimelineCompany.part1Title" />
-          </h3>
-          </div>
-          <p>
+     
+        <div className={css.containerPhone}>
+        <img className={css.imagePhone} src={phoneCompany1} alt="Company onboarding Medla" />
+        </div>
+        
+          <p className={css.cardText}>
+          <b><FormattedMessage id="SectionTimelineCompany.part1Title" /></b>
             <FormattedMessage id="SectionTimelineCompany.part1Text" />
           </p>
         </div>
 
+        <div className={css.step}>
+     
+     <div className={css.containerPhone}>
+     <img className={css.imagePhone} src={phoneCompany1} alt="Company onboarding Medla" />
+     </div>
+     
+       <p className={css.cardText}>
+       <b><FormattedMessage id="SectionTimelineCompany.part2Title" /></b>
+         <FormattedMessage id="SectionTimelineCompany.part2Text" />
+       </p>
+     </div>
+
+     <div className={css.step}>
+     
+     <div className={css.containerPhone}>
+     <img className={css.imagePhone} src={phoneCompany1} alt="Company onboarding Medla" />
+     </div>
+     
+       <p className={css.cardText}>
+       <b> <FormattedMessage id="SectionTimelineCompany.part3Title" /></b>
+         <FormattedMessage id="SectionTimelineCompany.part3Text" />
+       </p>
+     </div>
 
 
-        <div className={css.step}>
-        <div className={css.opacityCurtainBulding}>
-          <h3 className={css.stepTitleBuilding}>
-            <FormattedMessage id="SectionTimelineCompany.part2Title" />
-          </h3>
-          </div>
-          <p>
-            <FormattedMessage id="SectionTimelineCompany.part2Text"  />
-          </p>
-        </div>
-        <div className={css.step}>
-        <div className={css.opacityCurtainRunning}>
-          <h3 className={css.stepTitleRunning}>
-            <FormattedMessage id="SectionTimelineCompany.part3Title" />
-          </h3>
-          </div>
-          <p>
-            <FormattedMessage id="SectionTimelineCompany.part3Text"  />
-          </p>
-        </div>
+
+
       </div>
 
       </div>

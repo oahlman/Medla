@@ -3,6 +3,8 @@ import { FormattedMessage } from '../../util/reactIntl';
 import classNames from 'classnames';
 import css from './SectionTimelineCompany.module.css';
 import phoneCompany1 from '../../assets/phone-company1.png';
+import phoneCompany2 from '../../assets/phone-company2.png';
+import phoneCompany3 from '../../assets/phone-company3.png';
 
 
 const SectionTimelineCompany = props => {
@@ -37,7 +39,7 @@ const SectionTimelineCompany = props => {
         <div className={css.step}>
      
      <div className={css.containerPhone}>
-     <img className={css.imagePhone} src={phoneCompany1} alt="Company onboarding Medla" />
+     <img className={css.imagePhone} src={phoneCompany2} alt="Company onboarding Medla" />
      </div>
      
        <p className={css.cardText}>
@@ -49,7 +51,7 @@ const SectionTimelineCompany = props => {
      <div className={css.step}>
      
      <div className={css.containerPhone}>
-     <img className={css.imagePhone} src={phoneCompany1} alt="Company onboarding Medla" />
+     <img className={css.imagePhone} src={phoneCompany3} alt="Company onboarding Medla" />
      </div>
      
        <p className={css.cardText}>

@@ -284,11 +284,15 @@ margin-top:10px;
 
   margin-left:20px;
 
-
+  @media (--viewportXLarge) {
+    margin-left:-20px;
+  
+  }
 
   }
 }
 
+ 
 .imagePhoneContainer {
   flex-direction: row;
   justify-content: center;
@@ -385,8 +389,14 @@ display: none;
     @media (--viewportMedium) {
       width: 260px;
       margin-left: 20px;
-    }
+    
+  @media (--viewportXLarge) {
+    margin-left:-20px;
+  
   }
+
+  }
+}
 
   .heroButton:hover{
   color:black;

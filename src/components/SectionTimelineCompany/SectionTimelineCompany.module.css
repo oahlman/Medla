@@ -7,37 +7,94 @@
 
 .steps {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  overflow-x:scroll;
+  scroll-snap-type: x mandatory;
+  scroll-padding: 24px;
   justify-content: left;
   align-items: left;
   width:100%;
   margin-top: 20px;
+  
 
   @media (--viewportMedium) {
     flex-direction: row;
     justify-content: space-evenly;
+    overflow:visible;
+    margin-top: 100px;
+ 
   }
 }
 
 .step {
-  background-color: var(--matterColorNegative);
-  box-shadow: var(--boxShadow);
-  margin-top:0px;
-  margin-bottom:10px;
+  display:flex;
+  flex-direction: column;
+  justify-items: center;
+  scroll-snap-align: center;
+  background-color: var(--marketplaceColorLight);
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.035);
+  margin-top:6%;
+  margin-bottom:60px;
   padding:0px;
   padding-left:20px;
   padding-right: 20px;;
   border-radius: 20px;
-
+  min-width: 100%;
+  margin-right: 20px;
   color: var(--matterColorDark);
-
-
+  
   @media (--viewportMedium) {
-    width: 30%;
+    margin-top:0px;
+    margin-bottom:10px;
+    min-width: 30%;
     margin-right: 40px;
 
   }
 }
+
+.containerPhone{
+  display:flex;
+  flex-direction: column;
+  justify-items: center;
+  margin-top:-10%;
+
+  @media (--viewportMedium) {
+    margin-top:-27%;
+
+
+  }
+}
+
+.imagePhone{
+  display:flex;
+  align-self: center;
+  width:90%;
+
+  @media (--viewportMedium) {
+    width: 110%;
+
+
+  }
+}
+
+.cardText{
+  display: flex;
+  justify-content: flex-end;
+  align-content: center;
+  flex-direction: column;
+  margin-top:0%;
+  margin-left:12%;
+  margin-right:12%;
+  margin-bottom:5%;
+  @media (--viewportMedium) {
+    margin-top:-2%;
+    margin-left:4%;
+    margin-right:0%;
+
+  }
+}
+
 
 .stepText {
 

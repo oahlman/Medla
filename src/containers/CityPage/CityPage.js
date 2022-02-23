@@ -14,6 +14,9 @@ import { medlaCities } from '../../cities-config';
 import { filters } from '../../marketplace-custom-config';
 import image from '../../assets/background-1440.jpg'
 import placeholderImg from '../../assets/placeholder.jpg';
+import komatsuImg from '../../assets/komatsu.jpg';
+import davaImg from '../../assets/dava.jpg';
+import vakinImg from '../../assets/vakin.jpg';
 import {
   Page,
   UserNav,
@@ -31,6 +34,7 @@ import {
   ExternalLink,
   IconCheckmark,
   IconArrowHead,
+  PrimaryButton,
 } from '../../components';
 import { TopbarContainer, NotFoundPage } from '../../containers';
 import config from '../../config';
@@ -83,7 +87,14 @@ export class CityPageComponent extends Component {
     const companies = listings.filter(listing => listing.attributes.publicData.listingCategory === 'company');
 
     const jobSection = (<div className={css.jobSection}>
-      <h3 className={css.subtitle}>Nya jobb</h3>
+      <div className={css.sectionHeading}>
+        <h3 className={css.subtitle}>Nya jobb</h3>
+        <span>Vill du ta in lokala offerter?
+          <NamedLink className={css.helperLink} name="NewListingPage" >
+            <span> Annonsera ett jobb</span>
+          </NamedLink>
+        </span>
+      </div>
       <div className={css.listingCards}>
         {queryListingsError ? queryError : null}
         {queryListingsError ? queryError : null}
@@ -96,23 +107,30 @@ export class CityPageComponent extends Component {
           />
         ))}
       </div>
-      <div className={css.searchLink}>
-          <NamedLink className={css.helperLink}
-            name="SearchPage"
-            to={{
-              search: `?address=${projectData.Projektnamn}&bounds=${projectData.ne},${projectData.sw}&pub_listingCategory=job`,
-            }}>
-            <span>Se alla jobb</span>
-          </NamedLink>
-        </div>
+        <PrimaryButton className={css.button}>
+        <NamedLink
+          name="SearchPage"
+          to={{
+            search: `?address=${projectData.Projektnamn}&bounds=${projectData.ne},${projectData.sw}&pub_listingCategory=job`,
+          }}>
+        </NamedLink>
+        Se alla jobb
+        </PrimaryButton>
     </div>);
 
 
     const companySection = (<div className={css.companySection}>
-      <h3 className={css.subtitle}>Lokala företag</h3>
+      <div className={css.sectionHeading}>
+        <h3 className={css.subtitle}>Lokala företag</h3>
+        <span>Vill du synas här?
+          <NamedLink className={css.helperLink} name="SignupPage" >
+            <span> Registrera ditt företag</span>
+          </NamedLink>
+        </span>
+      </div>
       <div className={css.companyCards}>
         {queryListingsError ? queryError : null}
-        {companies.slice(0, 6).map(c => (
+        {companies.slice(0, 3).map(c => (
           <CompanyCard
             className={css.companyCard}
             key={c.id.uuid}
@@ -121,76 +139,43 @@ export class CityPageComponent extends Component {
           />
         ))}
       </div>
-      <div className={css.searchLink}>
-          <NamedLink
-            className={css.helperLink}
-            name="SearchPage"
-            to={{
-              search: `?address=${projectData.Projektnamn}&bounds=${projectData.ne},${projectData.sw}&pub_listingCategory=company`,
-            }}>
-            <span>Se alla företag</span>
-          </NamedLink>
-        </div>
+        <PrimaryButton className={css.button}>
+        <NamedLink
+          name="SearchPage"
+          to={{
+            search: `?address=${projectData.Projektnamn}&bounds=${projectData.ne},${projectData.sw}&pub_listingCategory=company`,
+          }}>
+        </NamedLink>
+        Se alla företag
+        </PrimaryButton>
     </div>);
 
-    const sectionPostJob = (
-      <div className={css.newJobSectionBg}>
-        <div className={css.newJobSection}>
-          <div className={css.newJobContent}>
-            <div className={css.newJobDescription}>
-              <h1 className={css.pageTitle}>
-                <FormattedMessage id="CityPage.createJobTitle" />
-                {projectData.Projektnamn}
-              </h1>
-              <FormattedMessage id="CityPage.createJobDescription" />
-            </div>
-            <div className={css.newJobDesktop}>
-              <NamedLink className={css.heroButton} name="NewListingPage">
-                <FormattedMessage id="CityPage.newJob" />
-              </NamedLink>
-            </div>
-          </div>
-        </div>
-      </div>);
-
-    let status = null;
-    let statusCard = css.statusCard;
-    let statusArrow = css.statusArrow;
-    let statusText = css.statusText;
-    let statusDescription = null
-    let jobSectionMaybe = null;
-    let companySectionMaybe = null;
     let postJobMaybe = null;
     let findCompanyMaybe = null;
 
-    if (new Date(projectData.Planerad_byggstart) < new Date()) {
-      statusCard = css.statusCardPlanning;
-      statusArrow = css.statusArrowPlanning;
-      statusText = css.statusTextPlanning;
-      status = 'Status: Planering';
-      statusDescription = 'I planeringsfasen görs inventeringar, samråd, tillståndsansökningar och en detaljplanering om projektet beviljas tillstånd.';
-      jobSectionMaybe = jobSection;
-      companySectionMaybe = companySection;
-      postJobMaybe = sectionPostJob;
-    } else if (new Date(projectData.Planerad_byggstart) > new Date() && new Date(projectData.Planerat_drifttagande) < new Date()) {
-      statusCard = css.statusCardBuilding;
-      statusArrow = css.statusArrowBuilding;
-      statusText = css.statusTextBuilding;
-      status = 'Status: Byggnation';
-      statusDescription = 'I byggfasen sker upphandling av byggentreprenad, finansiering och byggnation av projektet.';
-      jobSectionMaybe = jobSection;
-      companySectionMaybe = companySection;
-      postJobMaybe = sectionPostJob;
-    } else if (new Date(projectData.Planerat_drifttagande) > new Date()) {
-      statusCard = css.statusCardRunning;
-      statusArrow = css.statusArrowRunning;
-      statusText = css.statusTextRunning;
-      status = 'Status: Drift';
-      statusDescription = 'Projektet har färdigställts och är i drift. Underhållsjobb kommer att behövas under hela driftperioden.';
-      jobSectionMaybe = jobSection;
-      companySectionMaybe = companySection;
-      postJobMaybe = sectionPostJob;
-    }
+    const greenProject1 = (
+      <div className={css.greenProject}>
+        <img className={css.projectImage} src={komatsuImg} alt="KF One" />
+        <p className={css.projectTitle}>KF One</p>
+        <p className={css.projectOwner}>Komatsu Forest</p>
+        <p className={css.greenTarget}>Koldioxidneutral produktion 2022</p>
+      </div>);
+
+    const greenProject2 = (
+      <div className={css.greenProject}>
+        <img className={css.projectImage} src={davaImg} alt="Dåva Kraftvärmeverk" />
+        <p className={css.projectTitle}>Dåva Kraftvärmeverk</p>
+        <p className={css.projectOwner}>Umeå Energi</p>
+        <p className={css.greenTarget}>Klimatneutral verksamhet 2040</p>
+      </div>);
+
+    const greenProject3 = (
+      <div className={css.greenProject}>
+        <img className={css.projectImage} src={vakinImg} alt="Vakin Umeå" />
+        <p className={css.projectTitle}>Vakin Umeå</p>
+        <p className={css.projectOwner}>Vakin</p>
+        <p className={css.greenTarget}>Klimatneutral verksamhet 2040</p>
+      </div>);
 
     const projectPageMedla = (
       <div>
@@ -198,34 +183,28 @@ export class CityPageComponent extends Component {
           <div className={css.contentWrapper}>
             <div className={css.coverSection}>
               <div className={css.coverInfo}>
-              <h3 className={css.welcomeTitle}>Välkommen till</h3>
-              <h1 className={css.projectTitle} >{projectData.Projektnamn}</h1>
-              <p className={css.updatedDate}>Uppdaterad {projectData.Senast_sparad}</p>
+                <h3 className={css.welcomeTitle}>Välkommen till</h3>
+                <h1 className={css.cityTitle} >{projectData.Projektnamn}</h1>
                 <p>{projectData.about}</p>
-                <div className={css.step}>
-                  <NamedLink
-                    name="NotificationSettingsPage"
-                    className={userIsSubscribed ? css.following : css.follow}
-                  >
-                    <span className={userIsSubscribed ? css.followingText : css.followText}><FormattedMessage id={userIsSubscribed ? "CityPage.followingProject" : "CityPage.followProject"} /></span>
-                  </NamedLink>
-                </div>
-                <div className={css.step}>
-                  <NamedLink className={css.following}
-                    name="SearchPage"
-                    to={{
-                      search: `?address=${projectData.Projektnamn}&bounds=${projectData.ne},${projectData.sw}&pub_listingCategory=company`,
-                    }}
-                  ><FormattedMessage id={"CityPage.findLocalCompanies"} />
-                  </NamedLink>
-                </div>
               </div>
               <img className={css.coverImage} src={projectData.image ? projectData.image : placeholderImg} alt={`Bild från projektet ${projectData.Projektnamn}.`} />
             </div>
 
             <div className={css.contentMain}>
-              {jobSectionMaybe}
-              {companySectionMaybe}
+              {companySection}
+              {jobSection}
+              <div className={css.sectionHeading}>
+                <h3 className={css.subtitle}>Gröna projekt</h3>
+                <span>Vill du etablera dig här?
+                  <ExternalLink className={css.helperLink} href="https://www.umea.se/kommunochpolitik/organisation/forvaltningarverksamheter/stadsledningskontor/naringsliv" >
+                    <span> Kontakta Näringsliv</span>
+                  </ExternalLink>
+                </span>
+              </div>              <div className={css.greenProjects}>
+                {greenProject1}
+                {greenProject2}
+                {greenProject3}
+              </div>
             </div>
           </div>
         </div>

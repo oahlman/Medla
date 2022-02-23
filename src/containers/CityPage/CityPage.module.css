@@ -1,7 +1,7 @@
 @import '../../styles/customMediaQueries.css';
 @import '../../styles/propertySets.css';
 
-.projectTitle {
+.cityTitle {
  color: var(--marketplaceColorDark);
  margin-top: 0;
 }
@@ -58,6 +58,21 @@
 
 }
 
+.button {
+  background-color: var(--marketplaceColor);
+  margin-bottom: 10px;
+  @media (--viewportMedium) {
+    width: 260px;
+    margin: 0 auto;
+  }
+  &:hover {
+    background-color: var(--marketplaceColorDark);
+  }
+  &:focus {
+    background-color: var(--marketplaceColorDark);
+  }
+}
+
 .followingText {
   padding-left: 18px;
   background-repeat: no-repeat;
@@ -99,10 +114,24 @@
   }
 }
 
+.sectionHeading {
+  display: flex;
+  flex-direction: column;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  @media (--viewportMedium) {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
 .subtitle {
   @apply --marketplaceH3FontStyles;
-  margin-top: 32px;
-  margin-bottom: 16px;
+  margin-bottom: 0;
+  @media (--viewportMedium) {
+    margin-bottom: initial;
+  }
 }
 
 
@@ -720,4 +749,34 @@ li {
 
 .separator {
   margin: 0 7px;
+}
+
+.greenProjects {
+  composes: cards;
+}
+
+.greenProject {
+  composes: card;
+
+}
+
+.projectImage {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.projectTitle {
+  @apply --marketplaceH3FontStyles;
+  margin-bottom: 0;
+}
+
+.projectOwner {
+  margin: 0;
+}
+
+.greenTarget {
+  @apply --marketplaceSmallFontStyles;
+  margin: 0;
+
 }

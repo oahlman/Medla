@@ -68,10 +68,11 @@ export const ListingCardComponent = props => {
     ? 'ListingCard.perDay'
     : 'ListingCard.perUnit';
 
-
-  const projectCurrent  = projectLabel(amenities, publicData.amenities)
-  const jobCategory = categoryLabel(category, publicData.category)
-  const projectOnCard = projectCurrent ? projectCurrent : <FormattedMessage id="ListingCard.NoProjekt" />;
+  //Display listing address if "Other project" is selected
+  const projectLocation = projectLabel(amenities, publicData.amenities === 'other' ? publicData.location.address : publicData.amenities);
+  
+  const jobCategory = categoryLabel(category, publicData.category);
+  const displayLocation = projectLocation ? projectLocation : <FormattedMessage id="ListingCard.NoProjekt" />;
   const isEmbedded = format === 'embed';
 
   const categories = currentListing.attributes.publicData.category ? currentListing.attributes.publicData.category : [];
@@ -125,7 +126,7 @@ export const ListingCardComponent = props => {
                <MdLocationPin className={css.icon} ></MdLocationPin>
 
                   <div className={css.project}>
-                {richText(projectOnCard, {
+                {richText(displayLocation, {
                 longWordMinLength: MIN_LENGTH_FOR_LONG_WORDS,
                 longWordClass: css.longWord,
                 })}

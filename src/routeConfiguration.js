@@ -24,6 +24,7 @@ const ListingPage = loadable(() => import(/* webpackChunkName: "ListingPage" */ 
 const CompanyPage = loadable(() => import(/* webpackChunkName: "CompanyPage" */ /* webpackPrefetch: true */ './containers/CompanyPage/CompanyPage'));
 const ProjectPage = loadable(() => import(/* webpackChunkName: "ProjectPage" */ /* webpackPrefetch: true */ './containers/ProjectPage/ProjectPage'));
 const ProjectEmbed = loadable(() => import(/* webpackChunkName: "ProjectEmbed" */ /* webpackPrefetch: true */ './containers/ProjectPage/ProjectEmbed'));
+const CityPage = loadable(() => import(/* webpackChunkName: "CityPage" */ /* webpackPrefetch: true */ './containers/CityPage/CityPage'));
 const ManageListingsPage = loadable(() => import(/* webpackChunkName: "ManageListingsPage" */ './containers/ManageListingsPage/ManageListingsPage'));
 const NewUserPage = loadable(() => import( /* webpackChunkName: "NewUserPage" */ './containers/NewUserPage/NewUserPage'));
 const NewProjectUserPage = loadable(() => import( /* webpackChunkName: "NewProjectUserPage" */ './containers/NewProjectUserPage/NewProjectUserPage'));
@@ -474,6 +475,14 @@ const routeConfiguration = () => {
     },
 
     //medlaProject links start
+
+    {
+      path: '/umea',
+      name: 'Umeå',
+      component: CityPage,
+      extraProps: { projectId: 'umea' },
+      loadData: params => pageDataLoadingAPI.ProjectPage.loadData({ ...params, projectId: 'umea' })
+    },
 
     //medlaProject and externalProject from projects-config.js
 

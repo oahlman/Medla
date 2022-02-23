@@ -86,7 +86,8 @@ export class CityPageComponent extends Component {
     const jobs = listings.filter(listing => listing.attributes.publicData.listingCategory !== 'company');
     const companies = listings.filter(listing => listing.attributes.publicData.listingCategory === 'company');
 
-    const jobSection = (<div className={css.jobSection}>
+    const jobSection = (
+    <div className={css.jobSection}>
       <div className={css.sectionHeading}>
         <h3 className={css.subtitle}>Nya jobb</h3>
         <span>Vill du ta in lokala offerter?
@@ -107,19 +108,19 @@ export class CityPageComponent extends Component {
           />
         ))}
       </div>
-        <PrimaryButton className={css.button}>
         <NamedLink
+          className={css.button}
           name="SearchPage"
           to={{
             search: `?address=${projectData.Projektnamn}&bounds=${projectData.ne},${projectData.sw}&pub_listingCategory=job`,
           }}>
+          Se alla jobb
         </NamedLink>
-        Se alla jobb
-        </PrimaryButton>
     </div>);
 
 
-    const companySection = (<div className={css.companySection}>
+    const companySection = (
+    <div className={css.companySection}>
       <div className={css.sectionHeading}>
         <h3 className={css.subtitle}>Lokala företag</h3>
         <span>Vill du synas här?
@@ -139,15 +140,14 @@ export class CityPageComponent extends Component {
           />
         ))}
       </div>
-        <PrimaryButton className={css.button}>
         <NamedLink
+          className={css.button}
           name="SearchPage"
           to={{
             search: `?address=${projectData.Projektnamn}&bounds=${projectData.ne},${projectData.sw}&pub_listingCategory=company`,
           }}>
-        </NamedLink>
         Se alla företag
-        </PrimaryButton>
+        </NamedLink>
     </div>);
 
     let postJobMaybe = null;
@@ -177,6 +177,23 @@ export class CityPageComponent extends Component {
         <p className={css.greenTarget}>Klimatneutral verksamhet 2040</p>
       </div>);
 
+    const projectSection = (
+    <div className={css.projectSection}>
+      <div className={css.sectionHeading}>
+      <h3 className={css.subtitle}>Gröna projekt</h3>
+      <span>Vill du etablera dig här?
+        <ExternalLink className={css.helperLink} href="https://www.umea.se/kommunochpolitik/organisation/forvaltningarverksamheter/stadsledningskontor/naringsliv" >
+          <span> Kontakta Näringsliv</span>
+        </ExternalLink>
+      </span>
+      </div>           
+      <div className={css.greenProjects}>
+        {greenProject1}
+        {greenProject2}
+        {greenProject3}
+      </div>
+    </div>);
+
     const projectPageMedla = (
       <div>
         <div className={css.staticPageWrapper}>
@@ -193,18 +210,7 @@ export class CityPageComponent extends Component {
             <div className={css.contentMain}>
               {companySection}
               {jobSection}
-              <div className={css.sectionHeading}>
-                <h3 className={css.subtitle}>Gröna projekt</h3>
-                <span>Vill du etablera dig här?
-                  <ExternalLink className={css.helperLink} href="https://www.umea.se/kommunochpolitik/organisation/forvaltningarverksamheter/stadsledningskontor/naringsliv" >
-                    <span> Kontakta Näringsliv</span>
-                  </ExternalLink>
-                </span>
-              </div>              <div className={css.greenProjects}>
-                {greenProject1}
-                {greenProject2}
-                {greenProject3}
-              </div>
+              {projectSection}
             </div>
           </div>
         </div>

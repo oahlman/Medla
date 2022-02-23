@@ -27,7 +27,7 @@ export const medlaCities = [
     lng: 17.27748,
     ne: '63.96074168,17.70965133',
     sw: '60.28740006,13.58712057',
-    about: 'Umeå är en hubb för grön innovation. Här samverkar stad, bygd, universitet och näringsliv för en hållbar framtid. Följ med oss på resan mot ett klimatneutralt Umeå.',
+    about: 'Umeå är en hubb för grön innovation. Här samverkar stad, bygd, universitet och näringsliv för en hållbar framtid. Följ med oss på resan mot ett klimatneutralt Umeå. Foto av Fredrik Larsson/Visit Umeå',
     externalLink: 'https://www.medla.app/anslut-projekt',
   },
 ];

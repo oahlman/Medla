@@ -410,7 +410,7 @@ export class ListingPageComponent extends Component {
         unitType={unitType}
         onSubmit={handleBookingSubmit}
         title={bookingTitle}
-        subTitle={bookingSubTitle}
+        //subTitle={bookingSubTitle}
         authorDisplayName={authorDisplayName}
         onManageDisableScrolling={onManageDisableScrolling}
         timeSlots={timeSlots}

@@ -9,16 +9,21 @@ import { LoadableComponentErrorBoundaryPage } from './LoadableComponentErrorBoun
 class LoadableComponentErrorBoundary extends Component {
   constructor(props) {
     super(props);
-    this.state = { error: null };
+    this.state = { hasError: false };
   }
 
   static getDerivedStateFromError(error) {
     // Update state so the next render will show the fallback UI.
-    return { error };
+    return { hasError: true };
+  }
+
+  componentDidCatch(error, errorInfo) {
+    // You can also log the error to an error reporting service
+    console.log('error:', error,'errorInfo:', errorInfo);
   }
 
   render() {
-    if (this.state.error && this.state.error.name === 'ChunkLoadError') {
+    if (this.state.hasError) {
       return <LoadableComponentErrorBoundaryPage />;
     }
 
@@ -38,4 +43,5 @@ const UseLoadableErrorBoundaryOnlyInProdutionMode = props => {
     <LoadableComponentErrorBoundary>{children}</LoadableComponentErrorBoundary>
   );
 };
+
 export default UseLoadableErrorBoundaryOnlyInProdutionMode;

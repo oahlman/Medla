@@ -24,7 +24,7 @@
 .mobileInput {
   flex-grow: 1;
   /* Font */
-  @apply --marketplaceH4FontStyles;
+  @apply --marketplaceInputFontStyles;
 
   /* Layout */
   margin: 0 24px 0 0;

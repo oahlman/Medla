@@ -45,6 +45,8 @@ import {
   Button,
   ContactLinkJob,
   ContactCardForJob,
+  ExternalLink,
+  MenuLabel,
 
 } from '../../components';
 
@@ -59,6 +61,8 @@ import SectionDescriptionMaybe from './SectionDescriptionMaybe';
 import SectionServicesMaybe from './SectionServicesMaybe';
 import SectionRulesMaybe from './SectionRulesMaybe';
 import SectionMapMaybe from './SectionMapMaybe';
+import { IoFlagOutline } from "react-icons/io5";
+
 
 import css from './CompanyPage.module.css';
 
@@ -339,6 +343,8 @@ export class CompanyPageComponent extends Component {
 
     const currentAuthor = authorAvailable ? currentListing.author : null;
     const ensuredAuthor = ensureUser(currentAuthor);
+    
+
 
     // When user is banned or deleted the listing is also deleted.
     // Because listing can be never showed with banned or deleted user we don't have to provide
@@ -553,15 +559,21 @@ const ContactCardForJobListings = contactJob;
                   </div>
 
                   <div className={css.mapMobile}>
+
                   <SectionMapMaybe
                     geolocation={geolocation}
                     publicData={publicData}
                     listingId={currentListing.id}
                   />
+                  <div className={css.reportContainerMobile}>
+                <IoFlagOutline className={css.iconFlag}></IoFlagOutline>  <ExternalLink href="mailto:info@medla.app?subject=Rapportert%20av%20f%C3%B6retag" >
+              <p className={css.reportFont}>Rapportera företag</p>
+              </ExternalLink>
 
+                </div>
          
                   </div>
-
+         
                 </div>
 
 
@@ -595,12 +607,20 @@ const ContactCardForJobListings = contactJob;
             </Modal>
                   </div>
                   <div className={css.mapDesktop}>
+                    <div className={css.reportContainer}>
+
+                    <IoFlagOutline className={css.iconFlag}></IoFlagOutline>  <ExternalLink href="mailto:info@medla.app?subject=Rapportert%20av%20f%C3%B6retag" >
+                  <p className={css.reportFont}>Rapportera Företag</p>
+                      </ExternalLink>
+
+                  </div>
                   <SectionMapMaybe
                     geolocation={geolocation}
                     publicData={publicData}
                     listingId={currentListing.id}
                   />
                   </div>
+                  
                   <SectionHeading
                       showContactUser={showContactUser}
                        onContactUser={this.onContactUser} >
@@ -609,6 +629,7 @@ const ContactCardForJobListings = contactJob;
                   <div id="contactCompanyButton" className={css.showContact}> 
                      {ContactCardForJobListings}
                      </div>
+                     
               </div>
 
               </div>
@@ -616,6 +637,7 @@ const ContactCardForJobListings = contactJob;
 
 
             </div>
+            
           </LayoutWrapperMain>
           <LayoutWrapperFooter>
             <Footer />

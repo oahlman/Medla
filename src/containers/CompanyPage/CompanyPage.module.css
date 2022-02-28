@@ -816,7 +816,34 @@ display:none;
       }
     }
 
-  
+.reportContainer{
+  @apply --marketplaceTinyFontStyles;
+  display: flex;
+  flex-direction: wrap;
+  align-items: center;
+  justify-content: right;
+  gap:5px;
 
+}
+
+.reportContainerMobile{
+  @apply --marketplaceTinyFontStyles;
+  display: flex;
+  flex-direction: wrap;
+  align-items: center;
+  justify-content: center;
+  gap:5px;
+
+}
+  
+.iconFlag {
+  color:red;
+  
+}
+
+.reportFont{
+@apply --marketplaceTinyFontStyles;
+color: grey;
+}
 
   

@@ -566,7 +566,7 @@ const ContactCardForJobListings = contactJob;
                     listingId={currentListing.id}
                   />
                   <div className={css.reportContainerMobile}>
-                <IoFlagOutline className={css.iconFlag}></IoFlagOutline>  <ExternalLink href="mailto:info@medla.app?subject=Rapportera%20av%20f%C3%B6retag" >
+                <IoFlagOutline className={css.iconFlag}></IoFlagOutline>  <ExternalLink href="mailto:info@medla.app?subject=Rapportera%20f%C3%B6retag" >
               <p className={css.reportFont}>Rapportera företag</p>
               </ExternalLink>
 
@@ -609,7 +609,7 @@ const ContactCardForJobListings = contactJob;
                   <div className={css.mapDesktop}>
                     <div className={css.reportContainer}>
 
-                    <IoFlagOutline className={css.iconFlag}></IoFlagOutline>  <ExternalLink href="mailto:info@medla.app?subject=Rapportera%20av%20f%C3%B6retag" >
+                    <IoFlagOutline className={css.iconFlag}></IoFlagOutline>  <ExternalLink href="mailto:info@medla.app?subject=Rapportera%20f%C3%B6retag" >
                   <p className={css.reportFont}>Rapportera Företag</p>
                       </ExternalLink>
 

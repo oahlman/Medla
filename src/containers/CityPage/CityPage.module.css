@@ -59,6 +59,7 @@
 }
 
 .button {
+  @apply --marketplaceButtonStylesPrimary;
   background-color: var(--marketplaceColor);
   margin-bottom: 10px;
   @media (--viewportMedium) {
@@ -467,10 +468,6 @@ li {
   }
 }
 
-.newJobSectionBg {
-  background-color: var(--marketplaceColorLight);
-}
-
 .newJobSection {
   width: calc(100% - 48px);
   max-width: 1056px;
@@ -482,6 +479,25 @@ li {
     margin: 72px auto 0 auto;
     padding: 72px 0 72px 0;
   }
+}
+
+.section {
+  margin: 36px auto;
+  @media (--viewportMedium) {
+    margin: 72px auto;
+  }
+}
+
+.companySection {
+  composes: section;
+}
+
+.jobSection {
+  composes: section;
+}
+
+.projectSection {
+  composes: section;
 }
 
 .newJobContent {

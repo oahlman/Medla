@@ -112,12 +112,11 @@ module.exports = (reportUri, enforceSsl, reportOnly) => {
     frameAncestors: [
       '*',
       self, 
-      unsafeInline,
-      unsafeEval,
       data,
       blob,
     ],
   };
+
 
   // ================ END CUSTOM CSP URLs ================ //
 

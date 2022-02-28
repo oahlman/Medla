@@ -817,13 +817,16 @@ display:none;
     }
 
 .reportContainer{
+  display: none;
+  @media (--viewportMedium) {
+    
   @apply --marketplaceTinyFontStyles;
   display: flex;
   flex-direction: wrap;
   align-items: center;
   justify-content: center;
   gap:5px;
-
+  }
 }
 
 .reportContainerMobile{

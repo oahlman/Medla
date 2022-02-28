@@ -607,13 +607,7 @@ const ContactCardForJobListings = contactJob;
             </Modal>
                   </div>
                   <div className={css.mapDesktop}>
-                    <div className={css.reportContainer}>
-
-                    <IoFlagOutline className={css.iconFlag}></IoFlagOutline>  <ExternalLink href="mailto:info@medla.app?subject=Rapportera%20f%C3%B6retag" >
-                  <p className={css.reportFont}>Rapportera Företag</p>
-                      </ExternalLink>
-
-                  </div>
+                
                   <SectionMapMaybe
                     geolocation={geolocation}
                     publicData={publicData}
@@ -629,6 +623,13 @@ const ContactCardForJobListings = contactJob;
                   <div id="contactCompanyButton" className={css.showContact}> 
                      {ContactCardForJobListings}
                      </div>
+                     <div className={css.reportContainer}>
+
+<IoFlagOutline className={css.iconFlag}></IoFlagOutline>  <ExternalLink href="mailto:info@medla.app?subject=Rapportera%20f%C3%B6retag" >
+<p className={css.reportFont}>Rapportera Företag</p>
+  </ExternalLink>
+
+</div>
                      
               </div>
 

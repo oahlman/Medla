@@ -29,7 +29,7 @@ const companyParams = companyListing ? { slug: companyListing.attributes.title.r
 
 const linkCompanySearch = <NamedLink name="SearchPage"  to={{
   search:
-  's?address=Sverige&bounds=69.0599269995724%2C24.1933684832876%2C55.280224001785%2C10.8383668128319&pub_listingCategory=company',
+  's?address=Sverige&bounds=69.0599269995724%2C24.1933684832876%2C55.280224001785%2C10.8383668128319&pub_listingCategory=company&sort=meta_rating',
 }}
 >
   <FormattedMessage id="SectionHowItWorks.textLinkForetagare" />

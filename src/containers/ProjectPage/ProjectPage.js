@@ -127,7 +127,7 @@ export class ProjectPageComponent extends Component {
             className={css.helperLink}
             name="SearchPage"
             to={{
-              search: `?address=${projectData.Projektnamn}&bounds=${projectData.ne},${projectData.sw}&pub_listingCategory=company`,
+              search: `?address=${projectData.Projektnamn}&bounds=${projectData.ne},${projectData.sw}&pub_listingCategory=company&sort=meta_rating`,
             }}>
             <span>Se alla företag</span>
           </NamedLink>
@@ -215,7 +215,7 @@ export class ProjectPageComponent extends Component {
                   <NamedLink className={css.following}
                     name="SearchPage"
                     to={{
-                      search: `?address=${projectData.Projektnamn}&bounds=${projectData.ne},${projectData.sw}&pub_listingCategory=company`,
+                      search: `?address=${projectData.Projektnamn}&bounds=${projectData.ne},${projectData.sw}&pub_listingCategory=company&sort=meta_rating`,
                     }}
                   ><FormattedMessage id={"ProjectPage.findLocalCompanies"} />
                   </NamedLink>
@@ -237,7 +237,7 @@ export class ProjectPageComponent extends Component {
                   className={css.serviceCard}
                   name="SearchPage"
                   to={{
-                    search: `?address=${projectData.Projektnamn}&bounds=${projectData.ne},${projectData.sw}&pub_category=has_any:kostlogi&pub_listingCategory=company`,
+                    search: `?address=${projectData.Projektnamn}&bounds=${projectData.ne},${projectData.sw}&pub_category=has_any:kostlogi&pub_listingCategory=company&sort=meta_rating`,
                   }}>
                   <span>Kost och logi</span>
                 </NamedLink>
@@ -246,7 +246,7 @@ export class ProjectPageComponent extends Component {
                   className={css.serviceCard}
                   name="SearchPage"
                   to={{
-                    search: `?address=${projectData.Projektnamn}&bounds=${projectData.ne},${projectData.sw}&pub_category=has_any:bygg&pub_listingCategory=company`,
+                    search: `?address=${projectData.Projektnamn}&bounds=${projectData.ne},${projectData.sw}&pub_category=has_any:bygg&pub_listingCategory=company&sort=meta_rating`,
                   }}>
                   <span>Byggentreprenad</span>
                 </NamedLink>
@@ -255,7 +255,7 @@ export class ProjectPageComponent extends Component {
                   className={css.serviceCard}
                   name="SearchPage"
                   to={{
-                    search: `?address=${projectData.Projektnamn}&bounds=${projectData.ne},${projectData.sw}&pub_category=has_any:anlaggning&pub_listingCategory=company`,
+                    search: `?address=${projectData.Projektnamn}&bounds=${projectData.ne},${projectData.sw}&pub_category=has_any:anlaggning&pub_listingCategory=company&sort=meta_rating`,
                   }}>
                   <span>Anläggning</span>
                 </NamedLink>
@@ -264,7 +264,7 @@ export class ProjectPageComponent extends Component {
                   className={css.serviceCard}
                   name="SearchPage"
                   to={{
-                    search: `?address=${projectData.Projektnamn}&bounds=${projectData.ne},${projectData.sw}&pub_category=has_any:servicetjanster&pub_listingCategory=company`,
+                    search: `?address=${projectData.Projektnamn}&bounds=${projectData.ne},${projectData.sw}&pub_category=has_any:servicetjanster&pub_listingCategory=company&sort=meta_rating`,
                   }}>
                   <span>Servicetjänster</span>
                 </NamedLink>
@@ -273,7 +273,7 @@ export class ProjectPageComponent extends Component {
                   className={css.serviceCard}
                   name="SearchPage"
                   to={{
-                    search: `?address=${projectData.Projektnamn}&bounds=${projectData.ne},${projectData.sw}&pub_category=has_any:transport&pub_listingCategory=company`,
+                    search: `?address=${projectData.Projektnamn}&bounds=${projectData.ne},${projectData.sw}&pub_category=has_any:transport&pub_listingCategory=company&sort=meta_rating`,
                   }}>
                   <span>Transport</span>
                 </NamedLink>
@@ -282,7 +282,7 @@ export class ProjectPageComponent extends Component {
                   className={css.serviceCard}
                   name="SearchPage"
                   to={{
-                    search: `?address=${projectData.Projektnamn}&bounds=${projectData.ne},${projectData.sw}&pub_category=has_any:ovrigt&pub_listingCategory=company`,
+                    search: `?address=${projectData.Projektnamn}&bounds=${projectData.ne},${projectData.sw}&pub_category=has_any:ovrigt&pub_listingCategory=company&sort=meta_rating`,
                   }}>
                   <span>Övrigt</span>
                 </NamedLink>
@@ -292,7 +292,7 @@ export class ProjectPageComponent extends Component {
                   className={css.helperLink}
                   name="SearchPage"
                   to={{
-                    search: `?address=${projectData.Projektnamn}&bounds=${projectData.ne},${projectData.sw}&pub_listingCategory=company`,
+                    search: `?address=${projectData.Projektnamn}&bounds=${projectData.ne},${projectData.sw}&pub_listingCategory=company&sort=meta_rating`,
                   }}>
                   <span>Se alla branscher</span>
                 </NamedLink>

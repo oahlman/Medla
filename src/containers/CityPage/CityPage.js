@@ -144,7 +144,7 @@ export class CityPageComponent extends Component {
           className={css.button}
           name="SearchPage"
           to={{
-            search: `?address=${projectData.Projektnamn}&bounds=${projectData.ne},${projectData.sw}&pub_listingCategory=company`,
+            search: `?address=${projectData.Projektnamn}&bounds=${projectData.ne},${projectData.sw}&pub_listingCategory=company&sort=meta_rating`,
           }}>
         Se alla företag
         </NamedLink>

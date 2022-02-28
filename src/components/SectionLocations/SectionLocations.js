@@ -66,37 +66,37 @@ const SectionLocations = props => {
           'Avesta',
           'Gävleborgs län',
           avesta,
-          'address=Avesta&bounds=60.70848539%2C16.86920029%2C59.62704493%2C15.28974871&pub_listingCategory=company'
+          'address=Avesta&bounds=60.70848539%2C16.86920029%2C59.62704493%2C15.28974871&pub_listingCategory=company&sort=meta_rating'
         )}
         {locationLink(
           'Gällivare',
           'Norrbottens län',
           gallivare,
-          'address=Gällivare&bounds=69.33701906,25.08883256,64.71116182,16.22061112&pub_listingCategory=company'
+          'address=Gällivare&bounds=69.33701906,25.08883256,64.71116182,16.22061112&pub_listingCategory=company&sort=meta_rating'
         )}
         {locationLink(
           'Hofors',
           'Gävleborgs län',
           hofors,
-          'address=Hofors&bounds=61.09750184%2C17.13902433%2C59.96552243%2C15.46719667&pub_listingCategory=company'
+          'address=Hofors&bounds=61.09750184%2C17.13902433%2C59.96552243%2C15.46719667&pub_listingCategory=company&sort=meta_rating'
         )}
         {locationLink(
           'Ljusdal',
           'Gävleborgs län',
           ljusdal,
-          'address=Ljusdal&bounds=63.03626025,18.0991935,60.59913922,14.2480015&pub_listingCategory=company'
+          'address=Ljusdal&bounds=63.03626025,18.0991935,60.59913922,14.2480015&pub_listingCategory=company&sort=meta_rating'
         )}
         {locationLink(
           'Sandviken',
           'Gävleborgs län',
           sandviken,
-          'address=Sandviken&bounds=60.95459392%2C17.1740284%2C60.37694908%2C16.3174206&pub_listingCategory=company'
+          'address=Sandviken&bounds=60.95459392%2C17.1740284%2C60.37694908%2C16.3174206&pub_listingCategory=company&sort=meta_rating'
         )}
         {locationLink(
           'Årjäng',
           'Värmlands län',
           arjang,
-          'address=Årjäng&bounds=60.36228154%2C13.5496365%2C58.42383193%2C10.7828885&pub_listingCategory=company'
+          'address=Årjäng&bounds=60.36228154%2C13.5496365%2C58.42383193%2C10.7828885&pub_listingCategory=company&sort=meta_rating'
         )}
       </div>
     </div>

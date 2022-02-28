@@ -164,7 +164,7 @@ export const sortConfig = {
   conflictingFilters: ['keyword'],
 
   options: [
-    { key: 'meta_rating', label: 'Omdöme (Högst)' },
+    { key: 'meta_rating', label: 'Omdöme' },
     { key: 'createdAt', label: 'Nyast' },
     { key: '-createdAt', label: 'Äldst' },
 

@@ -109,6 +109,7 @@ class TopbarComponent extends Component {
       ...currentSearchParams,
       ...originMaybe,
       pub_listingCategory: values.category ? values.category : 'company',
+      sort: values.category ? 'createdAt' : 'meta_rating',
       address: search,
       bounds,
     };

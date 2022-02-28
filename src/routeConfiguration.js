@@ -275,6 +275,12 @@ const routeConfiguration = () => {
     },
 
     {
+      path: '/anslut-plats',
+      name: 'ConnectMunicipalityPage',
+      component: ConnectMunicipalityPage,
+    },
+
+    {
       path: '/anslut-kommun',
       name: 'ConnectMunicipalityPage',
       component: ConnectMunicipalityPage,

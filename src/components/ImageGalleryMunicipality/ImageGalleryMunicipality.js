@@ -161,8 +161,8 @@ class ImageGalleryMunicipality extends Component {
         </div>
         <div className={css.imageContainer}>
         <img id="secondImage" className={css.image} src={secondImage} alt="project"/>
-        <h3 id="secondHeading" className={css.imageHeading}>Kommunsida</h3>
-        <span id="secondText">Dynamisk kommunsida för näringslivets synlighet och lokala affärer.</span>
+        <h3 id="secondHeading" className={css.imageHeading}>Välkomstsida</h3>
+        <span id="secondText">Dynamisk sida för näringslivets synlighet och lokala affärer.</span>
         </div>
         <div className={css.imageContainer}>
         <img id="thirdImage" className={css.image} src={thirdImage} alt="chat"/>

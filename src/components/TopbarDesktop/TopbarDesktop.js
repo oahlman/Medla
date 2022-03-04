@@ -16,6 +16,7 @@ import {
   MenuContent,
   MenuItem,
   NamedLink,
+  IconSpinner,
 } from '../../components';
 import { TopbarSearchForm } from '../../forms';
 
@@ -36,6 +37,7 @@ const TopbarDesktop = props => {
     onLogout,
     onSearchSubmit,
     initialSearchFormValues,
+    location,
   } = props;
   const [mounted, setMounted] = useState(false);
 
@@ -143,6 +145,28 @@ const TopbarDesktop = props => {
       </span>
     </NamedLink>
   );
+  const baseUrl = window.location.origin;
+  const en = '/en';
+  const toSwedish = (window.location.pathname.startsWith('/en/') ? window.location.pathname.replace('en/', '') : window.location.pathname);
+  const toEnglish = (window.location.pathname.startsWith('/en/') ? window.location.pathname : en.concat('', window.location.pathname));
+  console.log('en', toEnglish, 'sv', toSwedish);
+  const languageMenu = (
+    <Menu>
+      <MenuLabel className={css.profileMenuLabel} isOpenClassName={css.profileMenuIsOpen}>
+      <IconSpinner />
+      </MenuLabel>
+      <MenuContent className={css.profileMenuContent}>
+        <MenuItem key="SwitchToSwedish">
+        <a className={classNames(css.yourListingsLink, currentPageClass('SwitchToSwedish'))} name='SwitchToSwedish' href={baseUrl.concat(toSwedish)}>Svenska</a>
+            <span className={css.menuItemBorder} />
+        </MenuItem>
+        <MenuItem key="SwitchToEnglish">
+          <a className={classNames(css.yourListingsLink, currentPageClass('SwitchToEnglish'))} name="SwitchToEnglish" href={baseUrl.concat(toEnglish)}>English</a>
+          <span className={css.menuItemBorder} />
+        </MenuItem>
+      </MenuContent>
+    </Menu>
+  );
 
   return (
     <nav className={classes}>
@@ -160,6 +184,7 @@ const TopbarDesktop = props => {
         </span>
       </NamedLink>
       {inboxLink}
+      {languageMenu}
       {profileMenu}
       {signupLink}
       {loginLink}

@@ -482,368 +482,368 @@ const routeConfiguration = () => {
     //English versions
 
     
-{
-  path: '/en/',
-  name: 'LandingPage',
-  component: LandingPage,
-},
-{
-  path: '/en/about',
-  name: 'AboutPage',
-  component: AboutPage,
-},
-{
-  path: '/en/about',
-  name: 'AboutPage',
-  component: AboutPage,
-},
-{
-  path: '/en/vanliga-fragor',
-  name: 'FAQPage',
-  component: FAQPage,
-},
-{
-  path: '/en/s',
-  name: 'SearchPage',
-  component: SearchPage,
-  loadData: pageDataLoadingAPI.SearchPage.loadData,
-},
-{
-  path: '/en/s/jobs',
-  name: 'SearchJobsPage',
-  component: SearchPage,
-  auth: true,
-  authPage: 'LoginPage',
-  loadData: pageDataLoadingAPI.SearchPage.loadData,
-},
-{
-  path: '/en/l',
-  name: 'ListingBasePage',
-  component: RedirectToLandingPage,
-},
-{
-  path: '/en/p',
-  name: 'ProjectBasePage',
-  component: RedirectToLandingPage,
-},
-{
-  path: '/en/l/:slug/:id',
-  name: 'ListingPage',
-  component: ListingPage,
-  loadData: pageDataLoadingAPI.ListingPage.loadData,
-},
-{
-  path: '/en/c/:slug/:id',
-  name: 'CompanyPage',
-  component: CompanyPage,
-  loadData: pageDataLoadingAPI.ListingPage.loadData,
-},
-{
-  path: '/en/l/:slug/:id/checkout',
-  name: 'CheckoutPage',
-  auth: true,
-  component: CheckoutPage,
-  setInitialValues: pageDataLoadingAPI.CheckoutPage.setInitialValues,
-},
-{
-  path: '/en/l/:slug/:id/:variant',
-  name: 'ListingPageVariant',
-  auth: true,
-  authPage: 'LoginPage',
-  component: ListingPage,
-  loadData: pageDataLoadingAPI.ListingPage.loadData,
-},
-{
-  path: '/en/c/:slug/:id/:variant',
-  name: 'CompanyPageVariant',
-  auth: true,
-  authPage: 'LoginPage',
-  component: CompanyPage,
-  loadData: pageDataLoadingAPI.ListingPage.loadData,
-},
-{
-  path: '/en/l/new',
-  name: 'NewListingPage',
-  auth: true,
-  component: () => (
-    <NamedRedirect
-      name="EditListingPage"
-      params={{ slug: draftSlug, id: draftId, type: 'new', tab: 'description' }}
-    />
-  ),
-},
-{
-  path: '/en/l/:slug/:id/:type/:tab',
-  name: 'EditListingPage',
-  auth: true,
-  component: EditListingPage,
-  loadData: pageDataLoadingAPI.EditListingPage.loadData,
-},
-{
-  path: '/en/l/:slug/:id/:type/:tab/:returnURLType',
-  name: 'EditListingStripeOnboardingPage',
-  auth: true,
-  component: EditListingPage,
-  loadData: pageDataLoadingAPI.EditListingPage.loadData,
-},
+    {
+      path: '/en/',
+      name: 'LandingPageEn',
+      component: LandingPage,
+    },
+    {
+      path: '/en/about',
+      name: 'AboutPageEn',
+      component: AboutPage,
+    },
+    {
+      path: '/en/about',
+      name: 'AboutPageEn',
+      component: AboutPage,
+    },
+    {
+      path: '/en/vanliga-fragor',
+      name: 'FAQPageEn',
+      component: FAQPage,
+    },
+    {
+      path: '/en/s',
+      name: 'SearchPageEn',
+      component: SearchPage,
+      loadData: pageDataLoadingAPI.SearchPage.loadData,
+    },
+    {
+      path: '/en/s/jobs',
+      name: 'SearchJobsPageEn',
+      component: SearchPage,
+      auth: true,
+      authPage: 'LoginPage',
+      loadData: pageDataLoadingAPI.SearchPage.loadData,
+    },
+    {
+      path: '/en/l',
+      name: 'ListingBasePageEn',
+      component: RedirectToLandingPage,
+    },
+    {
+      path: '/en/p',
+      name: 'ProjectBasePageEn',
+      component: RedirectToLandingPage,
+    },
+    {
+      path: '/en/l/:slug/:id',
+      name: 'ListingPageEn',
+      component: ListingPage,
+      loadData: pageDataLoadingAPI.ListingPage.loadData,
+    },
+    {
+      path: '/en/c/:slug/:id',
+      name: 'CompanyPageEn',
+      component: CompanyPage,
+      loadData: pageDataLoadingAPI.ListingPage.loadData,
+    },
+    {
+      path: '/en/l/:slug/:id/checkout',
+      name: 'CheckoutPageEn',
+      auth: true,
+      component: CheckoutPage,
+      setInitialValues: pageDataLoadingAPI.CheckoutPage.setInitialValues,
+    },
+    {
+      path: '/en/l/:slug/:id/:variant',
+      name: 'ListingPageVariantEn',
+      auth: true,
+      authPage: 'LoginPage',
+      component: ListingPage,
+      loadData: pageDataLoadingAPI.ListingPage.loadData,
+    },
+    {
+      path: '/en/c/:slug/:id/:variant',
+      name: 'CompanyPageVariantEn',
+      auth: true,
+      authPage: 'LoginPage',
+      component: CompanyPage,
+      loadData: pageDataLoadingAPI.ListingPage.loadData,
+    },
+    {
+      path: '/en/l/new',
+      name: 'NewListingPageEn',
+      auth: true,
+      component: () => (
+        <NamedRedirect
+          name="EditListingPage"
+          params={{ slug: draftSlug, id: draftId, type: 'new', tab: 'description' }}
+        />
+      ),
+    },
+    {
+      path: '/en/l/:slug/:id/:type/:tab',
+      name: 'EditListingPageEn',
+      auth: true,
+      component: EditListingPage,
+      loadData: pageDataLoadingAPI.EditListingPage.loadData,
+    },
+    {
+      path: '/en/l/:slug/:id/:type/:tab/:returnURLType',
+      name: 'EditListingStripeOnboardingPageEn',
+      auth: true,
+      component: EditListingPage,
+      loadData: pageDataLoadingAPI.EditListingPage.loadData,
+    },
 
-// Canonical path should be after the `/l/new` path since they
-// conflict and `new` is not a valid listing UUID.
-{
-  path: '/en/l/:id',
-  name: 'ListingPageCanonical',
-  component: ListingPage,
-  loadData: pageDataLoadingAPI.ListingPage.loadData,
-},
-{
-  path: '/en/c/:id',
-  name: 'CompanyPageCanonical',
-  component: CompanyPage,
-  loadData: pageDataLoadingAPI.ListingPage.loadData,
-},
-{
-  path: '/en/u',
-  name: 'ProfileBasePage',
-  component: RedirectToLandingPage,
-},
-{
-  path: '/en/u/:id',
-  name: 'ProfilePage',
-  component: ProfilePage,
-  loadData: pageDataLoadingAPI.ProfilePage.loadData,
-},
-{
-  path: '/en/profile-settings',
-  name: 'ProfileSettingsPage',
-  auth: true,
-  authPage: 'LoginPage',
-  component: ProfileSettingsPage,
-},
-{
-  path: '/en/p/:id',
-  name: 'ProjectPage',
-  component: ProjectPage,
-  loadData: pageDataLoadingAPI.ProjectPage.loadData,
-},
-{
-  path: '/en/notification-settings',
-  name: 'NotificationSettingsPage',
-  auth: true,
-  authPage: 'LoginPage',
-  component: NotificationSettingsPage,
-},
+    // Canonical path should be after the `/l/new` path since they
+    // conflict and `new` is not a valid listing UUID.
+    {
+      path: '/en/l/:id',
+      name: 'ListingPageCanonicalEn',
+      component: ListingPage,
+      loadData: pageDataLoadingAPI.ListingPage.loadData,
+    },
+    {
+      path: '/en/c/:id',
+      name: 'CompanyPageCanonicalEn',
+      component: CompanyPage,
+      loadData: pageDataLoadingAPI.ListingPage.loadData,
+    },
+    {
+      path: '/en/u',
+      name: 'ProfileBasePageEn',
+      component: RedirectToLandingPage,
+    },
+    {
+      path: '/en/u/:id',
+      name: 'ProfilePageEn',
+      component: ProfilePage,
+      loadData: pageDataLoadingAPI.ProfilePage.loadData,
+    },
+    {
+      path: '/en/profile-settings',
+      name: 'ProfileSettingsPageEn',
+      auth: true,
+      authPage: 'LoginPage',
+      component: ProfileSettingsPage,
+    },
+    {
+      path: '/en/p/:id',
+      name: 'ProjectPageEn',
+      component: ProjectPage,
+      loadData: pageDataLoadingAPI.ProjectPage.loadData,
+    },
+    {
+      path: '/en/notification-settings',
+      name: 'NotificationSettingsPageEn',
+      auth: true,
+      authPage: 'LoginPage',
+      component: NotificationSettingsPage,
+    },
 
-{
-  path: '/en/ny-anvandare',
-  name: 'NewUserPage',
-  component: NewUserPage,
-},
+    {
+      path: '/en/ny-anvandare',
+      name: 'NewUserPageEn',
+      component: NewUserPage,
+    },
 
-{
-  path: '/en/anslut-projekt',
-  name: 'NewProjectUserPage',
-  component: NewProjectUserPage,
-},
+    {
+      path: '/en/anslut-projekt',
+      name: 'NewProjectUserPageEn',
+      component: NewProjectUserPage,
+    },
 
-{
-  path: '/en/anslut-kommun',
-  name: 'ConnectMunicipalityPage',
-  component: ConnectMunicipalityPage,
-},
+    {
+      path: '/en/anslut-kommun',
+      name: 'ConnectMunicipalityPageEn',
+      component: ConnectMunicipalityPage,
+    },
 
-{
-  path: '/en/registrera-foretag',
-  name: 'ConnectMunicipalityPage',
-  component: ConnectCompanyPage,
-},
+    {
+      path: '/en/registrera-foretag',
+      name: 'ConnectMunicipalityPageEn',
+      component: ConnectCompanyPage,
+    },
 
 
-// Note: authenticating with IdP (e.g. Facebook) expects that /login path exists
-// so that in the error case users can be redirected back to the LoginPage
-// In case you change this, remember to update the route in server/api/auth/loginWithIdp.js
-  {
-    path: '/en/login',
-    name: 'LoginPage',
-    component: AuthenticationPage,
-    extraProps: { tab: 'login' },
-  },
-  {
-    path: '/en/signup',
-    name: 'SignupPage',
-    component: AuthenticationPage,
-    extraProps: { tab: 'signup' },
-  },
-  {
-    path: '/en/confirm',
-    name: 'ConfirmPage',
-    component: AuthenticationPage,
-    extraProps: { tab: 'confirm' },
-  },
-  {
-    path: '/en/recover-password',
-    name: 'PasswordRecoveryPage',
-    component: PasswordRecoveryPage,
-  },
-  {
-    path: '/en/nytt-losenord',
-    name: 'PasswordRecoveryPage',
-    component: PasswordRecoveryPage,
-  },
-  {
-    path: '/en/inbox',
-    name: 'InboxBasePage',
-    auth: true,
-    authPage: 'LoginPage',
-    component: () => <NamedRedirect name="InboxPage" params={{ tab: 'sales' }} />,
-  },
-  {
-    path: '/en/inbox/:tab',
-    name: 'InboxPage',
-    auth: true,
-    authPage: 'LoginPage',
-    component: InboxPage,
-    loadData: pageDataLoadingAPI.InboxPage.loadData,
-  },
-  {
-    path: '/en/order/:id',
-    name: 'OrderPage',
-    auth: true,
-    authPage: 'LoginPage',
-    component: props => <NamedRedirect name="OrderDetailsPage" params={{ ...props.params }} />,
-  },
-  {
-    path: '/en/order/:id/details',
-    name: 'OrderDetailsPage',
-    auth: true,
-    authPage: 'LoginPage',
-    component: TransactionPage,
-    extraProps: { transactionRole: 'customer' },
-    loadData: params =>
-      pageDataLoadingAPI.TransactionPage.loadData({ ...params, transactionRole: 'customer' }),
-    setInitialValues: pageDataLoadingAPI.TransactionPage.setInitialValues,
-  },
-  {
-    path: '/en/sale/:id',
-    name: 'SalePage',
-    auth: true,
-    authPage: 'LoginPage',
-    component: props => <NamedRedirect name="SaleDetailsPage" params={{ ...props.params }} />,
-  },
-  {
-    path: '/en/sale/:id/details',
-    name: 'SaleDetailsPage',
-    auth: true,
-    authPage: 'LoginPage',
-    component: TransactionPage,
-    extraProps: { transactionRole: 'provider' },
-    loadData: params =>
-      pageDataLoadingAPI.TransactionPage.loadData({ ...params, transactionRole: 'provider' }),
-  },
-  {
-    path: '/en/listings',
-    name: 'ManageListingsPage',
-    auth: true,
-    authPage: 'LoginPage',
-    component: ManageListingsPage,
-    loadData: pageDataLoadingAPI.ManageListingsPage.loadData,
-  },
-  {
-    path: '/en/account',
-    name: 'AccountSettingsPage',
-    auth: true,
-    authPage: 'LoginPage',
-    component: () => <NamedRedirect name="NotificationSettingsPage" />,
-  },
-  {
-    path: '/en/account/contact-details',
-    name: 'ContactDetailsPage',
-    auth: true,
-    authPage: 'LoginPage',
-    component: ContactDetailsPage,
-    loadData: pageDataLoadingAPI.ContactDetailsPage.loadData,
-  },
-  {
-    path: '/en/account/change-password',
-    name: 'PasswordChangePage',
-    auth: true,
-    authPage: 'LoginPage',
-    component: PasswordChangePage,
-  },
-  {
-    path: '/en/account/payments',
-    name: 'StripePayoutPage',
-    auth: true,
-    authPage: 'LoginPage',
-    component: StripePayoutPage,
-    loadData: pageDataLoadingAPI.StripePayoutPage.loadData,
-  },
-  {
-    path: '/en/account/payments/:returnURLType',
-    name: 'StripePayoutOnboardingPage',
-    auth: true,
-    authPage: 'LoginPage',
-    component: StripePayoutPage,
-    loadData: pageDataLoadingAPI.StripePayoutPage.loadData,
-  },
-  {
-    path: '/en/account/payment-methods',
-    name: 'PaymentMethodsPage',
-    auth: true,
-    authPage: 'LoginPage',
-    component: PaymentMethodsPage,
-    loadData: pageDataLoadingAPI.PaymentMethodsPage.loadData,
-  },
-  {
-    path: '/en/terms-of-service',
-    name: 'TermsOfServicePage',
-    component: TermsOfServicePage,
-  },
-  {
-    path: '/en/sitemap',
-    name: 'SiteMapPage',
-    component: SiteMapPage,
-  },
-  {
-    path: '/en/privacy-policy',
-    name: 'PrivacyPolicyPage',
-    component: PrivacyPolicyPage,
-  },
-  {
-    path: '/en/projects',
-    name: 'ProjectsMapPage',
-    component: ProjectsMapPage,
-  },
-  {
-    path: '/en/styleguide',
-    name: 'Styleguide',
-    component: StyleguidePage,
-  },
-  {
-    path: '/en/styleguide/g/:group',
-    name: 'StyleguideGroup',
-    component: StyleguidePage,
-  },
-  {
-    path: '/en/styleguide/c/:component',
-    name: 'StyleguideComponent',
-    component: StyleguidePage,
-  },
-  {
-    path: '/en/styleguide/c/:component/:example',
-    name: 'StyleguideComponentExample',
-    component: StyleguidePage,
-  },
-  {
-    path: '/en/styleguide/c/:component/:example/raw',
-    name: 'StyleguideComponentExampleRaw',
-    component: StyleguidePage,
-    extraProps: { raw: true },
-  },
-  {
-    path: '/en/notfound',
-    name: 'NotFoundPage',
-    component: props => <NotFoundPage {...props} />,
-  },
+    // Note: authenticating with IdP (e.g. Facebook) expects that /login path exists
+    // so that in the error case users can be redirected back to the LoginPage
+    // In case you change this, remember to update the route in server/api/auth/loginWithIdp.js
+    {
+      path: '/en/login',
+      name: 'LoginPageEn',
+      component: AuthenticationPage,
+      extraProps: { tab: 'login' },
+    },
+    {
+      path: '/en/signup',
+      name: 'SignupPageEn',
+      component: AuthenticationPage,
+      extraProps: { tab: 'signup' },
+    },
+    {
+      path: '/en/confirm',
+      name: 'ConfirmPageEn',
+      component: AuthenticationPage,
+      extraProps: { tab: 'confirm' },
+    },
+    {
+      path: '/en/recover-password',
+      name: 'PasswordRecoveryPageEn',
+      component: PasswordRecoveryPage,
+    },
+    {
+      path: '/en/nytt-losenord',
+      name: 'PasswordRecoveryPageEn',
+      component: PasswordRecoveryPage,
+    },
+    {
+      path: '/en/inbox',
+      name: 'InboxBasePageEn',
+      auth: true,
+      authPage: 'LoginPage',
+      component: () => <NamedRedirect name="InboxPage" params={{ tab: 'sales' }} />,
+    },
+    {
+      path: '/en/inbox/:tab',
+      name: 'InboxPageEn',
+      auth: true,
+      authPage: 'LoginPage',
+      component: InboxPage,
+      loadData: pageDataLoadingAPI.InboxPage.loadData,
+    },
+    {
+      path: '/en/order/:id',
+      name: 'OrderPageEn',
+      auth: true,
+      authPage: 'LoginPage',
+      component: props => <NamedRedirect name="OrderDetailsPage" params={{ ...props.params }} />,
+    },
+    {
+      path: '/en/order/:id/details',
+      name: 'OrderDetailsPageEn',
+      auth: true,
+      authPage: 'LoginPage',
+      component: TransactionPage,
+      extraProps: { transactionRole: 'customer' },
+      loadData: params =>
+        pageDataLoadingAPI.TransactionPage.loadData({ ...params, transactionRole: 'customer' }),
+      setInitialValues: pageDataLoadingAPI.TransactionPage.setInitialValues,
+    },
+    {
+      path: '/en/sale/:id',
+      name: 'SalePageEn',
+      auth: true,
+      authPage: 'LoginPage',
+      component: props => <NamedRedirect name="SaleDetailsPage" params={{ ...props.params }} />,
+    },
+    {
+      path: '/en/sale/:id/details',
+      name: 'SaleDetailsPageEn',
+      auth: true,
+      authPage: 'LoginPage',
+      component: TransactionPage,
+      extraProps: { transactionRole: 'provider' },
+      loadData: params =>
+        pageDataLoadingAPI.TransactionPage.loadData({ ...params, transactionRole: 'provider' }),
+    },
+    {
+      path: '/en/listings',
+      name: 'ManageListingsPageEn',
+      auth: true,
+      authPage: 'LoginPage',
+      component: ManageListingsPage,
+      loadData: pageDataLoadingAPI.ManageListingsPage.loadData,
+    },
+    {
+      path: '/en/account',
+      name: 'AccountSettingsPageEn',
+      auth: true,
+      authPage: 'LoginPage',
+      component: () => <NamedRedirect name="NotificationSettingsPage" />,
+    },
+    {
+      path: '/en/account/contact-details',
+      name: 'ContactDetailsPageEn',
+      auth: true,
+      authPage: 'LoginPage',
+      component: ContactDetailsPage,
+      loadData: pageDataLoadingAPI.ContactDetailsPage.loadData,
+    },
+    {
+      path: '/en/account/change-password',
+      name: 'PasswordChangePageEn',
+      auth: true,
+      authPage: 'LoginPage',
+      component: PasswordChangePage,
+    },
+    {
+      path: '/en/account/payments',
+      name: 'StripePayoutPageEn',
+      auth: true,
+      authPage: 'LoginPage',
+      component: StripePayoutPage,
+      loadData: pageDataLoadingAPI.StripePayoutPage.loadData,
+    },
+    {
+      path: '/en/account/payments/:returnURLType',
+      name: 'StripePayoutOnboardingPageEn',
+      auth: true,
+      authPage: 'LoginPage',
+      component: StripePayoutPage,
+      loadData: pageDataLoadingAPI.StripePayoutPage.loadData,
+    },
+    {
+      path: '/en/account/payment-methods',
+      name: 'PaymentMethodsPageEn',
+      auth: true,
+      authPage: 'LoginPage',
+      component: PaymentMethodsPage,
+      loadData: pageDataLoadingAPI.PaymentMethodsPage.loadData,
+    },
+    {
+      path: '/en/terms-of-service',
+      name: 'TermsOfServicePageEn',
+      component: TermsOfServicePage,
+    },
+    {
+      path: '/en/sitemap',
+      name: 'SiteMapPageEn',
+      component: SiteMapPage,
+    },
+    {
+      path: '/en/privacy-policy',
+      name: 'PrivacyPolicyPageEn',
+      component: PrivacyPolicyPage,
+    },
+    {
+      path: '/en/projects',
+      name: 'ProjectsMapPageEn',
+      component: ProjectsMapPage,
+    },
+    {
+      path: '/en/styleguide',
+      name: 'StyleguideEn',
+      component: StyleguidePage,
+    },
+    {
+      path: '/en/styleguide/g/:group',
+      name: 'StyleguideGroupEn',
+      component: StyleguidePage,
+    },
+    {
+      path: '/en/styleguide/c/:component',
+      name: 'StyleguideComponentEn',
+      component: StyleguidePage,
+    },
+    {
+      path: '/en/styleguide/c/:component/:example',
+      name: 'StyleguideComponentExampleEn',
+      component: StyleguidePage,
+    },
+    {
+      path: '/en/styleguide/c/:component/:example/raw',
+      name: 'StyleguideComponentExampleRawEn',
+      component: StyleguidePage,
+      extraProps: { raw: true },
+    },
+    {
+      path: '/en/notfound',
+      name: 'NotFoundPageEn',
+      component: props => <NotFoundPage {...props} />,
+    },
 
     //medlaProject links start
 

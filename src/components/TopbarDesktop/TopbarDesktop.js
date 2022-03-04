@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { FormattedMessage, intlShape } from '../../util/reactIntl';
 import classNames from 'classnames';
 import { ACCOUNT_SETTINGS_PAGES } from '../../routeConfiguration';
+import { IoGlobeOutline } from "react-icons/io5";
 import { propTypes } from '../../util/types';
 import {
   LISTING_PAGE_PENDING_APPROVAL_VARIANT,
@@ -153,11 +154,11 @@ const TopbarDesktop = props => {
   const languageMenu = (
     <Menu>
       <MenuLabel className={css.profileMenuLabel} isOpenClassName={css.profileMenuIsOpen}>
-      <IconSpinner />
+      <IoGlobeOutline className={css.globe} />
       </MenuLabel>
       <MenuContent className={css.profileMenuContent}>
         <MenuItem key="SwitchToSwedish">
-        <a className={classNames(css.yourListingsLink, currentPageClass('SwitchToSwedish'))} name='SwitchToSwedish' href={baseUrl.concat(toSwedish)}>Svenska</a>
+        <a className={classNames(css.profileSettingsLink, currentPageClass('SwitchToSwedish'))} name='SwitchToSwedish' href={baseUrl.concat(toSwedish)}>Svenska</a>
             <span className={css.menuItemBorder} />
         </MenuItem>
         <MenuItem key="SwitchToEnglish">

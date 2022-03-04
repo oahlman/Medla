@@ -581,7 +581,35 @@
   "ModalMissingInformation.companyImprovement": "Update Company Description.",
   
   "ModalMissingAccountInformation.closeVerifyEmailReminder": "Close",
-  
+  "Marketplace.config.key.label":"Companies",
+  "Marketplace.config.key.industry1": "Field work",
+  "Marketplace.config.key.industry2": "Manning",
+  "Marketplace.config.key.industry3": "Concrete pouring",
+  "Marketplace.config.key.industry4": "Construction",
+  "Marketplace.config.key.industry5": "Operation and Maintenance",
+  "Marketplace.config.key.industry6": "Electricity, Alarm and Fiber",
+  "Marketplace.config.key.industry7": "Vehicles and Tyres",
+  "Marketplace.config.key.industry8": "IT and Telecom",
+  "Marketplace.config.key.industry9": "Accomodation and Food",
+  "Marketplace.config.key.industry10": "Machine repair",
+  "Marketplace.config.key.industry11": "Media and PR",
+  "Marketplace.config.key.industry12": "Project Management",
+  "Marketplace.config.key.industry13": "Services",
+  "Marketplace.config.key.industry14": "Forest mask services",
+  "Marketplace.config.key.industry15": "Blasting",
+  "Marketplace.config.key.industry16": "Welds and metal",
+  "Marketplace.config.key.industry17": "Transport",
+  "Marketplace.config.key.industry18": "Manufacturing",
+  "Marketplace.config.key.industry19": "Training",
+  "Marketplace.config.key.industry20": "Other",
+
+
+
+
+
+
+
+
   "ModalMissingInformation.checkTextMessages": "Check your messages and verify your phone number {phoneNumber}",
   "ModalMissingInformation.fixPhoneNumber": "Oops, misspelling your number? {fixEmailLink}",
   "ModalMissingInformation.resendTextMessage": "Did not receive the sms? {resendEmailLink}",
@@ -1509,6 +1537,8 @@
   "TopbarMobileMenu.yourListingsLink": "Your Job Ads",
   "TopbarSearchForm.placeholder": "All of Sweden…",
   "TopbarSearchForm.searchHelp": "Tip: You can also search by zip code, for example 00500  Sörnäinen",
+  "TopbarSearchForm.selector.company":"Companies",
+  "TopbarSearchForm.selector.job":"Jobs",
   "TransactionPage.deletedListing": "Deleted List",
   "TransactionPage.fetchOrderFailed": "Order data retrieval failed.",
   "TransactionPage.fetchSaleFailed": "Sales data retrieval failed.",

@@ -19,7 +19,10 @@ import Routes from './Routes';
 import config from './config';
 
 // Flex template application uses English translations as default.
-import defaultMessages from './translations/sv.json';
+import swedishMessages from './translations/sv.json';
+import englishMessages from './translations/en.json';
+
+
 
 // If you want to change the language, change the imports to match the wanted locale:
 //   1) Change the language in the config.js file!
@@ -39,6 +42,8 @@ import defaultMessages from './translations/sv.json';
 // Step 3:
 // If you are using a non-english locale, point `messagesInLocale` to correct .json file
 import messagesInLocale from './translations/sv.json';
+
+const defaultMessages = englishMessages;
 
 // If translation key is missing from `messagesInLocale` (e.g. fr.json),
 // corresponding key will be added to messages from `defaultMessages` (en.json)
@@ -84,9 +89,11 @@ const setupLocale = () => {
 
 export const ClientApp = props => {
   const { store } = props;
+  const { pathname } = location;
+  console.log('location', location.pathname.endsWith('#en') ? 'english' : 'swedish');
   setupLocale();
   return (
-    <IntlProvider locale={config.locale} messages={localeMessages} textComponent="span">
+    <IntlProvider locale={config.locale} messages={location.pathname.startsWith('/en/') ? englishMessages : swedishMessages} textComponent="span">
       <Provider store={store}>
         <HelmetProvider>
           <BrowserRouter>
@@ -107,7 +114,7 @@ export const ServerApp = props => {
   setupLocale();
   HelmetProvider.canUseDOM = false;
   return (
-    <IntlProvider locale={config.locale} messages={localeMessages} textComponent="span">
+    <IntlProvider locale={config.locale} messages={location.pathname.startsWith('/en/') ? englishMessages : swedishMessages} textComponent="span">
       <Provider store={store}>
         <HelmetProvider context={helmetContext}>
           <StaticRouter location={url} context={context}>

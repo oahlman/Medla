@@ -32,16 +32,19 @@
  *         and tie them with correct extended data key
  *         (i.e. pub_<key> or meta_<key>).
  */
+import React from 'react';
+import {FormattedMessage} from '../src/util/reactIntl'
 
 export const filters = [
   {
+   
     id: 'listingCategory',
     label: 'Kategori',
     type: 'SelectSingleFilter',
     group: 'primary',
     queryParamNames: ['pub_listingCategory'],
     config: {
-      options: [{ key: 'job', label: 'Jobb' }, { key: 'company', label: 'Företag' }],
+      options: [{ key: 'job', label: 'Jobb' }, { key: 'company', label: <FormattedMessage id="Marketplace.config.key.label"/> }],
     },
   },
 
@@ -110,26 +113,26 @@ export const filters = [
       // Note: label is not added through the translation files
       // to make filter customizations a bit easier.
       options: [
-        { key: 'anlaggning', label: 'Anläggning' },
-        { key: 'bemanning', label: 'Bemanning' },
-        { key: 'betong', label: 'Betong' },
-        { key: 'bygg', label: 'Byggentreprenad' },
-        { key: 'driftochunderhall', label: 'Drift och underhåll' },
-        { key: 'el', label: 'El, larm och fiber' },
-        { key: 'fordon', label: 'Fordon och däck' },
-        { key: 'itochtelecom', label: 'IT och telecom' },
-        { key: 'kostlogi', label: 'Kost och logi' },
-        { key: 'maskinreparation', label: 'Maskinreparation' },
-        { key: 'media', label: 'Media och PR' },
-        { key: 'projektering', label: 'Projektering' },
-        { key: 'servicetjanster', label: 'Servicetjänster' },
-        { key: 'skogsmaskintjanster', label: 'Skogsmaskintjänster' },
-        { key: 'sprangning', label: 'Sprängning' },
-        { key: 'svets', label: 'Svets och metall' },
-        { key: 'transport', label: 'Transport' },
-        { key: 'tillverkning', label: 'Tillverkning' },
-        { key: 'utbildning', label: 'Utbildning' },
-        { key: 'ovrigt', label: 'Övrigt' },
+        { key: 'anlaggning', label: <FormattedMessage id="Marketplace.config.key.industry1"/> },
+        { key: 'bemanning', label: <FormattedMessage id="Marketplace.config.key.industry2"/> },
+        { key: 'betong', label: <FormattedMessage id="Marketplace.config.key.industry3"/> },
+        { key: 'bygg', label: <FormattedMessage id="Marketplace.config.key.industry4"/> },
+        { key: 'driftochunderhall', label: <FormattedMessage id="Marketplace.config.key.industry5"/> },
+        { key: 'el', label: <FormattedMessage id="Marketplace.config.key.industry6"/> },
+        { key: 'fordon', label: <FormattedMessage id="Marketplace.config.key.industry7"/> },
+        { key: 'itochtelecom', label: <FormattedMessage id="Marketplace.config.key.industry8"/> },
+        { key: 'kostlogi', label: <FormattedMessage id="Marketplace.config.key.industry9"/> },
+        { key: 'maskinreparation', label: <FormattedMessage id="Marketplace.config.key.industry10"/> },
+        { key: 'media', label: <FormattedMessage id="Marketplace.config.key.industry11"/> },
+        { key: 'projektering', label: <FormattedMessage id="Marketplace.config.key.industry12"/> },
+        { key: 'servicetjanster', label: <FormattedMessage id="Marketplace.config.key.industry13"/> },
+        { key: 'skogsmaskintjanster', label: <FormattedMessage id="Marketplace.config.key.industry14"/> },
+        { key: 'sprangning', label: <FormattedMessage id="Marketplace.config.key.industry15"/> },
+        { key: 'svets', label: <FormattedMessage id="Marketplace.config.key.industry16"/> },
+        { key: 'transport', label: <FormattedMessage id="Marketplace.config.key.industry17"/> },
+        { key: 'tillverkning', label: <FormattedMessage id="Marketplace.config.key.industry18"/> },
+        { key: 'utbildning', label: <FormattedMessage id="Marketplace.config.key.industry19"/> },
+        { key: 'ovrigt', label: <FormattedMessage id="Marketplace.config.key.industry20"/> },
       ],
     },
   },

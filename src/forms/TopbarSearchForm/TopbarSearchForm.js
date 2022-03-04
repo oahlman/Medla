@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Form as FinalForm, Field } from 'react-final-form';
 import classNames from 'classnames';
-import { intlShape, injectIntl } from '../../util/reactIntl';
+import { intlShape, injectIntl, FormattedMessage} from '../../util/reactIntl';
 import { Form, LocationAutocompleteInput, FieldTextInput, FieldSelectSwitch, Button, SelectSingleFilter, TopBarSearchModal, FieldBoolean } from '../../components';
 import { MdSearch } from 'react-icons/md';
 import { NamedLink } from '../../components';
@@ -116,6 +116,8 @@ class TopbarSearchFormComponent extends Component {
                           id="category" name="category" type= 'radio'>
                            <option value="company">Företag</option>
                              <option value="job">Jobb</option>
+
+                          
                                 </FieldSelectSwitch>
       
               

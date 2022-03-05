@@ -60,6 +60,10 @@ flex-direction: row;
   margin-top: 16px;
 }
 
+.hidden {
+  display: none;
+}
+
 .logoutButton {
   @apply --marketplaceLinkStyles;
   /* Logout font is smaller and gray since the action is not recommended. */
@@ -83,6 +87,17 @@ flex-direction: row;
   margin-bottom: 13px;
 }
 
+.chooseLanguage {
+  /* Font */
+  @apply --marketplaceLinkStyles;
+  @apply --marketplaceH2FontStyles;
+  color: var(--marketplaceColor);
+  text-align: left;
+
+  /* Layout */
+  margin-top: 0;
+}
+
 .navigationLink {
   /* Font */
   @apply --marketplaceH2FontStyles;
@@ -96,6 +111,22 @@ flex-direction: row;
   color: var(--marketplaceColorDark);
 }
 
+.languageMenu {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 22px;
+}
+
+.languageOption {
+  /* Font */
+  @apply --marketplaceH2FontStyles;
+  color: var(--matterColor);
+
+  /* Layout */
+  margin-top: 0;
+  margin-left: 6px;
+  margin-bottom: 11px;
+}
 
 .navigationLinkDark {
   /* Font */

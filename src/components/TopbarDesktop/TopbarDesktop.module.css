@@ -212,6 +212,12 @@
   padding-top: 20px;
 }
 
+.languageMenuContent {
+  min-width: 276px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
 /* Authentication */
 .signupLink {
   @apply --TopbarDesktop_linkHover;
@@ -253,6 +259,91 @@
   height: calc(100% - 4px);
   width: 0;
   transition: width var(--transitionStyleButton);
+}
+.languageHeader {
+  @apply --marketplaceH3FontStyles;
+  position: relative;
+  display: block;
+
+  /* Dimensions */
+  width: 100%;
+  margin: 0;
+  padding: 4px 24px 10px 24px;
+
+  /* Layout details */
+  color: var(--matterColor);
+  text-align: left;
+  transition: var(--transitionStyleButton);
+  @media (--viewportMedium) {
+    display: none;
+  }
+}
+
+.languageOption {
+  @apply --marketplaceH4FontStyles;
+  position: relative;
+  display: block;
+
+  /* Dimensions */
+  width: 100%;
+  margin: 0;
+  padding: 4px 24px;
+
+  /* Layout details */
+  color: var(--matterColor);
+  text-align: left;
+  transition: var(--transitionStyleButton);
+
+  &:hover {
+    color: var(--matterColorDark);
+    text-decoration: none;
+
+    & .menuItemBorder {
+      height: 100%;
+      width: 6px;
+      top: 0;
+      background-color: var(--marketplaceColor);
+    }
+  }
+}
+
+.languageButton {
+  @apply --marketplaceLinkStyles;
+  /* Font is specific to this component */
+  @apply --marketplaceH5FontStyles;
+  font-size: 14px;
+
+  /* Dimensions */
+  position: relative;
+  width: 100%;
+  min-width: 276px;
+  margin: 0;
+  padding: 20px 24px;
+
+  /* Layout details */
+  color: var(--matterColorAnti);
+  text-align: left;
+  white-space: nowrap;
+  transition: var(--transitionStyleButton);
+  border-top-width: 1px;
+  border-top-style: solid;
+  border-top-color: var(--matterColorNegative);
+
+  &:hover {
+    color: var(--matterColorDark);
+    text-decoration: none;
+
+    & .menuItemBorder {
+      height: 100%;
+      width: 6px;
+      top: 0;
+      background-color: var(--marketplaceColor);
+    }
+  }
+
+  @media (--viewportMedium) {
+    margin-bottom: 0;
+  }
 }
 
 .profileSettingsLink,

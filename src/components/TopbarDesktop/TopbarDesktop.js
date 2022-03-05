@@ -38,7 +38,6 @@ const TopbarDesktop = props => {
     onLogout,
     onSearchSubmit,
     initialSearchFormValues,
-    location,
   } = props;
   const [mounted, setMounted] = useState(false);
 
@@ -146,28 +145,66 @@ const TopbarDesktop = props => {
       </span>
     </NamedLink>
   );
-  const baseUrl = window.location.origin;
+  let baseUrl = null;
+  let path = null;
+  let toSwedish = null;
+  let toEnglish = null;
   const en = '/en';
-  const toSwedish = (window.location.pathname.startsWith('/en/') ? window.location.pathname.replace('en/', '') : window.location.pathname);
-  const toEnglish = (window.location.pathname.startsWith('/en/') ? window.location.pathname : en.concat('', window.location.pathname));
-  console.log('en', toEnglish, 'sv', toSwedish);
+  if (typeof window !== 'undefined') {
+    baseUrl = window.location.href.slice(0, window.location.origin.length);
+    path = window.location.href.slice(window.location.origin.length);
+    toSwedish = (path.startsWith('/en/') ? path.replace('en/', '') : path);
+    toEnglish = (path.startsWith('/en/') ? path : en.concat('', path));
+
+  }
+  
+  console.log('baseUrl:', baseUrl, 'path:', path, 'toSwedish:', toSwedish, 'toEnglish:', toEnglish, 'en:', en);
   const languageMenu = (
+
     <Menu>
       <MenuLabel className={css.profileMenuLabel} isOpenClassName={css.profileMenuIsOpen}>
-      <IoGlobeOutline className={css.globe} />
+        <IoGlobeOutline className={css.globe} />
       </MenuLabel>
-      <MenuContent className={css.profileMenuContent}>
-        <MenuItem key="SwitchToSwedish">
-        <a className={classNames(css.profileSettingsLink, currentPageClass('SwitchToSwedish'))} name='SwitchToSwedish' href={baseUrl.concat(toSwedish)}>Svenska</a>
+      <MenuContent className={css.languageMenuContent}>
+        <MenuItem key="Swedish">
+          <a className={classNames(css.profileSettingsLink, currentPageClass('Swedish'))} name='Swedish' href={baseUrl.concat(toSwedish)}>
             <span className={css.menuItemBorder} />
+            Svenska
+          </a>
         </MenuItem>
-        <MenuItem key="SwitchToEnglish">
-          <a className={classNames(css.yourListingsLink, currentPageClass('SwitchToEnglish'))} name="SwitchToEnglish" href={baseUrl.concat(toEnglish)}>English</a>
-          <span className={css.menuItemBorder} />
+        <MenuItem key="English">
+          <a className={classNames(css.profileSettingsLink, currentPageClass('English'))} name='English' href={baseUrl.concat(toEnglish)}>
+            <span className={css.menuItemBorder} />
+            English
+          </a>
         </MenuItem>
       </MenuContent>
     </Menu>
   );
+
+  <Menu>
+      <MenuLabel className={css.profileMenuLabel} isOpenClassName={css.profileMenuIsOpen}>
+      <IoGlobeOutline className={css.globe} />
+      </MenuLabel>
+      <MenuContent className={css.profileMenuContent}>
+      <MenuItem key="SwitchToSwedish">
+        <h3 className={css.languageHeader}>Välj Språk</h3>
+            <span className={css.menuItemBorder} />
+        </MenuItem>
+        <MenuItem key="SwitchToSwedish">
+        <InlineTextButton rootClassName={css.languageButton} >
+        <a className={classNames(css.languageOption, currentPageClass('SwitchToSwedish'))} name='SwitchToSwedish' href={baseUrl.concat(toSwedish)}>Svenska</a>
+            <span className={css.menuItemBorder} />
+          </InlineTextButton>
+        </MenuItem>
+        <MenuItem key="SwitchToEnglish">
+        <InlineTextButton rootClassName={css.languageButton} >
+          <a className={classNames(css.languageOption, currentPageClass('SwitchToEnglish'))} name="SwitchToEnglish" href={baseUrl.concat(toEnglish)}>English</a>
+          <span className={css.menuItemBorder} />
+          </InlineTextButton>
+        </MenuItem>
+      </MenuContent>
+    </Menu>
 
   return (
     <nav className={classes}>
@@ -179,13 +216,13 @@ const TopbarDesktop = props => {
         />
       </NamedLink>
       {search}
+      {languageMenu}
       <NamedLink className={css.createListingLink} name="NewListingPage">
         <span className={css.createListing}>
           <FormattedMessage id="TopbarDesktop.createListing" />
         </span>
       </NamedLink>
       {inboxLink}
-      {languageMenu}
       {profileMenu}
       {signupLink}
       {loginLink}

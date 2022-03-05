@@ -2,7 +2,7 @@
  *  TopbarMobileMenu prints the menu content for authenticated user or
  * shows login actions for those who are not authenticated.
  */
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from '../../util/reactIntl';
 import classNames from 'classnames';
@@ -33,6 +33,21 @@ const TopbarMobileMenu = props => {
   const companyListing = currentUserCompanyListing && currentUserCompanyListing[0];
   const companyPage = companyListing ? "CompanyPageVariant" : "ListingBasePage";
   const companyParams = companyListing ? { slug: companyListing.attributes.title.replace(/\s+/g, '-').toLowerCase(), id: companyListing.id.uuid, variant: LISTING_PAGE_PENDING_APPROVAL_VARIANT } : "";
+  
+  const [isOpen, setIsOpen] = useState(false);
+
+  let baseUrl = null;
+  let path = null;
+  let toSwedish = null;
+  let toEnglish = null;
+  const en = '/en';
+  if (typeof window !== 'undefined') {
+    baseUrl = window.location.href.slice(0, window.location.origin.length);
+    path = window.location.href.slice(window.location.origin.length);
+    toSwedish = (path.startsWith('/en/') ? path.replace('en/', '') : path);
+    toEnglish = (path.startsWith('/en/') ? path : en.concat('', path));
+
+  }
 
   if (!isAuthenticated) {
     const signup = (
@@ -146,6 +161,22 @@ const TopbarMobileMenu = props => {
         >
           <FormattedMessage id="TopbarMobileMenu.homeLink" />
         </NamedLink>
+
+        <InlineTextButton rootClassName={css.chooseLanguage} onClick={() => setIsOpen(!isOpen)}>
+          <FormattedMessage id={ isOpen ? "TopbarMobileMenu.closeLanguage" : "TopbarMobileMenu.chooseLanguage" }/>
+        </InlineTextButton>
+
+        <div className={isOpen ? css.languageMenu : css.hidden}>
+        <a className={css.languageOption} name='Swedish' href={baseUrl.concat(toSwedish)}>
+            <span className={css.menuItemBorder} />
+            Svenska
+          </a>
+
+          <a className={css.languageOption} name='English' href={baseUrl.concat(toEnglish)}>
+            <span className={css.menuItemBorder} />
+            English
+          </a>
+        </div>
 
         <NamedLink
           className={classNames(css.navigationLink, currentPageClass('InboxPage'))}

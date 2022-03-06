@@ -90,7 +90,7 @@ const setupLocale = () => {
 export const ClientApp = props => {
   const { store } = props;
   const { pathname } = location;
-  console.log('location', location.pathname.endsWith('#en') ? 'english' : 'swedish');
+  console.log('ClientApp', location.pathname);
   setupLocale();
   return (
     <IntlProvider locale={config.locale} messages={location.pathname.startsWith('/en/') ? englishMessages : swedishMessages} textComponent="span">
@@ -107,14 +107,15 @@ export const ClientApp = props => {
 
 const { any, string } = PropTypes;
 
-ClientApp.propTypes = { store: any.isRequired };
+ClientApp.propTypes = { pathname: string.isRequired, store: any.isRequired };
 
 export const ServerApp = props => {
   const { url, context, helmetContext, store } = props;
+  console.log('ServerApp', url);
   setupLocale();
   HelmetProvider.canUseDOM = false;
   return (
-    <IntlProvider locale={config.locale} messages={location.pathname.startsWith('/en/') ? englishMessages : swedishMessages} textComponent="span">
+    <IntlProvider locale={config.locale} messages={url.startsWith('/en/') ? englishMessages : swedishMessages} textComponent="span">
       <Provider store={store}>
         <HelmetProvider context={helmetContext}>
           <StaticRouter location={url} context={context}>

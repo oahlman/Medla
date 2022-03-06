@@ -2,7 +2,7 @@
  *  TopbarMobileMenu prints the menu content for authenticated user or
  * shows login actions for those who are not authenticated.
  */
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from '../../util/reactIntl';
 import classNames from 'classnames';
@@ -31,6 +31,12 @@ const TopbarMobileMenu = props => {
     rootUrl,
   } = props;
 
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   const user = ensureCurrentUser(currentUser);
   const companyListing = currentUserCompanyListing && currentUserCompanyListing[0];
   const companyPage = companyListing ? "CompanyPageVariant" : "ListingBasePage";
@@ -39,7 +45,7 @@ const TopbarMobileMenu = props => {
   const [isOpen, setIsOpen] = useState(false);
 
   const en = '/en';
-  const path = location && location.pathname;
+  const path = mounted ? location.pathname : '';
   const toSwedish = (path.startsWith('/en/') ? path.replace('en/', '') : path);
   const toEnglish = (path.startsWith('/en/') ? path : en.concat('', path));
 
@@ -227,7 +233,7 @@ const TopbarMobileMenu = props => {
   );
 };
 
-TopbarMobileMenu.defaultProps = { currentUser: null, notificationCount: 0, currentPage: null };
+TopbarMobileMenu.defaultProps = { currentUser: null, notificationCount: 0, currentPage: null, rootUrl: null, location: null };
 
 const { array, bool, func, number, string, shape } = PropTypes;
 

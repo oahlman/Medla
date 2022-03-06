@@ -149,7 +149,7 @@ const TopbarDesktop = props => {
   );
 
   const en = '/en';
-  const path = location && location.pathname;
+  const path = mounted ? location.pathname : '';
   const toSwedish = (path.startsWith('/en/') ? path.replace('en/', '') : path);
   const toEnglish = (path.startsWith('/en/') ? path : en.concat('', path));
   
@@ -208,6 +208,7 @@ TopbarDesktop.defaultProps = {
   className: null,
   currentUser: null,
   currentPage: null,
+  rootUrl: null,
   location: null,
   notificationCount: 0,
   initialSearchFormValues: {},

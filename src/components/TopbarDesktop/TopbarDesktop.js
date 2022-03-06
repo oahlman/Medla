@@ -149,7 +149,7 @@ const TopbarDesktop = props => {
   );
 
   const en = '/en';
-  const path = location.pathname;
+  const path = location && location.pathname;
   const toSwedish = (path.startsWith('/en/') ? path.replace('en/', '') : path);
   const toEnglish = (path.startsWith('/en/') ? path : en.concat('', path));
   
@@ -201,7 +201,7 @@ const TopbarDesktop = props => {
   );
 };
 
-const { array, bool, func, object, number, string } = PropTypes;
+const { array, bool, func, object, number, string, shape } = PropTypes;
 
 TopbarDesktop.defaultProps = {
   rootClassName: null,
@@ -222,7 +222,9 @@ TopbarDesktop.propTypes = {
   currentPage: string,
   isAuthenticated: bool.isRequired,
   onLogout: func.isRequired,
-  location: string.isRequired,
+  location: shape({
+    search: string.isRequired,
+  }).isRequired,
   rootUrl: string.isRequired,
   notificationCount: number,
   onSearchSubmit: func.isRequired,

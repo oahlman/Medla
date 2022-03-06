@@ -39,7 +39,7 @@ const TopbarMobileMenu = props => {
   const [isOpen, setIsOpen] = useState(false);
 
   const en = '/en';
-  const path = location.pathname;
+  const path = location && location.pathname;
   const toSwedish = (path.startsWith('/en/') ? path.replace('en/', '') : path);
   const toEnglish = (path.startsWith('/en/') ? path : en.concat('', path));
 
@@ -229,7 +229,7 @@ const TopbarMobileMenu = props => {
 
 TopbarMobileMenu.defaultProps = { currentUser: null, notificationCount: 0, currentPage: null };
 
-const { array, bool, func, number, string } = PropTypes;
+const { array, bool, func, number, string, shape } = PropTypes;
 
 TopbarMobileMenu.propTypes = {
   isAuthenticated: bool.isRequired,
@@ -239,7 +239,9 @@ TopbarMobileMenu.propTypes = {
   currentPage: string,
   notificationCount: number,
   onLogout: func.isRequired,
-  location: string.isRequired,
+  location: shape({
+    search: string.isRequired,
+  }).isRequired,
   rootUrl: string.isRequired,
 };
 

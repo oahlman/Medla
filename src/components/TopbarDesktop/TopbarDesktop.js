@@ -223,7 +223,7 @@ TopbarDesktop.propTypes = {
   isAuthenticated: bool.isRequired,
   onLogout: func.isRequired,
   location: shape({
-    search: string.isRequired,
+    pathname: string.isRequired,
   }).isRequired,
   rootUrl: string.isRequired,
   notificationCount: number,

@@ -240,7 +240,7 @@ TopbarMobileMenu.propTypes = {
   notificationCount: number,
   onLogout: func.isRequired,
   location: shape({
-    search: string.isRequired,
+    pathname: string.isRequired,
   }).isRequired,
   rootUrl: string.isRequired,
 };

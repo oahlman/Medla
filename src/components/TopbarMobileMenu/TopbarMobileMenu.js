@@ -41,7 +41,7 @@ const TopbarMobileMenu = props => {
   let toSwedish = null;
   let toEnglish = null;
   const en = '/en';
-  if (typeof window !== 'undefined') {
+  if (typeof window.location !== 'undefined') {
     baseUrl = window.location.href.slice(0, window.location.origin.length);
     path = window.location.href.slice(window.location.origin.length);
     toSwedish = (path.startsWith('/en/') ? path.replace('en/', '') : path);

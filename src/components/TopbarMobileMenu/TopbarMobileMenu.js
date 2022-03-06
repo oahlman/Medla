@@ -36,18 +36,13 @@ const TopbarMobileMenu = props => {
   
   const [isOpen, setIsOpen] = useState(false);
 
-  let baseUrl = null;
-  let path = null;
-  let toSwedish = null;
-  let toEnglish = null;
   const en = '/en';
-  if (typeof window.location !== 'undefined') {
-    baseUrl = window.location.href.slice(0, window.location.origin.length);
-    path = window.location.href.slice(window.location.origin.length);
-    toSwedish = (path.startsWith('/en/') ? path.replace('en/', '') : path);
-    toEnglish = (path.startsWith('/en/') ? path : en.concat('', path));
-
-  }
+  const origin = window.location !== 'undefined' ? window.location.origin : '';
+  const href = window.location !== 'undefined' ? window.location.href : '';
+  const baseUrl = href.slice(0, origin.length);
+  const path = href.slice(origin.length);
+  const toSwedish = (path.startsWith('/en/') ? path.replace('en/', '') : path);
+  const toEnglish = (path.startsWith('/en/') ? path : en.concat('', path));
 
   if (!isAuthenticated) {
     const signup = (

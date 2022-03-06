@@ -38,6 +38,7 @@ const TopbarDesktop = props => {
     onLogout,
     onSearchSubmit,
     initialSearchFormValues,
+    req,
   } = props;
   const [mounted, setMounted] = useState(false);
 
@@ -145,18 +146,15 @@ const TopbarDesktop = props => {
       </span>
     </NamedLink>
   );
-  let baseUrl = null;
-  let path = null;
-  let toSwedish = null;
-  let toEnglish = null;
-  const en = '/en';
-  if (typeof window.location !== 'undefined') {
-    baseUrl = window.location.href.slice(0, window.location.origin.length);
-    path = window.location.href.slice(window.location.origin.length);
-    toSwedish = (path.startsWith('/en/') ? path.replace('en/', '') : path);
-    toEnglish = (path.startsWith('/en/') ? path : en.concat('', path));
 
-  }
+  const en = '/en';
+  const origin = window.location !== 'undefined' ? window.location.origin : '';
+  const href = window.location !== 'undefined' ? window.location.href : '';
+  const baseUrl = href.slice(0, origin.length);
+  const path = href.slice(origin.length);
+  const toSwedish = (path.startsWith('/en/') ? path.replace('en/', '') : path);
+  const toEnglish = (path.startsWith('/en/') ? path : en.concat('', path));
+  
   
   const languageMenu = (
 

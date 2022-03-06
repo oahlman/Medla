@@ -26,7 +26,9 @@ const TopbarMobileMenu = props => {
     currentUser,
     notificationCount,
     onLogout,
+    location,
     disableProfileLink,
+    rootUrl,
   } = props;
 
   const user = ensureCurrentUser(currentUser);
@@ -37,10 +39,7 @@ const TopbarMobileMenu = props => {
   const [isOpen, setIsOpen] = useState(false);
 
   const en = '/en';
-  const origin = window.location !== 'undefined' ? window.location.origin : '';
-  const href = window.location !== 'undefined' ? window.location.href : '';
-  const baseUrl = href.slice(0, origin.length);
-  const path = href.slice(origin.length);
+  const path = location.pathname;
   const toSwedish = (path.startsWith('/en/') ? path.replace('en/', '') : path);
   const toEnglish = (path.startsWith('/en/') ? path : en.concat('', path));
 
@@ -162,12 +161,12 @@ const TopbarMobileMenu = props => {
         </InlineTextButton>
 
         <div className={isOpen ? css.languageMenu : css.hidden}>
-        <a className={css.languageOption} name='Swedish' href={baseUrl.concat(toSwedish)}>
+        <a className={css.languageOption} name='Swedish' href={rootUrl.concat(toSwedish)}>
             <span className={css.menuItemBorder} />
             Svenska
           </a>
 
-          <a className={css.languageOption} name='English' href={baseUrl.concat(toEnglish)}>
+          <a className={css.languageOption} name='English' href={rootUrl.concat(toEnglish)}>
             <span className={css.menuItemBorder} />
             English
           </a>
@@ -240,6 +239,8 @@ TopbarMobileMenu.propTypes = {
   currentPage: string,
   notificationCount: number,
   onLogout: func.isRequired,
+  location: string.isRequired,
+  rootUrl: string.isRequired,
 };
 
 export default TopbarMobileMenu;

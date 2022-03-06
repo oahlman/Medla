@@ -36,9 +36,10 @@ const TopbarDesktop = props => {
     intl,
     isAuthenticated,
     onLogout,
+    location,
     onSearchSubmit,
     initialSearchFormValues,
-    req,
+    rootUrl,
   } = props;
   const [mounted, setMounted] = useState(false);
 
@@ -148,10 +149,7 @@ const TopbarDesktop = props => {
   );
 
   const en = '/en';
-  const origin = window.location !== 'undefined' ? window.location.origin : '';
-  const href = window.location !== 'undefined' ? window.location.href : '';
-  const baseUrl = href.slice(0, origin.length);
-  const path = href.slice(origin.length);
+  const path = location.pathname;
   const toSwedish = (path.startsWith('/en/') ? path.replace('en/', '') : path);
   const toEnglish = (path.startsWith('/en/') ? path : en.concat('', path));
   
@@ -164,13 +162,13 @@ const TopbarDesktop = props => {
       </MenuLabel>
       <MenuContent className={css.languageMenuContent}>
         <MenuItem key="Swedish">
-          <a className={classNames(css.profileSettingsLink, currentPageClass('Swedish'))} name='Swedish' href={baseUrl.concat(toSwedish)}>
+          <a className={classNames(css.profileSettingsLink, currentPageClass('Swedish'))} name='Swedish' href={rootUrl.concat(toSwedish)}>
             <span className={css.menuItemBorder} />
             Svenska
           </a>
         </MenuItem>
         <MenuItem key="English">
-          <a className={classNames(css.profileSettingsLink, currentPageClass('English'))} name='English' href={baseUrl.concat(toEnglish)}>
+          <a className={classNames(css.profileSettingsLink, currentPageClass('English'))} name='English' href={rootUrl.concat(toEnglish)}>
             <span className={css.menuItemBorder} />
             English
           </a>
@@ -178,30 +176,6 @@ const TopbarDesktop = props => {
       </MenuContent>
     </Menu>
   );
-
-  <Menu>
-      <MenuLabel className={css.profileMenuLabel} isOpenClassName={css.profileMenuIsOpen}>
-      <IoGlobeOutline className={css.globe} />
-      </MenuLabel>
-      <MenuContent className={css.profileMenuContent}>
-      <MenuItem key="SwitchToSwedish">
-        <h3 className={css.languageHeader}>Välj Språk</h3>
-            <span className={css.menuItemBorder} />
-        </MenuItem>
-        <MenuItem key="SwitchToSwedish">
-        <InlineTextButton rootClassName={css.languageButton} >
-        <a className={classNames(css.languageOption, currentPageClass('SwitchToSwedish'))} name='SwitchToSwedish' href={baseUrl.concat(toSwedish)}>Svenska</a>
-            <span className={css.menuItemBorder} />
-          </InlineTextButton>
-        </MenuItem>
-        <MenuItem key="SwitchToEnglish">
-        <InlineTextButton rootClassName={css.languageButton} >
-          <a className={classNames(css.languageOption, currentPageClass('SwitchToEnglish'))} name="SwitchToEnglish" href={baseUrl.concat(toEnglish)}>English</a>
-          <span className={css.menuItemBorder} />
-          </InlineTextButton>
-        </MenuItem>
-      </MenuContent>
-    </Menu>
 
   return (
     <nav className={classes}>
@@ -234,6 +208,7 @@ TopbarDesktop.defaultProps = {
   className: null,
   currentUser: null,
   currentPage: null,
+  location: null,
   notificationCount: 0,
   initialSearchFormValues: {},
 };
@@ -247,6 +222,8 @@ TopbarDesktop.propTypes = {
   currentPage: string,
   isAuthenticated: bool.isRequired,
   onLogout: func.isRequired,
+  location: string.isRequired,
+  rootUrl: string.isRequired,
   notificationCount: number,
   onSearchSubmit: func.isRequired,
   initialSearchFormValues: object,

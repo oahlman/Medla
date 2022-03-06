@@ -37,6 +37,7 @@ const redirectToURLWithModalState = (props, modalStateParam) => {
   const { pathname, search, state } = location;
   const searchString = `?${stringify({ [modalStateParam]: 'open', ...parse(search) })}`;
   history.push(`${pathname}${searchString}`, state);
+  console.log('pathname', pathname);
 };
 
 const redirectToURLWithoutModalState = (props, modalStateParam) => {
@@ -181,8 +182,12 @@ class TopbarComponent extends Component {
         onLogout={this.handleLogout}
         notificationCount={notificationCount}
         currentPage={currentPage}
+        location={location}
+        rootUrl={config.canonicalRootURL}
       />
     );
+
+    console.log('locationTopbar', location);
 
     // Only render current search if full place object is available in the URL params
     const locationFieldsPresent = config.sortSearchByDistance
@@ -245,6 +250,8 @@ class TopbarComponent extends Component {
             notificationCount={notificationCount}
             onLogout={this.handleLogout}
             onSearchSubmit={this.handleSubmit}
+            location={location}
+            rootUrl={config.canonicalRootURL}
           />
         </div>
         <Modal

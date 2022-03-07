@@ -217,6 +217,8 @@
   "EditListingDescriptionForm.categoryRequired": "You must select an industry for your job.",
   "EditListingDescriptionForm.createListingDraftError": "Failed to create draft list. Please try again.",
   "EditListingDescriptionForm.description": "Describe your job",
+  "EditListingDescriptionForm.addServiceLabel":"Add service",
+  "EditListingDescriptionForm.saveServiceLabel":"Save service",
   "EditListingOffer1Form.offer": "Describe your service",
   "EditListingOffer2Form.offer": "Describe additional service",
   "EditListingOffer3Form.offer": "Describe additional service",

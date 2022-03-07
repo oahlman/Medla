@@ -217,6 +217,8 @@
   "EditListingDescriptionForm.categoryRequired": "Du måste välja en bransch för ditt jobb.",
   "EditListingDescriptionForm.createListingDraftError": "Det gick inte att skapa ett utkast till lista. Försök igen.",
   "EditListingDescriptionForm.description": "Beskriv ditt jobb",
+  "EditListingDescriptionForm.addServiceLabel": "Lägg till tjänst",
+  "EditListingDescriptionForm.saveServiceLabel":"Spara tjänst",
   "EditListingOffer1Form.offer": "Beskriv din tjänst",
   "EditListingOffer2Form.offer": "Beskriv ytterligare tjänst",
   "EditListingOffer3Form.offer": "Beskriv ytterligare tjänst",

@@ -54,6 +54,8 @@ export const EditListingPoliciesFormComponent = props => (
       const submitInProgress = updateInProgress;
       const submitDisabled = invalid || disabled || submitInProgress;
 
+      const industriesLabel = <FormattedMessage id="NotificationSettingsForm.industriesLabel" />;
+
       return (
         <Form className={classes} onSubmit={handleSubmit}>
           {errorMessage}
@@ -65,7 +67,7 @@ export const EditListingPoliciesFormComponent = props => (
             name="category"
             options={categories}
             twoColumns={true}
-            label="Branscher"
+            label={industriesLabel}
           />
 
           <Button

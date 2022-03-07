@@ -125,8 +125,8 @@ const EditListingServiceFormComponent = props => (
       const submitInProgress = updateInProgress;
       const submitDisabled = invalid || disabled || submitInProgress;
 
-
-      const buttonText = 'Lägg till tjänst';
+      const buttonText = <FormattedMessage id="EditListingDescriptionForm.addServiceLabel" />;
+      const saveService = <FormattedMessage id="EditListingDescriptionForm.saveServiceLabel" />;
 
       return (
         <div className={css.serviceCard}>
@@ -302,7 +302,7 @@ const EditListingServiceFormComponent = props => (
               disabled={submitDisabled}
               ready={submitReady}
             >
-              {'Spara tjänst'}
+              {saveService}
             </Button>
           </Form>
         </div>

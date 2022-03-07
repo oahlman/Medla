@@ -46,6 +46,8 @@ class TopbarSearchFormComponent extends Component {
 
           const classes = classNames(rootClassName, className);
           const desktopInputRootClass = desktopInputRoot || css.desktopInputRoot;
+          const languageJob = intl.formatMessage({ id: 'TopbarSearchForm.optionJob' });
+          const languageCompany = intl.formatMessage({ id: 'TopbarSearchForm.optionCompany' });
           
       
 
@@ -114,8 +116,8 @@ class TopbarSearchFormComponent extends Component {
                         <FieldSelectSwitch className={isMobile ? css.mobileInputRoot : desktopInputRootClass}
                           inputClassName={isMobile ? css.mobileInput : css.desktopInput}
                           id="category" name="category" type= 'radio'>
-                           <option value="company">Företag</option>
-                             <option value="job">Jobb</option>
+                           <option value="company">{languageCompany}</option>
+                             <option value="job">{languageJob}</option>
 
                           
                                 </FieldSelectSwitch>

@@ -162,13 +162,13 @@ const TopbarDesktop = props => {
       </MenuLabel>
       <MenuContent className={css.languageMenuContent}>
         <MenuItem key="Swedish">
-          <a className={classNames(css.profileSettingsLink, currentPageClass('Swedish'))} name='Swedish' href={rootUrl.concat(toSwedish)}>
+          <a className={css.profileSettingsLink} name='Swedish' href={rootUrl.concat(toSwedish)}>
             <span className={css.menuItemBorder} />
             Svenska
           </a>
         </MenuItem>
         <MenuItem key="English">
-          <a className={classNames(css.profileSettingsLink, currentPageClass('English'))} name='English' href={rootUrl.concat(toEnglish)}>
+          <a className={css.profileSettingsLink} name='English' href={rootUrl.concat(toEnglish)}>
             <span className={css.menuItemBorder} />
             English
           </a>

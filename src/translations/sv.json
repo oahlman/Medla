@@ -1542,6 +1542,8 @@
   "TransactionPanel.activityHeading": "Aktivitet",
   "TopbarSearchForm.selector.company":"Företag",
   "TopbarSearchForm.selector.job":"Jobb",
+  "TopbarSearchForm.optionJob":"Jobb",
+  "TopbarSearchForm.optionCompany":"Företag",
   "TransactionPanel.bookingBreakdownTitle": "Bokningsuppdelning",
   "TransactionPanel.customerBannedStatus": "Användaren gjorde begäran, men blev senare avstängd.",
   "TransactionPanel.declineButton": "Avböj",

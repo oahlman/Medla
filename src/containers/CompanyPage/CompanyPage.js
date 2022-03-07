@@ -47,6 +47,7 @@ import {
   ContactCardForJob,
   ExternalLink,
   MenuLabel,
+  CollapsibleProjects,
 
 } from '../../components';
 
@@ -506,53 +507,53 @@ const ContactCardForJobListings = contactJob;
                   <FormattedMessage id="CompanyPage.serviceTitle" />
                   </h2>
                 <div className={publicData.offerHeading1 ? css.blank : css.hidden}>
-                 <Collapsible
+                 <CollapsibleProjects
                   label = {publicData.offerHeading1 ? publicData.offerHeading1 : null}>
                   <SectionServicesMaybe
 
                   description={publicData.offer1 ? publicData.offer1 : null}
                   />
-                  </Collapsible>
+                  </CollapsibleProjects>
                   </div>
 
 
                   <div className={publicData.offerHeading2 ? css.blank : css.hidden}>
-                  <Collapsible
+                  <CollapsibleProjects
                   label = {publicData.offerHeading2 ? publicData.offerHeading2 : null}>
                   <SectionServicesMaybe
                   description={publicData.offer2 ? publicData.offer2 : null}
                   />
-                  </Collapsible>
+                  </CollapsibleProjects>
                   </div>
 
                   <div className={publicData.offerHeading3 ? css.blank : css.hidden}>
-                  <Collapsible
+                  <CollapsibleProjects
                   label = {publicData.offerHeading3 ? publicData.offerHeading3 : null}>
                   <SectionServicesMaybe
 
                   description={publicData.offer3 ? publicData.offer3 : null}
                   />
-                  </Collapsible>
+                  </CollapsibleProjects>
                   </div>
 
 
 
                   <div className={publicData.offerHeading4 ? css.blank : css.hidden}>
-                  <Collapsible
+                  <CollapsibleProjects
                   label = {publicData.offerHeading4 ? publicData.offerHeading4 : null}>
                   <SectionServicesMaybe
                   description={publicData.offer4 ? publicData.offer4 : null}
                   />
-                  </Collapsible>
+                  </CollapsibleProjects>
                   </div>
 
                   <div className={publicData.offerHeading5 ? css.blank : css.hidden}>
-                  <Collapsible
+                  <CollapsibleProjects
                   label = {publicData.offerHeading5 ? publicData.offerHeading5 : null}>
                   <SectionServicesMaybe
                   description={publicData.offer5 ? publicData.offer5 : null}
                   />
-                  </Collapsible>
+                  </CollapsibleProjects>
                   </div>
                   <div className={publicData.category ? css.categoryTags : css.hidden}>
                   <SectionRulesMaybe options={categoryOptions} publicData={publicData} />

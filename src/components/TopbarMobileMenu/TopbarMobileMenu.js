@@ -86,7 +86,22 @@ const TopbarMobileMenu = props => {
             />
           </div>
 
+          <InlineTextButton rootClassName={css.chooseLanguageLogOut} onClick={() => setIsOpen(!isOpen)}>
+          <FormattedMessage id={ isOpen ? "TopbarMobileMenu.closeLanguage" : "TopbarMobileMenu.chooseLanguage" }/>
+        </InlineTextButton>
 
+        <div className={isOpen ? css.languageMenu : css.hidden}>
+        <a className={css.languageOption} name='Swedish' href={rootUrl.concat(toSwedish)}>
+            <span className={css.menuItemBorder} />
+            Svenska
+          </a>
+
+          <a className={css.languageOption} name='English' href={rootUrl.concat(toEnglish)}>
+            <span className={css.menuItemBorder} />
+            English
+          </a>
+        </div>
+      
         <NamedLink name="AboutPage" className={css.navigationLinkMargin}>
         <FormattedMessage id="Footer.toAboutPage" />
         </NamedLink>

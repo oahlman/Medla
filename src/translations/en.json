@@ -450,7 +450,7 @@
   "KeywordFilterPlainForm.labelSelected": "Keywords",
   "KeywordFilterPlainForm.placeholder": "Enter a keyword…",
   "LandingPage.schemaDescription": "Search for both jobs and entrepreneurs, filter results by industry, geography and project." ,
-  "LandingPage.schemaTitle": "Find Local Forces | {siteTitle}",
+  "LandingPage.schemaTitle": "Find Local Solutions | {siteTitle}",
   "LayoutWrapperAccountSettingsSideNav.contactDetailsTabTitle": "Verification",
   "LayoutWrapperAccountSettingsSideNav.notificationSettingsTabTitle": "Alerts",
   "LayoutWrapperAccountSettingsSideNav.profileSettingsTabTitle": "Profile Image",
@@ -904,7 +904,7 @@
   "ProjectPage.readMore": "Learn More",
   "ProjectPage.externalService": "Contact Projector",
   "ProjectPage.projectOwnerLink": "Read more about Medla for Local Anchoring",
-  "ProjectPage.schemaTitle": "{name} | {siteTitle} - Find Local Forces",
+  "ProjectPage.schemaTitle": "{name} | {siteTitle} - Find Local Solutions",
   
   "CityPage.callToSubscribe": "You are not following this site.",
   "CityPage.alreadySubscribed": "You are following this site.",
@@ -921,7 +921,7 @@
   "CityPage.readMore": "Learn more",
   "CityPage.externalService": "Contact the municipality",
   "CityPage.projectOwnerLink": "Read more about Medla for Local Anchoring",
-  "CityPage.schemaTitle": "{name} | {siteTitle} - Find Local Forces",
+  "CityPage.schemaTitle": "{name} | {siteTitle} - Find Local Solutions",
   
   
   "ProfileSettingsForm.addYourProfilePicture": "+ Add your profile picture…",
@@ -1017,7 +1017,7 @@
   "SectionHowItWorks.textLinkForetagare": "entrepreneurs",
   "SectionHowItWorks.textLinkBeskrivForetag": "Describe the business",
   "SectionMission.part1Text": "That's why we started Medla. Jumped out of research and built to create more winners in the green transition.",
-  "SectionMission.part1Title": "Building a Sustainable Future Requires Local Forces.",
+  "SectionMission.part1Title": "Building a Sustainable Future Requires Local Solutions.",
   "SectionMission.titleLineOne": "Our Vision",
   "SectionPostJob.createJobTitle": "Let the right provider contact you",
   "SectionPostJob.createJobDescription": "Publish a job with the goods or services you need and get answers from relevant suppliers. Compare price, location and choose which suggestions you want to go ahead with. It's free and you do not commit to anything when you publishes a job. ",

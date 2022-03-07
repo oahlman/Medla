@@ -98,6 +98,17 @@ flex-direction: row;
   margin-top: 0;
 }
 
+.chooseLanguageLogOut {
+  /* Font */
+  @apply --marketplaceLinkStyles;
+  @apply --marketplaceH2FontStyles;
+  color: var(--marketplaceColor);
+  text-align: left;
+
+  /* Layout */
+  margin-top: 35px;
+}
+
 .navigationLink {
   /* Font */
   @apply --marketplaceH2FontStyles;
@@ -145,7 +156,6 @@ flex-direction: row;
   color: var(--matterColor);
 
   /* Layout */
-  margin-top: 35px;
   margin-bottom: 11px;
 }
 .currentPageLink {

@@ -853,5 +853,8 @@ color: grey;
 .servicesContainer{
   padding-left:24px;
   padding-right:24px;
+
+  @media (--viewportMedium) {
+    padding: 0px;
 }
-  
+}

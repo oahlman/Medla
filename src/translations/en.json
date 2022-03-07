@@ -1567,6 +1567,8 @@
   "TopbarSearchForm.selector.job":"Jobs",
   "TopbarSearchForm.optionJob":"Jobs",
   "TopbarSearchForm.optionCompany":"Companies",
+  "TopbarSearchForm.mobileHeading1":"Choose location",
+  "TopbarSearchForm.mobileHeading2":"Select Industry",
   "TransactionPage.deletedListing": "Deleted List",
   "TransactionPage.fetchOrderFailed": "Order data retrieval failed.",
   "TransactionPage.fetchSaleFailed": "Sales data retrieval failed.",

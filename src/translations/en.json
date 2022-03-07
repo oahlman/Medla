@@ -563,7 +563,7 @@
   "ManageListingsPage.companyPage": "Your Business",
   "ManageListingsPage.queryError": "Failed to query. Please try again.",
   "ManageListingsPage.title": "Manage Jobs",
-  "ManageListingsPage.youHaveListings": "You have {count} {count, plural, one {jobbannons}ads} other {jobbannonser}ads}}",
+  "ManageListingsPage.youHaveListings": "You have {count} {count, plural, one {job post} other {job postings}}",
   "ManageListingsPage.yourListings": "Your Job Ads",
   "MapPriceMarker.unsupportedPrice": "({currency})",
   "Modal.close": "Close",

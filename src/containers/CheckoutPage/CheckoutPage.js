@@ -401,6 +401,8 @@ export class CheckoutPageComponent extends Component {
 
     const { publicData, geolocation } = currentListing.attributes;
     const location = publicData && publicData.location ? publicData.location : {};
+    const buttonConfirm = <FormattedMessage id="CheckoutPage.buttonConfirm"/>
+
 
     const bookingForm = (
       <FinalForm
@@ -432,7 +434,7 @@ export class CheckoutPageComponent extends Component {
                   inProgress={this.state.submitting}
                   disabled={false}
                 >
-                  Bekräfta intresseanmälan
+                  {buttonConfirm}
                 </PrimaryButton>
               </div>
             </Form>

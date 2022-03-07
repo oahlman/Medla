@@ -111,6 +111,7 @@
   
   "ContactCardCompany.companyName": "Find {name}",
   "CheckoutPage.bookingTimeNotAvailableMessage": "Sorry, the requested time is already booked.",
+  "CheckoutPage.buttonConfirm":"Send",
   "CheckoutPage.chargeDisabledMessage": "This provider's payout information is incomplete, so the resource can not be booked. Contact the Marketplace Administrators.",
   "CheckoutPage.errorlistingLinkText": "assignment page",
   "CheckoutPage.goToLandingPage": "Go to Website",
@@ -355,12 +356,12 @@
   "EmailVerificationForm.verifying": "Verifying worm",
   "EmailVerificationPage.loadingUserInformation": "Loading User Information…",
   "EmailVerificationPage.title": "Verify Your Email Address",
-  "InquiryForm.heading": "Ask about {listingTitle}",
-  "InquiryForm.messageLabel": "Message to {authorDisplayName}",
-  "InquiryForm.messagePlaceholder": "Hello {authorDisplayName}! We are looking for…",
-  "InquiryForm.messageRequired": "A message is required",
-  "InquiryForm.sendEnquiryError": "Oops, something went wrong. Please try again.",
-  "InquiryForm.submitButtonText": "Submit Request",
+  "EnquiryForm.heading": "Ask about {listingTitle}",
+  "EnquiryForm.messageLabel": "Message",
+  "EnquiryForm.messagePlaceholder": "Hello! We are looking for…",
+  "EnquiryForm.messageRequired": "A message is required",
+  "EnquiryForm.sendEnquiryError": "Oops, something went wrong. Please try again.",
+  "EnquiryForm.submitButtonText": "Submit Request",
   "FrequentlyAskedQuestionsPage.signupForm": "Fill in the information here",
   "FrequentlyAskedQuestionsPage.searchPage": "when searching",
   "FrequentlyAskedQuestionsPage.supportEmail": "support@medla.app",
@@ -1121,7 +1122,7 @@
   "SectionCompanyFAQ.Title7": "How do I find the jobs?",
   "SectionCompanyFAQ.Title8": "Can I track multiple projects with the same account?",
   "SectionCompanyFAQ.Title9":"What types of jobs can I find on mediate?",
-  "SectionCompanyFAQ.Title10":"Who are behind medla?",
+  "SectionCompanyFAQ.Title10":"Who are behind Medla?",
 
   
   

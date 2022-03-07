@@ -107,6 +107,7 @@
   "CompanyPage.descriptionTitle": "About this company",
   "CompanyPage.serviceTitle": "Services",
   "CompanyPage.closedListing": "Company is not inactive on Medla.",
+  "CompanyPage.reportCompany": "Report",
   
   "ContactCardCompany.companyName": "Find {name}",
   "CheckoutPage.bookingTimeNotAvailableMessage": "Sorry, the requested time is already booked.",

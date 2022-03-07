@@ -567,7 +567,7 @@ const ContactCardForJobListings = contactJob;
                   />
                   <div className={css.reportContainerMobile}>
                 <IoFlagOutline className={css.iconFlag}></IoFlagOutline>  <ExternalLink href={`mailto:info@medla.app?subject=Rapportera%20f%C3%B6retag: ${currentListing.id.uuid}`} >
-              <p className={css.reportFont}>Rapportera företag</p>
+               <div className={css.reportFont}><FormattedMessage id="CompanyPage.reportCompany" /></div> 
               </ExternalLink>
 
                 </div>
@@ -626,7 +626,8 @@ const ContactCardForJobListings = contactJob;
                      <div className={css.reportContainer}>
 
 <IoFlagOutline className={css.iconFlag}></IoFlagOutline>  <ExternalLink href={`mailto:info@medla.app?subject=Rapportera%20f%C3%B6retag: ${currentListing.id.uuid}`} >
-<p className={css.reportFont}>Rapportera Företag</p>
+<div className={css.reportFont}><FormattedMessage id="CompanyPage.reportCompany" /></div> 
+
   </ExternalLink>
 
 </div>

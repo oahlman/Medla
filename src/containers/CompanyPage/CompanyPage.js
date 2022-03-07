@@ -506,6 +506,7 @@ const ContactCardForJobListings = contactJob;
                   <h2 className={publicData.offerHeading1 ? css.serviceTitle : css.hidden}>
                   <FormattedMessage id="CompanyPage.serviceTitle" />
                   </h2>
+                  <div className={css.servicesContainer}>
                 <div className={publicData.offerHeading1 ? css.blank : css.hidden}>
                  <CollapsibleProjects
                   label = {publicData.offerHeading1 ? publicData.offerHeading1 : null}>
@@ -554,6 +555,7 @@ const ContactCardForJobListings = contactJob;
                   description={publicData.offer5 ? publicData.offer5 : null}
                   />
                   </CollapsibleProjects>
+                  </div>
                   </div>
                   <div className={publicData.category ? css.categoryTags : css.hidden}>
                   <SectionRulesMaybe options={categoryOptions} publicData={publicData} />

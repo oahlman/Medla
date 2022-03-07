@@ -242,6 +242,7 @@
 }
 
 .contentContainer {
+
   @media (--viewportMedium) {
     max-width: 1056px;
     margin: 0 auto;
@@ -849,4 +850,8 @@ display:none;
 color: grey;
 }
 
+.servicesContainer{
+  padding-left:24px;
+  padding-right:24px;
+}
   

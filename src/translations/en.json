@@ -426,6 +426,11 @@
   "Footer.toAboutPage": "About Medla",
   "Footer.toContactPage": "Contact",
   "Footer.toFAQPage": "FAQ",
+
+
+
+
+
   "Footer.toHelpPage": "Help",
   "Footer.toNewListingPage": "Publish a Job",
   "ImageCarousel.imageAltText": "Displays image {index} / {count}",
@@ -1104,8 +1109,8 @@
   "SectionMunicipalityFAQ.Text7": "Affiliate projects are displayed with a project page where their jobs and needs are advertised.",
   "SectionMunicipalityFAQ.Text8": "Medla has no lock-in period, termination will be executed at the next payment.",
   "SectionMunicipalityFAQ.Text9": "The connection to Medla is made per project and can therefore be used in addition to other business platforms. If you want to move your entire project portfolio to Medla, we can help you with that.",
-  "SectionMunicipalityFAQ.Text10": "It is possible to connect projects outside Sweden, we update the language support for new regions if necessary.",
-  
+  "SectionMunicipalityFAQ.Text10": "It is possible to connect projects outside Sweden, we update the language support for new regions if necessary.",  
+
   "SectionCompanyFAQ.titleLineOne": "Frequently Asked Questions",
   "SectionCompanyFAQ.Title1": "Who Uses Medla?",
   "SectionCompanyFAQ.Title2": "What projects is Medla used for?",
@@ -1115,6 +1120,9 @@
   "SectionCompanyFAQ.Title6": "What types of jobs are available at Medla?",
   "SectionCompanyFAQ.Title7": "How do I find the jobs?",
   "SectionCompanyFAQ.Title8": "Can I track multiple projects with the same account?",
+  "SectionCompanyFAQ.Title9":"What types of jobs can I find on mediate?",
+  "SectionCompanyFAQ.Title10":"Who are behind medla?",
+
   
   
   
@@ -1126,7 +1134,9 @@
   "SectionCompanyFAQ.Text6": "All project needs can be set up, everything from construction work in the workplace to indirect needs such as catering, hairdressing services and leisure activities.",
   "SectionCompanyFAQ.Text7": "After registration you can see all jobs on Medla, jobs are displayed in our search function which you can easily find at the top of the website.",
   "SectionCompanyFAQ.Text8": "Yes, at Medla you register once and then easily select the projects where you want to be seen and get job notices.",
-  
+  "SectionCompanyFAQ.Text9":"At Medla, all types of needs that appear about the project are published.It can be anything from accommodation and meals to hairdressers and excavators.",
+  "SectionCompanyFAQ.Text10":"Medla is owned by Peer Digital Sweden AB. The company is started by previous project managers and developers from Umeå University.",
+
   
   "SectionProjectFunctions.titleLineOne": "Functions",
   "SectionProjectFunctions.chat": "Instant Messages",

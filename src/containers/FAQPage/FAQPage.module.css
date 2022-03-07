@@ -165,3 +165,27 @@
 max-width:70%;
 
 }
+
+.steps {
+  display: flex;
+  flex-direction: column;
+
+  @media (--viewportMedium) {
+    flex-direction: row;
+  }
+}
+
+.step {
+  margin:0px;
+  @media (--viewportMedium) {
+    margin-right: 40px;
+    width:50%;
+
+  }
+}
+
+.step:last-of-type {
+  @media (--viewportMedium) {
+    margin-right: 0;
+  }
+}

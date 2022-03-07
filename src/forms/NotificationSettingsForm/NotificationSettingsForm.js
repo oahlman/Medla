@@ -94,6 +94,9 @@ class NotificationSettingsFormComponent extends Component {
             invalid || pristine || pristineSinceLastSubmit || uploadInProgress || submitInProgress;
 
           const categoryOptions = findOptionsForSelectFilter('category', filterConfig);
+          const notifyVia = <FormattedMessage id="NotificationSettingsForm.notifyVia" />;
+          const projectHeadlineLabel = <FormattedMessage id="NotificationSettingsForm.projectHeadlineLabel" />;
+          const industriesLabel = <FormattedMessage id="NotificationSettingsForm.industriesLabel" />;
 
           const notificationOptions = [
             { key: 'email', label: 'E-post' },
@@ -117,7 +120,7 @@ class NotificationSettingsFormComponent extends Component {
                     className={css.features}
                     id="notifications"
                     name="notifications"
-                    label="Notifiera mig via"
+                    label={notifyVia}
                     options={notificationOptions}
                     values="notifications"
                     twoColumns={true}
@@ -130,7 +133,7 @@ class NotificationSettingsFormComponent extends Component {
                     className={css.features}
                     id="amenities"
                     name="amenities"
-                    label="Projekt"
+                    label={projectHeadlineLabel}
                     options={amenitiesOptions}
                     values="amenities"
                     twoColumns={true}
@@ -152,7 +155,7 @@ class NotificationSettingsFormComponent extends Component {
                     className={css.features}
                     id="category"
                     name="category"
-                    label="Branscher"
+                    label={industriesLabel}
                     options={categoryOptions}
                     values="category"
                     twoColumns={true}

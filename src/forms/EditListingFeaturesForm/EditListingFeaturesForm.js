@@ -53,6 +53,7 @@ const EditListingFeaturesFormComponent = props => (
         </p>
       ) : null;
 
+      const otherProjectLabel = <FormattedMessage id="Marketplace.config.key.labelOther" />;
       const options = findOptionsForSelectFilter('amenities', filterConfig);
       const showAsRequired = pristine && required;
       return (
@@ -123,7 +124,7 @@ const EditListingFeaturesFormComponent = props => (
           <FieldRadioButton
             id='other'
             name='amenities'
-            label="Annat projekt"
+            label={otherProjectLabel}
             value="other"
             showAsRequired={showAsRequired}
           />

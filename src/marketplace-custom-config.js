@@ -44,13 +44,13 @@ export const filters = [
     group: 'primary',
     queryParamNames: ['pub_listingCategory'],
     config: {
-      options: [{ key: 'job', label: 'Jobb' }, { key: 'company', label: <FormattedMessage id="Marketplace.config.key.label"/> }],
+      options: [{ key: 'job', label: <FormattedMessage id="Marketplace.config.key.labelJobs"/> }, { key: 'company', label: <FormattedMessage id="Marketplace.config.key.labelCompanies"/> }],
     },
   },
 
   {
     id: 'amenities',
-    label: 'Projekt',
+    label: <FormattedMessage id="Marketplace.config.key.projectHeading"/>,
     type: 'SelectSingleFilter',
     group: 'secondary',
     queryParamNames: ['pub_amenities'],
@@ -93,14 +93,14 @@ export const filters = [
         },
         {
           key: 'other',
-          label: 'Annat projekt',
+          label: <FormattedMessage id="Marketplace.config.key.labelOther"/>,
         },
       ],
     },
   },
   {
     id: 'category',
-    label: 'Bransch',
+    label: <FormattedMessage id="Marketplace.config.key.labelIndustries"/>,
     type: 'SelectMultipleFilter',
     group: 'primary',
     queryParamNames: ['pub_category'],
@@ -138,7 +138,7 @@ export const filters = [
   },
   {
     id: 'keyword',
-    label: 'Sökord',
+    label: <FormattedMessage id="Marketplace.config.key.labelKeywordSearch"/>,
     type: 'KeywordFilter',
     group: 'primary',
     // Note: KeywordFilter is fixed filter,
@@ -167,13 +167,13 @@ export const sortConfig = {
   conflictingFilters: ['keyword'],
 
   options: [
-    { key: 'meta_rating', label: 'Omdöme' },
-    { key: 'createdAt', label: 'Nyast' },
-    { key: '-createdAt', label: 'Äldst' },
+    { key: 'meta_rating', label: <FormattedMessage id="Marketplace.config.key.labelSortRating"/> }, 
+    { key: 'createdAt', label: <FormattedMessage id="Marketplace.config.key.labelSortNewest"/> }, 
+    { key: '-createdAt', label: <FormattedMessage id="Marketplace.config.key.labelSortOldest"/> }, 
 
     // The relevance is only used for keyword search, but the
     // parameter isn't sent to the Marketplace API. The key is purely
     // for handling the internal state of the sorting dropdown.
-    { key: 'relevance', label: 'Relevans', longLabel: 'Relevans (Sökord)' },
+    { key: 'relevance', label: <FormattedMessage id="Marketplace.config.key.labelSortRelevance"/>, label: <FormattedMessage id="Marketplace.config.key.labelSortRelevanceLong"/> },
   ],
 };

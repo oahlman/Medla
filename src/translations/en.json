@@ -581,7 +581,10 @@
   "ModalMissingInformation.companyImprovement": "Update Company Description.",
   
   "ModalMissingAccountInformation.closeVerifyEmailReminder": "Close",
-  "Marketplace.config.key.label":"Companies",
+  "Marketplace.config.key.labelCompanies":"Companies",
+  "Marketplace.config.key.labelJobs":"Jobs",
+  "Marketplace.config.key.labelKeywordSearch":"Keyword Search",
+  "Marketplace.config.key.labelIndustries":"Industry",
   "Marketplace.config.key.industry1": "Field work",
   "Marketplace.config.key.industry2": "Manning",
   "Marketplace.config.key.industry3": "Concrete pouring",
@@ -602,9 +605,13 @@
   "Marketplace.config.key.industry18": "Manufacturing",
   "Marketplace.config.key.industry19": "Training",
   "Marketplace.config.key.industry20": "Other",
-
-
-
+  "Marketplace.config.key.projectHeading":"Project",
+  "Marketplace.config.key.labelOther":"Other project",
+  "Marketplace.config.key.labelSortRating":"Rating",
+  "Marketplace.config.key.labelSortNewest":"Newest",
+  "Marketplace.config.key.labelSortOldest":"Oldest",
+  "Marketplace.config.key.labelSortRelevance":"Relevance",
+  "Marketplace.config.key.labelSortRelevanceLong":"Relevance (Keyword)",
 
 
 
@@ -986,7 +993,7 @@
   "SearchFiltersMobile.noResults": "No results.",
   "SearchFiltersMobile.resetAll": "Reset All",
   "SearchFiltersMobile.showListings": "View {count, number} {count, plural, one {objekt} other {objekt}}",
-  "SearchFiltersPrimary.foundResults": "{count, number} {count, plural, one {resultat} other {resultat}}",
+  "SearchFiltersPrimary.foundResults": "{count, number} {count, plural, one {results} other {results}}",
   "SearchFiltersPrimary.loadingResults": "Loading search results ...",
   "SearchFiltersPrimary.moreFiltersButton": "{count, plural, =0 {Filter} other {Filter • #}}",
   "SearchFiltersPrimary.noResults": "Unable to find any results.",

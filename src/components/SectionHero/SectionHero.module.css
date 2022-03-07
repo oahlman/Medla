@@ -161,16 +161,17 @@ background-color: transparent;
 
 .steps {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
 
   @media (--viewportMedium) {
-
+    display: flex;
+    flex-direction: row;
   }
 }
 
 .step {
   margin-right: 10px;
-  width: 160px;
+  width: 250px;
   @media (--viewportMedium) {
     width: 200px;
     margin-right: 20px;

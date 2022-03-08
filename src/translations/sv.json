@@ -1568,7 +1568,7 @@
   "TopbarSearchForm.selector.job":"Jobb",
   "TopbarSearchForm.optionJob":"Jobb",
   "TopbarSearchForm.optionCompany":"Företag",
-  "TopbarSearchForm.mobileHeading":"Välj plats",
+  "TopbarSearchForm.mobileHeading1":"Välj plats",
   "TopbarSearchForm.mobileHeading2":"Välj bransch",
   "TransactionPanel.bookingBreakdownTitle": "Bokningsuppdelning",
   "TransactionPanel.customerBannedStatus": "Användaren gjorde begäran, men blev senare avstängd.",

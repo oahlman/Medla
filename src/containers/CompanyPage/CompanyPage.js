@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 import { array, arrayOf, bool, func, shape, string, oneOf } from 'prop-types';
 import { FormattedMessage, intlShape, injectIntl } from '../../util/reactIntl';
 import { compose } from 'redux';
@@ -50,6 +50,7 @@ import {
   CollapsibleProjects,
 
 } from '../../components';
+import Convert from '../../components/Translate/Convert';
 
 import { EnquiryForm } from '../../forms';
 import { TopbarContainer, NotFoundPage } from '../../containers';
@@ -65,7 +66,9 @@ import SectionMapMaybe from './SectionMapMaybe';
 import { IoFlagOutline } from "react-icons/io5";
 
 
+
 import css from './CompanyPage.module.css';
+import { MdNavigation } from 'react-icons/md';
 
 const MIN_LENGTH_FOR_LONG_WORDS_IN_TITLE = 16;
 
@@ -254,6 +257,8 @@ export class CompanyPageComponent extends Component {
       return <NamedRedirect name="CompanyPage" params={params} search={location.search} />;
     }
 
+    console.log('BrowserLanguage', navigator.language.substring(0,2));
+
     const {
       description = '',
       geolocation = null,
@@ -261,6 +266,12 @@ export class CompanyPageComponent extends Component {
       title = '',
       publicData,
     } = currentListing.attributes;
+
+    const descriptionTranslate = (
+      <p><Convert 
+      text={description}/>
+      </p>
+    )
 
     const richTitle = (
       <span>
@@ -449,6 +460,7 @@ export class CompanyPageComponent extends Component {
 const ContactCardForJobListings = contactJob;
   const ContactLinkForJob = contactLinkJobListings;
   const SectionBookingPanel = null;
+  const browserLanguage = navigator.language;
 
     return (
       <Page
@@ -500,8 +512,8 @@ const ContactCardForJobListings = contactJob;
                   />
                     <div id="contactCompanyButton" className={css.mapMobile}>
                     {ContactLinkForJob}
-                    </div>
-                  <SectionDescriptionMaybe description={description} />
+                    </div>              
+                    <SectionDescriptionMaybe description={typeof navigator.language !== 'undefined' && navigator.language !== 'sv' ? descriptionTranslate : description} />
 
                   <h2 className={publicData.offerHeading1 ? css.serviceTitle : css.hidden}>
                   <FormattedMessage id="CompanyPage.serviceTitle" />

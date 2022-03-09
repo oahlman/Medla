@@ -265,23 +265,53 @@ export class CompanyPageComponent extends Component {
       publicData,
     } = currentListing.attributes;
 
-    const descriptionTranslate = (
-      <p><Convert 
-      text={description}/>
-      </p>
-    );
+    const foreignLanguage = typeof navigator.language !== 'undefined' && navigator.language !== 'sv';
 
-    const offerHeading1 = typeof navigator.language !== 'undefined' && navigator.language !== 'sv' ? <p><Convert text={publicData.offerHeading1}/> </p> : publicData.offerHeading1;
-    const offerHeading2 = typeof navigator.language !== 'undefined' && navigator.language !== 'sv' ? <p><Convert text={publicData.offerHeading2}/> </p> : publicData.offerHeading2;
-    const offerHeading3 = typeof navigator.language !== 'undefined' && navigator.language !== 'sv' ? <p><Convert text={publicData.offerHeading3}/> </p> : publicData.offerHeading3;
-    const offerHeading4 = typeof navigator.language !== 'undefined' && navigator.language !== 'sv' ? <p><Convert text={publicData.offerHeading4}/> </p> : publicData.offerHeading4;
-    const offerHeading5 = typeof navigator.language !== 'undefined' && navigator.language !== 'sv' ? <p><Convert text={publicData.offerHeading5}/> </p> : publicData.offerHeading5;
+    const offerHeading1 = publicData.offerHeading1;
+    const offerHeading2 = publicData.offerHeading2;
+    const offerHeading3 = publicData.offerHeading3;
+    const offerHeading4 = publicData.offerHeading4;
+    const offerHeading5 = publicData.offerHeading5;
     
-    const offer1 = typeof navigator.language !== 'undefined' && navigator.language !== 'sv' ? <p><Convert text={publicData.offer1}/> </p> : publicData.offer1;
-    const offer2 = typeof navigator.language !== 'undefined' && navigator.language !== 'sv' ? <p><Convert text={publicData.offer2}/> </p> : publicData.offer2;
-    const offer3 = typeof navigator.language !== 'undefined' && navigator.language !== 'sv' ? <p><Convert text={publicData.offer3}/> </p> : publicData.offer3;
-    const offer4 = typeof navigator.language !== 'undefined' && navigator.language !== 'sv' ? <p><Convert text={publicData.offer4}/> </p> : publicData.offer4;
-    const offer5 = typeof navigator.language !== 'undefined' && navigator.language !== 'sv' ? <p><Convert text={publicData.offer5}/> </p> : publicData.offer5;
+    const offer1 = publicData.offer1;
+    const offer2 = publicData.offer2;
+    const offer3 = publicData.offer3;
+    const offer4 = publicData.offer4;
+    const offer5 = publicData.offer5;
+
+    let descriptionTranslated = '...';
+
+
+    let offerHeading1Translated = '...';
+    let offerHeading2Translated = '...';
+    let offerHeading3Translated = '...';
+    let offerHeading4Translated = '...';
+    let offerHeading5Translated = '...';
+
+    let offer1Translated = '...';
+    let offer2Translated = '...';
+    let offer3Translated = '...';
+    let offer4Translated = '...';
+    let offer5Translated = '...';
+
+    if (foreignLanguage) {
+      descriptionTranslated = <Convert text={description}/>;
+
+      offerHeading1Translated = <Convert text={publicData.offerHeading1}/>;
+      offerHeading2Translated = <Convert text={publicData.offerHeading2}/>;
+      offerHeading3Translated = <Convert text={publicData.offerHeading3}/>;
+      offerHeading4Translated = <Convert text={publicData.offerHeading4}/>;
+      offerHeading5Translated = <Convert text={publicData.offerHeading5}/>;
+
+      offer1Translated = <Convert text={publicData.offer1}/>;
+      offer2Translated = <Convert text={publicData.offer2}/>;
+      offer3Translated = <Convert text={publicData.offer3}/>;
+      offer4Translated = <Convert text={publicData.offer4}/>;
+      offer5Translated = <Convert text={publicData.offer5}/>;
+    }
+
+    console.log('foreignLanguage:', foreignLanguage, 'offerHeading1:', offerHeading1, 'offerHeading1Translated:', offerHeading1Translated);
+
 
     const richTitle = (
       <span>
@@ -523,14 +553,14 @@ const ContactCardForJobListings = contactJob;
                     <div id="contactCompanyButton" className={css.mapMobile}>
                     {ContactLinkForJob}
                     </div>              
-                    <SectionDescriptionMaybe description={typeof navigator.language !== 'undefined' && navigator.language !== 'sv' ? descriptionTranslate : description} />
+                    <SectionDescriptionMaybe description={foreignLanguage && descriptionTranslated !== '' ? descriptionTranslated : description} />
 
                   <h2 className={publicData.offerHeading1 ? css.serviceTitle : css.hidden}>
                   <FormattedMessage id="CompanyPage.serviceTitle" />
                   </h2>
                 <div className={publicData.offerHeading1 ? css.blank : css.hidden}>
                  <CollapsibleProjects
-                  label = {publicData.offerHeading1 ? offerHeading1 : null}>
+                  label = {foreignLanguage && offerHeading1Translated !== '' ? offerHeading1Translated : offerHeading1}>
                   <SectionServicesMaybe
 
                   description={publicData.offer1 ? <span>{offer1}</span> : null}
@@ -541,7 +571,7 @@ const ContactCardForJobListings = contactJob;
 
                   <div className={publicData.offerHeading2 ? css.blank : css.hidden}>
                   <CollapsibleProjects
-                  label = {publicData.offerHeading2 ? offerHeading2 : null}>
+                  label = {foreignLanguage && offerHeading2Translated !== '' ? offerHeading2Translated : offerHeading2}>
                   <SectionServicesMaybe
                   description={publicData.offer2 ? offer2 : null}
                   />
@@ -550,7 +580,7 @@ const ContactCardForJobListings = contactJob;
 
                   <div className={publicData.offerHeading3 ? css.blank : css.hidden}>
                   <CollapsibleProjects
-                  label = {publicData.offerHeading3 ? offerHeading3 : null}>
+                  label = {foreignLanguage && offerHeading3Translated !== '' ? offerHeading3Translated : offerHeading3}>
                   <SectionServicesMaybe
 
                   description={publicData.offer3 ? offer3 : null}
@@ -562,7 +592,7 @@ const ContactCardForJobListings = contactJob;
 
                   <div className={publicData.offerHeading4 ? css.blank : css.hidden}>
                   <CollapsibleProjects
-                  label = {publicData.offerHeading4 ? offerHeading4 : null}>
+                  label = {foreignLanguage && offerHeading4Translated !== '' ? offerHeading4Translated : offerHeading4}>
                   <SectionServicesMaybe
                   description={publicData.offer4 ? offer4 : null}
                   />
@@ -571,7 +601,7 @@ const ContactCardForJobListings = contactJob;
 
                   <div className={publicData.offerHeading5 ? css.blank : css.hidden}>
                   <CollapsibleProjects
-                  label = {publicData.offerHeading5 ? offerHeading5 : null}>
+                  label = {foreignLanguage && offerHeading5Translated !== '' ? offerHeading5Translated : offerHeading5}>
                   <SectionServicesMaybe
                   description={publicData.offer5 ? offer5 : null}
                   />

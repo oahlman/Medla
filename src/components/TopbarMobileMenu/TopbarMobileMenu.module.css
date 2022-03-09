@@ -208,8 +208,10 @@ flex-direction: row;
   padding-left: 19px;
 }
 
-
-
+.iconLanguage {
+  width: 20px;
+  height: 20px;
+}
 
 .hidden{
   display:none;

@@ -13,6 +13,7 @@ import {
 } from '../../util/urlHelpers';
 import { ensureCurrentUser } from '../../util/data';
 import { AvatarLarge, InlineTextButton, NamedLink, NotificationBadge, ExternalLink } from '../../components';
+import { IoLanguage } from "react-icons/io5";
 
 import css from './TopbarMobileMenu.module.css';
 import DesktopLogo from '../Logo/DesktopLogo';
@@ -87,6 +88,7 @@ const TopbarMobileMenu = props => {
           </div>
 
           <InlineTextButton rootClassName={css.chooseLanguageLogOut} onClick={() => setIsOpen(!isOpen)}>
+          <IoLanguage className={css.iconLanguage} />
           <FormattedMessage id={ isOpen ? "TopbarMobileMenu.closeLanguage" : "TopbarMobileMenu.chooseLanguage" }/>
         </InlineTextButton>
 
@@ -170,14 +172,8 @@ const TopbarMobileMenu = props => {
 
       <div className={css.content}>
 
-      <NamedLink
-          className={classNames(css.homeLink, currentPageClass('LandingPage'))}
-          name="LandingPage"
-        >
-          <FormattedMessage id="TopbarMobileMenu.homeLink" />
-        </NamedLink>
-
         <InlineTextButton rootClassName={css.chooseLanguage} onClick={() => setIsOpen(!isOpen)}>
+          <IoLanguage className={css.iconLanguage} />
           <FormattedMessage id={ isOpen ? "TopbarMobileMenu.closeLanguage" : "TopbarMobileMenu.chooseLanguage" }/>
         </InlineTextButton>
 
@@ -192,6 +188,13 @@ const TopbarMobileMenu = props => {
             English
           </a>
         </div>
+
+        <NamedLink
+          className={classNames(css.homeLink, currentPageClass('LandingPage'))}
+          name="LandingPage"
+        >
+          <FormattedMessage id="TopbarMobileMenu.homeLink" />
+        </NamedLink>
 
         <NamedLink
           className={classNames(css.navigationLink, currentPageClass('InboxPage'))}

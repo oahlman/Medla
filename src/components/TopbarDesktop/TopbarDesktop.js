@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { FormattedMessage, intlShape } from '../../util/reactIntl';
 import classNames from 'classnames';
 import { ACCOUNT_SETTINGS_PAGES } from '../../routeConfiguration';
-import { IoGlobeOutline } from "react-icons/io5";
+import { IoLanguage } from "react-icons/io5";
 import { propTypes } from '../../util/types';
 import {
   LISTING_PAGE_PENDING_APPROVAL_VARIANT,
@@ -158,7 +158,7 @@ const TopbarDesktop = props => {
 
     <Menu>
       <MenuLabel className={css.profileMenuLabel} isOpenClassName={css.profileMenuIsOpen}>
-        <IoGlobeOutline className={css.globe} />
+        <IoLanguage className={css.iconLanguage} />
       </MenuLabel>
       <MenuContent className={css.languageMenuContent}>
         <MenuItem key="Swedish">

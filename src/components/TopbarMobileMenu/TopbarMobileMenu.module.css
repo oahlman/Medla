@@ -81,9 +81,6 @@ flex-direction: row;
   @apply --marketplaceH2FontStyles;
   color: var(--marketplaceColor);
   position: relative;
-
-  margin-top: var(--TopbarMobileMenu_topMargin);
-
   margin-bottom: 13px;
 }
 
@@ -95,7 +92,8 @@ flex-direction: row;
   text-align: left;
 
   /* Layout */
-  margin-top: 0;
+  margin-top: var(--TopbarMobileMenu_topMargin);
+
 }
 
 .chooseLanguageLogOut {
@@ -208,8 +206,9 @@ flex-direction: row;
   padding-left: 19px;
 }
 
-
-
+.iconLanguage {
+  margin-bottom: 5px;
+}
 
 .hidden{
   display:none;

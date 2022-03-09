@@ -343,8 +343,6 @@ export class CompanyPageComponent extends Component {
       offer5Translated = offer5;
     }
 
-    console.log('Translate:', this.translated, 'foreignLanguage:', foreignLanguage, 'offerHeading1:', offerHeading1, 'offerHeading1Translated:', offerHeading1Translated);
-
     const richTitle = (
       <span>
         {richText(title, {
@@ -541,7 +539,6 @@ export class CompanyPageComponent extends Component {
 const ContactCardForJobListings = contactJob;
   const ContactLinkForJob = contactLinkJobListings;
   const SectionBookingPanel = null;
-  const browserLanguage = navigator.language;
 
     return (
       <Page

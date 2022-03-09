@@ -44,50 +44,31 @@ export const CallButtonComponent = props => {
   } = props;
 
 
-    const currentListing = ensureListing(listing);
-    const listingName = currentListing.attributes.title
+  const currentListing = ensureListing(listing);
+  let contactInformation = currentListing.attributes.publicData.contactNumber;
+  let simulateContact = null;
+  console.log('contactInformation', contactInformation);
+  if (contactInformation === undefined) {
+    contactInformation = <FormattedMessage id="ListingPage.contactDetailsMissingButton" />;
+    simulateContact = contactInformation => null;
+  } else if ((/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i).test(contactInformation) && !contactInformation.startsWith('phone+')) {
+    contactInformation = contactInformation;
+    simulateContact = contactInformation => window.open(`mailto:${currentListing.attributes.publicData.contactNumber}`, '_self');
+  } else {
+    contactInformation = contactInformation.replace(/phone\+|@medla.app/g, "");
+    simulateContact = contactInformation => window.open(`tel:${contactInformation}`, '_self');
+  }
+  const [companyContact, setEmailHidden] = useState(false);
 
+  const showCompanyContactDetails =(
+    <SecondaryButton
+    className={companyContact ? css.buttonHiddenNumber : css.hidden}
+    type="submit"
+    onClick={simulateContact}>
+    {contactInformation}
+  </SecondaryButton>
 
-    const hasContactDetails = currentListing.attributes.publicData.contactNumber;
-    const contactInformation = hasContactDetails ? currentListing.attributes.publicData.contactNumber : <FormattedMessage
-    id="ListingPage.contactDetailsMissingButton" />;
-    const isEmail = (/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i).test(contactInformation);
-    const [companyContact, setEmailHidden] = useState(false);
-    const phoneNumberClean = contactInformation.replace(/[^0-9+]/g, '');
-
-    const swedenMobileNumberFormat = phoneNumberClean.substring(0,3).replace('0', '+46 ') + '-' + phoneNumberClean.substring(3,6) + ' ' + phoneNumberClean.substring(6,8) + ' ' + phoneNumberClean.substring(8,11);
-    const otherMobileNumberFormat = phoneNumberClean.substring(0,3) + '-' + phoneNumberClean.substring(3,5) + ' ' + phoneNumberClean.substring(5,8) + ' ' + phoneNumberClean.substring(8,10) + ' ' + phoneNumberClean.substring(10);
-    const landlinePhoneNumberFormat = phoneNumberClean.substring(0,3) + '-' + phoneNumberClean.substring(3,6) + ' ' + phoneNumberClean.substring(6,9) + ' ' + phoneNumberClean.substring(9);
-    const otherPhoneNumberFormat = phoneNumberClean.substring(0,3) + '-' + phoneNumberClean.substring(3,6) + ' ' + phoneNumberClean.substring(6,8) + ' ' + phoneNumberClean.substring(8);
-
-    let phoneNumberFormatted = null;
-    if (isEmail === false && phoneNumberClean.startsWith('07')) {
-      phoneNumberFormatted = swedenMobileNumberFormat;
-    } else if (isEmail === false && phoneNumberClean.startsWith('+')) {
-      phoneNumberFormatted = otherMobileNumberFormat;
-    } else if (isEmail === false && phoneNumberClean.length >= 10) {
-      phoneNumberFormatted = otherMobileNumberFormat;
-    } else if (isEmail === false && phoneNumberClean.length <= 9) {
-      phoneNumberFormatted = landlinePhoneNumberFormat;
-    } else if (isEmail === false) {
-      phoneNumberFormatted = otherPhoneNumberFormat;
-    }
-
-    const buttonText =  'Visa kontaktuppgifter';
-
-    const simulateCall = contactInformation => window.open(`tel:${contactInformation}`, '_self');
-    const simulateEmail = contactInformation => window.open(`mailto:${contactInformation}`, '_self');
-
-    const showCompanyContactDetails =(
-
-      <SecondaryButton
-      className={companyContact ? css.blank: css.hidden}
-      type="submit"
-      onClick={isEmail ? (() => simulateEmail(contactInformation)) : (() => simulateCall(contactInformation))}>
-      {isEmail ? contactInformation : phoneNumberFormatted}{}
-    </SecondaryButton>
-
-  );
+);
 
   return (
     <div >

@@ -6,17 +6,6 @@ const Convert = ({ language, text, target }) => {
   const [results, setResults] = useState([]);
   const [debouncedText, setDebouncedText] = useState(text);
 
-  // de-bouncing the search term
-  // runs every time the text changes  
-  useEffect(() => {
-      const timerId = setTimeout(() => {
-          setDebouncedText(text);
-      }, 500);
-
-      return () => {
-          clearTimeout(timerId);
-      };
-  }, [text]);
 
   // runs every time language or text updates
   useEffect(() => {

@@ -257,8 +257,6 @@ export class CompanyPageComponent extends Component {
       return <NamedRedirect name="CompanyPage" params={params} search={location.search} />;
     }
 
-    console.log('BrowserLanguage', navigator.language.substring(0,2));
-
     const {
       description = '',
       geolocation = null,
@@ -271,7 +269,19 @@ export class CompanyPageComponent extends Component {
       <p><Convert 
       text={description}/>
       </p>
-    )
+    );
+
+    const offerHeading1 = typeof navigator.language !== 'undefined' && navigator.language !== 'sv' ? <p><Convert text={publicData.offerHeading1}/> </p> : publicData.offerHeading1;
+    const offerHeading2 = typeof navigator.language !== 'undefined' && navigator.language !== 'sv' ? <p><Convert text={publicData.offerHeading2}/> </p> : publicData.offerHeading2;
+    const offerHeading3 = typeof navigator.language !== 'undefined' && navigator.language !== 'sv' ? <p><Convert text={publicData.offerHeading3}/> </p> : publicData.offerHeading3;
+    const offerHeading4 = typeof navigator.language !== 'undefined' && navigator.language !== 'sv' ? <p><Convert text={publicData.offerHeading4}/> </p> : publicData.offerHeading4;
+    const offerHeading5 = typeof navigator.language !== 'undefined' && navigator.language !== 'sv' ? <p><Convert text={publicData.offerHeading5}/> </p> : publicData.offerHeading5;
+    
+    const offer1 = typeof navigator.language !== 'undefined' && navigator.language !== 'sv' ? <p><Convert text={publicData.offer1}/> </p> : publicData.offer1;
+    const offer2 = typeof navigator.language !== 'undefined' && navigator.language !== 'sv' ? <p><Convert text={publicData.offer2}/> </p> : publicData.offer2;
+    const offer3 = typeof navigator.language !== 'undefined' && navigator.language !== 'sv' ? <p><Convert text={publicData.offer3}/> </p> : publicData.offer3;
+    const offer4 = typeof navigator.language !== 'undefined' && navigator.language !== 'sv' ? <p><Convert text={publicData.offer4}/> </p> : publicData.offer4;
+    const offer5 = typeof navigator.language !== 'undefined' && navigator.language !== 'sv' ? <p><Convert text={publicData.offer5}/> </p> : publicData.offer5;
 
     const richTitle = (
       <span>
@@ -520,10 +530,10 @@ const ContactCardForJobListings = contactJob;
                   </h2>
                 <div className={publicData.offerHeading1 ? css.blank : css.hidden}>
                  <CollapsibleProjects
-                  label = {publicData.offerHeading1 ? publicData.offerHeading1 : null}>
+                  label = {publicData.offerHeading1 ? offerHeading1 : null}>
                   <SectionServicesMaybe
 
-                  description={publicData.offer1 ? publicData.offer1 : null}
+                  description={publicData.offer1 ? <span>{offer1}</span> : null}
                   />
                   </CollapsibleProjects>
                   </div>
@@ -531,19 +541,19 @@ const ContactCardForJobListings = contactJob;
 
                   <div className={publicData.offerHeading2 ? css.blank : css.hidden}>
                   <CollapsibleProjects
-                  label = {publicData.offerHeading2 ? publicData.offerHeading2 : null}>
+                  label = {publicData.offerHeading2 ? offerHeading2 : null}>
                   <SectionServicesMaybe
-                  description={publicData.offer2 ? publicData.offer2 : null}
+                  description={publicData.offer2 ? offer2 : null}
                   />
                   </CollapsibleProjects>
                   </div>
 
                   <div className={publicData.offerHeading3 ? css.blank : css.hidden}>
                   <CollapsibleProjects
-                  label = {publicData.offerHeading3 ? publicData.offerHeading3 : null}>
+                  label = {publicData.offerHeading3 ? offerHeading3 : null}>
                   <SectionServicesMaybe
 
-                  description={publicData.offer3 ? publicData.offer3 : null}
+                  description={publicData.offer3 ? offer3 : null}
                   />
                   </CollapsibleProjects>
                   </div>
@@ -552,18 +562,18 @@ const ContactCardForJobListings = contactJob;
 
                   <div className={publicData.offerHeading4 ? css.blank : css.hidden}>
                   <CollapsibleProjects
-                  label = {publicData.offerHeading4 ? publicData.offerHeading4 : null}>
+                  label = {publicData.offerHeading4 ? offerHeading4 : null}>
                   <SectionServicesMaybe
-                  description={publicData.offer4 ? publicData.offer4 : null}
+                  description={publicData.offer4 ? offer4 : null}
                   />
                   </CollapsibleProjects>
                   </div>
 
                   <div className={publicData.offerHeading5 ? css.blank : css.hidden}>
                   <CollapsibleProjects
-                  label = {publicData.offerHeading5 ? publicData.offerHeading5 : null}>
+                  label = {publicData.offerHeading5 ? offerHeading5 : null}>
                   <SectionServicesMaybe
-                  description={publicData.offer5 ? publicData.offer5 : null}
+                  description={publicData.offer5 ? offer5 : null}
                   />
                   </CollapsibleProjects>
                   </div>

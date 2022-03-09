@@ -48,6 +48,8 @@ import {
   ExternalLink,
   MenuLabel,
   CollapsibleProjects,
+  InlineTextButton,
+  TranslateButton,
 
 } from '../../components';
 import Convert from '../../components/Translate/Convert';
@@ -63,7 +65,7 @@ import SectionDescriptionMaybe from './SectionDescriptionMaybe';
 import SectionServicesMaybe from './SectionServicesMaybe';
 import SectionRulesMaybe from './SectionRulesMaybe';
 import SectionMapMaybe from './SectionMapMaybe';
-import { IoFlagOutline } from "react-icons/io5";
+import { IoFlagOutline, IoLanguageOutline } from "react-icons/io5";
 
 
 
@@ -99,6 +101,7 @@ export class CompanyPageComponent extends Component {
     this.state = {
       pageClassNames: [],
       imageCarouselOpen: false,
+      viewOriginal: false,
       enquiryModalOpen: enquiryModalOpenForListingId === params.id,
     };
 
@@ -264,7 +267,6 @@ export class CompanyPageComponent extends Component {
       title = '',
       publicData,
     } = currentListing.attributes;
-
     const foreignLanguage = typeof navigator.language !== 'undefined' && navigator.language !== 'sv';
 
     const offerHeading1 = publicData.offerHeading1;
@@ -279,20 +281,35 @@ export class CompanyPageComponent extends Component {
     const offer4 = publicData.offer4;
     const offer5 = publicData.offer5;
 
-    let descriptionTranslated = '...';
+    let descriptionTranslated = '';
 
+    let offerHeading1Translated = '';
+    let offerHeading2Translated = '';
+    let offerHeading3Translated = '';
+    let offerHeading4Translated = '';
+    let offerHeading5Translated = '';
 
-    let offerHeading1Translated = '...';
-    let offerHeading2Translated = '...';
-    let offerHeading3Translated = '...';
-    let offerHeading4Translated = '...';
-    let offerHeading5Translated = '...';
+    let offer1Translated = '';
+    let offer2Translated = '';
+    let offer3Translated = '';
+    let offer4Translated = '';
+    let offer5Translated = '';
 
-    let offer1Translated = '...';
-    let offer2Translated = '...';
-    let offer3Translated = '...';
-    let offer4Translated = '...';
-    let offer5Translated = '...';
+    const viewOriginal = this.state.viewOriginal;
+
+    const translateButtonMaybe = foreignLanguage ? (
+    <div classname={css.viewOriginal}><IoLanguageOutline />
+    <InlineTextButton
+      onClick={() => {
+        this.setState({
+          viewOriginal: !viewOriginal,
+        });
+      }
+    }
+      >{this.state.viewOriginal ? 'Translate' : 'View Original'}</InlineTextButton>
+      </div>) : null;
+
+    console.log('translateButtonMaybe', translateButtonMaybe, 'viewOriginal', this.state.viewOriginal);
 
     if (foreignLanguage) {
       descriptionTranslated = <Convert text={description}/>;
@@ -308,10 +325,25 @@ export class CompanyPageComponent extends Component {
       offer3Translated = <Convert text={publicData.offer3}/>;
       offer4Translated = <Convert text={publicData.offer4}/>;
       offer5Translated = <Convert text={publicData.offer5}/>;
+    } 
+    
+    if (foreignLanguage && viewOriginal) {
+      descriptionTranslated = description;
+
+      offerHeading1Translated = offerHeading1;
+      offerHeading2Translated = offerHeading2;
+      offerHeading3Translated = offerHeading3;
+      offerHeading4Translated = offerHeading4;
+      offerHeading5Translated = offerHeading5;
+
+      offer1Translated = offer1;
+      offer2Translated = offer2;
+      offer3Translated = offer3;
+      offer4Translated = offer4;
+      offer5Translated = offer5;
     }
 
-    console.log('foreignLanguage:', foreignLanguage, 'offerHeading1:', offerHeading1, 'offerHeading1Translated:', offerHeading1Translated);
-
+    console.log('Translate:', this.translated, 'foreignLanguage:', foreignLanguage, 'offerHeading1:', offerHeading1, 'offerHeading1Translated:', offerHeading1Translated);
 
     const richTitle = (
       <span>
@@ -385,6 +417,15 @@ export class CompanyPageComponent extends Component {
       e.stopPropagation();
       this.setState({
         imageCarouselOpen: true,
+      });
+    };
+
+    const toggleViewOriginal = e => {
+      // Stop event from bubbling up to prevent image click handler
+      // trying to open the carousel as well.
+      e.stopPropagation();
+      this.setState({
+        viewOriginal: true,
       });
     };
     const authorAvailable = currentListing && currentListing.author;
@@ -552,7 +593,8 @@ const ContactCardForJobListings = contactJob;
                   />
                     <div id="contactCompanyButton" className={css.mapMobile}>
                     {ContactLinkForJob}
-                    </div>              
+                    </div>
+                    {translateButtonMaybe}
                     <SectionDescriptionMaybe description={foreignLanguage && descriptionTranslated !== '' ? descriptionTranslated : description} />
 
                   <h2 className={publicData.offerHeading1 ? css.serviceTitle : css.hidden}>
@@ -563,7 +605,7 @@ const ContactCardForJobListings = contactJob;
                   label = {foreignLanguage && offerHeading1Translated !== '' ? offerHeading1Translated : offerHeading1}>
                   <SectionServicesMaybe
 
-                  description={publicData.offer1 ? <span>{offer1}</span> : null}
+                  description={foreignLanguage && offer1Translated !== '' ? offer1Translated : offer1}
                   />
                   </CollapsibleProjects>
                   </div>
@@ -573,7 +615,7 @@ const ContactCardForJobListings = contactJob;
                   <CollapsibleProjects
                   label = {foreignLanguage && offerHeading2Translated !== '' ? offerHeading2Translated : offerHeading2}>
                   <SectionServicesMaybe
-                  description={publicData.offer2 ? offer2 : null}
+                  description={foreignLanguage && offer2Translated !== '' ? offer2Translated : offer2}
                   />
                   </CollapsibleProjects>
                   </div>
@@ -583,7 +625,7 @@ const ContactCardForJobListings = contactJob;
                   label = {foreignLanguage && offerHeading3Translated !== '' ? offerHeading3Translated : offerHeading3}>
                   <SectionServicesMaybe
 
-                  description={publicData.offer3 ? offer3 : null}
+                  description={foreignLanguage && offer3Translated !== '' ? offer3Translated : offer3}
                   />
                   </CollapsibleProjects>
                   </div>
@@ -594,7 +636,7 @@ const ContactCardForJobListings = contactJob;
                   <CollapsibleProjects
                   label = {foreignLanguage && offerHeading4Translated !== '' ? offerHeading4Translated : offerHeading4}>
                   <SectionServicesMaybe
-                  description={publicData.offer4 ? offer4 : null}
+                  description={foreignLanguage && offer4Translated !== '' ? offer4Translated : offer4}
                   />
                   </CollapsibleProjects>
                   </div>
@@ -603,7 +645,7 @@ const ContactCardForJobListings = contactJob;
                   <CollapsibleProjects
                   label = {foreignLanguage && offerHeading5Translated !== '' ? offerHeading5Translated : offerHeading5}>
                   <SectionServicesMaybe
-                  description={publicData.offer5 ? offer5 : null}
+                  description={foreignLanguage && offer5Translated !== '' ? offer5Translated : offer5}
                   />
                   </CollapsibleProjects>
                   </div>

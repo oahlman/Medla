@@ -849,4 +849,9 @@ display:none;
 color: grey;
 }
 
+.viewOriginal {
+  display: flex;
+  flex-direction: row;
+}
+
   

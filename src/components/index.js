@@ -232,6 +232,9 @@ export { default as ContactCardForCompany } from './ContactCardCompany/ContactCa
 export { default as ContactCardForJob } from './ContactCardJob/ContactCardJob';
 export { default as ContactLinkJob } from './ContactLinkSmart/ContactLinkSmart';
 
+export { default as TranslateButton } from './Translate/TranslateButton';
+
+
 
 
 

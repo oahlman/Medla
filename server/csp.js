@@ -33,6 +33,7 @@ const defaultDirectives = {
     '*.stripe.com',
     'www.googletagmanager.com',
     'connect.facebook.net',
+    'translation.googleapis.com',
   ],
   fontSrc: [self, data, 'assets-sharetribecom.sharetribe.com', 'fonts.gstatic.com'],
   frameSrc: [

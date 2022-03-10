@@ -531,7 +531,7 @@ export class ListingPageComponent extends Component {
                     listingId={currentListing.id}
                   />
                   <div className={css.reportContainerMobile}>
-                <IoFlagOutline className={css.iconFlag}></IoFlagOutline>  <ExternalLink href={`mailto:info@medla.app?subject=Rapportera%20f%C3%B6retag: ${currentListing.id.uuid}`} >
+                <IoFlagOutline className={css.iconFlag}></IoFlagOutline>  <ExternalLink href={`mailto:info@medla.app?subject=Rapportera%20jobb: ${currentListing.id.uuid}`} >
                <div className={css.reportFont}><FormattedMessage id="CompanyPage.reportCompany" /></div> 
               </ExternalLink>
 
@@ -552,7 +552,7 @@ export class ListingPageComponent extends Component {
                     </div>
                     <div className={css.reportContainer}>
 
-                      <IoFlagOutline className={css.iconFlag}></IoFlagOutline>  <ExternalLink href={`mailto:info@medla.app?subject=Rapportera%20f%C3%B6retag: ${currentListing.id.uuid}`} >
+                      <IoFlagOutline className={css.iconFlag}></IoFlagOutline>  <ExternalLink href={`mailto:info@medla.app?subject=Rapportera%20jobb: ${currentListing.id.uuid}`} >
                       <div className={css.reportFont}><FormattedMessage id="CompanyPage.reportCompany" /></div> 
 
                         </ExternalLink>

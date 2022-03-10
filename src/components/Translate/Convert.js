@@ -22,7 +22,9 @@ const Convert = ({ language, text, target }) => {
         }
       );
 
-      setResults(translation.data.data.translations[0].translatedText);
+      const translatedString = translation.data.data.translations[0].translatedText;
+
+      setResults(translatedString);
       
     };
 

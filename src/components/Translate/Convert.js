@@ -22,7 +22,7 @@ const Convert = ({ language, text, target }) => {
             {
             params: {
                 q: text,
-                target: navigator.language !== 'undefined' ? navigator.language.substring(0,2) : "sv",
+                target: typeof navigator.language !== 'undefined' ? navigator.language.substring(0,2) : "en",
                 key: key,
             },
             }

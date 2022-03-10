@@ -974,7 +974,7 @@
   "ProfileSettingsPage.heading": "Profile Image",
   "ProfileSettingsPage.title": "Profile Image",
   "ProfileSettingsPage.viewProfileLink": "View your profile",
-  "ResponsiveImage.noImage": "",
+  "ResponsiveImage.noImage": " ",
   "ReviewForm.reviewContentLabel": "Leave a Review",
   "ReviewForm.reviewContentPlaceholder": "Describe how the transaction went…",
   "ReviewForm.reviewContentRequired": "You must add a message to submit a review.",

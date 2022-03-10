@@ -44,6 +44,7 @@ import {
   ContactCardForJob,
   ContactCardForCompany,
   ContactLinkJob,
+  ExternalLink,
 
 } from '../../components';
 import { TopbarContainer, NotFoundPage } from '../../containers';
@@ -62,6 +63,8 @@ import SectionMapMaybe from './SectionMapMaybe';
 import SectionPricingMaybe from './SectionPricingMaybe';
 import css from './ListingPage.module.css';
 import JobActionBarMaybe from './JobActionBarMaybe';
+import { IoFlagOutline } from "react-icons/io5";
+
 
 const MIN_LENGTH_FOR_LONG_WORDS_IN_TITLE = 16;
 
@@ -527,6 +530,12 @@ export class ListingPageComponent extends Component {
                     publicData={publicData}
                     listingId={currentListing.id}
                   />
+                  <div className={css.reportContainerMobile}>
+                <IoFlagOutline className={css.iconFlag}></IoFlagOutline>  <ExternalLink href={`mailto:info@medla.app?subject=Rapportera%20f%C3%B6retag: ${currentListing.id.uuid}`} >
+               <div className={css.reportFont}><FormattedMessage id="CompanyPage.reportCompany" /></div> 
+              </ExternalLink>
+
+                </div>
 
                 </div>
 
@@ -541,6 +550,14 @@ export class ListingPageComponent extends Component {
                     <div className={css.showContact}>
                       {ContactCardForJobListings}
                     </div>
+                    <div className={css.reportContainer}>
+
+                      <IoFlagOutline className={css.iconFlag}></IoFlagOutline>  <ExternalLink href={`mailto:info@medla.app?subject=Rapportera%20f%C3%B6retag: ${currentListing.id.uuid}`} >
+                      <div className={css.reportFont}><FormattedMessage id="CompanyPage.reportCompany" /></div> 
+
+                        </ExternalLink>
+
+                          </div>
                   </div>
 
                   {ContactCardForCompanyListings

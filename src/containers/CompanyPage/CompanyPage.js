@@ -101,7 +101,7 @@ export class CompanyPageComponent extends Component {
     this.state = {
       pageClassNames: [],
       imageCarouselOpen: false,
-      viewOriginal: false,
+      viewOriginal: true,
       enquiryModalOpen: enquiryModalOpenForListingId === params.id,
     };
 
@@ -274,7 +274,7 @@ export class CompanyPageComponent extends Component {
     const offerHeading3 = publicData.offerHeading3;
     const offerHeading4 = publicData.offerHeading4;
     const offerHeading5 = publicData.offerHeading5;
-    
+
     const offer1 = publicData.offer1;
     const offer2 = publicData.offer2;
     const offer3 = publicData.offer3;
@@ -298,33 +298,33 @@ export class CompanyPageComponent extends Component {
     const viewOriginal = this.state.viewOriginal;
 
     const translateButtonMaybe = foreignLanguage ? (
-    <div classname={css.viewOriginal}><IoLanguageOutline />
-    <InlineTextButton
-      onClick={() => {
-        this.setState({
-          viewOriginal: !viewOriginal,
-        });
-      }
-    }
-      >{this.state.viewOriginal ? 'Translate' : 'View Original'}</InlineTextButton>
+      <div classname={css.viewOriginal}><IoLanguageOutline />
+        <InlineTextButton
+          onClick={() => {
+            this.setState({
+              viewOriginal: !viewOriginal,
+            });
+          }
+          }
+        >{this.state.viewOriginal ? 'Translate' : 'View Original'}</InlineTextButton>
       </div>) : null;
 
     if (foreignLanguage) {
-      descriptionTranslated = <Convert text={description}/>;
+      descriptionTranslated = <Convert text={description} />;
 
-      // offerHeading1Translated = <Convert text={publicData.offerHeading1}/>;
-      // offerHeading2Translated = <Convert text={publicData.offerHeading2}/>;
-      // offerHeading3Translated = <Convert text={publicData.offerHeading3}/>;
-      // offerHeading4Translated = <Convert text={publicData.offerHeading4}/>;
-      // offerHeading5Translated = <Convert text={publicData.offerHeading5}/>;
+      // offerHeading1Translated = <Convert text={publicData.offerHeading1} />;
+      // offerHeading2Translated = <Convert text={publicData.offerHeading2} />;
+      // offerHeading3Translated = <Convert text={publicData.offerHeading3} />;
+      // offerHeading4Translated = <Convert text={publicData.offerHeading4} />;
+      // offerHeading5Translated = <Convert text={publicData.offerHeading5} />;
 
-      // offer1Translated = <Convert text={publicData.offer1}/>;
-      // offer2Translated = <Convert text={publicData.offer2}/>;
-      // offer3Translated = <Convert text={publicData.offer3}/>;
-      // offer4Translated = <Convert text={publicData.offer4}/>;
-      // offer5Translated = <Convert text={publicData.offer5}/>;
-    } 
-    
+      // offer1Translated = <Convert text={publicData.offer1} />;
+      // offer2Translated = <Convert text={publicData.offer2} />;
+      // offer3Translated = <Convert text={publicData.offer3} />;
+      // offer4Translated = <Convert text={publicData.offer4} />;
+      // offer5Translated = <Convert text={publicData.offer5} />;
+    }
+
     if (foreignLanguage && viewOriginal) {
       descriptionTranslated = description;
 
@@ -432,7 +432,7 @@ export class CompanyPageComponent extends Component {
 
     const currentAuthor = authorAvailable ? currentListing.author : null;
     const ensuredAuthor = ensureUser(currentAuthor);
-    
+
 
 
     // When user is banned or deleted the listing is also deleted.
@@ -498,45 +498,45 @@ export class CompanyPageComponent extends Component {
         </span>
       ) : null;
 
-    const bookingPanelSection =(
+    const bookingPanelSection = (
       <BookingPanel
-      className={css.hidden}
-      listing={currentListing}
-      isOwnListing={isOwnListing}
-      unitType={unitType}
-      onSubmit={handleBookingSubmit}
-      title={bookingTitle}
-      subTitle={bookingSubTitle}
-      authorDisplayName={authorDisplayName}
-      onManageDisableScrolling={onManageDisableScrolling}
-      timeSlots={timeSlots}
-      fetchTimeSlotsError={fetchTimeSlotsError}
-      onFetchTransactionLineItems={onFetchTransactionLineItems}
-      lineItems={lineItems}
-      fetchLineItemsInProgress={fetchLineItemsInProgress}
-      fetchLineItemsError={fetchLineItemsError}
-    />
+        className={css.hidden}
+        listing={currentListing}
+        isOwnListing={isOwnListing}
+        unitType={unitType}
+        onSubmit={handleBookingSubmit}
+        title={bookingTitle}
+        subTitle={bookingSubTitle}
+        authorDisplayName={authorDisplayName}
+        onManageDisableScrolling={onManageDisableScrolling}
+        timeSlots={timeSlots}
+        fetchTimeSlotsError={fetchTimeSlotsError}
+        onFetchTransactionLineItems={onFetchTransactionLineItems}
+        lineItems={lineItems}
+        fetchLineItemsInProgress={fetchLineItemsInProgress}
+        fetchLineItemsError={fetchLineItemsError}
+      />
 
-  );
-
-
-  const contactJob =(
-    <ContactCardForJob listing={currentListing}
-    />
     );
 
-  
-  
-  const contactLinkJobListings =(
-    <ContactLinkJob listing={currentListing}/> 
+
+    const contactJob = (
+      <ContactCardForJob listing={currentListing}
+      />
     );
 
 
 
-    
-const ContactCardForJobListings = contactJob;
-  const ContactLinkForJob = contactLinkJobListings;
-  const SectionBookingPanel = null;
+    const contactLinkJobListings = (
+      <ContactLinkJob listing={currentListing} />
+    );
+
+
+
+
+    const ContactCardForJobListings = contactJob;
+    const ContactLinkForJob = contactLinkJobListings;
+    const SectionBookingPanel = null;
 
     return (
       <Page
@@ -576,7 +576,7 @@ const ContactCardForJobListings = contactJob;
               />
               <div className={css.contentContainer}>
                 <div className={css.avatarContainer}>
-                <SectionAvatar className={css.avatar} user={currentAuthor} params={params} />
+                  <SectionAvatar className={css.avatar} user={currentAuthor} params={params} />
                 </div>
                 <div className={css.mainContent}>
                   <SectionHeading
@@ -586,150 +586,149 @@ const ContactCardForJobListings = contactJob;
                     category={category}
                     hostLink={null}
                   />
-                    <div id="contactCompanyButton" className={css.mapMobile}>
+                  <div id="contactCompanyButton" className={css.mapMobile}>
                     {ContactLinkForJob}
-                    </div>
-                    {translateButtonMaybe}
-                    <SectionDescriptionMaybe description={foreignLanguage && descriptionTranslated !== '' ? descriptionTranslated : description} />
-
+                  </div>
+                  {translateButtonMaybe}
+                  <SectionDescriptionMaybe description={foreignLanguage && descriptionTranslated !== '' ? descriptionTranslated : description} />
                   <h2 className={publicData.offerHeading1 ? css.serviceTitle : css.hidden}>
-                  <FormattedMessage id="CompanyPage.serviceTitle" />
+                    <FormattedMessage id="CompanyPage.serviceTitle" />
                   </h2>
-                <div className={publicData.offerHeading1 ? css.blank : css.hidden}>
-                 <CollapsibleProjects
-                  label = {foreignLanguage && offerHeading1Translated !== '' ? offerHeading1Translated : offerHeading1}>
-                  <SectionServicesMaybe
+                  <div className={publicData.offerHeading1 ? css.blank : css.hidden}>
+                    <CollapsibleProjects
+                      label={foreignLanguage && offerHeading1Translated !== '' ? offerHeading1Translated : offerHeading1}>
+                      <SectionServicesMaybe
 
-                  description={foreignLanguage && offer1Translated !== '' ? offer1Translated : offer1}
-                  />
-                  </CollapsibleProjects>
+                        description={foreignLanguage && offer1Translated !== '' ? offer1Translated : offer1}
+                      />
+                    </CollapsibleProjects>
                   </div>
 
 
                   <div className={publicData.offerHeading2 ? css.blank : css.hidden}>
-                  <CollapsibleProjects
-                  label = {foreignLanguage && offerHeading2Translated !== '' ? offerHeading2Translated : offerHeading2}>
-                  <SectionServicesMaybe
-                  description={foreignLanguage && offer2Translated !== '' ? offer2Translated : offer2}
-                  />
-                  </CollapsibleProjects>
+                    <CollapsibleProjects
+                      label={foreignLanguage && offerHeading2Translated !== '' ? offerHeading2Translated : offerHeading2}>
+                      <SectionServicesMaybe
+                        description={foreignLanguage && offer2Translated !== '' ? offer2Translated : offer2}
+                      />
+                    </CollapsibleProjects>
                   </div>
 
                   <div className={publicData.offerHeading3 ? css.blank : css.hidden}>
-                  <CollapsibleProjects
-                  label = {foreignLanguage && offerHeading3Translated !== '' ? offerHeading3Translated : offerHeading3}>
-                  <SectionServicesMaybe
+                    <CollapsibleProjects
+                      label={foreignLanguage && offerHeading3Translated !== '' ? offerHeading3Translated : offerHeading3}>
+                      <SectionServicesMaybe
 
-                  description={foreignLanguage && offer3Translated !== '' ? offer3Translated : offer3}
-                  />
-                  </CollapsibleProjects>
+                        description={foreignLanguage && offer3Translated !== '' ? offer3Translated : offer3}
+                      />
+                    </CollapsibleProjects>
                   </div>
 
 
 
                   <div className={publicData.offerHeading4 ? css.blank : css.hidden}>
-                  <CollapsibleProjects
-                  label = {foreignLanguage && offerHeading4Translated !== '' ? offerHeading4Translated : offerHeading4}>
-                  <SectionServicesMaybe
-                  description={foreignLanguage && offer4Translated !== '' ? offer4Translated : offer4}
-                  />
-                  </CollapsibleProjects>
+                    <CollapsibleProjects
+                      label={foreignLanguage && offerHeading4Translated !== '' ? offerHeading4Translated : offerHeading4}>
+                      <SectionServicesMaybe
+                        description={foreignLanguage && offer4Translated !== '' ? offer4Translated : offer4}
+                      />
+                    </CollapsibleProjects>
                   </div>
 
                   <div className={publicData.offerHeading5 ? css.blank : css.hidden}>
-                  <CollapsibleProjects
-                  label = {foreignLanguage && offerHeading5Translated !== '' ? offerHeading5Translated : offerHeading5}>
-                  <SectionServicesMaybe
-                  description={foreignLanguage && offer5Translated !== '' ? offer5Translated : offer5}
-                  />
-                  </CollapsibleProjects>
+                    <CollapsibleProjects
+                      label={foreignLanguage && offerHeading5Translated !== '' ? offerHeading5Translated : offerHeading5}>
+                      <SectionServicesMaybe
+                        description={foreignLanguage && offer5Translated !== '' ? offer5Translated : offer5}
+                      />
+                    </CollapsibleProjects>
                   </div>
                   <div className={publicData.category ? css.categoryTags : css.hidden}>
-                  <SectionRulesMaybe options={categoryOptions} publicData={publicData} />
+                    <SectionRulesMaybe options={categoryOptions} publicData={publicData} />
                   </div>
 
                   <div className={css.mapMobile}>
 
-                  <SectionMapMaybe
-                    geolocation={geolocation}
-                    publicData={publicData}
-                    listingId={currentListing.id}
-                  />
-                  <div className={css.reportContainerMobile}>
-                <IoFlagOutline className={css.iconFlag}></IoFlagOutline>  <ExternalLink href={`mailto:info@medla.app?subject=Rapportera%20f%C3%B6retag: ${currentListing.id.uuid}`} >
-               <div className={css.reportFont}><FormattedMessage id="CompanyPage.reportCompany" /></div> 
-              </ExternalLink>
+                    <SectionMapMaybe
+                      geolocation={geolocation}
+                      publicData={publicData}
+                      listingId={currentListing.id}
+                    />
+                    <div className={css.reportContainerMobile}>
+                      <IoFlagOutline className={css.iconFlag}></IoFlagOutline>  <ExternalLink href={`mailto:info@medla.app?subject=Rapportera%20f%C3%B6retag: ${currentListing.id.uuid}`} >
+                        <div className={css.reportFont}><FormattedMessage id="CompanyPage.reportCompany" /></div>
+                      </ExternalLink>
 
-                </div>
-         
+                    </div>
+
                   </div>
-         
+
                 </div>
 
 
                 <div className={css.contactCardCompany}>
 
 
-                <div className={css.bookingPanel}>
+                  <div className={css.bookingPanel}>
 
-                  {SectionBookingPanel}
+                    {SectionBookingPanel}
 
-              
-              
-      
 
-                  <Modal
-              id="ListingPage.enquiry"
-              contentClassName={css.enquiryModalContent}
-              isOpen={isAuthenticated && this.state.enquiryModalOpen}
-              onClose={() => this.setState({ enquiryModalOpen: false })}
-              onManageDisableScrolling={onManageDisableScrolling}
-            >
-              <EnquiryForm
-                className={css.enquiryForm}
-                submitButtonWrapperClassName={css.enquirySubmitButtonWrapper}
-                listingTitle={title}
-                authorDisplayName={authorDisplayName}
-                sendEnquiryError={sendEnquiryError}
-                onSubmit={this.onSubmitEnquiry}
-                inProgress={sendEnquiryInProgress}
-              />
-            </Modal>
+
+
+
+                    <Modal
+                      id="ListingPage.enquiry"
+                      contentClassName={css.enquiryModalContent}
+                      isOpen={isAuthenticated && this.state.enquiryModalOpen}
+                      onClose={() => this.setState({ enquiryModalOpen: false })}
+                      onManageDisableScrolling={onManageDisableScrolling}
+                    >
+                      <EnquiryForm
+                        className={css.enquiryForm}
+                        submitButtonWrapperClassName={css.enquirySubmitButtonWrapper}
+                        listingTitle={title}
+                        authorDisplayName={authorDisplayName}
+                        sendEnquiryError={sendEnquiryError}
+                        onSubmit={this.onSubmitEnquiry}
+                        inProgress={sendEnquiryInProgress}
+                      />
+                    </Modal>
                   </div>
                   <div className={css.mapDesktop}>
-                
-                  <SectionMapMaybe
-                    geolocation={geolocation}
-                    publicData={publicData}
-                    listingId={currentListing.id}
-                  />
+
+                    <SectionMapMaybe
+                      geolocation={geolocation}
+                      publicData={publicData}
+                      listingId={currentListing.id}
+                    />
                   </div>
-                  
+
                   <SectionHeading
-                      showContactUser={showContactUser}
-                       onContactUser={this.onContactUser} >
-                      </SectionHeading>
+                    showContactUser={showContactUser}
+                    onContactUser={this.onContactUser} >
+                  </SectionHeading>
 
-                  <div id="contactCompanyButton" className={css.showContact}> 
-                     {ContactCardForJobListings}
-                     </div>
-                     <div className={css.reportContainer}>
+                  <div id="contactCompanyButton" className={css.showContact}>
+                    {ContactCardForJobListings}
+                  </div>
+                  <div className={css.reportContainer}>
 
-<IoFlagOutline className={css.iconFlag}></IoFlagOutline>  <ExternalLink href={`mailto:info@medla.app?subject=Rapportera%20f%C3%B6retag: ${currentListing.id.uuid}`} >
-<div className={css.reportFont}><FormattedMessage id="CompanyPage.reportCompany" /></div> 
+                    <IoFlagOutline className={css.iconFlag}></IoFlagOutline>  <ExternalLink href={`mailto:info@medla.app?subject=Rapportera%20f%C3%B6retag: ${currentListing.id.uuid}`} >
+                      <div className={css.reportFont}><FormattedMessage id="CompanyPage.reportCompany" /></div>
 
-  </ExternalLink>
+                    </ExternalLink>
 
-</div>
-                     
+                  </div>
+
+                </div>
+
               </div>
 
-              </div>
-              
 
 
             </div>
-            
+
           </LayoutWrapperMain>
           <LayoutWrapperFooter>
             <Footer />

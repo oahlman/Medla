@@ -312,17 +312,17 @@ export class CompanyPageComponent extends Component {
     if (foreignLanguage) {
       descriptionTranslated = <Convert text={description} />;
 
-      // offerHeading1Translated = <Convert text={publicData.offerHeading1} />;
-      // offerHeading2Translated = <Convert text={publicData.offerHeading2} />;
-      // offerHeading3Translated = <Convert text={publicData.offerHeading3} />;
-      // offerHeading4Translated = <Convert text={publicData.offerHeading4} />;
-      // offerHeading5Translated = <Convert text={publicData.offerHeading5} />;
+      offerHeading1Translated = <Convert text={publicData.offerHeading1} />;
+      offerHeading2Translated = <Convert text={publicData.offerHeading2} />;
+      offerHeading3Translated = <Convert text={publicData.offerHeading3} />;
+      offerHeading4Translated = <Convert text={publicData.offerHeading4} />;
+      offerHeading5Translated = <Convert text={publicData.offerHeading5} />;
 
-      // offer1Translated = <Convert text={publicData.offer1} />;
-      // offer2Translated = <Convert text={publicData.offer2} />;
-      // offer3Translated = <Convert text={publicData.offer3} />;
-      // offer4Translated = <Convert text={publicData.offer4} />;
-      // offer5Translated = <Convert text={publicData.offer5} />;
+      offer1Translated = <Convert text={publicData.offer1} />;
+      offer2Translated = <Convert text={publicData.offer2} />;
+      offer3Translated = <Convert text={publicData.offer3} />;
+      offer4Translated = <Convert text={publicData.offer4} />;
+      offer5Translated = <Convert text={publicData.offer5} />;
     }
 
     if (foreignLanguage && viewOriginal) {

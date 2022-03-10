@@ -7,7 +7,7 @@ const Convert = ({ language, text, target }) => {
   const [results, setResults] = useState([]);
   const [debouncedText, setDebouncedText] = useState(text);
   const key = process.env.REACT_APP_GOOGLE_CLOUD_TRANSLATE_API_KEY;
-  console.log('text: ', text);
+  const languageLoaded = typeof navigator !== 'undefined' ? navigator.language : null;
 
   // only run if text exists
   if (text === '' || text === null || text === undefined) {
@@ -22,7 +22,7 @@ const Convert = ({ language, text, target }) => {
             {
             params: {
                 q: text,
-                target: typeof navigator.language !== 'undefined' ? navigator.language.substring(0,2) : "en",
+                target: languageLoaded ? languageLoaded.substring(0,2) : "en",
                 key: key,
             },
             }

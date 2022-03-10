@@ -267,7 +267,8 @@ export class CompanyPageComponent extends Component {
       title = '',
       publicData,
     } = currentListing.attributes;
-    const foreignLanguage = typeof navigator.language !== 'undefined' && navigator.language !== 'sv';
+    const languageLoaded = typeof navigator !== 'undefined' ? navigator.language : null;
+    const foreignLanguage = languageLoaded && languageLoaded !== 'sv' ? true : false;
 
     const offerHeading1 = publicData.offerHeading1;
     const offerHeading2 = publicData.offerHeading2;

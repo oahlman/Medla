@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-import config from '../../config';
-import { twitterPageURL } from '../../util/urlHelpers';
 import { StaticPage, TopbarContainer } from '..';
 import { FormattedMessage } from '../../util/reactIntl';
 import {
@@ -9,8 +7,6 @@ import {
   LayoutWrapperMain,
   LayoutWrapperFooter,
   Footer,
-  NamedLink,
-  ExternalLink,
   CollapsibleProjects,
 
 } from '../../components';
@@ -18,31 +14,6 @@ import {
 import css from './FAQPage.module.css';
 
 const FAQPage = () => {
-  const { siteTwitterHandle, siteFacebookPage } = config;
-  const siteTwitterPage = twitterPageURL(siteTwitterHandle);
-
-    const [isOpen1, setIsOpen1] = useState(false);
-    const [isOpen2, setIsOpen2] = useState(false);
-    const [isOpen3, setIsOpen3] = useState(false);
-    const [isOpen4, setIsOpen4] = useState(false);
-    const [isOpen5, setIsOpen5] = useState(false);
-    const [isOpen6, setIsOpen6] = useState(false);
-    const [isOpen7, setIsOpen7] = useState(false);
-    const [isOpen8, setIsOpen8] = useState(false);
-    const [isOpen9, setIsOpen9] = useState(false);
-
-    const buttonText1 = isOpen1 ? 'Stäng' : 'Läs svar ';
-    const buttonText2 = isOpen2 ? 'Stäng' : 'Läs svar ';
-    const buttonText3 = isOpen3 ? 'Stäng' : 'Läs svar ';
-    const buttonText4 = isOpen4 ? 'Stäng' : 'Läs svar ';
-    const buttonText5 = isOpen5 ? 'Stäng' : 'Läs svar ';
-    const buttonText6 = isOpen6 ? 'Stäng' : 'Läs svar ';
-    const buttonText7 = isOpen7 ? 'Stäng' : 'Läs svar ';
-    const buttonText8 = isOpen8 ? 'Stäng' : 'Läs svar ';
-    const buttonText9 = isOpen9 ? 'Stäng' : 'Läs svar ';
-
-
-
   // prettier-ignore
   return (
     <StaticPage

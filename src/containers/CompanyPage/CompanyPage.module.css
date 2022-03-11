@@ -858,3 +858,14 @@ color: grey;
     padding: 0px;
 }
 }
+.viewOriginal {
+  padding: 0 24px;
+  display: flex;
+  flex-direction: row;
+
+  @media (--viewportMedium) {
+      padding: 0;
+  }
+}
+
+  

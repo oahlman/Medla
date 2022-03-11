@@ -8,9 +8,6 @@ const Convert = ({ language, text, target }) => {
   const key = process.env.REACT_APP_GOOGLE_CLOUD_TRANSLATE_API_KEY;
   const languageLoaded = typeof navigator !== 'undefined' ? navigator.language : null;
 
-  if (text === '' || text === null || text === undefined) {
-    null;
-  } else {
     useEffect(() => {
         const translate = async () => {
         const translation = await axios.post(
@@ -27,7 +24,7 @@ const Convert = ({ language, text, target }) => {
 
         const translatedString = translation.data.data.translations[0].translatedText;
 
-        setResults(translatedString ? translatedString : text);
+        setResults(translatedString);
             
         };
 
@@ -38,7 +35,6 @@ const Convert = ({ language, text, target }) => {
     return (
         `${results}`
     );
-    };
 };
 
 export default Convert;

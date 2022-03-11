@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-require('dotenv').config();
 
 // de-structure language and text props
 const Convert = ({ language, text, target }) => {
@@ -9,11 +8,9 @@ const Convert = ({ language, text, target }) => {
   const key = process.env.REACT_APP_GOOGLE_CLOUD_TRANSLATE_API_KEY;
   const languageLoaded = typeof navigator !== 'undefined' ? navigator.language : null;
 
-  // only run if text exists
   if (text === '' || text === null || text === undefined) {
-
+    null;
   } else {
-    // runs every time language or text updates
     useEffect(() => {
         const translate = async () => {
         const translation = await axios.post(
@@ -30,7 +27,7 @@ const Convert = ({ language, text, target }) => {
 
         const translatedString = translation.data.data.translations[0].translatedText;
 
-        setResults(translatedString);
+        setResults(translatedString ? translatedString : text);
             
         };
 

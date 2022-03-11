@@ -574,6 +574,7 @@ export class CompanyPageComponent extends Component {
                   <h2 className={publicData.offerHeading1 ? css.serviceTitle : css.hidden}>
                     <FormattedMessage id="CompanyPage.serviceTitle" />
                   </h2>
+                  <div className={css.servicesContainer}>
                   <div className={publicData.offerHeading1 ? css.blank : css.hidden}>
                     <CollapsibleProjects
                       label={foreignLanguage && offerHeading1Translated !== '' ? offerHeading1Translated : offerHeading1}>
@@ -708,7 +709,7 @@ export class CompanyPageComponent extends Component {
 
 
 
-     
+            </div>
 
           </LayoutWrapperMain>
           <LayoutWrapperFooter>

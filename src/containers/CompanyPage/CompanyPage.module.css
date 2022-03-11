@@ -850,8 +850,13 @@ color: grey;
 }
 
 .viewOriginal {
+  padding: 0 24px;
   display: flex;
   flex-direction: row;
+
+  @media (--viewportMedium) {
+      padding: 0;
+  }
 }
 
   

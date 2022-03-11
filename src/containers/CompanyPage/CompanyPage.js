@@ -49,8 +49,6 @@ import {
   MenuLabel,
   CollapsibleProjects,
   InlineTextButton,
-  TranslateButton,
-
 } from '../../components';
 import Convert from '../../components/Translate/Convert';
 
@@ -299,7 +297,7 @@ export class CompanyPageComponent extends Component {
     const viewOriginal = this.state.viewOriginal;
 
     const translateButtonMaybe = foreignLanguage ? (
-      <div classname={css.viewOriginal}><IoLanguageOutline />
+        <div><IoLanguageOutline />
         <InlineTextButton
           onClick={() => {
             this.setState({
@@ -417,14 +415,6 @@ export class CompanyPageComponent extends Component {
       });
     };
 
-    const toggleViewOriginal = e => {
-      // Stop event from bubbling up to prevent image click handler
-      // trying to open the carousel as well.
-      e.stopPropagation();
-      this.setState({
-        viewOriginal: true,
-      });
-    };
     const authorAvailable = currentListing && currentListing.author;
     const userAndListingAuthorAvailable = !!(currentUser && authorAvailable);
     const isOwnListing =
@@ -475,18 +465,6 @@ export class CompanyPageComponent extends Component {
       { id: 'ListingPage.schemaTitle' },
       { title, price: formattedPrice, siteTitle }
     );
-
-    const hostLink = (
-      <NamedLink
-        className={css.authorNameLink}
-        name="CompanyPage"
-        params={params}
-        to={{ hash: '#host' }}
-      >
-        {authorDisplayName}
-      </NamedLink>
-    );
-
 
     const amenityOptions = findOptionsForSelectFilter('amenities', filterConfig);
     const categoryOptions = findOptionsForSelectFilter('category', filterConfig);
@@ -585,12 +563,13 @@ export class CompanyPageComponent extends Component {
                     formattedPrice={formattedPrice}
                     richTitle={richTitle}
                     category={category}
-                    hostLink={null}
                   />
                   <div id="contactCompanyButton" className={css.mapMobile}>
                     {ContactLinkForJob}
                   </div>
-                  {translateButtonMaybe}
+                  <div className={css.viewOriginal}>
+                    {translateButtonMaybe}
+                  </div>
                   <SectionDescriptionMaybe description={foreignLanguage && descriptionTranslated !== '' ? descriptionTranslated : description} />
                   <h2 className={publicData.offerHeading1 ? css.serviceTitle : css.hidden}>
                     <FormattedMessage id="CompanyPage.serviceTitle" />

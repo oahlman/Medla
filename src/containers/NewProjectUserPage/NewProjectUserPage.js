@@ -30,9 +30,6 @@ import StaticPage from '../StaticPage/StaticPage';
 import TopbarContainer from '../TopbarContainer/TopbarContainer';
 import imagephone from '../../assets/Medla-phones.png';
 import imagemacbook from '../../assets/Medla-macbook.png';
-import imagesvenskvind from '../../assets/Svensk-vind-logo.png';
-import imageSvenskVindProfile from '../../assets/Svensk-vind-profile.jpg';
-import offshoreWind from '../../assets/offshore-wind.jpg'
 
 
 

@@ -5,54 +5,42 @@
   margin-bottom: 0;
 }
 
-.steps {
+.features {
+
+}
+
+.feature {
   display: flex;
   flex-direction: column;
   margin-top: 16px;
 
   @media (--viewportMedium) {
+    margin-bottom: 90px;
     flex-direction: row;
-    flex-wrap: wrap;
   }
 }
 
-.step {
-  padding: 0 20px 0 20px;
-  border-radius: 10px;
-  box-shadow: var(--boxShadow);
-  background-color: var(--matterColorLight);
-  transition: var(--transitionStyleButton);
+.feature:nth-of-type(2) {
   @media (--viewportMedium) {
-    margin-bottom: 20px;
-    margin-right: 20px;
-    width: calc(50% - 40px)
+    flex-direction: row-reverse;
   }
 }
-.step:hover {
-  transform: scale(1.02);
-  box-shadow: var(--boxShadowSectionLocationHover);
-}
 
-.step:nth-of-type(2n) {
+.feature:last-of-type {
   @media (--viewportMedium) {
-    margin-right: 0px;
-  }
-  @media (--viewportLarge) {
-    margin-right: 20px;
+    margin-bottom: 48px;
   }
 }
 
-.step:nth-of-type(4n) {
+.featureText {
+  flex-basis: 40%;
   @media (--viewportMedium) {
-    margin-right: 20px;
-  }
-  @media (--viewportLarge) {
-    margin-right: 0px;
+    margin-top: 30px;
   }
 }
 
-.stepTitle {
-  @apply --marketplaceH3FontStyles;
+.featureTitle {
+  @apply --marketplaceH2FontStyles;
   margin-top: 18px;
   margin-bottom: 6px;
 
@@ -62,9 +50,33 @@
   }
 }
 
-.stepSubtitle {
+.featureDescription {
   margin-top: 0px;
 
+}
+
+.featureImageRight {
+  @media (--viewportMedium) {
+    flex-basis: 50%;
+    direction: ltr;
+    margin-left: 40px;
+  }
+
+}
+
+.featureImageLeft {
+  @media (--viewportMedium) {
+    flex-basis: 50%;
+    direction: rtl;
+    margin-right: 40px;
+  }
+}
+
+.image {
+  max-width: 100%;
+  @media (--viewportMedium) {
+    max-width: 180%;
+  }
 }
 
 .createListingLink {
@@ -73,4 +85,49 @@
   @media (--viewportMedium) {
     margin-top: 24px;
   }
+}
+
+.videoShowcase {
+  height: 400px;
+  width: auto;
+  position: relative;
+
+}
+
+.iphone {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: auto;
+
+}
+
+.video {
+  position: absolute;
+  left: 3px;
+  height: 100%;
+  width: auto;
+  padding: 8px;
+  border-radius: 20px;
+
+}
+
+.macbook {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: auto;
+  width: 100%;
+
+}
+
+.videoMacbook {
+  position: absolute;
+  left: 3px;
+  height: auto;
+  width: 100%;
+  padding: 0 85px;
+  padding-top: 45px;
+
 }

@@ -4,7 +4,6 @@ import classNames from 'classnames';
 import css from './SectionProjectContact.module.css';
 import Button, { SecondaryButton } from '../Button/Button'
 import ExternalLink from '../ExternalLink/ExternalLink';
-import imagesvenskvind from '../../assets/Svensk-vind-logo.png';
 
 
 const SectionProjectContact = props => {
@@ -27,7 +26,7 @@ const SectionProjectContact = props => {
    
         
         <p className={css.disclaimerSvenskVindDesktop}>*Erbjudandet är tidsbegränsat och gäller för upp till två projekt per organisation. Medlemskap kontrolleras vid lagd beställning.</p>
-        <img className={css.imageSvenskVindDesktop} src={imagesvenskvind} alt="Svensk vind" />
+        <img className={css.imageSvenskVindDesktop} src={null} alt="Svensk vind" />
 
       </div>
 

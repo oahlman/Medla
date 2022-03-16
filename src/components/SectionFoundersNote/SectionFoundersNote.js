@@ -2,8 +2,6 @@ import React from 'react';
 import { FormattedMessage } from '../../util/reactIntl';
 import classNames from 'classnames';
 import css from './SectionFoundersNote.module.css';
-import imagesvenskvind from '../../assets/Svensk-vind-logo.png';
-      <img className={css.imageSvenskVind} src={imagesvenskvind} alt="Medla in macbook" />
 
 
 const SectionFoundersNote = props => {

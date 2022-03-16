@@ -73,20 +73,6 @@
   }
 }
 
-.imageSvenskVind{
-  width: 85px;
-  display: flex;
-  justify-self: right;
-  align-self: right;
-  padding-top:15px;
-
-
-  @media (--viewportMedium) {
-    width: 100px;
-    padding-top:0px;
-}
-}
-
 .containerNameAndLogo{
   display: flex;
   flex-direction: column;

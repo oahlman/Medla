@@ -2,9 +2,6 @@ import React from 'react';
 import { FormattedMessage } from '../../util/reactIntl';
 import classNames from 'classnames';
 import css from './SectionQuote.module.css';
-import imagesvenskvind from '../../assets/Svensk-vind-logo.png';
-      <img className={css.imageSvenskVind} src={imagesvenskvind} alt="Medla in macbook" />
-
 
 const SectionQuote = props => {
 
@@ -27,7 +24,7 @@ const SectionQuote = props => {
           <strong className={css.fontName}>
             Förnamn Efternamn - Svensk Vindenergi
           </strong>
-          <img className={css.imageSvenskVind} src={imagesvenskvind} alt="Medla och Svensk vind" />
+          <img className={css.imageSvenskVind} src={null} alt="Medla och Svensk vind" />
           </div>
         </div>
 

@@ -181,6 +181,7 @@ export { default as EditCompanyWizard } from './EditCompanyWizard/EditCompanyWiz
 export { default as Footer } from './Footer/Footer';
 export { default as SectionHero } from './SectionHero/SectionHero';
 export { default as SectionHowItWorks } from './SectionHowItWorks/SectionHowItWorks';
+export { default as SectionHowItWorksProjects } from './SectionHowItWorksProjects/SectionHowItWorksProjects';
 export { default as SectionMission } from './SectionMission/SectionMission';
 export { default as SectionPostJob } from './SectionPostJob/SectionPostJob';
 export { default as SectionSignUpProcess } from './SectionSignUpProcess/SectionSignUpProcess';

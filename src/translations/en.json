@@ -2,15 +2,15 @@
   "ActivityFeed.deletedListing": "Removed job",
   "ActivityFeed.deletedReviewContent": "This review has been deleted.",
   "ActivityFeed.leaveAReview": "Leave a review for {displayName}.",
-    "ActivityFeed.leaveAReviewSecond": "Leave a review for {displayName} to see their review.",
+  "ActivityFeed.leaveAReviewSecond": "Leave a review for {displayName} to see their review.",
   "ActivityFeed.ownTransitionAccept": "You accepted the business proposal. Do not forget to sign an agreement!",
   "ActivityFeed.ownTransitionDecline": "You declined the business proposal.",
   "ActivityFeed.ownTransitionExpire": "The business proposal expired. You did not respond in time.",
   "ActivityFeed.ownTransitionRequest": "You registered interest in {listingTitle}.",
   "ActivityFeed.ownTransitionReview": "You submitted a review for {displayName}.",
-    "ActivityFeed.showOlderMessages": "View Elder",
+  "ActivityFeed.showOlderMessages": "View Elder",
   "ActivityFeed.today": "Today",
-    "ActivityFeed.transitionAccept": "{displayName} accepted the business proposal. Do not forget to sign an agreement!",
+  "ActivityFeed.transitionAccept": "{displayName} accepted the business proposal. Do not forget to sign an agreement!",
   "ActivityFeed.transitionCancel": "The transaction was terminated.",
   "ActivityFeed.transitionComplete": "The transaction was completed. {reviewLink}",
   "ActivityFeed.transitionDecline": "{displayName} declined the business proposal.",
@@ -22,12 +22,12 @@
   "AuthenticationPage.emailAlreadyInUse": "An account with this email address or mobile phone number already exists. Please try logging in instead.",
   "AuthenticationPage.fixEmail": "Oops, misspelling in your email? {fixEmailLink}.",
   "AuthenticationPage.fixEmailLinkText": "Fix it",
-    "AuthenticationPage.loginFailed": "The email address or mobile phone number and password you entered did not match our records. Please check the details and try again.",
+  "AuthenticationPage.loginFailed": "The email address or mobile phone number and password you entered did not match our records. Please check the details and try again.",
   "AuthenticationPage.loginLinkText": "Login",
   "AuthenticationPage.loginWithFacebook": "Login with Facebook",
-    "AuthenticationPage.loginWithGoogle": "Sign in with Google",
+  "AuthenticationPage.loginWithGoogle": "Sign in with Google",
   "AuthenticationPage.loginWithAuth0": "Continue with Auth0",
-    "AuthenticationPage.or": "or",
+  "AuthenticationPage.or": "or",
   "AuthenticationPage.resendEmail": "Did not receive the email? {resendEmailLink}.",
   "AuthenticationPage.resendEmailLinkText": "Resend",
   "AuthenticationPage.resendFailed": "Could not resend verification message. Please try again.",
@@ -45,13 +45,13 @@
   "AuthenticationPage.verifyEmailClose": "SENARE",
   "AuthenticationPage.verifyEmailText": "Thank you for signing up! There is a quick step left. To be able to contact you, we need to verify your email address. Click on the link we sent to {email}.",
   "AuthenticationPage.verifyEmailTitle": "{name}, check your inbox to verify your email",
-  
+
   "AuthenticationPage.fixPhoneNumber": "Oops, typo in your mobile number? {fixEmailLink}.",
   "AuthenticationPage.resendTextMessage": "Did not receive the sms? {resendEmailLink}.",
   "AuthenticationPage.verifyPhoneClose": "SENARE",
   "AuthenticationPage.verifyPhoneText": "Thank you for signing up! There's a small step left. To be able to contact you we need to verify your mobile number. Click on the link we sent to {phoneNumber}.",
   "AuthenticationPage.verifyPhoneTitle": "{name}, check your messages to verify your mobile number",
-  
+
   "Avatar.bannedUserDisplayName": "Banned User",
   "Avatar.deletedUserDisplayName": "Deleted Users",
   "BookingBreakdown.baseUnitDay": "{unitPrice} * {quantity, number} {quantity, plural, one {day} other {days}}",
@@ -102,16 +102,15 @@
   "BookingPanel.perNight": "per night",
   "BookingPanel.perUnit": "per unit",
   "BookingPanel.subTitleClosedListing": "Sorry, the list has been closed.",
-  
-  
+
   "CompanyPage.descriptionTitle": "About this company",
   "CompanyPage.serviceTitle": "Services",
   "CompanyPage.closedListing": "Company is not inactive on Medla.",
   "CompanyPage.reportCompany": "Report",
-  
+
   "ContactCardCompany.companyName": "Find {name}",
   "CheckoutPage.bookingTimeNotAvailableMessage": "Sorry, the requested time is already booked.",
-  "CheckoutPage.buttonConfirm":"Send",
+  "CheckoutPage.buttonConfirm": "Send",
   "CheckoutPage.chargeDisabledMessage": "This provider's payout information is incomplete, so the resource can not be booked. Contact the Marketplace Administrators.",
   "CheckoutPage.errorlistingLinkText": "assignment page",
   "CheckoutPage.goToLandingPage": "Go to Website",
@@ -148,14 +147,13 @@
   "ConnectMunicipalityPage.headline": "More visible business and increased business benefits.",
   "ConnectMunicipalityPage.newservice": "Medla's municipal pages, project pages and company profiles link local businesses with project establishments in your region.",
   "ConnectMunicipalityPage.connectProject": "Connect Municipality",
-  
-  
+
   "ConnectCompanyPage.headline": "Are you looking for corporate customers?",
   "ConnectCompanyPage.newservice": "With your company page, quote requests and smart notices, mediate creates new business opportunities, completely free.",
   "ConnectCompanyPage.connectProject": "Quick Registration",
   "ConnectCompanyPage.connectCompany": "Create Account",
   "ConnectCompanyPage.industry": "Great need for suppliers within ...",
-  
+
   "ContactDetailsForm.confirmChangesInfo": "Enter your current password to change your email address.",
   "ContactDetailsForm.confirmChangesTitle": "Confirm Your Changes",
   "ContactDetailsForm.emailInvalid": "A valid email address is required",
@@ -218,8 +216,8 @@
   "EditListingDescriptionForm.categoryRequired": "You must select an industry for your job.",
   "EditListingDescriptionForm.createListingDraftError": "Failed to create draft list. Please try again.",
   "EditListingDescriptionForm.description": "Describe your job",
-  "EditListingDescriptionForm.addServiceLabel":"Add service",
-  "EditListingDescriptionForm.saveServiceLabel":"Save service",
+  "EditListingDescriptionForm.addServiceLabel": "Add service",
+  "EditListingDescriptionForm.saveServiceLabel": "Save service",
   "EditListingOffer1Form.offer": "Describe your service",
   "EditListingOffer2Form.offer": "Describe additional service",
   "EditListingOffer3Form.offer": "Describe additional service",
@@ -231,8 +229,7 @@
   "EditCompanyDescriptionForm.contactPhone": "Phone Number or Email",
   "EditCompanyDescriptionForm.companyNumber": "Organization Number",
   "EditCompanyDescriptionForm.organizationPlaceholder": "Enter your organization number",
-  
-  
+
   "EditCompanyDescriptionForm.contactPhoneJob": "Contact Details for Jobs",
   "EditListingDescriptionForm.maxLength": "Must be {maxLength} characters or less",
   "EditListingDescriptionForm.showListingFailed": "List data retrieval failed",
@@ -243,10 +240,10 @@
   "EditListingDescriptionForm.updateFailed": "The list could not be updated. Please try again.",
   "EditListingDescriptionPanel.createListingTitle": "Describe the job you need help with",
   "EditListingDescriptionPanel.createListingTooltip": "Create jobs when you need help with something, if you want to showcase your own services, do it here.",
-  
+
   "EditListingDescriptionPanel.title": "Describe {listingTitle}",
   "EditListingServicePanel.title": "Add the services offered by {listingTitle}",
-  
+
   "EditCompanyDescriptionForm.categoryLabel": "Industries",
   "EditCompanyDescriptionForm.categoryPlaceholder": "Select the industries you are active in.",
   "EditCompanyDescriptionForm.categoryRequired": "You must select an industry for your business.",
@@ -262,7 +259,7 @@
   "EditCompanyDescriptionForm.updateFailed": "The list could not be updated. Please try again.",
   "EditCompanyDescriptionPanel.createListingTitle": "Describe Your Business",
   "EditCompanyDescriptionPanel.title": "Change description for {listingTitle}",
-  
+
   "EditListingFeaturesForm.showListingFailed": "List data retrieval failed",
   "EditListingFeaturesForm.updateFailed": "The list could not be updated. Please try again.",
   "EditListingFeaturesPanel.createListingTitle": "Which project belongs to the job?",
@@ -285,7 +282,7 @@
   "EditListingPhotosForm.addImagesTip": "Add images that show what you have to offer.",
   "EditListingServiceForm.addServiceTip": "Delete the text and save to remove a service.",
   "EditListingServiceForm.contactPlaceholder": "Fill in contact information",
-  
+
   "EditListingPhotosForm.bankAccountNumberRequired": "You must add a bank account number.",
   "EditListingPhotosForm.chooseImage": "+ Select an image…",
   "EditListingPhotosForm.imageRequired": "You must add at least one image.",
@@ -401,8 +398,7 @@
   "Footer.improveProfile": "Your Business",
   "Footer.searchCompanies": "Search Companies",
   "Footer.searchConnectCompany": "Connect Project",
-  
-  
+
   "Footer.searchRegionMitt": "Mitt",
   "Footer.searchRegionSydOst": "Southeast",
   "Footer.searchRegionVast": "West",
@@ -411,9 +407,7 @@
   "Footer.searchRegionFooterHeading1": "Info",
   "Footer.searchRegionFooterHeading2": "Employer",
   "Footer.searchRegionFooterHeading3": "Employee",
-  
-  
-  
+
   "Footer.searchKuopio": "Kuopio",
   "Footer.searchMikkeli": "Mikkeli",
   "Footer.searchOulu": "Oulu",
@@ -427,10 +421,6 @@
   "Footer.toAboutPage": "About Medla",
   "Footer.toContactPage": "Contact",
   "Footer.toFAQPage": "FAQ",
-
-
-
-
 
   "Footer.toHelpPage": "Help",
   "Footer.toNewListingPage": "Publish a Job",
@@ -458,7 +448,7 @@
   "KeywordFilter.placeholder": "Enter a keyword",
   "KeywordFilterPlainForm.labelSelected": "Keywords",
   "KeywordFilterPlainForm.placeholder": "Enter a keyword…",
-  "LandingPage.schemaDescription": "Search for both jobs and entrepreneurs, filter results by industry, geography and project." ,
+  "LandingPage.schemaDescription": "Search for both jobs and entrepreneurs, filter results by industry, geography and project.",
   "LandingPage.schemaTitle": "Find Local Solutions | {siteTitle}",
   "LayoutWrapperAccountSettingsSideNav.contactDetailsTabTitle": "Verification",
   "LayoutWrapperAccountSettingsSideNav.notificationSettingsTabTitle": "Alerts",
@@ -518,7 +508,7 @@
   "ListingPage.contactDetailsButton": "View Contact Details",
   "ListingPage.contactDetailsMissingButton": "Missing contact information",
   "ListingPage.contactCompanyCardTitle": "Contact {name}",
-  
+
   "LoadableComponentErrorBoundaryPage.title": "Page not downloaded",
   "LoadableComponentErrorBoundaryPage.heading": "Oops, we could not get the page.",
   "LoadableComponentErrorBoundaryPage.description": "It seems that Medla needs to be updated. Reload the current page or go back to {link}.",
@@ -588,12 +578,12 @@
   "ModalMissingInformation.profileCategoryStatus": "You have selected alerts.",
   "ModalMissingInformation.profileCategoryStatusNull": "Select your alerts.",
   "ModalMissingInformation.companyImprovement": "Update Company Description.",
-  
+
   "ModalMissingAccountInformation.closeVerifyEmailReminder": "Close",
-  "Marketplace.config.key.labelCompanies":"Companies",
-  "Marketplace.config.key.labelJobs":"Jobs",
-  "Marketplace.config.key.labelKeywordSearch":"Keyword Search",
-  "Marketplace.config.key.labelIndustries":"Industry",
+  "Marketplace.config.key.labelCompanies": "Companies",
+  "Marketplace.config.key.labelJobs": "Jobs",
+  "Marketplace.config.key.labelKeywordSearch": "Keyword Search",
+  "Marketplace.config.key.labelIndustries": "Industry",
   "Marketplace.config.key.industry1": "Field work",
   "Marketplace.config.key.industry2": "Manning",
   "Marketplace.config.key.industry3": "Concrete pouring",
@@ -614,17 +604,13 @@
   "Marketplace.config.key.industry18": "Manufacturing",
   "Marketplace.config.key.industry19": "Training",
   "Marketplace.config.key.industry20": "Other",
-  "Marketplace.config.key.projectHeading":"Projects",
-  "Marketplace.config.key.labelOther":"Other project",
-  "Marketplace.config.key.labelSortRating":"Rating",
-  "Marketplace.config.key.labelSortNewest":"Newest",
-  "Marketplace.config.key.labelSortOldest":"Oldest",
-  "Marketplace.config.key.labelSortRelevance":"Relevance",
-  "Marketplace.config.key.labelSortRelevanceLong":"Relevance (Keyword)",
-
-
-
-
+  "Marketplace.config.key.projectHeading": "Projects",
+  "Marketplace.config.key.labelOther": "Other project",
+  "Marketplace.config.key.labelSortRating": "Rating",
+  "Marketplace.config.key.labelSortNewest": "Newest",
+  "Marketplace.config.key.labelSortOldest": "Oldest",
+  "Marketplace.config.key.labelSortRelevance": "Relevance",
+  "Marketplace.config.key.labelSortRelevanceLong": "Relevance (Keyword)",
 
   "ModalMissingInformation.checkTextMessages": "Check your messages and verify your phone number {phoneNumber}",
   "ModalMissingInformation.fixPhoneNumber": "Oops, misspelling your number? {fixEmailLink}",
@@ -637,8 +623,8 @@
   "NewUserPage.headline": "Welcome to Medla!",
   "NewUserPage.subheading": "Let's Tell Us More",
   "NewUserPage.newservice": "The business platform is changing and now goes by the name Medla, your old profile is already available, just log in.",
-  "NewProjectUserPage.headline": "Efficient design and local anchoring.",
-  "NewProjectUserPage.newservice": "Mediation project pages, job advertisements and supplier databases save time and enhance the societal benefits of your projects.",
+  "NewProjectUserPage.headline": "Get project development and local growth in sync.",
+  "NewProjectUserPage.newservice": "Anchor projects, facilitate local business mediation and strengthen your local contribution.",
   "NewProjectUserPage.connectProject": "Connect Project",
   "NewProjectUserPage.connectProjectOffer": "Take advantage of the offer",
   "NotificationSettingsForm.saveChanges": "Save Changes",
@@ -649,10 +635,10 @@
   "NotificationSettingsForm.notificationSettingsInfo": "Choose how you want to receive notifications.",
   "NotificationSettingsForm.businessAreasTip": "By default, the same industries are displayed on your company page.",
   "NotificationSettingsPage.heading": "Alerts",
-  "NotificationSettingsForm.notifyVia":"Notify me via",
-  "NotificationSettingsForm.projectHeadlineLabel":"Projects",
-  "NotificationSettingsForm.industriesLabel":"Industries",  
-  
+  "NotificationSettingsForm.notifyVia": "Notify me via",
+  "NotificationSettingsForm.projectHeadlineLabel": "Projects",
+  "NotificationSettingsForm.industriesLabel": "Industries",
+
   "NotificationSettingsPage.title": "Alerts",
   "NotFoundPage.description": "We could not find the page or job you are looking for. Please make sure you have entered the URL correctly.",
   "NotFoundPage.heading": "Sorry, we could not find that page.",
@@ -701,7 +687,7 @@
   "PasswordRecoveryPage.resendEmailLinkText": "Send another email.",
   "PasswordRecoveryPage.resendingEmailInfo": "Re-send Instructions…",
   "PasswordRecoveryPage.title": "Request a new password",
-  
+
   "PasswordRecoveryPage.phoneSubmittedMessage": "The instructions for resetting your password have been sent to {submittedEmailText}. It may take up to 2 minutes for you to receive the message.",
   "PasswordRecoveryPage.phoneSubmittedTitle": "Check Your Messages",
   "PasswordRecoveryPage.fixPhoneInfo": "Oops, typo in your number? {fixPhoneLink}",
@@ -709,7 +695,7 @@
   "PasswordRecoveryPage.resendPhoneInfo": "Did not receive a text message? {resendPhoneLink}",
   "PasswordRecoveryPage.resendPhoneLinkText": "Send another SMS.",
   "PasswordRecoveryPage.resendingPhoneInfo": "Re-send Instructions…",
-  
+
   "PasswordResetForm.passwordLabel": "Your new password",
   "PasswordResetForm.passwordPlaceholder": "Enter your new password…",
   "PasswordResetForm.passwordRequired": "This field is required",
@@ -925,7 +911,7 @@
   "ProjectPage.externalService": "Contact Projector",
   "ProjectPage.projectOwnerLink": "Read more about Medla for Local Anchoring",
   "ProjectPage.schemaTitle": "{name} | {siteTitle} - Find Local Solutions",
-  
+
   "CityPage.callToSubscribe": "You are not following this site.",
   "CityPage.alreadySubscribed": "You are following this site.",
   "CityPage.findLocalCompanies": "Search Companies",
@@ -942,8 +928,7 @@
   "CityPage.externalService": "Contact the municipality",
   "CityPage.projectOwnerLink": "Read more about Medla for Local Anchoring",
   "CityPage.schemaTitle": "{name} | {siteTitle} - Find Local Solutions",
-  
-  
+
   "ProfileSettingsForm.addYourProfilePicture": "+ Add your profile picture…",
   "ProfileSettingsForm.addYourProfilePictureMobile": "+ Add",
   "ProfileSettingsForm.bioHeading": "Alerts",
@@ -965,12 +950,12 @@
   "ProfileSettingsForm.updateProfileFailed": "Oops, something went wrong. Please try again.",
   "ProfileSettingsForm.yourName": "Contact Person",
   "ProfileSettingsForm.yourProfilePicture": "Your profile picture",
-  
+
   "ProfileSettingsForm.notificationOptionsHeading": "Alerts",
   "ProfileSettingsForm.notificationOptionsInfo": "Choose which jobs you want to be notified about.",
   "ProfileSettingsForm.notificationSettingsHeading": "Notice Settings",
   "ProfileSettingsForm.notificationSettingsInfo": "Choose how you want to receive emoticons.",
-  
+
   "ProfileSettingsPage.heading": "Profile Image",
   "ProfileSettingsPage.title": "Profile Image",
   "ProfileSettingsPage.viewProfileLink": "View your profile",
@@ -1036,6 +1021,12 @@
   "SectionHowItWorks.textLinkJobb": "jobs",
   "SectionHowItWorks.textLinkForetagare": "entrepreneurs",
   "SectionHowItWorks.textLinkBeskrivForetag": "Describe the business",
+  "SectionHowItWorksProjects.part1Text": "Local companies follow your project and are positive that the project is approved.",
+  "SectionHowItWorksProjects.part1Title": "1. Anchor",
+  "SectionHowItWorksProjects.part2Text": "Entering contractors looking for goods and services will find local vendors through your project.",
+  "SectionHowItWorksProjects.part2Title": "2. Mediate",
+  "SectionHowItWorksProjects.part3Text": "You measure and demonstrate the local business value created in your project.",
+  "SectionHowItWorksProjects.part3Title": "3. Measure",
   "SectionMission.part1Text": "That's why we started Medla. Jumped out of research and built to create more winners in the green transition.",
   "SectionMission.part1Title": "Building a Sustainable Future Requires Local Solutions.",
   "SectionMission.titleLineOne": "Our Vision",
@@ -1055,8 +1046,7 @@
   "SectionSignUpProcess.textLinkDescribeCompany": "Describe Company",
   "SectionSignUpProcess.login": "medla.app/login",
   "SectionSignUpProcess.toHome": "here",
-  
-  
+
   "SectionProjectChallenges.titleLineOne": "The Challenges",
   "SectionProjectChallenges.part1Title": "For Communities",
   "SectionProjectChallenges.part1Text": "It is not enough to build sustainable energy production, the project and the organization are also expected to be sustainable (social, environmental, economic)",
@@ -1075,8 +1065,7 @@
   "SectionProjectFAQ.Title8": "Does Medla have any binding time?",
   "SectionProjectFAQ.Title9": "We have projects in another business platform, how does Medla work then?",
   "SectionProjectFAQ.Title10": "Can projects outside Sweden be connected?",
-  
-  
+
   "SectionProjectFAQ.Text1": "Designers who want to lift profits and anchor their projects, construction contractors who need goods and services in projects and local businesses that want to deliver to the energy industry.",
   "SectionProjectFAQ.Text2": "Green industrial projects in all design phases.",
   "SectionProjectFAQ.Text3": "Getting started with Medla is easy. After you contact us, we confirm your project details and install the projects in 1-2 weeks. Based on project status, we hold introductions for the project contractor and local stakeholders. ",
@@ -1087,7 +1076,7 @@
   "SectionProjectFAQ.Text8": "Medla has no lock-in period, termination will be executed at the next payment.",
   "SectionProjectFAQ.Text9": "The connection to Medla is made per project and can therefore be used in addition to other business platforms. If you want to move your entire project portfolio to Medla, we can help you with that.",
   "SectionProjectFAQ.Text10": "It is possible to connect projects outside Sweden, we update the language support for new regions if necessary.",
-  
+
   "SectionMunicipalityFAQ.titleLineOne": "Frequently Asked Questions",
   "SectionMunicipalityFAQ.Title1": "Who Uses Medla?",
   "SectionMunicipalityFAQ.Title2": "What projects is Medla used for?",
@@ -1099,8 +1088,7 @@
   "SectionMunicipalityFAQ.Title8": "Does Medla have any binding period?",
   "SectionMunicipalityFAQ.Title9": "We have projects in another business platform, how does Medla work then?",
   "SectionMunicipalityFAQ.Title10": "Can projects outside Sweden be connected?",
-  
-  
+
   "SectionMunicipalityFAQ.Text1": "Municipalities that want to show and make their business more accessible, planners who want to lift profits and anchor their establishments, construction companies that need goods and services in projects and local businesses that want to deliver to the projects. ",
   "SectionMunicipalityFAQ.Text2": "Sustainable energy and industrial projects in all phases (wind farms, solar parks, hydrogen plants, battery factories, green steel projects and many more)",
   "SectionMunicipalityFAQ.Text3": "Getting started with Medla is easy. After you have contacted us, we will confirm your information and install the municipal page in 1-2 weeks.",
@@ -1110,7 +1098,7 @@
   "SectionMunicipalityFAQ.Text7": "Affiliate projects are displayed with a project page where their jobs and needs are advertised.",
   "SectionMunicipalityFAQ.Text8": "Medla has no lock-in period, termination will be executed at the next payment.",
   "SectionMunicipalityFAQ.Text9": "The connection to Medla is made per project and can therefore be used in addition to other business platforms. If you want to move your entire project portfolio to Medla, we can help you with that.",
-  "SectionMunicipalityFAQ.Text10": "It is possible to connect projects outside Sweden, we update the language support for new regions if necessary.",  
+  "SectionMunicipalityFAQ.Text10": "It is possible to connect projects outside Sweden, we update the language support for new regions if necessary.",
 
   "SectionCompanyFAQ.titleLineOne": "Frequently Asked Questions",
   "SectionCompanyFAQ.Title1": "Who Uses Medla?",
@@ -1121,12 +1109,9 @@
   "SectionCompanyFAQ.Title6": "What types of jobs are available at Medla?",
   "SectionCompanyFAQ.Title7": "How do I find the jobs?",
   "SectionCompanyFAQ.Title8": "Can I track multiple projects with the same account?",
-  "SectionCompanyFAQ.Title9":"What types of jobs can I find on mediate?",
-  "SectionCompanyFAQ.Title10":"Who are behind Medla?",
+  "SectionCompanyFAQ.Title9": "What types of jobs can I find on mediate?",
+  "SectionCompanyFAQ.Title10": "Who are behind Medla?",
 
-  
-  
-  
   "SectionCompanyFAQ.Text1": "Municipalities that want to show and make their business more accessible, designers who want to lift profits and anchor their establishments, construction companies that need goods and services in projects and local businesses that want to deliver to the projects. ",
   "SectionCompanyFAQ.Text2": "Sustainable energy and industrial projects in all phases (wind farms, solar parks, hydrogen plants, battery factories, green steel projects and many more)",
   "SectionCompanyFAQ.Text3": "It only takes a couple of minutes, register your business and choose which projects and industries are relevant to you.",
@@ -1135,10 +1120,9 @@
   "SectionCompanyFAQ.Text6": "All project needs can be set up, everything from construction work in the workplace to indirect needs such as catering, hairdressing services and leisure activities.",
   "SectionCompanyFAQ.Text7": "After registration you can see all jobs on Medla, jobs are displayed in our search function which you can easily find at the top of the website.",
   "SectionCompanyFAQ.Text8": "Yes, at Medla you register once and then easily select the projects where you want to be seen and get job notices.",
-  "SectionCompanyFAQ.Text9":"At Medla, all types of needs that appear about the project are published.It can be anything from accommodation and meals to hairdressers and excavators.",
-  "SectionCompanyFAQ.Text10":"Medla is owned by Peer Digital Sweden AB. The company is started by previous project managers and developers from Umeå University.",
+  "SectionCompanyFAQ.Text9": "At Medla, all types of needs that appear about the project are published.It can be anything from accommodation and meals to hairdressers and excavators.",
+  "SectionCompanyFAQ.Text10": "Medla is owned by Peer Digital Sweden AB. The company is started by previous project managers and developers from Umeå University.",
 
-  
   "SectionProjectFunctions.titleLineOne": "Functions",
   "SectionProjectFunctions.chat": "Instant Messages",
   "SectionProjectFunctions.data": "Key Figures and Analyzes",
@@ -1157,7 +1141,7 @@
   "SectionProjectGoals.part1Text": "Strengthening Relationships with Key Stakeholders & the Local Community",
   "SectionProjectGoals.part3Title": "Strengthened Brand & Social Sustainability Positioning",
   "SectionProjectGoals.part3Text": "Increased local employment in the project",
-  
+
   "SectionConnectCompanyFunctions.titleLineOne": "Functions",
   "SectionConnectCompanyFunctions.chat": "Accommodation",
   "SectionConnectCompanyFunctions.data": "Crew",
@@ -1179,27 +1163,19 @@
   "SectionConnectCompanyFunctions.machine Repair": "Machine Repair",
   "SectionConnectCompanyFunctions.svets": "Welding & Metal",
   "SectionConnectCompanyFunctions.extra": "...",
-  
-  
-  
-  
-    
+
   "SectionMunicipalityGoals.titleLineOne": "Expected Profits",
   "SectionMunicipalityGoals.part1Text": "Insights and new information about own business",
   "SectionMunicipalityGoals.part1Title": "Attractive Municipality for Investment",
   "SectionMunicipalityGoals.part3Text": "More visible and accessible business",
   "SectionMunicipalityGoals.part3Title": "Business Opportunities for Local Businesses on Projects",
-  
+
   "SectionCompanyGoals.titleLineOne": "Create an Account to ...",
   "SectionCompanyGoals.part1Text": "Respond to Quotation Requests for Free",
   "SectionCompanyGoals.part1Title": "Find More Corporate Customers",
   "SectionCompanyGoals.part3Text": "Strengthen Your Digital Presence",
   "SectionCompanyGoals.part3Title": "Be Visible Where Project Customers Are",
-    
-  
-  
-  
-  
+
   "SectionTimeline.titleLineOne": "Solutions for all project phases",
   "SectionTimeline.part1Title": "Scheduling",
   "SectionTimeline.part2Title": "Construction",
@@ -1207,7 +1183,7 @@
   "SectionTimeline.part1Text": "Visualize benefits and create local anchor for the project.",
   "SectionTimeline.part2Text": "Simplify business mediation between construction contractors and local suppliers.",
   "SectionTimeline.part3Text": "Contribute to long-term local development and use measurable results in future projects.",
-  
+
   "SectionTimelineCompany.titleLineOne": "Get started in two minutes",
   "SectionTimelineCompany.part1Title": "1. Register",
   "SectionTimelineCompany.part2Title": "2. Follow Project",
@@ -1215,7 +1191,7 @@
   "SectionTimelineCompany.part1Text": "Your business page is automatically generated after you enter your business information.",
   "SectionTimelineCompany.part2Text": "Easily select the projects and industries you want to follow and get job notices from.",
   "SectionTimelineCompany.part3Text": "When relevant transactions appear, you will receive a notification by SMS or email.",
-  
+
   "SectionTimelineMunicipality.titleLineOne": "Solutions for all project phases",
   "SectionTimelineMunicipality.part1Title": "A more attractive municipality",
   "SectionTimelineMunicipality.part2Title": "Local Business Opportunities",
@@ -1223,7 +1199,7 @@
   "SectionTimelineMunicipality.part1Text": "Show investors that they can feel secure with the supply of skills in your municipality.",
   "SectionTimelineMunicipality.part2Text": "Wind farms, solar parks and hydrogen establishments need local suppliers, make your business available with Medla.",
   "SectionTimelineMunicipality.part3Text": "Measure the effects and local business benefits on projects in your municipality with Medla-Statistics.",
-  
+
   "SectionWhatIsMedla.createListingLink": "PS. You too can become a Medla host with just a few clicks!",
   "SectionWhatIsMedla.part1Text": "Business directory and job placement, snow removal, accommodation, catering and more.",
   "SectionWhatIsMedla.part1Title": "Energy Industry Marketplace for Local Business",
@@ -1238,40 +1214,28 @@
   "SectionWhatIsMedla.toHome": "here",
   "SectionWhatIsMedla.mailTo": "Contact Us",
   "SectionWhatIsMedla.connectProject": "here",
-  
-  "SectionWhatIsMedlaDescription.Title1": "Vendor Database",
-  "SectionWhatIsMedlaDescription.Title2": "Job Advertising",
-  "SectionWhatIsMedlaDescription.Title3": "Everything gathered on your project page",
-  "SectionWhatIsMedlaDescription.Title4": "View Results Per Project",
-  "SectionWhatIsMedlaDescription.Text1": "Invite, search and compare project local vendors - they register themselves and are controlled by Medla.",
-  "SectionWhatIsMedlaDescription.Text2": "Publish project needs (as simple as sending an SMS) and get responses from relevant vendors - we make it just as easy for your contract.",
-  "SectionWhatIsMedlaDescription.Text3": "Local business, job opportunities and project information on unique Medla domain.",
-  "SectionWhatIsMedlaDescription.Text4": "See the number of mediated transactions and measure the local impact of the project.",
-  
+
+  "SectionWhatIsMedlaDescription.Title1": "Project Portal",
+  "SectionWhatIsMedlaDescription.Title2": "Job Ads",
+  "SectionWhatIsMedlaDescription.Title3": "Search",
+  "SectionWhatIsMedlaDescription.Title4": "Transparency and Control",
+  "SectionWhatIsMedlaDescription.Text1": "Local companies that want to deliver to the project can register their interest with one click. The companies that meet your requirements will be visible in your dynamic supplier database and will be notified if relevant jobs are advertised in the project.",
+  "SectionWhatIsMedlaDescription.Text2": "Employees and subcontractors can make simple quotes to the project's local companies, for everything from road construction to board and lodging. The first contact is made easily with the built-in chat.",
+  "SectionWhatIsMedlaDescription.Text3": "Project actors can also find each other by searching the database. Filter by industry, keywords or via the map to see local and regional offerings.",
+  "SectionWhatIsMedlaDescription.Text4": "Your project will be integrated into Medla's marketplace, which facilitates local business in more projects and makes it possible to track rogue players. In your project you have full control over which players get access. Supplier database and business statistics are you to keep, even if you cancel Medla. ",
   "SectionWhatIsMedlaMunicipality.titleLineOne": "Developed with Municipalities and Projectors.",
   "SectionWhatIsMedlaMunicipality.part1Title": "The Local Business Mediation Marketplace",
-    
-    
+
   "SectionWhatIsMedlaDescriptionMunicipality.Title1": "Link between business and project",
   "SectionWhatIsMedlaDescriptionMunicipality.Title2": "Showcase Your Business",
   "SectionWhatIsMedlaDescriptionMunicipality.Title3": "Dynamic Municipal Page",
   "SectionWhatIsMedlaDescriptionMunicipality.Title4": "Statistics and Insights",
-  
-  
+
   "SectionWhatIsMedlaDescriptionMunicipality.Text1": "Company Profiles, Quotation Requests, Notices and Messaging Features.",
   "SectionWhatIsMedlaDescriptionMunicipality.Text2": "Local Businesses Register to Be Visible and Contactable.",
   "SectionWhatIsMedlaDescriptionMunicipality.Text3": "Your business and projects in your region gathered on your very own Medla domain.",
   "SectionWhatIsMedlaDescriptionMunicipality.Text4": "Information on the number of local businesses and deeper insight into your own business.",
-  
-  
-   
-  
-  
-  
-  
-    
-  
-  
+
   "SectionQuote.part1Text": "Electrification offers enormous opportunities for a vibrant countryside, by creating local jobs where the need is greatest. Medla facilitates this development.",
   "SectionFoundersNote.part1Title": "A greeting from Medla's initiators",
   "SectionWhyMedla.createListingLink": "PS. You too can become a Medla host with just a few clicks!",
@@ -1439,7 +1403,7 @@
   "StripePaymentForm.saveforLaterUseLegalInfo": "I authorize Saunatime to send instructions to the financial institution that issued my card to take payments from my card account in accordance with the terms of my agreement with you.",
   "StripePaymentForm.stripe.api_connection_error": "Could not connect to Stripe API.",
   "StripePaymentForm.stripe.api_error": "Stripe API error.",
-  "StripePaymentForm.stripe.authentication_error":" Stripe could not be authenticated. ",
+  "StripePaymentForm.stripe.authentication_error": " Stripe could not be authenticated. ",
   "StripePaymentForm.stripe.card_error": "Debit cards cannot be handled.",
   "StripePaymentForm.stripe.invalid_request_error": "Invalid Stripe API request.",
   "StripePaymentForm.stripe.rate_limit_error": "Too many requests to the Stripe API.",
@@ -1551,7 +1515,7 @@
   "TopbarMobileMenu.inboxLink": "Inbox",
   "TopbarMobileMenu.homeLink": "Home",
   "TopbarMobileMenu.chooseLanguage": "Choose language",
-  "TopbarMobileMenu.closeLanguage": "Hide languages",  
+  "TopbarMobileMenu.closeLanguage": "Hide languages",
   "TopbarMobileMenu.loginLink": "Login",
   "TopbarMobileMenu.logoutLink": "Logout",
   "TopbarMobileMenu.newListingLink": "+ Publish a Job",
@@ -1564,12 +1528,12 @@
   "TopbarMobileMenu.yourListingsLink": "Your Job Ads",
   "TopbarSearchForm.placeholder": "All of Sweden…",
   "TopbarSearchForm.searchHelp": "Tip: You can also search by zip code, for example 00500  Sörnäinen",
-  "TopbarSearchForm.selector.company":"Companies",
-  "TopbarSearchForm.selector.job":"Jobs",
-  "TopbarSearchForm.optionJob":"Jobs",
-  "TopbarSearchForm.optionCompany":"Companies",
-  "TopbarSearchForm.mobileHeading1":"Choose location",
-  "TopbarSearchForm.mobileHeading2":"Select Industry",
+  "TopbarSearchForm.selector.company": "Companies",
+  "TopbarSearchForm.selector.job": "Jobs",
+  "TopbarSearchForm.optionJob": "Jobs",
+  "TopbarSearchForm.optionCompany": "Companies",
+  "TopbarSearchForm.mobileHeading1": "Choose location",
+  "TopbarSearchForm.mobileHeading2": "Select Industry",
   "TransactionPage.deletedListing": "Deleted List",
   "TransactionPage.fetchOrderFailed": "Order data retrieval failed.",
   "TransactionPage.fetchSaleFailed": "Sales data retrieval failed.",
@@ -1623,6 +1587,4 @@
   "UserCard.viewProfileLink": "View Profile",
   "UserDisplayName.banned": "Banned User",
   "UserDisplayName.deleted": "Deleted users"
-  }
-  
-  
+}

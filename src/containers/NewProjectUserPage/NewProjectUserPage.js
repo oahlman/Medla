@@ -16,6 +16,7 @@ import {
   SectionFoundersNote,
   ImageGallery,
   SectionWhatIsMedla,
+  SectionHowItWorksProjects,
   SectionProjectDeal,
   SectionProjectFunctions,
   SectionTimeline,
@@ -77,11 +78,10 @@ const NewProjectUserPage = () => {
          
           <container className={css.sectionContent} >
             <div className={css.sections}>
-            <SectionTimeline className={css.subSection} />
+            <SectionHowItWorksProjects />
           <div className={css.sectionProcessMaybeColor}>
           <SectionWhatIsMedla className={css.whatIsMedla} />
             <div> 
-            <ImageGallery  className={css.gallery}/>
             <SectionWhatIsMedlaDescription className={css.whatIsMedlaDescription}  /> 
             <SectionProjectFunctions  className={css.functions} />
             </div>
@@ -96,7 +96,6 @@ const NewProjectUserPage = () => {
           <div className={css.imageContact}></div>
           </div>
           </div>
-          <SectionFoundersNote className={css.sectionProcessMaybe}/>
           </div>
 
 

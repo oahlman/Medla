@@ -21,9 +21,6 @@ const SectionHowItWorksProjects = props => {
 
       <div className={css.steps}>
         <div className={css.step}>
-        <div className={css.containerPhone}>
-        <img className={css.imagePhone} src={phoneCompany2} alt="Company onboarding Medla" />
-        </div>
           <h2 className={css.stepTitle}>
             <FormattedMessage id="SectionHowItWorksProjects.part1Title" />
           </h2>
@@ -33,9 +30,6 @@ const SectionHowItWorksProjects = props => {
         </div>
 
         <div className={css.step}>
-        <div className={css.containerPhone}>
-        <img className={css.imagePhone} src={phoneCompany3} alt="Company onboarding Medla" />
-        </div>
           <h2 className={css.stepTitle}>
             <FormattedMessage id="SectionHowItWorksProjects.part2Title" />
           </h2>
@@ -46,9 +40,6 @@ const SectionHowItWorksProjects = props => {
         </div>
 
         <div className={css.step}>
-        <div className={css.containerPhone}>
-        <img className={css.imagePhone} src={phoneCompany1} alt="Company onboarding Medla" />
-        </div>
           <h2 className={css.stepTitle}>
             <FormattedMessage id="SectionHowItWorksProjects.part3Title" />
           </h2>

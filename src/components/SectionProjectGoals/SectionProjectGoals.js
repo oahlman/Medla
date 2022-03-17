@@ -3,7 +3,9 @@ import { FormattedMessage } from '../../util/reactIntl';
 import classNames from 'classnames';
 import css from './SectionProjectGoals.module.css';
 import { IoCheckmarkOutline } from "react-icons/io5";
-
+import {
+  ExternalLink,
+} from '../../components';
 const SectionProjectGoals = props => {
 
   const { rootClassName, className, currentUser } = props;
@@ -45,12 +47,18 @@ const SectionProjectGoals = props => {
             <FormattedMessage id="SectionProjectGoals.part3Title" />
           </div>
           </div>
-
-         
         </div>
       </div>
+      <div className={css.buttonAlign}>
+      
+      <div className={css.titleCTA}>
+        <FormattedMessage id="SectionProjectGoals.titleLineTwoCTA" />
 
-
+      </div>
+              <ExternalLink className={css.heroButton} href="mailto:info@medla.app?subject=Komma%20ig%C3%A5ng%20med%20Medla">
+              <FormattedMessage id="ConnectCompanyPage.connectProjectOwner" />
+                  </ExternalLink>
+      </div>    
     </div>
   );
 };

@@ -7,7 +7,10 @@ import macbookFrame from '../../assets/macbook.png';
 import notification from '../../assets/text-notification.mov';
 import chat from '../../assets/chat.mov';
 import answerJob from '../../assets/answer-job.mov';
-
+import portalImg from '../../assets/portal.png';
+import searchImg from '../../assets/search.png';
+import jobImg from '../../assets/jobs.png';
+import dashboardImg from '../../assets/dashboard.png';
 
 import css from './SectionWhatIsMedlaDescription.module.css';
 
@@ -53,11 +56,7 @@ const SectionWhatIsMedlaDescription = props => {
           </p>
           </div>
         <div className={css.featureImageRight}>
-
-        <div className={css.videoShowcase}>
-          <video className={css.video} src={notification} autoPlay loop muted alt="Company onboarding Medla" />
-          <img className={css.iphone} src={iphone} alt="Company onboarding Medla" />
-        </div>
+          <img className={css.image} src={portalImg} alt="Company onboarding Medla" />
         </div>
         </div>
         
@@ -71,10 +70,7 @@ const SectionWhatIsMedlaDescription = props => {
           </p>
           </div>
         <div className={css.featureImageLeft}>
-        <div className={css.videoShowcase}>
-          <video className={css.videoMacbook} src={answerJob} autoPlay loop muted alt="Company onboarding Medla" />
-          <img className={css.macbook} src={macbookFrame} alt="Company onboarding Medla" />
-        </div>
+          <img className={css.image} src={jobImg} alt="Company onboarding Medla" />
         </div>
         </div>
 
@@ -88,7 +84,7 @@ const SectionWhatIsMedlaDescription = props => {
           </p>
           </div>
         <div className={css.featureImageRight}>
-        <img className={css.image} src={macbook} alt="Company onboarding Medla" />
+        <img className={css.image} src={searchImg} alt="Company onboarding Medla" />
         </div>
         </div>
 
@@ -101,8 +97,8 @@ const SectionWhatIsMedlaDescription = props => {
             <FormattedMessage id="SectionWhatIsMedlaDescription.Text4" />
           </p>
           </div>
-        <div className={css.featureImageRight}>
-        <img className={css.image} src={macbook} alt="Company onboarding Medla" />
+        <div className={css.featureImageLeft}>
+          <img className={css.image} src={dashboardImg} alt="Company onboarding Medla" />
         </div>
         </div>
         

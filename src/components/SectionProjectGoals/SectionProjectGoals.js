@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import css from './SectionProjectGoals.module.css';
 import { IoCheckmarkOutline } from "react-icons/io5";
 import {
-  NamedLink,
+  ExternalLink,
 } from '../../components';
 const SectionProjectGoals = props => {
 
@@ -55,9 +55,9 @@ const SectionProjectGoals = props => {
         <FormattedMessage id="SectionProjectGoals.titleLineTwoCTA" />
 
       </div>
-      <NamedLink name='SignupPage' className={css.heroButton}>
-                <FormattedMessage id="ConnectCompanyPage.connectProjectOwner" />
-              </NamedLink>
+              <ExternalLink className={css.heroButton} href="mailto:info@medla.app?subject=Komma%20ig%C3%A5ng%20med%20Medla">
+              <FormattedMessage id="ConnectCompanyPage.connectProjectOwner" />
+                  </ExternalLink>
       </div>    
     </div>
   );

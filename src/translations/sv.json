@@ -1136,10 +1136,13 @@
   "SectionProjectFunctions.notifications": "Notiser via SMS & epost",
   "SectionProjectFunctions.branch": "Stöd för 25+ branscher",
   "SectionProjectGoals.titleLineOne": "Förväntade vinster",
-  "SectionProjectGoals.part1Title": "Fler projekt som får kommunal tillstyrkan",
-  "SectionProjectGoals.part1Text": "Stärkta relationer med nyckelintressenter & lokalsamhället",
-  "SectionProjectGoals.part3Title": "Stärkt varumärke & social hållbarhets-positionering",
-  "SectionProjectGoals.part3Text": "Ökad lokal sysselsättning i projektet",
+  "SectionProjectGoals.titleLineTwoCTA":"En enklare förankring med Medla",
+  "ConnectCompanyPage.connectProjectOwner":"Kom igång idag",
+
+  "SectionProjectGoals.part1Title": "Stärkt projektförankring.",
+  "SectionProjectGoals.part1Text": "Rapporter som bär värde även i framtida tillstyrkansprocesser.",
+  "SectionProjectGoals.part3Title": "Stärkt varumärke & social hållbarhets-positionering.",
+  "SectionProjectGoals.part3Text": "Fler lokala affärer.",
 
   "SectionConnectCompanyFunctions.titleLineOne": "Funktioner",
   "SectionConnectCompanyFunctions.chat": "Boende",

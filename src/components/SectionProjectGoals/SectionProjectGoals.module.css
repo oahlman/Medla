@@ -4,6 +4,10 @@
   @apply --marketplaceH1FontStyles;
 
 }
+.titleCTA {
+  @apply --marketplaceH1FontStyles;
+  color: var(--marketplaceColorDark);
+}
 
 
 .steps {
@@ -84,5 +88,61 @@ width:35px;
     width: fit-content;
     gap: 15px;
 }
+
+}
+
+.buttonAlign{
+  margin-top:75px;
+  display:flex;
+  flex-direction: column;
+  justify-items:center;
+  align-items: center;
+
+}
+.heroButton {
+  @apply --marketplaceButtonStyles;
+  border-width: 2px;
+  transition-duration: 0.25s;
+  animation-delay: 0.8s;
+  margin-bottom: 10px;
+  margin-top: 30px;
+  color:whitesmoke;
+  border-color: var(--marketplaceColorDark);
+  background-color: var(--marketplaceColorDark);
+  @media (--viewportMedium) {
+    width: 260px;
+    margin-left: 20px;
+  }
+}
+
+.heroButton:hover{
+color:whitesmoke;
+border-color: var(--marketplaceColor);
+background-color: var(--marketplaceColor);
+text-decoration: none;
+
+}
+
+
+.statusLine2 {
+  height: 2px;
+  width: calc(100% - 60px);
+  border-style: solid;
+  border-width: 2px;
+  border-color: var(--marketplaceColor);
+
+
+  @media (--viewportMedium) {
+  margin-top:40px;
+  margin-bottom:40px;
+  height: calc(50% - 60px);
+  width: calc(70% - 200px);
+  max-width: 100%;
+  }
+}
+
+.svg{
+color: blue;
+z-index: 0;
 
 }

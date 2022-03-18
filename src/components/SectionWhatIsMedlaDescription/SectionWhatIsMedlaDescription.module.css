@@ -68,6 +68,7 @@
 
 .image {
   max-width: 100%;
+  border-radius: 0;
   @media (--viewportMedium) {
     max-width: 140%;
   }
@@ -103,8 +104,6 @@
   height: 100%;
   width: auto;
   padding: 8px;
-  border-radius: 20px;
-
 }
 
 .macbook {

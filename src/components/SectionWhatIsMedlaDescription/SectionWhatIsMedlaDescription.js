@@ -7,10 +7,10 @@ import macbookFrame from '../../assets/macbook.png';
 import notification from '../../assets/text-notification.mov';
 import chat from '../../assets/chat.mov';
 import answerJob from '../../assets/answer-job.mov';
-import portalImg from '../../assets/portal.png';
+import projectImg from '../../assets/project.png';
 import searchImg from '../../assets/search.png';
-import jobImg from '../../assets/jobs.png';
-import dashboardImg from '../../assets/dashboard.png';
+import jobsImg from '../../assets/jobs.png';
+import controlImg from '../../assets/control.png';
 
 import css from './SectionWhatIsMedlaDescription.module.css';
 
@@ -56,7 +56,7 @@ const SectionWhatIsMedlaDescription = props => {
           </p>
           </div>
         <div className={css.featureImageRight}>
-          <img className={css.image} src={portalImg} alt="Company onboarding Medla" />
+          <img className={css.image} src={projectImg} alt="Company onboarding Medla" />
         </div>
         </div>
         
@@ -70,7 +70,7 @@ const SectionWhatIsMedlaDescription = props => {
           </p>
           </div>
         <div className={css.featureImageLeft}>
-          <img className={css.image} src={jobImg} alt="Company onboarding Medla" />
+          <img className={css.image} src={jobsImg} alt="Company onboarding Medla" />
         </div>
         </div>
 
@@ -98,7 +98,7 @@ const SectionWhatIsMedlaDescription = props => {
           </p>
           </div>
         <div className={css.featureImageLeft}>
-          <img className={css.image} src={dashboardImg} alt="Company onboarding Medla" />
+          <img className={css.image} src={controlImg} alt="Company onboarding Medla" />
         </div>
         </div>
         

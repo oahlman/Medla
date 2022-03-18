@@ -1,12 +1,6 @@
 import React from 'react';
 import { FormattedMessage } from '../../util/reactIntl';
 import classNames from 'classnames';
-import macbook from '../../assets/macbook-jobs.png';
-import iphone from '../../assets/iphone.png';
-import macbookFrame from '../../assets/macbook.png';
-import notification from '../../assets/text-notification.mov';
-import chat from '../../assets/chat.mov';
-import answerJob from '../../assets/answer-job.mov';
 import projectImg from '../../assets/project.png';
 import searchImg from '../../assets/search.png';
 import jobsImg from '../../assets/jobs.png';

@@ -14,6 +14,7 @@ const SectionHowItWorksProjects = props => {
   const classes = classNames(rootClassName || css.root, className);
   return (
     <div className={classes}>
+      <div className={css.containerMargin}>
       <div className={css.title}>
         <FormattedMessage id="SectionHowItWorks.titleLineOne" />
 
@@ -48,6 +49,7 @@ const SectionHowItWorksProjects = props => {
           </p>
         </div>
       </div>
+    </div>
     </div>
   );
 };

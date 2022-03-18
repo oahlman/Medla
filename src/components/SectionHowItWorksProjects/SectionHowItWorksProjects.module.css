@@ -5,6 +5,16 @@
   margin-top: 0;
 }
 
+.containerMargin{
+  margin-top: 10%;
+  margin-bottom: 5%;
+
+@media (--viewportMedium) {
+  margin-top: 2%;
+  margin-bottom: 5%;
+}
+}
+
 .steps {
   display: flex;
   flex-direction: column;

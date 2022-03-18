@@ -49,16 +49,7 @@ const SectionProjectGoals = props => {
           </div>
         </div>
       </div>
-      <div className={css.buttonAlign}>
-      
-      <div className={css.titleCTA}>
-        <FormattedMessage id="SectionProjectGoals.titleLineTwoCTA" />
-
-      </div>
-              <ExternalLink className={css.heroButton} href="mailto:info@medla.app?subject=Komma%20ig%C3%A5ng%20med%20Medla">
-              <FormattedMessage id="ConnectCompanyPage.connectProjectOwner" />
-                  </ExternalLink>
-      </div>    
+ 
     </div>
   );
 };

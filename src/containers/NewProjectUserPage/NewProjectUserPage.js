@@ -80,7 +80,6 @@ const NewProjectUserPage = () => {
           <SectionWhatIsMedla className={css.whatIsMedla} />
             <div> 
             <SectionWhatIsMedlaDescription className={css.whatIsMedlaDescription}  /> 
-            <SectionProjectFunctions  className={css.functions} />
             </div>
           </div>
           <SectionProjectFAQ />

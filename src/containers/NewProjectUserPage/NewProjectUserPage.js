@@ -56,10 +56,10 @@ const NewProjectUserPage = () => {
         <div className={css.hero}>
           <div className={css.row}>
             <div className={css.text}>
-              <h1 className={css.bannerContent}>
+              <h1 className={css.bannerTitle}>
                 <FormattedMessage id="NewProjectUserPage.headline" ></FormattedMessage>
               </h1>
-              <p className={css.bannerContent}>
+              <p className={css.bannerSubtitle}>
                 <FormattedMessage id="NewProjectUserPage.newservice" ></FormattedMessage>
               </p>
               <ExternalLink href="https://www.peerdigital.se/anslut-projekt" className={css.heroButtonTop}>

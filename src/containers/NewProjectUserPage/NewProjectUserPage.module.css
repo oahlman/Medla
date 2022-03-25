@@ -415,7 +415,6 @@ display: none;
 
     @media (--viewportMedium) {
       width: 260px;
-      margin-left: 20px;
     }
   }
 

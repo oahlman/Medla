@@ -325,8 +325,9 @@
 
 .avatarMobile {
   display: flex;
-  border : solid whitesmoke 3px;
+  outline: solid whitesmoke 3px;
   outline-offset: -1px;
+  padding:1px;
 
   @media (--viewportMedium) {
     display: none; /* Hide the medium avatar from the bigger screens */
@@ -337,11 +338,12 @@
   display: none; /* Hide the large avatar from the smaller screens */
 
   @media (--viewportMedium) {
+    outline-offset: -1px;
+    padding:1px;
     display: flex;
-    border: solid whitesmoke 3px;
+    outline: solid whitesmoke 3px;
     height: 100px;
     width: 100px;
- 
 
 
   }

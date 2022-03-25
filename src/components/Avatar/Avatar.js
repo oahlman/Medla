@@ -105,7 +105,7 @@ export const AvatarComponent = props => {
   } else if (profileLinkEnabled) {
     // Placeholder avatar (initials)
     return (
-      <NamedLink {...rootProps} {...linkProps}>
+      <NamedLink {...rootProps} {...linkProps} >
           <span className={css.initials}><IoPersonCircleSharp className={css.defaultAvatar}></IoPersonCircleSharp></span>
 
       </NamedLink>

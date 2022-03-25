@@ -226,13 +226,10 @@
   flex-direction: column;
   left: 0px;
   top: 30px;
-  outline: solid whitesmoke 3px;
-  outline-offset: -1px;
-  padding:1px;
+  border: solid whitesmoke 3px;
+  padding:0px;
   height: 85px;
   width: 85px;
-  -moz-border-radius:85px;
-  -webkit-border-radius:85px;
   border-radius:85px;
   margin-bottom: 25px;
   z-index: 1;
@@ -240,6 +237,8 @@
 
 @media (--viewportLarge) {}
 }
+
+
 
 
 .containerTags{

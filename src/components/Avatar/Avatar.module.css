@@ -32,7 +32,7 @@
 
 .initials {
   height: -webkit-fill-available;
-  width: -webkit-fill-available;;
+  width: -webkit-fill-available;
   margin:-10px;
   padding: 0px;
 
@@ -45,7 +45,7 @@
 .defaultAvatar{
 background-image: radial-gradient(at center, rgb(163, 163, 163) 50%, transparent 40%);
 height: -webkit-fill-available;
-width: -webkit-fill-available;;
+width: -webkit-fill-available;
 color: rgb(225, 225, 225);
 
 @media (--viewportMedium) {

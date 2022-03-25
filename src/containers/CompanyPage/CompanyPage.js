@@ -555,7 +555,7 @@ export class CompanyPageComponent extends Component {
               />
               <div className={css.contentContainer}>
                 <div className={css.avatarContainer}>
-                  <SectionAvatar className={css.avatar} user={currentAuthor} params={params} />
+                  <SectionAvatar className={css.avatar} user={currentAuthor} params={params}  />
                 </div>
                 <div className={css.mainContent}>
                   <SectionHeading

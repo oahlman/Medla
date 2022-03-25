@@ -19,14 +19,6 @@ const DetailCardImage = props => {
   return (
     <React.Fragment>
       <div className={classes}>
-        <div className={css.aspectWrapper}>
-          <ResponsiveImage
-            rootClassName={css.rootForImage}
-            alt={listingTitle}
-            image={image}
-            variants={['landscape-crop', 'landscape-crop2x']}
-          />
-        </div>
       </div>
       {isCustomer ? (
         <div className={avatarWrapperClassName || css.avatarWrapper}>

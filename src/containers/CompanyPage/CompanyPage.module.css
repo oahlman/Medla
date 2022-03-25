@@ -326,6 +326,7 @@
 .avatarMobile {
   display: flex;
   border: solid whitesmoke 3px;
+  background: rgb(153, 153, 153); 
 
   @media (--viewportMedium) {
     display: none; /* Hide the medium avatar from the bigger screens */
@@ -338,6 +339,7 @@
   @media (--viewportMedium) {
     display: flex;
     border: solid whitesmoke 3px;
+    background: rgb(153, 153, 153); 
     height: 100px;
     width: 100px;
 

@@ -31,8 +31,28 @@
 }
 
 .initials {
-  font-size: 14px;
-  font-weight: var(--fontWeightBold);
+ 
+  height: -webkit-fill-available;
+  width: -webkit-fill-available;;
+  margin:-7px;
+  padding: 0px;
+
+  @media (--viewportMedium) {
+    margin:-11px;
+  }
+  }
+
+
+.defaultAvatar{
+height: -webkit-fill-available;
+width: -webkit-fill-available;;
+padding-right:2px;
+padding: 0px;
+color: rgb(225, 225, 225);
+
+@media (--viewportMedium) {
+
+}
 }
 
 .avatarImage {

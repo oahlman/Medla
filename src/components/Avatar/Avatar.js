@@ -10,6 +10,11 @@ import {
   userAbbreviatedName,
 } from '../../util/data';
 import { ResponsiveImage, IconBannedUser, NamedLink } from '../../components/';
+import { IoPersonOutline } from "react-icons/io5";
+import { IoPersonCircleSharp } from "react-icons/io5";
+
+
+
 
 import css from './Avatar.module.css';
 
@@ -101,14 +106,15 @@ export const AvatarComponent = props => {
     // Placeholder avatar (initials)
     return (
       <NamedLink {...rootProps} {...linkProps}>
-        <span className={css.initials}>{abbreviatedName}</span>
+          <span className={css.initials}><IoPersonCircleSharp className={css.defaultAvatar}></IoPersonCircleSharp></span>
+
       </NamedLink>
     );
   } else {
     // Placeholder avatar (initials)
     return (
       <div {...rootProps}>
-        <span className={css.initials}>{abbreviatedName}</span>
+        <span className={css.initials}><IoPersonCircleSharp className={css.defaultAvatar}></IoPersonCircleSharp></span>
       </div>
     );
   }

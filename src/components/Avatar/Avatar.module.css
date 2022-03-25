@@ -31,7 +31,7 @@
 }
 
 .initials {
- 
+
   height: -webkit-fill-available;
   width: -webkit-fill-available;;
   margin:-7px;
@@ -44,6 +44,7 @@
 
 
 .defaultAvatar{
+  background-image: radial-gradient(at center, rgb(163, 163, 163) 50%, transparent 40%);
 height: -webkit-fill-available;
 width: -webkit-fill-available;;
 padding-right:2px;

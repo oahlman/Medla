@@ -227,6 +227,8 @@
   left: 0px;
   top: 30px;
   outline: solid whitesmoke 3px;
+  outline-offset: -1px;
+  padding:1px;
   height: 85px;
   width: 85px;
   -moz-border-radius:85px;

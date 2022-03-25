@@ -44,6 +44,7 @@ flex-direction: row;
   flex-shrink: 0;
   margin-right: 30px;
   border: solid whitesmoke 3px;
+  background: rgb(153, 153, 153); 
   height: 85px;
   width: 85px;
   -moz-border-radius:85px;

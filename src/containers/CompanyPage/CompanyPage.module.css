@@ -325,7 +325,7 @@
 
 .avatarMobile {
   display: flex;
-  outline: solid whitesmoke 3px;
+  box-shadow: 0 0 0 3px whitesmoke;
   outline-offset: -1px;
   padding:1px;
 
@@ -341,7 +341,7 @@
     outline-offset: -1px;
     padding:1px;
     display: flex;
-    outline: solid whitesmoke 3px;
+    box-shadow: 0 0 0 3px whitesmoke;
     height: 100px;
     width: 100px;
 

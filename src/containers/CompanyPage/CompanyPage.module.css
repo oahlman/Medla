@@ -325,7 +325,7 @@
 
 .avatarMobile {
   display: flex;
-  border: solid whitesmoke 3px;
+  outline: solid whitesmoke 3px;
   background: rgb(153, 153, 153); 
 
   @media (--viewportMedium) {
@@ -338,7 +338,7 @@
 
   @media (--viewportMedium) {
     display: flex;
-    border: solid whitesmoke 3px;
+    outline: solid whitesmoke 3px;
     background: rgb(153, 153, 153); 
     height: 100px;
     width: 100px;

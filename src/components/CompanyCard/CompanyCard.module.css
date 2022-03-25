@@ -226,9 +226,9 @@
   flex-direction: column;
   left: 0px;
   top: 30px;
-  outline: solid whitesmoke 3px;
-  outline-offset: -1px;
-  padding:1px;
+  box-shadow: 0 0 0 3px whitesmoke;
+  outline: none;
+  border:none;
   height: 85px;
   width: 85px;
   -moz-border-radius:85px;

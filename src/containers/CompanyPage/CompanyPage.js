@@ -8,7 +8,7 @@ import config from '../../config';
 import moment from 'moment';
 import routeConfiguration from '../../routeConfiguration';
 import { findOptionsForSelectFilter } from '../../util/search';
-import { LISTING_STATE_PENDING_APPROVAL, LISTING_STATE_CLOSED, propTypes } from '../../util/types';
+import { LISTING_STATE_PENDING_APPROVAL, LISTING_STATE_CLOSED, propTypes, LISTING_STATE_PUBLISHED } from '../../util/types';
 import { types as sdkTypes } from '../../util/sdkLoader';
 import {
   LISTING_PAGE_DRAFT_VARIANT,
@@ -55,7 +55,7 @@ import Convert from '../../components/Translate/Convert';
 import { EnquiryForm } from '../../forms';
 import { TopbarContainer, NotFoundPage } from '../../containers';
 
-import { sendEnquiry, fetchTransactionLineItems, setInitialValues } from './CompanyPage.duck';
+import { sendEnquiry, fetchTransactionLineItems, setInitialValues, closeListing, openListing } from './CompanyPage.duck';
 import SectionImages from './SectionImages';
 import SectionAvatar from './SectionAvatar';
 import SectionHeading from './SectionHeading';
@@ -101,11 +101,14 @@ export class CompanyPageComponent extends Component {
       imageCarouselOpen: false,
       viewOriginal: true,
       enquiryModalOpen: enquiryModalOpenForListingId === params.id,
+      listingMenuOpen: null,
+      listingOpen: null,
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.onContactUser = this.onContactUser.bind(this);
     this.onSubmitEnquiry = this.onSubmitEnquiry.bind(this);
+    this.onToggleMenu = this.onToggleMenu.bind(this);
   }
 
   handleSubmit(values) {
@@ -157,6 +160,10 @@ export class CompanyPageComponent extends Component {
         {}
       )
     );
+  }
+
+  onToggleMenu(listing) {
+    this.setState({ listingMenuOpen: listing });
   }
 
   onContactUser() {
@@ -221,6 +228,12 @@ export class CompanyPageComponent extends Component {
       fetchLineItemsInProgress,
       fetchLineItemsError,
       onContactUser,
+      closingListing,
+      closingListingError,
+      onCloseListing,
+      onOpenListing,
+      openingListing,
+      openingListingError,
     } = this.props;
 
     const listingId = new UUID(rawParams.id);
@@ -233,6 +246,10 @@ export class CompanyPageComponent extends Component {
 
     const listingSlug = rawParams.slug || createSlug(currentListing.attributes.title || '');
     const params = { slug: listingSlug, ...rawParams };
+
+    const { state } = currentListing.attributes;
+    const isClosed = state === LISTING_STATE_CLOSED;
+    console.log('isClosed', isClosed);
 
     const listingType = isDraftVariant
       ? LISTING_PAGE_PARAM_TYPE_DRAFT
@@ -257,6 +274,9 @@ export class CompanyPageComponent extends Component {
     if (shouldShowPublicCompanyPage) {
       return <NamedRedirect name="CompanyPage" params={params} search={location.search} />;
     }
+
+    const closingErrorListingId = !!closingListingError && closingListingError.listingId;
+    const openingErrorListingId = !!openingListingError && openingListingError.listingId;
 
     const {
       description = '',
@@ -339,6 +359,32 @@ export class CompanyPageComponent extends Component {
       offer4Translated = offer4;
       offer5Translated = offer5;
     }
+
+    const openCloseText = this.state.listingOpen;
+    const listingClosed = currentListing.attributes.state === LISTING_STATE_CLOSED;
+    const listingPublished = currentListing.attributes.state === LISTING_STATE_PUBLISHED;
+    const initialText = listingClosed ? 'Open' : 'Close';
+
+    const offerOpenClose =(<button
+      onClick={event => {
+      event.preventDefault();
+      event.stopPropagation();
+      if (listingClosed && !closingListing) {
+        onOpenListing(currentListing.id)
+        this.setState({
+          listingOpen: true,
+        })
+      }
+      else if (listingPublished && !openingListing) {
+        onCloseListing(currentListing.id)
+        this.setState({
+          listingOpen: false,
+        })
+      };
+    }}>{openCloseText ? 'Open' : 'Close'}
+    </button> )
+
+    console.log('currentListing.attributes.state', currentListing.attributes.state, 'LISTING_STATE_CLOSED', LISTING_STATE_CLOSED, 'LISTING_STATE_PUBLISHED', LISTING_STATE_PUBLISHED);
 
     const richTitle = (
       <span>
@@ -570,6 +616,7 @@ export class CompanyPageComponent extends Component {
                   <div className={css.viewOriginal}>
                     {translateButtonMaybe}
                   </div>
+                  {offerOpenClose}
                   <SectionDescriptionMaybe description={foreignLanguage && descriptionTranslated !== '' ? descriptionTranslated : description} />
                   <h2 className={publicData.offerHeading1 ? css.serviceTitle : css.hidden}>
                     <FormattedMessage id="CompanyPage.serviceTitle" />
@@ -734,6 +781,10 @@ CompanyPageComponent.defaultProps = {
   filterConfig: config.custom.filters,
   lineItems: null,
   fetchLineItemsError: null,
+  closingListing: null,
+  closingListingError: null,
+  openingListing: null,
+  openingListingError: null,
 };
 
 CompanyPageComponent.propTypes = {
@@ -777,6 +828,18 @@ CompanyPageComponent.propTypes = {
   lineItems: array,
   fetchLineItemsInProgress: bool.isRequired,
   fetchLineItemsError: propTypes.error,
+  closingListing: shape({ uuid: string.isRequired }),
+  closingListingError: shape({
+    listingId: propTypes.uuid.isRequired,
+    error: propTypes.error.isRequired,
+  }),
+  onCloseListing: func.isRequired,
+  onOpenListing: func.isRequired,
+  openingListing: shape({ uuid: string.isRequired }),
+  openingListingError: shape({
+    listingId: propTypes.uuid.isRequired,
+    error: propTypes.error.isRequired,
+  }),
 };
 
 const mapStateToProps = state => {
@@ -793,6 +856,10 @@ const mapStateToProps = state => {
     fetchLineItemsInProgress,
     fetchLineItemsError,
     enquiryModalOpenForListingId,
+    openingListing,
+    openingListingError,
+    closingListing,
+    closingListingError,
   } = state.ListingPage;
   const { currentUser } = state.user;
 
@@ -825,6 +892,10 @@ const mapStateToProps = state => {
     fetchLineItemsError,
     sendEnquiryInProgress,
     sendEnquiryError,
+    openingListing,
+    openingListingError,
+    closingListing,
+    closingListingError,
   };
 };
 
@@ -837,6 +908,8 @@ const mapDispatchToProps = dispatch => ({
     dispatch(fetchTransactionLineItems(bookingData, listingId, isOwnListing)),
   onSendEnquiry: (listingId, message) => dispatch(sendEnquiry(listingId, message)),
   onInitializeCardPaymentData: () => dispatch(initializeCardPaymentData()),
+  onCloseListing: listingId => dispatch(closeListing(listingId)),
+  onOpenListing: listingId => dispatch(openListing(listingId)),
 });
 
 // Note: it is important that the withRouter HOC is **outside** the

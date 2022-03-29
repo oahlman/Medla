@@ -48,7 +48,6 @@ export const ContactCardJob = props => {
   const currentListing = ensureListing(listing);
   let contactInformation = currentListing.attributes.publicData.contactNumber;
   let simulateContact = null;
-  console.log('contactInformation', contactInformation);
   if (contactInformation === undefined) {
     contactInformation = <FormattedMessage id="ListingPage.contactDetailsMissingButton" />;
     simulateContact = contactInformation => null;

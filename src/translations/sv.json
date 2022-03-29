@@ -107,6 +107,8 @@
   "CompanyPage.serviceTitle": "Tjänster",
   "CompanyPage.closedListing": "Företaget är inte inaktivt på Medla.",
   "CompanyPage.reportCompany": "Rapportera",
+  "CompanyPage.openListing": "Visa företag",
+  "CompanyPage.closeListing": "Dölj företag",
 
   "ContactCardCompany.companyName": "Hitta till {name}",
   "CheckoutPage.bookingTimeNotAvailableMessage": "Tyvärr är den begärda tiden redan bokad.",

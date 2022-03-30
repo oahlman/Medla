@@ -115,7 +115,6 @@ export class CompanyPageComponent extends Component {
   handleSubmit(values) {
     const {
       history,
-      getOwnListing,
       getListing,
       params,
       callSetInitialValues,
@@ -570,7 +569,7 @@ export class CompanyPageComponent extends Component {
                 listing={currentListing}
                 isOwnListing={isOwnListing}
                 editParams={{
-                  id: ensureOwnListing(listingId).uuid,
+                  id: listingId.uuid,
                   slug: listingSlug,
                   type: listingType,
                   tab: listingTab,
@@ -581,13 +580,13 @@ export class CompanyPageComponent extends Component {
                 onManageDisableScrolling={onManageDisableScrolling}
 
                 key={listingId.uuid}
-                isMenuOpen={!!listingMenuOpen && listingMenuOpen.id.uuid === ensureOwnListing(listingId).uuid}
+                isMenuOpen={!!listingMenuOpen && listingMenuOpen.id.uuid === listingId.uuid}
                 actionsInProgressListingId={openingListing || closingListing}
                 onToggleMenu={this.onToggleMenu}
                 onCloseListing={onCloseListing}
                 onOpenListing={onOpenListing}
-                hasOpeningError={openingErrorListingId.uuid === ensureOwnListing(listingId).uuid}
-                hasClosingError={closingErrorListingId.uuid === ensureOwnListing(listingId).uuid}
+                hasOpeningError={openingErrorListingId.uuid === listingId.uuid}
+                hasClosingError={closingErrorListingId.uuid === listingId.uuid}
               />
               <div className={css.contentContainer}>
                 <div className={css.avatarContainer}>

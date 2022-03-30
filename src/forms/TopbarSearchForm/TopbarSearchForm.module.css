@@ -338,16 +338,16 @@ background: white;
   @media (--viewportMedium) {
     display:none;
   }
-  @media (--viewportLarge) {
+  @media (min-width: 1060px) {
     display:inherit;
   }
 }
 .displaySmall{
   display:none;
-  @media (--viewportMedium) {
+  @media (max-width: 1060px) {
     display:inherit;
   }
-  @media (--viewportLarge) {
+  @media (min-width: 1060px) {
     display:none;
   }
 }

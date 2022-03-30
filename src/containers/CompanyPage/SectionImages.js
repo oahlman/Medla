@@ -1,5 +1,6 @@
 import React from 'react';
-import { FormattedMessage } from '../../util/reactIntl';
+import { FormattedMessage, intlShape } from '../../util/reactIntl';
+import PropTypes from 'prop-types';
 import { ResponsiveImage, Modal, ImageCarousel } from '../../components';
 import ActionBarMaybe from './ActionBarMaybe';
 
@@ -15,6 +16,19 @@ const SectionImages = props => {
     imageCarouselOpen,
     onImageCarouselClose,
     onManageDisableScrolling,
+    hasClosingError,
+    hasOpeningError,
+    history,
+    intl,
+    isMenuOpen,
+    actionsInProgressListingId,
+    onCloseListing,
+    onOpenListing,
+    onToggleMenu,
+    openingListing,
+    closingListing,
+    openingErrorListingId,
+    closingErrorListingId,
   } = props;
 
   const hasImages = listing.images && listing.images.length > 0;
@@ -24,7 +38,20 @@ const SectionImages = props => {
   // to the parent that would otherwise open the image carousel
   const actionBar = listing.id ? (
     <div onClick={e => e.stopPropagation()}>
-      <ActionBarMaybe isOwnListing={isOwnListing} listing={listing} editParams={editParams} />
+      <ActionBarMaybe 
+        isOwnListing={isOwnListing} 
+        listing={listing} 
+        editParams={editParams}
+        className={css.listingCard}
+        key={listing.id.uuid}
+        listing={listing}
+        onCloseListing={onCloseListing}
+        onOpenListing={onOpenListing}
+        isMenuOpen={isMenuOpen}
+        actionsInProgressListingId={actionsInProgressListingId}
+        onToggleMenu={onToggleMenu}
+        hasOpeningError={hasOpeningError}
+        hasClosingError={hasClosingError} />
     </div>
   ) : null;
 
@@ -70,6 +97,27 @@ const SectionImages = props => {
       </Modal>
     </div>
   );
+};
+
+SectionImages.defaultProps = {
+  className: null,
+  rootClassName: null,
+  actionsInProgressListingId: null,
+};
+
+const { bool, func, shape, string } = PropTypes;
+
+SectionImages.propTypes = {
+  className: string,
+  rootClassName: string,
+  hasClosingError: bool.isRequired,
+  hasOpeningError: bool.isRequired,
+  intl: intlShape.isRequired,
+  isMenuOpen: bool.isRequired,
+  actionsInProgressListingId: shape({ uuid: string.isRequired }),
+  onCloseListing: func.isRequired,
+  onOpenListing: func.isRequired,
+  onToggleMenu: func.isRequired,
 };
 
 export default SectionImages;

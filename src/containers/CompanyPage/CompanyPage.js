@@ -55,7 +55,9 @@ import Convert from '../../components/Translate/Convert';
 import { EnquiryForm } from '../../forms';
 import { TopbarContainer, NotFoundPage } from '../../containers';
 
-import { sendEnquiry, fetchTransactionLineItems, setInitialValues, closeListing, openListing } from './CompanyPage.duck';
+import { sendEnquiry, fetchTransactionLineItems, setInitialValues } from './CompanyPage.duck';
+import { closeListing, openListing } from '../ManageListingsPage/ManageListingsPage.duck';
+import ActionBarMaybe from '../ListingPage/ActionBarMaybe';
 import SectionImages from './SectionImages';
 import SectionAvatar from './SectionAvatar';
 import SectionHeading from './SectionHeading';
@@ -275,6 +277,7 @@ export class CompanyPageComponent extends Component {
       return <NamedRedirect name="CompanyPage" params={params} search={location.search} />;
     }
 
+    const listingMenuOpen = this.state.listingMenuOpen;
     const closingErrorListingId = !!closingListingError && closingListingError.listingId;
     const openingErrorListingId = !!openingListingError && openingListingError.listingId;
 
@@ -364,27 +367,6 @@ export class CompanyPageComponent extends Component {
     const listingClosed = currentListing.attributes.state === LISTING_STATE_CLOSED;
     const listingPublished = currentListing.attributes.state === LISTING_STATE_PUBLISHED;
     const initialText = listingClosed ? 'Open' : 'Close';
-
-    const offerOpenClose =(<button
-      onClick={event => {
-      event.preventDefault();
-      event.stopPropagation();
-      if (listingClosed && !closingListing) {
-        onOpenListing(currentListing.id)
-        this.setState({
-          listingOpen: true,
-        })
-      }
-      else if (listingPublished && !openingListing) {
-        onCloseListing(currentListing.id)
-        this.setState({
-          listingOpen: false,
-        })
-      };
-    }}>{openCloseText ? 'Open' : 'Close'}
-    </button> )
-
-    console.log('currentListing.attributes.state', currentListing.attributes.state, 'LISTING_STATE_CLOSED', LISTING_STATE_CLOSED, 'LISTING_STATE_PUBLISHED', LISTING_STATE_PUBLISHED);
 
     const richTitle = (
       <span>
@@ -598,6 +580,15 @@ export class CompanyPageComponent extends Component {
                 onImageCarouselClose={() => this.setState({ imageCarouselOpen: false })}
                 handleViewPhotosClick={handleViewPhotosClick}
                 onManageDisableScrolling={onManageDisableScrolling}
+                
+                key={listingId.uuid}
+                isMenuOpen={!!listingMenuOpen && listingMenuOpen.id.uuid === listingId.uuid}
+                actionsInProgressListingId={openingListing || closingListing}
+                onToggleMenu={this.onToggleMenu}
+                onCloseListing={onCloseListing}
+                onOpenListing={onOpenListing}
+                hasOpeningError={openingErrorListingId.uuid === listingId.uuid}
+                hasClosingError={closingErrorListingId.uuid === listingId.uuid}
               />
               <div className={css.contentContainer}>
                 <div className={css.avatarContainer}>
@@ -616,7 +607,6 @@ export class CompanyPageComponent extends Component {
                   <div className={css.viewOriginal}>
                     {translateButtonMaybe}
                   </div>
-                  {offerOpenClose}
                   <SectionDescriptionMaybe description={foreignLanguage && descriptionTranslated !== '' ? descriptionTranslated : description} />
                   <h2 className={publicData.offerHeading1 ? css.serviceTitle : css.hidden}>
                     <FormattedMessage id="CompanyPage.serviceTitle" />

@@ -68,7 +68,7 @@
   padding-top: 0;
   padding-bottom: 0;
   padding-left: 0px;
-  min-width: 100%;
+  width: 170px;
   /* Search text gets ellipsis if it's too wide */
   text-overflow: ellipsis;
   overflow-x: hidden;
@@ -334,21 +334,24 @@ background: white;
 
 .displayWide{
   display:inherit;
-  @media (--viewportMedium) {
+  @media (max-width: 1060px) { 
     display:none;
-  }
-  @media (--viewportLarge) {
+  
+  @media (min-width: 1060px) {
     display:inherit;
   }
+}
 }
 
 .displaySmall{
   display:none;
-  @media (--viewportMedium) {
-    display:inherit;
-  }
-  @media (--viewportLarge) {
+  @media (max-width: 1060px) { 
+  display:inherit;
+  
+  @media (min-width: 1060px) {
     display:none;
   }
 }
+}
+
 

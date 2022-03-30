@@ -197,6 +197,7 @@ border-radius: 20px;
 border-width:1px;
 box-shadow: 0 0 10px 2px rgba(0,0,0,0.025);
 height: fit-content;
+z-index: 1;
 
 
 @media (--viewportMedium) {
@@ -334,24 +335,21 @@ background: white;
 
 .displayWide{
   display:inherit;
-  @media (max-width: 1060px) { 
+  @media (--viewportMedium) {
     display:none;
-  
-  @media (min-width: 1060px) {
+  }
+  @media (--viewportLarge) {
     display:inherit;
   }
 }
-}
-
 .displaySmall{
   display:none;
-  @media (max-width: 1060px) { 
-  display:inherit;
-  
-  @media (min-width: 1060px) {
+  @media (--viewportMedium) {
+    display:inherit;
+  }
+  @media (--viewportLarge) {
     display:none;
   }
-}
 }
 
 

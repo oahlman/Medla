@@ -75,12 +75,12 @@ export const ActionBarMaybe = props => {
     console.log('listing.id.uuid', listing.id.uuid, 'isClosed', isClosed);
 
     return (
-      <div className={css.actionBar}>
-        <p className={ownListingTextClasses}>
+      <div className={isClosed ? css.actionBarListingClosed : css.actionBar}>
+        <p className={actionsInProgressListingId ? '...' : ownListingTextClasses}>
           <FormattedMessage id={ownListingTextTranslationId} />
         </p>
         <Menu
-              className={classNames(css.menu, { [css.cardIsOpen]: !isClosed })}
+              className={classNames(css.menu, [css.cardIsOpen])}
               contentPlacementOffset={MENU_CONTENT_OFFSET}
               contentPosition="left"
               useArrow={false}
@@ -113,7 +113,7 @@ export const ActionBarMaybe = props => {
                         onOpenListing(currentListing.id)
                         .then(window.location.reload());
                       }
-                      else if (!isClosed && !actionsInProgressListingId) {
+                      else if (!actionsInProgressListingId) {
                         onToggleMenu(null);
                         onCloseListing(currentListing.id.uuid)
                         .then(window.location.reload());

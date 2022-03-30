@@ -105,6 +105,12 @@
   border-radius: var(--borderRadius);
 }
 
+.actionBarListingClosed {
+  composes: actionBar;
+  background-color: var(--failColor);
+
+}
+
 .noImageActionBar {
   position: absolute;
   display: flex;
@@ -1018,50 +1024,6 @@ color: grey;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-}
-
-.titleWrapper {
-}
-
-.title {
-  @apply --marketplaceLinkStyles;
-  /* Font */
-  @apply --marketplaceH3FontStyles;
-  color: var(--matterColor);
-  text-align: left;
-
-  padding-top: 3px;
-  padding-bottom: 3px;
-
-  /* Remove default margins from font */
-  margin-top: 0;
-  margin-bottom: 0;
-
-  @media (--viewportMedium) {
-    padding-top: 4px;
-    padding-bottom: 4px;
-
-    margin-top: 0;
-    margin-bottom: 0;
-  }
-}
-
-.titlePending {
-  color: var(--attentionColor);
-}
-
-.titleDraft {
-  margin-right: 8px;
-}
-
-/* Solid gray background for draft listings without image */
-.draftNoImage {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background-color: var(--matterColor);
 }
 
 .edit {

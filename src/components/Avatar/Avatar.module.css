@@ -87,6 +87,7 @@ color: rgb(225, 225, 225);
 .largeAvatar .initials {
   font-size: 30px;
   font-weight: var(--fontWeightSemiBold);
+  
 }
 
 .bannedUserIcon {

@@ -185,7 +185,11 @@
 }
 
 .avatar {
+  display: block;
   margin: 16px 0;
+  width: 45px;
+  height: 45px;
+
 }
 
 .languageMenuLabel {
@@ -431,4 +435,15 @@
       background-color: var(--matterColorDark);
     }
   }
+}
+
+.avatarContainer{
+  display: inline-block;
+  object-fit: contain;
+ 
+  
+
+
+
+  
 }

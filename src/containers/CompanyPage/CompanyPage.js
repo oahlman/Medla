@@ -55,8 +55,7 @@ import Convert from '../../components/Translate/Convert';
 import { EnquiryForm } from '../../forms';
 import { TopbarContainer, NotFoundPage } from '../../containers';
 
-import { sendEnquiry, fetchTransactionLineItems, setInitialValues } from './CompanyPage.duck';
-import { closeListing, openListing } from '../ManageListingsPage/ManageListingsPage.duck';
+import { sendEnquiry, fetchTransactionLineItems, setInitialValues, closeListing, openListing } from './CompanyPage.duck';
 import ActionBarMaybe from '../ListingPage/ActionBarMaybe';
 import SectionImages from './SectionImages';
 import SectionAvatar from './SectionAvatar';
@@ -251,7 +250,6 @@ export class CompanyPageComponent extends Component {
 
     const { state } = currentListing.attributes;
     const isClosed = state === LISTING_STATE_CLOSED;
-    console.log('isClosed', isClosed);
 
     const listingType = isDraftVariant
       ? LISTING_PAGE_PARAM_TYPE_DRAFT
@@ -580,7 +578,7 @@ export class CompanyPageComponent extends Component {
                 onImageCarouselClose={() => this.setState({ imageCarouselOpen: false })}
                 handleViewPhotosClick={handleViewPhotosClick}
                 onManageDisableScrolling={onManageDisableScrolling}
-                
+
                 key={listingId.uuid}
                 isMenuOpen={!!listingMenuOpen && listingMenuOpen.id.uuid === listingId.uuid}
                 actionsInProgressListingId={openingListing || closingListing}
@@ -864,7 +862,6 @@ const mapStateToProps = state => {
     const listings = getMarketplaceEntities(state, [ref]);
     return listings.length === 1 ? listings[0] : null;
   };
-
   return {
     isAuthenticated,
     currentUser,

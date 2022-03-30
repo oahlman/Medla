@@ -64,7 +64,6 @@ const updateListingAttributes = (state, listingEntity) => {
 
 const manageListingsPageReducer = (state = initialState, action = {}) => {
   const { type, payload } = action;
-  console.log('payload', payload);
   switch (type) {
     case FETCH_LISTINGS_REQUEST:
       return {

@@ -107,6 +107,9 @@
   "CompanyPage.serviceTitle": "Services",
   "CompanyPage.closedListing": "Company is not inactive on Medla.",
   "CompanyPage.reportCompany": "Report",
+  "CompanyPage.manageOptions": "Options",
+  "CompanyPage.openListing": "Show business",
+  "CompanyPage.closeListing": "Hide business",
 
   "ContactCardCompany.companyName": "Find {name}",
   "CheckoutPage.bookingTimeNotAvailableMessage": "Sorry, the requested time is already booked.",
@@ -492,7 +495,7 @@
   "ListingPage.ownJob": "This is your job.",
   "ListingPage.ownJobDraft": "This job is a draft.",
   "ListingPage.ownJobPendingApproval": "This job is awaiting approval.",
-  "ListingPage.ownClosedCompany": "Your business is closed and visible only to you.",
+  "ListingPage.ownClosedCompany": "Your business is hidden.",
   "ListingPage.ownCompany": "This is your business.",
   "ListingPage.ownCompanyDraft": "The company is a draft.",
   "ListingPage.ownCompanyPendingApproval": "Your business is awaiting approval.",

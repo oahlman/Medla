@@ -107,6 +107,9 @@
   "CompanyPage.serviceTitle": "Tjänster",
   "CompanyPage.closedListing": "Företaget är inte inaktivt på Medla.",
   "CompanyPage.reportCompany": "Rapportera",
+  "CompanyPage.manageOptions": "Alternativ",
+  "CompanyPage.openListing": "Visa företag",
+  "CompanyPage.closeListing": "Dölj företag",
 
   "ContactCardCompany.companyName": "Hitta till {name}",
   "CheckoutPage.bookingTimeNotAvailableMessage": "Tyvärr är den begärda tiden redan bokad.",
@@ -491,7 +494,7 @@
   "ListingPage.ownJob": "Det här är ditt jobb.",
   "ListingPage.ownJobDraft": "Det här jobbet är ett utkast.",
   "ListingPage.ownJobPendingApproval": "Det här jobbet väntar på godkännande.",
-  "ListingPage.ownClosedCompany": "Ditt företag är stängt och syns bara för dig.",
+  "ListingPage.ownClosedCompany": "Ditt företag är dolt.",
   "ListingPage.ownCompany": "Det här är ditt företag.",
   "ListingPage.ownCompanyDraft": "Företaget är ett utkast.",
   "ListingPage.ownCompanyPendingApproval": "Ditt företag väntar på godkännande.",

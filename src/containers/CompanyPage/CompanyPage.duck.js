@@ -39,6 +39,14 @@ export const SEND_ENQUIRY_REQUEST = 'app/ListingPage/SEND_ENQUIRY_REQUEST';
 export const SEND_ENQUIRY_SUCCESS = 'app/ListingPage/SEND_ENQUIRY_SUCCESS';
 export const SEND_ENQUIRY_ERROR = 'app/ListingPage/SEND_ENQUIRY_ERROR';
 
+export const OPEN_LISTING_REQUEST = 'app/ManageListingsPage/OPEN_LISTING_REQUEST';
+export const OPEN_LISTING_SUCCESS = 'app/ManageListingsPage/OPEN_LISTING_SUCCESS';
+export const OPEN_LISTING_ERROR = 'app/ManageListingsPage/OPEN_LISTING_ERROR';
+
+export const CLOSE_LISTING_REQUEST = 'app/ManageListingsPage/CLOSE_LISTING_REQUEST';
+export const CLOSE_LISTING_SUCCESS = 'app/ManageListingsPage/CLOSE_LISTING_SUCCESS';
+export const CLOSE_LISTING_ERROR = 'app/ManageListingsPage/CLOSE_LISTING_ERROR';
+
 // ================ Reducer ================ //
 
 const initialState = {
@@ -88,6 +96,54 @@ const listingPageReducer = (state = initialState, action = {}) => {
     case FETCH_LINE_ITEMS_ERROR:
       return { ...state, fetchLineItemsInProgress: false, fetchLineItemsError: payload };
 
+      case OPEN_LISTING_REQUEST:
+        return {
+          ...state,
+          openingListing: payload.listingId,
+          openingListingError: null,
+        };
+      case OPEN_LISTING_SUCCESS:
+        return {
+          ...updateListingAttributes(state, payload.data),
+          openingListing: null,
+        };
+      case OPEN_LISTING_ERROR: {
+        // eslint-disable-next-line no-console
+        console.error(payload);
+        return {
+          ...state,
+          openingListing: null,
+          openingListingError: {
+            listingId: state.openingListing,
+            error: payload,
+          },
+        };
+      }
+  
+      case CLOSE_LISTING_REQUEST:
+        return {
+          ...state,
+          closingListing: payload.listingId,
+          closingListingError: null,
+        };
+      case CLOSE_LISTING_SUCCESS:
+        return {
+          ...updateListingAttributes(state, payload.data),
+          closingListing: null,
+        };
+      case CLOSE_LISTING_ERROR: {
+        // eslint-disable-next-line no-console
+        console.error(payload);
+        return {
+          ...state,
+          closingListing: null,
+          closingListingError: {
+            listingId: state.closingListing,
+            error: payload,
+          },
+        };
+      }
+
     case SEND_ENQUIRY_REQUEST:
       return { ...state, sendEnquiryInProgress: true, sendEnquiryError: null };
     case SEND_ENQUIRY_SUCCESS:
@@ -103,6 +159,38 @@ const listingPageReducer = (state = initialState, action = {}) => {
 export default listingPageReducer;
 
 // ================ Action creators ================ //
+
+export const openListingRequest = listingId => ({
+  type: OPEN_LISTING_REQUEST,
+  payload: { listingId },
+});
+
+export const openListingSuccess = response => ({
+  type: OPEN_LISTING_SUCCESS,
+  payload: response.data,
+});
+
+export const openListingError = e => ({
+  type: OPEN_LISTING_ERROR,
+  error: true,
+  payload: e,
+});
+
+export const closeListingRequest = listingId => ({
+  type: CLOSE_LISTING_REQUEST,
+  payload: { listingId },
+});
+
+export const closeListingSuccess = response => ({
+  type: CLOSE_LISTING_SUCCESS,
+  payload: response.data,
+});
+
+export const closeListingError = e => ({
+  type: CLOSE_LISTING_ERROR,
+  error: true,
+  payload: e,
+});
 
 export const setInitialValues = initialValues => ({
   type: SET_INITIAL_VALUES,
@@ -212,6 +300,34 @@ export const fetchReviews = listingId => (dispatch, getState, sdk) => {
     })
     .catch(e => {
       dispatch(fetchReviewsError(storableError(e)));
+    });
+};
+
+export const closeListing = listingId => (dispatch, getState, sdk) => {
+  dispatch(closeListingRequest(listingId));
+
+  return sdk.ownListings
+    .close({ id: listingId }, { expand: true })
+    .then(response => {
+      dispatch(closeListingSuccess(response));
+      return response;
+    })
+    .catch(e => {
+      dispatch(closeListingError(storableError(e)));
+    });
+};
+
+export const openListing = listingId => (dispatch, getState, sdk) => {
+  dispatch(openListingRequest(listingId));
+
+  return sdk.ownListings
+    .open({ id: listingId }, { expand: true })
+    .then(response => {
+      dispatch(openListingSuccess(response));
+      return response;
+    })
+    .catch(e => {
+      dispatch(openListingError(storableError(e)));
     });
 };
 

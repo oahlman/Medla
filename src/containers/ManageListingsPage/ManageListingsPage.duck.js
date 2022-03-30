@@ -61,6 +61,7 @@ const updateListingAttributes = (state, listingEntity) => {
   };
 };
 
+
 const manageListingsPageReducer = (state = initialState, action = {}) => {
   const { type, payload } = action;
   switch (type) {

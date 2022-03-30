@@ -63,12 +63,12 @@
   @apply --marketplaceH4FontStyles;
   align-self: center;
   line-height: unset;
-  height: 17px;
+  height: fit-content;
   border: none;
   padding-top: 0;
   padding-bottom: 0;
   padding-left: 0px;
-  min-width: 100%;
+  width: 170px;
   /* Search text gets ellipsis if it's too wide */
   text-overflow: ellipsis;
   overflow-x: hidden;
@@ -197,6 +197,7 @@ border-radius: 20px;
 border-width:1px;
 box-shadow: 0 0 10px 2px rgba(0,0,0,0.025);
 height: fit-content;
+z-index: 1;
 
 
 @media (--viewportMedium) {
@@ -341,7 +342,6 @@ background: white;
     display:inherit;
   }
 }
-
 .displaySmall{
   display:none;
   @media (--viewportMedium) {
@@ -351,4 +351,5 @@ background: white;
     display:none;
   }
 }
+
 

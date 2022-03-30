@@ -334,8 +334,9 @@
   display: flex;
   box-shadow: 0 0 0 3px whitesmoke;
   outline-offset: -1px;
-  padding:1px;
-
+  padding:0px;
+  height: fit-content;
+  width: fit-content;
   @media (--viewportMedium) {
     display: none; /* Hide the medium avatar from the bigger screens */
   }
@@ -346,11 +347,12 @@
 
   @media (--viewportMedium) {
     outline-offset: -1px;
-    padding:1px;
+    padding:0px;
     display: flex;
     box-shadow: 0 0 0 3px whitesmoke;
-    height: 100px;
-    width: 100px;
+    height: fit-content;
+    width: fit-content;
+ 
 
 
   }

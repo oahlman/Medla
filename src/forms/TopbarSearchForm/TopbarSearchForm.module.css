@@ -63,7 +63,7 @@
   @apply --marketplaceH4FontStyles;
   align-self: center;
   line-height: unset;
-  height: 17px;
+  height: fit-content;
   border: none;
   padding-top: 0;
   padding-bottom: 0;

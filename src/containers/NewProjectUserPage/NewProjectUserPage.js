@@ -62,7 +62,7 @@ const NewProjectUserPage = () => {
               <p className={css.bannerSubtitle}>
                 <FormattedMessage id="NewProjectUserPage.newservice" ></FormattedMessage>
               </p>
-              <ExternalLink href="https://www.peerdigital.se/anslut-projekt" className={css.heroButtonTop}>
+              <ExternalLink href="mailto:info@medla.app?subject=Anslut%20projekt" className={css.heroButtonTop}>
                 <FormattedMessage id="NewProjectUserPage.connectProject" />
               </ExternalLink>
             </div>
@@ -101,7 +101,7 @@ const NewProjectUserPage = () => {
         <FormattedMessage id="SectionProjectGoals.titleLineTwoCTA" />
 
       </div>
-              <ExternalLink className={css.heroButtonTop} href="mailto:info@medla.app?subject=Komma%20ig%C3%A5ng%20med%20Medla">
+              <ExternalLink className={css.heroButtonTop} href="mailto:info@medla.app?subject=Kom%20ig%C3%A5ng%20med%20Medla%20-%20Anslut%20projekt">
               <FormattedMessage id="ConnectCompanyPage.connectProjectOwner" />
                   </ExternalLink>
       </div>  

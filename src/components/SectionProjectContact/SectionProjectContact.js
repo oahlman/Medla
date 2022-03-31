@@ -20,7 +20,7 @@ const SectionProjectContact = props => {
       <div className={css.subTitle}>
         <FormattedMessage id="SectionProjectContact.textLineOne" />
       </div>
-        <ExternalLink className={css.button} href="https://peerdigital.se/anslut-projekt"> 
+        <ExternalLink className={css.button} href="mailto:info@medla.app?subject=Anslut%20projekt"> 
         <FormattedMessage id="NewProjectUserPage.connectProjectOffer" />
         </ExternalLink>
    

@@ -117,7 +117,7 @@ const TopbarMobileMenu = props => {
           </ExternalLink>
 
           <ExternalLink
-            href='https://www.peerdigital.se/anslut-projekt'
+            href='mailto:info@medla.app?subject=Anslut%20projekt'
 
            className={css.navigationLinkDark}
             >

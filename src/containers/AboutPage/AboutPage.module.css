@@ -56,3 +56,10 @@
   margin-top: 32px;
   margin-bottom: 16px;
 }
+
+.divider {
+  width: 50%;
+  height: 1px;
+  background-color: var(--matterColorAnti);
+  margin: 64px auto;
+}

@@ -9,6 +9,7 @@ import {
   LayoutWrapperFooter,
   Footer,
   ExternalLink,
+  SectionFoundersNote,
 } from '../../components';
 
 import css from './AboutPage.module.css';
@@ -38,7 +39,7 @@ const AboutPage = () => {
 
           <div className={css.contentWrapper}>
             <div className={css.contentSide}>
-              <p>Medlas mål är att låsa upp lokala krafter som accelererar omställningen till hållbar energiproduktion.</p>
+              <p>Medlas mål är att låsa upp lokala krafter som accelererar omställningen till fossilfria samhällen.</p>
             </div>
 
             <div className={css.contentMain}>
@@ -47,7 +48,7 @@ const AboutPage = () => {
               </h2>
 
               <p>
-                Medla är en digital tjänst för lokal jobbförmedling i hållbara energiprojekt.
+                Medla är en digital tjänst för lokal jobbförmedling i gröna industriprojekt.
                 Med Medla kan företag och enskilda firmor enkelt visa upp sin verksamheter,
                 hitta relevanta jobbmöjligheter och påbörja affärsrelationer med aktörer i energisektorn.
                 För projektägare gör Medla det möjligt att nå ut till det lokala näringslivet och effektivisera planering,
@@ -59,15 +60,14 @@ const AboutPage = () => {
               </h2>
 
                 <p>
-                  Medla är sprunget ur ett mångårigt samarbete mellan Umeå Universitet och Energimyndigheten, och är en
-                vidareutveckling av den forskningsprototyp som arbetades fram av universitetet, Vindkraftcentrum,
-                Peer Digital och projektörer i vindkraftsektorn. Tjänsten drivs av Peer Digital med stöd av Medlas referensgrupp,
-                vilken utgörs av aktörer och nyckelintressenter i förnybar energi-sektorn. Forskningsprototypen drivs vidare av Umeå Universitet.
+                Medla bygger på forskning i informatik, digitalisering och landsbygdsutveckling, samt på användarpiloter i vindkraftbranschen. 
+                Medla och tillhörande tjänster tillhandahålls och utvecklas av Peer Digital Sweden AB med tillsammans med en referensgrupp av 
+                experter inom svenskt näringsliv och grön industri. 
                 </p>
 
               <p>
                 <h2>Våra mål</h2>
-                1. <strong>Underlätta</strong> utbyggnaden av hållbar energiproduktion i Sverige.
+                1. <strong>Underlätta</strong> utbyggnaden av fossilfri industri i Sverige.
                 <br></br>
                 2. <strong>Tillgängliggöra</strong> projekt så att lokala företag och samhällen kan dra nytta av investeringar i deras närhet.
                 <br></br>
@@ -75,13 +75,14 @@ const AboutPage = () => {
 
               </p>
 
-
               <h2>Kontakt</h2>
               <p>
               Har du frågor eller funderingar så når du oss på {''}
                 <ExternalLink href="mailto:info@medla.app">info@medla.app</ExternalLink>.
               </p>
-
+              <div className={css.divider}></div>
+              <SectionFoundersNote />
+              <div className={css.divider}></div>
             </div>
           </div>
         </LayoutWrapperMain>

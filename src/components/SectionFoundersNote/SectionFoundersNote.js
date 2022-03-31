@@ -1,6 +1,9 @@
 import React from 'react';
 import { FormattedMessage } from '../../util/reactIntl';
 import classNames from 'classnames';
+import { ExternalLink } from '../../components';
+import oskarImg from '../../assets/oskar.jpg';
+import adamImg from '../../assets/adam.jpg';
 import css from './SectionFoundersNote.module.css';
 
 
@@ -39,6 +42,24 @@ const SectionFoundersNote = props => {
           Initiativtagare till Medla</p>
          
           </div>
+
+          <div className={css.profiles}>
+            <div className={css.profile}>
+              <img className={css.profileImage} src={oskarImg} alt="Oskar Ahlman" />
+              <span>Oskar Ahlman</span>
+              <ExternalLink href="https://www.linkedin.com/in/oskar-ahlman/" className={null}>
+                <FormattedMessage id="SectionFoundersNote.linkedIn" />
+              </ExternalLink>
+            </div>
+            <div className={css.profile}>
+              <img className={css.profileImage} src={adamImg} alt="Adam Falkenberg" />
+              <span>Adam Falkenberg</span>
+              <ExternalLink href="https://www.linkedin.com/in/adam-falkenberg-2a98b1130/" className={null}>
+                <FormattedMessage id="SectionFoundersNote.linkedIn" />
+              </ExternalLink>
+            </div>
+          </div>
+
         </div>
 
 

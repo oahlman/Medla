@@ -56,6 +56,7 @@
 .stepTitle {
   margin-top: 0px;
   margin-bottom: 18px;
+  font-style: italic;
 
   @media (--viewportMedium) {
     margin-top: 0px;
@@ -93,4 +94,37 @@
   display: flex;
   justify-self: left;
   align-self: left;
+}
+
+.profiles {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  width: 100%;
+  padding-top:20px;
+
+  @media (--viewportMedium) {
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+}
+}
+
+.profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profileImage {
+  border: 5px solid #f2f2f2;
+  border-radius: 50%;
+  object-fit: cover;
+  width: 100px;
+  height: auto;
+
+  @media (--viewportMedium) {
+    width: 150px;
+}
 }

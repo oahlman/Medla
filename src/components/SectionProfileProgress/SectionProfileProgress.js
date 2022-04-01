@@ -1,7 +1,7 @@
 import React from 'react';
 import { array, bool, func, number, object, shape, string } from 'prop-types';
 import { compose } from 'redux';
-import { LISTING_PAGE_PENDING_APPROVAL_VARIANT, } from '../../util/urlHelpers';
+import { LISTING_PAGE_PENDING_APPROVAL_VARIANT, LISTING_PAGE_DRAFT_VARIANT, LISTING_PAGE_PARAM_TYPE_EDIT, createSlug, stringify } from '../../util/urlHelpers';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { propTypes } from '../../util/types';
@@ -10,7 +10,7 @@ import { NamedLink } from '..';
 import { sendVerificationEmail, hasCurrentUserErrors, verifyPhoneNumber } from '../../ducks/user.duck';
 import { logout, authenticationInProgress } from '../../ducks/Auth.duck';
 import { manageDisableScrolling } from '../../ducks/UI.duck';
-import { ensureCurrentUser } from '../../util/data';
+import { ensureCurrentUser, ensureOwnListing } from '../../util/data';
 import { FormattedMessage } from '../../util/reactIntl';
 import css from './SectionProfileProgress.module.css';
 import classNames from 'classnames';
@@ -18,6 +18,7 @@ import {
   MenuItem,
 
 } from '../../components';
+import ModalMissingAccountInformation from '../ModalMissingAccountInformation/ModalMissingAccountInformation';
 
 export const SectionProfileProgress = props => {
   const {
@@ -48,6 +49,8 @@ export const SectionProfileProgress = props => {
       page === 'AccountSettingsPage' && ACCOUNT_SETTINGS_PAGES.includes(currentPage);
     return currentPage === page || isAccountSettingsPage ? css.currentPage : null;
   };
+  const companyListing = currentUserCompanyListing && currentUserCompanyListing[0];
+  const listingLoaded = companyListing && companyListing.attributes;
   const user = ensureCurrentUser(currentUser);
   const transientUserProfileCategory = user.attributes.profile.publicData;
   const transientUserProfileAmenities = user.attributes.profile.publicData;
@@ -55,13 +58,44 @@ export const SectionProfileProgress = props => {
   const transientUserCategory = { ...user, category: transientUserProfileCategory };
   const transientUserAmenities = { ...user, amenities: transientUserProfileAmenities };
   const profileCategory = transientUserCategory;
+  const isPendingApprovalVariant = listingLoaded ? companyListing.attributes.state === LISTING_PAGE_PENDING_APPROVAL_VARIANT : null;
+  const isDraftVariant = listingLoaded ? companyListing.attributes.state === LISTING_PAGE_DRAFT_VARIANT : null;
+  const isVariant = isPendingApprovalVariant || isDraftVariant;
+
+  let companyPage = "ListingBasePage";
+  if (listingLoaded && isVariant) {
+    companyPage = "EditListingPage";
+  } else if (listingLoaded && !isVariant) {
+    companyPage = "EditListingPage";
+  }
+
+  let missingInformationText = 'ModalMissingInformation.companyImprovement';
+  let tab = 'description';
+  let missingInformation = true;
+  if (listingLoaded && companyListing.attributes.description === null) {
+    missingInformationText = 'ModalMissingInformation.description';
+    tab = 'description';
+  } else if (listingLoaded && !companyListing.attributes.publicData.offer1) {
+    missingInformationText = 'ModalMissingInformation.services';
+    tab = 'pricing';
+  } else if (listingLoaded && !companyListing.attributes.publicData.category) {
+    missingInformationText = 'ModalMissingInformation.businessAreas';
+    tab = 'policy';
+  } else if (listingLoaded && !companyListing.attributes.publicData.companyNumber) {
+    missingInformationText = 'ModalMissingInformation.organisation';
+    tab = 'location';
+  } else {
+    missingInformationText = 'ModalMissingInformation.photos';
+    tab = 'photos';
+    missingInformation = false;
+  }
 
   const profileAmenities = transientUserAmenities;
   const profileImageId = user.profileImage ? user.profileImage.id : null;
   const profileImage = image || { imageId: profileImageId };
-  const companyListing = currentUserCompanyListing && currentUserCompanyListing[0];
-  const companyPage = companyListing ? "CompanyPageVariant" : "ListingBasePage";
-  const companyParams = companyListing ? { slug: companyListing.attributes.title.replace(/\s+/g, '-').toLowerCase(), id: companyListing.id.uuid, variant: LISTING_PAGE_PENDING_APPROVAL_VARIANT } : "";
+  console.log('user', user, 'listing', companyListing);
+  const companyParams = listingLoaded ? { slug: createSlug(companyListing.attributes.title), id: companyListing.id.uuid, variant: LISTING_PAGE_PENDING_APPROVAL_VARIANT, type: LISTING_PAGE_PARAM_TYPE_EDIT, tab: tab } : "";
+  
 
 
   const categoryNumber = profileCategory.id && user.attributes.profile.publicData.category;
@@ -155,16 +189,17 @@ export const SectionProfileProgress = props => {
           </div>
           </NamedLink>
 
-          <NamedLink className={css.progressCard3}  name={companyPage}
+          <NamedLink className={css.progressCard3}  
+            name={companyPage}
             params={companyParams}  >
-          <div className={css.pendingEmailUnverified}>
-            <FormattedMessage id="ModalMissingInformation.companyImprovement" />
+          <div className={missingInformation ? css.pendingEmailUnverified : css.emailVerified}>
+            <FormattedMessage id={missingInformationText} />
             <br></br>
               <NamedLink   className={classNames(css.settingsLink, currentPageClass('ProfilePage'))}
             name={companyPage}
             params={companyParams}
               >
-                  <FormattedMessage id="SectionProfileProgress.editListingLink" />
+                  <FormattedMessage id={missingInformation ? "SectionProfileProgress.fixLink" : "SectionProfileProgress.changeLink"} />
               </NamedLink>
 
           </div>

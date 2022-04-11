@@ -32,14 +32,12 @@ const defaultDirectives = {
     '*.sentry.io',
     '*.stripe.com',
     'www.googletagmanager.com',
-    'connect.facebook.net',
     'https://translation.googleapis.com/language/translate/v2',
   ],
   fontSrc: [self, data, 'assets-sharetribecom.sharetribe.com', 'fonts.gstatic.com'],
   frameSrc: [
     self, 
     '*.stripe.com',
-    'www.facebook.com',
   ],
   imgSrc: [
     self,
@@ -66,8 +64,6 @@ const defaultDirectives = {
     'www.googletagmanager.com',
 
     '*.stripe.com',
-    'www.facebook.com',
-    'connect.facebook.net',
   ],
   scriptSrc: [
     self,
@@ -79,7 +75,6 @@ const defaultDirectives = {
     '*.google-analytics.com',
     'js.stripe.com',
     'www.googletagmanager.com',
-    'connect.facebook.net',
   ],
   styleSrc: [self, unsafeInline, 'fonts.googleapis.com', 'api.mapbox.com'],
 };

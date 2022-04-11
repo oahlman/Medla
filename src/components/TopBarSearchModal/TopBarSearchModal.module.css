@@ -17,7 +17,7 @@
 
 .questionCard {
   @apply --marketplaceH4FontStyles;
-  display: flex;
+  display: none;
   flex-wrap: wrap;
   justify-content: left;
   width: 100%;
@@ -39,7 +39,7 @@
 
 
   @media (--viewportMedium) {
-  
+     display: flex;
     margin-right: 0px;
     width: 190px;
 

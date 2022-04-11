@@ -248,7 +248,6 @@ export const signup = params => (dispatch, getState, sdk) => {
     return sdk.ownListings
     .create({
       title: params.companyName,
-      description: params.companyName,
       geolocation: new LatLng (lat, lng),
       publicData: {
         contactNumber: params.email,

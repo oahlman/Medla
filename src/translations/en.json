@@ -581,6 +581,11 @@
   "ModalMissingInformation.profileCategoryStatus": "You have selected alerts.",
   "ModalMissingInformation.profileCategoryStatusNull": "Select your alerts.",
   "ModalMissingInformation.companyImprovement": "Update Company Description.",
+  "ModalMissingInformation.description": "Add Business Description.",
+  "ModalMissingInformation.services": "Add what services you offer.",
+  "ModalMissingInformation.businessAreas": "Enter your industries.",
+  "ModalMissingInformation.organisation": "Fill in your organization number.",
+  "ModalMissingInformation.photos": "You have described the company.",
 
   "ModalMissingAccountInformation.closeVerifyEmailReminder": "Close",
   "Marketplace.config.key.labelCompanies": "Companies",

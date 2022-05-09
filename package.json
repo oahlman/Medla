@@ -23,7 +23,7 @@
     "cors": "^2.8.5",
     "decimal.js": "10.3.1",
     "dotenv": "6.2.0",
-    "dotenv-expand": "4.2.0",
+    "dotenv-expand": "8.0.3",
     "express": "^4.17.1",
     "express-enforces-ssl": "^1.1.0",
     "express-openid-connect": "^2.7.2",

@@ -3411,13 +3411,6 @@ axe-core@^4.0.2:
   resolved "https://registry.npmjs.org/axe-core/-/axe-core-4.0.2.tgz"
   integrity sha512-arU1h31OGFu+LPrOLGZ7nB45v940NMDMEJeNmbutu57P+UFDVnkZg3e+J1I2HJRZ9hT7gO8J91dn/PMrAiKakA==
 
-axios@^0.19.0:
-  version "0.19.2"
-  resolved "https://registry.npmjs.org/axios/-/axios-0.19.2.tgz"
-  integrity sha512-fjgm5MvRHLhx+osE2xoekY70AhARk3a6hkN+3Io1jc00jtquGvxYlKlsFUhmUET0V5te6CcZI7lcv2Ym61mjHA==
-  dependencies:
-    follow-redirects "1.5.10"
-
 axios@^0.21.1:
   version "0.21.4"
   resolved "https://registry.npmjs.org/axios/-/axios-0.21.4.tgz"
@@ -5027,13 +5020,6 @@ debug@4, debug@^4.0.1, debug@^4.1.0, debug@^4.1.1, debug@^4.3.3:
   dependencies:
     ms "2.1.2"
 
-debug@=3.1.0:
-  version "3.1.0"
-  resolved "https://registry.npmjs.org/debug/-/debug-3.1.0.tgz"
-  integrity sha512-OX8XqP7/1a9cqkxYw2yXss15f26NKWBpDXQd0/uK/KPqdQhxbPa994hnzjcE2VqQpDslf55723cKPUOGSmMY3g==
-  dependencies:
-    ms "2.0.0"
-
 debug@^3.1.1, debug@^3.2.5, debug@^3.2.6:
   version "3.2.6"
   resolved "https://registry.npmjs.org/debug/-/debug-3.2.6.tgz"
@@ -6472,13 +6458,6 @@ flush-write-stream@^1.0.0:
   dependencies:
     inherits "^2.0.3"
     readable-stream "^2.3.6"
-
-follow-redirects@1.5.10:
-  version "1.5.10"
-  resolved "https://registry.npmjs.org/follow-redirects/-/follow-redirects-1.5.10.tgz"
-  integrity sha512-0V5l4Cizzvqt5D44aTXbFZz+FtyXV1vrDN6qrelxtfYQKW0KO0W2T/hkE8xvGa/540LkZlkaUjO4ailYTFtHVQ==
-  dependencies:
-    debug "=3.1.0"
 
 follow-redirects@^1.0.0:
   version "1.13.0"
@@ -12581,10 +12560,10 @@ shallowequal@^1.1.0:
   resolved "https://registry.npmjs.org/shallowequal/-/shallowequal-1.1.0.tgz"
   integrity sha512-y0m1JoUZSlPAjXVtPPW70aZWfIL/dSP7AFkRnniLCrK/8MDKog3TySTBmckD+RObVxH0v4Tox67+F14PdED2oQ==
 
-sharetribe-flex-integration-sdk@^1.6.1:
-  version "1.6.1"
-  resolved "https://registry.npmjs.org/sharetribe-flex-integration-sdk/-/sharetribe-flex-integration-sdk-1.6.1.tgz"
-  integrity sha512-jej5xQ1l1lkaHzlaXQR82FWW16eEVCzMWAOgCSF4CKqD6uOqYsdb/Q1p/r/DBPaRKHkBs+kAdbrMd7cyzDQo4w==
+sharetribe-flex-integration-sdk@^1.8.0:
+  version "1.8.0"
+  resolved "https://registry.yarnpkg.com/sharetribe-flex-integration-sdk/-/sharetribe-flex-integration-sdk-1.8.0.tgz#f12eb2a1c2609042c1176d1f4b0125c9be43d9d3"
+  integrity sha512-7N42ET7Mjygu25Cvny1I2MtBrw0Ad+WE+CCIHrFx1/mf4JaEjH/YSJiljvqgpNh6dlykfPwcobqrlFtVYVl7nw==
   dependencies:
     axios "^0.21.1"
     env-paths "^2.2.0"
@@ -12593,12 +12572,12 @@ sharetribe-flex-integration-sdk@^1.6.1:
     transit-js "^0.8.861"
     xdg-basedir "^4.0.0"
 
-sharetribe-flex-sdk@1.13.0:
-  version "1.13.0"
-  resolved "https://registry.npmjs.org/sharetribe-flex-sdk/-/sharetribe-flex-sdk-1.13.0.tgz"
-  integrity sha512-g8+Cx2m2TF/iUemYs97qWaJ2NdfCqiocm+tU5zC9RuSWMOY0eZ0NA8G6kg7/2EVzrZZJqDsNofdS4k2nkZ7p4w==
+sharetribe-flex-sdk@1.16.0:
+  version "1.16.0"
+  resolved "https://registry.yarnpkg.com/sharetribe-flex-sdk/-/sharetribe-flex-sdk-1.16.0.tgz#12f37265a611d4f9de9155140bf9e1583d0861e4"
+  integrity sha512-+HzJrTIg+lDO0Uio8mlx0KIpC6AheLnq8dPpqnifQ1cDCUJwSpIYXDuiytKASfB7ZGsmfdBuw/dLC+FF2CpuTQ==
   dependencies:
-    axios "^0.19.0"
+    axios "^0.21.1"
     js-cookie "^2.1.3"
     lodash "^4.17.10"
     transit-js "^0.8.861"

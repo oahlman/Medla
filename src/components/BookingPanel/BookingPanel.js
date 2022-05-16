@@ -9,7 +9,7 @@ import { propTypes, LISTING_STATE_CLOSED, LINE_ITEM_NIGHT, LINE_ITEM_DAY } from 
 import { formatMoney } from '../../util/currency';
 import { parse, stringify } from '../../util/urlHelpers';
 import config from '../../config';
-import { ModalInMobile, Button } from '../../components';
+import { ModalInMobile, Button, ExternalLink } from '../../components';
 import { BookingDatesForm } from '../../forms';
 
 import css from './BookingPanel.module.css';
@@ -74,6 +74,8 @@ const BookingPanel = props => {
   const price = listing.attributes.price;
   const hasListingState = !!listing.attributes.state;
   const isClosed = hasListingState && listing.attributes.state === LISTING_STATE_CLOSED;
+  const isExternal = !!listing.attributes.publicData.externalLink;
+  const externalLink = listing.attributes.publicData.externalLink;
   const showBookingDatesForm = hasListingState && !isClosed;
   const showClosedListingHelpText = listing.id && isClosed;
   const { formattedPrice, priceTitle } = priceData(price, intl);
@@ -82,8 +84,8 @@ const BookingPanel = props => {
   const subTitleText = !!subTitle
     ? subTitle
     : showClosedListingHelpText
-    ? intl.formatMessage({ id: 'BookingPanel.subTitleClosedListing' })
-    : null;
+      ? intl.formatMessage({ id: 'BookingPanel.subTitleClosedListing' })
+      : null;
 
   const isNightly = unitType === LINE_ITEM_NIGHT;
   const isDaily = unitType === LINE_ITEM_DAY;
@@ -91,11 +93,13 @@ const BookingPanel = props => {
   const unitTranslationKey = isNightly
     ? 'BookingPanel.perNight'
     : isDaily
-    ? 'BookingPanel.perDay'
-    : 'BookingPanel.perUnit';
+      ? 'BookingPanel.perDay'
+      : 'BookingPanel.perUnit';
 
   const classes = classNames(rootClassName || css.root, className);
   const titleClasses = classNames(titleClassName || css.bookingTitle);
+
+  console.log('externalLink', externalLink);
 
   return (
     <div className={classes}>
@@ -137,7 +141,6 @@ const BookingPanel = props => {
         ) : null}
       </ModalInMobile>
       <div className={css.openBookingForm}>
-
         {showBookingDatesForm ? (
           <Button
             rootClassName={css.bookButton}
@@ -151,6 +154,12 @@ const BookingPanel = props => {
           </div>
         ) : null}
       </div>
+      {isExternal ? (
+      <ExternalLink href={externalLink} rootClassName={css.bookButton}>
+        <Button>
+          <FormattedMessage id="BookingPanel.ctaButtonMessage" />
+        </Button>
+      </ExternalLink>) : null}
     </div>
   );
 };

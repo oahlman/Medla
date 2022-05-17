@@ -126,7 +126,7 @@ const BookingPanel = props => {
           <BookingDatesForm
             className={css.bookingForm}
             formId="BookingPanel"
-            submitButtonWrapperClassName={css.bookingDatesSubmitButtonWrapper}
+            submitButtonWrapperClassName={!isExternal ? css.bookingDatesSubmitButtonWrapper : css.hidden}
             unitType={unitType}
             onSubmit={onSubmit}
             listingId={listing.id}
@@ -140,7 +140,7 @@ const BookingPanel = props => {
           />
         ) : null}
       </ModalInMobile>
-      <div className={css.openBookingForm}>
+      <div className={!isExternal ? css.openBookingForm : css.hidden}> 
         {showBookingDatesForm ? (
           <Button
             rootClassName={css.bookButton}
@@ -157,7 +157,7 @@ const BookingPanel = props => {
       {isExternal ? (
       <ExternalLink href={externalLink} rootClassName={css.bookButton}>
         <Button>
-          <FormattedMessage id="BookingPanel.ctaButtonMessage" />
+          <FormattedMessage id="BookingPanel.externalCtaButtonMessage" />
         </Button>
       </ExternalLink>) : null}
     </div>

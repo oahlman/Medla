@@ -118,6 +118,7 @@
   position: fixed;
   bottom: 0;
   background-color: var(--matterColorLight);
+ 
 
   @media (--viewportMedium) {
     padding: 0;
@@ -203,4 +204,9 @@
   width: 100%;
   padding: 15px 24px 15px 24px;
   text-align: center;
+}
+
+.hidden {
+display:none;
+
 }

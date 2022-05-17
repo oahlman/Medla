@@ -95,6 +95,7 @@
   "BookingDateRangeFilter.labelSelectedPopup": "{dates}",
   "BookingPanel.closedListingButtonText": "Sorry, the list has been closed.",
   "BookingPanel.ctaButtonMessage": "Answer Job",
+  "BookingPanel.externalCtaButtonMessage": "Go to advert",
   "BookingPanel.hostedBy": "Jobs from {name}",
   "BookingPanel.contactCompanyName": "Contact {name}",
   "BookingPanel.contactCopanyDisclaimer": "You do not commit to anything with a request",

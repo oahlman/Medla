@@ -95,6 +95,7 @@
   "BookingDateRangeFilter.labelSelectedPopup": "{dates}",
   "BookingPanel.closedListingButtonText": "Tyvärr, listan har stängts.",
   "BookingPanel.ctaButtonMessage": "Besvara jobb",
+  "BookingPanel.externalCtaButtonMessage": "Gå till annons",
   "BookingPanel.hostedBy": "Jobb från {name}",
   "BookingPanel.contactCompanyName": "Kontakta {name}",
   "BookingPanel.contactCopanyDisclaimer": "Du förbinder dig inte till något med en förfrågan",

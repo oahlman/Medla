@@ -229,8 +229,6 @@ export class ListingPageComponent extends Component {
 
         const isExternal = !!currentListing.attributes.publicData.externalLink;
 
-        console.log('isExternal', isExternal)
-
     const listingSlug = rawParams.slug || createSlug(currentListing.attributes.title || '');
     const params = { slug: listingSlug, ...rawParams };
 

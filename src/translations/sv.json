@@ -465,6 +465,7 @@
   "PreviewAccessBanner.contact": "Kontakt",
   "ListingCard.NoAddress": "Adress saknas",
   "ListingCard.NoProjekt": "Inget projekt valt",
+  "ListingCard.NoLocation": "Ingen plats",
   "ListingCard.perDay": "per dag",
   "ListingCard.perNight": "per natt",
   "ListingCard.perUnit": "per enhet",

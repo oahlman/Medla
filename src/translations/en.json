@@ -466,6 +466,7 @@
   "PreviewAccessBanner.contact": "Contact",
   "ListingCard.NoAddress": "Missing address",
   "ListingCard.NoProjekt": "No project selected",
+  "ListingCard.NoLocation": "No location selected",
   "ListingCard.perDay": "per day",
   "ListingCard.perNight": "per night",
   "ListingCard.perUnit": "per device",

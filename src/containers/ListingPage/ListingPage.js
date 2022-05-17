@@ -228,6 +228,8 @@ export class ListingPageComponent extends Component {
         : ensureListing(getListing(listingId));
 
         const isExternal = !!currentListing.attributes.publicData.externalLink;
+        const isOwner = currentListing.attributes.publicData.owner;
+
 
     const listingSlug = rawParams.slug || createSlug(currentListing.attributes.title || '');
     const params = { slug: listingSlug, ...rawParams };
@@ -394,7 +396,7 @@ export class ListingPageComponent extends Component {
         params={params}
         to={{ hash: '#host' }}
       >
-      {!isExternal ? authorDisplayName : 'External'}
+      {!isExternal ? authorDisplayName : isOwner}
       
       </NamedLink>
     );

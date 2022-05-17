@@ -75,6 +75,7 @@ const BookingPanel = props => {
   const hasListingState = !!listing.attributes.state;
   const isClosed = hasListingState && listing.attributes.state === LISTING_STATE_CLOSED;
   const isExternal = !!listing.attributes.publicData.externalLink;
+
   const externalLink = listing.attributes.publicData.externalLink;
   const showBookingDatesForm = hasListingState && !isClosed;
   const showClosedListingHelpText = listing.id && isClosed;

@@ -35,6 +35,8 @@ export const ListingCardComponent = props => {
   const id = currentListing.id.uuid;
   const { title = '', publicData, description } = currentListing.attributes;
   const slug = createSlug(title);
+  const isExternal = !!listing.attributes.publicData.externalLink;
+console.log('isExternal', isExternal)
   const author = ensureUser(listing.author);
   const authorName = author.attributes.profile.displayName;
   const firstImage =
@@ -103,8 +105,9 @@ export const ListingCardComponent = props => {
          <div className={isEmbedded ? css.containerTopHalfEmbed : css.containerTopHalf}>
 
          <div className={css.authorContainer}>
+           
             <div className={css.author}>
-            {authorName}
+            {!isExternal ? authorName : 'External'}
             </div>
             </div>
 

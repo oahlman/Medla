@@ -101,7 +101,9 @@ export class ListingPageComponent extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.onContactUser = this.onContactUser.bind(this);
     this.onSubmitEnquiry = this.onSubmitEnquiry.bind(this);
+    
   }
+  
 
   handleSubmit(values) {
     const {
@@ -224,6 +226,10 @@ export class ListingPageComponent extends Component {
       isPendingApprovalVariant || isDraftVariant
         ? ensureOwnListing(getOwnListing(listingId))
         : ensureListing(getListing(listingId));
+
+        const isExternal = !!currentListing.attributes.publicData.externalLink;
+
+        console.log('isExternal', isExternal)
 
     const listingSlug = rawParams.slug || createSlug(currentListing.attributes.title || '');
     const params = { slug: listingSlug, ...rawParams };
@@ -390,7 +396,8 @@ export class ListingPageComponent extends Component {
         params={params}
         to={{ hash: '#host' }}
       >
-        {authorDisplayName}
+      {!isExternal ? authorDisplayName : 'External'}
+      
       </NamedLink>
     );
 

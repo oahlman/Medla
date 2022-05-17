@@ -1,15 +1,20 @@
 import React from 'react';
 import { FormattedMessage } from '../../util/reactIntl';
 import { PropertyGroup } from '../../components';
-
+import { ensureListing } from '../../util/data';
 import css from './ListingPage.module.css';
 
+
+
 const SectionRulesMaybe = props => {
+  
+
+
   const { options, publicData } = props;
   if (!publicData) {
     return null;
   }
-
+ 
   const selectedOptions = publicData && publicData.category ? publicData.category : [];
   return (
     <div className={css.sectionFeatures}>

@@ -72,7 +72,7 @@ export const ListingCardComponent = props => {
 
   //Display listing address if "Other project" is selected
   const projectLocation = projectLabel(amenities, publicData.amenities === 'other' ? publicData.location.address : publicData.amenities);
-  const externalRegion = currentListing.attributes.publicData.owner;
+  const externalRegion = currentListing.attributes.publicData.address.region;
 
   const externalWithFallback = externalRegion ? externalRegion : <FormattedMessage id="ListingCard.NoLocation" />;
   const internalWithFallback = projectLocation ? projectLocation : <FormattedMessage id="ListingCard.NoProjekt" />;

@@ -100,7 +100,7 @@ class NotificationSettingsFormComponent extends Component {
 
           const notificationOptions = [
             { key: 'email', label: 'E-post' },
-            { key: 'sms', label: 'Sms' },
+            
           ];
           const amenitiesOptions = findOptionsForSelectFilter('amenities', filterConfig);
 

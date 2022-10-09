@@ -64,32 +64,8 @@ export const filters = [
       // to make filter customizations a bit easier.
       options: [
         {
-          key: 'bjornberget',
-          label: 'Björnberget',
-        },
-        {
-          key: 'bleka',
-          label: 'Bleka',
-        },
-        {
-          key: 'hocksjon',
-          label: 'Hocksjön',
-        },
-        {
-          key: 'kolvallen',
-          label: 'Kölvallen',
-        },
-        {
-          key: 'kabeko',
-          label: 'Kabeko',
-        },
-        {
-          key: 'stollsaterberget',
-          label: 'Stöllsäterberget',
-        },
-        {
-          key: 'stormossen',
-          label: 'Stormossen',
+          key: 'tomasliden',
+          label: 'Tomasliden',
         },
         {
           key: 'other',

@@ -41,10 +41,10 @@ const LoginFormComponent = props => (
 
       // username
       const usernameLabel = intl.formatMessage({
-        id: 'SignupForm.usernameLabel',
+        id: 'LoginForm.usernameLabel',
       });
       const usernamePlaceholder = intl.formatMessage({
-        id: 'SignupForm.usernamePlaceholder',
+        id: 'LoginForm.usernamePlaceholder',
       });
       const usernameRequiredMessage = intl.formatMessage({
         id: 'SignupForm.usernameRequired',

@@ -401,7 +401,7 @@
 
 
   @media (--viewportMedium) {
-    width: 300px;
+    width: 100%;
     margin-left: 24px;
   }
 }

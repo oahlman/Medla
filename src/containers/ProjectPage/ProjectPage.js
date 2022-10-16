@@ -317,20 +317,7 @@ export class ProjectPageComponent extends Component {
                     <div className={statusArrow}></div>
                     <div className={statusText}> <b>{status}</b><br></br>{statusDescription}</div>
                   </div>
-                  <ul className={css.items}>
-                    <li><b>Projektnamn</b> {projectData.Projektnamn}</li>
-                    <li><b>Projektör</b> {projectData.Verksamhetsutövare}</li>
-                    <li><b>Aktuella verk</b> {projectData.Aktuella_verk}</li>
-                    <li><b>Ej koordinatsatta verk</b> {projectData.Antal_ej_koordinatsatta_verk}</li>
-                    <li><b>Beräknad årsproduktion</b> {projectData.Beräknad_årsproduktion_GWh} GWh</li>
-                    <li><b>Uppmätt årsproduktion</b> {projectData.Uppmätt_årsproduktion_GWh} GWh</li>
-                    <li><b>Planerad byggstart</b> {projectData.Planerad_byggstart}</li>
-                    <li><b>Planerat drifttagande</b> {projectData.Planerat_drifttagande}</li>
-                    <li><b>Återkallat eller ej aktuellt</b> {projectData.Området_ej_aktuellt_i_sin_helhet}</li>
-                    <li><b>Kommun</b> {projectData.Kommun}</li>
-                    <li><b>Län</b> {projectData.Län}</li>
-                    <li><b>Elområde</b> {projectData.Elområde}</li>
-                  </ul>
+                 
                 </div>
               </div>
             </div>

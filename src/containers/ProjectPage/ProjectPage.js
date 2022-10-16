@@ -203,8 +203,8 @@ export class ProjectPageComponent extends Component {
               <h1 className={css.projectTitle} >{projectData.Projektnamn}</h1>
               <p className={css.updatedDate}>Uppdaterad {projectData.Senast_sparad}</p>
                 <p>{projectData.about}</p>
-                <div id="followProjectButton" className={css.step}>
-                  <NamedLink
+                <div  className={css.step}>
+                  <NamedLink id="followProjectButton"
                     name="NotificationSettingsPage"
                     className={userIsSubscribed ? css.following : css.follow}
                   >
@@ -212,7 +212,7 @@ export class ProjectPageComponent extends Component {
                   </NamedLink>
                 </div>
                 <div className={css.step}>
-                  <NamedLink className={css.following}
+                  <NamedLink id="followProjectButton" className={css.following}
                     name="SearchPage"
                     to={{
                       search: `?address=${projectData.Projektnamn}&bounds=${projectData.ne},${projectData.sw}&pub_listingCategory=company&sort=meta_rating`,

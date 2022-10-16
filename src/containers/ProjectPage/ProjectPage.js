@@ -204,6 +204,7 @@ export class ProjectPageComponent extends Component {
               <p className={css.updatedDate}>Uppdaterad {projectData.Senast_sparad}</p>
                 <p>{projectData.about}</p>
                 <div   className={css.step}>
+                  
                   <NamedLink id="followProjectButton"
                   
                     name="NotificationSettingsPage"

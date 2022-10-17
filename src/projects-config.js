@@ -52,9 +52,9 @@ export const medlaProjects = [
 
     image: lillmossenImg, 
     lat: 64.91414804,
-    lng: 19.48307701,
-    ne: '63.96074168,17.70965133',
-    sw: '60.28740006,13.58712057',
+    lng: 19.48307701,  
+    ne: '65.170231,19.834797',
+    sw: '64.638342,18.847158',
     about: 'wpd planerar att uppföra 10 vindkraftverk med 200 m totalhöjd på Tomasliden. Projektområdet ligger i Norsjö kommun, cirka 10 km väster om Bastuträsk och 20 km sydost om samhället Norsjö.',
     externalLink: 'https://www.wpd.se/aktuella-projekt/vindkraft-pa-land/tomasliden/',
 

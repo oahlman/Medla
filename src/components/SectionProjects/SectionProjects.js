@@ -30,6 +30,7 @@ const hocksjon = projects[projects.findIndex(id => id.id === 'hocksjon')];
 const gronhult = projects[projects.findIndex(id => id.id === 'gronhult')];
 const blaklidenfabodberget = projects[projects.findIndex(id => id.id === 'blaklidenfabodberget')];
 const kabeko = projects[projects.findIndex(id => id.id === 'kabeko')];
+const tomasliden = projects[projects.findIndex(id => id.id === 'tomasliden')];
 
 const locationLink = (title, subtitle, status, link, logo) => {
 

@@ -164,7 +164,7 @@ export class ProjectPageComponent extends Component {
     let postJobMaybe = null;
     let findCompanyMaybe = null;
 
-    if (new Date(projectData.Planerad_byggstart) < new Date()) {
+    if (new Date(projectData.Planerad_byggstart) > new Date()) {
       statusCard = css.statusCardPlanning;
       statusArrow = css.statusArrowPlanning;
       statusText = css.statusTextPlanning;
@@ -173,7 +173,7 @@ export class ProjectPageComponent extends Component {
       jobSectionMaybe = jobSection;
       companySectionMaybe = companySection;
       postJobMaybe = sectionPostJob;
-    } else if (new Date(projectData.Planerad_byggstart) > new Date() && new Date(projectData.Planerat_drifttagande) < new Date()) {
+    } else if (new Date(projectData.Planerad_byggstart) < new Date() && new Date(projectData.Planerat_drifttagande) > new Date()) {
       statusCard = css.statusCardBuilding;
       statusArrow = css.statusArrowBuilding;
       statusText = css.statusTextBuilding;
@@ -182,7 +182,7 @@ export class ProjectPageComponent extends Component {
       jobSectionMaybe = jobSection;
       companySectionMaybe = companySection;
       postJobMaybe = sectionPostJob;
-    } else if (new Date(projectData.Planerat_drifttagande) > new Date()) {
+    } else if (new Date(projectData.Planerat_drifttagande) < new Date()) {
       statusCard = css.statusCardRunning;
       statusArrow = css.statusArrowRunning;
       statusText = css.statusTextRunning;
@@ -192,6 +192,8 @@ export class ProjectPageComponent extends Component {
       companySectionMaybe = companySection;
       postJobMaybe = sectionPostJob;
     }
+
+    console.log('status:', new Date(projectData.Planerad_byggstart), 'Date', new Date());
 
     const projectPageMedla = (
       <div>

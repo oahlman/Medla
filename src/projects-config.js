@@ -46,7 +46,7 @@ export const medlaProjects = [
     Kommun: "Norsjö",
     Län: "Västerbottens län",
     Elområde: "Luleå",
-    Senast_sparad: "Jun 11, 2021",
+    Senast_sparad: "Oct 17, 2022",
 
     // Medla config
 

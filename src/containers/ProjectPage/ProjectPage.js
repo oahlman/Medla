@@ -205,9 +205,9 @@ export class ProjectPageComponent extends Component {
               <h1 className={css.projectTitle} >{projectData.Projektnamn}</h1>
               <p className={css.updatedDate}>Uppdaterad {projectData.Senast_sparad}</p>
                 <p>{projectData.about}</p>
-                <div   className={css.step}>
-                  
-                  <NamedLink id="followProjectButton"
+                <div className={css.step}  id="followProjectButton">
+    
+                  <NamedLink 
                   
                     name="NotificationSettingsPage"
                     className={userIsSubscribed ? css.following : css.follow}
@@ -215,7 +215,7 @@ export class ProjectPageComponent extends Component {
                     <span className={userIsSubscribed ? css.followingText : css.followText}><FormattedMessage id={userIsSubscribed ? "ProjectPage.followingProject" : "ProjectPage.followProject"} /></span>
                   </NamedLink>
                 </div>
-                <div  className={css.step}>
+                <div  className={css.step} >
                   <NamedLink className={css.following}
                     name="SearchPage"
                     to={{

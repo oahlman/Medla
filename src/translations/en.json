@@ -648,6 +648,7 @@
   "NotificationSettingsForm.notifyVia": "Notify me via",
   "NotificationSettingsForm.projectHeadlineLabel": "Projects",
   "NotificationSettingsForm.industriesLabel": "Industries",
+  "NotificationSettingsForm.notifyNewProjectsLabel": "Notify me of new projects on Medla",
 
   "NotificationSettingsPage.title": "Alerts",
   "NotFoundPage.description": "We could not find the page or job you are looking for. Please make sure you have entered the URL correctly.",

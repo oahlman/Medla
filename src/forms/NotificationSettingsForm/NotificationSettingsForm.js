@@ -97,6 +97,7 @@ class NotificationSettingsFormComponent extends Component {
           const notifyVia = <FormattedMessage id="NotificationSettingsForm.notifyVia" />;
           const projectHeadlineLabel = <FormattedMessage id="NotificationSettingsForm.projectHeadlineLabel" />;
           const industriesLabel = <FormattedMessage id="NotificationSettingsForm.industriesLabel" />;
+          const notifyNewProjectsLabel = <FormattedMessage id="NotificationSettingsForm.notifyNewProjectsLabel" />;
 
           const notificationOptions = [
             { key: 'email', label: 'E-post' },
@@ -144,7 +145,7 @@ class NotificationSettingsFormComponent extends Component {
                     className={css.features}
                     id="notifyNewProjects"
                     name="notifyNewProjects"
-                    label="Notifiera mig om nya projekt på Medla"
+                    label={notifyNewProjectsLabel}
                     defaultValue='true'
                     twoColumns={true}
 

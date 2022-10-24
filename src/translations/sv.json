@@ -648,6 +648,7 @@
   "NotificationSettingsForm.notifyVia": "Notifiera mig via",
   "NotificationSettingsForm.projectHeadlineLabel": "Projekt",
   "NotificationSettingsForm.industriesLabel": "Branscher",
+  "NotificationSettingsForm.notifyNewProjectsLabel": "Notifiera mig om nya projekt på Medla",
 
   "NotFoundPage.description": "Vi kan inte hitta sidan eller jobbet du letar efter. Kontrollera att du har skrivit in webbadressen korrekt.",
   "NotFoundPage.heading": "Vi kunde tyvärr inte hitta den sidan.",

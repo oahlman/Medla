@@ -72,6 +72,22 @@ const medlaProjectPaths = medlaProjects.map(p => (
       loadData: params => pageDataLoadingAPI.ProjectPage.loadData({ ...params, projectId: p.Områdes_ID })
     }
 ));
+const medlaProjectPathsEn = medlaProjects.map(p => (
+  {
+    path: `/en/${p.Projektnamn
+      .replace(/\s+/g, '-')
+      .toLowerCase()
+      .replace(/å/g, 'a')
+      .replace(/ä/g, 'a')
+      .replace(/ö/g, 'o')
+      .replace(/\W/g, "-")}`,
+      name: `/${p.Projektnamn
+        .replace(/\W/g, "-")}`,
+    component: ProjectPage,
+    extraProps: { projectId: p.Områdes_ID },
+    loadData: params => pageDataLoadingAPI.ProjectPage.loadData({ ...params, projectId: p.Områdes_ID })
+  }
+));
 const medlaProjectEmbedPaths = medlaProjects.map(p => (
   {
     path: `/embed/${p.Projektnamn
@@ -91,6 +107,23 @@ const medlaProjectEmbedPaths = medlaProjects.map(p => (
 const externalProjectPaths = externalProjects.map(p => (
   {
     path: `/${p.Projektnamn
+      .replace(/\s+/g, '-')
+      .toLowerCase()
+      .replace(/å/g, 'a')
+      .replace(/ä/g, 'a')
+      .replace(/ö/g, 'o')
+      .replace(/\W/g, "-")}`,
+    name: `/${p.Projektnamn
+      .replace(/\W/g, "-")}`,
+    component: ProjectPage,
+    extraProps: { projectId: p.Områdes_ID },
+    loadData: params => pageDataLoadingAPI.ProjectPage.loadData({ ...params, projectId: p.Områdes_ID })
+  }
+));
+
+const externalProjectPathsEn = externalProjects.map(p => (
+  {
+    path: `/en/${p.Projektnamn
       .replace(/\s+/g, '-')
       .toLowerCase()
       .replace(/å/g, 'a')
@@ -858,8 +891,10 @@ const routeConfiguration = () => {
     //medlaProject and externalProject from projects-config.js
 
     ...medlaProjectPaths,
+    ...medlaProjectPathsEn,
     ...medlaProjectEmbedPaths,
     ...externalProjectPaths,
+    ...externalProjectPathsEn,
 
     // Do not change this path!
     //

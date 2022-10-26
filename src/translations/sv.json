@@ -641,7 +641,7 @@
   "NotificationSettingsForm.notificationOptionsInfo": "Välj vad du vill få notiser om.",
   "NotificationSettingsForm.newProjectsHeadline": "Nya projekt",
   "NotificationSettingsForm.notificationSettingsHeading": "Notisinställningar",
-  "NotificationSettingsForm.notificationSettingsInfo": "Välj hur du vill ta emot emotiser.",
+  "NotificationSettingsForm.notificationSettingsInfo": "Välj hur du vill ta emot notiser.",
   "NotificationSettingsForm.businessAreasTip": "Som standard visas samma branscher på din företagssida.",
   "NotificationSettingsPage.heading": "Bevakningar",
   "NotificationSettingsPage.title": "Bevakningar",
@@ -974,7 +974,7 @@
   "ProfileSettingsForm.notificationOptionsHeading": "Bevakningar",
   "ProfileSettingsForm.notificationOptionsInfo": "Välj vilka jobb du vill få notiser om.",
   "ProfileSettingsForm.notificationSettingsHeading": "Notisinställningar",
-  "ProfileSettingsForm.notificationSettingsInfo": "Välj hur du vill ta emot emotiser.",
+  "ProfileSettingsForm.notificationSettingsInfo": "Välj hur du vill ta emot notiser.",
 
   "ProfileSettingsPage.heading": "Profilbild",
   "ProfileSettingsPage.title": "Profilbild",

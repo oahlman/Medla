@@ -124,6 +124,7 @@ class NotificationSettingsFormComponent extends Component {
                     label={notifyVia}
                     options={notificationOptions}
                     values="notifications"
+                    defaultValue='true'
                     twoColumns={true}
                   />
                 <p className={css.bioInfo}>

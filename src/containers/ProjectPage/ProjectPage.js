@@ -84,7 +84,7 @@ export class ProjectPageComponent extends Component {
     const companies = listings.filter(listing => listing.attributes.publicData.listingCategory === 'company');
 
     const jobSection = (<div className={css.jobSection}>
-      <h3 className={css.subtitle}>Nya jobb</h3>
+      <h3 className={css.subtitle}><FormattedMessage id="ProjectPage.jobsTitle" /></h3>
       <div className={css.listingCards}>
         {queryListingsError ? queryError : null}
         {queryListingsError ? queryError : null}
@@ -103,14 +103,14 @@ export class ProjectPageComponent extends Component {
             to={{
               search: `?address=${projectData.Projektnamn}&bounds=${projectData.ne},${projectData.sw}&pub_listingCategory=job`,
             }}>
-            <span>Se alla jobb</span>
+            <FormattedMessage id="ProjectPage.seeAllJobs" />
           </NamedLink>
         </div>
     </div>);
 
 
     const companySection = (<div className={css.companySection}>
-      <h3 className={css.subtitle}>Lokala företag</h3>
+      <h3 className={css.subtitle}><FormattedMessage id="ProjectPage.companiesTitle" /></h3>
       <div className={css.companyCards}>
         {queryListingsError ? queryError : null}
         {companies.slice(0, 6).map(c => (
@@ -129,7 +129,7 @@ export class ProjectPageComponent extends Component {
             to={{
               search: `?address=${projectData.Projektnamn}&bounds=${projectData.ne},${projectData.sw}&pub_listingCategory=company&sort=meta_rating`,
             }}>
-            <span>Se alla företag</span>
+            <FormattedMessage id="ProjectPage.seeAllCompanies" />
           </NamedLink>
         </div>
     </div>);
@@ -195,16 +195,26 @@ export class ProjectPageComponent extends Component {
 
     console.log('status:', new Date(projectData.Planerad_byggstart), 'Date', new Date());
 
+    const aboutProject = intl.formatMessage(
+      {
+        id: 'ProjectPage.aboutText',
+      },
+      {
+        name: projectData.about,
+        nameEn: projectData.aboutEn,
+      }
+    );
+
     const projectPageMedla = (
       <div>
         <div className={css.staticPageWrapper}>
           <div className={css.contentWrapper}>
             <div className={css.coverSection}>
               <div className={css.coverInfo}>
-              <h3 className={css.welcomeTitle}>Välkommen till</h3>
+              <h3 className={css.welcomeTitle}><FormattedMessage id="ProjectPage.welcomeTitle" /></h3>
               <h1 className={css.projectTitle} >{projectData.Projektnamn}</h1>
-              <p className={css.updatedDate}>Uppdaterad {projectData.Senast_sparad}</p>
-                <p>{projectData.about}</p>
+              <p className={css.updatedDate}><FormattedMessage id="ProjectPage.updatedDate" /> {projectData.Senast_sparad}</p>
+                <p>{aboutProject}</p>
                 <div className={css.step}  id="followProjectButton">
     
                   <NamedLink 
@@ -233,7 +243,7 @@ export class ProjectPageComponent extends Component {
               {companySectionMaybe}
 
               <h3 className={css.subtitle}>
-                Populära branscher
+                <FormattedMessage id="ProjectPage.industriesTitle" />
               </h3>
               <div className={css.serviceCards}>
 
@@ -298,16 +308,16 @@ export class ProjectPageComponent extends Component {
                   to={{
                     search: `?address=${projectData.Projektnamn}&bounds=${projectData.ne},${projectData.sw}&pub_listingCategory=company&sort=meta_rating`,
                   }}>
-                  <span>Se alla branscher</span>
+                  <FormattedMessage id="ProjectPage.seeAllIndustries" />
                 </NamedLink>
               </div>
 
-              <h3 id='projectDetails' className={css.subtitle}> Om projektet </h3>
+              <h3 id='projectDetails' className={css.subtitle}><FormattedMessage id="ProjectPage.aboutTitle" /></h3>
               <b>{projectData.Projektnamn}</b>
               <div className={css.projectDetails}>
               <div className={css.description}>
                   <p>{projectData.about}</p>
-                  <p><ExternalLink href={projectData.externalLink}>Läs mer</ExternalLink></p>
+                  <p><ExternalLink href={projectData.externalLink}><FormattedMessage id="ProjectPage.readMore" /></ExternalLink></p>
                 </div>
                 <div className={css.stats}>
                   <div className={css.statusBar}>
@@ -337,9 +347,9 @@ export class ProjectPageComponent extends Component {
         <div className={css.contentWrapper}>
           <div className={css.coverSection}>
             <div className={css.coverInfo}>
-            <h3 className={css.welcomeTitle}>Välkommen till</h3>
+            <h3 className={css.welcomeTitle}><FormattedMessage id="ProjectPage.welcomeTitle" /></h3>
               <h1 className={css.projectTitle} >{projectData.Projektnamn}</h1>
-              <p className={css.updatedDate}>Uppdaterad {projectData.Senast_sparad}</p>
+              <p className={css.updatedDate}><FormattedMessage id="ProjectPage.updatedDate" /> {projectData.Senast_sparad}</p>
               <p>Projektet drivs av {projectData.Verksamhetsutövare} och består av {projectData.Aktuella_verk} vindkraftverk i {projectData.Kommun}, {projectData.Län}.</p>
               <div className={css.step}>
                 <ExternalLink
@@ -355,7 +365,7 @@ export class ProjectPageComponent extends Component {
 
           <div className={css.contentMain}>
 
-            <h3 id='projectDetails' className={css.subtitle}> Om projektet </h3>
+            <h3 id='projectDetails' className={css.subtitle}><FormattedMessage id="ProjectPage.aboutTitle" /></h3>
             <b>{projectData.Projektnamn}</b>
             <div className={css.projectDetails}>
             <div className={css.description}>

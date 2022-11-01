@@ -292,7 +292,7 @@ class ContactDetailsFormComponent extends Component {
           }
 
           // phone
-
+          
           const phonePlaceholder = intl.formatMessage({
             id: 'ContactDetailsForm.phonePlaceholder',
           });
@@ -487,16 +487,8 @@ class ContactDetailsFormComponent extends Component {
                   customErrorText={emailTouched ? null : emailTakenErrorText}
                 />
                 {emailVerifiedInfo}
-                <FieldPhoneNumberInput
-                  className={css.phone}
-                  name="phoneNumber"
-                  id={formId ? `${formId}.phoneNumber` : 'phoneNumber'}
-                  label={phoneLabel}
-                  placeholder={phonePlaceholder}
-                  validate={validators.composeValidators(phoneValid)}
-                  customErrorText={phoneNumberChanged ? passwordErrorText : null}
-                />
-                {phoneNumberVerifiedInfo}
+               
+               
               </div>
 
               <div className={confirmEmailClasses}>

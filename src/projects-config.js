@@ -21,6 +21,7 @@ export const medlaProjects = [
     Senast_sparad: "May 02, 2019",
 
     // Medla config
+    // Områdes_ID is used for findIndex
 
     image: lillmossenImg,
     location: {
@@ -38,8 +39,7 @@ export const medlaProjects = [
     externalLink: 'https://www.medla.app/anslut-projekt',
   },
   {
-    Områdes_ID: "2417-V-007",
-    id: "tomasliden",
+    Områdes_ID: "tomasliden",
     Projektnamn: "Tomasliden",
     Verksamhetsutövare: "WPD Onshore Tomasliden AB",
     Organisationsnummer: "556898-0964",
@@ -60,7 +60,7 @@ export const medlaProjects = [
     image: lillmossenImg, 
     location: {
       lat: 64.914148,
-      lng: 19.483077,  
+      lng: 19.483077,
     },
     bounds: {
       ne: '65.170231,19.834797',

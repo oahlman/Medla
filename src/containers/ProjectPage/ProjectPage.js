@@ -101,7 +101,7 @@ export class ProjectPageComponent extends Component {
           <NamedLink className={css.helperLink}
             name="SearchPage"
             to={{
-              search: `?address=${projectData.Projektnamn}&bounds=${projectData.ne},${projectData.sw}&pub_listingCategory=job`,
+              search: `?address=${projectData.Projektnamn}&bounds=${projectData.bounds.ne},${projectData.bounds.sw}&pub_listingCategory=job`,
             }}>
             <FormattedMessage id="ProjectPage.seeAllJobs" />
           </NamedLink>
@@ -127,7 +127,7 @@ export class ProjectPageComponent extends Component {
             className={css.helperLink}
             name="SearchPage"
             to={{
-              search: `?address=${projectData.Projektnamn}&bounds=${projectData.ne},${projectData.sw}&pub_listingCategory=company&sort=meta_rating`,
+              search: `?address=${projectData.Projektnamn}&bounds=${projectData.bounds.ne},${projectData.bounds.sw}&pub_listingCategory=company&sort=meta_rating`,
             }}>
             <FormattedMessage id="ProjectPage.seeAllCompanies" />
           </NamedLink>
@@ -193,8 +193,6 @@ export class ProjectPageComponent extends Component {
       postJobMaybe = sectionPostJob;
     }
 
-    console.log('status:', new Date(projectData.Planerad_byggstart), 'Date', new Date());
-
     const summaryProject = intl.formatMessage(
       {
         id: 'ProjectPage.aboutText',
@@ -239,7 +237,7 @@ export class ProjectPageComponent extends Component {
                   <NamedLink className={css.following}
                     name="SearchPage"
                     to={{
-                      search: `?address=${projectData.Projektnamn}&bounds=${projectData.ne},${projectData.sw}&pub_listingCategory=company&sort=meta_rating`,
+                      search: `?address=${projectData.Projektnamn}&bounds=${projectData.bounds.ne},${projectData.bounds.sw}&pub_listingCategory=company&sort=meta_rating`,
                     }}
                   ><FormattedMessage id={"ProjectPage.findLocalCompanies"} />
                   </NamedLink>
@@ -261,7 +259,7 @@ export class ProjectPageComponent extends Component {
                   className={css.serviceCard}
                   name="SearchPage"
                   to={{
-                    search: `?address=${projectData.Projektnamn}&bounds=${projectData.ne},${projectData.sw}&pub_category=has_any:kostlogi&pub_listingCategory=company&sort=meta_rating`,
+                    search: `?address=${projectData.Projektnamn}&bounds=${projectData.bounds.ne},${projectData.bounds.sw}&pub_category=has_any:kostlogi&pub_listingCategory=company&sort=meta_rating`,
                   }}>
                   <span>Kost och logi</span>
                 </NamedLink>
@@ -270,7 +268,7 @@ export class ProjectPageComponent extends Component {
                   className={css.serviceCard}
                   name="SearchPage"
                   to={{
-                    search: `?address=${projectData.Projektnamn}&bounds=${projectData.ne},${projectData.sw}&pub_category=has_any:bygg&pub_listingCategory=company&sort=meta_rating`,
+                    search: `?address=${projectData.Projektnamn}&bounds=${projectData.bounds.ne},${projectData.bounds.sw}&pub_category=has_any:bygg&pub_listingCategory=company&sort=meta_rating`,
                   }}>
                   <span>Byggentreprenad</span>
                 </NamedLink>
@@ -279,7 +277,7 @@ export class ProjectPageComponent extends Component {
                   className={css.serviceCard}
                   name="SearchPage"
                   to={{
-                    search: `?address=${projectData.Projektnamn}&bounds=${projectData.ne},${projectData.sw}&pub_category=has_any:anlaggning&pub_listingCategory=company&sort=meta_rating`,
+                    search: `?address=${projectData.Projektnamn}&bounds=${projectData.bounds.ne},${projectData.bounds.sw}&pub_category=has_any:anlaggning&pub_listingCategory=company&sort=meta_rating`,
                   }}>
                   <span>Anläggning</span>
                 </NamedLink>
@@ -288,7 +286,7 @@ export class ProjectPageComponent extends Component {
                   className={css.serviceCard}
                   name="SearchPage"
                   to={{
-                    search: `?address=${projectData.Projektnamn}&bounds=${projectData.ne},${projectData.sw}&pub_category=has_any:servicetjanster&pub_listingCategory=company&sort=meta_rating`,
+                    search: `?address=${projectData.Projektnamn}&bounds=${projectData.bounds.ne},${projectData.bounds.sw}&pub_category=has_any:servicetjanster&pub_listingCategory=company&sort=meta_rating`,
                   }}>
                   <span>Servicetjänster</span>
                 </NamedLink>
@@ -297,7 +295,7 @@ export class ProjectPageComponent extends Component {
                   className={css.serviceCard}
                   name="SearchPage"
                   to={{
-                    search: `?address=${projectData.Projektnamn}&bounds=${projectData.ne},${projectData.sw}&pub_category=has_any:transport&pub_listingCategory=company&sort=meta_rating`,
+                    search: `?address=${projectData.Projektnamn}&bounds=${projectData.bounds.ne},${projectData.bounds.sw}&pub_category=has_any:transport&pub_listingCategory=company&sort=meta_rating`,
                   }}>
                   <span>Transport</span>
                 </NamedLink>
@@ -306,7 +304,7 @@ export class ProjectPageComponent extends Component {
                   className={css.serviceCard}
                   name="SearchPage"
                   to={{
-                    search: `?address=${projectData.Projektnamn}&bounds=${projectData.ne},${projectData.sw}&pub_category=has_any:ovrigt&pub_listingCategory=company&sort=meta_rating`,
+                    search: `?address=${projectData.Projektnamn}&bounds=${projectData.bounds.ne},${projectData.bounds.sw}&pub_category=has_any:ovrigt&pub_listingCategory=company&sort=meta_rating`,
                   }}>
                   <span>Övrigt</span>
                 </NamedLink>
@@ -316,7 +314,7 @@ export class ProjectPageComponent extends Component {
                   className={css.helperLink}
                   name="SearchPage"
                   to={{
-                    search: `?address=${projectData.Projektnamn}&bounds=${projectData.ne},${projectData.sw}&pub_listingCategory=company&sort=meta_rating`,
+                    search: `?address=${projectData.Projektnamn}&bounds=${projectData.bounds.ne},${projectData.bounds.sw}&pub_listingCategory=company&sort=meta_rating`,
                   }}>
                   <FormattedMessage id="ProjectPage.seeAllIndustries" />
                 </NamedLink>

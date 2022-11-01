@@ -23,10 +23,14 @@ export const medlaProjects = [
     // Medla config
 
     image: lillmossenImg,
-    lat: 63.166695,
-    lng: 17.27748,
-    ne: '63.96074168,17.70965133',
-    sw: '60.28740006,13.58712057',
+    location: {
+      lat: 13.166695,
+      lng: 67.27748,
+    },
+    bounds: {
+        ne: '63.96074168,17.70965133',
+        sw: '60.28740006,13.58712057',
+    },
     summary: 'Medlas exempel med 32 vindkraftverk med en totalhöjd om högst 290 m. Projektområdet är beläget ca 25 km söder om Umeå, ca 20 km norr om Normaling och ca 8 km nordväst om Hörnefors.',
     summaryEn: 'Medlas example with 32 wind turbines with a total height of no more than 290 m. The project area is located approx. 25 km south of Umeå, approx. 20 km north of Normaling and approx. 8 km northwest of Hörnefors.',
     about: 'Medlas exempel med 32 vindkraftverk med en totalhöjd om högst 290 m. Projektområdet är beläget ca 25 km söder om Umeå, ca 20 km norr om Normaling och ca 8 km nordväst om Hörnefors.',
@@ -54,10 +58,14 @@ export const medlaProjects = [
     // Medla config
 
     image: lillmossenImg, 
-    lat: 64.91414804,
-    lng: 19.48307701,  
-    ne: '65.170231,19.834797',
-    sw: '64.638342,18.847158',
+    location: {
+      lat: 64.914148,
+      lng: 19.483077,  
+    },
+    bounds: {
+      ne: '65.170231,19.834797',
+      sw: '64.638342,18.847158',
+    },
     summary: 'wpd planerar att uppföra 10 vindkraftverk med 200 m totalhöjd på Tomasliden. Projektområdet ligger i Norsjö kommun, cirka 10 km väster om Bastuträsk och 20 km sydost om samhället Norsjö.',
     summaryEn: 'wpd plans to erect 10 wind turbines with a total height of 200 m on Tomasliden. The project area is located in Norsjö municipality, approximately 10 km west of Bastuträsk and 20 km southeast of the community Norsjö.',
     about: 'wpd planerar att uppföra 10 vindkraftverk med 200 m totalhöjd på Tomasliden. Projektområdet ligger i Norsjö kommun, cirka 10 km väster om Bastuträsk och 20 km sydost om samhället Norsjö. Förstärkning och byggnation av tillfartsvägar och vägar inom vindkraftsparken beräknas starta i början av november 2022. Fortsatt byggnation av vägar, kranplaner samt anläggande av fundament och kablar planeras ske med start våren 2023. Installation av vindkraftverken planeras ske under sommaren 2024.',

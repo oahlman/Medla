@@ -3,7 +3,7 @@ import { fetchCurrentUser } from '../../ducks/user.duck';
 import { types as sdkTypes } from '../../util/sdkLoader';
 import { denormalisedResponseEntities } from '../../util/data';
 import { storableError } from '../../util/errors';
-import { projects } from './ProjectConfig';
+import { medlaProjects } from '../../projects-config';
 
 const { UUID } = sdkTypes;
 
@@ -100,10 +100,11 @@ export const queryListingsError = e => ({
 
 export const queryListings = queryParams => (dispatch, getState, sdk) => {
   const { LatLng } = sdkTypes;
-  const listedProject = projects.findIndex(id => id.id === queryParams);
+  const listedProject = medlaProjects.findIndex(id => id.id === queryParams);
   const currentProject = listedProject === -1 ? 0 : listedProject;
-  const projectData = projects[currentProject];
+  const projectData = medlaProjects[currentProject];
   const origin = new LatLng(projectData.location.lat, projectData.location.lng);
+
   dispatch(queryListingsRequest(queryParams));
   return sdk.listings
     .query({

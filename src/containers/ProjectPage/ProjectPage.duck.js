@@ -104,6 +104,7 @@ export const queryListings = queryParams => (dispatch, getState, sdk) => {
   const currentProject = listedProject === -1 ? 0 : listedProject;
   const projectData = medlaProjects[currentProject];
   const origin = new LatLng(projectData.location.lat, projectData.location.lng);
+  console.log('queryParams', queryParams, 'origin: ', origin, 'projectData: ', projectData);
 
   dispatch(queryListingsRequest(queryParams));
   return sdk.listings

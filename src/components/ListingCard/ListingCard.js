@@ -37,7 +37,6 @@ export const ListingCardComponent = props => {
   const slug = createSlug(title);
   const isExternal = !!listing.attributes.publicData.externalLink;
   const isOwner = listing.attributes.publicData.owner;
-  console.log('isOwner', isOwner)
   const author = ensureUser(listing.author);
   const authorName = author.attributes.profile.displayName;
   const firstImage =

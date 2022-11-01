@@ -4,6 +4,7 @@ import kolvallenImg from './assets/kolvallen.jpg';
 
 export const medlaProjects = [
   {
+    id: 'lillmossen',
     Områdes_ID: 'lillmossen',
     Projektnamn: 'Lillmossen',
     Verksamhetsutövare: 'Medla',
@@ -21,12 +22,12 @@ export const medlaProjects = [
     Senast_sparad: "May 02, 2019",
 
     // Medla config
-    // Områdes_ID is used for findIndex
+    // Both Områdes_ID and id are needed and should follow the standard format "project-name"
 
     image: lillmossenImg,
     location: {
-      lat: 13.166695,
-      lng: 67.27748,
+      lat: 63.166695,
+      lng: 17.27748,
     },
     bounds: {
         ne: '63.96074168,17.70965133',
@@ -39,6 +40,7 @@ export const medlaProjects = [
     externalLink: 'https://www.medla.app/anslut-projekt',
   },
   {
+    id: "tomasliden",
     Områdes_ID: "tomasliden",
     Projektnamn: "Tomasliden",
     Verksamhetsutövare: "WPD Onshore Tomasliden AB",

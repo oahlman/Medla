@@ -32,6 +32,36 @@ export const medlaProjects = [
     externalLink: 'https://www.medla.app/anslut-projekt',
   },
   {
+    Områdes_ID: "2417-V-007",
+    id: "tomasliden",
+    Projektnamn: "Tomasliden",
+    Verksamhetsutövare: "WPD Onshore Tomasliden AB",
+    Organisationsnummer: "556898-0964",
+    Aktuella_verk: 10,
+    Antal_ej_koordinatsatta_verk: 0,
+    Beräknad_årsproduktion_GWh: 185,
+    Uppmätt_årsproduktion_GWh: 0,
+    Planerad_byggstart: "Oct 01, 2022",
+    Planerat_drifttagande: "Jul 01, 2024",
+    Området_ej_aktuellt_i_sin_helhet: "Nej",
+    Kommun: "Norsjö",
+    Län: "Västerbottens län",
+    Elområde: "Luleå",
+    Senast_sparad: "Oct 17, 2022",
+
+    // Medla config
+
+    image: lillmossenImg, 
+    lat: 64.91414804,
+    lng: 19.48307701,  
+    ne: '65.170231,19.834797',
+    sw: '64.638342,18.847158',
+    about: 'wpd planerar att uppföra 10 vindkraftverk med 200 m totalhöjd på Tomasliden. Projektområdet ligger i Norsjö kommun, cirka 10 km väster om Bastuträsk och 20 km sydost om samhället Norsjö.',
+    aboutEn: 'wpd plans to erect 10 wind turbines with a total height of 200 m on Tomasliden. The project area is located in Norsjö municipality, approximately 10 km west of Bastuträsk and 20 km southeast of the community Norsjö.',
+    externalLink: 'https://www.wpd.se/aktuella-projekt/vindkraft-pa-land/tomasliden/',
+
+  },
+  {
     Områdes_ID: "2161-V-008",
     Projektnamn: "Kölvallen",
     Verksamhetsutövare: "Arise Windpower AB",
@@ -61,35 +91,6 @@ export const medlaProjects = [
 ];
 
 export const externalProjects = [
-  {
-    Områdes_ID: "2417-V-007",
-    id: "tomasliden",
-    Projektnamn: "Tomasliden",
-    Verksamhetsutövare: "WPD Onshore Tomasliden AB",
-    Organisationsnummer: "556898-0964",
-    Aktuella_verk: 10,
-    Antal_ej_koordinatsatta_verk: 0,
-    Beräknad_årsproduktion_GWh: 185,
-    Uppmätt_årsproduktion_GWh: 0,
-    Planerad_byggstart: "Oct 01, 2022",
-    Planerat_drifttagande: "Jul 01, 2024",
-    Området_ej_aktuellt_i_sin_helhet: "Nej",
-    Kommun: "Norsjö",
-    Län: "Västerbottens län",
-    Elområde: "Luleå",
-    Senast_sparad: "Oct 17, 2022",
-
-    // Medla config
-
-    image: lillmossenImg, 
-    lat: 64.91414804,
-    lng: 19.48307701,  
-    ne: '65.170231,19.834797',
-    sw: '64.638342,18.847158',
-    about: 'wpd planerar att uppföra 10 vindkraftverk med 200 m totalhöjd på Tomasliden. Projektområdet ligger i Norsjö kommun, cirka 10 km väster om Bastuträsk och 20 km sydost om samhället Norsjö.',
-    externalLink: 'https://www.wpd.se/aktuella-projekt/vindkraft-pa-land/tomasliden/',
-
-  },
   {
     Områdes_ID: "0584-V-018",
     Projektnamn: "Kattorp 1",

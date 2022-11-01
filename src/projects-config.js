@@ -27,6 +27,8 @@ export const medlaProjects = [
     lng: 17.27748,
     ne: '63.96074168,17.70965133',
     sw: '60.28740006,13.58712057',
+    summary: 'Medlas exempel med 32 vindkraftverk med en totalhöjd om högst 290 m. Projektområdet är beläget ca 25 km söder om Umeå, ca 20 km norr om Normaling och ca 8 km nordväst om Hörnefors.',
+    summaryEn: 'Medlas example with 32 wind turbines with a total height of no more than 290 m. The project area is located approx. 25 km south of Umeå, approx. 20 km north of Normaling and approx. 8 km northwest of Hörnefors.',
     about: 'Medlas exempel med 32 vindkraftverk med en totalhöjd om högst 290 m. Projektområdet är beläget ca 25 km söder om Umeå, ca 20 km norr om Normaling och ca 8 km nordväst om Hörnefors.',
     aboutEn: 'Medlas example with 32 wind turbines with a total height of no more than 290 m. The project area is located approx. 25 km south of Umeå, approx. 20 km north of Normaling and approx. 8 km northwest of Hörnefors.',
     externalLink: 'https://www.medla.app/anslut-projekt',
@@ -56,11 +58,16 @@ export const medlaProjects = [
     lng: 19.48307701,  
     ne: '65.170231,19.834797',
     sw: '64.638342,18.847158',
-    about: 'wpd planerar att uppföra 10 vindkraftverk med 200 m totalhöjd på Tomasliden. Projektområdet ligger i Norsjö kommun, cirka 10 km väster om Bastuträsk och 20 km sydost om samhället Norsjö.',
-    aboutEn: 'wpd plans to erect 10 wind turbines with a total height of 200 m on Tomasliden. The project area is located in Norsjö municipality, approximately 10 km west of Bastuträsk and 20 km southeast of the community Norsjö.',
+    summary: 'wpd planerar att uppföra 10 vindkraftverk med 200 m totalhöjd på Tomasliden. Projektområdet ligger i Norsjö kommun, cirka 10 km väster om Bastuträsk och 20 km sydost om samhället Norsjö.',
+    summaryEn: 'wpd plans to erect 10 wind turbines with a total height of 200 m on Tomasliden. The project area is located in Norsjö municipality, approximately 10 km west of Bastuträsk and 20 km southeast of the community Norsjö.',
+    about: 'wpd planerar att uppföra 10 vindkraftverk med 200 m totalhöjd på Tomasliden. Projektområdet ligger i Norsjö kommun, cirka 10 km väster om Bastuträsk och 20 km sydost om samhället Norsjö. Förstärkning och byggnation av tillfartsvägar och vägar inom vindkraftsparken beräknas starta i början av november 2022. Fortsatt byggnation av vägar, kranplaner samt anläggande av fundament och kablar planeras ske med start våren 2023. Installation av vindkraftverken planeras ske under sommaren 2024.',
+    aboutEn: 'wpd plans to erect 10 wind turbines with a total height of 200 m on Tomasliden. The project area is located in Norsjö municipality, approximately 10 km west of Bastuträsk and 20 km southeast of the community Norsjö. Reinforcement and construction of access roads and roads within the wind farm is expected to start at the beginning of November 2022. Continued construction of roads, crane planes and construction of foundations and cables is planned to take place starting in the spring of 2023. Installation of the wind turbines is planned to take place during the summer of 2024.',
     externalLink: 'https://www.wpd.se/aktuella-projekt/vindkraft-pa-land/tomasliden/',
 
   },
+];
+
+export const externalProjects = [
   {
     Områdes_ID: "2161-V-008",
     Projektnamn: "Kölvallen",
@@ -88,9 +95,6 @@ export const medlaProjects = [
     about: 'Arise utvecklar projektet Kölvallen i närheten av Sveg. Kölvallen är ett systerprojekt till projektet Skaftåsen, 35 turbiner, som för närvarande är under byggnation. Kölvallen har 42-43 fullt tillståndsgivna turbiner med en totalhöjd på 220 m. Vi hoppas på att kunna starta bygget under andra halvan av 2022 och avsluta under 2024.',
     externalLink: 'https://www.arise.se/',
   },
-];
-
-export const externalProjects = [
   {
     Områdes_ID: "0584-V-018",
     Projektnamn: "Kattorp 1",

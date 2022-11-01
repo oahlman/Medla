@@ -195,6 +195,16 @@ export class ProjectPageComponent extends Component {
 
     console.log('status:', new Date(projectData.Planerad_byggstart), 'Date', new Date());
 
+    const summaryProject = intl.formatMessage(
+      {
+        id: 'ProjectPage.aboutText',
+      },
+      {
+        name: projectData.summary,
+        nameEn: projectData.summaryEn,
+      }
+    );
+    
     const aboutProject = intl.formatMessage(
       {
         id: 'ProjectPage.aboutText',
@@ -214,7 +224,7 @@ export class ProjectPageComponent extends Component {
               <h3 className={css.welcomeTitle}><FormattedMessage id="ProjectPage.welcomeTitle" /></h3>
               <h1 className={css.projectTitle} >{projectData.Projektnamn}</h1>
               <p className={css.updatedDate}><FormattedMessage id="ProjectPage.updatedDate" /> {projectData.Senast_sparad}</p>
-                <p>{aboutProject}</p>
+                <p>{summaryProject}</p>
                 <div className={css.step}  id="followProjectButton">
     
                   <NamedLink 
@@ -316,7 +326,7 @@ export class ProjectPageComponent extends Component {
               <b>{projectData.Projektnamn}</b>
               <div className={css.projectDetails}>
               <div className={css.description}>
-                  <p>{projectData.about}</p>
+                  <p>{aboutProject}</p>
                   <p><ExternalLink href={projectData.externalLink}><FormattedMessage id="ProjectPage.readMore" /></ExternalLink></p>
                 </div>
                 <div className={css.stats}>

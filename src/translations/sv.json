@@ -529,7 +529,7 @@
   "LoginForm.passwordLabel": "Lösenord",
   "LoginForm.passwordPlaceholder": "Ange ditt lösenord…",
   "LoginForm.passwordRequired": "Detta fält är obligatoriskt",
-  "LoginForm.usernameLabel": "E-post eller mobilnummer",
+  "LoginForm.usernameLabel": "E-post",
   "LoginForm.usernamePlaceholder": "sverigebygg@email.com",
   "LoginForm.usernameRequired": "Du måste ange ett mobilnummer eller en e-postadress",
   "LoginForm.usernameInvalid": "Ett giltigt mobilnummer eller en giltig e-postadress krävs.",

@@ -530,7 +530,7 @@
   "LoginForm.passwordLabel": "Password",
   "LoginForm.passwordPlaceholder": "Enter your password…",
   "LoginForm.passwordRequired": "This field is required",
-  "LoginForm.usernameLabel": "Email or mobile number",
+  "LoginForm.usernameLabel": "Email",
   "LoginForm.usernamePlaceholder": "mycompany@email.com",
   "LoginForm.usernameRequired": "You must enter a mobile number or email address",
   "LoginForm.usernameInvalid": "A valid mobile number or email address is required.",

@@ -1279,6 +1279,12 @@
   "SectionWhyMedla.connectProject": "här",
   "SectionLocations.listingsInLocation": "{location}",
   "SectionLocations.title": "Platser",
+  "SectionNews.titleLineOne": "Nytt på Medla",
+  "SectionNews.part1Title": "wpd lanserar Tomasliden",
+  "SectionNews.part1Text": "Projekt Tomasliden finns nu tillgängligt, följ projektet för att hitta jobb och göra er verksamhet synlig i projektet",
+  "SectionNews.linkToNews":"Till Tomasliden",
+
+
   "SectionProfileProgress.changeLink": "Ändra",
   "SectionProfileProgress.fixLink": "Fixa",
   "SectionProfileProgress.addLink": "Lägg till",

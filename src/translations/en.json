@@ -1281,6 +1281,11 @@
   "SectionWhyMedla.connectProject": "here",
   "SectionLocations.listingsInLocation": "{location}",
   "SectionLocations.title": "Locations",
+  "SectionNews.titleLineOne": "New on medla",
+  "SectionNews.part1Title": "wpd launches Tomasliden",
+  "SectionNews.part1Text": "Project Tomasliden is now available, follow the project to find jobs and make your business visible in the project",
+  "SectionNews.linkToNews":"To Tomasliden",
+
   "SectionProfileProgress.changeLink": "Modify",
   "SectionProfileProgress.fixLink": "Fix",
   "SectionProfileProgress.editListingLink": "Edit",

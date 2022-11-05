@@ -218,6 +218,9 @@ export { default as SectionTimelineCompany } from './SectionTimelineCompany/Sect
 export { default as SectionTimelineMunicipality } from './SectionTimelineMunicipality/SectionTimelineMunicipality';
 
 export { default as SectionLocations } from './SectionLocations/SectionLocations';
+export { default as SectionNews } from './SectionNews/SectionNews';
+
+
 export { default as SectionProjects } from './SectionProjects/SectionProjects';
 export { default as SectionThumbnailLinks } from './SectionThumbnailLinks/SectionThumbnailLinks';
 export { default as Topbar } from './Topbar/Topbar';

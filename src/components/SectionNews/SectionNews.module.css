@@ -1,0 +1,67 @@
+@import '../../styles/propertySets.css';
+
+.title {
+  @apply --marketplaceH1FontStyles;
+  margin-top: 0;
+  color: var(--marketplaceColorDark);
+
+}
+
+.steps {
+  display: flex;
+  flex-direction: column;
+
+  @media (--viewportMedium) {
+    flex-direction: row;
+  }
+}
+
+.step {
+  
+  @media (--viewportMedium) {
+    width: 500px;
+    margin-right: 40px;
+    margin-bottom:5%;
+  }
+}
+
+.step:last-of-type {
+  @media (--viewportMedium) {
+    margin-right: 0;
+  }
+}
+
+.stepTitle {
+  color: var(--marketplaceColorDark);
+
+  margin-top: 18px;
+  margin-bottom: 18px;
+
+  @media (--viewportMedium) {
+    margin-top: 21px;
+    margin-bottom: 18px;
+  }
+}
+
+.createListingLink {
+  
+  margin-top: 18px;
+
+
+  @media (--viewportMedium) {
+    margin-top: 24px;
+  }
+}
+
+.linkStyle{
+
+}
+
+
+
+.newsImage {
+max-width: 100%;
+margin-top:5%;
+
+  
+}

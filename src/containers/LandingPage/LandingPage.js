@@ -18,6 +18,7 @@ import {
   SectionProjects,
   SectionLocations,
   SectionProfileProgress,
+  SectionNews,
   LayoutSingleColumn,
   LayoutWrapperTopbar,
   LayoutWrapperMain,
@@ -92,6 +93,12 @@ export const LandingPageComponent = props => {
           </div>
 
           <ul className={css.sections}>
+
+          <li className={css.section1}>
+              <div className={css.sectionContent}>
+                <SectionNews />
+              </div>
+            </li>
 
           <li className={css.section}>
             <div className={isAuthenticated ? css.sectionContentFirstChild : css.hidden}>

@@ -57,11 +57,14 @@
 
 }
 
-
-
 .newsImage {
 max-width: 100%;
 margin-top:5%;
+transition: var(--transitionStyleButton);
 
+&:hover {
+  transform: scale(1.02);
+  box-shadow: var(--boxShadowSectionLocationHover);
+}
   
 }

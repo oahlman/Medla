@@ -58,14 +58,13 @@ params={companyParams}
   return (
     
     <div className={classes}>
-      <div className={css.title}>
-        <FormattedMessage id="SectionNews.titleLineOne" />
-
-      </div>
-
       <div className={css.steps}>
         <div className={css.step}>
           <h2 className={css.stepTitle}>
+          <div className={css.title}>
+        <FormattedMessage id="SectionNews.titleLineOne" />
+
+      </div>
             <FormattedMessage id="SectionNews.part1Title" />
           </h2>
           <p >

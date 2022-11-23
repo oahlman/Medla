@@ -94,16 +94,16 @@ export const LandingPageComponent = props => {
 
           <ul className={css.sections}>
 
-          <li className={css.section1}>
-              <div className={css.sectionContent}>
-                <SectionNews />
-              </div>
-            </li>
-
           <li className={css.section}>
             <div className={isAuthenticated ? css.sectionContentFirstChild : css.hidden}>
             <SectionProfileProgress />
           </div>
+            </li>
+
+            <li className={css.section1}>
+              <div className={css.sectionContent}>
+                <SectionNews />
+              </div>
             </li>
 
             <li className={css.section}>

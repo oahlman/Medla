@@ -65,8 +65,8 @@ export const medlaProjects = [
       lng: 19.483077,
     },
     bounds: {
-      ne: '65.170231,19.834797',
-      sw: '64.638342,18.847158',
+      ne: '65.43224223,20.37332522',
+      sw: '64.36842344,18.30862978',
     },
     summary: 'wpd planerar att uppföra 10 vindkraftverk med 200 m totalhöjd på Tomasliden. Projektområdet ligger i Norsjö kommun, cirka 10 km väster om Bastuträsk och 20 km sydost om samhället Norsjö.',
     summaryEn: 'wpd plans to erect 10 wind turbines with a total height of 200 m on Tomasliden. The project area is located in Norsjö municipality, approximately 10 km west of Bastuträsk and 20 km southeast of the community Norsjö.',

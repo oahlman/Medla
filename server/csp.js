@@ -26,6 +26,7 @@ const defaultDirectives = {
     'events.mapbox.com',
 
     // Google Analytics
+    '​www.​googletagm­anager.​com',
     'www.google-analytics.com',
     'stats.g.doubleclick.net',
 
@@ -58,10 +59,11 @@ const defaultDirectives = {
     '*.ggpht.com',
 
     // Google Analytics
+    'www.googletagmanager.com',
     'www.google.com',
     'www.google-analytics.com',
     'stats.g.doubleclick.net',
-    'www.googletagmanager.com',
+    
 
     '*.stripe.com',
   ],
@@ -72,6 +74,7 @@ const defaultDirectives = {
     data,
     'maps.googleapis.com',
     'api.mapbox.com',
+    '​www.​googletagm­anager.​com',
     '*.google-analytics.com',
     'js.stripe.com',
     'www.googletagmanager.com',

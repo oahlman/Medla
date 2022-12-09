@@ -6,7 +6,7 @@ export const LOCATION_CHANGED = 'app/Routing/LOCATION_CHANGED';
 
 const initialState = {
   currentLocation: null,
-  currentCanonicalPath: null,
+  currentCanonicalUrl: null,
 };
 
 export default function routingReducer(state = initialState, action = {}) {
@@ -16,7 +16,7 @@ export default function routingReducer(state = initialState, action = {}) {
       return {
         ...state,
         currentLocation: payload.location,
-        currentCanonicalPath: payload.canonicalPath,
+        currentCanonicalUrl: payload.canonicalUrl,
       };
 
     default:
@@ -26,7 +26,7 @@ export default function routingReducer(state = initialState, action = {}) {
 
 // ================ Action creators ================ //
 
-export const locationChanged = (location, canonicalPath) => ({
+export const locationChanged = (location, canonicalUrl) => ({
   type: LOCATION_CHANGED,
-  payload: { location, canonicalPath },
+  payload: { location, canonicalUrl },
 });

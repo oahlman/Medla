@@ -65,8 +65,8 @@ const setPageScrollPosition = location => {
 
 const handleLocationChanged = (dispatch, location) => {
   setPageScrollPosition(location);
-  const path = canonicalRoutePath(routeConfiguration(), location);
-  dispatch(locationChanged(location, path));
+  const url = canonicalRoutePath(routeConfiguration(), location);
+  dispatch(locationChanged(location, url));
 };
 
 /**

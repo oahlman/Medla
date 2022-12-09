@@ -12,16 +12,6 @@ way to update this template, but currently, we follow a pattern:
 
 ---
 
-## Upcoming version 2022-XX-XX
-- [change] Google Analytics: remove Universal Analytics and start supporting GA4.
-
-  NOTE: you need to update the Google Analytics id to GA4's id (starting with 'G-' prefix).
-
-  [#1508](https://github.com/sharetribe/ftw-daily/pull/1508)
-
-
-
-
 ## Upcoming version 2021-XX-XX
 
 - [change] Updates to some of the libraries. React Intl had a breaking change v3 -> v5.

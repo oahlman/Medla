@@ -42,8 +42,6 @@ const defaultDirectives = {
   frameSrc: [
     self, 
     '*.stripe.com',
-    'https://*.facebook.com',
-    
   ],
   imgSrc: [
     self,

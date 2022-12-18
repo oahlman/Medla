@@ -29,6 +29,9 @@ const defaultDirectives = {
     'www.googletagmanager.com',
     'www.google-analytics.com',
     'stats.g.doubleclick.net',
+    'https://*.google-analytics.com', 
+    'https://*.analytics.google.com',
+    'https://*.googletagmanager.com',
 
     '*.sentry.io',
     '*.stripe.com',
@@ -45,6 +48,8 @@ const defaultDirectives = {
     data,
     blob,
     ...devImagesMaybe,
+    'https://*.facebook.com',
+    'https://connect.facebook.net',
     '*.imgix.net',
     'sharetribe.imgix.net', // Safari 9.1 didn't recognize asterisk rule.
 
@@ -60,6 +65,8 @@ const defaultDirectives = {
 
     // Google Analytics
     'www.googletagmanager.com',
+    'https://*.google-analytics.com ',
+    'https://*.googletagmanager.com',
     'www.google.com',
     'www.google-analytics.com',
     'stats.g.doubleclick.net',
@@ -74,10 +81,10 @@ const defaultDirectives = {
     data,
     'maps.googleapis.com',
     'api.mapbox.com',
-    'www.googletagmanager.com',
+    'https://*.googletagmanager.com',
     '*.google-analytics.com',
     'js.stripe.com',
-    'www.googletagmanager.com',
+    'https://connect.facebook.net',
   ],
   styleSrc: [self, unsafeInline, 'fonts.googleapis.com', 'api.mapbox.com'],
 };

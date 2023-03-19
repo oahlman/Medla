@@ -1,28 +1,39 @@
 require('dotenv').config();
 import React, { useState, useEffect } from "react";
 import { Configuration, OpenAIApi } from "openai";
-console.log('process.env', process.env);
+import IconSpinner from "../IconSpinner/IconSpinner";
 
-const OpenAIHelper = ({prompt}) => {
+const fetchCompletionFromOpenAI = async (key, prompt) => {
+  const configuration = new Configuration({
+    apiKey: key,
+  });
+  const openai = new OpenAIApi(configuration);
+
+  const completion = await openai.createChatCompletion({
+    model: "gpt-3.5-turbo",
+    messages: [
+      {
+        "role": "system",
+        "content": "Du är MedlaGPT, en AI-assistent som hjälper beställare och projektledare i svenska industriprojekt att göra lokala och hållbara inköp. Skriv en underrubrik till följande titel. Skriv endast underrubriken och ingen extra text."
+      },
+      { role: "user", content: prompt }
+    ],
+  });
+
+  return completion.data.choices[0].message.content;
+};
+
+const OpenAIHelper = ({ prompt }) => {
   const [openAIText, setOpenAIText] = useState("");
+  const [loading, setLoading] = useState(true);
   const key = process.env.REACT_APP_OPENAI_API_KEY;
 
   useEffect(() => {
-    const fetchOpenAIText = async () => {
+    (async () => {
+      setLoading(true);
       try {
-        const configuration = new Configuration({
-          apiKey: key,
-        });
-        const openai = new OpenAIApi(configuration);
-
-        const completion = await openai.createChatCompletion({
-          model: "gpt-3.5-turbo",
-          messages: [
-            {"role": "system", "content": "Du är MedlaGPT, en AI-assistent som hjälper beställare och projektledare i svenska industriprojekt att göra lokala och hållbara inköp. Skriv en underrubrik till följande titel. Skriv endast underrubriken och ingen extra text."},
-            { role: "user", content: prompt }],
-        }
-        );
-        setOpenAIText(completion.data.choices[0].message.content);
+        const completionText = await fetchCompletionFromOpenAI(key, prompt);
+        setOpenAIText(completionText);
       } catch (err) {
         if (err.response && err.response.status === 401) {
           setOpenAIText(
@@ -32,11 +43,19 @@ const OpenAIHelper = ({prompt}) => {
           setOpenAIText(`Error occurred: ${err.message}`);
         }
       }
-    };
-    fetchOpenAIText();
-  }, []);
-  console.log('openAIText', prompt, openAIText);
-  return <div>{openAIText}</div>;
+      setLoading(false);
+    })();
+  }, [key, prompt]);
+
+  return (
+    <div>
+      {loading ? (
+        <IconSpinner />
+      ) : (
+        openAIText.replace(/Underrubrik: /g, "")
+      )}
+    </div>
+  );
 };
 
 export default OpenAIHelper;

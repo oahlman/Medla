@@ -3,6 +3,7 @@ import { string } from 'prop-types';
 import { FormattedMessage } from '../../util/reactIntl';
 import classNames from 'classnames';
 import { NamedLink, SecondaryButton } from '../../components';
+import OpenAIHelper from '../OpenAiHelper/openAiHelper';
 
 import css from './SectionHero.module.css';
 
@@ -17,7 +18,7 @@ const SectionHero = props => {
           <FormattedMessage id="SectionHero.title" />
         </h1>
         <h2 className={css.heroSubTitle}>
-          <FormattedMessage id="SectionHero.subTitle" />
+          <OpenAIHelper prompt={'Gör lokala affärer.'}/>
         </h2>
         <div className={css.steps}>
           <div className={css.step}>

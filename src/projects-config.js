@@ -57,8 +57,6 @@ export const medlaProjects = [
     Elområde: "Luleå",
     Senast_sparad: "Oct 17, 2022",
 
-    // Medla config
-
     image: lillmossenImg, 
     location: {
       lat: 64.914148,
@@ -74,6 +72,39 @@ export const medlaProjects = [
     aboutEn: 'wpd plans to erect 10 wind turbines with a total height of 200 m on Tomasliden. The project area is located in Norsjö municipality, approximately 10 km west of Bastuträsk and 20 km southeast of the community Norsjö. Reinforcement and construction of access roads and roads within the wind farm is expected to start at the beginning of November 2022. Continued construction of roads, crane planes and construction of foundations and cables is planned to take place starting in the spring of 2023. Installation of the wind turbines is planned to take place during the summer of 2024.',
     externalLink: 'https://www.wpd.se/aktuella-projekt/vindkraft-pa-land/tomasliden/',
 
+  },
+  {
+    id: "velinga",
+    Områdes_ID: "velinga",
+    Projektnamn: "Velinga",
+    Verksamhetsutövare: "Vattenfall Vindkraft AB",
+    Organisationsnummer: "556581-4273",
+    Aktuella_verk: 12,
+    Antal_ej_koordinatsatta_verk: 0,
+    Beräknad_årsproduktion_GWh: 0,
+    Uppmätt_årsproduktion_GWh: 0,
+    Planerad_byggstart: "2023",
+    Planerat_drifttagande: "2025",
+    Området_ej_aktuellt_i_sin_helhet: "Ja",
+    Kommun: "Tidaholm",
+    Län: "Västra Götalands län",
+    Elområde: "Stockholm",
+    Senast_sparad: "",
+
+    image: lillmossenImg, 
+    location: {
+      lat: 58.179939,
+      lng: 13.959821,
+    },
+    bounds: {
+      ne: '58.40955319,14.34840347',
+      sw: '57.87123483,13.50112253',
+    },
+    summary: 'Medlas exempel med 32 vindkraftverk med en totalhöjd om högst 290 m. Projektområdet är beläget ca 25 km söder om Umeå, ca 20 km norr om Normaling och ca 8 km nordväst om Hörnefors.',
+    summaryEn: 'Medlas example with 32 wind turbines with a total height of no more than 290 m. The project area is located approx. 25 km south of Umeå, approx. 20 km north of Normaling and approx. 8 km northwest of Hörnefors.',
+    about: 'Medlas exempel med 32 vindkraftverk med en totalhöjd om högst 290 m. Projektområdet är beläget ca 25 km söder om Umeå, ca 20 km norr om Normaling och ca 8 km nordväst om Hörnefors.',
+    aboutEn: 'Medlas example with 32 wind turbines with a total height of no more than 290 m. The project area is located approx. 25 km south of Umeå, approx. 20 km north of Normaling and approx. 8 km northwest of Hörnefors.',
+    externalLink: 'https://www.medla.app/anslut-projekt',
   },
 ];
 

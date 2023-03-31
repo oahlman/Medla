@@ -73,6 +73,13 @@ const EditListingFeaturesFormComponent = props => (
             showAsRequired={showAsRequired}
           />
           <FieldRadioButton
+            id='velinga'
+            name='amenities'
+            label="Velinga"
+            value="velinga"
+            showAsRequired={showAsRequired}
+          />
+          <FieldRadioButton
             id='other'
             name='amenities'
             label={otherProjectLabel}

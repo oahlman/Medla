@@ -68,6 +68,10 @@ export const filters = [
           label: 'Tomasliden',
         },
         {
+          key: 'velinga',
+          label: 'Velinga',
+        },
+        {
           key: 'other',
           label: <FormattedMessage id="Marketplace.config.key.labelOther"/>,
         },

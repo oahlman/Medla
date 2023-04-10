@@ -39,13 +39,13 @@ const locationLink = (title, subtitle, status, link, logo) => {
   let projectStatusText = null
 if (status === 'planning') {
   projectStatusText = css.planning;
-  status = 'Planering';
+  status = 'Handläggs';
 } else if (status === 'building') {
   projectStatusText = css.building;
-  status = 'Byggnation';
+  status = 'Beviljade';
 } else if (status === 'running') {
   projectStatusText = css.running;
-  status = 'Drift';
+  status = 'Uppförda';
 }
 
   const projectTitle = <span className={css.projectTitleText}>{title}</span>;

@@ -178,7 +178,7 @@ export class ProjectPageComponent extends Component {
       statusArrow = css.statusArrowBuilding;
       statusText = css.statusTextBuilding;
       status = 'Status: Beviljat';
-      statusDescription = 'I byggfasen sker upphandling av byggentreprenad, finansiering och byggnation av projektet.';
+      statusDescription = 'När ett projekt är beviljat inleds arbetet för upphandling av byggentreprenad och byggnation av projektet.';
       jobSectionMaybe = jobSection;
       companySectionMaybe = companySection;
       postJobMaybe = sectionPostJob;

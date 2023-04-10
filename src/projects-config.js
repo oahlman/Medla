@@ -104,7 +104,7 @@ export const medlaProjects = [
     summaryEn: 'Vattenfall plans to build a wind farm with 12 wind turbines and a total height of 180 meters in Velinga. The project area is located in the municipality of Tidaholm in Västra Götaland County.',
     about: 'Vattenfall planerar att uppföra en vindkraftspark med 12 vindkraftverk och en totalhöjd av 180 m i Velinga. Projektområdet ligger i Tidaholms kommun i Västra Götalands län. Upphandling av vindkraftverk och entreprenad för infrastruktur såsom vägar, fundament, uppställningsplatser och kabeldragning pågår under 2023. Preliminär idrifttagning under 2025.',
     aboutEn: 'Vattenfall is planning to construct a wind farm in Velinga with 12 wind turbines and a total height of 180 meters. The project area is located in the municipality of Tidaholm in Västra Götaland County. The procurement of wind turbines and infrastructure such as roads, foundations, assembly areas, and cabling is ongoing in 2023. The preliminary commissioning is expected to take place in 2025.',
-    externalLink: 'https://www.medla.app/anslut-projekt',
+    externalLink: 'https://group.vattenfall.com/se/var-verksamhet/vindprojekt/velinga',
   },
 ];
 

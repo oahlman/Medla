@@ -89,7 +89,7 @@ export const medlaProjects = [
     Kommun: "Tidaholm",
     Län: "Västra Götalands län",
     Elområde: "Stockholm",
-    Senast_sparad: "",
+    Senast_sparad: "Apr 10 2023",
 
     image: lillmossenImg, 
     location: {

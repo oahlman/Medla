@@ -168,7 +168,7 @@ export class ProjectPageComponent extends Component {
       statusCard = css.statusCardPlanning;
       statusArrow = css.statusArrowPlanning;
       statusText = css.statusTextPlanning;
-      status = 'Status: Planering';
+      status = 'Status: Handläggs';
       statusDescription = 'I planeringsfasen görs inventeringar, samråd, tillståndsansökningar och en detaljplanering om projektet beviljas tillstånd.';
       jobSectionMaybe = jobSection;
       companySectionMaybe = companySection;
@@ -177,8 +177,8 @@ export class ProjectPageComponent extends Component {
       statusCard = css.statusCardBuilding;
       statusArrow = css.statusArrowBuilding;
       statusText = css.statusTextBuilding;
-      status = 'Status: Byggnation';
-      statusDescription = 'I byggfasen sker upphandling av byggentreprenad, finansiering och byggnation av projektet.';
+      status = 'Status: Beviljat';
+      statusDescription = 'När ett projekt är beviljat inleds arbetet för upphandling av byggentreprenad och byggnation av projektet.';
       jobSectionMaybe = jobSection;
       companySectionMaybe = companySection;
       postJobMaybe = sectionPostJob;
@@ -186,7 +186,7 @@ export class ProjectPageComponent extends Component {
       statusCard = css.statusCardRunning;
       statusArrow = css.statusArrowRunning;
       statusText = css.statusTextRunning;
-      status = 'Status: Drift';
+      status = 'Status: Uppfört';
       statusDescription = 'Projektet har färdigställts och är i drift. Underhållsjobb kommer att behövas under hela driftperioden.';
       jobSectionMaybe = jobSection;
       companySectionMaybe = companySection;
@@ -329,11 +329,11 @@ export class ProjectPageComponent extends Component {
                 </div>
                 <div className={css.stats}>
                   <div className={css.statusBar}>
-                    <div className={status === 'Status: Planering' ? css.statusCirclePlanning : css.statusCircle}></div>
-                    <div className={status === 'Status: Planering' ? css.statusLinePlanning : css.statusLine}></div>
-                    <div className={status === 'Status: Byggnation' ? css.statusCircleBuilding : css.statusCircle}></div>
-                    <div className={status === 'Status: Byggnation' ? css.statusLineBuilding : css.statusLine}></div>
-                    <div className={status === 'Status: Drift' ? css.statusCircleRunning : css.statusCircle}></div>
+                    <div className={status === 'Status: Handläggs' ? css.statusCirclePlanning : css.statusCircle}></div>
+                    <div className={status === 'Status: Handläggs' ? css.statusLinePlanning : css.statusLine}></div>
+                    <div className={status === 'Status: Beviljat' ? css.statusCircleBuilding : css.statusCircle}></div>
+                    <div className={status === 'Status: Beviljat' ? css.statusLineBuilding : css.statusLine}></div>
+                    <div className={status === 'Status: Uppfört' ? css.statusCircleRunning : css.statusCircle}></div>
                   </div>
                   <div className={statusCard}>
                     <div className={statusArrow}></div>

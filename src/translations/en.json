@@ -1296,6 +1296,8 @@
   "SectionProjects.title": "Project",
   "SectionProjects.projectTitle": "{title}",
   "SectionProjects.projectSubtitle": "{subtitle}",
+  "SectionProjects.calculatingDistance": "Calculating distance...",
+  "SectionProjects.distance": "{distance}",
   "SectionProjects.projectStatus": "{status}",
   "SelectMultipleFilter.labelSelected": "{labelText} • {count}",
   "SelectMultipleFilterPlainForm.labelSelected": "{labelText} • {count}",

@@ -1296,6 +1296,8 @@
   "SectionProjects.title": "Projekt",
   "SectionProjects.projectTitle": "{title}",
   "SectionProjects.projectSubtitle": "{subtitle}",
+  "SectionProjects.calculatingDistance": "Beräknar avstånd...",
+  "SectionProjects.distance": "{distance}",
   "SectionProjects.projectStatus": "{status}",
   "SelectMultipleFilter.labelSelected": "{labelText} • {count}",
   "SelectMultipleFilterPlainForm.labelSelected": "{labelText} • {count}",

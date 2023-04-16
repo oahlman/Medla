@@ -95,7 +95,7 @@ const SectionProjects = (props) => {
     const projectSubtitle = <span className={css.projectSubtitleText}>{subtitle}</span>;
     const distance = userCoords
       ? `${calculateDistance(userCoords, projectCoords)} km`
-      : <FormattedMessage id="SectionProjects.calculatingDistance" />;
+      : null;
 
     return (
       <a href={`/${link}`} className={css.location}>

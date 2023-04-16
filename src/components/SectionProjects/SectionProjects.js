@@ -76,26 +76,10 @@ const getUserCoordinates = () => {
 const SectionProjects = (props) => {
   const { rootClassName, className } = props;
   const classes = classNames(rootClassName || css.root, className);
-  const [userCoords, setUserCoords] = useState(null);
-
-  useEffect(() => {
-    const fetchUserCoords = async () => {
-      try {
-        const coords = await getUserCoordinates();
-        setUserCoords({ latitude: coords.latitude, longitude: coords.longitude });
-      } catch (error) {
-        console.error('Error fetching user coordinates:', error);
-      }
-    };
-    fetchUserCoords();
-  }, []);
 
   const locationLink = (title, subtitle, link, logo, projectCoords) => {
     const projectTitle = <span className={css.projectTitleText}>{title}</span>;
     const projectSubtitle = <span className={css.projectSubtitleText}>{subtitle}</span>;
-    const distance = userCoords
-      ? `${calculateDistance(userCoords, projectCoords)} km`
-      : null;
 
     return (
       <a href={`/${link}`} className={css.location}>
@@ -116,12 +100,6 @@ const SectionProjects = (props) => {
               <FormattedMessage
                 id="SectionProjects.projectSubtitle"
                 values={{ subtitle: projectSubtitle }}
-              />
-            </div>
-            <div className={css.distance}>
-              <FormattedMessage
-                id="SectionProjects.distance"
-                values={{ distance }}
               />
             </div>
           </div>

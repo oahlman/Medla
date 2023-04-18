@@ -94,7 +94,7 @@ export const medlaProjects = [
 
     image: gronhultImg,
     location: {
-      lat: 68.09215,
+      lat: 58.09215,
       lng: 14.009379,
     },
     bounds: {

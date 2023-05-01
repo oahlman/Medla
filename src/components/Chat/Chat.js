@@ -6,9 +6,9 @@ import css from './Chat.module.css';
 const Chat = () => {
   const [message, setMessage] = useState('');
   const [messages, setMessages] = useState([]);
-  const key = process.env.REACT_APP_OPENAI_API_KEY;
+  const apiKey = process.env.REACT_APP_OPENAI_API_KEY;
 
-  console.log('key', key)
+  console.log('key', apiKey)
 
   const sendMessage = async (e) => {
     e.preventDefault();
@@ -27,42 +27,43 @@ const Chat = () => {
   };  
 
   const callChatGPT = async (message) => {
-    try {
-      const response = await axios.post(
-        'https://api.openai.com/v1/chat/completions',
-        {
-          model: 'gpt-3.5-turbo',
-          messages: [
-            ...messages.map((msg) => ({
-              role: msg.user === 'you' ? 'user' : 'assistant',
-              content: msg.text,
-            })),
-            {
-              role: 'user',
-              content: message,
-            },
-          ],
-          max_tokens: 50,
-          temperature: 1,
-        },
-        {
-          headers: {
-            'Content-Type': 'application/json',
-            'Authorization': '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',
+  try {
+    const response = await axios.post(
+      'https://api.openai.com/v1/chat/completions',
+      {
+        model: 'gpt-3.5-turbo',
+        messages: [
+          ...messages.map((msg) => ({
+            role: msg.user === 'you' ? 'user' : 'assistant',
+            content: msg.text,
+          })),
+          {
+            role: 'user',
+            content: message,
           },
+        ],
+        max_tokens: 50,
+        temperature: 1,
+      },
+      {
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${apiKey}`,
         },
-      );
-  
-      const assistantMessage = response.data.choices && response.data.choices[0].message;
-      if (assistantMessage) {
-        return assistantMessage.content.trim();
-      }
-    } catch (error) {
-      console.error('Error calling ChatGPT API:', error);
+      },
+    );
+
+    const assistantMessage = response.data.choices && response.data.choices[0].message;
+    if (assistantMessage) {
+      return assistantMessage.content.trim();
     }
-  
-    return null;
-  };  
+  } catch (error) {
+    console.error('Error calling ChatGPT API:', error);
+  }
+
+  return null;
+};
+
 
   return (
     <div>

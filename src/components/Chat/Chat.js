@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
 import Linkify from 'react-linkify';
 import css from './Chat.module.css';
@@ -19,6 +19,13 @@ const Chat = () => {
     );
   };
   
+  const messageContainerRef = useRef(null);
+
+  useEffect(() => {
+    if (messageContainerRef.current) {
+      messageContainerRef.current.scrollTop = messageContainerRef.current.scrollHeight;
+    }
+  }, [messages]);
 
   const sendMessage = async (e) => {
     e.preventDefault();
@@ -150,7 +157,7 @@ const Chat = () => {
     <>
       {isChatVisible && (
         <div className={css.chatContainer}>
-          <div className={css.messageContainer}>
+          <div className={css.messageContainer} ref={messageContainerRef}>
             {messages.map((msg, index) => (
               <div key={index} className={msg.user === 'Du' ? css.you : css.bot}>
                 <p>
@@ -172,14 +179,16 @@ const Chat = () => {
           </form>
         </div>
       )}
-      <button
-        onClick={() => setIsChatVisible(!isChatVisible)}
-        className={css.openChatButton}
-      >
-        {isChatVisible ? 'Close Chat' : 'Open Chat'}
-      </button>
+      {!isChatVisible && (
+  <button
+    onClick={() => setIsChatVisible(true)}
+    className={css.openChatButton}
+  >
+    Open Chat
+  </button>
+)}
     </>
-  );  
+  );
 };
 
 export default Chat;

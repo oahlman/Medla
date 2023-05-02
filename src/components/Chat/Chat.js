@@ -21,6 +21,8 @@ const Chat = () => {
   
   const messageContainerRef = useRef(null);
 
+  const [isWaitingForResponse, setIsWaitingForResponse] = useState(false);
+
   useEffect(() => {
     if (messageContainerRef.current) {
       messageContainerRef.current.scrollTop = messageContainerRef.current.scrollHeight;
@@ -29,19 +31,24 @@ const Chat = () => {
 
   const sendMessage = async (e) => {
     e.preventDefault();
-    if (message) {
-      setMessages((prevMessages) => [...prevMessages, { user: 'Du', text: message }]);
-      setMessage('');
+    if (!message) return;
   
-      // Call ChatGPT API
+    setMessages((prevMessages) => [...prevMessages, { user: 'Du', text: message }]);
+  
+    setMessage('');
+    setIsWaitingForResponse(true);
+  
+    try {
       const response = await callChatGPT(message);
-  
-      // Add the response to the messages list
-      if (response) {
-        setMessages((prevMessages) => [...prevMessages, { user: 'Support', text: response }]);
-      }
+      setMessages((prevMessages) => [...prevMessages, { user: 'Bot', text: response }]);
+    } catch (error) {
+      setMessages((prevMessages) => [...prevMessages, { user: 'Bot', text: 'Oops, something went wrong. Please try again later.' }]);
+    } finally {
+      setIsWaitingForResponse(false);
     }
-  };  
+  };
+  
+  
 
   const callChatGPT = async (message) => {
     try {
@@ -52,7 +59,7 @@ const Chat = () => {
           messages: [
             {
               role: 'system',
-              content: 'Du är Medlas hjälpsamma kundsupportassistent som talar svenska och är kunnig om Medlas tjänster och funktioner. Dina svar är alltid väldigt korta och koncisa (max 2 meningar), istället för långa svar så hänvisar du till länkar på Medla som https://medla.app/s, https://medla.app/signup och https://medla.app/vanliga-fragor, och när du inte har svar hänvisar du till supportmailen på support@medla.app. Dela aldrig länkar som inte slutar med "medla.app"',
+              content: 'Du är Medlas hjälpsamma kundsupportassistent som talar svenska och är kunnig om Medlas tjänster och funktioner. Dina svar är alltid väldigt korta och koncisa (max 2 meningar), istället för långa svar så hänvisar du till länkar på Medla som medla.app/s, medla.app/signup och medla.app/vanliga-fragor, och när du inte har svar hänvisar du till supportmailen på support@medla.app. Dela aldrig länkar som inte slutar med "medla.app"',
             },
             {
               role: 'assistant',
@@ -157,6 +164,12 @@ const Chat = () => {
     <>
       {isChatVisible && (
         <div className={css.chatContainer}>
+          <button
+            onClick={() => setIsChatVisible(false)}
+            className={css.closeChatButton}
+          >
+            ×
+          </button>
           <div className={css.messageContainer} ref={messageContainerRef}>
             {messages.map((msg, index) => (
               <div key={index} className={msg.user === 'Du' ? css.you : css.bot}>
@@ -166,27 +179,38 @@ const Chat = () => {
                 </p>
               </div>
             ))}
+            {isWaitingForResponse && (
+              <div className={css.bot}>
+                <div className={css.loadingDots}>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </div>
+              </div>
+            )}
           </div>
           <form onSubmit={sendMessage}>
-            <input
-              type="text"
-              value={message}
-              onChange={(e) => setMessage(e.target.value)}
-              placeholder="Type your message here"
-              className={css.input}
-            />
-            <button type="submit" className={css.button}>Send</button>
+            <div className={css.formContainer}>
+              <input
+                type="text"
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
+                placeholder="Prova att fråga 'Hur anmäler jag mig?' eller 'Vilka tjänster erbjuder ni?'"
+                className={css.input}
+              />
+              <button type="submit" className={css.button}>Skicka</button>
+            </div>
           </form>
         </div>
       )}
       {!isChatVisible && (
-  <button
-    onClick={() => setIsChatVisible(true)}
-    className={css.openChatButton}
-  >
-    Open Chat
-  </button>
-)}
+        <button
+          onClick={() => setIsChatVisible(true)}
+          className={css.openChatButton}
+        >
+          Öppna Chatt
+        </button>
+      )}
     </>
   );
 };

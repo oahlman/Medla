@@ -63,7 +63,7 @@
 .button {
   @apply --marketplaceSmallFontStyles;
   padding: 5px 10px;
-  background-color: #4caf50;
+  background-color: var(--marketplaceColor);
   color: white;
   border: none;
   cursor: pointer;
@@ -71,24 +71,24 @@
 }
 
 .button:hover {
-  background-color: #45a049;
+  background-color: var(--marketplaceColorDark);
 }
 
 .sendButton {
   border: none;
-  color: #4caf50;
-  fill: #4caf50;;
+  color: var(--marketplaceColor);
+  fill: var(--marketplaceColor);;
   padding: 0;
 }
 
 .sendButton svg {
   display: block;
-  color: #4caf50;
+  color: var(--marketplaceColor);
 }
 
-.sendButton:hover {
-  color: #45a049;
-  fill: #45a049;
+.sendButton svg:hover {
+  color: var(--marketplaceColorDark);
+  fill: var(--marketplaceColorDark);
 }
 
 .openChatButton {
@@ -97,7 +97,7 @@
   right: 20px;
   z-index: 1000;
   padding: 15px; 
-  background-color: #4caf50;
+  background-color: var(--marketplaceColor);
   color: white;
   border: none;
   cursor: pointer;
@@ -109,7 +109,7 @@
 }
 
 .openChatButton:hover {
-  background-color: #45a049;
+  background-color: var(--marketplaceColorDark);
   transform: scale(1.1); /* Scale the button up by 10% on hover */
 }
 
@@ -120,7 +120,7 @@
   right: 20px;
   z-index: 1000;
   padding: 15px; 
-  background-color: #4caf50;
+  background-color: var(--marketplaceColor);
   color: white;
   border: none;
   cursor: pointer;
@@ -132,7 +132,7 @@
 }
 
 .closeChatButton:hover {
-  background-color: #45a049;
+  background-color: var(--marketplaceColorDark);
   transform: scale(1.1); /* Scale the button up by 10% on hover */
 }
 
@@ -181,7 +181,7 @@
 /* Media query for mobile devices */
 @media screen and (max-width: 768px) {
   .chatContainer {
-    bottom: 0;
+    bottom: 90px;
     right: 0;
     width: 100%;
     max-height: 100%;

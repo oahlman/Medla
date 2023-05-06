@@ -317,6 +317,12 @@ export class CompanyPageComponent extends Component {
 
     const viewOriginal = this.state.viewOriginal;
 
+    const listingAddress = currentListing.attributes.publicData.location && currentListing.attributes.publicData.location.address ? currentListing.attributes.publicData.location.address : null;
+    const companyAddress = currentListing.attributes.publicData && currentListing.attributes.publicData.companyAdress ? currentListing.attributes.publicData.companyAdress : null;
+    const address = listingAddress !== null ? listingAddress : companyAddress;
+    const displayAddress = address !== null ? address : <FormattedMessage id="ListingCard.NoAddress" />;
+  
+
     const translateButtonMaybe = foreignLanguage ? (
         <div><IoLanguageOutline />
         <InlineTextButton
@@ -598,7 +604,12 @@ export class CompanyPageComponent extends Component {
                     formattedPrice={formattedPrice}
                     richTitle={richTitle}
                     category={category}
+                    
                   />
+                  <div className={css.address}>
+                    {displayAddress}
+                  </div>
+                  
                   <div id="contactCompanyButton" className={css.mapMobile}>
                     {ContactLinkForJob}
                   </div>

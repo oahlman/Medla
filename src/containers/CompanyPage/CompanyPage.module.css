@@ -1123,4 +1123,15 @@ color: grey;
   }
 
    }
+
+   .blank {
+    
+    padding-left:24px;
+    padding-right:24px;
+    @media (--viewportMedium) {
+     padding-left:0px;
+     padding-right:0px;
+   }
+ 
+    }
  

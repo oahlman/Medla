@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
 import Linkify from 'react-linkify';
 import css from './Chat.module.css';
-import chatContent from './ChatContent'
+import { assistantContent, systemContent } from './ChatContent'
 import { bubbleIcon, sendIcon } from './icons'
 
 const Chat = () => {
@@ -55,11 +55,11 @@ const Chat = () => {
           messages: [
             {
               role: 'system',
-              content: 'Du är Medlas hjälpsamma kundsupportassistent som talar svenska och är kunnig om Medlas tjänster och funktioner. Dina svar är alltid väldigt korta och koncisa (max 2 meningar), istället för långa svar så hänvisar du till länkar på Medla som medla.app/s, medla.app/signup och medla.app/vanliga-fragor, och när du inte har svar hänvisar du till supportmailen på support@medla.app. Dela aldrig länkar som inte slutar med "medla.app"',
+              content: systemContent,
             },
             {
               role: 'assistant',
-              content: chatContent,
+              content: assistantContent,
             },
             ...messages.map((msg) => ({
               role: msg.user === 'Du' ? 'user' : 'assistant',

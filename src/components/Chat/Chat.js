@@ -7,7 +7,12 @@ import { bubbleIcon, sendIcon } from './icons'
 
 const Chat = () => {
   const [message, setMessage] = useState('');
-  const [messages, setMessages] = useState([]);
+  const [messages, setMessages] = useState([
+    {
+      user: 'Bot',
+      text: 'Hej! Jag är Medlas chattsupport. Jag kan berätta hur Medla fungerar och hjälpa dig om du har frågor eller behöver hjälp.'
+    }
+  ]);
   const [isChatVisible, setIsChatVisible] = useState(false);
   const apiKey = process.env.REACT_APP_OPENAI_API_KEY;
 
@@ -88,7 +93,7 @@ const Chat = () => {
     } catch (error) {
       console.error('Error calling ChatGPT API:', error);
     }
-  
+
     return null;
   };  
 
@@ -96,6 +101,9 @@ const Chat = () => {
     <>
       {isChatVisible && (
         <div className={css.chatContainer}>
+          <div className={css.chatHeader}>
+            Medla Supportchatt
+          </div>
           <button
             onClick={() => setIsChatVisible(false)}
             className={css.closeChatButton}
@@ -105,15 +113,18 @@ const Chat = () => {
             </svg>
           </button>
           <div className={css.messageContainer} ref={messageContainerRef}>
-            {messages.map((msg, index) => (
-              <div key={index} className={msg.user === 'Du' ? css.you : css.bot}>
+          {messages.map((msg, index) => (
+            <div className={msg.user === 'Du' ? css.youContainer : css.botContainer} key={index}>
+              <div className={msg.user === 'Du' ? css.you : css.bot}>
                 <p>
                   <strong>{msg.user}:</strong>{' '}
                   <Linkify componentDecorator={medlaLinkDecorator}>{msg.text}</Linkify>
                 </p>
               </div>
-            ))}
-            {isWaitingForResponse && (
+            </div>
+          ))}
+          {isWaitingForResponse && (
+            <div className={css.botContainer}>
               <div className={css.bot}>
                 <div className={css.loadingDots}>
                   <div></div>
@@ -121,7 +132,9 @@ const Chat = () => {
                   <div></div>
                 </div>
               </div>
-            )}
+            </div>
+          )}
+
           </div>
           <form onSubmit={sendMessage}>
             <div className={css.formContainer}>
@@ -137,11 +150,11 @@ const Chat = () => {
               </button>
             </div>
           </form>
-          </div>
+        </div>
       )}
       {!isChatVisible && (
         <button onClick={() => setIsChatVisible(true)} className={css.openChatButton}>
-        {bubbleIcon}
+          {bubbleIcon}
         </button>
       )}
     </>
@@ -149,3 +162,4 @@ const Chat = () => {
 };
 
 export default Chat;
+

@@ -14,7 +14,9 @@ const baseUrl = process.env.REACT_APP_SHARETRIBE_SDK_BASE_URL || 'https://flex-a
 // NOTE: Do not change these in the customizations, make custom
 // additions within the exported function in the bottom of this file.
 const defaultDirectives = {
-  // ...
+  baseUri: [self],
+  defaultSrc: [self],
+  childSrc: [blob],
   connectSrc: [
     self,
     baseUrl,
@@ -35,7 +37,6 @@ const defaultDirectives = {
     '*.stripe.com',
     'www.googletagmanager.com',
     'https://translation.googleapis.com/language/translate/v2',
-
     'https://api.openai.com',
   ],
   fontSrc: [self, data, 'assets-sharetribecom.sharetribe.com', 'fonts.gstatic.com'],
@@ -85,6 +86,7 @@ const defaultDirectives = {
     '*.google-analytics.com',
     'js.stripe.com',
     'https://connect.facebook.net',
+    'https://api.openai.com',
   ],
   styleSrc: [self, unsafeInline, 'fonts.googleapis.com', 'api.mapbox.com'],
 };

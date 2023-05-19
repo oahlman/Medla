@@ -1,0 +1,229 @@
+@import '../../styles/propertySets.css';
+
+.chatHeader {
+  background-color: var(--marketplaceColorDark);
+  color: white;
+  padding: 10px;
+  border-radius: 10px 10px 0 0;
+  @apply --marketplaceSmallFontStyles;
+}
+
+.messageContainer {
+  flex: 1;
+  overflow-y: scroll;
+  padding: 10px;
+  min-height: 300px; /* Increase the minimum height */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.chatContainer {
+  position: fixed;
+  bottom: 90px;
+  right: 20px;
+  width: 400px;
+  height: calc(100% - 180px);
+  max-height: 700px;
+  background-color: white;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.youContainer, .botContainer {
+  display: flex;
+  justify-content: flex-end;  /* For 'youContainer', messages will be on the right */
+  width: 100%; /* Take up the full width to ensure each container is on its own row */
+}
+
+.botContainer {
+  justify-content: flex-start;  /* For 'botContainer', messages will be on the left */
+}
+
+
+
+.formContainer {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.you, .bot {
+  @apply --marketplaceSmallFontStyles;
+  padding: 10px;
+  margin-bottom: 10px;
+  display: inline-flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.bot {
+  background-color: #e2e2e2;
+  color: #393939;
+  align-self: flex-start;
+  text-align: left;
+  margin-right: 25px;
+  border-radius: 10px 10px 10px 0;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.you {
+  background-color: var(--marketplaceColor);
+  color: #f2f2f2;
+  align-self: flex-end;
+  text-align: right;
+  margin-left: 25px;
+  border-radius: 10px 10px 0 10px;
+}
+
+.input {
+  font-size: 16px;
+  width: 90%;
+  padding: 5px 10px;
+  margin-right: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.button {
+  @apply --marketplaceSmallFontStyles;
+  padding: 5px 10px;
+  background-color: var(--marketplaceColor);
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.button:hover {
+  background-color: var(--marketplaceColorDark);
+}
+
+.sendButton {
+  border: none;
+  color: var(--marketplaceColor);
+  fill: var(--marketplaceColor);;
+  padding: 0;
+}
+
+.sendButton svg {
+  display: block;
+  color: var(--marketplaceColor);
+}
+
+.sendButton svg:hover {
+  color: var(--marketplaceColorDark);
+  fill: var(--marketplaceColorDark);
+}
+
+.openChatButton {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  padding: 15px; 
+  background-color: var(--marketplaceColor);
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 50%; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease; /* Add transition for smooth scaling */
+}
+
+.openChatButton:hover {
+  background-color: var(--marketplaceColorDark);
+  transform: scale(1.1); /* Scale the button up by 10% on hover */
+}
+
+
+.closeChatButton {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  padding: 15px; 
+  background-color: var(--marketplaceColor);
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 50%; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease; /* Add transition for smooth scaling */
+}
+
+.closeChatButton:hover {
+  background-color: var(--marketplaceColorDark);
+  transform: scale(1.1); /* Scale the button up by 10% on hover */
+}
+
+.loadingDots {
+  display: inline-block;
+  position: relative;
+  width: 32px;
+  height: 10px;
+}
+
+.loadingDots div {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background-color: #393939;
+  border-radius: 50%;
+  animation: loadingDots 1.4s infinite;
+}
+
+.loadingDots div:nth-child(1) {
+  left: 0;
+  animation-delay: -0.4s;
+}
+
+.loadingDots div:nth-child(2) {
+  left: 10px;
+  animation-delay: -0.2s;
+}
+
+.loadingDots div:nth-child(3) {
+  left: 20px;
+  animation-delay: 0s;
+}
+
+@keyframes loadingDots {
+  0%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-8px);
+  }
+}
+
+
+
+/* Media query for mobile devices */
+@media screen and (max-width: 768px) {
+  .chatContainer {
+    position: fixed;
+    bottom: 0; /* Make the chat stick to the bottom */
+    right: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    border-radius: 0;
+  }
+
+  .messageContainer {
+    height: calc(100% - 50px); /* Adjust height to accommodate the input form */
+  }
+
+  .closeChatButton {
+    position: fixed;
+    top: 20px;
+    height: 50px;
+    width: 50px;
+  }
+}

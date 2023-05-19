@@ -11,6 +11,7 @@ import {
   Logo,
   ExternalLink,
   NamedLink,
+  Chat,
 } from '../../components';
 import { ensureCurrentUser } from '../../util/data';
 import { compose } from 'redux';
@@ -47,6 +48,7 @@ const Footer = props => {
     <div className={classes}>
       <div className={css.topBorderWrapper}>
         <div className={css.content}>
+          <Chat />
           <div className={css.someLiksMobile}></div>
           <div className={css.links}>
             <div className={css.organization} id="organization">

@@ -37,6 +37,7 @@ const defaultDirectives = {
     '*.stripe.com',
     'www.googletagmanager.com',
     'https://translation.googleapis.com/language/translate/v2',
+    'https://api.openai.com',
   ],
   fontSrc: [self, data, 'assets-sharetribecom.sharetribe.com', 'fonts.gstatic.com'],
   frameSrc: [
@@ -85,6 +86,7 @@ const defaultDirectives = {
     '*.google-analytics.com',
     'js.stripe.com',
     'https://connect.facebook.net',
+    'https://api.openai.com',
   ],
   styleSrc: [self, unsafeInline, 'fonts.googleapis.com', 'api.mapbox.com'],
 };

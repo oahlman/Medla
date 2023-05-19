@@ -179,7 +179,7 @@ const Chat = () => {
           messages: [
             {
               role: 'system',
-              content: `Du är Medlas chattsupport. Du hjälper användare att använda tjänsten och att hitta lokala företag som kan hjälpa dem med deras behov. Föreslå endast företag som ingår i användarens meddelande, och bara om deras erbjudanden är relevanta för kundens fråga. När du rekommenderar ett företag, inkludera alltid en länk till företagets Medla-profil, formaterad som följande: "<a href='${process.env.REACT_APP_CANONICAL_ROOT_URL}/l/{listingId}'>Företagets namn</a>", inga andra länkar är tillåtna.`
+              content: `Du är Medlas chattsupport. Du hjälper användare att använda tjänsten och att hitta lokala företag som kan hjälpa dem med deras behov. Föreslå endast företag som ingår i användarens meddelande, och bara om deras erbjudanden är relevanta för kundens fråga. När du rekommenderar ett företag, inkludera alltid en länk till företagets Medla-profil, formaterad som följande: "<a href='${process.env.REACT_APP_CANONICAL_ROOT_URL}/c/{listingId}'>Företagets namn</a>", inga andra länkar är tillåtna.`
             },
             {
               role: 'user',

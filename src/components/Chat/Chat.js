@@ -14,29 +14,6 @@ const sdk = sharetribeSdk.createInstance({
   clientId: process.env.REACT_APP_SHARETRIBE_SDK_CLIENT_ID,
   baseUrl: process.env.REACT_APP_SHARETRIBE_SDK_BASE_URL || 'https://flex-api.sharetribe.com',
 });
-const apiKey = process.env.REACT_APP_OPENAI_API_KEY;
-
-// const processUserMessage = async (userMessage) => {
-//   const listingQuery = await getListingQuery(userMessage);
-//   const queryResults = await runSharetribeQuery(listingQuery);
-//   const chatResponse = await getChatResponse(queryResults, userMessage);
-// 
-//   console.log('userMessage: ', userMessage, 'listingQuery: ', listingQuery, 'queryResults: ', queryResults, 'chatResponse: ', chatResponse);
-// };
-
-// processUserMessage('Where can I eat lunch in Umeå?');
-
-// Search all listings, ordered by distance from given location,
-// matching only listings with `publicData.gears` less than 23
-// and price amount between 14.00 and 16.00.
-sdk.listings.query({
-  pub_category: 'kostlogi',
-  state: "published",
-  origin: new LatLng(40.0, -74.0),
-  per_page: 5
-}).then(res => {
-  console.log('data: ', res.data);
-});
 
 const Chat = () => {
   const [message, setMessage] = useState('');
@@ -85,9 +62,8 @@ const Chat = () => {
         queryResponse = await getChatResponse(queryResults, message);
       }
     
-      const assistantResponse = listingQuery && listingQuery !== null ? queryResponse : response;
+      const assistantResponse = queryResponse !== null && listingQuery !== null ? queryResponse : response;
       setMessages((prevMessages) => [...prevMessages, { user: 'Bot', text: assistantResponse }]);
-      console.log('message: ', message, '\nlistingQuery: ', listingQuery, '\nqueryResults: ', queryResults, '\nqueryResponse: ', queryResponse, '\nresponse: ', response);
     } catch (error) {
       setMessages((prevMessages) => [...prevMessages, { user: 'Bot', text: 'Oops, something went wrong. Please try again later.' }]);
     } finally {
@@ -126,9 +102,7 @@ const Chat = () => {
       );      
   
       const assistantMessage = response.data.choices && response.data.choices[0].message;
-      console.log('response.data.choices[0].message: ', response.data.choices[0].message);
       if (assistantMessage) {
-        // Trim the string and remove any trailing periods
         const cleanedContent = assistantMessage.content.trim().replace(/\.$/, "");
     
         try {
@@ -138,7 +112,7 @@ const Chat = () => {
             return null;
           }
           
-          result.origin = [parseFloat(result.origin[0]), parseFloat(result.origin[1])];  // convert to numbers
+          result.origin = [parseFloat(result.origin[0]), parseFloat(result.origin[1])];
           return result;
         } catch (error) {
           console.error('Error parsing JSON from assistant:', error);

@@ -17,30 +17,37 @@ const sdk = sharetribeSdk.createInstance({
 
 const Chat = () => {
   const [message, setMessage] = useState('');
-  const [messages, setMessages] = useState([
+  const initialMessage = [
     {
       user: 'Bot',
-      text: 'Hej! Jag är Medlas chattsupport. Jag kan berätta hur Medla fungerar och hjälpa dig om du har frågor eller behöver hjälp.'
+      text: 'Hej! Jag är Medlas chattsupport. Jag kan berätta hur Medla fungerar och hjälpa dig om du har frågor eller behöver hjälp.',
+      id: 'initialMessage'
     }
-  ]);
+  ];
+  const [messages, setMessages] = useState(JSON.parse(localStorage.getItem('chatMessages')) || initialMessage);
   const [isChatVisible, setIsChatVisible] = useState(false);
-  const apiKey = process.env.REACT_APP_OPENAI_API_KEY;
-
-  const medlaLinkDecorator = (href, text, key) => (
-    <a href={href} key={key} target="_blank" rel="noopener noreferrer">
-      {text}
-    </a>
-  );
-
   const messageContainerRef = useRef(null);
-
-  const [isWaitingForResponse, setIsWaitingForResponse] = useState(false);
 
   useEffect(() => {
     if (messageContainerRef.current) {
-      messageContainerRef.current.scrollTop = messageContainerRef.current.scrollHeight;
+      const messageContainer = messageContainerRef.current;
+      messageContainer.scrollTop = messageContainer.scrollHeight;
     }
+  }, [messages, isChatVisible]);
+
+  useEffect(() => {
+    const savedMessages = localStorage.getItem('chatMessages');
+    if (savedMessages) {
+      setMessages(JSON.parse(savedMessages));
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem('chatMessages', JSON.stringify(messages));
   }, [messages]);
+
+  const apiKey = process.env.REACT_APP_OPENAI_API_KEY;
+  const [isWaitingForResponse, setIsWaitingForResponse] = useState(false);
 
   const sendMessage = async (e) => {
     e.preventDefault();
@@ -52,15 +59,14 @@ const Chat = () => {
     setIsWaitingForResponse(true);
 
     try {
-      const response = await callChatGPT(message);
       const listingQuery = await getListingQuery(message);
     
-      let queryResults, queryResponse;
+      let queryResults;
     
-      if(listingQuery !== null) {
+      if(listingQuery !== null && typeof listingQuery !== 'string') {
         queryResults = await runSharetribeQuery(listingQuery);
-        queryResponse = await getChatResponse(queryResults, message);
       }
+      const response = await callChatGPT(queryResults, message);
     
       const assistantResponse = queryResponse !== null && listingQuery !== null ? queryResponse : response;
       setMessages((prevMessages) => [...prevMessages, { user: 'Bot', text: assistantResponse }]);
@@ -81,7 +87,7 @@ const Chat = () => {
           messages: [
             {
               role: 'system',
-              content: `You are a JSON translator. You should translate user's requests about services, products or companies to a category and a set of lng lat coordinates.`,
+              content: `You are a JSON translator. You should translate user's requests about services, products or companies to a category and a set of lng lat coordinates. You only speak JSON.`,
             },
             {
               role: 'system',
@@ -125,26 +131,36 @@ const Chat = () => {
     return null;
 };
   
-  async function runSharetribeQuery(listingQuery) {
-    try {
-      const response = await sdk.listings.query({
-        pub_category: listingQuery.pub_category,
-        origin: new LatLng(...listingQuery.origin),
-        pub_listingCategory: 'company',
-        per_page: 5,
+async function runSharetribeQuery(listingQuery) {
+  try {
+    const response = await sdk.listings.query({
+      pub_category: listingQuery.pub_category,
+      origin: new LatLng(...listingQuery.origin),
+      pub_listingCategory: 'company',
+      per_page: 5,
+    });
+
+    if (response.data && response.data.data) {
+      return response.data.data.map(listing => {
+        return {
+          uuid: listing.id.uuid,
+          title: listing.attributes.title,
+          offer1: listing.attributes.publicData.offer1,
+          offer2: listing.attributes.publicData.offer2,
+          offer3: listing.attributes.publicData.offer3,
+          offer4: listing.attributes.publicData.offer4,
+          offer5: listing.attributes.publicData.offer5
+        };
       });
-  
-      if (response.data) {
-        return response.data;
-      }
-    } catch (error) {
-      console.error('Error running Sharetribe query:', error);
     }
-  
-    return null;
-  }  
-  
-  const getChatResponse = async (queryResults, message) => {
+  } catch (error) {
+    console.error('Error running Sharetribe query:', error);
+  }
+
+  return null;
+}
+
+  const callChatGPT = async (queryResults, message) => {
     try {
       const response = await axios.post(
         'https://api.openai.com/v1/chat/completions',
@@ -153,69 +169,18 @@ const Chat = () => {
           messages: [
             {
               role: 'system',
-              content: `Du är Medlas chattsupport. Du hjälper användare att använda tjänsten och att hitta lokala företag som kan hjälpa dem med deras behov. Föreslå endast företag som ingår i användarens meddelande, och bara om deras erbjudanden är relevanta för kundens fråga. När du rekommenderar ett företag, inkludera alltid en länk till företagets Medla-profil, formaterad som följande: "<a href='${process.env.REACT_APP_CANONICAL_ROOT_URL}/c/{listingId}'>Företagets namn</a>", inga andra länkar är tillåtna.`
-            },
-            {
-              role: 'user',
-              content: `${message}\n\nFöreslå upp till 3 företag från listan om de är relevanta för frågan, om inte så be om mer information:\n\n${JSON.stringify(queryResults.data)}`,
-            },
-          ],
-          temperature: 0.2,
-          max_tokens: 400,
-        },
-        {
-          headers: {
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${apiKey}`,
-          },
-        },
-      );
-  
-      const assistantMessage = response.data.choices && response.data.choices[0].message;
-      if (assistantMessage) {
-        const content = assistantMessage.content.trim();
-
-        // Break up the message into lines and indent each line for better readability
-        const lines = content.split('\n');
-        const indentedLines = lines.map(line => `    ${line}`);
-
-        // Add a title and a newline for spacing, then join the indented lines back together
-        const formattedMessage = `Företagssuggestioner:\n\n${indentedLines.join('\n')}`;
-
-        return formattedMessage;
-      }
-    } catch (error) {
-      console.error('Error calling ChatGPT API:', error);
-    }
-  
-    return null;
-  };
-
-  const callChatGPT = async (message) => {
-    try {
-      const response = await axios.post(
-        'https://api.openai.com/v1/chat/completions',
-        {
-          model: 'gpt-3.5-turbo',
-          messages: [
-            {
-              role: 'system',
-              content: 'Du är Medlas chattsupport som hjälper användare att hitta lokala varor, tjänster och leverantörer.',
-            },
-            {
-              role: 'assistant',
-              content: 'Hej! Jag är Medlas chattsupport. Jag kan berätta hur Medla fungerar och hjälpa dig om du har frågor eller behöver hjälp.',
-            },
+              content: `Du är Medlas chattsupport. Din uppgift är att hjälpa användare att navigera genom tjänsten och att hitta lokala företag baserat på deras specifika behov. Du bör endast föreslå företag som nämns i användarens meddelande och som erbjuder tjänster relevanta för användarens förfrågan. När du rekommenderar ett företag, inkludera en länk till företagets Medla-profil, formaterad som följande: "<a href='${process.env.REACT_APP_CANONICAL_ROOT_URL}/c/{listingId}'>Företagets namn</a>". Inga andra länkar är tillåtna.`,
+            },            
             ...messages.map((msg) => ({
               role: msg.user === 'Du' ? 'user' : 'assistant',
               content: msg.text,
             })),
             {
               role: 'user',
-              content: message,
+              content: queryResults == undefined ? message : `${message}\n\nFöreslå upp till 3 företag från listan om de är relevanta för frågan, om inte så be om mer information:\n\n${JSON.stringify(queryResults)}`,
             },
           ],
-          max_tokens: 150,
+          max_tokens: 400,
           temperature: 0.2,
         },
         {
@@ -254,27 +219,26 @@ const Chat = () => {
           </button>
           <div className={css.messageContainer} ref={messageContainerRef}>
           {messages.map((msg, index) => (
-            <div className={msg.user === 'Du' ? css.youContainer : css.botContainer} key={index}>
-              <div className={msg.user === 'Du' ? css.you : css.bot}>
-                <p>
-                  <strong>{msg.user}:</strong>{' '}
-                  <div dangerouslySetInnerHTML={{ __html: msg.text }}></div>
-                </p>
-              </div>
-            </div>
-          ))}
-          {isWaitingForResponse && (
-            <div className={css.botContainer}>
-              <div className={css.bot}>
-                <div className={css.loadingDots}>
-                  <div></div>
-                  <div></div>
-                  <div></div>
+                <div id={`msg-${msg.id}`} className={msg.user === 'Du' ? css.youContainer : css.botContainer} key={index}>
+                  <div className={msg.user === 'Du' ? css.you : css.bot}>
+                    <p>
+                      <strong>{msg.user}:</strong>{' '}
+                      <div dangerouslySetInnerHTML={{ __html: msg.text.replace(/\n/g, '<br />') }}></div>
+                    </p>
+                  </div>
+                </div>
+              ))}
+            {isWaitingForResponse && (
+              <div className={css.botContainer}>
+                <div className={css.bot}>
+                  <div className={css.loadingDots}>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                  </div>
                 </div>
               </div>
-            </div>
-          )}
-
+            )}
           </div>
           <form onSubmit={sendMessage}>
             <div className={css.formContainer}>

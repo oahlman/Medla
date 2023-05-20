@@ -24,7 +24,13 @@ const Chat = () => {
       id: 'initialMessage'
     }
   ];
-  const [messages, setMessages] = useState(JSON.parse(localStorage.getItem('chatMessages')) || initialMessage);
+  
+  const [messages, setMessages] = useState(
+    typeof window !== "undefined" && localStorage.getItem('chatMessages') 
+      ? JSON.parse(localStorage.getItem('chatMessages')) 
+      : initialMessage
+  );
+  
   const [isChatVisible, setIsChatVisible] = useState(false);
   const messageContainerRef = useRef(null);
 
@@ -36,14 +42,18 @@ const Chat = () => {
   }, [messages, isChatVisible]);
 
   useEffect(() => {
-    const savedMessages = localStorage.getItem('chatMessages');
-    if (savedMessages) {
-      setMessages(JSON.parse(savedMessages));
+    if (typeof window !== "undefined") {
+      const savedMessages = localStorage.getItem('chatMessages');
+      if (savedMessages) {
+        setMessages(JSON.parse(savedMessages));
+      }
     }
   }, []);
 
   useEffect(() => {
-    localStorage.setItem('chatMessages', JSON.stringify(messages));
+    if (typeof window !== "undefined") {
+      localStorage.setItem('chatMessages', JSON.stringify(messages));
+    }
   }, [messages]);
 
   const apiKey = process.env.REACT_APP_OPENAI_API_KEY;
@@ -68,9 +78,11 @@ const Chat = () => {
       }
       const response = await callChatGPT(queryResults, message);
     
-      const assistantResponse = queryResponse !== null && listingQuery !== null ? queryResponse : response;
+      const assistantResponse = response;
       setMessages((prevMessages) => [...prevMessages, { user: 'Bot', text: assistantResponse }]);
     } catch (error) {
+      console.error('Error message:', error.message);
+      console.error('Full error stack:', error.stack);
       setMessages((prevMessages) => [...prevMessages, { user: 'Bot', text: 'Oops, something went wrong. Please try again later.' }]);
     } finally {
       setIsWaitingForResponse(false);

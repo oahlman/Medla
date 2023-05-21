@@ -52,9 +52,10 @@ const Chat = () => {
 
   useEffect(() => {
     if (typeof window !== "undefined") {
-      localStorage.setItem('chatMessages', JSON.stringify(messages));
+      localStorage.setItem('chatMessages', JSON.stringify(messages.slice(-10))); // store only the last 10 messages
     }
-  }, [messages]);
+}, [messages]);
+  console.log('messages: ', messages)
 
   const apiKey = process.env.REACT_APP_OPENAI_API_KEY;
   const [isWaitingForResponse, setIsWaitingForResponse] = useState(false);
@@ -63,7 +64,7 @@ const Chat = () => {
     e.preventDefault();
     if (!message) return;
 
-    setMessages((prevMessages) => [...prevMessages, { user: 'Du', text: message }]);
+    setMessages((prevMessages) => [...prevMessages.slice(-10), { user: 'Du', text: message }]);  // keep only the last 10 messages
 
     setMessage('');
     setIsWaitingForResponse(true);
@@ -77,9 +78,11 @@ const Chat = () => {
         queryResults = await runSharetribeQuery(listingQuery);
       }
       const response = await callChatGPT(queryResults, message);
+
+      console.log('listingQuery: ', listingQuery, 'queryResults: ', queryResults, 'response: ', response)
     
-      const assistantResponse = response;
-      setMessages((prevMessages) => [...prevMessages, { user: 'Bot', text: assistantResponse }]);
+      const assistantResponse = response === null ? 'Vi verkar ha stött på ett tekniskt problem, vänligen prova igen om en liten stund.' : response;
+      setMessages((prevMessages) => [...prevMessages.slice(-10), { user: 'Bot', text: assistantResponse }]);  // keep only the last 10 messages
     } catch (error) {
       console.error('Error message:', error.message);
       console.error('Full error stack:', error.stack);
@@ -154,14 +157,18 @@ async function runSharetribeQuery(listingQuery) {
 
     if (response.data && response.data.data) {
       return response.data.data.map(listing => {
+        const publicData = listing.attributes.publicData || {};
+        const location = publicData.location || {};
+
         return {
           uuid: listing.id.uuid,
           title: listing.attributes.title,
-          offer1: listing.attributes.publicData.offer1,
-          offer2: listing.attributes.publicData.offer2,
-          offer3: listing.attributes.publicData.offer3,
-          offer4: listing.attributes.publicData.offer4,
-          offer5: listing.attributes.publicData.offer5
+          offer1: publicData.offer1,
+          offer2: publicData.offer2,
+          offer3: publicData.offer3,
+          offer4: publicData.offer4,
+          offer5: publicData.offer5,
+          address: location.address || null
         };
       });
     }
@@ -172,47 +179,51 @@ async function runSharetribeQuery(listingQuery) {
   return null;
 }
 
-  const callChatGPT = async (queryResults, message) => {
-    try {
-      const response = await axios.post(
-        'https://api.openai.com/v1/chat/completions',
-        {
-          model: 'gpt-3.5-turbo',
-          messages: [
-            {
-              role: 'system',
-              content: `Du är Medlas chattsupport. Din uppgift är att hjälpa användare att navigera genom tjänsten och att hitta lokala företag baserat på deras specifika behov. Du bör endast föreslå företag som nämns i användarens meddelande och som erbjuder tjänster relevanta för användarens förfrågan. När du rekommenderar ett företag, inkludera en länk till företagets Medla-profil, formaterad som följande: "<a href='${process.env.REACT_APP_CANONICAL_ROOT_URL}/c/{listingId}'>Företagets namn</a>". Inga andra länkar är tillåtna.`,
-            },            
-            ...messages.map((msg) => ({
-              role: msg.user === 'Du' ? 'user' : 'assistant',
-              content: msg.text,
-            })),
-            {
-              role: 'user',
-              content: queryResults == undefined ? message : `${message}\n\nFöreslå upp till 3 företag från listan om de är relevanta för frågan, om inte så be om mer information:\n\n${JSON.stringify(queryResults)}`,
-            },
-          ],
-          max_tokens: 400,
-          temperature: 0.2,
-        },
-        {
-          headers: {
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${apiKey}`,
+const callChatGPT = async (queryResults, message) => {
+  try {
+    const systemPrompt = queryResults == undefined ? `Du är Medlas chattsupport. Din uppgift är att hjälpa användare att navigera genom tjänsten och att hitta lokala företag baserat på deras specifika behov. Du bör endast föreslå företag som nämns i användarens meddelande och som erbjuder tjänster relevanta för användarens förfrågan. När du rekommenderar ett företag, inkludera en länk till företagets Medla-profil, formaterad som följande: "<a href='${process.env.REACT_APP_CANONICAL_ROOT_URL}/c/{listingId}'>Företagets namn</a>". Inga andra länkar är tillåtna.` : `Du är Medlas chattsupport. Din uppgift är att hjälpa användare att navigera genom tjänsten och att hitta lokala företag baserat på deras specifika behov. Du bör endast föreslå företag som nämns i användarens meddelande och som erbjuder tjänster relevanta för användarens förfrågan. När du rekommenderar ett företag, inkludera en länk till företagets Medla-profil, formaterad som följande: "<a href='${process.env.REACT_APP_CANONICAL_ROOT_URL}/c/{listingId}'>Företagets namn</a>". Inga andra länkar är tillåtna.\n\nFöreslå upp till 3 företag från nedan JSON array som kan tillgodose användarens behov, om inga företag passar så vänligen be användaren att förtydliga sitt behov:\n\n${JSON.stringify(queryResults)}\n\nFöreslå upp till 3 företag som ovan JSON array som kan tillgodose användarens behov, om inga företag passar så vänligen be användaren att förtydliga sitt behov.`;
+    
+    console.log('System Prompt:', systemPrompt); // add this line to log the system prompt
+    
+    const response = await axios.post(
+      'https://api.openai.com/v1/chat/completions',
+      {
+        model: 'gpt-3.5-turbo',
+        messages: [
+          {
+            role: 'system',
+            content: systemPrompt,
+          },            
+          ...messages.slice(-10).map((msg) => ({ // send only the last 10 messages
+            role: msg.user === 'Du' ? 'user' : 'assistant',
+            content: msg.text,
+          })),
+          {
+            role: 'user',
+            content: message,
           },
+        ],
+        max_tokens: 500,
+        temperature: 0.2,
+      },
+      {
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${apiKey}`,
         },
-      );
+      },
+    );
   
-      const assistantMessage = response.data.choices && response.data.choices[0].message;
-      if (assistantMessage) {
-        return assistantMessage.content.trim();
-      }
-    } catch (error) {
-      console.error('Error calling ChatGPT API:', error);
+    const assistantMessage = response.data.choices && response.data.choices[0].message;
+    if (assistantMessage) {
+      return assistantMessage.content.trim();
     }
+  } catch (error) {
+    console.error('Error calling ChatGPT API:', error);
+  }
 
-    return null;
-  };  
+  return null;
+};   
 
   return (
     <>
@@ -235,7 +246,7 @@ async function runSharetribeQuery(listingQuery) {
                   <div className={msg.user === 'Du' ? css.you : css.bot}>
                     <p>
                       <strong>{msg.user}:</strong>{' '}
-                      <div dangerouslySetInnerHTML={{ __html: msg.text.replace(/\n/g, '<br />') }}></div>
+                      <div dangerouslySetInnerHTML={{ __html: msg.text ? msg.text.replace(/\n/g, '<br />') : '' }}></div>
                     </p>
                   </div>
                 </div>

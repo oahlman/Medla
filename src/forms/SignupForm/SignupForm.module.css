@@ -117,3 +117,17 @@
 .signupTrigger{
   
 }
+
+.hidden {
+  display: none;
+}
+
+.profileType {
+  display: flex;
+  gap: 16px;
+}
+
+.profileTypeTitle {
+  font-weight: var(--fontWeightSemiBold);
+  font-size: 14px;
+}

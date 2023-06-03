@@ -49,6 +49,7 @@ FieldCheckboxRenderer.defaultProps = {
   className: null,
   label: null,
   twoColumns: false,
+  options: [], // default value
 };
 
 FieldCheckboxRenderer.propTypes = {

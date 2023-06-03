@@ -184,13 +184,19 @@ export class AuthenticationPageComponent extends Component {
     };
 
     const handleSubmitSignup = values => {
-      const { email, phoneNumber, fname, lname, ...rest } = values;
+      const { email, phoneNumber, fname, lname, companyName, ...rest } = values;
+    
+      // If companyName is present, use it as the firstName and set lastName as 'null'
+      const isCompany = Boolean(companyName);
+      const firstName = isCompany ? companyName : fname.trim();
+      const lastName = isCompany ? ' null' : lname.trim();
+    
       const isEmail = (/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i).test(email);
-      const emailParams = { email: email, phoneNumber: null, firstName: fname.trim(), lastName: lname.trim(), ...rest };
-      const phoneParams = { email: `phone+${email}@medla.app`, phoneNumber: email, firstName: fname.trim(), lastName: lname.trim(), ...rest };
+      const emailParams = { email: email, phoneNumber: null, firstName, lastName, ...rest };
+      const phoneParams = { email: `phone+${email}@medla.app`, phoneNumber: email, firstName, lastName, ...rest };
       const params = isEmail ? emailParams : phoneParams;
       submitSignup(params);
-    };
+    };      
 
     const handleSubmitConfirm = values => {
       const { idpToken, email, firstName, lastName, idpId } = this.state.authInfo;

@@ -59,6 +59,11 @@ flex-direction: row;
   @apply --marketplaceH1FontStyles;
   margin-bottom: 1px;
   margin-top: 16px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: block;
+  width: 90%;
 }
 
 .hidden {

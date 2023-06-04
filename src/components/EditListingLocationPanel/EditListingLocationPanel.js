@@ -5,7 +5,7 @@ import { FormattedMessage } from '../../util/reactIntl';
 import { LISTING_STATE_DRAFT } from '../../util/types';
 import { ensureOwnListing } from '../../util/data';
 import { ListingLink } from '../../components';
-import { EditListingLocationForm, EditCompanyInfoForm } from '../../forms';
+import { EditListingLocationForm } from '../../forms';
 
 import css from './EditListingLocationPanel.module.css';
 
@@ -30,12 +30,7 @@ class EditListingLocationPanel extends Component {
     const locationFieldsPresent =
       publicData && publicData.location && publicData.location.address && geolocation;
     const location = publicData && publicData.location ? publicData.location : {};
-    const { address, building} = location;
-    const contactNumber = currentListing.attributes.publicData.contactNumber
-    const companyNumber = currentListing.attributes.publicData.companyNumber
-
-
-
+    const { address, building } = location;
 
     return {
       building,
@@ -45,8 +40,6 @@ class EditListingLocationPanel extends Component {
             selectedPlace: { address, origin: geolocation },
           }
         : null,
-          contactNumber: contactNumber,
-          companyNumber:  companyNumber,
     };
   }
 
@@ -63,14 +56,10 @@ class EditListingLocationPanel extends Component {
       panelUpdated,
       updateInProgress,
       errors,
-      publicData,
-
     } = this.props;
 
     const classes = classNames(rootClassName || css.root, className);
     const currentListing = ensureOwnListing(listing);
-    const contactNumber = currentListing.attributes.publicData.contactNumber;
-    const listingCategoryData = currentListing.attributes.publicData.listingCategory;
 
     const isPublished =
       currentListing.id && currentListing.attributes.state !== LISTING_STATE_DRAFT;
@@ -83,18 +72,14 @@ class EditListingLocationPanel extends Component {
       <FormattedMessage id="EditListingLocationPanel.createListingTitle" />
     );
 
-    const isJob = listingCategoryData !== 'company';
-
-    const listingCategory = isJob ? 'job' : 'company';
-
-    return isJob ? (
+    return (
       <div className={classes}>
         <h1 className={css.title}>{panelTitle}</h1>
         <EditListingLocationForm
           className={css.form}
           initialValues={this.state.initialValues}
           onSubmit={values => {
-            const { building = '', location, contactNumber} = values;
+            const { building = '', location } = values;
             const {
               selectedPlace: { address, origin },
             } = location;
@@ -102,21 +87,14 @@ class EditListingLocationPanel extends Component {
               geolocation: origin,
               publicData: {
                 location: { address, building },
-                contactNumber: contactNumber,
-                listingCategory: listingCategory,
-
               },
             };
-
             this.setState({
               initialValues: {
                 building,
                 location: { search: address, selectedPlace: { address, origin } },
-                contactNumber: contactNumber,
-
               },
             });
-
             onSubmit(updateValues);
           }}
           onChange={onChange}
@@ -128,55 +106,6 @@ class EditListingLocationPanel extends Component {
           fetchErrors={errors}
         />
       </div>
-      ) : (
-
-        <div className={classes}>
-         <h1 className={css.title}> <FormattedMessage id="EditCompanyInfoPanel.title" /> </h1>
-        <EditCompanyInfoForm
-          className={css.form}
-          initialValues={this.state.initialValues}
-          onSubmit={values => {
-            const { building = '', location, contactNumber,  companyNumber} = values;
-            const {
-              selectedPlace: { address, origin },
-            } = location;
-            const updateValues = {
-              geolocation: origin,
-              publicData: {
-                location: { address, building },
-                contactNumber: contactNumber,
-                listingCategory: listingCategory,
-                companyNumber:  companyNumber,
-
-              },
-            };
-
-            this.setState({
-              initialValues: {
-                building,
-                location: { search: address, selectedPlace: { address, origin } },
-                contactNumber: contactNumber,
-                companyNumber:  companyNumber,
-
-              },
-            });
-
-            onSubmit(updateValues);
-          }}
-          onChange={onChange}
-          saveActionMsg={submitButtonText}
-          disabled={disabled}
-          ready={ready}
-          updated={panelUpdated}
-          updateInProgress={updateInProgress}
-          fetchErrors={errors}
-        />
-
-
-
-
-        </div>
-
     );
   }
 }

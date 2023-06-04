@@ -24,7 +24,7 @@ import EditListingWizardTab, {
   FEATURES,
   POLICY,
   LOCATION,
-  SERVICE,
+  PRICING,
   PHOTOS,
 } from './EditListingWizardTab';
 import css from './EditListingWizard.module.css';
@@ -41,7 +41,9 @@ export const TABS = [
   FEATURES,
   POLICY,
   LOCATION,
+  PRICING,
   ...availabilityMaybe,
+  PHOTOS,
 ];
 
 // Tabs are horizontal in small screens
@@ -60,7 +62,7 @@ const tabLabel = (intl, tab) => {
     key = 'EditListingWizard.tabLabelPolicy';
   } else if (tab === LOCATION) {
     key = 'EditListingWizard.tabLabelLocation';
-  } else if (tab === SERVICE) {
+  } else if (tab === PRICING) {
     key = 'EditListingWizard.tabLabelPricing';
   } else if (tab === AVAILABILITY) {
     key = 'EditListingWizard.tabLabelAvailability';
@@ -89,6 +91,7 @@ const tabCompleted = (tab, listing) => {
     publicData,
   } = listing.attributes;
   const images = listing.images;
+  console.log('location: ',publicData.location);
 
   switch (tab) {
     case DESCRIPTION:
@@ -96,10 +99,10 @@ const tabCompleted = (tab, listing) => {
     case FEATURES:
       return !!(publicData && publicData.amenities);
     case POLICY:
-      return !!(publicData && typeof publicData.category !== 'undefined');
+      return !!(publicData && typeof publicData.rules !== 'undefined');
     case LOCATION:
       return !!(geolocation && publicData && publicData.location && publicData.location.address);
-    case SERVICE:
+    case PRICING:
       return !!price;
     case AVAILABILITY:
       return !!availabilityPlan;
@@ -181,7 +184,7 @@ const RedirectToStripe = ({ redirectFn }) => {
 };
 
 // Create a new or edit listing through EditListingWizard
-class EditCompanyWizard extends Component {
+class EditListingWizard extends Component {
   constructor(props) {
     super(props);
 
@@ -211,7 +214,26 @@ class EditCompanyWizard extends Component {
   }
 
   handlePublishListing(id) {
-    this.props.onPublishListingDraft(id);
+    const { onPublishListingDraft, currentUser, stripeAccount } = this.props;
+
+    const stripeConnected =
+      currentUser && currentUser.stripeAccount && !!currentUser.stripeAccount.id;
+
+    const stripeAccountData = stripeConnected ? getStripeAccountData(stripeAccount) : null;
+
+    const requirementsMissing =
+      stripeAccount &&
+      (hasRequirements(stripeAccountData, 'past_due') ||
+        hasRequirements(stripeAccountData, 'currently_due'));
+
+    if (stripeConnected && !requirementsMissing) {
+      onPublishListingDraft(id);
+    } else {
+      this.setState({
+        draftId: id,
+        showPayoutDetails: true,
+      });
+    }
   }
 
   handlePayoutModalClose() {
@@ -445,7 +467,7 @@ class EditCompanyWizard extends Component {
   }
 }
 
-EditCompanyWizard.defaultProps = {
+EditListingWizard.defaultProps = {
   className: null,
   currentUser: null,
   rootClassName: null,
@@ -460,7 +482,7 @@ EditCompanyWizard.defaultProps = {
   stripeAccountLinkError: null,
 };
 
-EditCompanyWizard.propTypes = {
+EditListingWizard.propTypes = {
   id: string.isRequired,
   className: string,
   currentUser: propTypes.currentUser,
@@ -520,4 +542,4 @@ EditCompanyWizard.propTypes = {
 export default compose(
   withViewport,
   injectIntl
-)(EditCompanyWizard);
+)(EditListingWizard);

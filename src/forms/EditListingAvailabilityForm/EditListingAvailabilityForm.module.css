@@ -1,3 +1,5 @@
+@import '../../styles/customMediaQueries.css';
+
 .root {
   /* Dimensions */
   width: 100%;
@@ -9,10 +11,6 @@
   flex-direction: column;
 
   padding-top: 1px;
-}
-
-.hidden {
-  display: none;
 }
 
 .title {

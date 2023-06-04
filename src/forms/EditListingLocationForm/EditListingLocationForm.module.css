@@ -1,3 +1,5 @@
+@import '../../styles/customMediaQueries.css';
+
 .root {
   /* Dimensions */
   width: 100%;
@@ -12,25 +14,9 @@
     padding-top: 2px;
   }
 }
-.formMargins {
-  margin-bottom: 24px;
-
-  @media (--viewportMedium) {
-    margin-bottom: 32px;
-  }
-}
-.contactDetails {
-  composes: formMargins;
-  flex-shrink: 0;
-}
 
 .error {
   color: var(--failColor);
-}
-
-.locationAddress{
-  composes: formMargins;
-  flex-shrink: 0;  
 }
 
 .locationAutocompleteInput {
@@ -80,6 +66,16 @@
 
 .validLocation {
   border-bottom-color: var(--successColor);
+}
+
+.locationAddress,
+.building {
+  flex-shrink: 0;
+  margin-bottom: 24px;
+
+  @media (--viewportMedium) {
+    margin-bottom: 32px;
+  }
 }
 
 .submitButton {

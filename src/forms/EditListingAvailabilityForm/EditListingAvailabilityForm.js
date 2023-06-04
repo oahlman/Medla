@@ -48,7 +48,7 @@ export class EditListingAvailabilityFormComponent extends Component {
           return (
             <Form className={classes} onSubmit={handleSubmit}>
               {errorMessage}
-              <div className={css.hidden}>
+              <div className={css.calendarWrapper}>
                 <ManageAvailabilityCalendar
                   availability={availability}
                   availabilityPlan={availabilityPlan}

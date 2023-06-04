@@ -1,20 +1,21 @@
 import React from 'react';
 import { bool, func, shape, string } from 'prop-types';
 import classNames from 'classnames';
-import { Form as FinalForm, FormSpy } from 'react-final-form';
+import { Form as FinalForm } from 'react-final-form';
 import arrayMutators from 'final-form-arrays';
 import { FormattedMessage } from '../../util/reactIntl';
 import { findOptionsForSelectFilter } from '../../util/search';
 import { propTypes } from '../../util/types';
 import config from '../../config';
-import { Button, FieldCheckboxGroup, FieldRadioButton, Form } from '../../components';
+import { Button, FieldCheckboxGroup, Form } from '../../components';
 
 import css from './EditListingFeaturesForm.module.css';
 
 const EditListingFeaturesFormComponent = props => (
   <FinalForm
-      {...props}
-      render={fieldRenderProps => {
+    {...props}
+    mutators={{ ...arrayMutators }}
+    render={formRenderProps => {
       const {
         disabled,
         ready,
@@ -28,12 +29,7 @@ const EditListingFeaturesFormComponent = props => (
         updateInProgress,
         fetchErrors,
         filterConfig,
-        onChange,
-        invalid,
-        submitting,
-        required,
-        id,
-      } = fieldRenderProps;
+      } = formRenderProps;
 
       const classes = classNames(rootClassName || css.root, className);
       const submitReady = (updated && pristine) || ready;
@@ -53,39 +49,13 @@ const EditListingFeaturesFormComponent = props => (
         </p>
       ) : null;
 
-      const otherProjectLabel = <FormattedMessage id="Marketplace.config.key.labelOther" />;
       const options = findOptionsForSelectFilter('amenities', filterConfig);
-      const showAsRequired = pristine && required;
       return (
-
-        <Form className={classes} onSubmit={e => {
-          e.preventDefault();
-          handleSubmit(e);
-        }}>
+        <Form className={classes} onSubmit={handleSubmit}>
           {errorMessage}
           {errorMessageShowListing}
-          <FormSpy onChange={onChange} />
-          <FieldRadioButton
-            id='tomasliden'
-            name='amenities'
-            label="Tomasliden"
-            value="tomasliden"
-            showAsRequired={showAsRequired}
-          />
-          <FieldRadioButton
-            id='velinga'
-            name='amenities'
-            label="Velinga"
-            value="velinga"
-            showAsRequired={showAsRequired}
-          />
-          <FieldRadioButton
-            id='other'
-            name='amenities'
-            label={otherProjectLabel}
-            value="other"
-            showAsRequired={showAsRequired}
-          />
+
+          <FieldCheckboxGroup className={css.features} id={name} name={name} options={options} />
 
           <Button
             className={css.submitButton}

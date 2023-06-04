@@ -6,8 +6,6 @@ import { ensureOwnListing } from '../../util/data';
 import { LISTING_STATE_DRAFT } from '../../util/types';
 import { ListingLink } from '../../components';
 import { EditListingAvailabilityForm } from '../../forms';
-import { EditListingPoliciesPanel } from '../../components';
-import { ListingPreviewCardComponent } from '../ListingPreviewCard/ListingPreviewCard';
 
 import css from './EditListingAvailabilityPanel.module.css';
 
@@ -33,28 +31,16 @@ const EditListingAvailabilityPanel = props => {
   const defaultAvailabilityPlan = {
     type: 'availability-plan/day',
     entries: [
-      { dayOfWeek: 'mon', seats: 10 },
-      { dayOfWeek: 'tue', seats: 10 },
-      { dayOfWeek: 'wed', seats: 10 },
-      { dayOfWeek: 'thu', seats: 10 },
-      { dayOfWeek: 'fri', seats: 10 },
-      { dayOfWeek: 'sat', seats: 10 },
-      { dayOfWeek: 'sun', seats: 10 },
-      // Seats is set to 10 to enable multiple bookings on the same listing.
-      // Removing "...availabilityMaybe" from EditListingWizardTab breaks this function.
-      // It seems EditListingAvailabilityPanel needs to be rendered for 
-      // defaultAvailabilityPlan to take effect.
+      { dayOfWeek: 'mon', seats: 1 },
+      { dayOfWeek: 'tue', seats: 1 },
+      { dayOfWeek: 'wed', seats: 1 },
+      { dayOfWeek: 'thu', seats: 1 },
+      { dayOfWeek: 'fri', seats: 1 },
+      { dayOfWeek: 'sat', seats: 1 },
+      { dayOfWeek: 'sun', seats: 1 },
     ],
   };
   const availabilityPlan = currentListing.attributes.availabilityPlan || defaultAvailabilityPlan;
-  const { publicData } = currentListing.attributes;
-  const panelWidth = 62.5;
-  // Render hints for responsive image
-  const renderSizes = [
-    `(max-width: 767px) 100vw`,
-    `(max-width: 1920px) ${panelWidth / 2}vw`,
-    `${panelWidth / 3}vw`,
-  ].join(', ');
 
   return (
     <div className={classes}>
@@ -68,12 +54,6 @@ const EditListingAvailabilityPanel = props => {
           <FormattedMessage id="EditListingAvailabilityPanel.createListingTitle" />
         )}
       </h1>
-      <ListingPreviewCardComponent
-            className={css.listingCard}
-            listing={currentListing}
-            renderSizes={renderSizes}
-            onClick={ (event) => event.preventDefault() }
-          />
       <EditListingAvailabilityForm
         className={css.form}
         listingId={currentListing.id}

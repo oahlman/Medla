@@ -22,7 +22,7 @@ import {
   getStripeConnectAccountLink,
 } from '../../ducks/stripeConnectAccount.duck';
 
-import { EditListingWizard, EditCompanyWizard, NamedRedirect, Page } from '../../components';
+import { EditListingWizard, NamedRedirect, Page } from '../../components';
 import { TopbarContainer } from '../../containers';
 
 import {
@@ -93,7 +93,7 @@ export const EditListingPageComponent = props => {
 
   const listingId = page.submittedListingId || (id ? new UUID(id) : null);
   const currentListing = ensureOwnListing(getOwnListing(listingId));
-  const { state: currentListingState, publicData } = currentListing.attributes;
+  const { state: currentListingState } = currentListing.attributes;
 
   const isPastDraft = currentListingState && currentListingState !== LISTING_STATE_DRAFT;
   const shouldRedirect = isNewListingFlow && listingId && isPastDraft;
@@ -168,9 +168,7 @@ export const EditListingPageComponent = props => {
       ? intl.formatMessage({ id: 'EditListingPage.titleCreateListing' })
       : intl.formatMessage({ id: 'EditListingPage.titleEditListing' });
 
-    const isJob = publicData.listingCategory !== 'company';
-
-    return isJob ? (
+    return (
       <Page title={title} scrollingDisabled={scrollingDisabled}>
         <TopbarContainer
           className={css.topbar}
@@ -179,58 +177,6 @@ export const EditListingPageComponent = props => {
           mobileClassName={css.mobileTopbar}
         />
         <EditListingWizard
-          id="EditCompanyWizard"
-          className={css.wizard}
-          params={params}
-          disabled={disableForm}
-          errors={errors}
-          fetchInProgress={fetchInProgress}
-          newListingPublished={newListingPublished}
-          history={history}
-          images={images}
-          listing={currentListing}
-          availability={{
-            calendar: page.availabilityCalendar,
-            onFetchAvailabilityExceptions,
-            onCreateAvailabilityException,
-            onDeleteAvailabilityException,
-            onFetchBookings,
-          }}
-          onUpdateListing={onUpdateListing}
-          onCreateListingDraft={onCreateListingDraft}
-          onPublishListingDraft={onPublishListingDraft}
-          onPayoutDetailsFormChange={onPayoutDetailsFormChange}
-          onPayoutDetailsSubmit={onPayoutDetailsFormSubmit}
-          onGetStripeConnectAccountLink={onGetStripeConnectAccountLink}
-          getAccountLinkInProgress={getAccountLinkInProgress}
-          onImageUpload={onImageUpload}
-          onUpdateImageOrder={onUpdateImageOrder}
-          onRemoveImage={onRemoveListingImage}
-          onChange={onChange}
-          currentUser={currentUser}
-          onManageDisableScrolling={onManageDisableScrolling}
-          stripeOnboardingReturnURL={params.returnURLType}
-          updatedTab={page.updatedTab}
-          updateInProgress={page.updateInProgress || page.createListingDraftInProgress}
-          payoutDetailsSaveInProgress={page.payoutDetailsSaveInProgress}
-          payoutDetailsSaved={page.payoutDetailsSaved}
-          stripeAccountFetched={stripeAccountFetched}
-          stripeAccount={stripeAccount}
-          stripeAccountError={
-            createStripeAccountError || updateStripeAccountError || fetchStripeAccountError
-          }
-          stripeAccountLinkError={getAccountLinkError}
-        />
-      </Page>
-    ) : ((
-      <Page title={title} scrollingDisabled={scrollingDisabled}>
-        <TopbarContainer
-          className={css.topbar}
-          mobileRootClassName={css.mobileTopbar}
-          desktopClassName={css.desktopTopbar}
-          mobileClassName={css.mobileTopbar}
-        />
-        <EditCompanyWizard
           id="EditListingWizard"
           className={css.wizard}
           params={params}
@@ -274,7 +220,7 @@ export const EditListingPageComponent = props => {
           stripeAccountLinkError={getAccountLinkError}
         />
       </Page>
-    ));
+    );
   } else {
     // If user has come to this page through a direct linkto edit existing listing,
     // we need to load it first.
@@ -329,9 +275,6 @@ EditListingPageComponent.propTypes = {
   page: object.isRequired,
   params: shape({
     id: string.isRequired,
-    publicData: {
-      listingCategory: "job"
-    },
     slug: string.isRequired,
     type: oneOf(LISTING_PAGE_PARAM_TYPES).isRequired,
     tab: string.isRequired,

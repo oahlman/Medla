@@ -11,8 +11,6 @@ import {
   composeValidators,
 } from '../../util/validators';
 import { Form, LocationAutocompleteInputField, Button, FieldTextInput } from '../../components';
-import * as validators from '../../util/validators';
-
 
 import css from './EditListingLocationForm.module.css';
 
@@ -60,35 +58,6 @@ export const EditListingLocationFormComponent = props => (
         id: 'EditListingLocationForm.buildingPlaceholder',
       });
 
-          //phone
-          const usernameRequiredMessage = intl.formatMessage({
-            id: 'SignupForm.usernameRequired',
-          });
-          const phonePlaceholder = intl.formatMessage({
-            id: 'ContactDetailsForm.phonePlaceholder',
-          });
-          const phoneLabel = intl.formatMessage({ id: 'ContactDetailsForm.phoneLabel' });
-          const phoneInvalidMessage = intl.formatMessage({
-            id: 'SignupForm.phoneInvalid',
-          });
-
-          const contactPhoneMessage = intl.formatMessage({
-            id: 'EditCompanyDescriptionForm.contactPhone',
-          }
-          );
-          const phoneValid = validators.swedenMobileFormatValid(phoneInvalidMessage);
-
-
-          const contactInformationMessage = intl.formatMessage({
-            id: 'EditListingDescriptionForm.contactPlaceholder',
-          });
-
-            const usernameInvalidMessage = intl.formatMessage({
-        id: 'SignupForm.usernameInvalid',
-           });
-          const usernameRequired = validators.required(usernameRequiredMessage);
-          const usernameValid = validators.usernameFormatValid(usernameInvalidMessage);
-
       const { updateListingError, showListingsError } = fetchErrors || {};
       const errorMessage = updateListingError ? (
         <p className={css.error}>
@@ -130,16 +99,14 @@ export const EditListingLocationFormComponent = props => (
             )}
           />
 
-
           <FieldTextInput
-            id="contactNumber"
-            name="contactNumber"
-            className={css.contactDetails}
-            type="textarea"
-            label={contactPhoneMessage}
-            placeholder={contactInformationMessage}
-            validate={validators.composeValidators(usernameRequired)}
-            />
+            className={css.building}
+            type="text"
+            name="building"
+            id="building"
+            label={buildingMessage}
+            placeholder={buildingPlaceholderMessage}
+          />
 
           <Button
             className={css.submitButton}

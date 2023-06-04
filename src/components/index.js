@@ -175,6 +175,7 @@ export { default as EditListingDescriptionPanel } from './EditListingDescription
 export { default as EditListingFeaturesPanel } from './EditListingFeaturesPanel/EditListingFeaturesPanel';
 export { default as EditListingLocationPanel } from './EditListingLocationPanel/EditListingLocationPanel';
 export { default as EditListingPhotosPanel } from './EditListingPhotosPanel/EditListingPhotosPanel';
+export { default as EditListingPricingPanel } from './EditListingPricingPanel/EditListingPricingPanel';
 export { default as EditListingPoliciesPanel } from './EditListingPoliciesPanel/EditListingPoliciesPanel';
 export { default as EditListingServicePanel } from './EditListingServicePanel/EditListingServicePanel';
 export { default as EditListingWizard } from './EditListingWizard/EditListingWizard';

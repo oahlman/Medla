@@ -662,7 +662,6 @@ export function requestUpdateListing(tab, data) {
           include: ['author', 'images'],
           'fields.image': ['variants.landscape-crop', 'variants.landscape-crop2x'],
         };
-
         return dispatch(requestShowListing(payload));
       })
       .then(() => {

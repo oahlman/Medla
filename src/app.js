@@ -6,6 +6,7 @@ import ReactDOMServer from 'react-dom/server';
 // https://github.com/airbnb/react-dates#initialize
 // NOTE: Initializing it here will initialize it also for app.test.js
 import 'react-dates/initialize';
+import 'moment/locale/sv';
 import { HelmetProvider } from 'react-helmet-async';
 import { BrowserRouter, StaticRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
@@ -78,7 +79,7 @@ const setupLocale = () => {
   if (isTestEnv) {
     // Use english as a default locale in tests
     // This affects app.test.js and app.node.test.js tests
-    config.locale = 'en';
+    config.locale = 'sv';
     return;
   }
 
@@ -91,9 +92,10 @@ export const ClientApp = props => {
   const { store } = props;
   const { pathname } = location;
   console.log('ClientApp', location.pathname);
-  setupLocale();
+  const locale = location.pathname.startsWith('/en/') ? 'en' : 'sv';
+  moment.locale(locale); // change Moment.js locale here
   return (
-    <IntlProvider locale={config.locale} messages={location.pathname.startsWith('/en/') ? englishMessages : swedishMessages} textComponent="span">
+    <IntlProvider locale={locale} messages={locale === 'en' ? englishMessages : swedishMessages} textComponent="span">
       <Provider store={store}>
         <HelmetProvider>
           <BrowserRouter>
@@ -112,10 +114,11 @@ ClientApp.propTypes = { pathname: string.isRequired, store: any.isRequired };
 export const ServerApp = props => {
   const { url, context, helmetContext, store } = props;
   console.log('ServerApp', url);
-  setupLocale();
+  const locale = url.startsWith('/en/') ? 'en' : 'sv';
+  moment.locale(locale); // change Moment.js locale here
   HelmetProvider.canUseDOM = false;
   return (
-    <IntlProvider locale={config.locale} messages={url.startsWith('/en/') ? englishMessages : swedishMessages} textComponent="span">
+    <IntlProvider locale={locale} messages={locale === 'en' ? englishMessages : swedishMessages} textComponent="span">
       <Provider store={store}>
         <HelmetProvider context={helmetContext}>
           <StaticRouter location={url} context={context}>

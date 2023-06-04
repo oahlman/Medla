@@ -1,22 +1,19 @@
 import React from 'react';
-import { arrayOf, bool, func, shape, string } from 'prop-types';
+import { bool, func, shape, string } from 'prop-types';
 import { compose } from 'redux';
 import { Form as FinalForm } from 'react-final-form';
-import arrayMutators from 'final-form-arrays';
 import { intlShape, injectIntl, FormattedMessage } from '../../util/reactIntl';
 import classNames from 'classnames';
 import { propTypes } from '../../util/types';
-import { Form, Button, FieldTextInput, FieldCheckboxGroup } from '../../components';
+import { Form, Button, FieldTextInput } from '../../components';
 
 import css from './EditListingPoliciesForm.module.css';
 
 export const EditListingPoliciesFormComponent = props => (
   <FinalForm
     {...props}
-    mutators={{ ...arrayMutators }}
     render={formRenderProps => {
       const {
-        categories,
         className,
         disabled,
         ready,
@@ -54,20 +51,18 @@ export const EditListingPoliciesFormComponent = props => (
       const submitInProgress = updateInProgress;
       const submitDisabled = invalid || disabled || submitInProgress;
 
-      const industriesLabel = <FormattedMessage id="NotificationSettingsForm.industriesLabel" />;
-
       return (
         <Form className={classes} onSubmit={handleSubmit}>
           {errorMessage}
           {errorMessageShowListing}
 
-          <FieldCheckboxGroup
-            className={css.features}
-            id="category"
-            name="category"
-            options={categories}
-            twoColumns={true}
-            label={industriesLabel}
+          <FieldTextInput
+            id="rules"
+            name="rules"
+            className={css.policy}
+            type="textarea"
+            label={rulesLabelMessage}
+            placeholder={rulesPlaceholderMessage}
           />
 
           <Button
@@ -103,12 +98,6 @@ EditListingPoliciesFormComponent.propTypes = {
     showListingsError: propTypes.error,
     updateListingError: propTypes.error,
   }),
-  categories: arrayOf(
-    shape({
-      key: string.isRequired,
-      label: string.isRequired,
-    })
-  ),
 };
 
 export default compose(injectIntl)(EditListingPoliciesFormComponent);

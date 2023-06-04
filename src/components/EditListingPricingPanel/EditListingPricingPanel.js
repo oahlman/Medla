@@ -3,13 +3,17 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { FormattedMessage } from '../../util/reactIntl';
 import { LISTING_STATE_DRAFT } from '../../util/types';
-import { ensureOwnListing } from '../../util/data';
 import { ListingLink } from '../../components';
-import { EditListingPoliciesForm } from '../../forms';
+import { EditListingPricingForm } from '../../forms';
+import { ensureOwnListing } from '../../util/data';
+import { types as sdkTypes } from '../../util/sdkLoader';
+import config from '../../config';
 
-import css from './EditListingPoliciesPanel.module.css';
+import css from './EditListingPricingPanel.module.css';
 
-const EditListingPoliciesPanel = props => {
+const { Money } = sdkTypes;
+
+const EditListingPricingPanel = props => {
   const {
     className,
     rootClassName,
@@ -26,55 +30,55 @@ const EditListingPoliciesPanel = props => {
 
   const classes = classNames(rootClassName || css.root, className);
   const currentListing = ensureOwnListing(listing);
-  const { publicData } = currentListing.attributes;
+  const { price } = currentListing.attributes;
 
   const isPublished = currentListing.id && currentListing.attributes.state !== LISTING_STATE_DRAFT;
   const panelTitle = isPublished ? (
     <FormattedMessage
-      id="EditListingPoliciesPanel.title"
+      id="EditListingPricingPanel.title"
       values={{ listingTitle: <ListingLink listing={listing} /> }}
     />
   ) : (
-    <FormattedMessage id="EditListingPoliciesPanel.createListingTitle" />
+    <FormattedMessage id="EditListingPricingPanel.createListingTitle" />
+  );
+
+  const priceCurrencyValid = price instanceof Money ? price.currency === config.currency : true;
+  const form = priceCurrencyValid ? (
+    <EditListingPricingForm
+      className={css.form}
+      initialValues={{ price }}
+      onSubmit={onSubmit}
+      onChange={onChange}
+      saveActionMsg={submitButtonText}
+      disabled={disabled}
+      ready={ready}
+      updated={panelUpdated}
+      updateInProgress={updateInProgress}
+      fetchErrors={errors}
+    />
+  ) : (
+    <div className={css.priceCurrencyInvalid}>
+      <FormattedMessage id="EditListingPricingPanel.listingPriceCurrencyInvalid" />
+    </div>
   );
 
   return (
     <div className={classes}>
       <h1 className={css.title}>{panelTitle}</h1>
-      <EditListingPoliciesForm
-        className={css.form}
-        publicData={publicData}
-        initialValues={{ rules: publicData.rules }}
-        onSubmit={values => {
-          const { rules = '' } = values;
-          const updateValues = {
-            publicData: {
-              rules,
-            },
-          };
-          onSubmit(updateValues);
-        }}
-        onChange={onChange}
-        disabled={disabled}
-        ready={ready}
-        saveActionMsg={submitButtonText}
-        updated={panelUpdated}
-        updateInProgress={updateInProgress}
-        fetchErrors={errors}
-      />
+      {form}
     </div>
   );
 };
 
 const { func, object, string, bool } = PropTypes;
 
-EditListingPoliciesPanel.defaultProps = {
+EditListingPricingPanel.defaultProps = {
   className: null,
   rootClassName: null,
   listing: null,
 };
 
-EditListingPoliciesPanel.propTypes = {
+EditListingPricingPanel.propTypes = {
   className: string,
   rootClassName: string,
 
@@ -91,4 +95,4 @@ EditListingPoliciesPanel.propTypes = {
   errors: object.isRequired,
 };
 
-export default EditListingPoliciesPanel;
+export default EditListingPricingPanel;

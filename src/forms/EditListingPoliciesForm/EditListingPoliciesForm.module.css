@@ -1,3 +1,5 @@
+@import '../../styles/customMediaQueries.css';
+
 .root {
   /* Dimensions */
   width: 100%;
@@ -13,10 +15,6 @@
   @media (--viewportMedium) {
     padding-top: 2px;
   }
-}
-
-.hidden {
-  display: none;
 }
 
 .formMargins {

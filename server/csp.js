@@ -38,11 +38,21 @@ const defaultDirectives = {
     'www.googletagmanager.com',
     'https://translation.googleapis.com/language/translate/v2',
     'https://api.openai.com',
+
+
+    //Hotjar
+    'https://*.hotjar.com',
+    'https://*.hotjar.io',
+    'wss://*.hotjar.com',
+
   ],
   fontSrc: [self, data, 'assets-sharetribecom.sharetribe.com', 'fonts.gstatic.com'],
   frameSrc: [
     self, 
     '*.stripe.com',
+
+    //Hotjar
+    'https://script.hotjar.com',
   ],
   imgSrc: [
     self,
@@ -74,6 +84,12 @@ const defaultDirectives = {
     
 
     '*.stripe.com',
+
+    //Hotjar
+    'https://static.hotjar.com',
+    'https://script.hotjar.com',
+
+
   ],
   scriptSrc: [
     self,
@@ -87,13 +103,25 @@ const defaultDirectives = {
     'js.stripe.com',
     'https://connect.facebook.net',
     'https://api.openai.com',
+    
+    //Hotjar
+    'https://static.hotjar.com',
+    'https://script.hotjar.com',
+    
+
   ],
-  styleSrc: [self, unsafeInline, 'fonts.googleapis.com', 'api.mapbox.com'],
+  styleSrc: [self, unsafeInline, 'fonts.googleapis.com', 'api.mapbox.com',
+  
+  //Hotjar
+  'https://static.hotjar.com',
+  'https://script.hotjar.com',
+
+  ],
 };
 
 /**
  * Middleware for creating a Content Security Policy
- *
+ *s
  * @param {String} reportUri URL where the browser will POST the
  * policy violation reports
  *

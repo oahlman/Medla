@@ -19,6 +19,7 @@ import { Modal, NamedRedirect, Tabs, StripeConnectAccountStatusBox } from '../..
 import { StripeConnectAccountForm } from '../../forms';
 
 import EditListingWizardTab, {
+  STAYLOCATION,
   AVAILABILITY,
   DESCRIPTION,
   FEATURES,
@@ -37,10 +38,9 @@ const availabilityMaybe = config.enableAvailability ? [AVAILABILITY] : [];
 // Note 2: Ensure that draft listing is created after the first panel
 // and listing publishing happens after last panel.
 export const TABS = [
-  DESCRIPTION,
+  STAYLOCATION,
   FEATURES,
   POLICY,
-  LOCATION,
   PRICING,
   ...availabilityMaybe,
   PHOTOS,
@@ -54,8 +54,8 @@ const STRIPE_ONBOARDING_RETURN_URL_FAILURE = 'failure';
 
 const tabLabel = (intl, tab) => {
   let key = null;
-  if (tab === DESCRIPTION) {
-    key = 'EditListingWizard.tabLabelDescription';
+  if (tab === STAYLOCATION) {
+    key = 'EditListingWizard.tabLabelStayLocation';
   } else if (tab === FEATURES) {
     key = 'EditListingWizard.tabLabelFeatures';
   } else if (tab === POLICY) {
@@ -84,7 +84,6 @@ const tabLabel = (intl, tab) => {
 const tabCompleted = (tab, listing) => {
   const {
     availabilityPlan,
-    description,
     geolocation,
     price,
     title,
@@ -94,8 +93,8 @@ const tabCompleted = (tab, listing) => {
   console.log('location: ',publicData.location);
 
   switch (tab) {
-    case DESCRIPTION:
-      return !!(description && title);
+    case STAYLOCATION:
+      return !!(title && geolocation && publicData && publicData.location && publicData.location.address);
     case FEATURES:
       return !!(publicData && publicData.amenities);
     case POLICY:

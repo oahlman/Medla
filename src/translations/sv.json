@@ -248,6 +248,10 @@
   "EditListingDescriptionPanel.title": "Beskriv {listingTitle}",
   "EditListingServicePanel.title": "Lägg till de tjänster som {listingTitle} erbjuder",
 
+  "EditStayLocationPanel.createListingTitle": "Lägg till ditt boende",
+  "EditStayLocationPanel.createListingTooltip": "Jobb skapar du när du behöver hjälp med något, vill du visa upp din egna tjänster så gör du det här.",
+  "EditStayLocationPanel.title": "Beskriv {listingTitle}",
+
   "EditCompanyDescriptionForm.categoryLabel": "Branscher",
   "EditCompanyDescriptionForm.categoryPlaceholder": "Välj de branscher ni är aktiva inom.",
   "EditCompanyDescriptionForm.categoryRequired": "Du måste välja en bransch för ditt företag.",
@@ -347,6 +351,7 @@
   "EditListingWizard.tabLabelPhotos": "Bilder",
   "EditListingWizard.tabLabelPolicy": "Regler",
   "EditListingWizard.tabLabelPricing": "Pris",
+  "EditListingWizard.tabLabelStayLocation": "Plats",
   "EmailVerificationForm.finishAccountSetup": "Vi måste skicka e-postaviseringar till dig. För att tillåta detta, verifiera din e-postadress {email}.",
   "EmailVerificationForm.successButtonText": "Fortsätt utforska",
   "EmailVerificationForm.successText": "Allt ser bra ut. Dags att komma ut - ha en bra dag.",

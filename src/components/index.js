@@ -178,6 +178,7 @@ export { default as EditListingPhotosPanel } from './EditListingPhotosPanel/Edit
 export { default as EditListingPricingPanel } from './EditListingPricingPanel/EditListingPricingPanel';
 export { default as EditListingPoliciesPanel } from './EditListingPoliciesPanel/EditListingPoliciesPanel';
 export { default as EditListingServicePanel } from './EditListingServicePanel/EditListingServicePanel';
+export { default as EditStayLocationPanel } from './EditStayLocationPanel/EditStayLocationPanel';
 export { default as EditListingWizard } from './EditListingWizard/EditListingWizard';
 export { default as EditCompanyWizard } from './EditCompanyWizard/EditCompanyWizard';
 export { default as Footer } from './Footer/Footer';

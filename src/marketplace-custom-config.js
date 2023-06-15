@@ -55,28 +55,109 @@ export const filters = [
     group: 'secondary',
     queryParamNames: ['pub_amenities'],
     config: {
-      // Optional modes: 'has_all', 'has_any'
-      // https://www.sharetribe.com/api-reference/marketplace.html#extended-data-filtering
-
-      // "key" is the option you see in Flex Console.
-      // "label" is set here for this web app's UI only.
-      // Note: label is not added through the translation files
-      // to make filter customizations a bit easier.
       options: [
         {
-          key: 'tomasliden',
-          label: 'Tomasliden',
+          key: 'uppvarmning',
+          label: 'Uppvärmning',
         },
         {
-          key: 'velinga',
-          label: 'Velinga',
+          key: 'hoghastighetsinternet',
+          label: 'Höghastighetsinternet',
         },
         {
-          key: 'other',
-          label: <FormattedMessage id="Marketplace.config.key.labelOther"/>,
+          key: 'dusch',
+          label: 'Dusch',
+        },
+        {
+          key: 'badkar',
+          label: 'Badkar',
+        },
+        {
+          key: 'bastu',
+          label: 'Bastu',
+        },
+        {
+          key: 'dricksvatten',
+          label: 'Dricksvatten',
+        },
+        {
+          key: 'varmvatten',
+          label: 'Varmvatten',
+        },
+        {
+          key: 'wc',
+          label: 'WC',
+        },
+        {
+          key: 'parkering',
+          label: 'Parkering',
+        },
+        {
+          key: 'kyl',
+          label: 'Kyl',
+        },
+        {
+          key: 'frys',
+          label: 'Frys',
+        },
+        {
+          key: 'ugn',
+          label: 'Ugn',
+        },
+        {
+          key: 'spis',
+          label: 'Spis',
+        },
+        {
+          key: 'mikrovagsugn',
+          label: 'Mikrovågsugn',
+        },
+        {
+          key: 'diskmaskin',
+          label: 'Diskmaskin',
+        },
+        {
+          key: 'tvattmaskin',
+          label: 'Tvättmaskin',
+        },
+        {
+          key: 'torktumlare',
+          label: 'Torktumlare',
+        },
+        {
+          key: 'torkskap',
+          label: 'Torkskåp',
+        },
+        {
+          key: 'eldstad',
+          label: 'Eldstad',
+        },
+        {
+          key: 'tv',
+          label: 'TV',
+        },
+        {
+          key: 'garage',
+          label: 'Garage',
+        },
+        {
+          key: 'motorvarmare',
+          label: 'Motorvärmare',
+        },
+        {
+          key: 'elbilsladdare',
+          label: 'Elbilsladdare',
+        },
+        {
+          key: 'ved',
+          label: 'Ved',
+        },
+        {
+          key: 'rullstolsanpassat',
+          label: 'Rullstolsanpassat',
         },
       ],
-    },
+    },    
   },
   {
     id: 'category',

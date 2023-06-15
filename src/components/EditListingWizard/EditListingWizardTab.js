@@ -17,10 +17,12 @@ import {
   EditListingPhotosPanel,
   EditListingPoliciesPanel,
   EditListingPricingPanel,
+  EditStayLocationPanel,
 } from '../../components';
 
 import css from './EditListingWizard.module.css';
 
+export const STAYLOCATION ='stayLocation'
 export const AVAILABILITY = 'availability';
 export const DESCRIPTION = 'description';
 export const FEATURES = 'features';
@@ -31,6 +33,7 @@ export const PHOTOS = 'photos';
 
 // EditListingWizardTab component supports these tabs
 export const SUPPORTED_TABS = [
+  STAYLOCATION,
   DESCRIPTION,
   FEATURES,
   POLICY,
@@ -157,13 +160,13 @@ const EditListingWizardTab = props => {
   };
 
   switch (tab) {
-    case DESCRIPTION: {
+    case STAYLOCATION: {
       const submitButtonTranslationKey = isNewListingFlow
         ? 'EditListingWizard.saveNewDescription'
         : 'EditListingWizard.saveEditDescription';
       return (
-        <EditListingDescriptionPanel
-          {...panelProps(DESCRIPTION)}
+        <EditStayLocationPanel
+          {...panelProps(STAYLOCATION)}
           submitButtonText={intl.formatMessage({ id: submitButtonTranslationKey })}
           onSubmit={values => {
             onCompleteEditListingWizardTab(tab, values);

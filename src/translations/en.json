@@ -291,6 +291,11 @@
   "EditListingServiceForm.addServiceTip": "Delete the text and save to remove a service.",
   "EditListingServiceForm.contactPlaceholder": "Fill in contact information",
 
+  "EditStayLocationForm.accommodationType": "Stay type",
+  "EditStayLocationForm.house": "House",
+  "EditStayLocationForm.apartment": "Apartment",
+  "EditStayLocationForm.room": "Room",
+
   "EditListingPhotosForm.bankAccountNumberRequired": "You must add a bank account number.",
   "EditListingPhotosForm.chooseImage": "+ Select an image…",
   "EditListingPhotosForm.imageRequired": "You must add at least one image.",

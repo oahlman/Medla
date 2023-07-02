@@ -49,13 +49,43 @@ const EditListingFeaturesFormComponent = props => (
         </p>
       ) : null;
 
-      const options = findOptionsForSelectFilter('amenities', filterConfig);
+      const generalOptions = findOptionsForSelectFilter('generalAmenities', filterConfig);
+      const bathroomOptions = findOptionsForSelectFilter('bathroomAmenities', filterConfig);
+      const kitchenOptions = findOptionsForSelectFilter('kitchenAmenities', filterConfig);
+      const extraOptions = findOptionsForSelectFilter('extraAmenities', filterConfig);
+
       return (
         <Form className={classes} onSubmit={handleSubmit}>
           {errorMessage}
           {errorMessageShowListing}
 
-          <FieldCheckboxGroup className={css.features} id={name} name={name} options={options} />
+          <FieldCheckboxGroup
+            className={css.features}
+            id="generalAmenities"
+            name="generalAmenities"
+            options={generalOptions}
+          />
+
+          <FieldCheckboxGroup
+            className={css.features}
+            id="bathroomAmenities"
+            name="bathroomAmenities"
+            options={bathroomOptions}
+          />
+
+          <FieldCheckboxGroup
+            className={css.features}
+            id="kitchenAmenities"
+            name="kitchenAmenities"
+            options={kitchenOptions}
+          />
+
+          <FieldCheckboxGroup
+            className={css.features}
+            id="extraAmenities"
+            name="extraAmenities"
+            options={extraOptions}
+          />
 
           <Button
             className={css.submitButton}

@@ -291,6 +291,11 @@
   "EditListingServiceForm.addServiceTip": "Ta bort texten och spara för att plocka bort en tjänst.",
   "EditListingServiceForm.contactPlaceholder": "Fyll i kontaktuppgifter",
 
+  "EditStayLocationForm.accommodationType": "Boendetyp",
+  "EditStayLocationForm.house": "Hus",
+  "EditStayLocationForm.apartment": "Lägenhet",
+  "EditStayLocationForm.room": "Rum",
+
   "EditListingPhotosForm.bankAccountNumberRequired": "Du måste lägga till ett bankkontonummer.",
   "EditListingPhotosForm.chooseImage": "+ Välj en bild…",
   "EditListingPhotosForm.imageRequired": "Du måste lägga till minst en bild.",

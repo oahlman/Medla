@@ -114,3 +114,8 @@
 .hidden {
   display: none;
 }
+
+.accommodationTypeTitle {
+  font-weight: var(--fontWeightSemiBold);
+  font-size: 14px;
+}

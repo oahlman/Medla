@@ -5,7 +5,7 @@ import { Form as FinalForm } from 'react-final-form';
 import { intlShape, injectIntl, FormattedMessage } from '../../util/reactIntl';
 import classNames from 'classnames';
 import { propTypes } from '../../util/types';
-import { Form, Button, FieldTextInput, LocationAutocompleteInputField } from '../../components';
+import { Form, Button, FieldTextInput, LocationAutocompleteInputField, FieldRadioButton } from '../../components';
 import {
   autocompleteSearchRequired,
   autocompletePlaceSelected,
@@ -22,6 +22,7 @@ const identity = v => v;
 const EditStayLocationForm = props => (
   <FinalForm
     {...props}
+    initialValues={{ accommodationType: 'house' }}
     render={formRenderProps => {
       const {
         className,
@@ -39,20 +40,20 @@ const EditStayLocationForm = props => (
       } = formRenderProps;
 
       // For description
-      const titleMessage = intl.formatMessage({ id: 'EditStayLocationForm.title' });
+      const titleMessage = intl.formatMessage({ id: 'EditListingDescriptionForm.title' });
       const titlePlaceholderMessage = intl.formatMessage({
-        id: 'EditStayLocationForm.titlePlaceholder',
+        id: 'EditListingDescriptionForm.titlePlaceholder',
       });
       const titleRequiredMessage = intl.formatMessage({
-        id: 'EditStayLocationForm.titleRequired',
+        id: 'EditListingDescriptionForm.titleRequired',
       });
       const maxLengthMessage = intl.formatMessage(
-        { id: 'EditStayLocationForm.maxLength' },
+        { id: 'EditListingDescriptionForm.maxLength' },
         {
           maxLength: TITLE_MAX_LENGTH,
         }
       );
-      
+
       // For location
       const addressMessage = intl.formatMessage({ id: 'EditListingLocationForm.address' });
       const addressPlaceholderMessage = intl.formatMessage({
@@ -63,6 +64,20 @@ const EditStayLocationForm = props => (
       });
       const addressNotRecognizedMessage = intl.formatMessage({
         id: 'EditListingLocationForm.addressNotRecognized',
+      });
+
+      // For accommodation type
+      const accommodationTypeLabel = intl.formatMessage({
+        id: 'EditStayLocationForm.accommodationType',
+      });
+      const houseLabel = intl.formatMessage({
+        id: 'EditStayLocationForm.house',
+      });
+      const apartmentLabel = intl.formatMessage({
+        id: 'EditStayLocationForm.apartment',
+      });
+      const roomLabel = intl.formatMessage({
+        id: 'EditStayLocationForm.room',
       });
 
       const { updateListingError, createListingDraftError, showListingsError } = fetchErrors || {};
@@ -113,15 +128,15 @@ const EditStayLocationForm = props => (
             )}
           />
           <div className={values.title ? null : css.hidden}>
-          <FieldTextInput
-            id="title"
-            name="title"
-            className={css.title}
-            type="text"
-            label={titleMessage}
-            placeholder={titlePlaceholderMessage}
-            maxLength={TITLE_MAX_LENGTH}
-          />
+            <FieldTextInput
+              id="title"
+              name="title"
+              className={css.title}
+              type="text"
+              label={titleMessage}
+              placeholder={titlePlaceholderMessage}
+              maxLength={TITLE_MAX_LENGTH}
+            />
           </div>
 
           <Button

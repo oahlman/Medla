@@ -47,118 +47,142 @@ export const filters = [
       options: [{ key: 'job', label: <FormattedMessage id="Marketplace.config.key.labelJobs"/> }, { key: 'company', label: <FormattedMessage id="Marketplace.config.key.labelCompanies"/> }],
     },
   },
-
-  {
-    id: 'amenities',
-    label: <FormattedMessage id="Marketplace.config.key.projectHeading"/>,
-    type: 'SelectSingleFilter',
-    group: 'secondary',
-    queryParamNames: ['pub_amenities'],
-    config: {
-      options: [
-        {
-          key: 'uppvarmning',
-          label: 'Uppvärmning',
-        },
-        {
-          key: 'hoghastighetsinternet',
-          label: 'Höghastighetsinternet',
-        },
-        {
-          key: 'dusch',
-          label: 'Dusch',
-        },
-        {
-          key: 'badkar',
-          label: 'Badkar',
-        },
-        {
-          key: 'bastu',
-          label: 'Bastu',
-        },
-        {
-          key: 'dricksvatten',
-          label: 'Dricksvatten',
-        },
-        {
-          key: 'varmvatten',
-          label: 'Varmvatten',
-        },
-        {
-          key: 'wc',
-          label: 'WC',
-        },
-        {
-          key: 'parkering',
-          label: 'Parkering',
-        },
-        {
-          key: 'kyl',
-          label: 'Kyl',
-        },
-        {
-          key: 'frys',
-          label: 'Frys',
-        },
-        {
-          key: 'ugn',
-          label: 'Ugn',
-        },
-        {
-          key: 'spis',
-          label: 'Spis',
-        },
-        {
-          key: 'mikrovagsugn',
-          label: 'Mikrovågsugn',
-        },
-        {
-          key: 'diskmaskin',
-          label: 'Diskmaskin',
-        },
-        {
-          key: 'tvattmaskin',
-          label: 'Tvättmaskin',
-        },
-        {
-          key: 'torktumlare',
-          label: 'Torktumlare',
-        },
-        {
-          key: 'torkskap',
-          label: 'Torkskåp',
-        },
-        {
-          key: 'eldstad',
-          label: 'Eldstad',
-        },
-        {
-          key: 'tv',
-          label: 'TV',
-        },
-        {
-          key: 'garage',
-          label: 'Garage',
-        },
-        {
-          key: 'motorvarmare',
-          label: 'Motorvärmare',
-        },
-        {
-          key: 'elbilsladdare',
-          label: 'Elbilsladdare',
-        },
-        {
-          key: 'ved',
-          label: 'Ved',
-        },
-        {
-          key: 'rullstolsanpassat',
-          label: 'Rullstolsanpassat',
-        },
-      ],
-    },    
-  },
+    {
+      id: 'generalAmenities',
+      label: <FormattedMessage id="Marketplace.config.key.generalHeading"/>,
+      type: 'SelectMultipleFilter',
+      group: 'secondary',
+      queryParamNames: ['pub_general_amenities'],
+      config: {
+        options: [
+          {
+            key: 'uppvarmning',
+            label: 'Uppvärmning',
+          },
+          {
+            key: 'hoghastighetsinternet',
+            label: 'Höghastighetsinternet',
+          },
+          {
+            key: 'parkering',
+            label: 'Parkering',
+          },
+          {
+            key: 'rullstolsanpassat',
+            label: 'Rullstolsanpassat',
+          },
+        ],
+      },
+    },
+    {
+      id: 'bathroomAmenities',
+      label: <FormattedMessage id="Marketplace.config.key.bathroomLaundryHeading"/>,
+      type: 'SelectMultipleFilter',
+      group: 'secondary',
+      queryParamNames: ['pub_bathroom_laundry_amenities'],
+      config: {
+        options: [
+          {
+            key: 'dusch',
+            label: 'Dusch',
+          },
+          {
+            key: 'wc',
+            label: 'WC',
+          },
+          {
+            key: 'badkar',
+            label: 'Badkar',
+          },
+          {
+            key: 'bastu',
+            label: 'Bastu',
+          },
+          {
+            key: 'tvattmaskin',
+            label: 'Tvättmaskin',
+          },
+          {
+            key: 'torktumlare',
+            label: 'Torktumlare',
+          },
+          {
+            key: 'torkskap',
+            label: 'Torkskåp',
+          },
+        ],
+      },
+    },
+    {
+      id: 'kitchenAmenities',
+      label: <FormattedMessage id="Marketplace.config.key.kitchenHeading"/>,
+      type: 'SelectMultipleFilter',
+      group: 'secondary',
+      queryParamNames: ['pub_kitchen_amenities'],
+      config: {
+        options: [
+          {
+            key: 'kyl',
+            label: 'Kyl',
+          },
+          {
+            key: 'frys',
+            label: 'Frys',
+          },
+          {
+            key: 'ugn',
+            label: 'Ugn',
+          },
+          {
+            key: 'spis',
+            label: 'Spis',
+          },
+          {
+            key: 'mikrovagsugn',
+            label: 'Mikrovågsugn',
+          },
+          {
+            key: 'diskmaskin',
+            label: 'Diskmaskin',
+          },
+        ],
+      },
+    },
+    {
+      id: 'extraAmenities',
+      label: <FormattedMessage id="Marketplace.config.key.extraHeading"/>,
+      type: 'SelectMultipleFilter',
+      group: 'secondary',
+      queryParamNames: ['pub_extra_amenities'],
+      config: {
+        options: [
+          {
+            key: 'tv',
+            label: 'TV',
+          },
+          {
+            key: 'garage',
+            label: 'Garage',
+          },
+          {
+            key: 'motorvarmare',
+            label: 'Motorvärmare',
+          },
+          {
+            key: 'elbilsladdare',
+            label: 'Elbilsladdare',
+          },
+          {
+            key: 'eldstad',
+            label: 'Eldstad',
+          },
+          {
+            key: 'ved',
+            label: 'Ved',
+          },
+        ],
+      },
+    },  
   {
     id: 'category',
     label: <FormattedMessage id="Marketplace.config.key.labelIndustries"/>,

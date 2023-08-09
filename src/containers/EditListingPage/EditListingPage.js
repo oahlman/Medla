@@ -22,7 +22,7 @@ import {
   getStripeConnectAccountLink,
 } from '../../ducks/stripeConnectAccount.duck';
 
-import { EditListingWizard, NamedRedirect, Page } from '../../components';
+import { EditListingWizard, EditCompanyWizard, NamedRedirect, Page } from '../../components';
 import { TopbarContainer } from '../../containers';
 
 import {
@@ -168,6 +168,10 @@ export const EditListingPageComponent = props => {
       ? intl.formatMessage({ id: 'EditListingPage.titleCreateListing' })
       : intl.formatMessage({ id: 'EditListingPage.titleEditListing' });
 
+      const listingType = currentListing.attributes.metadata.listingType;
+
+      const WizardComponent = listingType === 'stay' ? EditListingWizard : EditCompanyWizard;
+      
     return (
       <Page title={title} scrollingDisabled={scrollingDisabled}>
         <TopbarContainer
@@ -176,8 +180,8 @@ export const EditListingPageComponent = props => {
           desktopClassName={css.desktopTopbar}
           mobileClassName={css.mobileTopbar}
         />
-        <EditListingWizard
-          id="EditListingWizard"
+        <WizardComponent
+          id={listingType === 'stay' ? 'EditListingWizard' : 'EditCompanyWizard'}
           className={css.wizard}
           params={params}
           disabled={disableForm}

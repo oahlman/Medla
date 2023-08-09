@@ -19,6 +19,27 @@ import { Modal, NamedRedirect, Tabs, StripeConnectAccountStatusBox } from '../..
 import { StripeConnectAccountForm } from '../../forms';
 
 import EditListingWizardTab, {
+/*
+dessa ska uppdateras till: 
+
+Adress - Var finns ditt boende? [Plats]
+
+Boendetyp - Vilken typ av boende är det? [Hus/Lägenhet/Rum]
+
+Antal sängar - Hur många sängar finns? [Antal dubbelsängar, Antal enkelsängar]
+
+Bekvämligheter - Vilka bekvämligheter finns?* - Vad ingår?**
+
+Policy - Vad är tillåtet i boendet? [Pälsdjur, Rökning, Laddning av elbil, Övrigt (fritext)]
+
+Pris - Vad kostar boendet? [Pris per natt, Pris per vecka, Pris per månad, Efter överenskommelse]
+
+Tillgänglighet - När är boendet tillgängligt? [Kalender]
+
+Bilder - Visa upp ditt boende
+
+Anteckningar i https://docs.google.com/document/d/1-Lntdt2r6QJT8eDMRFH7VhibnZpsCqa-6Wf__YdUnKc/edit
+*/
   STAYLOCATION,
   AVAILABILITY,
   DESCRIPTION,

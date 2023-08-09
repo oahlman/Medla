@@ -19,6 +19,23 @@ import { Modal, NamedRedirect, Tabs, StripeConnectAccountStatusBox } from '../..
 import { StripeConnectAccountForm } from '../../forms';
 
 import EditListingWizardTab, {
+/*
+dessa ska uppdateras till: 
+
+Namn - Vad heter ert företag?
+
+Plats - Var är ni baserade?
+
+Bransch - Vilken bransch tillhör ni?
+
+Tjänster - Vad erbjuder ert företag? + Fritext 
+
+Kontakt - Hur vill ni bli kontaktade?
+
+Bilder - Visa vilka ni är
+
+Anteckningar i https://docs.google.com/document/d/1-Lntdt2r6QJT8eDMRFH7VhibnZpsCqa-6Wf__YdUnKc/edit
+*/
   AVAILABILITY,
   DESCRIPTION,
   FEATURES,
@@ -36,7 +53,10 @@ const availabilityMaybe = config.enableAvailability ? [AVAILABILITY] : [];
 // Note 1: You need to change save button translations for new listing flow
 // Note 2: Ensure that draft listing is created after the first panel
 // and listing publishing happens after last panel.
-export const TABS = [DESCRIPTION,SERVICE, POLICY, LOCATION, PHOTOS, ...availabilityMaybe];
+export const TABS = [
+  DESCRIPTION,
+  PHOTOS, 
+  ...availabilityMaybe];
 
 // Tabs are horizontal in small screens
 const MAX_HORIZONTAL_NAV_SCREEN_WIDTH = 1023;

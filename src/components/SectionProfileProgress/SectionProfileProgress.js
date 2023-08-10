@@ -98,8 +98,8 @@ export const SectionProfileProgress = props => {
   
 
 
-  const categoryNumber = profileCategory.id && user.attributes.profile.publicData.category;
-  const amenitiesNumber = profileAmenities.id && user.attributes.profile.publicData.amenities;
+  const categoryNumber = user?.attributes?.profile?.publicData?.category;
+  const amenitiesNumber = user?.attributes?.profile?.publicData?.amenities;
   const hasCategoryorAmemities = ((amenitiesNumber && amenitiesNumber.length > 0 ) || (categoryNumber && categoryNumber.length > 0)) ? true : false;
 
   const imageVerified = user.profileImage;

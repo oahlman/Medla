@@ -168,11 +168,9 @@ export const EditListingPageComponent = props => {
       ? intl.formatMessage({ id: 'EditListingPage.titleCreateListing' })
       : intl.formatMessage({ id: 'EditListingPage.titleEditListing' });
 
-      const listingType = currentListing.attributes.metadata.listingType;
+    const isJob = publicData.listingCategory !== 'company';
 
-      const WizardComponent = listingType === 'stay' ? EditListingWizard : EditCompanyWizard;
-      
-    return (
+    return isJob ? (
       <Page title={title} scrollingDisabled={scrollingDisabled}>
         <TopbarContainer
           className={css.topbar}
@@ -180,8 +178,8 @@ export const EditListingPageComponent = props => {
           desktopClassName={css.desktopTopbar}
           mobileClassName={css.mobileTopbar}
         />
-        <WizardComponent
-          id={listingType === 'stay' ? 'EditListingWizard' : 'EditCompanyWizard'}
+        <EditListingWizard
+          id="EditCompanyWizard"
           className={css.wizard}
           params={params}
           disabled={disableForm}
@@ -224,7 +222,51 @@ export const EditListingPageComponent = props => {
           stripeAccountLinkError={getAccountLinkError}
         />
       </Page>
-    );
+    ): (
+      <EditListingWizard
+          id="EditCompanyWizard"
+          className={css.wizard}
+          params={params}
+          disabled={disableForm}
+          errors={errors}
+          fetchInProgress={fetchInProgress}
+          newListingPublished={newListingPublished}
+          history={history}
+          images={images}
+          listing={currentListing}
+          availability={{
+            calendar: page.availabilityCalendar,
+            onFetchAvailabilityExceptions,
+            onCreateAvailabilityException,
+            onDeleteAvailabilityException,
+            onFetchBookings,
+          }}
+          onUpdateListing={onUpdateListing}
+          onCreateListingDraft={onCreateListingDraft}
+          onPublishListingDraft={onPublishListingDraft}
+          onPayoutDetailsFormChange={onPayoutDetailsFormChange}
+          onPayoutDetailsSubmit={onPayoutDetailsFormSubmit}
+          onGetStripeConnectAccountLink={onGetStripeConnectAccountLink}
+          getAccountLinkInProgress={getAccountLinkInProgress}
+          onImageUpload={onImageUpload}
+          onUpdateImageOrder={onUpdateImageOrder}
+          onRemoveImage={onRemoveListingImage}
+          onChange={onChange}
+          currentUser={currentUser}
+          onManageDisableScrolling={onManageDisableScrolling}
+          stripeOnboardingReturnURL={params.returnURLType}
+          updatedTab={page.updatedTab}
+          updateInProgress={page.updateInProgress || page.createListingDraftInProgress}
+          payoutDetailsSaveInProgress={page.payoutDetailsSaveInProgress}
+          payoutDetailsSaved={page.payoutDetailsSaved}
+          stripeAccountFetched={stripeAccountFetched}
+          stripeAccount={stripeAccount}
+          stripeAccountError={
+            createStripeAccountError || updateStripeAccountError || fetchStripeAccountError
+          }
+          stripeAccountLinkError={getAccountLinkError}
+        />
+    )
   } else {
     // If user has come to this page through a direct linkto edit existing listing,
     // we need to load it first.

@@ -36,18 +36,14 @@ Bilder - Visa vilka ni är
 
 Anteckningar i https://docs.google.com/document/d/1-Lntdt2r6QJT8eDMRFH7VhibnZpsCqa-6Wf__YdUnKc/edit
 */
-  AVAILABILITY,
   DESCRIPTION,
+  LOCATION,
   FEATURES,
   POLICY,
-  LOCATION,
   SERVICE,
   PHOTOS,
 } from './EditListingWizardTab';
 import css from './EditListingWizard.module.css';
-
-// Show availability calendar only if environment variable availabilityEnabled is true
-const availabilityMaybe = config.enableAvailability ? [AVAILABILITY] : [];
 
 // You can reorder these panels.
 // Note 1: You need to change save button translations for new listing flow
@@ -55,8 +51,11 @@ const availabilityMaybe = config.enableAvailability ? [AVAILABILITY] : [];
 // and listing publishing happens after last panel.
 export const TABS = [
   DESCRIPTION,
-  PHOTOS, 
-  ...availabilityMaybe];
+  LOCATION,
+  FEATURES,
+  POLICY,
+  SERVICE,
+  PHOTOS];
 
 // Tabs are horizontal in small screens
 const MAX_HORIZONTAL_NAV_SCREEN_WIDTH = 1023;
@@ -76,8 +75,6 @@ const tabLabel = (intl, tab) => {
     key = 'EditListingWizard.tabLabelLocation';
   } else if (tab === SERVICE) {
     key = 'EditListingWizard.tabLabelPricing';
-  } else if (tab === AVAILABILITY) {
-    key = 'EditListingWizard.tabLabelAvailability';
   } else if (tab === PHOTOS) {
     key = 'EditListingWizard.tabLabelPhotos';
   }
@@ -95,7 +92,6 @@ const tabLabel = (intl, tab) => {
  */
 const tabCompleted = (tab, listing) => {
   const {
-    availabilityPlan,
     description,
     geolocation,
     price,
@@ -115,8 +111,6 @@ const tabCompleted = (tab, listing) => {
       return !!(geolocation && publicData && publicData.location && publicData.location.address);
     case SERVICE:
       return !!price;
-    case AVAILABILITY:
-      return !!availabilityPlan;
     case PHOTOS:
       return images && images.length > 0;
     default:

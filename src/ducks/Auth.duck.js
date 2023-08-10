@@ -180,15 +180,15 @@ export const login = params => (dispatch, getState, sdk) => {
 
 export const updateCompanyListingId = () => (dispatch, getState, sdk) => {
   return sdk.ownListings.query({ per_page: 1 })
-  .then(res => {
-  sdk.currentUser
-  .updateProfile({
-    privateData: {
-      companyListingId: (res.data.data[0]).id.uuid,
-    },
-  })
-  })
-  .catch(e => dispatch((storableError(e))));;
+    .then(res => {
+      sdk.currentUser
+        .updateProfile({
+          privateData: {
+            companyListingId: (res.data.data[0]).id.uuid,
+          },
+        })
+    })
+    .catch(e => dispatch((storableError(e))));;
 };
 
 export const logout = () => (dispatch, getState, sdk) => {
@@ -216,7 +216,7 @@ export const signup = params => (dispatch, getState, sdk) => {
     return Promise.reject(new Error('Login or logout already in progress'));
   }
   dispatch(signupRequest());
-  const { email, password, location, firstName, lastName, ...rest } = params;
+  const { email, password, location, profileType, firstName, lastName, ...rest } = params;
 
   const createUserParams = isEmpty(rest)
     ? { email, password, firstName, lastName }
@@ -229,7 +229,6 @@ export const signup = params => (dispatch, getState, sdk) => {
   const { LatLng } = sdkTypes;
   const lat = params.location.selectedPlace.origin.lat;
   const lng = params.location.selectedPlace.origin.lng;
-
   // We must login the user if signup succeeds since the API doesn't
   // do that automatically.
   return sdk.currentUser
@@ -244,36 +243,37 @@ export const signup = params => (dispatch, getState, sdk) => {
         lastName: params.lastName,
       });
     })
-  .then(() => {
-    return sdk.ownListings
-    .create({
-      title: params.companyName,
-      geolocation: new LatLng (lat, lng),
-      publicData: {
-        contactNumber: params.email,
-        listingCategory: "company",
-        location: {
-          address: search,
-        }
-      },
+    .then(() => {
+      if (params.profileType === 'company') {
+        sdk.ownListings.create({
+          title: params.firstName,
+          geolocation: new LatLng(lat, lng),
+          publicData: {
+            contactNumber: params.email,
+            listingCategory: 'company',
+            location: {
+              address: search,
+            },
+          },
+        });
+      }
     })
-  })
-  .then(() => {
-    return sdk.currentUser
-    .updateProfile({
-      displayName: params.companyName,
-    publicData: {
-      companyName: params.companyName,
-    },
-  })
-})
-  .then(res => {
-    return dispatch(updateCompanyListingId());
-  })
-  .then(() => dispatch(fetchCurrentUserCompanyListing()))
-  .then(res => {
-    return dispatch(confirmSuccess());
-  });
+    .then(() => {
+      return sdk.currentUser
+        .updateProfile({
+          displayName: params.companyName,
+          publicData: {
+            companyName: params.companyName,
+          },
+        })
+    })
+    .then(res => {
+      return dispatch(updateCompanyListingId());
+    })
+    .then(() => dispatch(fetchCurrentUserCompanyListing()))
+    .then(res => {
+      return dispatch(confirmSuccess());
+    });
 };
 
 export const signupWithIdp = params => (dispatch, getState, sdk) => {

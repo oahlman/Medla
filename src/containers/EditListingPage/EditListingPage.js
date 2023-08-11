@@ -111,20 +111,20 @@ export const EditListingPageComponent = props => {
 
     const redirectProps = isPendingApproval
       ? {
-          name: 'ListingPageVariant',
-          params: {
-            id: listingId.uuid,
-            slug: listingSlug,
-            variant: LISTING_PAGE_PENDING_APPROVAL_VARIANT,
-          },
-        }
+        name: 'ListingPageVariant',
+        params: {
+          id: listingId.uuid,
+          slug: listingSlug,
+          variant: LISTING_PAGE_PENDING_APPROVAL_VARIANT,
+        },
+      }
       : {
-          name: 'ListingPage',
-          params: {
-            id: listingId.uuid,
-            slug: listingSlug,
-          },
-        };
+        name: 'ListingPage',
+        params: {
+          id: listingId.uuid,
+          slug: listingSlug,
+        },
+      };
 
     return <NamedRedirect {...redirectProps} />;
   } else if (showForm) {
@@ -168,10 +168,12 @@ export const EditListingPageComponent = props => {
       ? intl.formatMessage({ id: 'EditListingPage.titleCreateListing' })
       : intl.formatMessage({ id: 'EditListingPage.titleEditListing' });
 
-      const listingType = currentListing.attributes.metadata.listingType;
+    const listingCategory = currentListing.attributes.publicData.listingCategory;
 
-      const WizardComponent = listingType === 'stay' ? EditListingWizard : EditCompanyWizard;
-      
+    const WizardComponent = listingCategory === 'company' ? EditCompanyWizard : EditListingWizard;
+
+    console.log('listingCategory', listingCategory);
+
     return (
       <Page title={title} scrollingDisabled={scrollingDisabled}>
         <TopbarContainer
@@ -181,7 +183,7 @@ export const EditListingPageComponent = props => {
           mobileClassName={css.mobileTopbar}
         />
         <WizardComponent
-          id={listingType === 'stay' ? 'EditListingWizard' : 'EditCompanyWizard'}
+          id={listingCategory === 'company' ? 'EditCompanyWizard' : 'EditListingWizard'}
           className={css.wizard}
           params={params}
           disabled={disableForm}

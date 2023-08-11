@@ -41,12 +41,14 @@ Bilder - Visa upp ditt boende
 Anteckningar i https://docs.google.com/document/d/1-Lntdt2r6QJT8eDMRFH7VhibnZpsCqa-6Wf__YdUnKc/edit
 */
   STAYLOCATION,
-  AVAILABILITY,
-  DESCRIPTION,
+  //STAYTYPE,
+  //BEDS,
   FEATURES,
   POLICY,
-  LOCATION,
   PRICING,
+  AVAILABILITY,
+  DESCRIPTION,
+  LOCATION,
   PHOTOS,
 } from './EditListingWizardTab';
 import css from './EditListingWizard.module.css';
@@ -60,6 +62,8 @@ const availabilityMaybe = config.enableAvailability ? [AVAILABILITY] : [];
 // and listing publishing happens after last panel.
 export const TABS = [
   STAYLOCATION,
+  //STAYTYPE,
+  //BEDS,
   FEATURES,
   POLICY,
   PRICING,
@@ -117,7 +121,7 @@ const tabCompleted = (tab, listing) => {
     case STAYLOCATION:
       return !!(title && geolocation && publicData && publicData.location && publicData.location.address);
     case FEATURES:
-      return !!(publicData && publicData.amenities);
+      return !!(publicData);
     case POLICY:
       return !!(publicData && typeof publicData.rules !== 'undefined');
     case LOCATION:

@@ -55,7 +55,6 @@ const Chat = () => {
       localStorage.setItem('chatMessages', JSON.stringify(messages.slice(-10))); // store only the last 10 messages
     }
 }, [messages]);
-  console.log('messages: ', messages)
 
   const apiKey = process.env.REACT_APP_OPENAI_API_KEY;
   const [isWaitingForResponse, setIsWaitingForResponse] = useState(false);

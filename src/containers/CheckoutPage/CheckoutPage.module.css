@@ -1,5 +1,4 @@
 @import '../../styles/customMediaQueries.css';
-@import '../../styles/propertySets.css';
 
 /* Dummy Topbar */
 
@@ -25,22 +24,11 @@
   }
 }
 
-.homeMobile {
+.home {
   display: flex;
   padding: calc((var(--topbarHeight) - var(--CheckoutPage_logoHeight)) / 2) 24px;
 
   @media (--viewportLarge) {
-    display: none;
-    padding: calc((var(--topbarHeightDesktop) - var(--CheckoutPage_logoHeightDesktop)) / 2) 36px;
-  }
-}
-
-.homeDesktop {
-  display: none;
-  padding: calc((var(--topbarHeight) - var(--CheckoutPage_logoHeight)) / 2) 24px;
-
-  @media (--viewportLarge) {
-    display: flex;
     padding: calc((var(--topbarHeightDesktop) - var(--CheckoutPage_logoHeightDesktop)) / 2) 36px;
   }
 }
@@ -102,7 +90,8 @@
 
 .aspectWrapper {
   position: relative;
-  padding-bottom: 20%; /* 3:2 Aspect Ratio */
+  padding-bottom: 66.6667%; /* 3:2 Aspect Ratio */
+  background-color: var(--matterColorNegative); /* Loading BG color */
 
   @media (--viewportLarge) {
     display: none;
@@ -164,7 +153,6 @@
 
 .title {
   /* Font */
-  @apply --marketplaceH1FontStyles;
   color: var(--matterColor);
 
   /* Layout */
@@ -180,7 +168,7 @@
 
 .author {
   width: 100%;
-  @apply --marketplaceH4FontStyles;
+  composes: h4 from global;
 
   /* Reset margins from font styles */
   margin-top: 0;
@@ -290,6 +278,7 @@
 
 .detailsAspectWrapper {
   position: relative;
+  padding-bottom: 66.6667%; /* 3:2 Aspect Ratio */
   background-color: var(--matterColorNegative); /* Loading BG color */
 }
 
@@ -312,7 +301,7 @@
 }
 
 .detailsSubtitle {
-  @apply --marketplaceH5FontStyles;
+  composes: h5 from global;
 
   /* Reset margins from font styles */
   margin-top: 0;

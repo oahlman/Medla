@@ -112,7 +112,7 @@ EditListingFeaturesFormComponent.defaultProps = {
 EditListingFeaturesFormComponent.propTypes = {
   rootClassName: string,
   className: string,
-  name: string.isRequired,
+  name: string,
   onSubmit: func.isRequired,
   saveActionMsg: string.isRequired,
   disabled: bool.isRequired,

@@ -5,7 +5,6 @@ import { compose } from 'redux';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import config from '../../config';
-import moment from 'moment';
 import routeConfiguration from '../../routeConfiguration';
 import { findOptionsForSelectFilter } from '../../util/search';
 import { LISTING_STATE_PENDING_APPROVAL, LISTING_STATE_CLOSED, propTypes } from '../../util/types';
@@ -24,7 +23,6 @@ import {
   ensureOwnListing,
   ensureUser,
   userDisplayNameAsString,
-  userCompanyNameAsString,
 } from '../../util/data';
 import { richText } from '../../util/richText';
 import { getMarketplaceEntities } from '../../ducks/marketplaceData.duck';
@@ -40,12 +38,6 @@ import {
   LayoutWrapperFooter,
   Footer,
   BookingPanel,
-  CallButton,
-  ContactCardForJob,
-  ContactCardForCompany,
-  ContactLinkJob,
-  ExternalLink,
-
 } from '../../components';
 import { TopbarContainer, NotFoundPage } from '../../containers';
 
@@ -54,17 +46,12 @@ import SectionImages from './SectionImages';
 import SectionAvatar from './SectionAvatar';
 import SectionHeading from './SectionHeading';
 import SectionDescriptionMaybe from './SectionDescriptionMaybe';
-import SectionServicesMaybe from './SectionServicesMaybe';
 import SectionFeaturesMaybe from './SectionFeaturesMaybe';
 import SectionReviews from './SectionReviews';
 import SectionHostMaybe from './SectionHostMaybe';
 import SectionRulesMaybe from './SectionRulesMaybe';
 import SectionMapMaybe from './SectionMapMaybe';
-import SectionPricingMaybe from './SectionPricingMaybe';
 import css from './ListingPage.module.css';
-import JobActionBarMaybe from './JobActionBarMaybe';
-import { IoFlagOutline } from "react-icons/io5";
-
 
 const MIN_LENGTH_FOR_LONG_WORDS_IN_TITLE = 16;
 
@@ -101,9 +88,7 @@ export class ListingPageComponent extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.onContactUser = this.onContactUser.bind(this);
     this.onSubmitEnquiry = this.onSubmitEnquiry.bind(this);
-    
   }
-  
 
   handleSubmit(values) {
     const {
@@ -117,19 +102,13 @@ export class ListingPageComponent extends Component {
     const listing = getListing(listingId);
 
     const { bookingDates, ...bookingData } = values;
-    const now = moment();
-    const today = now.startOf('day').toDate();
-    const tomorrow = now
-      .startOf('day')
-      .add(1, 'days')
-      .toDate();
 
     const initialValues = {
       listing,
       bookingData,
       bookingDates: {
-        bookingStart: today,
-        bookingEnd: tomorrow,
+        bookingStart: bookingDates.startDate,
+        bookingEnd: bookingDates.endDate,
       },
       confirmPaymentError: null,
     };
@@ -227,10 +206,6 @@ export class ListingPageComponent extends Component {
         ? ensureOwnListing(getOwnListing(listingId))
         : ensureListing(getListing(listingId));
 
-        const isExternal = !!currentListing.attributes.publicData.externalLink;
-        const isOwner = currentListing.attributes.publicData.owner;
-
-
     const listingSlug = rawParams.slug || createSlug(currentListing.attributes.title || '');
     const params = { slug: listingSlug, ...rawParams };
 
@@ -238,6 +213,7 @@ export class ListingPageComponent extends Component {
       ? LISTING_PAGE_PARAM_TYPE_DRAFT
       : LISTING_PAGE_PARAM_TYPE_EDIT;
     const listingTab = isDraftVariant ? 'photos' : 'description';
+
     const isApproved =
       currentListing.id && currentListing.attributes.state !== LISTING_STATE_PENDING_APPROVAL;
 
@@ -261,7 +237,7 @@ export class ListingPageComponent extends Component {
     const {
       description = '',
       geolocation = null,
-      price = '',
+      price = null,
       title = '',
       publicData,
     } = currentListing.attributes;
@@ -308,7 +284,7 @@ export class ListingPageComponent extends Component {
           </LayoutSingleColumn>
         </Page>
       );
-    } else if (!currentListing.id && !publicData.listingCategory) {
+    } else if (!currentListing.id) {
       // Still loading the listing
 
       const loadingTitle = intl.formatMessage({
@@ -352,7 +328,7 @@ export class ListingPageComponent extends Component {
     // When user is banned or deleted the listing is also deleted.
     // Because listing can be never showed with banned or deleted user we don't have to provide
     // banned or deleted display names for the function
-    const authorDisplayName = userCompanyNameAsString(ensuredAuthor, '');
+    const authorDisplayName = userDisplayNameAsString(ensuredAuthor, '');
 
     const { formattedPrice, priceTitle } = priceData(price, intl);
 
@@ -396,14 +372,12 @@ export class ListingPageComponent extends Component {
         params={params}
         to={{ hash: '#host' }}
       >
-      {!isExternal ? authorDisplayName : isOwner}
-      
+        {authorDisplayName}
       </NamedLink>
     );
 
     const amenityOptions = findOptionsForSelectFilter('amenities', filterConfig);
     const categoryOptions = findOptionsForSelectFilter('category', filterConfig);
-
     const category =
       publicData && publicData.category ? (
         <span>
@@ -412,55 +386,11 @@ export class ListingPageComponent extends Component {
         </span>
       ) : null;
 
-    const bookingPanelSection = (
-      <BookingPanel
-        className={css.blank}
-        listing={currentListing}
-        isOwnListing={isOwnListing}
-        unitType={unitType}
-        onSubmit={handleBookingSubmit}
-        title={bookingTitle}
-        //subTitle={bookingSubTitle}
-        authorDisplayName={authorDisplayName}
-        onManageDisableScrolling={onManageDisableScrolling}
-        timeSlots={timeSlots}
-        fetchTimeSlotsError={fetchTimeSlotsError}
-        onFetchTransactionLineItems={onFetchTransactionLineItems}
-        lineItems={lineItems}
-        fetchLineItemsInProgress={fetchLineItemsInProgress}
-        fetchLineItemsError={fetchLineItemsError}
-      />
-
-    );
-    const contactJob = (
-      <ContactCardForJob listing={currentListing}
-      />
-    );
-
-    const contactCompany = (
-      <ContactCardForCompany listing={currentListing} />
-    );
-
-    const contactLinkJobListings = (
-      <ContactLinkJob listing={currentListing} />
-
-    );
-
-    const ContactCardForJobListings = contactJob;
-
-
-    const ContactCardForCompanyListings = null;
-
-    const ContactLinkForJob = contactLinkJobListings;
-
-    const SectionBookingPanel = bookingPanelSection;
-
     return (
       <Page
         title={schemaTitle}
         scrollingDisabled={scrollingDisabled}
         author={authorDisplayName}
-        contentType="website"
         description={description}
         facebookImages={facebookImages}
         twitterImages={twitterImages}
@@ -476,22 +406,21 @@ export class ListingPageComponent extends Component {
           <LayoutWrapperTopbar>{topbar}</LayoutWrapperTopbar>
           <LayoutWrapperMain>
             <div>
-              <div className={css.jobSectionImages}>
-                <div className={css.jobThreeToTwoWrapper}>
-                  <div className={css.jobAspectWrapper}>
-                    <JobActionBarMaybe
-                      listing={currentListing}
-                      isOwnListing={isOwnListing}
-                      editParams={{
-                        id: listingId.uuid,
-                        slug: listingSlug,
-                        type: listingType,
-                        tab: listingTab,
-                      }}
-                    />
-                  </div>
-                </div>
-              </div>
+              <SectionImages
+                title={title}
+                listing={currentListing}
+                isOwnListing={isOwnListing}
+                editParams={{
+                  id: listingId.uuid,
+                  slug: listingSlug,
+                  type: listingType,
+                  tab: listingTab,
+                }}
+                imageCarouselOpen={this.state.imageCarouselOpen}
+                onImageCarouselClose={() => this.setState({ imageCarouselOpen: false })}
+                handleViewPhotosClick={handleViewPhotosClick}
+                onManageDisableScrolling={onManageDisableScrolling}
+              />
               <div className={css.contentContainer}>
                 <SectionAvatar user={currentAuthor} params={params} />
                 <div className={css.mainContent}>
@@ -499,82 +428,52 @@ export class ListingPageComponent extends Component {
                     priceTitle={priceTitle}
                     formattedPrice={formattedPrice}
                     richTitle={richTitle}
+                    category={category}
                     hostLink={hostLink}
+                    showContactUser={showContactUser}
+                    onContactUser={this.onContactUser}
                   />
-
-                  <div className={css.mapMobile}>
-                    {ContactLinkForJob}
-                  </div>                  <SectionDescriptionMaybe description={description} />
-
-
-                  <SectionServicesMaybe
-
-
-                    title={publicData.offerHeading1 ? publicData.offerHeading1 : null}
-                    description={publicData.offer1 ? publicData.offer1 : null}
-                  />
-                  <SectionServicesMaybe
-
-                    title={publicData.offerHeading2 ? publicData.offerHeading2 : null}
-                    description={publicData.offer2 ? publicData.offer2 : null}
-                  />
-                  <SectionServicesMaybe
-                    title={publicData.offerHeading3 ? publicData.offerHeading3 : null}
-                    description={publicData.offer3 ? publicData.offer3 : null}
-                  />
-                  <SectionServicesMaybe
-                    title={publicData.offerHeading4 ? publicData.offerHeading4 : null}
-                    description={publicData.offer4 ? publicData.offer4 : null}
-                  />
-                  <SectionServicesMaybe
-                    title={publicData.offerHeading5 ? publicData.offerHeading5 : null}
-                    description={publicData.offer5 ? publicData.offer5 : null}
-                  />
-
-                  <SectionRulesMaybe options={categoryOptions} publicData={publicData} />
+                  <SectionDescriptionMaybe description={description} />
+                  <SectionFeaturesMaybe options={amenityOptions} publicData={publicData} />
+                  <SectionRulesMaybe publicData={publicData} />
                   <SectionMapMaybe
                     geolocation={geolocation}
                     publicData={publicData}
                     listingId={currentListing.id}
                   />
-                  <div className={css.reportContainerMobile}>
-                <IoFlagOutline className={css.iconFlag}></IoFlagOutline>  <ExternalLink href={`mailto:info@medla.app?subject=Rapportera%20jobb: ${currentListing.id.uuid}`} >
-               <div className={css.reportFont}><FormattedMessage id="CompanyPage.reportCompany" /></div> 
-              </ExternalLink>
-
+                  <SectionReviews reviews={reviews} fetchReviewsError={fetchReviewsError} />
+                  <SectionHostMaybe
+                    title={title}
+                    listing={currentListing}
+                    authorDisplayName={authorDisplayName}
+                    onContactUser={this.onContactUser}
+                    isEnquiryModalOpen={isAuthenticated && this.state.enquiryModalOpen}
+                    onCloseEnquiryModal={() => this.setState({ enquiryModalOpen: false })}
+                    sendEnquiryError={sendEnquiryError}
+                    sendEnquiryInProgress={sendEnquiryInProgress}
+                    onSubmitEnquiry={this.onSubmitEnquiry}
+                    currentUser={currentUser}
+                    onManageDisableScrolling={onManageDisableScrolling}
+                  />
                 </div>
-
-                </div>
-
-
-                <div className={css.contactCardCompany}>
-
-
-                  <div className={css.bookingPanel}>
-
-                    {SectionBookingPanel}
-
-                    <div className={css.showContact}>
-                      {ContactCardForJobListings}
-                    </div>
-                    <div className={css.reportContainer}>
-
-                      <IoFlagOutline className={css.iconFlag}></IoFlagOutline>  <ExternalLink href={`mailto:info@medla.app?subject=Rapportera%20jobb: ${currentListing.id.uuid}`} >
-                      <div className={css.reportFont}><FormattedMessage id="CompanyPage.reportCompany" /></div> 
-
-                        </ExternalLink>
-
-                          </div>
-                  </div>
-
-                  {ContactCardForCompanyListings
-                  }
-
-
-                </div>
-
+                <BookingPanel
+                  className={css.bookingPanel}
+                  listing={currentListing}
+                  isOwnListing={isOwnListing}
+                  unitType={unitType}
+                  onSubmit={handleBookingSubmit}
+                  title={bookingTitle}
+                  subTitle={bookingSubTitle}
+                  authorDisplayName={authorDisplayName}
+                  onManageDisableScrolling={onManageDisableScrolling}
+                  timeSlots={timeSlots}
+                  fetchTimeSlotsError={fetchTimeSlotsError}
+                  onFetchTransactionLineItems={onFetchTransactionLineItems}
+                  lineItems={lineItems}
+                  fetchLineItemsInProgress={fetchLineItemsInProgress}
+                  fetchLineItemsError={fetchLineItemsError}
+                />
               </div>
-
             </div>
           </LayoutWrapperMain>
           <LayoutWrapperFooter>

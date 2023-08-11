@@ -13,11 +13,11 @@ import includes from 'lodash/includes';
 
 import css from './PropertyGroup.module.css';
 
-const checkSelected = (options, selectedOptions, extraTags) => {
+const checkSelected = (options, selectedOptions) => {
   return options.map(option => ({
     key: option.key,
     label: option.label,
-    isSelected: includes(selectedOptions, option.key, extraTags),
+    isSelected: includes(selectedOptions, option.key),
   }));
 };
 
@@ -38,31 +38,32 @@ const IconCheck = props => {
 
 const Item = props => {
   const { label, isSelected } = props;
-  
   const labelClass = isSelected ? css.selectedLabel : css.notSelectedLabel;
   return (
-    
+    <li className={css.item}>
+      <span className={css.iconWrapper}>
+        <IconCheck isVisible={isSelected} />
+      </span>
       <div className={css.labelWrapper}>
         <span className={labelClass}>{label}</span>
       </div>
-   
-  
+    </li>
   );
 };
 
 const PropertyGroup = props => {
-  const { rootClassName, className, id, options, selectedOptions, twoColumns, extraTags } = props;
+  const { rootClassName, className, id, options, selectedOptions, twoColumns } = props;
   const classes = classNames(rootClassName || css.root, className);
   const listClasses = twoColumns ? classNames(classes, css.twoColumns) : classes;
 
   const checked = checkSelected(options, selectedOptions);
 
   return (
-    <span className={listClasses}>
+    <ul className={listClasses}>
       {checked.map(option => (
         <Item key={`${id}.${option.key}`} label={option.label} isSelected={option.isSelected} />
       ))}
-    </span>
+    </ul>
   );
 };
 
@@ -71,8 +72,6 @@ PropertyGroup.defaultProps = {
   className: null,
   selectedOptions: [],
   twoColumns: false,
-  extraTags: [],
-  
 };
 
 const { arrayOf, bool, node, shape, string } = PropTypes;

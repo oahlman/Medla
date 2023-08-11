@@ -91,6 +91,7 @@ export const BookingBreakdownComponent = props => {
       <LineItemBookingPeriod booking={booking} unitType={unitType} dateType={dateType} />
       <LineItemUnitsMaybe transaction={transaction} unitType={unitType} />
 
+      <LineItemBasePriceMaybe transaction={transaction} unitType={unitType} intl={intl} />
       <LineItemUnknownItemsMaybe transaction={transaction} isProvider={isProvider} intl={intl} />
 
       <LineItemSubTotalMaybe
@@ -106,6 +107,11 @@ export const BookingBreakdownComponent = props => {
         isCustomer={isCustomer}
         intl={intl}
       />
+      <LineItemCustomerCommissionRefundMaybe
+        transaction={transaction}
+        isCustomer={isCustomer}
+        intl={intl}
+      />
 
       <LineItemProviderCommissionMaybe
         transaction={transaction}
@@ -117,6 +123,8 @@ export const BookingBreakdownComponent = props => {
         isProvider={isProvider}
         intl={intl}
       />
+
+      <LineItemTotalPrice transaction={transaction} isProvider={isProvider} intl={intl} />
 
       {hasCommissionLineItem ? (
         <span className={css.feeInfo}>

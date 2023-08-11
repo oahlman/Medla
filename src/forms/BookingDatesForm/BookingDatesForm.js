@@ -36,8 +36,7 @@ export class BookingDatesFormComponent extends Component {
   // focus on that input, otherwise continue with the
   // default handleSubmit function.
   handleFormSubmit(e) {
-    const startDate = new Date(2017, 3, 14, 12, 0, 0);
-    const endDate = new Date(2017, 3, 16, 12, 0, 0);
+    const { startDate, endDate } = e.bookingDates || {};
     if (!startDate) {
       e.preventDefault();
       this.setState({ focusedInput: START_DATE });
@@ -71,6 +70,25 @@ export class BookingDatesFormComponent extends Component {
   render() {
     const { rootClassName, className, price: unitPrice, ...rest } = this.props;
     const classes = classNames(rootClassName || css.root, className);
+
+    if (!unitPrice) {
+      return (
+        <div className={classes}>
+          <p className={css.error}>
+            <FormattedMessage id="BookingDatesForm.listingPriceMissing" />
+          </p>
+        </div>
+      );
+    }
+    if (unitPrice.currency !== config.currency) {
+      return (
+        <div className={classes}>
+          <p className={css.error}>
+            <FormattedMessage id="BookingDatesForm.listingCurrencyInvalid" />
+          </p>
+        </div>
+      );
+    }
 
     return (
       <FinalForm
@@ -182,12 +200,41 @@ export class BookingDatesFormComponent extends Component {
                   this.handleOnChange(values);
                 }}
               />
+              <FieldDateRangeInput
+                className={css.bookingDates}
+                name="bookingDates"
+                unitType={unitType}
+                startDateId={`${formId}.bookingStartDate`}
+                startDateLabel={bookingStartLabel}
+                startDatePlaceholderText={startDatePlaceholderText}
+                endDateId={`${formId}.bookingEndDate`}
+                endDateLabel={bookingEndLabel}
+                endDatePlaceholderText={endDatePlaceholderText}
+                focusedInput={this.state.focusedInput}
+                onFocusedInputChange={this.onFocusedInputChange}
+                format={identity}
+                timeSlots={timeSlots}
+                useMobileMargins
+                validate={composeValidators(
+                  required(requiredMessage),
+                  bookingDatesRequired(startDateErrorMessage, endDateErrorMessage)
+                )}
+                disabled={fetchLineItemsInProgress}
+              />
 
               {bookingInfoMaybe}
               {loadingSpinnerMaybe}
               {bookingInfoErrorMaybe}
 
-           
+              <p className={css.smallPrint}>
+                <FormattedMessage
+                  id={
+                    isOwnListing
+                      ? 'BookingDatesForm.ownListing'
+                      : 'BookingDatesForm.youWontBeChargedInfo'
+                  }
+                />
+              </p>
               <div className={submitButtonClasses}>
                 <PrimaryButton type="submit">
                   <FormattedMessage id="BookingDatesForm.requestToBook" />

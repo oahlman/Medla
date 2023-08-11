@@ -9,7 +9,7 @@ import { propTypes, LISTING_STATE_CLOSED, LINE_ITEM_NIGHT, LINE_ITEM_DAY } from 
 import { formatMoney } from '../../util/currency';
 import { parse, stringify } from '../../util/urlHelpers';
 import config from '../../config';
-import { ModalInMobile, Button, ExternalLink } from '../../components';
+import { ModalInMobile, Button } from '../../components';
 import { BookingDatesForm } from '../../forms';
 
 import css from './BookingPanel.module.css';
@@ -74,9 +74,6 @@ const BookingPanel = props => {
   const price = listing.attributes.price;
   const hasListingState = !!listing.attributes.state;
   const isClosed = hasListingState && listing.attributes.state === LISTING_STATE_CLOSED;
-  const isExternal = !!listing.attributes.publicData.externalLink;
-
-  const externalLink = listing.attributes.publicData.externalLink;
   const showBookingDatesForm = hasListingState && !isClosed;
   const showClosedListingHelpText = listing.id && isClosed;
   const { formattedPrice, priceTitle } = priceData(price, intl);
@@ -85,8 +82,8 @@ const BookingPanel = props => {
   const subTitleText = !!subTitle
     ? subTitle
     : showClosedListingHelpText
-      ? intl.formatMessage({ id: 'BookingPanel.subTitleClosedListing' })
-      : null;
+    ? intl.formatMessage({ id: 'BookingPanel.subTitleClosedListing' })
+    : null;
 
   const isNightly = unitType === LINE_ITEM_NIGHT;
   const isDaily = unitType === LINE_ITEM_DAY;
@@ -94,13 +91,11 @@ const BookingPanel = props => {
   const unitTranslationKey = isNightly
     ? 'BookingPanel.perNight'
     : isDaily
-      ? 'BookingPanel.perDay'
-      : 'BookingPanel.perUnit';
+    ? 'BookingPanel.perDay'
+    : 'BookingPanel.perUnit';
 
   const classes = classNames(rootClassName || css.root, className);
   const titleClasses = classNames(titleClassName || css.bookingTitle);
-
-  console.log('externalLink', externalLink);
 
   return (
     <div className={classes}>
@@ -127,9 +122,10 @@ const BookingPanel = props => {
           <BookingDatesForm
             className={css.bookingForm}
             formId="BookingPanel"
-            submitButtonWrapperClassName={!isExternal ? css.bookingDatesSubmitButtonWrapper : css.hidden}
+            submitButtonWrapperClassName={css.bookingDatesSubmitButtonWrapper}
             unitType={unitType}
             onSubmit={onSubmit}
+            price={price}
             listingId={listing.id}
             isOwnListing={isOwnListing}
             timeSlots={timeSlots}
@@ -141,7 +137,16 @@ const BookingPanel = props => {
           />
         ) : null}
       </ModalInMobile>
-      <div className={!isExternal ? css.openBookingForm : css.hidden}> 
+      <div className={css.openBookingForm}>
+        <div className={css.priceContainer}>
+          <div className={css.priceValue} title={priceTitle}>
+            {formattedPrice}
+          </div>
+          <div className={css.perUnit}>
+            <FormattedMessage id={unitTranslationKey} />
+          </div>
+        </div>
+
         {showBookingDatesForm ? (
           <Button
             rootClassName={css.bookButton}
@@ -155,12 +160,6 @@ const BookingPanel = props => {
           </div>
         ) : null}
       </div>
-      {isExternal ? (
-      <ExternalLink href={externalLink} rootClassName={css.bookButton}>
-        <Button>
-          <FormattedMessage id="BookingPanel.externalCtaButtonMessage" />
-        </Button>
-      </ExternalLink>) : null}
     </div>
   );
 };

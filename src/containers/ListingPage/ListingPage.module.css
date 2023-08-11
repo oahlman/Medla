@@ -1,9 +1,7 @@
 @import '../../styles/customMediaQueries.css';
-@import '../../styles/propertySets.css';
 
 .root {
 }
-
 
 .pageRoot {
   display: flex;
@@ -25,29 +23,7 @@
 .sectionImages {
 }
 
-.jobSectionImages {
-  height: 100px;
-  @media (--viewportMedium) {
-    height: 150px;
-  }
-}
-
 .threeToTwoWrapper {
-  /* Layout */
-  display: block;
-  width: 100%;
-  position: relative;
-
-  @media (--viewportMedium) {
-    padding: 0;
-  }
-
-  @media (--viewportLarge) {
-    padding: 36px 36px 0 36px;
-  }
-}
-
-.jobThreeToTwoWrapper {
   /* Layout */
   display: block;
   width: 100%;
@@ -76,19 +52,6 @@
   }
 }
 
-.jobAspectWrapper {
-  position: relative; /* allow positioning own listing action bar */
-  padding-bottom: 0; /* 3:2 Aspect Ratio */
-  background-color: var(--matterColorNegative); /* Loading BG color */
-
-  /* Image carousel can be opened from the image, therefore we should show a pointer */
-  cursor: pointer;
-
-  @media (--viewportMedium) {
-    padding-bottom: 0; /* No fixed aspect on desktop layouts */
-  }
-}
-
 .actionBar {
   position: absolute;
   display: flex;
@@ -107,26 +70,8 @@
   border-radius: var(--borderRadius);
 }
 
-.noImageActionBar {
-  position: absolute;
-  display: flex;
-  justify-content: space-between;
-  top: 63px;
-  left: 13px;
-  width: calc(100% - 26px);
-  color: var(--matterColorNegative);
-  background-color: var(--matterColor);
-  z-index: 1; /* bring on top of mobile image */
-
-  /* Action bar prevents the image click events going to the parent and
-   should not show a pointer */
-  cursor: initial;
-
-  border-radius: var(--borderRadius);
-}
-
 .ownListingText {
-  @apply --marketplaceH4FontStyles;
+  composes: h4 from global;
   margin: 14px 12px 11px 24px;
 
   @media (--viewportMedium) {
@@ -139,7 +84,7 @@
 }
 
 .closedListingText {
-  @apply --marketplaceH4FontStyles;
+  composes: h4 from global;
   margin: 14px 12px 11px 24px;
   text-align: center;
   width: 100%;
@@ -150,7 +95,7 @@
 }
 
 .editListingLink {
-  @apply --marketplaceH4FontStyles;
+  composes: h4 from global;
   flex-shrink: 0;
   margin: 0;
   padding: 14px 24px 11px 12px;
@@ -203,7 +148,7 @@
 }
 
 .viewPhotos {
-  @apply --marketplaceTinyFontStyles;
+  composes: marketplaceTinyFontStyles from global;
   font-weight: var(--fontWeightMedium);
 
   /* Position and dimensions */
@@ -286,25 +231,22 @@
   }
 }
 
+.bookingPanel {
+  @media (--viewportLarge) {
+    display: block;
+    margin-top: 79px;
+    margin-left: 60px;
+    border-left-style: solid;
+    border-left-width: 1px;
+    border-left-color: var(--matterColorNegative);
 
+    padding-left: 60px;
 
-  .bookingPanel {
-   
-
-
-    @media (--viewportLarge) {
-      display: block;
-  
-    
-  
-      
-  
-      /* The calendar needs 312px */
-      flex-basis: 312px;
-      flex-shrink: 0;
-    }
+    /* The calendar needs 312px */
+    flex-basis: 312px;
+    flex-shrink: 0;
   }
-  
+}
 
 .sectionAvatar {
   /* Position (over the listing image)*/
@@ -366,7 +308,7 @@
 
 .desktopPriceValue {
   /* Font */
-  @apply --marketplaceModalTitleStyles;
+  composes: marketplaceModalTitleStyles from global;
   color: var(--marketplaceColor);
 
   @media (--viewportMedium) {
@@ -377,7 +319,7 @@
 
 .desktopPerUnit {
   /* Font */
-  @apply --marketplaceH5FontStyles;
+  composes: h5 from global;
   color: var(--matterColor);
 
   @media (--viewportMedium) {
@@ -387,13 +329,8 @@
 }
 
 .heading {
-  margin-bottom: -25px;
+  margin-bottom: 33px;
   padding: 0 24px;
-  /* fallback option */
-  word-break: break-all;
-  /* use break-word if available */
-  word-break: break-word;
-  hyphens: auto;
 
   @media (--viewportMedium) {
     margin-bottom: 0;
@@ -403,7 +340,7 @@
 
 .title {
   /* Font */
-  @apply --marketplaceModalTitleStyles;
+  composes: marketplaceModalTitleStyles from global;
   color: var(--matterColor);
 
   /* Layout */
@@ -418,7 +355,8 @@
 
 .author {
   width: 100%;
-  @apply --marketplaceH5FontStyles;
+  composes: h5 from global;
+
   margin-top: 7px;
   margin-bottom: 0;
 
@@ -446,9 +384,33 @@
 }
 
 .contactLink {
-  @apply --marketplaceLinkStyles;
-  @apply --marketplaceH5FontStyles;
+  /* Position and dimensions */
+  display: inline;
+  padding: 0;
+
+  /* Borders */
+  border: none;
+
+  /* Colors */
+  color: var(--marketplaceColor);
+
+  /* Text size should be inherited */
+  text-decoration: none;
+
+  font-weight: var(--fontWeightMedium);
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: 0;
   margin: 0;
+
+  &:hover {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+  @media (--viewportMedium) {
+    line-height: 16px;
+  }
 }
 
 .sectionDescription {
@@ -461,22 +423,12 @@
   }
 }
 
-.sectionPricingMaybe {
-  padding: 0 24px;
-  margin-bottom: 35px;
-
-  @media (--viewportMedium) {
-    padding: 0;
-    margin-bottom: 36px;
-  }
-}
-
 .descriptionTitle {
   /* Font */
-  @apply --marketplaceH3FontStyles;
+  composes: h3 from global;
   color: var(--matterColorAnti);
-  
-  margin-top: 10px;
+
+  margin-top: 0;
   margin-bottom: 13px;
   @media (--viewportMedium) {
     margin-top: 0;
@@ -496,7 +448,7 @@
 
 .featuresTitle {
   /* Font */
-  @apply --marketplaceH3FontStyles;
+  composes: h3 from global;
   color: var(--matterColorAnti);
 
   margin-top: 0;
@@ -532,7 +484,7 @@
 
 .locationTitle {
   /* Font */
-  @apply --marketplaceH3FontStyles;
+  composes: h3 from global;
   color: var(--matterColorAnti);
 
   margin-top: 0;
@@ -556,7 +508,7 @@
 }
 
 .reviewsHeading {
-  @apply --marketplaceH3FontStyles;
+  composes: h3 from global;
   color: var(--matterColorAnti);
 
   margin: 52px 0 20px 0;
@@ -583,7 +535,7 @@
 }
 
 .yourHostHeading {
-  @apply --marketplaceH3FontStyles;
+  composes: h3 from global;
   color: var(--matterColorAnti);
 
   margin: 54px 0 23px 0;
@@ -656,183 +608,4 @@
   /* use break-word if available */
   word-break: break-word;
   hyphens: auto;
-}
-
-
-
-
-.hidden{
-  display:none;
-}
-
-.contactButtonJob{
-  @apply --marketplaceButtonStylesPrimary;
-
-  /* Clear padding that is set for link elements looking like buttons */
-  padding: 0;
-}
-
-.contactButtonCompany{
-  @apply --marketplaceButtonStylesPrimary;
-
-  /* Clear padding that is set for link elements looking like buttons */
-  padding: 0;
-  
-}
-
-.contactForm {
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  margin: 0 0 84px 0;
-
-  @media (--viewportMedium) {
-    margin: 0;
-    min-height: 400px;
-  }
-
-  @media (--viewportLarge) {
-    min-width: 312px;
-    min-height: auto;
-  }
-}
-
-
-
-.contactCardCompany {  
-  z-index: 1;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  margin-left: auto ;
-  margin-right: auto ;
-  margin-bottom: 0px;
-  padding: 18px 24px 18px 24px;
-  background-color: var(--matterColorLight);
-  box-shadow: var(--boxShadowTop);
-  display: flex; 
-  flex-direction: column;
-  justify-content: center;
-
-
-    @media (--viewportMedium) {
-
-      
-    }
-    @media (--viewportLarge) {
-      flex-basis: 576px;
-      height: 100%;
-      background-color: var(--matterColorLight);
-      display: inline-block;
-      position: -webkit-sticky; /* Safari */
-      position: sticky;
-
-      top: 120px;
-      @apply --marketplaceTinyFontStyles;
-      margin-top: 60px;
-      margin-bottom: 60px !important;
-      margin-left: 30px;
-      margin-right: 0px;
-      height: fit-content;
-      padding: 25px;
-      color: var(--matterColorAnti);
-      text-align: center;
-      box-shadow: var(--boxShadowListingCard);
-      border-radius: 10px;
-      width: 50px !important;
-      
-     
-    }
-
-
-  
-}
-
-  .contactCardMobile {
-    /* Ensure that mobile button is over Footer too */
-    z-index: 9999999999;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100vw;
-    padding: 18px 24px 18px 24px;
-    background-color: var(--matterColorLight);
-    box-shadow: var(--boxShadowTop);
-    display: flex;
-  
-    /* Contain repainting to this component only */
-    /* 3D painting container helps scrolling */
-    transform: translate3d(0, 0, 0);
-  
-  }
-  
-
-
-  .mapMobile {
-    display:block;
-      
-    @media (--viewportMedium) {
-        display:block;
-        margin-top: -30px;
-      }
-  
-      @media (--viewportLarge) {
-        display:none;
-      }
-    }
-
-
-
-    .showContact{
-      display: none;
-      
-      @media (--viewportMedium) {
-         display: none;
-        }
-    
-        @media (--viewportLarge) {
-          display: initial;
-        }
-      }
-  .reportContainer{
-  display: none;
-  @media (--viewportMedium) {
-    
-  @apply --marketplaceTinyFontStyles;
-  display: flex;
-  flex-direction: wrap;
-  align-items: center;
-  justify-content: center;
-  gap:5px;
-  }
-}
-
-.reportContainerMobile{
-  @apply --marketplaceTinyFontStyles;
-  display: flex;
-  flex-direction: wrap;
-  align-items: center;
-  justify-content: center;
-  gap:5px;
-
-  @media (--viewportMedium) {
- 
-  }
-
-  @media (--viewportLarge) {
-    display:none;
-  }
-}
-
-
-  
-.iconFlag {
-  color:red;
-  
-}
-
-.reportFont{
-@apply --marketplaceTinyFontStyles;
-color: grey;
 }

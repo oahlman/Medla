@@ -27,6 +27,7 @@ export const FEATURES = 'features';
 export const POLICY = 'policy';
 export const LOCATION = 'location';
 export const SERVICE = 'pricing';
+export const PRICING = 'pricing';
 export const PHOTOS = 'photos';
 
 // EditListingWizardTab component supports these tabs
@@ -35,6 +36,7 @@ export const SUPPORTED_TABS = [
   FEATURES,
   POLICY,
   LOCATION,
+  PRICING,
   SERVICE,
   AVAILABILITY,
   PHOTOS,

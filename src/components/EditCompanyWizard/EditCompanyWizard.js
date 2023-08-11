@@ -40,8 +40,11 @@ Anteckningar i https://docs.google.com/document/d/1-Lntdt2r6QJT8eDMRFH7VhibnZpsC
   DESCRIPTION,
   FEATURES,
   POLICY,
+  //INDUSTRY,
   LOCATION,
-  SERVICE,
+  PRICING,
+  //SERVICE,
+  //CONTACT,
   PHOTOS,
 } from './EditListingWizardTab';
 import css from './EditListingWizard.module.css';
@@ -55,8 +58,11 @@ const availabilityMaybe = config.enableAvailability ? [AVAILABILITY] : [];
 // and listing publishing happens after last panel.
 export const TABS = [
   DESCRIPTION,
-  PHOTOS, 
-  ...availabilityMaybe];
+  LOCATION,
+  //INDUSTRY,
+  PRICING,
+  //CONTACT,
+  PHOTOS];
 
 // Tabs are horizontal in small screens
 const MAX_HORIZONTAL_NAV_SCREEN_WIDTH = 1023;
@@ -74,7 +80,7 @@ const tabLabel = (intl, tab) => {
     key = 'EditListingWizard.tabLabelPolicy';
   } else if (tab === LOCATION) {
     key = 'EditListingWizard.tabLabelLocation';
-  } else if (tab === SERVICE) {
+  } else if (tab === PRICING) {
     key = 'EditListingWizard.tabLabelPricing';
   } else if (tab === AVAILABILITY) {
     key = 'EditListingWizard.tabLabelAvailability';
@@ -113,7 +119,7 @@ const tabCompleted = (tab, listing) => {
       return !!(publicData && typeof publicData.rules !== 'undefined');
     case LOCATION:
       return !!(geolocation && publicData && publicData.location && publicData.location.address);
-    case SERVICE:
+    case PRICING:
       return !!price;
     case AVAILABILITY:
       return !!availabilityPlan;

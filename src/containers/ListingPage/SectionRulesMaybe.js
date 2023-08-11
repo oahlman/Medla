@@ -1,34 +1,31 @@
 import React from 'react';
+import { shape, string } from 'prop-types';
 import { FormattedMessage } from '../../util/reactIntl';
-import { PropertyGroup } from '../../components';
-import { ensureListing } from '../../util/data';
-import css from './ListingPage.module.css';
+import classNames from 'classnames';
 
-
+import css from './SectionRulesMaybe.module.css';
 
 const SectionRulesMaybe = props => {
-  
-
-
-  const { options, publicData } = props;
-  if (!publicData) {
-    return null;
-  }
- 
-  const selectedOptions = publicData && publicData.category ? publicData.category : [];
-  return (
-    <div className={css.sectionFeatures}>
-      <h2 className={css.featuresTitle}>
+  const { className, rootClassName, publicData } = props;
+  const classes = classNames(rootClassName || css.root, className);
+  return publicData && publicData.rules ? (
+    <div className={classes}>
+      <h2 className={css.title}>
         <FormattedMessage id="ListingPage.rulesTitle" />
       </h2>
-      <PropertyGroup
-        id="ListingPage.category"
-        options={options}
-        selectedOptions={selectedOptions}
-        twoColumns={true}
-      />
+      <p className={css.rules}>{publicData.rules}</p>
     </div>
-  );
+  ) : null;
+};
+
+SectionRulesMaybe.defaultProps = { className: null, rootClassName: null };
+
+SectionRulesMaybe.propTypes = {
+  className: string,
+  rootClassName: string,
+  publicData: shape({
+    rules: string,
+  }),
 };
 
 export default SectionRulesMaybe;

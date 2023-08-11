@@ -32,7 +32,7 @@ const EditListingDescriptionPanel = props => {
   const { description, title, publicData } = currentListing.attributes;
 
   const isJob = publicData.listingCategory !== 'company';
-  const listingCategory = isJob ? 'stay' : 'company';
+  const listingCategory = isJob ? 'job' : 'company';
 
   const isPublished = currentListing.id && currentListing.attributes.state !== LISTING_STATE_DRAFT;
   const panelTitle = isPublished ? (

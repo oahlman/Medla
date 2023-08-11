@@ -56,8 +56,8 @@ export const LandingPageComponent = props => {
 
   const email = currentUser && currentUser.attributes.email;
   const emailVerified = currentUser && currentUser.attributes.emailVerified;
-  const phoneNumber = currentUser?.attributes?.profile?.protectedData?.phoneNumber;
-  const phoneNumberVerified = currentUser?.attributes?.profile?.privateData?.phoneNumberVerified;
+  const phoneNumber = currentUser && currentUser.attributes.profile.protectedData.phoneNumber;
+  const phoneNumberVerified = currentUser && currentUser.attributes.profile.privateData.phoneNumberVerified;
 
   if (emailVerified == true && phoneNumberVerified !== true && email === `phone+${phoneNumber}@medla.app`) {
     return onVerifyPhoneNumber();

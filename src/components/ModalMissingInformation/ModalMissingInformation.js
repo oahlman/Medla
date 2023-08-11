@@ -103,7 +103,7 @@ class ModalMissingInformation extends Component {
     let content = null;
 
     const currentUserLoaded = user && user.id;
-    const isPhoneNumber = currentUser?.attributes?.email?.includes("phone+") && currentUser?.attributes?.email?.includes("@medla.app");
+    const isPhoneNumber = currentUserLoaded && currentUser.attributes.email.includes("phone+") && currentUser.attributes.email.includes("@medla.app");
     if (currentUserLoaded) {
       if (this.state.showMissingInformationReminder === EMAIL_VERIFICATION) {
         content = (isPhoneNumber ?

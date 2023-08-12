@@ -1,0 +1,65 @@
+@import '../../styles/customMediaQueries.css';
+
+.root {}
+
+.pageCentering {
+    width: 100%;
+    max-width: 1056px; /* Your desired maximum width */
+    margin: 0 auto;
+
+  }
+  
+  /* Media query for smaller screens */
+  @media only screen and (max-width: 600px) {
+    .pageCentering {
+      width: 100%; /* Takes full width on small screens */
+    }
+  }
+  
+
+.someContent {
+  max-width: 1056px;
+}
+
+.iframeContainer {
+  position: relative;
+  width: 100%;
+  padding-top: 156%; /* Aspect ratio: (1366 / 768) * 100 */
+  overflow: hidden;
+}
+
+.iframeContainer iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  overflow-x: hidden; /* This line will hide the scrollbars */
+}
+
+.watermarkCover {
+    position: absolute;
+    bottom: 0; /* Adjust these values to position the cover precisely */
+    left: 0;
+    width: 100%; /* Set the width and height to cover the watermark */
+    height: 30px;
+    background-color: white; /* Or match the background color of the iframe */
+    z-index: 10;
+  }
+
+  .SectionProfileProgress {
+    composes: someContent;
+    margin-top: 10%;
+    margin-bottom: 10%;
+  }
+  
+  
+
+
+  
+  
+  
+  
+  
+

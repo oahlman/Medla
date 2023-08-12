@@ -20,6 +20,7 @@ const EmailVerificationPage = loadable(() => import(/* webpackChunkName: "EmailV
 const FAQPage = loadable(() => import(/* webpackChunkName: "FAQPage" */ './containers/FAQPage/FAQPage'));
 const InboxPage = loadable(() => import(/* webpackChunkName: "InboxPage" */ './containers/InboxPage/InboxPage'));
 const LandingPage = loadable(() => import(/* webpackChunkName: "LandingPage" */ './containers/LandingPage/LandingPage'));
+const LandingPageMunicipality = loadable(() => import(/* webpackChunkName: "LandingPageMunicipality" */ './containers/LandingPageMunicipality/LandingPageMunicipality'));
 const ListingPage = loadable(() => import(/* webpackChunkName: "ListingPage" */ /* webpackPrefetch: true */ './containers/ListingPage/ListingPage'));
 const CompanyPage = loadable(() => import(/* webpackChunkName: "CompanyPage" */ /* webpackPrefetch: true */ './containers/CompanyPage/CompanyPage'));
 const ProjectPage = loadable(() => import(/* webpackChunkName: "ProjectPage" */ /* webpackPrefetch: true */ './containers/ProjectPage/ProjectPage'));
@@ -153,6 +154,14 @@ const routeConfiguration = () => {
       name: 'LandingPage',
       component: LandingPage,
     },
+
+    {
+      path: '/Municipality',
+      name: 'LandingPage',
+      component: LandingPageMunicipality,
+    },
+
+
     {
       path: '/about',
       name: 'AboutPage',

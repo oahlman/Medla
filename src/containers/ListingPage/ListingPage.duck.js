@@ -301,7 +301,6 @@ export const fetchTransactionLineItems = ({ bookingData, listingId, isOwnListing
   transactionLineItems({ bookingData, listingId, isOwnListing })
     .then(response => {
       const lineItems = response.data;
-      console.log('bookingData', bookingData);
       dispatch(fetchLineItemsSuccess(lineItems));
     })
     .catch(e => {

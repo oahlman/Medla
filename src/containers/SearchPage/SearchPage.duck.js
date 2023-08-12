@@ -222,14 +222,9 @@ export const loadData = (params, search) => {
     page,
     perPage: RESULT_PAGE_SIZE,
     include: ['author', 'images', 'author.profileImage'],
-    'fields.listing': ['title', 'geolocation', 'description', 'publicData'],
-    'fields.user': ['profile.displayName', 'profile.abbreviatedName', 'author.profileImage'],
-    'fields.image': [
-      'variants.square-small',
-      'variants.square-small2x',
-      'variants.landscape-crop',
-      'variants.landscape-crop2x',
-    ],
+    'fields.listing': ['title', 'geolocation', 'price', 'description', 'publicData'],
+    'fields.user': ['profile.displayName', 'profile.abbreviatedName'],
+    'fields.image': ['variants.square-small', 'variants.square-small2x','variants.landscape-crop', 'variants.landscape-crop2x'],
     'limit.images': 1,
   });
 };

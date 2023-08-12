@@ -52,7 +52,7 @@
 }
 
 .sideBarError {
-  composes: h4 from global;
+  @apply --marketplaceH4FontStyles;
   color: var(--failColor);
   margin: 0 24px 12px 24px;
 
@@ -62,7 +62,7 @@
 }
 
 .smallPrint {
-  composes: marketplaceTinyFontStyles from global;
+  @apply --marketplaceTinyFontStyles;
   color: var(--matterColorAnti);
   text-align: center;
   margin: auto 24px 20px 24px;

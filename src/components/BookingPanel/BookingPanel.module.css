@@ -1,9 +1,10 @@
 @import '../../styles/customMediaQueries.css';
+@import '../../styles/propertySets.css';
 
 /* Booking form inside modalContainer needs special handling */
 /* since "inMobile" breakpoint is actually --viewportLarge */
 .modalContainer {
-  composes: marketplaceModalInMobileBaseStyles from global;
+  @apply --marketplaceModalInMobileBaseStyles;
 
   height: 100vh;
 
@@ -40,6 +41,7 @@
 
 .title {
   /* Font */
+  @apply --marketplaceH1FontStyles;
   color: var(--matterColor);
 
   /* Layout */
@@ -54,7 +56,7 @@
 
 .author {
   width: 100%;
-  composes: h4 from global;
+  @apply --marketplaceH4FontStyles;
   margin-top: 7px;
   margin-bottom: 0;
 
@@ -83,7 +85,8 @@
 }
 
 .bookingHelp {
-  composes: h5 from global;
+  @apply --marketplaceTinyFontStyles;
+  color: var(--matterColorAnti);
   display: none;
 
   @media (--viewportMedium) {
@@ -129,7 +132,7 @@
 
 .openBookingForm {
   /* Ensure that mobile button is over Footer too */
-  z-index: 9;
+  z-index: 9999;
   position: fixed;
   bottom: 0;
   left: 0;
@@ -164,7 +167,7 @@
 
 .priceValue {
   /* Font */
-  composes: h2 from global;
+  @apply --marketplaceH2FontStyles;
   color: var(--matterColor);
 
   margin-top: 0;
@@ -177,7 +180,7 @@
 
 .perUnit {
   /* Font */
-  composes: marketplaceTinyFontStyles from global;
+  @apply --marketplaceTinyFontStyles;
   color: var(--matterColor);
 
   margin-top: 0;
@@ -189,7 +192,7 @@
 }
 
 .bookButton {
-  composes: button buttonFont buttonText buttonBorders buttonColorsPrimary from global;
+  @apply --marketplaceButtonStylesPrimary;
 
   /* Clear padding that is set for link elements looking like buttons */
   padding: 0;

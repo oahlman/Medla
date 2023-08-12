@@ -1,10 +1,10 @@
+@import '../../styles/customMediaQueries.css';
 @import '../../styles/propertySets.css';
 
 .root {
   /* Layout */
   display: flex;
   flex-direction: column;
-
 
   /* Remove link's hover effect */
   &:hover {
@@ -14,41 +14,40 @@
 
 .threeToTwoWrapper {
   /* Layout */
-  display: block;
   border-radius: 10px;
-  height: 225px;
+  display: block;
+  width: 100%;
   position: relative;
   transition: var(--transitionStyleButton);
-  overflow: hidden;
 
-  @media (--viewportMedium) {
   &:hover {
     transform: scale(1.02);
     box-shadow: var(--boxShadowListingCard);
-  }}
+  }
 }
 
 /* Firefox doesn't support image aspect ratio inside flexbox */
 .aspectWrapper {
-  
-  padding-bottom: 22.2222%; /* 3:2 Aspect Ratio */
-  background-color: #eef5f3;
-  max-width: 100%;
+  padding-bottom: 66.6667%; /* 3:2 Aspect Ratio */
+  background: var(--matterColorNegative); /* Loading BG color */
 }
 
-.aspectWrapperEmbed {
-  composes: aspectWrapper;
-  background-color: #eef5f3;
+.rootForImage {
+  /* Layout - image will take space defined by aspect ratio wrapper */
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  border-radius: var(--borderRadius);
 }
-
-
 
 .info {
   /* Layout */
   display: flex;
   flex-direction: row;
   padding: 16px 0 2px 0;
-  
 }
 
 .price {
@@ -95,110 +94,32 @@
 }
 
 .title {
-  display: -webkit-box;
-  -webkit-line-clamp: 1;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  text-overflow: ellipsis;
   /* Font */
-  margin: 10px;
-  padding-top:25px;
-
   @apply --marketplaceH3FontStyles;
-  color: var(--marketplaceColorLight);
-
-  /* Remove default margins from font */
-
-  @media (--viewportMedium) {
-    margin-bottom: 0px;
-    padding-top:30px;
-  }
-}
-
-.titleEmbed {
-  composes: title;
-  color: initial;
-}
-
-
-.project {
-  @apply --marketplaceTinyFontStyles;
-  margin-right: 10px;
-  margin-left: 5px;
-  display: -webkit-box;
-  -webkit-line-clamp: 1;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  text-overflow: ellipsis;
-
-  
-
-  /* Font */
-  @apply --marketplaceTinyFontStyles;
-  color: var(--matterColorAnti);
-
-
-  /* Remove default margins from font */
-  margin-top: 0;
-  margin-bottom: 0px;
-
-  @media (--viewportMedium) {
-    margin-top: 0;
-  }
-}
-
-.longWord {
-  /* fallback option */
-  word-break: break-all;
-  /* use break-word if available */
-  word-break: break-word;
-  hyphens: auto;
-}
-
-.containerTopHalf {
-  
-  background: var(--marketplaceColorDark);
-  border-radius: 10px 10px 0 0;
-  padding-bottom: 5px;
-
-}
-
-.containerTopHalfEmbed {
-  background: var(--marketplaceColorBright);
-  border-radius: 10px 10px 0 0;
-  padding-bottom: 5px;
-}
-
-.description {
-  /* Font */
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 2; /* number of lines to show */
-          line-clamp: 2; 
-  -webkit-box-orient: vertical;
-  min-height: 45px;
-  height: 45px;
-  max-width: 100%;
-
-  @apply --marketplaceSmallFontStyles;
   color: var(--matterColor);
-  flex-shrink: 3;
 
   /* Remove default margins from font */
-  margin-left:10px;
-  margin-top: 10px;
-  margin-right:10px;
-  margin-bottom: 10px;
+  margin-top: 0;
+  margin-bottom: 0;
 
   @media (--viewportMedium) {
-    margin-bottom: 12px;
-    min-height: 45px;
-    height: 45px;
-    -webkit-line-clamp: 2; /* number of lines to show */
-    line-clamp: 2; 
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
 
-  
+.authorInfo {
+  /* Font */
+  @apply --marketplaceTinyFontStyles;
+  color: var(--matterColor);
+
+  /* Remove default margins from font */
+  margin-top: 0;
+  margin-bottom: 0;
+
+  @media (--viewportMedium) {
+    margin-top: 0;
+    margin-bottom: 0;
   }
 }
 
@@ -209,138 +130,3 @@
   word-break: break-word;
   hyphens: auto;
 }
-
-
-
-.category {
-  @apply --marketplaceTinyFontStyles;
-  margin-right: 10px;
-  margin-left: 5px;
-  display: -webkit-box;
-  -webkit-line-clamp: 1;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  text-overflow: ellipsis;
-
-  
-
-  /* Font */
-  @apply --marketplaceTinyFontStyles;
-  color: var(--matterColorAnti);
-
-
-  /* Remove default margins from font */
-  margin-top: 0;
-  margin-bottom: 0px;
-
-  @media (--viewportMedium) {
-    margin-top: 0;
-  }
-}
-
-.authorContainer{
-position: absolute;
-top:0px;
-right:-15px;
-
-
-
-}
-.author {
-  background: var(--marketplaceColor);
-  width:fit-content;
-  display: -webkit-box;
-  -webkit-line-clamp: 1;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  text-align:right;
-  margin: 10px;
-  text-align: right;
-  padding-right:20px;
-  padding-left:25px;
-  padding-bottom:3px;
-  border-radius: 0 0 0 30px;
-
-  /* Font */
-  @apply --marketplaceSmallFontStyles;
-  color: var(--matterColorBright);
-
-  /* Remove default margins from font */
-  margin-top: 0;
-  margin-bottom: 5px;
-
-  @media (--viewportMedium) {
-    margin-top: 0;
-  }
-}
-
-.projectAndCategory{
-  display: flex;
-  align-items: center;
-  margin-right: 10px;
-  margin-left:10px;
-  margin-bottom:5px;
-  margin-top:-10px;
-
-
-
-  @media (--viewportMedium) {
-    margin-top: 5px;
-  }
-}
-
-
-.icon{
-  color: var(--matterColorAnti);
-}
-
-.containerTags{
-  display: -webkit-inline-box;
-  flex-wrap: wrap;
-  align-content: flex-end;
-  position: relative;
-  align-content: flex-end;
-  margin-left:10px;
-  height: 0px;
-  margin-bottom: 20px;
-
-  color: var(--matterColorAnti);
-  flex-shrink: 1;
-
-  @media (--viewportMedium) {
-    height: 0px;
-
-  }}
-
-
-  .extraTags {
-    @apply --marketplaceTinyFontStyles;
-    border-style:solid;
-    border-color: var(--matterColorAnti);
-     border-width: 0.1px;
-     border-radius: 9999px;
-    position: relative;
-    padding: 5px;
-    margin-right: 5px;
-    margin-top:10px;
-    flex-shrink: 1;
-    background-color: var(--matterColorMed);
-
-    @media (min-width: 700px) and (max-width: 1300px) {
-      padding:5px;
-      margin-right:3px;
-
-      margin-top:5px;
-
-
-
-    @media (--viewportMedium) {
-
-    }
-  }
-}
-
-  .hidden {
-    display:none;
-
-  }

@@ -44,7 +44,7 @@ export const filters = [
     group: 'primary',
     queryParamNames: ['pub_listingCategory'],
     config: {
-      options: [{ key: 'job', label: <FormattedMessage id="Marketplace.config.key.labelJobs"/> }, { key: 'company', label: <FormattedMessage id="Marketplace.config.key.labelCompanies"/> }],
+      options: [{ key: 'job', label: <FormattedMessage id="Marketplace.config.key.labelStays"/> }, { key: 'company', label: <FormattedMessage id="Marketplace.config.key.labelCompanies"/> }],
     },
   },
     {

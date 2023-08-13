@@ -1,54 +1,30 @@
-@import '../../styles/propertySets.css';
+@import '../../styles/customMediaQueries.css';
 
 .root {
- 
-  
-}
-
-
-
-.item {
-  @media (--viewportMedium) {
-    padding: 4px 0;
-    max-height:200px;
-    
-  }
+  margin: 0;
 }
 
 .twoColumns {
-  display: flex;
-  color: var(--matterColor);
-
-
-  /* Then we define the flow direction 
-     and if we allow the items to wrap 
-   * Remember this is the same as:
-   * flex-direction: row;
-   * flex-wrap: wrap;
-   */
-  flex-flow: row wrap;
-  flex-grow: 1;
-  /* Then we define how is distributed the remaining space */
-  justify-content: left;
-  
-  overflow:hidden; /* hide the overflow */
-  padding-left: 0;
-  
-  row-gap: 10px;
-  
-  
   @media (--viewportMedium) {
-    row-gap: 1px;
-    
+    column-count: 2;
   }
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  padding: 3px 0;
+
+  @media (--viewportMedium) {
+    padding: 4px 0;
   }
+}
 
-
-.checkIcon { display: none;
+.checkIcon {
 }
 
 .hidden {
-  display: none;
+  visibility: hidden;
 }
 
 .marketplaceFill {
@@ -64,69 +40,21 @@
 }
 
 .labelWrapper {
- 
-  display: inline-table;
-  flex-flow: row wrap;
-  /* Then we define how is distributed the remaining space */
-  justify-content: left;
-  margin-top: 10px;
-  margin-bottom:3px;
-  
-
-  @media (--viewportMedium) {
-    margin-top: 0px;
-    margin-bottom:0px;
-  }
+  display: inline-block;
 }
 
-
-
-.selectedLabel {
-  border-style:solid;
-  border-color: var(--matterColorAnti);
-  border-width: 0.1px;
-  border-radius: 99px;
-  padding-left: 7px;
-  padding-right: 7px;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  margin-right:5px;
-  font-size: 11px;
-  color: var(--matterColor);
-  flex-shrink: 1;
-  
-  @media (min-width: 700px) and (max-width: 1300px) {                             
-    font-size: 8px;
-    padding-left: 10px;
-    padding-right: 10px;
-    margin-right:3px;
-    
-
-
-   }
-
-  @media (--viewportMedium) {
- 
-  
-  }
-  
-}
+.selectedLabel,
 .notSelectedLabel {
-  display:none;
-  left: 10px;
-  bottom: 10px;
-
-
-
-
+  composes: marketplaceBodyFontStyles from global;
+  line-height: 24px;
+  margin: 0;
 }
 
 .selectedLabel {
-  @apply --marketplaceTinyFontStyles;
+  font-weight: var(--fontWeightSemiBold);
 }
 
 .notSelectedLabel {
-  display: none;
   color: var(--matterColorNegative);
   position: relative;
 

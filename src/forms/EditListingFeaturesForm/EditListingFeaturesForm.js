@@ -14,6 +14,7 @@ import css from './EditListingFeaturesForm.module.css';
 const EditListingFeaturesFormComponent = props => (
   <FinalForm
     {...props}
+    initialValues={{ amenities: props.initialValues.amenities !== undefined ? props.initialValues.amenities : [] }}
     mutators={{ ...arrayMutators }}
     render={formRenderProps => {
       const {
@@ -49,7 +50,7 @@ const EditListingFeaturesFormComponent = props => (
         </p>
       ) : null;
 
-      const generalOptions = findOptionsForSelectFilter('generalAmenities', filterConfig);
+      const generalOptions = findOptionsForSelectFilter('amenities', filterConfig);
       const bathroomOptions = findOptionsForSelectFilter('bathroomAmenities', filterConfig);
       const kitchenOptions = findOptionsForSelectFilter('kitchenAmenities', filterConfig);
       const extraOptions = findOptionsForSelectFilter('extraAmenities', filterConfig);
@@ -61,30 +62,9 @@ const EditListingFeaturesFormComponent = props => (
 
           <FieldCheckboxGroup
             className={css.features}
-            id="generalAmenities"
-            name="generalAmenities"
+            id="amenities"
+            name="amenities"
             options={generalOptions}
-          />
-
-          <FieldCheckboxGroup
-            className={css.features}
-            id="bathroomAmenities"
-            name="bathroomAmenities"
-            options={bathroomOptions}
-          />
-
-          <FieldCheckboxGroup
-            className={css.features}
-            id="kitchenAmenities"
-            name="kitchenAmenities"
-            options={kitchenOptions}
-          />
-
-          <FieldCheckboxGroup
-            className={css.features}
-            id="extraAmenities"
-            name="extraAmenities"
-            options={extraOptions}
           />
 
           <Button

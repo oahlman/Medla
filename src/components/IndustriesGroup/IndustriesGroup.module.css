@@ -1,0 +1,149 @@
+@import '../../styles/propertySets.css';
+
+.root {
+ 
+  
+}
+
+
+
+.item {
+  @media (--viewportMedium) {
+    padding: 4px 0;
+    max-height:200px;
+    
+  }
+}
+
+.twoColumns {
+  display: flex;
+  color: var(--matterColor);
+
+
+  /* Then we define the flow direction 
+     and if we allow the items to wrap 
+   * Remember this is the same as:
+   * flex-direction: row;
+   * flex-wrap: wrap;
+   */
+  flex-flow: row wrap;
+  flex-grow: 1;
+  /* Then we define how is distributed the remaining space */
+  justify-content: left;
+  
+  overflow:hidden; /* hide the overflow */
+  padding-left: 0;
+  
+  row-gap: 10px;
+  
+  
+  @media (--viewportMedium) {
+    row-gap: 1px;
+    
+  }
+  }
+
+
+.checkIcon { display: none;
+}
+
+.hidden {
+  display: none;
+}
+
+.marketplaceFill {
+  fill: var(--marketplaceColor);
+}
+
+.iconWrapper {
+  align-self: baseline;
+  margin-right: 8px;
+
+  /* This follows line-height */
+  height: 24px;
+}
+
+.labelWrapper {
+ 
+  display: inline-table;
+  flex-flow: row wrap;
+  /* Then we define how is distributed the remaining space */
+  justify-content: left;
+  margin-top: 10px;
+  margin-bottom:3px;
+  
+
+  @media (--viewportMedium) {
+    margin-top: 0px;
+    margin-bottom:0px;
+  }
+}
+
+
+
+.selectedLabel {
+  border-style:solid;
+  border-color: var(--matterColorAnti);
+  border-width: 0.1px;
+  border-radius: 99px;
+  padding-left: 7px;
+  padding-right: 7px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  margin-right:5px;
+  font-size: 11px;
+  color: var(--matterColor);
+  flex-shrink: 1;
+  
+  @media (min-width: 700px) and (max-width: 1300px) {                             
+    font-size: 8px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-right:3px;
+    
+
+
+   }
+
+  @media (--viewportMedium) {
+ 
+  
+  }
+  
+}
+.notSelectedLabel {
+  display:none;
+  left: 10px;
+  bottom: 10px;
+
+
+
+
+}
+
+.selectedLabel {
+  @apply --marketplaceTinyFontStyles;
+}
+
+.notSelectedLabel {
+  display: none;
+  color: var(--matterColorNegative);
+  position: relative;
+
+  /* line-through */
+  background-image: linear-gradient(
+    transparent 10px,
+    var(--matterColorNegative) 10px,
+    var(--matterColorNegative) 11px,
+    transparent 11px
+  );
+
+  @media (--viewportMedium) {
+    background-image: linear-gradient(
+      transparent 12px,
+      var(--matterColorNegative) 12px,
+      var(--matterColorNegative) 13px,
+      transparent 13px
+    );
+  }
+}

@@ -10,7 +10,7 @@ const SectionFeaturesMaybe = props => {
     return null;
   }
 
-  const selectedOptions = publicData && publicData.amenities ? publicData.amenities : [];
+  const selectedOptions = publicData && publicData.generalAmenities ? publicData.generalAmenities : [];
 
   console.log("options", options, 'selectedOptions', selectedOptions);
   return (

@@ -376,8 +376,8 @@ export class ListingPageComponent extends Component {
       </NamedLink>
     );
 
-    const amenityOptions = findOptionsForSelectFilter('amenities', filterConfig);
-    const categoryOptions = findOptionsForSelectFilter('amenities', filterConfig);
+    const amenityOptions = findOptionsForSelectFilter('generalAmenities', filterConfig);
+    const categoryOptions = findOptionsForSelectFilter('generalAmenities', filterConfig);
     const category =
       publicData && publicData.category ? (
         <span>

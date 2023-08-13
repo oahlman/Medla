@@ -18,7 +18,7 @@ import {
   LISTING_PAGE_PENDING_APPROVAL_VARIANT,
 } from '../../util/urlHelpers';
 import { findOptionsForSelectFilter } from '../../util/search';
-import { PropertyGroup } from '..';
+import { IndustriesGroup } from '..';
 
 
 
@@ -55,8 +55,8 @@ export const CompanyCardComponent = props => {
   const firstImage =
    currentListing.images && currentListing.images.length > 0 ? currentListing.images[0] : null;
   const categoryOptions = findOptionsForSelectFilter('category', filterConfig);
-  let propertyGroupTags =(
-      <PropertyGroup
+  let industriesGroupTags =(
+      <IndustriesGroup
        id="CompanyCard.category"
        options={categoryOptions}
        publicData={publicData}
@@ -110,7 +110,7 @@ export const CompanyCardComponent = props => {
                  </div>
 
                  <div className={css.containerTags}>
-              {propertyGroupTags}
+              {industriesGroupTags}
               <span className={categories.length > 3 ? css.extraTags : css.hidden} >
                  {extraTags}
               </span>

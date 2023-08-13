@@ -46,6 +46,7 @@ export { default as NotificationBadge } from './NotificationBadge/NotificationBa
 export { default as OutsideClickHandler } from './OutsideClickHandler/OutsideClickHandler';
 export { default as Promised } from './Promised/Promised';
 export { default as PropertyGroup } from './PropertyGroup/PropertyGroup';
+export { default as IndustriesGroup } from './IndustriesGroup/IndustriesGroup';
 export { default as RangeSlider } from './RangeSlider/RangeSlider';
 export { default as ResponsiveImage } from './ResponsiveImage/ResponsiveImage';
 export { default as UserDisplayName } from './UserDisplayName/UserDisplayName';

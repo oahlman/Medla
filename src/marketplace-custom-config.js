@@ -48,11 +48,11 @@ export const filters = [
     },
   },
     {
-      id: 'amenities',
+      id: 'generalAmenities',
       label: <FormattedMessage id="Marketplace.config.key.generalHeading"/>,
       type: 'SelectMultipleFilter',
       group: 'secondary',
-      queryParamNames: ['pub_amenities'],
+      queryParamNames: ['pub_general_amenities'],
       config: {
         options: [
           {

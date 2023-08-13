@@ -71,7 +71,7 @@
 }
 
 .ownListingText {
-  composes: h4 from global;
+  @apply --marketplaceH4FontStyles;
   margin: 14px 12px 11px 24px;
 
   @media (--viewportMedium) {
@@ -84,7 +84,7 @@
 }
 
 .closedListingText {
-  composes: h4 from global;
+  @apply --marketplaceH4FontStyles;
   margin: 14px 12px 11px 24px;
   text-align: center;
   width: 100%;
@@ -95,7 +95,7 @@
 }
 
 .editListingLink {
-  composes: h4 from global;
+  @apply --marketplaceH4FontStyles;
   flex-shrink: 0;
   margin: 0;
   padding: 14px 24px 11px 12px;
@@ -148,7 +148,7 @@
 }
 
 .viewPhotos {
-  composes: marketplaceTinyFontStyles from global;
+  @apply --marketplaceTinyFontStyles;
   font-weight: var(--fontWeightMedium);
 
   /* Position and dimensions */
@@ -308,7 +308,7 @@
 
 .desktopPriceValue {
   /* Font */
-  composes: marketplaceModalTitleStyles from global;
+  @apply --marketplaceH1FontStyles;
   color: var(--marketplaceColor);
 
   @media (--viewportMedium) {
@@ -319,7 +319,7 @@
 
 .desktopPerUnit {
   /* Font */
-  composes: h5 from global;
+  @apply --marketplaceH5FontStyles;
   color: var(--matterColor);
 
   @media (--viewportMedium) {
@@ -340,7 +340,7 @@
 
 .title {
   /* Font */
-  composes: marketplaceModalTitleStyles from global;
+  @apply --marketplaceH1FontStyles;
   color: var(--matterColor);
 
   /* Layout */
@@ -355,7 +355,7 @@
 
 .author {
   width: 100%;
-  composes: h5 from global;
+  @apply --marketplaceH5FontStyles;
 
   margin-top: 7px;
   margin-bottom: 0;
@@ -425,7 +425,7 @@
 
 .descriptionTitle {
   /* Font */
-  composes: h3 from global;
+  @apply --marketplaceH3FontStyles;
   color: var(--matterColorAnti);
 
   margin-top: 0;
@@ -448,7 +448,7 @@
 
 .featuresTitle {
   /* Font */
-  composes: h3 from global;
+  @apply --marketplaceH3FontStyles;
   color: var(--matterColorAnti);
 
   margin-top: 0;
@@ -484,7 +484,7 @@
 
 .locationTitle {
   /* Font */
-  composes: h3 from global;
+  @apply --marketplaceH3FontStyles;
   color: var(--matterColorAnti);
 
   margin-top: 0;
@@ -508,7 +508,7 @@
 }
 
 .reviewsHeading {
-  composes: h3 from global;
+  @apply --marketplaceH3FontStyles;
   color: var(--matterColorAnti);
 
   margin: 52px 0 20px 0;
@@ -535,7 +535,7 @@
 }
 
 .yourHostHeading {
-  composes: h3 from global;
+  @apply --marketplaceH3FontStyles;
   color: var(--matterColorAnti);
 
   margin: 54px 0 23px 0;

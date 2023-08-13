@@ -632,6 +632,10 @@
   "Marketplace.config.key.labelSortOldest": "Äldst",
   "Marketplace.config.key.labelSortRelevance": "Relevans",
   "Marketplace.config.key.labelSortRelevanceLong": "Relevans (Sökord)",
+  "Marketplace.config.key.generalHeading": "Generella",
+  "Marketplace.config.key.bathroomLaundryHeading": "Tvätt och badrum",
+  "Marketplace.config.key.kitchenHeading": "Kök",
+  "Marketplace.config.key.extraHeading": "Extra",
 
   "ModalMissingInformation.checkTextMessages": "Kolla dina meddelanden och verifiera ditt telefonnummer {phoneNumber}",
   "ModalMissingInformation.fixPhoneNumber": "Oj, stavfel i ditt nummer? {fixEmailLink}",

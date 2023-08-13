@@ -633,6 +633,10 @@
   "Marketplace.config.key.labelSortOldest": "Oldest",
   "Marketplace.config.key.labelSortRelevance": "Relevance",
   "Marketplace.config.key.labelSortRelevanceLong": "Relevance (Keyword)",
+  "Marketplace.config.key.generalHeading": "General",
+  "Marketplace.config.key.bathroomLaundryHeading": "Bathroom and Laundry",
+  "Marketplace.config.key.kitchenHeading": "Kitchen",
+  "Marketplace.config.key.extraHeading": "Extra",
 
   "ModalMissingInformation.checkTextMessages": "Check your messages and verify your phone number {phoneNumber}",
   "ModalMissingInformation.fixPhoneNumber": "Oops, misspelling your number? {fixEmailLink}",

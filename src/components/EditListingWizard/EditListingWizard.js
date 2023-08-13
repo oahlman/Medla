@@ -115,14 +115,17 @@ const tabCompleted = (tab, listing) => {
     publicData,
   } = listing.attributes;
   const images = listing.images;
+  console.log('location: ',publicData.location);
 
   switch (tab) {
     case STAYLOCATION:
       return !!(title && geolocation && publicData && publicData.location && publicData.location.address);
     case FEATURES:
-      return !!(publicData && typeof publicData.amenities !== 'undefined');
+      return !!(publicData);
     case POLICY:
-      return !!(publicData  && typeof publicData.rules !== 'undefined');
+      return !!(publicData && typeof publicData.rules !== 'undefined');
+    case LOCATION:
+      return !!(geolocation && publicData && publicData.location && publicData.location.address);
     case PRICING:
       return !!price;
     case AVAILABILITY:

@@ -15,7 +15,7 @@ import css from './LandingPageMunicipality.module.css';
 const cityToURLMap = {
   'umea': "https://lookerstudio.google.com/embed/reporting/94d763d1-fcc2-4bfb-8509-5f89892ebcaf/page/5EF5C",
   'stockholm': "https://lookerstudio.google.com/embed/reporting/94d763d1-fcc2-4bfb-8509-5f89892ebcaf/page/p_d1qeitru8c",
-  // ... Add other cities as needed
+  
 };
 
 const LandingPageMunicipalityComponent = ({ isAuthenticated, currentUser, }) => {
@@ -24,6 +24,7 @@ const LandingPageMunicipalityComponent = ({ isAuthenticated, currentUser, }) => 
   console.log('city:', city);
 
   const iframeSrc = cityToURLMap[city] || null;
+
 
   return (
     <Page className={css.root}>
@@ -35,7 +36,6 @@ const LandingPageMunicipalityComponent = ({ isAuthenticated, currentUser, }) => 
           {isAuthenticated && iframeSrc && (
             <div className={css.pageCentering}>
               <SectionProfileProgress />
-              
               <div className={css.iframeContainer}>
                 <div className={css.watermarkCover}></div>
                 <iframe src={iframeSrc} frameborder="0" allowfullscreen></iframe>

@@ -3,18 +3,24 @@
 .root {}
 
 .pageCentering {
-    width: 100%;
-    max-width: 1056px; /* Your desired maximum width */
-    margin: 0 auto;
+  margin: var(--LandingPage_sectionMarginTop) 24px 51px 24px;
 
+  @media (--viewportMedium) {
+    max-width: 100%;
+    margin: var(--LandingPage_sectionMarginTopMedium) 24px 60px 24px;
   }
-  
-  /* Media query for smaller screens */
-  @media only screen and (max-width: 600px) {
-    .pageCentering {
-      width: 100%; /* Takes full width on small screens */
-    }
+
+  @media (--viewportLarge) {
+    max-width: 1128px;
+    padding: 0 36px 0 36px;
+    margin: var(--LandingPage_sectionMarginTopLarge) auto 93px auto;
   }
+
+  @media (--viewportXLarge) {
+    max-width: 1056px;
+    padding: 0;
+  }
+}
   
 
 .someContent {
@@ -24,7 +30,7 @@
 .iframeContainer {
   position: relative;
   width: 100%;
-  padding-top: 156%; /* Aspect ratio: (1366 / 768) * 100 */
+  padding-top: 115%; /* Aspect ratio: (1366 / 768) * 100 */
   overflow: hidden;
 }
 
@@ -36,6 +42,7 @@
   height: 100%;
   border: 0;
   overflow-x: hidden; /* This line will hide the scrollbars */
+  margin-top: 3%;
 }
 
 .watermarkCover {
@@ -44,7 +51,7 @@
     left: 0;
     width: 100%; /* Set the width and height to cover the watermark */
     height: 30px;
-    background-color: white; /* Or match the background color of the iframe */
+    background-color: rgb(252, 252, 252); /* Or match the background color of the iframe */
     z-index: 10;
   }
 

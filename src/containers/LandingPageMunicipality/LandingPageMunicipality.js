@@ -12,22 +12,18 @@ import {
 import { TopbarContainer } from '../../containers';
 import css from './LandingPageMunicipality.module.css';
 
+const cityToURLMap = {
+  'umea': "https://lookerstudio.google.com/embed/reporting/94d763d1-fcc2-4bfb-8509-5f89892ebcaf/page/5EF5C",
+  'stockholm': "https://lookerstudio.google.com/embed/reporting/94d763d1-fcc2-4bfb-8509-5f89892ebcaf/page/p_d1qeitru8c",
+  // ... Add other cities as needed
+};
 
-const LandingPageMunicipalityComponent = ({ isAuthenticated, currentUser }) => {
-    console.log('currentUser:', currentUser); // Log the whole currentUser object
+const LandingPageMunicipalityComponent = ({ isAuthenticated, currentUser, }) => {
   
-    const city = currentUser?.attributes?.metadata?.city; // Safely access city using optional chaining
-    console.log('city:', city); // Log the city value
-  
-    let iframeSrc;
-    if (city === 'umea') {
-      iframeSrc = "https://lookerstudio.google.com/embed/reporting/94d763d1-fcc2-4bfb-8509-5f89892ebcaf/page/5EF5C";
-    } else if (city === 'stockholm') {
-      iframeSrc = "https://lookerstudio.google.com/embed/reporting/94d763d1-fcc2-4bfb-8509-5f89892ebcaf/page/p_d1qeitru8c";
-    }
-  
- 
-  
+  const city = currentUser && currentUser.attributes.profile.metadata.city;
+  console.log('city:', city);
+
+  const iframeSrc = cityToURLMap[city] || null;
 
   return (
     <Page className={css.root}>
@@ -36,19 +32,15 @@ const LandingPageMunicipalityComponent = ({ isAuthenticated, currentUser }) => {
           <TopbarContainer />
         </LayoutWrapperTopbar>
         <LayoutWrapperMain>
-          {isAuthenticated && (
-            <div>
-              
-              <div className={css.pageCentering}>
+          {isAuthenticated && iframeSrc && (
+            <div className={css.pageCentering}>
               <SectionProfileProgress />
-                
-                  <div className={css.iframeContainer}>
-                    <div className={css.watermarkCover}></div>
-                    <iframe src="https://lookerstudio.google.com/embed/reporting/94d763d1-fcc2-4bfb-8509-5f89892ebcaf/page/5EF5C" frameborder="0" allowfullscreen></iframe>
-                  </div>
-                </div>
+              
+              <div className={css.iframeContainer}>
+                <div className={css.watermarkCover}></div>
+                <iframe src={iframeSrc} frameborder="0" allowfullscreen></iframe>
               </div>
-           
+            </div>
           )}
         </LayoutWrapperMain>
         <LayoutWrapperFooter>
@@ -61,12 +53,13 @@ const LandingPageMunicipalityComponent = ({ isAuthenticated, currentUser }) => {
 
 const mapStateToProps = (state) => {
     const { isAuthenticated } = state.Auth;
-    const currentUser = state.Auth.currentUser; // Make sure this line is correct
-  
+    const currentUser = state.user.currentUser;
+
     return {
       isAuthenticated,
       currentUser,
     };
-  };
+};
   
+// Connecting component to Redux store
 export default connect(mapStateToProps)(LandingPageMunicipalityComponent);

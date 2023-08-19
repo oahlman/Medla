@@ -29,25 +29,7 @@ const SearchResultsPanel = props => {
     `${panelLargeWidth / 3}vw`,
   ].join(', ');
 
-  const isJob = search.pub_listingCategory === 'job';
-
-  return isJob ? (
-    <div className={classes}>
-      <div className={css.listingCards}>
-        {listings.map(l => (
-          <ListingCard
-            className={css.listingCard}
-            key={l.id.uuid}
-            listing={l}
-            renderSizes={cardRenderSizes}
-            setActiveListing={setActiveListing}
-          />
-        ))}
-        {props.children}
-      </div>
-      {paginationLinks}
-    </div>
-  ) : (
+  return (
     <div className={classes}>
       <div className={css.companyCards}>
         {listings.map(l => (

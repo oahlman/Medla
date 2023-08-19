@@ -161,7 +161,6 @@ export const searchListings = searchParams => (dispatch, getState, sdk) => {
   const datesMaybe = datesSearchParams(dates);
 
   const params = {
-    pub_listingCategory: 'company',
     ...rest,
     ...priceMaybe,
     ...datesMaybe,
@@ -191,7 +190,6 @@ export const searchMapListings = searchParams => (dispatch, getState, sdk) => {
 
   const { perPage, ...rest } = searchParams;
   const params = {
-    pub_listingCategory: 'company',
     ...rest,
     per_page: perPage,
   };

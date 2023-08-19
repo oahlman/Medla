@@ -78,7 +78,7 @@ export class SearchMapComponent extends Component {
     const pathParams = { id, slug };
     const isJob = listing.attributes.publicData.listingCategory !== 'company';
 
-    return createResourceLocatorString(isJob ? 'ListingPage': 'CompanyPage', routes, pathParams, {});
+    return createResourceLocatorString(routes, pathParams, {});
   }
 
   onListingClicked(listings) {

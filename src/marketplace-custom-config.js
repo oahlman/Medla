@@ -37,191 +37,6 @@ import {FormattedMessage} from '../src/util/reactIntl'
 
 export const filters = [
   {
-   
-    id: 'listingCategory',
-    label: 'Kategori',
-    type: 'SelectSingleFilter',
-    group: 'primary',
-    queryParamNames: ['pub_listingCategory'],
-    config: {
-      options: [{ key: 'job', label: <FormattedMessage id="Marketplace.config.key.labelStays"/> }, { key: 'company', label: <FormattedMessage id="Marketplace.config.key.labelCompanies"/> }],
-    },
-  },
-    {
-      id: 'generalAmenities',
-      label: <FormattedMessage id="Marketplace.config.key.generalHeading"/>,
-      type: 'SelectMultipleFilter',
-      group: 'secondary',
-      queryParamNames: ['pub_general_amenities'],
-      config: {
-        options: [
-          {
-            key: 'uppvarmning',
-            label: 'Uppvärmning',
-          },
-          {
-            key: 'hoghastighetsinternet',
-            label: 'Höghastighetsinternet',
-          },
-          {
-            key: 'parkering',
-            label: 'Parkering',
-          },
-          {
-            key: 'rullstolsanpassat',
-            label: 'Rullstolsanpassat',
-          },
-        ],
-      },
-    },
-    {
-      id: 'bathroomAmenities',
-      label: <FormattedMessage id="Marketplace.config.key.bathroomLaundryHeading"/>,
-      type: 'SelectMultipleFilter',
-      group: 'secondary',
-      queryParamNames: ['pub_bathroom_laundry_amenities'],
-      config: {
-        options: [
-          {
-            key: 'dusch',
-            label: 'Dusch',
-          },
-          {
-            key: 'wc',
-            label: 'WC',
-          },
-          {
-            key: 'badkar',
-            label: 'Badkar',
-          },
-          {
-            key: 'bastu',
-            label: 'Bastu',
-          },
-          {
-            key: 'tvattmaskin',
-            label: 'Tvättmaskin',
-          },
-          {
-            key: 'torktumlare',
-            label: 'Torktumlare',
-          },
-          {
-            key: 'torkskap',
-            label: 'Torkskåp',
-          },
-        ],
-      },
-    },
-    {
-      id: 'kitchenAmenities',
-      label: <FormattedMessage id="Marketplace.config.key.kitchenHeading"/>,
-      type: 'SelectMultipleFilter',
-      group: 'secondary',
-      queryParamNames: ['pub_kitchen_amenities'],
-      config: {
-        options: [
-          {
-            key: 'kyl',
-            label: 'Kyl',
-          },
-          {
-            key: 'frys',
-            label: 'Frys',
-          },
-          {
-            key: 'ugn',
-            label: 'Ugn',
-          },
-          {
-            key: 'spis',
-            label: 'Spis',
-          },
-          {
-            key: 'mikrovagsugn',
-            label: 'Mikrovågsugn',
-          },
-          {
-            key: 'diskmaskin',
-            label: 'Diskmaskin',
-          },
-        ],
-      },
-    },
-    {
-      id: 'extraAmenities',
-      label: <FormattedMessage id="Marketplace.config.key.extraHeading"/>,
-      type: 'SelectMultipleFilter',
-      group: 'secondary',
-      queryParamNames: ['pub_extra_amenities'],
-      config: {
-        options: [
-          {
-            key: 'tv',
-            label: 'TV',
-          },
-          {
-            key: 'garage',
-            label: 'Garage',
-          },
-          {
-            key: 'motorvarmare',
-            label: 'Motorvärmare',
-          },
-          {
-            key: 'elbilsladdare',
-            label: 'Elbilsladdare',
-          },
-          {
-            key: 'eldstad',
-            label: 'Eldstad',
-          },
-          {
-            key: 'ved',
-            label: 'Ved',
-          },
-        ],
-      },
-    },  
-  {
-    id: 'category',
-    label: <FormattedMessage id="Marketplace.config.key.labelIndustries"/>,
-    type: 'SelectMultipleFilter',
-    group: 'primary',
-    queryParamNames: ['pub_category'],
-    config: {
-      // Optional modes: 'has_all', 'has_any'
-      // https://www.sharetribe.com/api-reference/marketplace.html#extended-data-filtering
-      searchMode: 'has_any',
-      // "key" is the option you see in Flex Console.
-      // "label" is set here for the UI only.
-      // Note: label is not added through the translation files
-      // to make filter customizations a bit easier.
-      options: [
-        { key: 'anlaggning', label: <FormattedMessage id="Marketplace.config.key.industry1"/> },
-        { key: 'bemanning', label: <FormattedMessage id="Marketplace.config.key.industry2"/> },
-        { key: 'betong', label: <FormattedMessage id="Marketplace.config.key.industry3"/> },
-        { key: 'bygg', label: <FormattedMessage id="Marketplace.config.key.industry4"/> },
-        { key: 'driftochunderhall', label: <FormattedMessage id="Marketplace.config.key.industry5"/> },
-        { key: 'el', label: <FormattedMessage id="Marketplace.config.key.industry6"/> },
-        { key: 'fordon', label: <FormattedMessage id="Marketplace.config.key.industry7"/> },
-        { key: 'itochtelecom', label: <FormattedMessage id="Marketplace.config.key.industry8"/> },
-        { key: 'kostlogi', label: <FormattedMessage id="Marketplace.config.key.industry9"/> },
-        { key: 'maskinreparation', label: <FormattedMessage id="Marketplace.config.key.industry10"/> },
-        { key: 'media', label: <FormattedMessage id="Marketplace.config.key.industry11"/> },
-        { key: 'projektering', label: <FormattedMessage id="Marketplace.config.key.industry12"/> },
-        { key: 'servicetjanster', label: <FormattedMessage id="Marketplace.config.key.industry13"/> },
-        { key: 'skogsmaskintjanster', label: <FormattedMessage id="Marketplace.config.key.industry14"/> },
-        { key: 'sprangning', label: <FormattedMessage id="Marketplace.config.key.industry15"/> },
-        { key: 'svets', label: <FormattedMessage id="Marketplace.config.key.industry16"/> },
-        { key: 'transport', label: <FormattedMessage id="Marketplace.config.key.industry17"/> },
-        { key: 'tillverkning', label: <FormattedMessage id="Marketplace.config.key.industry18"/> },
-        { key: 'utbildning', label: <FormattedMessage id="Marketplace.config.key.industry19"/> },
-        { key: 'ovrigt', label: <FormattedMessage id="Marketplace.config.key.industry20"/> },
-      ],
-    },
-  },
-  {
     id: 'keyword',
     label: <FormattedMessage id="Marketplace.config.key.labelKeywordSearch"/>,
     type: 'KeywordFilter',
@@ -233,6 +48,101 @@ export const filters = [
     // the keyword search can't be used at the same time.
     // You can turn on/off ordering by distance from config.js file.
     config: {},
+  },
+  {
+    id: 'category',
+    label: <FormattedMessage id="Marketplace.config.key.labelIndustries"/>,
+    type: 'SelectSingleFilter',
+    group: 'primary',
+    queryParamNames: ['pub_category'],
+    config: {
+      // Optional modes: 'has_all', 'has_any'
+      // https://www.sharetribe.com/api-reference/marketplace.html#extended-data-filtering
+      searchMode: 'has_any',
+      // "key" is the option you see in Flex Console.
+      // "label" is set here for the UI only.
+      // Note: label is not added through the translation files
+      // to make filter customizations a bit easier.
+      options: [
+        { key: 'anlaggning', label:<FormattedMessage id="Marketplace.config.key.labelFieldWork"/>},
+        { key: 'bygg', label:<FormattedMessage id="Marketplace.config.key.labelConstruction"/>},
+        { key: 'transport', label:<FormattedMessage id="Marketplace.config.key.labelTransportation"/>},
+        { key: 'mat', label:<FormattedMessage id="Marketplace.config.key.labelFood"/>},
+        { key: 'boende', label:<FormattedMessage id="Marketplace.config.key.labelStays"/>},
+      ],
+    },
+  },
+  {
+    id: 'anlaggning',
+    label: <FormattedMessage id="Marketplace.config.key.labelFieldWork"/>,
+    type: 'SelectMultipleFilter',
+    group: 'secondary',
+    queryParamNames: ['pub_anlaggning'],
+    config: {
+      options: [
+        { key: 'grav', label: <FormattedMessage id="Marketplace.config.key.labelGrav"/> },
+        { key: 'skog', label: <FormattedMessage id="Marketplace.config.key.labelSkog"/> },
+        { key: 'sprangning', label: <FormattedMessage id="Marketplace.config.key.labelSprangning"/> },
+        { key: 'betong', label: <FormattedMessage id="Marketplace.config.key.labelBetong"/> },
+      ],
+    },
+  },
+  {
+    id: 'boende',
+    label: <FormattedMessage id="Marketplace.config.key.labelStays"/>,
+    type: 'SelectMultipleFilter',
+    group: 'secondary',
+    queryParamNames: ['pub_boende'],
+    config: {
+      options: [
+        { key: 'hus', label: <FormattedMessage id="Marketplace.config.key.labelHus"/> },
+        { key: 'lagenhet', label: <FormattedMessage id="Marketplace.config.key.labelLagenhet"/> },
+        { key: 'rum', label: <FormattedMessage id="Marketplace.config.key.labelRum"/> },
+      ],
+    },
+  },
+  {
+    id: 'bygg',
+    label: <FormattedMessage id="Marketplace.config.key.labelConstruction"/>,
+    type: 'SelectMultipleFilter',
+    group: 'secondary',
+    queryParamNames: ['pub_bygg'],
+    config: {
+      options: [
+        // Since specific labels for these subcategories are not provided, I'll use placeholders for now
+        { key: 'underkategori1', label: 'Underkategori1' },
+        { key: 'underkategori2', label: 'Underkategori2' },
+        { key: 'underkategori3', label: 'Underkategori3' },
+        { key: 'underkategori4', label: 'Underkategori4' },
+      ],
+    },
+  },
+  {
+    id: 'mat',
+    label: <FormattedMessage id="Marketplace.config.key.labelFood"/>,
+    type: 'SelectMultipleFilter',
+    group: 'secondary',
+    queryParamNames: ['pub_mat'],
+    config: {
+      options: [
+        { key: 'matbutik', label: <FormattedMessage id="Marketplace.config.key.labelMatbutik"/> },
+        { key: 'cafe', label: <FormattedMessage id="Marketplace.config.key.labelCafe"/> },
+        { key: 'restaurang', label: <FormattedMessage id="Marketplace.config.key.labelRestaurang"/> },
+      ],
+    },
+  },
+  {
+    id: 'transport',
+    label: <FormattedMessage id="Marketplace.config.key.labelTransportation"/>,
+    type: 'SelectMultipleFilter',
+    group: 'secondary',
+    queryParamNames: ['pub_transport'],
+    config: {
+      options: [
+        { key: 'lastbil', label: <FormattedMessage id="Marketplace.config.key.labelLastbil"/> },
+        { key: 'taxi', label: <FormattedMessage id="Marketplace.config.key.labelTaxi"/> },
+      ],
+    },
   },
 ];
 

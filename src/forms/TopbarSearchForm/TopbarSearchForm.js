@@ -2,33 +2,25 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Form as FinalForm, Field } from 'react-final-form';
 import classNames from 'classnames';
-import { intlShape, injectIntl, FormattedMessage} from '../../util/reactIntl';
-import { Form, LocationAutocompleteInput, FieldTextInput, FieldSelectSwitch, Button, SelectSingleFilter, TopBarSearchModal, FieldBoolean } from '../../components';
+import { intlShape, injectIntl, FormattedMessage } from '../../util/reactIntl';
+import { Form, LocationAutocompleteInput, FieldTextInput, Button } from '../../components';
 import { MdSearch } from 'react-icons/md';
-import { NamedLink } from '../../components';
 
 import css from './TopbarSearchForm.module.css';
-
 
 const identity = v => v;
 
 class TopbarSearchFormComponent extends Component {
   constructor(props) {
     super(props);
-    this.onChange = this.onChange.bind(this);
+    this.onSubmit = this.onSubmit.bind(this);
     this.searchInput = null;
   }
 
-  
-
-  onChange(location) {
+  onSubmit(values) {
+    const { location, keyword } = values;
     if (location.selectedPlace) {
-      // Note that we use `onSubmit` instead of the conventional
-      // `handleSubmit` prop for submitting. We want to autosubmit
-      // when a place is selected, and don't require any extra
-      // validations for the form.
-      this.props.onSubmit({ location });
-      // blur search input to hide software keyboard
+      this.props.onSubmit({ location, keyword });
       if (this.searchInput) {
         this.searchInput.blur();
       }
@@ -37,126 +29,69 @@ class TopbarSearchFormComponent extends Component {
 
   render() {
     return (
-      
       <FinalForm
-      
         {...this.props}
+        onSubmit={this.onSubmit}
         render={formRenderProps => {
           const { rootClassName, className, desktopInputRoot, intl, isMobile, handleSubmit } = formRenderProps;
 
           const classes = classNames(rootClassName, className);
           const desktopInputRootClass = desktopInputRoot || css.desktopInputRoot;
-          const languageJob = intl.formatMessage({ id: 'TopbarSearchForm.optionJob' });
-          const languageCompany = intl.formatMessage({ id: 'TopbarSearchForm.optionCompany' });
-          
-      
-
-          // Allow form submit only when the place has changed
-          const preventFormSubmit = e => e.preventDefault();
+          const keywordPlaceholder = intl.formatMessage({ id: 'TopbarSearchForm.keywordPlaceholder' });
 
           return (
             <Form
-            
               className={classes}
               onSubmit={handleSubmit}
               enforcePagePreloadFor="SearchPage"
-              
-              
-            ><div className={css.searchBar}>
+            >
+              <div className={css.searchBar}>
+                <Field
+                  name="location"
+                  format={identity}
+                  render={({ input, meta }) => {
+                    const { onChange, ...restInput } = input;
+                    const locationInput = { ...restInput, onChange };
 
-
-              <Field
-                name="location"
-                format={identity}
-                render={({ input, meta }) => {
-                  const { onSubmit, ...restInput } = input;
-
-                  // Merge the standard onChange function with custom behaviur. A better solution would
-                  // be to use the FormSpy component from Final Form and pass this.onChange to the
-                  // onChange prop but that breaks due to insufficient subscription handling.
-                  // See: https://github.com/final-form/react-final-form/issues/159
-                  const searchOnChange = value => {
-                    onSubmit(value);
-                    this.onSubmit(value);
-                  };
-
-                  
-                  const searchInput = { ...restInput, onSubmit: searchOnChange };
-
-                  const searchBar = (
-
-                    <div className={css.searchBarWrapper}> 
-                          <div className={css.searchBarContainer}> 
-                    <h3 className={css.mobileHeading} ><FormattedMessage id="TopbarSearchForm.mobileHeading1"></FormattedMessage></h3>
-                    <LocationAutocompleteInput
-                      className={isMobile ? css.mobileInputRoot : desktopInputRootClass}
-                      iconClassName={isMobile ? css.mobileIcon : css.desktopIcon}
-                      inputClassName={isMobile ? css.mobileInput : css.desktopInput}
-                      predictionsClassName={
-                        isMobile ? css.mobilePredictions : css.desktopPredictions
-                      }
-                      predictionsAttributionClassName={
-                        isMobile ? css.mobilePredictionsAttribution : null
-                      }
-                      placeholder={intl.formatMessage({ id: 'TopbarSearchForm.placeholder' })}
-                      closeOnBlur={!isMobile}
-                      inputRef={node => {
-                        this.searchInput = node;
-                      }}
-                      input={searchInput}
-                      meta={meta}
-                    />
-      
-                
-                        <hr className={css.hr1}></hr>
-                        <hr className={css.hr2}></hr>              
-      
-      
-                         <h3 className={css.mobileHeading}><FormattedMessage id="TopbarSearchForm.mobileHeading2"></FormattedMessage></h3>
-                        <FieldSelectSwitch className={isMobile ? css.mobileInputRoot : desktopInputRootClass}
+                    return (
+                      <div className={css.searchBarWrapper}>
+                        <h3 className={css.mobileHeading}><FormattedMessage id="TopbarSearchForm.mobileHeading1" /></h3>
+                        <LocationAutocompleteInput
+                          className={isMobile ? css.mobileInputRoot : desktopInputRootClass}
+                          iconClassName={isMobile ? css.mobileIcon : css.desktopIcon}
                           inputClassName={isMobile ? css.mobileInput : css.desktopInput}
-                          id="category" name="category" type= 'radio'>
-                           <option value="company">{languageCompany}</option>
-                             <option value="job">{languageJob}</option>
+                          predictionsClassName={isMobile ? css.mobilePredictions : css.desktopPredictions}
+                          predictionsAttributionClassName={isMobile ? css.mobilePredictionsAttribution : null}
+                          placeholder={intl.formatMessage({ id: 'TopbarSearchForm.locationPlaceholder' })}
+                          closeOnBlur={!isMobile}
+                          inputRef={node => { this.searchInput = node; }}
+                          input={locationInput}
+                          meta={meta}
+                        />
 
-                          
-                                </FieldSelectSwitch>
-      
-              
-                                  <hr className={css.hr3}></hr>
-              
-                              <span className={css.divider2nd}>
-                           <button
-                             className={css.submitButton}
-                             type="submit"
-                          ><MdSearch className={css.icon}></MdSearch > 
-                        </button>
-                          </span>                   
-               </div>
-               </div>
-           
-      
-        );
-      
-                  return (
+                        <hr className={css.hr1} />
+                        <hr className={css.hr2} />
 
-                <div className={css.searchBarWrapper}> 
-                    <div className={css.displaySmall}>
-                    <TopBarSearchModal>
-                      {searchBar}
-                     </TopBarSearchModal>
-                   </div>
+                        <h3 className={css.mobileHeading}><FormattedMessage id="TopbarSearchForm.mobileHeading2" /></h3>
+                        <FieldTextInput
+                          id="keyword"
+                          name="keyword"
+                          type="text"
+                          className={isMobile ? css.mobileInputRoot : desktopInputRootClass}
+                          inputClassName={isMobile ? css.mobileInput : css.desktopInput}
+                          placeholder={keywordPlaceholder}
+                        />
+                        <hr className={css.hr3} />
 
-                     <div className={css.displayWide}> 
-                     {searchBar} 
+                        <span className={css.divider2nd}>
+                          <button className={css.submitButton} type="submit">
+                            <MdSearch className={css.icon} />
+                          </button>
+                        </span>
                       </div>
-                       </div>
                     );
                   }}
                 />
-          
-              
-              
               </div>
             </Form>
           );

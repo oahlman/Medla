@@ -187,7 +187,29 @@
 
          See docs/content-security-policy.md for more information.
     -->
-  </body>
 
- 
+     <!-- Embed Code for Customer Websites -->
+     <script>
+      (function() {
+        // Load the script asynchronously
+        var chatScript = document.createElement('script');
+        chatScript.type = 'text/javascript';
+        chatScript.async = true;
+        chatScript.src = 'http://127.0.0.1:5000/static/widget.js'; // The URL to your chat widget script
+        document.body.appendChild(chatScript);
+        
+        // Optional: Configure the chat widget settings
+        window.chatWidgetSettings = {
+          'someSetting': true
+        };
+        
+        // Optional: API for customers to interact with the chat widget
+        window.chatWidgetApi = {
+          open: function() { /* Open the chat widget */ },
+          close: function() { /* Close the chat widget */ }
+          // ... other methods as needed
+        };
+      })();
+      </script>
+  </body> 
 </html>

@@ -100,13 +100,14 @@ const TopbarDesktop = props => {
       </MenuLabel>
       <MenuContent className={css.profileMenuContent}>
         <MenuItem key="ManageListingsPage">
-          <NamedLink
+          {/*   <NamedLink
             className={classNames(css.yourListingsLink, currentPageClass('ManageListingsPage'))}
             name="ManageListingsPage"
           >
             {/*   <span className={css.menuItemBorder} />
             <FormattedMessage id="TopbarDesktop.yourListingsLink" />
           </NamedLink>
+          */}
         </MenuItem>
         <MenuItem key="ProfilePage">
           <NamedLink
@@ -114,7 +115,6 @@ const TopbarDesktop = props => {
             name={companyPage}
             params={companyParams}
           >
-          */}
             <span className={css.menuItemBorder} />
             <FormattedMessage id="TopbarDesktop.companySettingsLink" />
           </NamedLink>

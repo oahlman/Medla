@@ -3,11 +3,9 @@ import PropTypes from 'prop-types';
 import { FormattedMessage, intlShape } from '../../util/reactIntl';
 import classNames from 'classnames';
 import { ACCOUNT_SETTINGS_PAGES } from '../../routeConfiguration';
-import { IoLanguage } from "react-icons/io5";
+import { IoLanguage } from 'react-icons/io5';
 import { propTypes } from '../../util/types';
-import {
-  LISTING_PAGE_PENDING_APPROVAL_VARIANT,
-} from '../../util/urlHelpers';
+import { LISTING_PAGE_PENDING_APPROVAL_VARIANT } from '../../util/urlHelpers';
 import {
   Avatar,
   InlineTextButton,
@@ -47,7 +45,6 @@ const TopbarDesktop = props => {
     setMounted(true);
   }, []);
 
-
   const authenticatedOnClientSide = mounted && isAuthenticated;
   const isAuthenticatedOrJustHydrated = isAuthenticated || !mounted;
 
@@ -55,8 +52,14 @@ const TopbarDesktop = props => {
 
   const user = ensureCurrentUser(currentUser);
   const companyListing = currentUserCompanyListing && currentUserCompanyListing[0];
-  const companyPage = companyListing ? "CompanyPageVariant" : "ListingBasePage";
-  const companyParams = companyListing ? { slug: companyListing.attributes.title.replace(/\s+/g, '-').toLowerCase(), id: companyListing.id.uuid, variant: LISTING_PAGE_PENDING_APPROVAL_VARIANT } : "";
+  const companyPage = companyListing ? 'CompanyPageVariant' : 'ListingBasePage';
+  const companyParams = companyListing
+    ? {
+        slug: companyListing.attributes.title.replace(/\s+/g, '-').toLowerCase(),
+        id: companyListing.id.uuid,
+        variant: LISTING_PAGE_PENDING_APPROVAL_VARIANT,
+      }
+    : '';
 
   const search = (
     <TopbarSearchForm
@@ -92,7 +95,7 @@ const TopbarDesktop = props => {
     <Menu>
       <MenuLabel className={css.profileMenuLabel} isOpenClassName={css.profileMenuIsOpen}>
         <div className={css.avatarContainer}>
-        <Avatar className={css.avatar} user={currentUser} disableProfileLink />
+          <Avatar className={css.avatar} user={currentUser} disableProfileLink />
         </div>
       </MenuLabel>
       <MenuContent className={css.profileMenuContent}>
@@ -101,7 +104,7 @@ const TopbarDesktop = props => {
             className={classNames(css.yourListingsLink, currentPageClass('ManageListingsPage'))}
             name="ManageListingsPage"
           >
-            <span className={css.menuItemBorder} />
+            {/*   <span className={css.menuItemBorder} />
             <FormattedMessage id="TopbarDesktop.yourListingsLink" />
           </NamedLink>
         </MenuItem>
@@ -111,6 +114,7 @@ const TopbarDesktop = props => {
             name={companyPage}
             params={companyParams}
           >
+          */}
             <span className={css.menuItemBorder} />
             <FormattedMessage id="TopbarDesktop.companySettingsLink" />
           </NamedLink>
@@ -152,25 +156,23 @@ const TopbarDesktop = props => {
 
   const en = '/en';
   const path = mounted ? location.pathname : '';
-  const toSwedish = (path.startsWith('/en/') ? path.replace('en/', '') : path);
-  const toEnglish = (path.startsWith('/en/') ? path : en.concat('', path));
-  
-  
-  const languageMenu = (
+  const toSwedish = path.startsWith('/en/') ? path.replace('en/', '') : path;
+  const toEnglish = path.startsWith('/en/') ? path : en.concat('', path);
 
+  const languageMenu = (
     <Menu>
       <MenuLabel className={css.profileMenuLabel} isOpenClassName={css.profileMenuIsOpen}>
         <IoLanguage className={css.iconLanguage} />
       </MenuLabel>
       <MenuContent className={css.languageMenuContent}>
         <MenuItem key="Swedish">
-          <a className={css.profileSettingsLink} name='Swedish' href={rootUrl.concat(toSwedish)}>
+          <a className={css.profileSettingsLink} name="Swedish" href={rootUrl.concat(toSwedish)}>
             <span className={css.menuItemBorder} />
             Svenska
           </a>
         </MenuItem>
         <MenuItem key="English">
-          <a className={css.profileSettingsLink} name='English' href={rootUrl.concat(toEnglish)}>
+          <a className={css.profileSettingsLink} name="English" href={rootUrl.concat(toEnglish)}>
             <span className={css.menuItemBorder} />
             English
           </a>
@@ -190,11 +192,17 @@ const TopbarDesktop = props => {
       </NamedLink>
       {search}
       {languageMenu}
-      <NamedLink className={css.createListingLink} name="NewListingPage">
+
+      <NamedLink
+        className={classNames(css.createListingLink, currentPageClass('ProfilePage'))}
+        name={companyPage}
+        params={companyParams}
+      >
         <span className={css.createListing}>
-          <FormattedMessage id="TopbarDesktop.createListing" />
+          <FormattedMessage id="TopbarDesktop.companySettingsLink" />
         </span>
       </NamedLink>
+
       {inboxLink}
       {profileMenu}
       {signupLink}

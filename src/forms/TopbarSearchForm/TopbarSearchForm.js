@@ -108,13 +108,13 @@ class TopbarSearchFormComponent extends Component {
                             meta={meta}
                           />
 
-                          <hr className={css.hr1}></hr>
-                          <hr className={css.hr2}></hr>
+                          {/*  <hr className={css.hr1}></hr>*/}
+                          {/*   <hr className={css.hr2}></hr>*/}
 
-                          <h3 className={css.mobileHeading}>
+                          {/* <h3 className={css.mobileHeading}>
                             <FormattedMessage id="TopbarSearchForm.mobileHeading2"></FormattedMessage>
-                          </h3>
-                          <FieldSelectSwitch
+                          </h3>*/}
+                          {/*  <FieldSelectSwitch
                             className={isMobile ? css.mobileInputRoot : desktopInputRootClass}
                             inputClassName={isMobile ? css.mobileInput : css.desktopInput}
                             id="category"
@@ -122,7 +122,8 @@ class TopbarSearchFormComponent extends Component {
                             type="radio"
                           >
                             <option value="company">{languageCompany}</option>
-                          </FieldSelectSwitch>
+                             <option value="job">{languageJob}</option>
+                           </FieldSelectSwitch>*/}
 
                           <hr className={css.hr3}></hr>
 

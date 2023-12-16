@@ -181,6 +181,18 @@ const TopbarDesktop = props => {
     </Menu>
   );
 
+  const createListing = isAuthenticatedOrJustHydrated ? (
+    <NamedLink
+      className={classNames(css.createListingLink, currentPageClass('ProfilePage'))}
+      name={companyPage}
+      params={companyParams}
+    >
+      <span className={css.createListing}>
+        <FormattedMessage id="TopbarDesktop.companySettingsLink" />
+      </span>
+    </NamedLink>
+  ) : null;
+
   return (
     <nav className={classes}>
       <NamedLink className={css.logoLink} name="LandingPage">
@@ -192,17 +204,7 @@ const TopbarDesktop = props => {
       </NamedLink>
       {search}
       {languageMenu}
-
-      <NamedLink
-        className={classNames(css.createListingLink, currentPageClass('ProfilePage'))}
-        name={companyPage}
-        params={companyParams}
-      >
-        <span className={css.createListing}>
-          <FormattedMessage id="TopbarDesktop.companySettingsLink" />
-        </span>
-      </NamedLink>
-
+      {createListing}
       {inboxLink}
       {profileMenu}
       {signupLink}

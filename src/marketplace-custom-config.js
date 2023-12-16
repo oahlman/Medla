@@ -33,24 +33,28 @@
  *         (i.e. pub_<key> or meta_<key>).
  */
 import React from 'react';
-import {FormattedMessage} from '../src/util/reactIntl'
+import { FormattedMessage } from '../src/util/reactIntl';
 
 export const filters = [
-  {
-   
-    id: 'listingCategory',
-    label: 'Kategori',
-    type: 'SelectSingleFilter',
-    group: 'primary',
-    queryParamNames: ['pub_listingCategory'],
-    config: {
-      options: [{ key: 'job', label: <FormattedMessage id="Marketplace.config.key.labelJobs"/> }, { key: 'company', label: <FormattedMessage id="Marketplace.config.key.labelCompanies"/> }],
-    },
+  /*
+{
+  id: 'listingCategory',
+  label: 'Kategori',
+  type: 'SelectSingleFilter',
+  group: 'primary',
+  queryParamNames: ['pub_listingCategory'],
+  config: {
+    options: [
+      { key: 'job', label: <FormattedMessage id="Marketplace.config.key.labelJobs" /> },
+      { key: 'company', label: <FormattedMessage id="Marketplace.config.key.labelCompanies" /> },
+    ],
   },
+},
+*/
 
   {
     id: 'amenities',
-    label: <FormattedMessage id="Marketplace.config.key.projectHeading"/>,
+    label: <FormattedMessage id="Marketplace.config.key.projectHeading" />,
     type: 'SelectSingleFilter',
     group: 'secondary',
     queryParamNames: ['pub_amenities'],
@@ -73,14 +77,14 @@ export const filters = [
         },
         {
           key: 'other',
-          label: <FormattedMessage id="Marketplace.config.key.labelOther"/>,
+          label: <FormattedMessage id="Marketplace.config.key.labelOther" />,
         },
       ],
     },
   },
   {
     id: 'category',
-    label: <FormattedMessage id="Marketplace.config.key.labelIndustries"/>,
+    label: <FormattedMessage id="Marketplace.config.key.labelIndustries" />,
     type: 'SelectMultipleFilter',
     group: 'primary',
     queryParamNames: ['pub_category'],
@@ -93,32 +97,44 @@ export const filters = [
       // Note: label is not added through the translation files
       // to make filter customizations a bit easier.
       options: [
-        { key: 'anlaggning', label: <FormattedMessage id="Marketplace.config.key.industry1"/> },
-        { key: 'bemanning', label: <FormattedMessage id="Marketplace.config.key.industry2"/> },
-        { key: 'betong', label: <FormattedMessage id="Marketplace.config.key.industry3"/> },
-        { key: 'bygg', label: <FormattedMessage id="Marketplace.config.key.industry4"/> },
-        { key: 'driftochunderhall', label: <FormattedMessage id="Marketplace.config.key.industry5"/> },
-        { key: 'el', label: <FormattedMessage id="Marketplace.config.key.industry6"/> },
-        { key: 'fordon', label: <FormattedMessage id="Marketplace.config.key.industry7"/> },
-        { key: 'itochtelecom', label: <FormattedMessage id="Marketplace.config.key.industry8"/> },
-        { key: 'kostlogi', label: <FormattedMessage id="Marketplace.config.key.industry9"/> },
-        { key: 'maskinreparation', label: <FormattedMessage id="Marketplace.config.key.industry10"/> },
-        { key: 'media', label: <FormattedMessage id="Marketplace.config.key.industry11"/> },
-        { key: 'projektering', label: <FormattedMessage id="Marketplace.config.key.industry12"/> },
-        { key: 'servicetjanster', label: <FormattedMessage id="Marketplace.config.key.industry13"/> },
-        { key: 'skogsmaskintjanster', label: <FormattedMessage id="Marketplace.config.key.industry14"/> },
-        { key: 'sprangning', label: <FormattedMessage id="Marketplace.config.key.industry15"/> },
-        { key: 'svets', label: <FormattedMessage id="Marketplace.config.key.industry16"/> },
-        { key: 'transport', label: <FormattedMessage id="Marketplace.config.key.industry17"/> },
-        { key: 'tillverkning', label: <FormattedMessage id="Marketplace.config.key.industry18"/> },
-        { key: 'utbildning', label: <FormattedMessage id="Marketplace.config.key.industry19"/> },
-        { key: 'ovrigt', label: <FormattedMessage id="Marketplace.config.key.industry20"/> },
+        { key: 'anlaggning', label: <FormattedMessage id="Marketplace.config.key.industry1" /> },
+        { key: 'bemanning', label: <FormattedMessage id="Marketplace.config.key.industry2" /> },
+        { key: 'betong', label: <FormattedMessage id="Marketplace.config.key.industry3" /> },
+        { key: 'bygg', label: <FormattedMessage id="Marketplace.config.key.industry4" /> },
+        {
+          key: 'driftochunderhall',
+          label: <FormattedMessage id="Marketplace.config.key.industry5" />,
+        },
+        { key: 'el', label: <FormattedMessage id="Marketplace.config.key.industry6" /> },
+        { key: 'fordon', label: <FormattedMessage id="Marketplace.config.key.industry7" /> },
+        { key: 'itochtelecom', label: <FormattedMessage id="Marketplace.config.key.industry8" /> },
+        { key: 'kostlogi', label: <FormattedMessage id="Marketplace.config.key.industry9" /> },
+        {
+          key: 'maskinreparation',
+          label: <FormattedMessage id="Marketplace.config.key.industry10" />,
+        },
+        { key: 'media', label: <FormattedMessage id="Marketplace.config.key.industry11" /> },
+        { key: 'projektering', label: <FormattedMessage id="Marketplace.config.key.industry12" /> },
+        {
+          key: 'servicetjanster',
+          label: <FormattedMessage id="Marketplace.config.key.industry13" />,
+        },
+        {
+          key: 'skogsmaskintjanster',
+          label: <FormattedMessage id="Marketplace.config.key.industry14" />,
+        },
+        { key: 'sprangning', label: <FormattedMessage id="Marketplace.config.key.industry15" /> },
+        { key: 'svets', label: <FormattedMessage id="Marketplace.config.key.industry16" /> },
+        { key: 'transport', label: <FormattedMessage id="Marketplace.config.key.industry17" /> },
+        { key: 'tillverkning', label: <FormattedMessage id="Marketplace.config.key.industry18" /> },
+        { key: 'utbildning', label: <FormattedMessage id="Marketplace.config.key.industry19" /> },
+        { key: 'ovrigt', label: <FormattedMessage id="Marketplace.config.key.industry20" /> },
       ],
     },
   },
   {
     id: 'keyword',
-    label: <FormattedMessage id="Marketplace.config.key.labelKeywordSearch"/>,
+    label: <FormattedMessage id="Marketplace.config.key.labelKeywordSearch" />,
     type: 'KeywordFilter',
     group: 'primary',
     // Note: KeywordFilter is fixed filter,
@@ -147,13 +163,17 @@ export const sortConfig = {
   conflictingFilters: ['keyword'],
 
   options: [
-    { key: 'meta_rating', label: <FormattedMessage id="Marketplace.config.key.labelSortRating"/> }, 
-    { key: 'createdAt', label: <FormattedMessage id="Marketplace.config.key.labelSortNewest"/> }, 
-    { key: '-createdAt', label: <FormattedMessage id="Marketplace.config.key.labelSortOldest"/> }, 
+    { key: 'meta_rating', label: <FormattedMessage id="Marketplace.config.key.labelSortRating" /> },
+    { key: 'createdAt', label: <FormattedMessage id="Marketplace.config.key.labelSortNewest" /> },
+    { key: '-createdAt', label: <FormattedMessage id="Marketplace.config.key.labelSortOldest" /> },
 
     // The relevance is only used for keyword search, but the
     // parameter isn't sent to the Marketplace API. The key is purely
     // for handling the internal state of the sorting dropdown.
-    { key: 'relevance', label: <FormattedMessage id="Marketplace.config.key.labelSortRelevance"/>, label: <FormattedMessage id="Marketplace.config.key.labelSortRelevanceLong"/> },
+    {
+      key: 'relevance',
+      label: <FormattedMessage id="Marketplace.config.key.labelSortRelevance" />,
+      label: <FormattedMessage id="Marketplace.config.key.labelSortRelevanceLong" />,
+    },
   ],
 };

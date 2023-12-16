@@ -50,7 +50,7 @@ class SelectSingleFilterPopup extends Component {
 
     // resolve menu label text and class
     const menuLabel = initialValue ? optionLabel(options, initialValue) : label;
-    const menuLabelClass = initialValue ? css.menuLabelSelected : css.menuLabel;
+    const menuLabelClass = initialValue ? css.hidden : css.hidden;
 
     const classes = classNames(rootClassName || css.root, className);
 

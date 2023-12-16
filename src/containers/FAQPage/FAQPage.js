@@ -8,7 +8,6 @@ import {
   LayoutWrapperFooter,
   Footer,
   CollapsibleProjects,
-
 } from '../../components';
 
 import css from './FAQPage.module.css';
@@ -59,11 +58,7 @@ const FAQPage = () => {
           </p>
           </CollapsibleProjects>
 
-          <CollapsibleProjects label={<FormattedMessage id="SectionCompanyFAQ.Title10"/>}>
-        <p className={css.stepSubtitle}>
-            <FormattedMessage id="SectionCompanyFAQ.Text10" />
-          </p>
-          </CollapsibleProjects>
+        
 
 
         </div>
@@ -76,32 +71,36 @@ const FAQPage = () => {
             <FormattedMessage id="SectionCompanyFAQ.Text5" />
           </p>
           </CollapsibleProjects>
-
+      {/* 
           <CollapsibleProjects label={<FormattedMessage id="SectionCompanyFAQ.Title6"/>}>
           <p className={css.stepSubtitle}>
             <FormattedMessage id="SectionCompanyFAQ.Text6" />
           </p>
           </CollapsibleProjects>
-
-          <CollapsibleProjects label={<FormattedMessage id="SectionCompanyFAQ.Title7"/>}>
+        */}
+       {/*    <CollapsibleProjects label={<FormattedMessage id="SectionCompanyFAQ.Title7"/>}>
           <p className={css.stepSubtitle}>
             <FormattedMessage id="SectionCompanyFAQ.Text7" />
           </p>
           </CollapsibleProjects>
-
+      */}
           <CollapsibleProjects label={<FormattedMessage id="SectionCompanyFAQ.Title8"/>}>
           <p className={css.stepSubtitle}>
             <FormattedMessage id="SectionCompanyFAQ.Text8" />
           </p>
           </CollapsibleProjects>
 
-          <CollapsibleProjects label={<FormattedMessage id="SectionCompanyFAQ.Title9"/>}>
+         {/*  <CollapsibleProjects label={<FormattedMessage id="SectionCompanyFAQ.Title9"/>}>
           <p className={css.stepSubtitle}>
             <FormattedMessage id="SectionCompanyFAQ.Text9" />
           </p>
           </CollapsibleProjects>
- 
-
+          */}
+        <CollapsibleProjects label={<FormattedMessage id="SectionCompanyFAQ.Title10"/>}>
+        <p className={css.stepSubtitle}>
+            <FormattedMessage id="SectionCompanyFAQ.Text10" />
+          </p>
+          </CollapsibleProjects>
   
         </div>
         

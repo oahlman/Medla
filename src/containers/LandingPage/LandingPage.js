@@ -57,9 +57,14 @@ export const LandingPageComponent = props => {
   const email = currentUser && currentUser.attributes.email;
   const emailVerified = currentUser && currentUser.attributes.emailVerified;
   const phoneNumber = currentUser && currentUser.attributes.profile.protectedData.phoneNumber;
-  const phoneNumberVerified = currentUser && currentUser.attributes.profile.privateData.phoneNumberVerified;
+  const phoneNumberVerified =
+    currentUser && currentUser.attributes.profile.privateData.phoneNumberVerified;
 
-  if (emailVerified == true && phoneNumberVerified !== true && email === `phone+${phoneNumber}@medla.app`) {
+  if (
+    emailVerified == true &&
+    phoneNumberVerified !== true &&
+    email === `phone+${phoneNumber}@medla.app`
+  ) {
     return onVerifyPhoneNumber();
   }
 
@@ -93,11 +98,10 @@ export const LandingPageComponent = props => {
           </div>
 
           <ul className={css.sections}>
-
-          <li className={css.section}>
-            <div className={isAuthenticated ? css.sectionContentFirstChild : css.hidden}>
-            <SectionProfileProgress />
-          </div>
+            <li className={css.section}>
+              <div className={isAuthenticated ? css.sectionContentFirstChild : css.hidden}>
+                <SectionProfileProgress />
+              </div>
             </li>
 
             <li className={css.section}>
@@ -118,6 +122,7 @@ export const LandingPageComponent = props => {
               </div>
             </li>
 
+            {/* 
             <li className={css.section}>
               <div className={css.sectionContent}>
                 <SectionPostJob />
@@ -128,9 +133,7 @@ export const LandingPageComponent = props => {
               <div className={css.missionContent}>
                 <SectionMission />
               </div>
-            </li>
-
-
+            </li>  */}
           </ul>
         </LayoutWrapperMain>
         <LayoutWrapperFooter>

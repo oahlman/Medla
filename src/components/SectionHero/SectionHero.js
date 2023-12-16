@@ -33,7 +33,7 @@ const SectionHero = props => {
             </NamedLink>
           </div>
 
-          <div className={css.step}>
+          {/*  <div className={css.step}>
             <NamedLink
               name="SearchJobsPage"
               to={{
@@ -44,7 +44,7 @@ const SectionHero = props => {
             >
               <FormattedMessage id="SectionHero.browseButtonSecondary" />
             </NamedLink>
-          </div>
+          </div>*/}
         </div>
       </div>
     </div>

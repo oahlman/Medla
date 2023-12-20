@@ -244,19 +244,18 @@ export const signup = params => (dispatch, getState, sdk) => {
       });
     })
     .then(() => {
-      if (params.profileType === 'company') {
-        sdk.ownListings.create({
-          title: params.firstName,
-          geolocation: new LatLng(lat, lng),
-          publicData: {
-            contactNumber: params.email,
-            listingCategory: 'company',
-            location: {
-              address: search,
-            },
+      sdk.ownListings.create({
+        title: params.firstName,
+        geolocation: new LatLng(lat, lng),
+        publicData: {
+          contactNumber: params.email,
+          listingCategory: 'company',
+          profileType: params.profileType === 'company' ? 'company' : 'privatePerson',
+          location: {
+            address: search,
           },
-        });
-      }
+        },
+      });
     })
     .then(() => {
       return sdk.currentUser

@@ -8,12 +8,16 @@ import { FormattedMessage } from '../../util/reactIntl';
 import classNames from 'classnames';
 import { ACCOUNT_SETTINGS_PAGES } from '../../routeConfiguration';
 import { propTypes } from '../../util/types';
-import {
-  LISTING_PAGE_PENDING_APPROVAL_VARIANT,
-} from '../../util/urlHelpers';
+import { LISTING_PAGE_PENDING_APPROVAL_VARIANT } from '../../util/urlHelpers';
 import { ensureCurrentUser } from '../../util/data';
-import { AvatarLarge, InlineTextButton, NamedLink, NotificationBadge, ExternalLink } from '../../components';
-import { IoLanguage } from "react-icons/io5";
+import {
+  AvatarLarge,
+  InlineTextButton,
+  NamedLink,
+  NotificationBadge,
+  ExternalLink,
+} from '../../components';
+import { IoLanguage } from 'react-icons/io5';
 
 import css from './TopbarMobileMenu.module.css';
 import DesktopLogo from '../Logo/DesktopLogo';
@@ -40,22 +44,27 @@ const TopbarMobileMenu = props => {
 
   const user = ensureCurrentUser(currentUser);
   const companyListing = currentUserCompanyListing && currentUserCompanyListing[0];
-  const companyPage = companyListing ? "CompanyPageVariant" : "ListingBasePage";
-  const companyParams = companyListing ? { slug: companyListing.attributes.title.replace(/\s+/g, '-').toLowerCase(), id: companyListing.id.uuid, variant: LISTING_PAGE_PENDING_APPROVAL_VARIANT } : "";
-  
+  const companyPage = companyListing ? 'CompanyPageVariant' : 'ListingBasePage';
+  const companyParams = companyListing
+    ? {
+        slug: companyListing.attributes.title.replace(/\s+/g, '-').toLowerCase(),
+        id: companyListing.id.uuid,
+        variant: LISTING_PAGE_PENDING_APPROVAL_VARIANT,
+      }
+    : '';
+
   const [isOpen, setIsOpen] = useState(false);
 
   const en = '/en';
   const path = mounted ? location.pathname : '';
-  const toSwedish = (path.startsWith('/en/') ? path.replace('en/', '') : path);
-  const toEnglish = (path.startsWith('/en/') ? path : en.concat('', path));
+  const toSwedish = path.startsWith('/en/') ? path.replace('en/', '') : path;
+  const toEnglish = path.startsWith('/en/') ? path : en.concat('', path);
 
   if (!isAuthenticated) {
     const signup = (
       <NamedLink name="SignupPage" className={css.signupLink}>
         <FormattedMessage id="TopbarMobileMenu.signupLink" />
       </NamedLink>
-
     );
 
     const login = (
@@ -71,13 +80,9 @@ const TopbarMobileMenu = props => {
     );
     return (
       <div className={css.root}>
-
-          <NamedLink
-          name="LandingPage"
-            >
+        <NamedLink name="LandingPage">
           <DesktopLogo></DesktopLogo>
-           </NamedLink>
-
+        </NamedLink>
 
         <div className={css.content}>
           <div className={css.authenticationGreeting}>
@@ -87,47 +92,51 @@ const TopbarMobileMenu = props => {
             />
           </div>
 
-          <InlineTextButton rootClassName={css.chooseLanguageLogOut} onClick={() => setIsOpen(!isOpen)}>
-          <IoLanguage className={css.iconLanguage} />
-          <FormattedMessage id={ isOpen ? "TopbarMobileMenu.closeLanguage" : "TopbarMobileMenu.chooseLanguage" }/>
-        </InlineTextButton>
+          <InlineTextButton
+            rootClassName={css.chooseLanguageLogOut}
+            onClick={() => setIsOpen(!isOpen)}
+          >
+            <IoLanguage className={css.iconLanguage} />
+            <FormattedMessage
+              id={isOpen ? 'TopbarMobileMenu.closeLanguage' : 'TopbarMobileMenu.chooseLanguage'}
+            />
+          </InlineTextButton>
 
-        <div className={isOpen ? css.languageMenu : css.hidden}>
-        <a className={css.languageOption} name='Swedish' href={rootUrl.concat(toSwedish)}>
-            <span className={css.menuItemBorder} />
-            Svenska
-          </a>
+          <div className={isOpen ? css.languageMenu : css.hidden}>
+            <a className={css.languageOption} name="Swedish" href={rootUrl.concat(toSwedish)}>
+              <span className={css.menuItemBorder} />
+              Svenska
+            </a>
 
-          <a className={css.languageOption} name='English' href={rootUrl.concat(toEnglish)}>
-            <span className={css.menuItemBorder} />
-            English
-          </a>
-        </div>
-      
-        <NamedLink name="AboutPage" className={css.navigationLinkMargin}>
-        <FormattedMessage id="Footer.toAboutPage" />
-        </NamedLink>
+            <a className={css.languageOption} name="English" href={rootUrl.concat(toEnglish)}>
+              <span className={css.menuItemBorder} />
+              English
+            </a>
+          </div>
 
-        <NamedLink name="FAQPage" className={css.navigationLinkDark}>
-         <FormattedMessage id="Footer.toFAQPage" />
-        </NamedLink>
+          <NamedLink name="AboutPage" className={css.navigationLinkMargin}>
+            <FormattedMessage id="Footer.toAboutPage" />
+          </NamedLink>
 
-        <ExternalLink className={css.navigationLinkDark} href="mailto:info@medla.app">
-          <FormattedMessage id="Footer.toHelpPage" />
+          <NamedLink name="FAQPage" className={css.navigationLinkDark}>
+            <FormattedMessage id="Footer.toFAQPage" />
+          </NamedLink>
+
+          <ExternalLink className={css.navigationLinkDark} href="mailto:info@medla.app">
+            <FormattedMessage id="Footer.toHelpPage" />
           </ExternalLink>
 
           <ExternalLink
-            href='mailto:info@medla.app?subject=Anslut%20projekt'
-
-           className={css.navigationLinkDark}
-            >
+            href="mailto:info@medla.app?subject=Anslut%20projekt"
+            className={css.navigationLinkDark}
+          >
             <FormattedMessage id="Footer.searchConnectCompany" />
-           </ExternalLink>
+          </ExternalLink>
         </div>
         <div className={css.footer}>
-        <NamedLink className={css.createNewListingLink} name="SignupPage">
-          <FormattedMessage id="SignupForm.signUp" />
-        </NamedLink>
+          <NamedLink className={css.createNewListingLink} name="SignupPage">
+            <FormattedMessage id="SignupForm.signUp" />
+          </NamedLink>
         </div>
       </div>
     );
@@ -147,43 +156,45 @@ const TopbarMobileMenu = props => {
 
   return (
     <div className={css.root}>
-
       <div className={css.avatarContainer}>
-      <NamedLink
+        <NamedLink
           className={classNames(css.navigationLink, currentPageClass('ProfileSettingsPage'))}
           name={companyPage}
           params={companyParams}
         >
-       <AvatarLarge className={css.avatar} disableProfileLink={!disableProfileLink} user={currentUser}
-      /> </NamedLink>
+          <AvatarLarge
+            className={css.avatar}
+            disableProfileLink={!disableProfileLink}
+            user={currentUser}
+          />{' '}
+        </NamedLink>
+
+        <div className={css.content}>
+          <span className={css.greeting}>
+            <FormattedMessage id="TopbarMobileMenu.greeting" values={{ displayName }} />
+          </span>
+
+          <InlineTextButton rootClassName={css.logoutButton} onClick={onLogout}>
+            <FormattedMessage id="TopbarMobileMenu.logoutLink" />
+          </InlineTextButton>
+        </div>
+      </div>
 
       <div className={css.content}>
-      <span className={css.greeting}>
-          <FormattedMessage id="TopbarMobileMenu.greeting" values={{ displayName }} />
-        </span>
-
-        <InlineTextButton rootClassName={css.logoutButton} onClick={onLogout}>
-          <FormattedMessage id="TopbarMobileMenu.logoutLink" />
-        </InlineTextButton>
-
-        </div>
-
-        </div>
-
-      <div className={css.content}>
-
         <InlineTextButton rootClassName={css.chooseLanguage} onClick={() => setIsOpen(!isOpen)}>
           <IoLanguage className={css.iconLanguage} />
-          <FormattedMessage id={ isOpen ? "TopbarMobileMenu.closeLanguage" : "TopbarMobileMenu.chooseLanguage" }/>
+          <FormattedMessage
+            id={isOpen ? 'TopbarMobileMenu.closeLanguage' : 'TopbarMobileMenu.chooseLanguage'}
+          />
         </InlineTextButton>
 
         <div className={isOpen ? css.languageMenu : css.hidden}>
-        <a className={css.languageOption} name='Swedish' href={rootUrl.concat(toSwedish)}>
+          <a className={css.languageOption} name="Swedish" href={rootUrl.concat(toSwedish)}>
             <span className={css.menuItemBorder} />
             Svenska
           </a>
 
-          <a className={css.languageOption} name='English' href={rootUrl.concat(toEnglish)}>
+          <a className={css.languageOption} name="English" href={rootUrl.concat(toEnglish)}>
             <span className={css.menuItemBorder} />
             English
           </a>
@@ -204,12 +215,15 @@ const TopbarMobileMenu = props => {
           <FormattedMessage id="TopbarMobileMenu.inboxLink" />
           {notificationCountBadge}
         </NamedLink>
+
+        {/*
         <NamedLink
           className={classNames(css.navigationLink, currentPageClass('ManageListingsPage'))}
           name="ManageListingsPage"
         >
           <FormattedMessage id="TopbarMobileMenu.yourListingsLink" />
         </NamedLink>
+         */}
         <NamedLink
           className={classNames(css.navigationLink, currentPageClass('ProfileSettingsPage'))}
           name={companyPage}
@@ -217,6 +231,7 @@ const TopbarMobileMenu = props => {
         >
           <FormattedMessage id="TopbarMobileMenu.companySettingsLink" />
         </NamedLink>
+
         <NamedLink
           className={classNames(css.navigationLink, currentPageClass('AccountSettingsPage'))}
           name="AccountSettingsPage"
@@ -224,34 +239,37 @@ const TopbarMobileMenu = props => {
           <FormattedMessage id="TopbarMobileMenu.accountSettingsLink" />
         </NamedLink>
 
-
-
         <NamedLink
-         className={classNames(css.navigationLinkMargin, currentPageClass ('AboutPage'))}
-        name="AboutPage" >
-        <FormattedMessage id="Footer.toAboutPage" />
+          className={classNames(css.navigationLinkMargin, currentPageClass('AboutPage'))}
+          name="AboutPage"
+        >
+          <FormattedMessage id="Footer.toAboutPage" />
         </NamedLink>
 
         <NamedLink name="FAQPage" className={css.navigationLinkDark}>
-         <FormattedMessage id="Footer.toFAQPage" />
+          <FormattedMessage id="Footer.toFAQPage" />
         </NamedLink>
 
         <ExternalLink className={css.navigationLinkDark} href="mailto:info@medla.app">
           <FormattedMessage id="Footer.toHelpPage" />
-          </ExternalLink>
-
+        </ExternalLink>
       </div>
       <div className={css.footer}>
         <NamedLink className={css.createNewListingLink} name="NewListingPage">
           <FormattedMessage id="TopbarMobileMenu.newListingLink" />
         </NamedLink>
-        </div>
-
+      </div>
     </div>
   );
 };
 
-TopbarMobileMenu.defaultProps = { currentUser: null, notificationCount: 0, currentPage: null, rootUrl: null, location: null };
+TopbarMobileMenu.defaultProps = {
+  currentUser: null,
+  notificationCount: 0,
+  currentPage: null,
+  rootUrl: null,
+  location: null,
+};
 
 const { array, bool, func, number, string, shape } = PropTypes;
 

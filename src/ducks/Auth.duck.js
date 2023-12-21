@@ -219,8 +219,8 @@ export const signup = params => (dispatch, getState, sdk) => {
   const { email, password, location, profileType, firstName, lastName, ...rest } = params;
 
   const createUserParams = isEmpty(rest)
-    ? { email, password, firstName, lastName }
-    : { email, password, firstName, lastName, protectedData: { ...rest } };
+    ? { email, password, firstName, lastName, publicData: { profileType } }
+    : { email, password, firstName, lastName, protectedData: { ...rest }, publicData: { profileType } };
 
 
   const loginParams = { email, password };

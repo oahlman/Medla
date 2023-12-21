@@ -40,6 +40,7 @@ const Footer = props => {
   };
 
   const user = ensureCurrentUser(currentUser);
+  const isCompanyProfile = user?.attributes?.profile?.publicData?.profileType === "company";
   const companyListing = currentUserCompanyListing && currentUserCompanyListing[0];
   const companyPage = companyListing ? "CompanyPageVariant" : "ListingBasePage";
   const companyParams = companyListing ? { slug: companyListing.attributes.title.replace(/\s+/g, '-').toLowerCase(), id: companyListing.id.uuid, variant: LISTING_PAGE_PENDING_APPROVAL_VARIANT } : "";
@@ -114,9 +115,12 @@ const Footer = props => {
 
 
                 <li className={css.listItem}>
-                  <NamedLink name={companyPage}
-                  params={companyParams}  className={css.link}>
-                    <FormattedMessage id="Footer.improveProfile" />
+                  <NamedLink name={companyPage} params={companyParams} className={css.link}>
+                    {isCompanyProfile ? (
+                      <FormattedMessage id="Footer.improveProfile" />
+                    ) : (
+                      <FormattedMessage id="Footer.improveListing" />
+                    )}
                   </NamedLink>
                 </li>
 

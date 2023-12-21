@@ -21,7 +21,6 @@ const cityToURLMap = {
 const LandingPageMunicipalityComponent = ({ isAuthenticated, currentUser, }) => {
   
   const city = currentUser && currentUser.attributes.profile.metadata.city;
-  console.log('city:', city);
 
   const iframeSrc = cityToURLMap[city] || null;
 

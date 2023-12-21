@@ -45,19 +45,24 @@ export const ActionBarMaybe = props => {
   const isPendingApproval = state === LISTING_STATE_PENDING_APPROVAL;
   const isClosed = state === LISTING_STATE_CLOSED;
   const isDraft = state === LISTING_STATE_DRAFT;
+  const isCompanyListing = listing?.attributes?.publicData?.profileType === "company";
 
   if (isOwnListing) {
     let ownListingTextTranslationId = 'ListingPage.ownCompany';
 
     if (isPendingApproval) {
-      ownListingTextTranslationId = 'ListingPage.ownCompanyPendingApproval';
+      ownListingTextTranslationId = isCompanyListing ? 'ListingPage.ownCompanyPendingApproval' : 'ListingPage.ownListingPendingApproval';
     } else if (isClosed) {
-      ownListingTextTranslationId = 'ListingPage.ownClosedCompany';
+      ownListingTextTranslationId = isCompanyListing ? 'ListingPage.ownClosedCompany' : 'ListingPage.ownClosedListing';
     } else if (isDraft) {
-      ownListingTextTranslationId = 'ListingPage.ownLCompanyDraft';
+      ownListingTextTranslationId = isCompanyListing ? 'ListingPage.ownCompanyDraft' : 'ListingPage.ownListingDraft';
     }
 
-    const message = isDraft ? 'ListingPage.finishCompany' : 'ListingPage.editCompany';
+    const finishMessage = isCompanyListing ? 'ListingPage.finishCompany' : 'ListingPage.finishListing';
+    const openMessage = isCompanyListing ? 'ListingPage.openCompany' : 'ListingPage.openListing';
+    const editMessage = isCompanyListing ? 'ListingPage.editCompany' : 'ListingPage.editListing';
+    const closeMessage = isCompanyListing ? 'ListingPage.closeCompany' : 'ListingPage.closeListing';
+    const message = isDraft ? finishMessage : editMessage;
 
     const ownListingTextClasses = classNames(css.ownListingText, {
       [css.ownListingTextPendingApproval]: isPendingApproval,
@@ -70,9 +75,6 @@ export const ActionBarMaybe = props => {
     const menuItemClasses = classNames(css.menuItem, {
       [css.menuItemDisabled]: !!actionsInProgressListingId,
     });
-
-
-    console.log('listing.id.uuid', listing.id.uuid, 'isClosed', isClosed);
 
     return (
       <div className={isClosed ? css.actionBarListingClosed : css.actionBar}>
@@ -120,7 +122,7 @@ export const ActionBarMaybe = props => {
                       }
                     }}
                   >
-                    <FormattedMessage id={isClosed ? 'CompanyPage.openListing' : 'CompanyPage.closeListing'} />
+                    <FormattedMessage id={isClosed ? openMessage : closeMessage} />
                   </InlineTextButton>
                 </MenuItem>
               </MenuContent>

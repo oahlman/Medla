@@ -61,6 +61,7 @@ export const SectionProfileProgress = props => {
   const isPendingApprovalVariant = listingLoaded ? companyListing.attributes.state === LISTING_PAGE_PENDING_APPROVAL_VARIANT : null;
   const isDraftVariant = listingLoaded ? companyListing.attributes.state === LISTING_PAGE_DRAFT_VARIANT : null;
   const isVariant = isPendingApprovalVariant || isDraftVariant;
+  const isCompanyProfile = user?.attributes?.profile?.publicData?.profileType === "company";
 
   let companyPage = "ListingBasePage";
   if (listingLoaded && isVariant) {
@@ -93,7 +94,6 @@ export const SectionProfileProgress = props => {
   const profileAmenities = transientUserAmenities;
   const profileImageId = user.profileImage ? user.profileImage.id : null;
   const profileImage = image || { imageId: profileImageId };
-  console.log('user', user, 'listing', companyListing);
   const companyParams = listingLoaded ? { slug: createSlug(companyListing.attributes.title), id: companyListing.id.uuid, variant: LISTING_PAGE_PENDING_APPROVAL_VARIANT, type: LISTING_PAGE_PARAM_TYPE_EDIT, tab: tab } : "";
   
 

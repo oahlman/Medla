@@ -61,7 +61,6 @@ export const SectionProfileProgress = props => {
   const isPendingApprovalVariant = listingLoaded ? companyListing.attributes.state === LISTING_PAGE_PENDING_APPROVAL_VARIANT : null;
   const isDraftVariant = listingLoaded ? companyListing.attributes.state === LISTING_PAGE_DRAFT_VARIANT : null;
   const isVariant = isPendingApprovalVariant || isDraftVariant;
-  const isCompanyProfile = user?.attributes?.profile?.publicData?.profileType === "company";
 
   let companyPage = "ListingBasePage";
   if (listingLoaded && isVariant) {

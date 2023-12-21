@@ -19,17 +19,17 @@ export const ActionBarMaybe = props => {
   const isPendingApproval = state === LISTING_STATE_PENDING_APPROVAL;
   const isClosed = state === LISTING_STATE_CLOSED;
   const isDraft = state === LISTING_STATE_DRAFT;
-  const isCompanyListing = listing?.attributes?.publicData?.profileType === "company";
+  const isPrivateListing = listing?.attributes?.publicData?.profileType === "privatePerson";
 
   if (isOwnListing) {
     let ownListingTextTranslationId = 'ListingPage.ownCompany';
 
     if (isPendingApproval) {
-      ownListingTextTranslationId = isCompanyListing ? 'ListingPage.ownCompanyPendingApproval' : 'ListingPage.ownCompanyPendingApprovalPrivatePerson';
+      ownListingTextTranslationId = isPrivateListing ? 'ListingPage.ownListingPendingApproval' : 'ListingPage.ownCompanyPendingApproval';
     } else if (isClosed) {
-      ownListingTextTranslationId = isCompanyListing ? 'ListingPage.ownClosedCompany' : 'ListingPage.ownClosedCompanyPrivatePerson';
+      ownListingTextTranslationId = isPrivateListing ? 'ListingPage.ownClosedListing' : 'ListingPage.ownClosedCompany';
     } else if (isDraft) {
-      ownListingTextTranslationId = isCompanyListing ? 'ListingPage.ownCompanyDraft' : 'ListingPage.ownCompanyDraftPrivatePerson';
+      ownListingTextTranslationId = isPrivateListing ? 'ListingPage.ownListingDraft' : 'ListingPage.ownCompanyDraft';
     }
 
     const message = isDraft ? 'ListingPage.finishCompany' : 'ListingPage.editCompany';

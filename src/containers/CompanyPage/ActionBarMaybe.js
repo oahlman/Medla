@@ -45,23 +45,23 @@ export const ActionBarMaybe = props => {
   const isPendingApproval = state === LISTING_STATE_PENDING_APPROVAL;
   const isClosed = state === LISTING_STATE_CLOSED;
   const isDraft = state === LISTING_STATE_DRAFT;
-  const isCompanyListing = listing?.attributes?.publicData?.profileType === "company";
+  const isPrivateListing = listing?.attributes?.publicData?.profileType === "privatePerson";
 
   if (isOwnListing) {
     let ownListingTextTranslationId = 'ListingPage.ownCompany';
 
     if (isPendingApproval) {
-      ownListingTextTranslationId = isCompanyListing ? 'ListingPage.ownCompanyPendingApproval' : 'ListingPage.ownListingPendingApproval';
+      ownListingTextTranslationId = isPrivateListing ? 'ListingPage.ownListingPendingApproval' : 'ListingPage.ownCompanyPendingApproval';
     } else if (isClosed) {
-      ownListingTextTranslationId = isCompanyListing ? 'ListingPage.ownClosedCompany' : 'ListingPage.ownClosedListing';
+      ownListingTextTranslationId = isPrivateListing ? 'ListingPage.ownClosedListing' : 'ListingPage.ownClosedCompany';
     } else if (isDraft) {
-      ownListingTextTranslationId = isCompanyListing ? 'ListingPage.ownCompanyDraft' : 'ListingPage.ownListingDraft';
+      ownListingTextTranslationId = isPrivateListing ? 'ListingPage.ownListingDraft' : 'ListingPage.ownCompanyDraft';
     }
 
-    const finishMessage = isCompanyListing ? 'ListingPage.finishCompany' : 'ListingPage.finishListing';
-    const openMessage = isCompanyListing ? 'ListingPage.openCompany' : 'ListingPage.openListing';
-    const editMessage = isCompanyListing ? 'ListingPage.editCompany' : 'ListingPage.editListing';
-    const closeMessage = isCompanyListing ? 'ListingPage.closeCompany' : 'ListingPage.closeListing';
+    const finishMessage = isPrivateListing ? 'ListingPage.finishListing' : 'ListingPage.finishCompany';
+    const openMessage = isPrivateListing ? 'ListingPage.openListing' : 'ListingPage.openCompany';
+    const editMessage = isPrivateListing ?'ListingPage.editListing' :  'ListingPage.editCompany';
+    const closeMessage = isPrivateListing ? 'ListingPage.closeListing' : 'ListingPage.closeCompany';
     const message = isDraft ? finishMessage : editMessage;
 
     const ownListingTextClasses = classNames(css.ownListingText, {

@@ -51,7 +51,7 @@ const TopbarDesktop = props => {
   const classes = classNames(rootClassName || css.root, className);
 
   const user = ensureCurrentUser(currentUser);
-  const isCompanyProfile = user?.attributes?.profile?.publicData?.profileType === "company";
+  const isPrivateProfile = user?.attributes?.profile?.publicData?.profileType === "privatePerson";
   const companyListing = currentUserCompanyListing && currentUserCompanyListing[0];
   const companyPage = companyListing ? 'CompanyPageVariant' : 'ListingBasePage';
   const companyParams = companyListing
@@ -117,10 +117,10 @@ const TopbarDesktop = props => {
             params={companyParams}
           >
             <span className={css.menuItemBorder} />
-            {isCompanyProfile ? (
-                <FormattedMessage id="TopbarDesktop.companySettingsLink" />
-              ) : (
+            {isPrivateProfile ? (
                 <FormattedMessage id="TopbarDesktop.listingSettingsLink" />
+              ) : (
+                <FormattedMessage id="TopbarDesktop.companySettingsLink" />
               )}
           </NamedLink>
         </MenuItem>
@@ -193,10 +193,10 @@ const TopbarDesktop = props => {
       params={companyParams}
     >
       <span className={css.createListing}>
-        {isCompanyProfile ? (
-            <FormattedMessage id="TopbarDesktop.companySettingsLink" />
-          ) : (
+        {isPrivateProfile ? (
             <FormattedMessage id="TopbarDesktop.listingSettingsLink" />
+          ) : (
+            <FormattedMessage id="TopbarDesktop.companySettingsLink" />
           )}
       </span>
     </NamedLink>

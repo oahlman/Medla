@@ -255,9 +255,9 @@ const TopbarMobileMenu = props => {
         </ExternalLink>
       </div>
       <div className={css.footer}>
-        <NamedLink className={css.createNewListingLink} name="NewListingPage">
+        {/*<NamedLink className={css.createNewListingLink} name="NewListingPage">
           <FormattedMessage id="TopbarMobileMenu.newListingLink" />
-        </NamedLink>
+        </NamedLink>*/}
       </div>
     </div>
   );

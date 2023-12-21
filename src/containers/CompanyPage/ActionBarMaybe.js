@@ -58,6 +58,7 @@ export const ActionBarMaybe = props => {
       ownListingTextTranslationId = isPrivateListing ? 'ListingPage.ownListingDraft' : 'ListingPage.ownCompanyDraft';
     }
 
+    const ownListing = isPrivateListing ? 'ListingPage.ownListing' : 'ListingPage.ownCompany';
     const finishMessage = isPrivateListing ? 'ListingPage.finishListing' : 'ListingPage.finishCompany';
     const openMessage = isPrivateListing ? 'ListingPage.openListing' : 'ListingPage.openCompany';
     const editMessage = isPrivateListing ?'ListingPage.editListing' :  'ListingPage.editCompany';
@@ -79,7 +80,7 @@ export const ActionBarMaybe = props => {
     return (
       <div className={isClosed ? css.actionBarListingClosed : css.actionBar}>
         <p className={actionsInProgressListingId ? '...' : ownListingTextClasses}>
-          <FormattedMessage id={ownListingTextTranslationId} />
+          <FormattedMessage id={ownListing} />
         </p>
         <Menu
               className={classNames(css.menu, [css.cardIsOpen])}

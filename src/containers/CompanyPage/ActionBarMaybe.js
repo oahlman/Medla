@@ -48,7 +48,7 @@ export const ActionBarMaybe = props => {
   const isPrivateListing = listing?.attributes?.publicData?.profileType === "privatePerson";
 
   if (isOwnListing) {
-    let ownListingTextTranslationId = 'ListingPage.ownCompany';
+    let ownListingTextTranslationId = isPrivateListing ? 'ListingPage.ownListing' : 'ListingPage.ownCompany';
 
     if (isPendingApproval) {
       ownListingTextTranslationId = isPrivateListing ? 'ListingPage.ownListingPendingApproval' : 'ListingPage.ownCompanyPendingApproval';
@@ -58,7 +58,6 @@ export const ActionBarMaybe = props => {
       ownListingTextTranslationId = isPrivateListing ? 'ListingPage.ownListingDraft' : 'ListingPage.ownCompanyDraft';
     }
 
-    const ownListing = isPrivateListing ? 'ListingPage.ownListing' : 'ListingPage.ownCompany';
     const finishMessage = isPrivateListing ? 'ListingPage.finishListing' : 'ListingPage.finishCompany';
     const openMessage = isPrivateListing ? 'ListingPage.openListing' : 'ListingPage.openCompany';
     const editMessage = isPrivateListing ?'ListingPage.editListing' :  'ListingPage.editCompany';
@@ -80,7 +79,7 @@ export const ActionBarMaybe = props => {
     return (
       <div className={isClosed ? css.actionBarListingClosed : css.actionBar}>
         <p className={actionsInProgressListingId ? '...' : ownListingTextClasses}>
-          <FormattedMessage id={ownListing} />
+          <FormattedMessage id={ownListingTextTranslationId} />
         </p>
         <Menu
               className={classNames(css.menu, [css.cardIsOpen])}

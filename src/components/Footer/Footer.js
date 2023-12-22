@@ -49,7 +49,6 @@ const Footer = props => {
     <div className={classes}>
       <div className={css.topBorderWrapper}>
         <div className={css.content}>
-          <Chat />
           <div className={css.someLiksMobile}></div>
           <div className={css.links}>
             <div className={css.organization} id="organization">

@@ -195,20 +195,13 @@
         var chatScript = document.createElement('script');
         chatScript.type = 'text/javascript';
         chatScript.async = true;
-        chatScript.src = 'http://127.0.0.1:5000/static/widget.js'; // The URL to your chat widget script
+        chatScript.src = 'https://dev-chat.peerdigital.se/static/widget.js'; // The URL to your chat widget script
         document.body.appendChild(chatScript);
         
         // Optional: Configure the chat widget settings
         window.chatWidgetSettings = {
-          'primaryColor': '#155579',
-          'hoverColor': '#01243C'
-        };
-        
-        // Optional: API for customers to interact with the chat widget
-        window.chatWidgetApi = {
-          open: function() { /* Open the chat widget */ },
-          close: function() { /* Close the chat widget */ }
-          // ... other methods as needed
+          'primaryColor': '#155579', // Change the color of the widget in HEX
+          'hoverColor': '#01243C' // Change the color of the widget when hovering in HEX
         };
       })();
       </script>

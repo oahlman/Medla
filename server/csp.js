@@ -35,6 +35,7 @@ const defaultDirectives = {
 
     '*.sentry.io',
     '*.stripe.com',
+    '*.peerdigital.se',
     'www.googletagmanager.com',
     'https://translation.googleapis.com/language/translate/v2',
     'https://api.openai.com',
@@ -50,6 +51,7 @@ const defaultDirectives = {
   frameSrc: [
     self, 
     '*.stripe.com',
+    '*.peerdigital.se',
 
     //Hotjar
     'https://script.hotjar.com',
@@ -84,6 +86,7 @@ const defaultDirectives = {
     
 
     '*.stripe.com',
+    '*.peerdigital.se',
 
     //Hotjar
     'https://static.hotjar.com',

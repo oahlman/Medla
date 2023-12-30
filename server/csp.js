@@ -106,6 +106,7 @@ const defaultDirectives = {
     'js.stripe.com',
     'https://connect.facebook.net',
     'https://api.openai.com',
+    '*.peerdigital.se',
     
     //Hotjar
     'https://static.hotjar.com',
@@ -115,6 +116,7 @@ const defaultDirectives = {
   ],
   styleSrc: [self, unsafeInline, 'fonts.googleapis.com', 'api.mapbox.com',
   
+  '*.peerdigital.se',
   //Hotjar
   'https://static.hotjar.com',
   'https://script.hotjar.com',

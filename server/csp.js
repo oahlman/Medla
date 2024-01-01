@@ -36,6 +36,7 @@ const defaultDirectives = {
     '*.sentry.io',
     '*.stripe.com',
     '*.peerdigital.se',
+    'http://127.0.0.1:5000/customer_medla',
     'www.googletagmanager.com',
     'https://translation.googleapis.com/language/translate/v2',
     'https://api.openai.com',
@@ -52,6 +53,7 @@ const defaultDirectives = {
     self, 
     '*.stripe.com',
     '*.peerdigital.se',
+    'http://127.0.0.1:5000/customer_medla',
 
     //Hotjar
     'https://script.hotjar.com',
@@ -87,6 +89,7 @@ const defaultDirectives = {
 
     '*.stripe.com',
     '*.peerdigital.se',
+    'http://127.0.0.1:5000/customer_medla',
 
     //Hotjar
     'https://static.hotjar.com',
@@ -107,6 +110,7 @@ const defaultDirectives = {
     'https://connect.facebook.net',
     'https://api.openai.com',
     '*.peerdigital.se',
+    'http://127.0.0.1:5000/customer_medla',
     
     //Hotjar
     'https://static.hotjar.com',
@@ -117,6 +121,7 @@ const defaultDirectives = {
   styleSrc: [self, unsafeInline, 'fonts.googleapis.com', 'api.mapbox.com',
   
   '*.peerdigital.se',
+  'http://127.0.0.1:5000/customer_medla',
   //Hotjar
   'https://static.hotjar.com',
   'https://script.hotjar.com',

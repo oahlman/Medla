@@ -160,6 +160,7 @@
     <script src="%PUBLIC_URL%/static/scripts/mapbox/mapbox-sdk.min.js"></script>
     <link href="https://api.mapbox.com/mapbox-gl-js/v1.0.0/mapbox-gl.css" rel="stylesheet" />
     <script src="https://api.mapbox.com/mapbox-gl-js/v1.0.0/mapbox-gl.js"></script>
+    <script src="https://chat.peerdigital.se/static/widget.js"></script>
     <script>
       window.mapboxgl.accessToken = '%REACT_APP_MAPBOX_ACCESS_TOKEN%';
     </script>
@@ -188,22 +189,5 @@
          See docs/content-security-policy.md for more information.
     -->
 
-     <!-- Embed Code for Customer Websites -->
-     <script>
-      (function() {
-        // Load the script asynchronously
-        var chatScript = document.createElement('script');
-        chatScript.type = 'text/javascript';
-        chatScript.async = true;
-        chatScript.src = 'https://chat.peerdigital.se/static/widget.js'; // The URL to your chat widget script
-        document.body.appendChild(chatScript);
-        
-        // Optional: Configure the chat widget settings
-        window.chatWidgetSettings = {
-          'primaryColor': '#155579', // Change the color of the widget in HEX
-          'hoverColor': '#01243C' // Change the color of the widget when hovering in HEX
-        };
-      })();
-      </script>
   </body> 
 </html>

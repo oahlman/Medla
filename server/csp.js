@@ -36,7 +36,7 @@ const defaultDirectives = {
     '*.sentry.io',
     '*.stripe.com',
     '*.peerdigital.se',
-    '*.stig.chat',
+    'https://stig.chat',
     'https://stig.chat/static/widget.js',
     'http://127.0.0.1:5000/customer_medla',
     'www.googletagmanager.com',
@@ -55,7 +55,7 @@ const defaultDirectives = {
     self, 
     '*.stripe.com',
     '*.peerdigital.se',
-    '*.stig.chat',
+    'https://stig.chat',
     'https://stig.chat/static/widget.js',
     'http://127.0.0.1:5000/customer_medla',
 
@@ -93,7 +93,7 @@ const defaultDirectives = {
 
     '*.stripe.com',
     '*.peerdigital.se',
-    '*.stig.chat',
+    'https://stig.chat',
     'https://stig.chat/static/widget.js',
     'http://127.0.0.1:5000/customer_medla',
 
@@ -116,7 +116,7 @@ const defaultDirectives = {
     'https://connect.facebook.net',
     'https://api.openai.com',
     '*.peerdigital.se',
-    '*.stig.chat',
+    'https://stig.chat',
     'https://stig.chat/static/widget.js',
     'http://127.0.0.1:5000/customer_medla',
     
@@ -129,7 +129,7 @@ const defaultDirectives = {
   styleSrc: [self, unsafeInline, 'fonts.googleapis.com', 'api.mapbox.com',
   
   '*.peerdigital.se',
-  '*.stig.chat',
+  'https://stig.chat',
   'https://stig.chat/static/widget.js',
   'http://127.0.0.1:5000/customer_medla',
   //Hotjar

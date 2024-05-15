@@ -75,36 +75,37 @@ export const medlaProjects = [
 
   },
   {
-  "id": "velinga",
-  "Områdes_ID": "velinga",
-  "Projektnamn": "Velinga",
-  "Verksamhetsutövare": "Vattenfall Vindkraft AB",
-  "Organisationsnummer": "556581-4273",
-  "Aktuella_verk": 12,
-  "Antal_ej_koordinatsatta_verk": 0,
-  "Beräknad_årsproduktion_GWh": 0,
-  "Uppmätt_årsproduktion_GWh": 0,
-  "Planerad_byggstart": "2023",
-  "Planerat_drifttagande": "2025",
-  "Området_ej_aktuellt_i_sin_helhet": "Ja",
-  "Kommun": "Tidaholm",
-  "Län": "Västra Götalands län",
-  "Elområde": "Stockholm",
-  "Senast_sparad": "Apr 11 2023",
-  "image": "gronhultImg",
-  "location": {
-    "lat": 58.09215,
-    "lng": 14.009379
-  },
-  "bounds": {
-    "ne": "58.28604025,14.28744251",
-    "sw": "57.90795458,13.6912549"
-  },
-  "summary": "I början av 2024 påbörjar Vattenfall byggnationen av Velinga vindkraftpark med 12 vindkraftverk med en totalhöjd av 180 meter. Projektområdet ligger i Tidaholms kommun i Västra Götalands län.",
-  "summaryEn": "At the beginning of 2024, Vattenfall will start the construction of the Velinga wind park, featuring 12 wind turbines with a total height of 180 meters. The project area is located in the municipality of Tidaholm, Västra Götaland County.",
-  "about": "I början av 2024 påbörjar Vattenfall byggnationen av Velinga vindkraftpark med 12 vindkraftverk med en totalhöjd av 180 meter. Projektområdet ligger i Tidaholms kommun i Västra Götalands län. I januari 2024 etablerades ett platskontor och därefter fortsätter arbetet med infrastruktur såsom vägar, fundament, uppställningsplatser och kabeldragning. Under sommar 2025 påbörjas transport och montering av vindkraftverken. Parken beräknas vara i drift i början av 2026.",
-  "aboutEn": "In early 2024, Vattenfall will commence the construction of the Velinga wind park, with 12 wind turbines each reaching a height of 180 meters. The project is situated in Tidaholm municipality, Västra Götaland County. Work begins in January 2024 with the establishment of site offices, followed by the development of infrastructure such as roads, foundations, assembly sites, and cabling. The transport and assembly of the wind turbines are scheduled to start in the summer of 2025, and the park is expected to be operational at the beginning of 2026.",
-  "externalLink": "http://www.vattenfall.se/velingavind"
+    id: 'velinga',
+    Områdes_ID: 'velinga',
+    Projektnamn: 'Velinga',
+    Verksamhetsutövare: 'Vattenfall Vindkraft AB',
+    Organisationsnummer: '556581-4273',
+    Aktuella_verk: 12,
+    Antal_ej_koordinatsatta_verk: 0,
+    Beräknad_årsproduktion_GWh: 0,
+    Uppmätt_årsproduktion_GWh: 0,
+    Planerad_byggstart: '2023',
+    Planerat_drifttagande: '2025',
+    Området_ej_aktuellt_i_sin_helhet: 'Ja',
+    Kommun: 'Tidaholm',
+    Län: 'Västra Götalands län',
+    Elområde: 'Stockholm',
+    Senast_sparad: 'Apr 11 2023',
+
+    image: gronhultImg,
+    location: {
+      lat: 58.09215,
+      lng: 14.009379,
+    },
+    bounds: {
+      ne: '58.28604025,14.28744251',
+      sw: '57.90795458,13.6912549',
+    },
+    summary: 'I början av 2024 påbörjar Vattenfall byggnationen av Velinga vindkraftpark med 12 vindkraftverk med en totalhöjd av 180 meter. Projektområdet ligger i Tidaholms kommun i Västra Götalands län.',
+    summaryEn: 'At the beginning of 2024, Vattenfall will start the construction of the Velinga wind park, featuring 12 wind turbines with a total height of 180 meters. The project area is located in the municipality of Tidaholm, Västra Götaland County.',
+    about: 'I början av 2024 påbörjar Vattenfall byggnationen av Velinga vindkraftpark med 12 vindkraftverk med en totalhöjd av 180 meter. Projektområdet ligger i Tidaholms kommun i Västra Götalands län. I januari 2024 etablerades ett platskontor och därefter fortsätter arbetet med infrastruktur såsom vägar, fundament, uppställningsplatser och kabeldragning. Under sommar 2025 påbörjas transport och montering av vindkraftverken. Parken beräknas vara i drift i början av 2026.',
+    aboutEn: 'In early 2024, Vattenfall will commence the construction of the Velinga wind park, with 12 wind turbines each reaching a height of 180 meters. The project is situated in Tidaholm municipality, Västra Götaland County. Work begins in January 2024 with the establishment of site offices, followed by the development of infrastructure such as roads, foundations, assembly sites, and cabling. The transport and assembly of the wind turbines are scheduled to start in the summer of 2025, and the park is expected to be operational at the beginning of 2026.',
+    externalLink: 'http://www.vattenfall.se/velingavind',
 },
 ];
 
